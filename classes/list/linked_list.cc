@@ -1,31 +1,17 @@
 #ifdef __cplusplus
+#include "../../plotting/iterator/list_iterator.cc"
 #include <iostream>
-#include <queue>
-#include <stack>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <utility>
 #endif
-
-template <typename T> class link {
-private:
-  T pvalue;
-  std::shared_ptr<link> psucc;
-
-public:
-  int val() { return pvalue; }
-
-  std::shared_ptr<link> &succ() { return psucc; }
-
-  explicit link(T value = 0) : pvalue(value), psucc(nullptr) {}
-};
 
 template <typename T> class linked_list {
 public:
   explicit linked_list() : root(std::make_shared<link<T>>()), tail(nullptr) {}
 
   bool empty() { return tail == nullptr; }
+
+  Iterator<T> begin() { return Iterator<T>(root); }
+
+  Iterator<T> end() { return Iterator<T>(nullptr); }
 
   void push_back(T key) {
     if (empty()) {
@@ -83,15 +69,15 @@ public:
           t = t->succ();
         }
         if (t == tail) {
-          std::cout << "Element not found\n";
+          std::cout << "Element:" << key << " not found\n";
           return nullptr;
         }
-        std::cout << "Element was found\n";
+        std::cout << "Element:" << key << " was found\n";
         return t->succ();
       }
     } catch (std::invalid_argument &e) {
       std::cerr << e.what() << '\n';
-      return;
+      return nullptr;
     }
   }
 
@@ -104,9 +90,3 @@ private:
   std::shared_ptr<link<T>> root;
   std::shared_ptr<link<T>> tail;
 };
-
-int main() {
-  linked_list<int> l1;
-  l1.push_back(2);
-  l1.push_back(3);
-}
