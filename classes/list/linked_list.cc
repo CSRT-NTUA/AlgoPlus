@@ -9,9 +9,9 @@ public:
 
   bool empty() { return tail == nullptr; }
 
-  Iterator<T> begin() { return Iterator<T>(root); }
+  list_iter<T> begin() { return list_iter<T>(root); }
 
-  Iterator<T> end() { return Iterator<T>(nullptr); }
+  list_iter<T> end() { return list_iter<T>(nullptr); }
 
   void push_back(T key) {
     if (empty()) {
