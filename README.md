@@ -1,7 +1,7 @@
 AlgoPlus is a C++ library that includes ready to use complex Data Structures.
 
 Examples:
-'''cpp
+```cpp
 doubly_linked_list<int> l1, l2;
   l1.push_back(1);
   l1.push_back(3);
@@ -26,4 +26,4 @@ doubly_linked_list<int> l1, l2;
   b1.insert('c');
   b1.insert('d');
   vector<vector<char>> v = b1.dfs();
-'''
+```
