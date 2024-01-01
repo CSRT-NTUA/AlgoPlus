@@ -42,7 +42,7 @@ private:
   } node;
   node *root;
   int64_t height(node *root) {
-    if (root == NULL)
+    if (root == nullptr)
       return 0;
     return 1 + std::max(height(root->left), height(root->right));
   }
@@ -51,8 +51,8 @@ private:
     node *nn = new node();
     nn->info = info;
     nn->height = 0;
-    nn->left = NULL;
-    nn->right = NULL;
+    nn->left = nullptr;
+    nn->right = nullptr;
     return nn;
   }
 
@@ -77,14 +77,14 @@ private:
   }
 
   node *minValue(node *root) {
-    if (root->left == NULL)
+    if (root->left == nullptr)
       return root;
     return minValue(root->left);
   }
 
   node *__insert(node *root, int item) {
     node *nn = createNode(item);
-    if (root == NULL)
+    if (root == nullptr)
       return nn;
     if (item < root->info)
       root->left = __insert(root->left, item);
@@ -104,7 +104,7 @@ private:
   }
 
   node *__remove(node *root, int key) {
-    if (root == NULL)
+    if (root == nullptr)
       return root;
     if (key < root->info)
       root->left = __remove(root->left, key);
@@ -115,12 +115,12 @@ private:
       if (!root->right) {
         node *temp = root->left;
         delete (root);
-        root = NULL;
+        root = nullptr;
         return temp;
       } else if (!root->left) {
         node *temp = root->right;
         delete (root);
-        root = NULL;
+        root = nullptr;
         return temp;
       }
       node *temp = minValue(root->right);
