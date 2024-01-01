@@ -25,5 +25,5 @@ doubly_linked_list<int> l1, l2;
   b1.insert('a');
   b1.insert('c');
   b1.insert('d');
-  vector<vector<char>> v = b1.dfs();
+  vector<vector<char>> v = b1.level_order();
 ```
