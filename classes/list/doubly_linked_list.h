@@ -1,5 +1,5 @@
 #ifdef __cplusplus
-#include "../../plotting/iterator/list_iterator.cc"
+#include "../../plotting/iterator/list_iterator.h"
 #include <iostream>
 #endif
 

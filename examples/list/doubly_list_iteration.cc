@@ -1,5 +1,5 @@
 #ifdef __cplusplus
-#include "../../classes/list/doubly_linked_list.cc"
+#include "../../classes/list/doubly_linked_list.h"
 #include <iostream>
 #endif
 
