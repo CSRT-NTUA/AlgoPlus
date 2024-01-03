@@ -8,15 +8,21 @@
 #include <utility>
 #endif
 
-#ifndef __graph_h__
 template <typename T> class graph {
 public:
-  graph(std::string __type) {
+  graph(std::string __type, std::vector<std::vector<T>> __adj = {}) {
     try {
       if (__type == "directed" || __type == "undirected") {
         this->__type = __type;
       } else {
         throw std::invalid_argument("Can't recognize the type of graph");
+      }
+      if (!__adj.empty()) {
+        for (size_t i = 0; i < __adj.size(); i++) {
+          for (T &x : __adj[i]) {
+            this->add_edge(i, x);
+          }
+        }
       }
     } catch (std::invalid_argument &e) {
       std::cerr << e.what() << '\n';
@@ -25,7 +31,7 @@ public:
   }
   ~graph() {}
 
-  void add_edge(T u, T v, int64_t w) {
+  void add_edge(T u, T v) {
     if (__type == "undirected") {
       adj[u].push_back(v);
       adj[v].push_back(u);
@@ -78,18 +84,26 @@ public:
   }
 
 private:
-  std::unordered_map<T, T> adj;
+  std::unordered_map<T, std::vector<T>> adj;
   std::string __type;
 };
 
 template <typename T> class weighted_graph {
 public:
-  weighted_graph(std::string __type) {
+  weighted_graph(std::string __type,
+                 std::vector<std::vector<std::pair<T, int64_t>>> __adj = {{}}) {
     try {
       if (__type == "directed" || __type == "undirected") {
         this->__type = __type;
       } else {
         throw std::invalid_argument("Can't recognize the type of graph");
+      }
+      if (!__adj.empty()) {
+        for (size_t i = 0; i < __adj.size(); i++) {
+          for (std::pair<T, int64_t> &x : __adj[i]) {
+            this->add_edge(i, x.first, x.second);
+          }
+        }
       }
     } catch (std::invalid_argument &e) {
       std::cerr << e.what() << '\n';
@@ -152,35 +166,41 @@ public:
     return path;
   }
 
-  int64_t shortest_path(T start, T end){
+  int64_t shortest_path(T start, T end) {
+    if (__elements.find(start) == __elements.end()) {
+      std::cout << "Element: " << start << " is not found in the Graph" << '\n';
+      return -1;
+    }
+    if (__elements.find(end) == __elements.end()) {
+      std::cout << "Element: " << end << " is not found in the Graph" << '\n';
+      return -1;
+    }
     std::unordered_map<T, int64_t> dist;
-  for (auto &x : __elements) {
-    dist[x] = INT_MAX;
-  }
-  std::priority_queue<std::pair<int64_t, T>,
-  std::vector<std::pair<int64_t, T>>,
-  std::greater<std::pair<int64_t, T>>>
-  pq;
-  pq.push(std::make_pair(0, start));
-  dist[start] = 0;
-  while (!pq.empty()) {
-    T currentNode = pq.top().second;
-    T currentDist = pq.top().first;
-    pq.pop();
-    for (std::pair<T, int64_t> &edge : adj[currentNode]) {
-      if (currentDist + edge.second < dist[edge.first]) {
-        dist[edge.first] = currentDist + edge.second;
-        pq.push(std::make_pair(dist[edge.first], edge.first));
+    for (auto &x : __elements) {
+      dist[x] = INT_MAX;
+    }
+    std::priority_queue<std::pair<int64_t, T>,
+                        std::vector<std::pair<int64_t, T>>,
+                        std::greater<std::pair<int64_t, T>>>
+        pq;
+    pq.push(std::make_pair(0, start));
+    dist[start] = 0;
+    while (!pq.empty()) {
+      T currentNode = pq.top().second;
+      T currentDist = pq.top().first;
+      pq.pop();
+      for (std::pair<T, int64_t> &edge : adj[currentNode]) {
+        if (currentDist + edge.second < dist[edge.first]) {
+          dist[edge.first] = currentDist + edge.second;
+          pq.push(std::make_pair(dist[edge.first], edge.first));
+        }
       }
     }
-  }
-  return (dist[end] != INT_MAX) ? dist[end] : -1;
-
+    return (dist[end] != INT_MAX) ? dist[end] : -1;
   }
 
 private:
-  std::unordered_map<T, std::vector<std::pair<T, int64_t> > > adj;
+  std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
   std::unordered_set<T> __elements;
 };
-#endif
