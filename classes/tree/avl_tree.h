@@ -5,7 +5,13 @@
 
 template <typename T> class avl_tree {
 public:
-  explicit avl_tree() noexcept : root(nullptr) {}
+  explicit avl_tree(std::vector<T> __elements = {}) noexcept : root(nullptr) {
+    if (!__elements.empty()) {
+      for (T &x : __elements) {
+        this->insert(x);
+      }
+    }
+  }
   ~avl_tree() noexcept {}
 
   void insert(T key) { root = __insert(root, key); }

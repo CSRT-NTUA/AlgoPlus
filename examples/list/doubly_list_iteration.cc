@@ -4,7 +4,7 @@
 #endif
 
 int main() {
-  doubly_linked_list<int> l1, l2;
+  doubly_linked_list<int> l1({5, 6}), l2;
   l1.push_back(1);
   l1.push_back(3);
   l1.push_back(4);

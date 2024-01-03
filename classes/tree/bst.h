@@ -6,7 +6,13 @@
 
 template <typename T> class bst {
 public:
-  explicit bst() noexcept : root(nullptr) {}
+  explicit bst(std::vector<T> __elements = {}) noexcept : root(nullptr) {
+    if (!__elements.empty()) {
+      for (T &x : __elements) {
+        this->insert(x);
+      }
+    }
+  }
   ~bst() noexcept {}
 
   void insert(T key) { root = __insert(root, key); }
@@ -143,4 +149,3 @@ private:
     }
   }
 };
-

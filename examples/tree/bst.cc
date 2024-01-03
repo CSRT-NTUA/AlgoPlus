@@ -4,7 +4,7 @@
 #endif
 
 int main() {
-  bst<int> b;
+  bst<int> b({1, 3, 5});
   b.insert(1);
   b.insert(10);
   b.insert(-2);

@@ -5,7 +5,14 @@
 
 template <typename T> class linked_list {
 public:
-  explicit linked_list() : root(std::make_shared<link<T>>()), tail(nullptr) {}
+  explicit linked_list(std::vector<T> __elements = {})
+      : root(std::make_shared<link<T>>()), tail(nullptr) {
+    if (!__elements.empty()) {
+      for (T &x : __elements) {
+        this->push_back(x);
+      }
+    }
+  }
 
   bool empty() { return tail == nullptr; }
 
