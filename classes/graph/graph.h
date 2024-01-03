@@ -151,15 +151,15 @@ public:
     return path;
   }
 
-  int64_t shortest_path(T start, T end) {
+  int64_t dijkstra(T start, T end){
     std::unordered_map<T, int64_t> dist;
     for (auto &x : __elements) {
       dist[x] = INT_MAX;
     }
     std::priority_queue<std::pair<int64_t, T>,
-                        std::vector<std::pair<int64_t, T>>,
-                        std::greater<std::pair<int64_t, T>>>
-        pq;
+    std::vector<std::pair<int64_t, T>>,
+    std::greater<std::pair<int64_t, T>>>
+    pq;
     pq.push(std::make_pair(0, start));
     dist[start] = 0;
     while (!pq.empty()) {
@@ -181,3 +181,4 @@ private:
   std::string __type;
   std::unordered_set<T> __elements;
 };
+

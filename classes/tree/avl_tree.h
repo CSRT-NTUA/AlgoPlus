@@ -5,8 +5,8 @@
 
 template <typename T> class avl_tree {
 public:
-  avl_tree() : root(nullptr) {}
-  ~avl_tree() {}
+  explicit avl_tree() noexcept : root(nullptr) {}
+  ~avl_tree() noexcept {}
 
   void insert(T key) { root = __insert(root, key); }
 

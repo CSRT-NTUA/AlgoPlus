@@ -6,8 +6,8 @@
 
 template <typename T> class bst {
 public:
-  bst() : root(nullptr) {}
-  ~bst() {}
+  explicit bst() noexcept : root(nullptr) {}
+  ~bst() noexcept {}
 
   void insert(T key) { root = __insert(root, key); }
 
@@ -144,16 +144,3 @@ private:
   }
 };
 
-int main() {
-  bst<int> b;
-  b.insert(0);
-  b.insert(2);
-  b.insert(-1);
-  b.insert(4);
-
-  b.remove(-1);
-  std::vector<int> v = b.inorder();
-  // for (auto &x : v) {
-  //  std::cout << x << " ";
-  // }
-}
