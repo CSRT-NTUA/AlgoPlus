@@ -8,6 +8,7 @@
 #include <utility>
 #endif
 
+#ifndef __graph_h__
 template <typename T> class graph {
 public:
   graph(std::string __type) {
@@ -151,34 +152,35 @@ public:
     return path;
   }
 
-  int64_t dijkstra(T start, T end){
+  int64_t shortest_path(T start, T end){
     std::unordered_map<T, int64_t> dist;
-    for (auto &x : __elements) {
-      dist[x] = INT_MAX;
-    }
-    std::priority_queue<std::pair<int64_t, T>,
-    std::vector<std::pair<int64_t, T>>,
-    std::greater<std::pair<int64_t, T>>>
-    pq;
-    pq.push(std::make_pair(0, start));
-    dist[start] = 0;
-    while (!pq.empty()) {
-      T currentNode = pq.top().second;
-      T currentDist = pq.top().first;
-      pq.pop();
-      for (std::pair<T, int64_t> &edge : adj[currentNode]) {
-        if (currentDist + edge.second < dist[edge.first]) {
-          dist[edge.first] = currentDist + edge.second;
-          pq.push(std::make_pair(dist[edge.first], edge.first));
-        }
+  for (auto &x : __elements) {
+    dist[x] = INT_MAX;
+  }
+  std::priority_queue<std::pair<int64_t, T>,
+  std::vector<std::pair<int64_t, T>>,
+  std::greater<std::pair<int64_t, T>>>
+  pq;
+  pq.push(std::make_pair(0, start));
+  dist[start] = 0;
+  while (!pq.empty()) {
+    T currentNode = pq.top().second;
+    T currentDist = pq.top().first;
+    pq.pop();
+    for (std::pair<T, int64_t> &edge : adj[currentNode]) {
+      if (currentDist + edge.second < dist[edge.first]) {
+        dist[edge.first] = currentDist + edge.second;
+        pq.push(std::make_pair(dist[edge.first], edge.first));
       }
     }
-    return (dist[end] != INT_MAX) ? dist[end] : -1;
+  }
+  return (dist[end] != INT_MAX) ? dist[end] : -1;
+
   }
 
 private:
-  std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
+  std::unordered_map<T, std::vector<std::pair<T, int64_t> > > adj;
   std::string __type;
   std::unordered_set<T> __elements;
 };
-
+#endif
