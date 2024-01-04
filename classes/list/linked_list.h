@@ -88,8 +88,14 @@ public:
     }
   }
 
-  friend constexpr std::ostream &operator<<(std::ostream &out,
-                                            linked_list<T> &l1);
+  friend std::ostream &operator<<(std::ostream &out, linked_list<T> &l1) {
+    out << '{';
+    for (list_iter<T> it = l1.begin(); it != l1.end(); it++) {
+      out << *it << ' ';
+    }
+    out << '}' << '\n';
+    return out;
+  }
   friend constexpr linked_list &operator+(const linked_list<link<T>> &l1,
                                           const linked_list<link<T>> &l2);
 

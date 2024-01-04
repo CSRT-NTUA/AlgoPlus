@@ -11,6 +11,7 @@ int main() {
   for (list_iter<int> it = l1.begin(); it != l1.end(); it++) {
     std::cout << *(it) << ' ';
   }
+  std::cout << l1 << '\n';
   std::cout << '\n';
   if (l1.search(0)) {
     std::cout << "Yes" << '\n';

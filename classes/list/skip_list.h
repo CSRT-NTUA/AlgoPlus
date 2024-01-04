@@ -40,7 +40,9 @@ public:
     return __level;
   }
 
-  void insert(T key, void *value); // to be continued
+  void insert(T key, void *value) {
+    std::shared_ptr < node >> next;
+  } // to be continued
 
 private:
   int MAX_LEVEL;
