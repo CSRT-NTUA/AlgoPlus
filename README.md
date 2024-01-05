@@ -1,5 +1,7 @@
 AlgoPlus is a C++ library that includes ready to use complex Data Structures.
 
+![Algoplus](https://github.com/CSRT-NTUA/AlgoPlus/blob/main/assets/logo.png)
+
 Examples:
 ```cpp
 doubly_linked_list<int> l1, l2;
