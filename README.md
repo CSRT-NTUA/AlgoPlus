@@ -31,3 +31,13 @@ doubly_linked_list<int> l1, l2;
   b1.insert('d');
   vector<vector<char>> v = b1.level_order();
 ```
+
+
+### How to contribute  
+1. Suggest new implementations on our already implemented data structures & algorithms, or, suggest new classes or algorithms(Note that the code **must** follow our code-style to be accepted).
+2. Contribute to unit testing by writting unit tests for our classes and algorithms.
+3. Contribute to the api code for other languages.
+4. Promote the repository on your local workshop/seminar and get a shout-out.
+
+### Classes
+
