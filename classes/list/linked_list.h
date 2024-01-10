@@ -69,7 +69,7 @@ public:
   bool search(T key) {
     try {
       if (empty()) {
-        throw std::invalid_argument("List is empty");
+        return false;
       } else {
         std::shared_ptr<__link<T>> t = root;
         while (t != tail && t->succ()->val() != key) {

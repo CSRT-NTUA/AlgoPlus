@@ -20,19 +20,66 @@ public:
 
   doubly_list_iter<T> end() { return doubly_list_iter<T>(nullptr); }
 
-  void push_back(T key) {
-    std::shared_ptr<doubly_link<T>> curr = root;
-    if (curr == nullptr) {
-      std::shared_ptr<doubly_link<T>> p = new_node(key);
-      root = p;
+  bool search(T key) {
+    if (this->empty()) {
+      return false;
     } else {
-      while (curr->succ() != nullptr) {
-        curr = curr->succ();
+      std::shared_ptr<doubly_link<T>> t = root;
+      while (t != tail && t->succ()->val() != key) {
+        t = t->succ();
       }
-      std::shared_ptr<doubly_link<T>> p = new_node(key);
-      curr->succ() = p;
-      p->prev() = curr;
+      if (t == tail || t == nullptr) {
+        return false;
+      }
+      return true;
     }
+    return false;
+  }
+
+  void push_back(T key) {
+    std::shared_ptr<doubly_link<T>> p = std::make_shared<doubly_link<T>>(key);
+    if (!root) {
+      root = p;
+    }
+    if (tail != nullptr) {
+      tail->succ() = p;
+    }
+    p->succ() = nullptr;
+    p->prev() = tail;
+    tail = p;
+  }
+
+  void push_front(T key) {
+    std::shared_ptr<doubly_link<T>> p = new_node(key);
+    p->succ() = root;
+    p->prev() = nullptr;
+    if (root != nullptr) {
+      root->prev() = p;
+    }
+    root = p;
+  }
+
+  std::vector<T> elements() {
+    std::vector<T> __elements;
+    if (this->empty()) {
+      return __elements;
+    }
+    doubly_list_iter<T> it = this->begin();
+    it++;
+    for (; it != this->end(); it++) {
+      __elements.push_back(*(it));
+    }
+    return __elements;
+  }
+
+  friend std::ostream &operator<<(std::ostream &out, doubly_linked_list<T> &l) {
+    doubly_link<T> it = l.begin();
+    it++;
+    out << '{';
+    for (; it != l.end(); it++) {
+      out << *(it) << ' ';
+    }
+    out << '}' << '\n';
   }
 
 private:

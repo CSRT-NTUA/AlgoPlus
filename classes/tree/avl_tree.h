@@ -53,7 +53,7 @@ private:
     return 1 + std::max(height(root->left), height(root->right));
   }
 
-  node *createNode(int info) {
+  node *createNode(T info) {
     node *nn = new node();
     nn->info = info;
     nn->height = 0;
@@ -88,7 +88,7 @@ private:
     return minValue(root->left);
   }
 
-  node *__insert(node *root, int item) {
+  node *__insert(node *root, T item) {
     node *nn = createNode(item);
     if (root == nullptr)
       return nn;
@@ -109,7 +109,7 @@ private:
     return root;
   }
 
-  node *__remove(node *root, int key) {
+  node *__remove(node *root, T key) {
     if (root == nullptr)
       return root;
     if (key < root->info)
