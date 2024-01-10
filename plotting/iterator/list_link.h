@@ -2,16 +2,16 @@
 #include <iostream>
 #endif
 
-template <typename T> class link {
+template <typename T> class __link {
 private:
   T pvalue;
-  std::shared_ptr<link> psucc;
+  std::shared_ptr<__link> psucc;
 
 public:
-  explicit link(T value = 0) : pvalue(value), psucc(nullptr) {}
+  explicit __link(T value = 0) : pvalue(value), psucc(nullptr) {}
   T val() { return pvalue; }
 
-  std::shared_ptr<link> &succ() { return psucc; }
+  std::shared_ptr<__link> &succ() { return psucc; }
 };
 
 template <typename T> class doubly_link {

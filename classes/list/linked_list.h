@@ -6,7 +6,7 @@
 template <typename T> class linked_list {
 public:
   explicit linked_list(std::vector<T> __elements = {})
-      : root(std::make_shared<link<T>>()), tail(nullptr) {
+      : root(std::make_shared<__link<T>>()), tail(nullptr) {
     if (!__elements.empty()) {
       for (T &x : __elements) {
         this->push_back(x);
@@ -22,20 +22,20 @@ public:
 
   void push_back(T key) {
     if (empty()) {
-      root->succ() = std::make_shared<link<T>>(key);
+      root->succ() = std::make_shared<__link<T>>(key);
       tail = root->succ();
     } else {
-      tail->succ() = std::make_shared<link<T>>(key);
+      tail->succ() = std::make_shared<__link<T>>(key);
       tail = tail->succ();
     }
   }
 
   void push_front(T key) {
     if (empty()) {
-      root->succ() = std::make_shared<link<T>>(key);
+      root->succ() = std::make_shared<__link<T>>(key);
       tail = root->succ();
     } else {
-      std::shared_ptr<link<T>> p = std::make_shared<link<T>>(key);
+      std::shared_ptr<__link<T>> p = std::make_shared<__link<T>>(key);
       p->succ() = root->succ();
       root->succ() = p;
     }
@@ -46,8 +46,8 @@ public:
       std::cout << "List is Empty!";
       return;
     }
-    std::shared_ptr<link<T>> t = root;
-    std::shared_ptr<link<T>> to_be_removed = nullptr;
+    std::shared_ptr<__link<T>> t = root;
+    std::shared_ptr<__link<T>> to_be_removed = nullptr;
     while (t != tail && t->succ()->val() != key) {
       t = t->succ();
     }
@@ -66,25 +66,23 @@ public:
     }
   }
 
-  std::shared_ptr<link<T>> search(T key) {
+  bool search(T key) {
     try {
       if (empty()) {
         throw std::invalid_argument("List is empty");
       } else {
-        std::shared_ptr<link<T>> t = root;
+        std::shared_ptr<__link<T>> t = root;
         while (t != tail && t->succ()->val() != key) {
           t = t->succ();
         }
         if (t == tail) {
-          std::cout << "Element:" << key << " not found\n";
-          return nullptr;
+          return false;
         }
-        std::cout << "Element:" << key << " was found\n";
-        return t->succ();
+        return true;
       }
     } catch (std::invalid_argument &e) {
       std::cerr << e.what() << '\n';
-      return nullptr;
+      return false;
     }
   }
 
@@ -96,10 +94,10 @@ public:
     out << '}' << '\n';
     return out;
   }
-  friend constexpr linked_list &operator+(const linked_list<link<T>> &l1,
-                                          const linked_list<link<T>> &l2);
+  friend constexpr linked_list &operator+(const linked_list<__link<T>> &l1,
+                                          const linked_list<__link<T>> &l2);
 
 private:
-  std::shared_ptr<link<T>> root;
-  std::shared_ptr<link<T>> tail;
+  std::shared_ptr<__link<T>> root;
+  std::shared_ptr<__link<T>> tail;
 };

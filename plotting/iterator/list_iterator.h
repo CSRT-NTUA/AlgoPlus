@@ -5,7 +5,7 @@
 template <typename T> class list_iter {
 public:
   list_iter() noexcept {}
-  list_iter(const std::shared_ptr<link<T>> node) noexcept : curr(node) {}
+  list_iter(const std::shared_ptr<__link<T>> node) noexcept : curr(node) {}
   list_iter &operator++() {
     if (curr) {
       curr = curr->succ();
@@ -22,7 +22,7 @@ public:
   T operator*() { return curr->val(); }
 
 private:
-  std::shared_ptr<link<T>> curr;
+  std::shared_ptr<__link<T>> curr;
 };
 
 template <typename T> class doubly_list_iter {
