@@ -75,7 +75,7 @@ public:
         while (t != tail && t->succ()->val() != key) {
           t = t->succ();
         }
-        if (t == tail) {
+        if (t == tail || t == nullptr) {
           return false;
         }
         return true;
@@ -86,9 +86,25 @@ public:
     }
   }
 
+  std::vector<T> elements() {
+    std::vector<T> __elements;
+    if (this->empty()) {
+      return __elements;
+    }
+    list_iter<T> it = this->begin();
+    it++;
+    for (; it != this->end(); it++) {
+      __elements.push_back(*(it));
+    }
+
+    return __elements;
+  }
+
   friend std::ostream &operator<<(std::ostream &out, linked_list<T> &l1) {
     out << '{';
-    for (list_iter<T> it = l1.begin(); it != l1.end(); it++) {
+    list_iter<T> it = l1.begin();
+    it++;
+    for (; it != l1.end(); it++) {
       out << *it << ' ';
     }
     out << '}' << '\n';
