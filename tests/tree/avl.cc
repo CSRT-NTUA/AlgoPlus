@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "../../classes/tree/avl_tree.h"
+#include "../../src/classes/tree/avl_tree.h"
 #include "../catch2/catch.hpp"
 #include <string>
 

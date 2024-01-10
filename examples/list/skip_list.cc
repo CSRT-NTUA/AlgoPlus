@@ -1,5 +1,5 @@
 #ifdef __cplusplus
-#include "../../classes/list/skip_list.h"
+#include "../../src/classes/list/skip_list.h"
 #include <iostream>
 #endif
 

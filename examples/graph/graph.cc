@@ -1,5 +1,5 @@
 #ifndef GRAPH_H
-#include "../../classes/graph/graph.h"
+#include "../../src/classes/graph/graph.h"
 #endif
 
 int main() {

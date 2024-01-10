@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "../../classes/list/linked_list.h"
+#include "../../src/classes/list/linked_list.h"
 #include "../catch2/catch.hpp"
 #include <string>
 

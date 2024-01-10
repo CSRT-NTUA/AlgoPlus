@@ -1,5 +1,5 @@
 #ifdef __cplusplus
-#include "../../classes/tree/bst.h"
+#include "../../src/classes/tree/bst.h"
 #include <iostream>
 #endif
 

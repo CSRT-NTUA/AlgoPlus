@@ -1,5 +1,5 @@
 #ifdef __cplusplus
-#include "../../classes/heap/min_heap.h"
+#include "../../src/classes/heap/min_heap.h"
 #include <iostream>
 #endif
 

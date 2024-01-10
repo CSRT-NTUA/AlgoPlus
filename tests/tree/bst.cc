@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "../../classes/tree/bst.h"
+#include "../../src/classes/tree/bst.h"
 #include "../catch2/catch.hpp"
 #include <string>
 
