@@ -51,6 +51,10 @@ public:
 
   int64_t connected_components();
 
+  bool cycle();
+
+  std::vector<T> topological_sort();
+
 private:
   std::unordered_map<T, std::vector<T>> adj;
   std::unordered_set<T> __elements;
@@ -102,15 +106,15 @@ template <typename T> std::vector<T> graph<T>::bfs(T start) {
 
 template <typename T> int64_t graph<T>::connected_components() {
   auto explore = [&](std::unordered_map<T, bool> &visited, T element) -> void {
-    std::stack<T> s;
-    s.push(element);
+    std::queue<T> q;
+    q.push(element);
     visited[element] = true;
-    while (!s.empty()) {
-      T current = s.top();
-      s.pop();
+    while (!q.empty()) {
+      T current = q.front();
+      q.pop();
       for (T &x : adj[current]) {
         if (visited.find(x) == visited.end()) {
-          s.push(x);
+          q.push(x);
           visited[x] = true;
         }
       }
@@ -126,6 +130,71 @@ template <typename T> int64_t graph<T>::connected_components() {
     }
   }
   return cc;
+}
+
+template <typename T> bool graph<T>::cycle() {
+  std::unordered_map<T, int> indeg;
+  std::queue<T> q;
+  size_t visited = 0;
+
+  for (T x : __elements) {
+    for (T &y : adj[x]) {
+      indeg[y]++;
+    }
+  }
+
+  for (T x : __elements) {
+    if (indeg[x] == 0) {
+      q.push(x);
+    }
+  }
+
+  while (!q.empty()) {
+    T current = q.front();
+    q.pop();
+    visited++;
+    for (T &x : adj[current]) {
+      if (--indeg[x] == 0) {
+        q.push(x);
+      }
+    }
+  }
+  return visited == 0;
+}
+
+template <typename T> std::vector<T> graph<T>::topological_sort() {
+  std::vector<T> top_sort;
+  std::unordered_map<T, bool> visited;
+  std::unordered_map<T, int64_t> indeg;
+  for (T x : __elements) {
+    for (T &y : adj[x]) {
+      indeg[y]++;
+    }
+  }
+
+  std::queue<T> q;
+  for (T x : __elements) {
+    if (indeg[x] == 0) {
+      q.push(x);
+      visited[x] = true;
+    }
+  }
+
+  while (!q.empty()) {
+    T current = q.front();
+    q.pop();
+    top_sort.push_back(current);
+    for (T &x : adj[current]) {
+      if (visited.find(x) == visited.end()) {
+        if (--indeg[x] == 0) {
+          q.push(x);
+          visited[x] = true;
+        }
+      }
+    }
+  }
+
+  return top_sort;
 }
 
 template <typename T> class weighted_graph {
@@ -171,6 +240,10 @@ public:
 
   int64_t connected_components();
 
+  bool cycle();
+
+  std::vector<T> topological_sort();
+
 private:
   std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
@@ -186,27 +259,54 @@ template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
     std::cout << "Element: " << end << " is not found in the Graph" << '\n';
     return -1;
   }
-  std::unordered_map<T, int64_t> dist;
-  for (auto &x : __elements) {
-    dist[x] = INT_MAX;
-  }
-  std::priority_queue<std::pair<int64_t, T>, std::vector<std::pair<int64_t, T>>,
-                      std::greater<std::pair<int64_t, T>>>
-      pq;
-  pq.push(std::make_pair(0, start));
-  dist[start] = 0;
-  while (!pq.empty()) {
-    T currentNode = pq.top().second;
-    T currentDist = pq.top().first;
-    pq.pop();
-    for (std::pair<T, int64_t> &edge : adj[currentNode]) {
-      if (currentDist + edge.second < dist[edge.first]) {
-        dist[edge.first] = currentDist + edge.second;
-        pq.push(std::make_pair(dist[edge.first], edge.first));
+
+  if (!cycle()) {
+    std::vector<T> top_sort = topological_sort();
+    std::reverse(top_sort.begin(), top_sort.end());
+    std::stack<T> s;
+    std::unordered_map<T, int64_t> dist;
+    for (auto &x : __elements) {
+      dist[x] = INT_MAX;
+    }
+    dist[start] = 0;
+    while (!top_sort.empty()) {
+      auto current = top_sort.back();
+      top_sort.pop_back();
+      if (dist[current] != INT_MAX) {
+        for (std::pair<T, int64_t> &x : adj[current]) {
+          if (dist[x.first] > dist[current] + x.second) {
+            dist[x.first] = dist[current] + x.second;
+            top_sort.push_back(x.first);
+          }
+        }
       }
     }
+    return (dist[end] != INT_MAX) ? dist[end] : -1;
+  } else {
+    std::unordered_map<T, int64_t> dist;
+    for (auto &x : __elements) {
+      dist[x] = INT_MAX;
+    }
+    std::priority_queue<std::pair<int64_t, T>,
+                        std::vector<std::pair<int64_t, T>>,
+                        std::greater<std::pair<int64_t, T>>>
+        pq;
+    pq.push(std::make_pair(0, start));
+    dist[start] = 0;
+    while (!pq.empty()) {
+      T currentNode = pq.top().second;
+      T currentDist = pq.top().first;
+      pq.pop();
+      for (std::pair<T, int64_t> &edge : adj[currentNode]) {
+        if (currentDist + edge.second < dist[edge.first]) {
+          dist[edge.first] = currentDist + edge.second;
+          pq.push(std::make_pair(dist[edge.first], edge.first));
+        }
+      }
+    }
+    return (dist[end] != INT_MAX) ? dist[end] : -1;
   }
-  return (dist[end] != INT_MAX) ? dist[end] : -1;
+  return -1;
 }
 
 template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
@@ -281,5 +381,70 @@ template <typename T> int64_t weighted_graph<T>::connected_components() {
     }
   }
   return cc;
+}
+
+template <typename T> bool weighted_graph<T>::cycle() {
+  std::unordered_map<T, int> indeg;
+  std::queue<T> q;
+  size_t visited = 0;
+
+  for (T x : __elements) {
+    for (std::pair<T, int64_t> &y : adj[x]) {
+      indeg[y.first]++;
+    }
+  }
+
+  for (T x : __elements) {
+    if (indeg[x] == 0) {
+      q.push(x);
+    }
+  }
+
+  while (!q.empty()) {
+    T current = q.front();
+    q.pop();
+    visited++;
+    for (std::pair<T, int64_t> &x : adj[current]) {
+      if (--indeg[x.first] == 0) {
+        q.push(x.first);
+      }
+    }
+  }
+  return visited == 0;
+}
+
+template <typename T> std::vector<T> weighted_graph<T>::topological_sort() {
+  std::vector<T> top_sort;
+  std::unordered_map<T, bool> visited;
+  std::unordered_map<T, int64_t> indeg;
+  for (T x : __elements) {
+    for (std::pair<T, int64_t> &y : adj[x]) {
+      indeg[y.first]++;
+    }
+  }
+
+  std::queue<T> q;
+  for (T x : __elements) {
+    if (indeg[x] == 0) {
+      q.push(x);
+      visited[x] = true;
+    }
+  }
+
+  while (!q.empty()) {
+    T current = q.front();
+    q.pop();
+    top_sort.push_back(current);
+    for (std::pair<T, int64_t> &x : adj[current]) {
+      if (visited.find(x.first) == visited.end()) {
+        if (--indeg[x.first] == 0) {
+          q.push(x.first);
+          visited[x.first] = true;
+        }
+      }
+    }
+  }
+
+  return top_sort;
 }
 #endif

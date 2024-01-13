@@ -33,4 +33,41 @@ TEST_CASE("testing connecting components") {
   g.add_edge(5, 6);
   g.add_edge(7, 8);
   REQUIRE(g.connected_components() == 3);
+
+  graph<char> g2("undirected");
+  g2.add_edge('a', 'g');
+  g2.add_edge('b', 'o');
+  g2.add_edge('o', 'a');
+  g2.add_edge('w', 'e');
+  REQUIRE(g2.connected_components() == 2);
+}
+
+TEST_CASE("testing cycle detection") {
+  graph<int> g("undirected");
+  g.add_edge(1, 2);
+  g.add_edge(2, 3);
+  g.add_edge(3, 1);
+  REQUIRE(g.cycle() == true);
+
+  graph<int> g2("directed");
+  g2.add_edge(1, 2);
+  g2.add_edge(2, 3);
+  g2.add_edge(3, 1);
+  REQUIRE(g2.cycle() == true);
+
+  graph<int> g3("directed");
+  g3.add_edge(4, 5);
+  g3.add_edge(5, 6);
+  g3.add_edge(4, 6);
+  REQUIRE(g3.cycle() == false);
+}
+
+TEST_CASE("testing topological sorting") {
+  graph<int> g("directed");
+  g.add_edge(0, 1);
+  g.add_edge(1, 3);
+  g.add_edge(2, 3);
+  g.add_edge(3, 4);
+  std::vector<int> v1 = {2, 0, 1, 3, 4};
+  REQUIRE(g.topological_sort() == v1);
 }

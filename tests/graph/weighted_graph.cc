@@ -28,3 +28,36 @@ TEST_CASE("testing conected components") {
   g2.add_edge(3, 5, 7);
   REQUIRE(g2.connected_components() == 1);
 }
+
+TEST_CASE("testing cycle detection") {
+  weighted_graph<int> g("undirected");
+  g.add_edge(0, 1, 0);
+  g.add_edge(2, 3, 4);
+  g.add_edge(1, 2, 10);
+  g.add_edge(3, 0, 9);
+  REQUIRE(g.cycle() == true);
+
+  weighted_graph<int> g2("directed");
+  g2.add_edge(0, 1, 0);
+  g2.add_edge(2, 3, 0);
+  g2.add_edge(1, 2, 0);
+  g2.add_edge(0, 3, 0);
+  REQUIRE(g2.cycle() == false);
+}
+
+TEST_CASE("testing shortest path in DAG") {
+  weighted_graph<int> g2("directed");
+  g2.add_edge(0, 1, 10);
+  g2.add_edge(2, 3, 8);
+  g2.add_edge(1, 2, 6);
+  g2.add_edge(0, 3, 4);
+  REQUIRE(g2.shortest_path(0, 3) == 4);
+
+  weighted_graph<int> g3("directed");
+  g3.add_edge(0, 1, 0);
+  g3.add_edge(1, 2, 2);
+  g3.add_edge(2, 6, 3);
+  g3.add_edge(1, 6, 1);
+  g3.add_edge(3, 2, 4);
+  REQUIRE(g3.shortest_path(0, 6) == 1);
+}
