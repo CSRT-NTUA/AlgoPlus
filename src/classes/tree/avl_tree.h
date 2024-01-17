@@ -1,4 +1,5 @@
 #ifdef __cplusplus
+#include "../../plotting/iterator/avl_tree_iterator.h"
 #include <functional>
 #include <vector>
 #endif
@@ -13,6 +14,10 @@ public:
     }
   }
   ~avl_tree() noexcept {}
+
+  avl_iter<T> begin() { return avl_iter<T>(root); }
+
+  avl_iter<T> end() { return avl_iter<T>(nullptr); }
 
   void insert(T key) { root = __insert(root, key); }
 
@@ -37,6 +42,17 @@ public:
     __postorder([&](node *callbacked) { path.push_back(callbacked->info); },
                 root);
     return path;
+  }
+
+  friend std::ostream &operator<<(std::ostream &out, avl_tree<T> &t1) {
+    out << '{';
+    avl_iter<T> it = t1.begin();
+    it++;
+    for (; it != t1.end(); it++) {
+      out << *it << ' ';
+    }
+    out << '}' << '\n';
+    return out;
   }
 
 private:

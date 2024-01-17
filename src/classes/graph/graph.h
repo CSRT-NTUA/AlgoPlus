@@ -244,6 +244,8 @@ public:
 
   std::vector<T> topological_sort();
 
+  int64_t prim(T start);
+
 private:
   std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
@@ -260,7 +262,7 @@ template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
     return -1;
   }
 
-  if (!cycle()) {
+  if (!cycle() && __type == "directed") {
     std::vector<T> top_sort = topological_sort();
     std::reverse(top_sort.begin(), top_sort.end());
     std::stack<T> s;
@@ -447,4 +449,30 @@ template <typename T> std::vector<T> weighted_graph<T>::topological_sort() {
 
   return top_sort;
 }
+
+template <typename T> int64_t weighted_graph<T>::prim(T __temp) {
+  std::priority_queue<std::pair<T, int64_t>, std::vector<std::pair<T, int64_t>>,
+                      std::greater<std::pair<T, int64_t>>>
+      q;
+  std::unordered_map<T, bool> visited;
+  int64_t cost = 0;
+  q.push(std::make_pair(0, __temp));
+  while (!q.empty()) {
+    std::pair<T, int64_t> current = q.top();
+    q.pop();
+    __temp = current.first;
+    if (visited.find(__temp) != visited.end()) {
+      continue;
+    }
+    cost += current.second;
+    visited[__temp] = true;
+    for (std::pair<T, int64_t> &x : adj[current.first]) {
+      if (visited.find(x.first) == visited.end()) {
+        q.push(x);
+      }
+    }
+  }
+  return cost;
+}
+
 #endif

@@ -61,3 +61,13 @@ TEST_CASE("testing shortest path in DAG") {
   g3.add_edge(3, 2, 4);
   REQUIRE(g3.shortest_path(0, 6) == 1);
 }
+
+TEST_CASE("testing mst with prim's algo") {
+  weighted_graph<int> g("directed");
+  g.add_edge(1, 2, 2);
+  g.add_edge(0, 1, 0);
+  g.add_edge(2, 6, 3);
+  g.add_edge(1, 6, 1);
+  g.add_edge(3, 2, 4);
+  REQUIRE(g.prim(0) == 3);
+}

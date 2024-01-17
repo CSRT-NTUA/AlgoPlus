@@ -25,4 +25,8 @@ int main() {
     std::cout << x << " ";
   }
   std::cout << '\n';
+
+  avl_tree<int> b1({5, 9, -5, 3});
+  std::cout << "iterators for avl trees" << '\n';
+  std::cout << b << '\n';
 }

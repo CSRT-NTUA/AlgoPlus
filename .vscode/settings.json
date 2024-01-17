@@ -58,6 +58,14 @@
     "stack": "cpp",
     "unordered_set": "cpp",
     "__errc": "cpp",
-    "__mutex_base": "cpp"
+    "__mutex_base": "cpp",
+    "__tree": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "iomanip": "cpp",
+    "map": "cpp",
+    "regex": "cpp",
+    "set": "cpp",
+    "thread": "cpp"
   }
 }
