@@ -13,4 +13,18 @@ int main() {
     std::cout << x << " ";
   }
   std::cout << '\n';
+
+  // now you can visualize trees in Algo+
+
+  bst<char> b2;
+  b2.insert('a');
+  b2.insert('t');
+  b2.insert('f');
+  b2.insert('w');
+  b2.insert('p');
+  b2.insert('o');
+  b2.insert('m');
+  
+
+  b2.visualize();
 }

@@ -1,0 +1,8 @@
+digraph Tree {
+a->t
+t->f
+f->p
+p->o
+o->m
+t->w
+}

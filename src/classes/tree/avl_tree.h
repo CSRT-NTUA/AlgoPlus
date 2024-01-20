@@ -1,6 +1,8 @@
 #ifdef __cplusplus
 #include <functional>
 #include <vector>
+#include <string>
+#include "../../visualization/tree_visual/tree_visualization.h"
 #endif
 
 template <typename T> class avl_tree {
@@ -37,6 +39,11 @@ public:
     __postorder([&](node *callbacked) { path.push_back(callbacked->info); },
                 root);
     return path;
+  }
+
+  void visualize(){
+    std::string __generated = generate_visualization();
+    visualization::visualize(__generated);
   }
 
 private:
@@ -158,5 +165,35 @@ private:
       __inorder(callback, root->left);
       __inorder(callback, root->right);
     }
+  }
+
+  std::string generate_visualization(){
+    std::string __generate = __inorder_gen(root);
+    return __generate;
+  }
+
+  std::string __inorder_gen(node *root){
+    std::string __s;
+    if(std::is_same_v<T, char> || std::is_same_v<T, std::string>){
+      if(root -> left){
+        __s += root->info;
+        __s +=  "->";
+        __s += root->left->info;
+        __s += "\n";
+        __s +=  __inorder_gen(root->left);
+      }
+      if(root -> right){
+        __s += root->info;
+        __s += "->"; 
+        __s += root->right->info;
+        __s += "\n";
+        __s += __inorder_gen(root->right);
+      }
+    }
+    else{
+      if(root -> left){__s += std::to_string(root->info) + "->" + std::to_string(root->left->info) + "\n" + __inorder_gen(root->left);}
+      if(root -> right){__s += std::to_string(root->info) + "->" + std::to_string(root->right->info) + "\n" + __inorder_gen(root->right);}
+    }
+    return __s;
   }
 };

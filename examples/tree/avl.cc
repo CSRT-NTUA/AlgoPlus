@@ -25,8 +25,14 @@ int main() {
     std::cout << x << " ";
   }
   std::cout << '\n';
+  
+  // you can now visualize with Algo+
+  avl_tree<int> b2;
+  b2.insert(10);
+  b2.insert(15);
+  b2.insert(-10);
+  b2.insert(-5);
+  b2.insert(-8);
 
-  avl_tree<int> b1({5, 9, -5, 3});
-  std::cout << "iterators for avl trees" << '\n';
-  std::cout << b << '\n';
+  b2.visualize();
 }
