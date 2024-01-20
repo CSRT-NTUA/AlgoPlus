@@ -71,3 +71,13 @@ TEST_CASE("testing mst with prim's algo") {
   g.add_edge(3, 2, 4);
   REQUIRE(g.prim(0) == 3);
 }
+
+TEST_CASE("testing bipartite graph"){
+  weighted_graph<char> g("undirected");
+  g.add_edge('a', 'b', 1);
+  g.add_edge('b', 'c', 2);
+  g.add_edge('c', 'd', 3);
+  g.add_edge('d', 'a', 4);
+  REQUIRE(g.bipartite() == true);
+
+}

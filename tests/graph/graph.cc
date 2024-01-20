@@ -71,3 +71,12 @@ TEST_CASE("testing topological sorting") {
   std::vector<int> v1 = {2, 0, 1, 3, 4};
   REQUIRE(g.topological_sort() == v1);
 }
+
+TEST_CASE("testing bipartite check"){
+  graph<char> g("undirected");
+  g.add_edge('a', 'b');
+  g.add_edge('b', 'c');
+  g.add_edge('c', 'd');
+  g.add_edge('d', 'a');
+  REQUIRE(g.bipartite() == true);
+}

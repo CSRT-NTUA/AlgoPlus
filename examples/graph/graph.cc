@@ -15,4 +15,7 @@ int main() {
     std::cout << x << " ";
   }
   std::cout << '\n';
+
+  graph<char> g3("directed", { {'a', 'b'}, {'c', 'd'}, {'b','c'} });
+  std::cout << "Graph g3 is: " << g3 << '\n';
 }

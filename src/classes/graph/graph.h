@@ -45,6 +45,8 @@ public:
     __elements.insert(v);
   }
 
+  size_t size();
+
   std::vector<T> dfs(T start);
 
   std::vector<T> bfs(T start);
@@ -55,11 +57,26 @@ public:
 
   std::vector<T> topological_sort();
 
+  bool bipartite();
+
+  friend std::ostream & operator <<(std::ostream &out, graph<T> &g){
+    out << '{';
+
+    std::vector<T> elements = g.topological_sort();
+    for(T &x : elements){
+      out << x << ' ';
+    }
+    out << '}' << '\n';
+    return out;
+  }
+
 private:
   std::unordered_map<T, std::vector<T>> adj;
   std::unordered_set<T> __elements;
   std::string __type;
 };
+
+template<typename T> size_t graph<T>::size(){return __elements.size();}
 
 template <typename T> std::vector<T> graph<T>::dfs(T start) {
   std::stack<T> s;
@@ -197,6 +214,35 @@ template <typename T> std::vector<T> graph<T>::topological_sort() {
   return top_sort;
 }
 
+template <typename T> bool graph<T>::bipartite(){
+  std::unordered_map<T, int> color;
+  std::queue<std::pair<T, int> > q;
+
+  for(T x : __elements){
+    if(color.find(x) == color.end()){
+      q.push({x, 0});
+      color[x] = 0;
+      while(!q.empty()){
+        std::pair<T, int> current = q.front();
+        q.pop();
+        T v = current.first;
+        int col = current.second;
+        for(T & x : adj[v]){
+          if(color.find(x) != color.end() && color[x] == col){
+            return false;
+          }
+          if(color.find(x) == color.end()){
+            color[x] = (col) ? 0 : 1;
+            q.push({x, color[x]});
+          }
+        }
+      }
+    }
+  }
+  return true;
+}
+
+
 template <typename T> class weighted_graph {
 public:
   weighted_graph(std::string __type,
@@ -232,6 +278,8 @@ public:
     __elements.insert(v);
   }
 
+  size_t size();
+
   std::vector<T> dfs(T start);
 
   std::vector<T> bfs(T start);
@@ -246,11 +294,25 @@ public:
 
   int64_t prim(T start);
 
+  bool bipartite();
+
+  friend std::ostream &operator <<(std::ostream &out, weighted_graph<T> &g){
+    out << '{';
+    std::vector<T> elements = g.topological_sort();
+    for(T &x : elements){
+      out << x << ' ';
+    }
+    out << '}' << '\n';
+    return out;
+  }
+
 private:
   std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
   std::unordered_set<T> __elements;
 };
+
+template <typename T> size_t weighted_graph<T>::size(){return __elements.size();}
 
 template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
   if (__elements.find(start) == __elements.end()) {
@@ -473,6 +535,34 @@ template <typename T> int64_t weighted_graph<T>::prim(T __temp) {
     }
   }
   return cost;
+}
+
+template <typename T> bool weighted_graph<T>::bipartite(){
+  std::unordered_map<T, int> color;
+  std::queue<std::pair<T, int> > q;
+
+  for(T x : __elements){
+    if(color.find(x) == color.end()){
+      q.push({x, 0});
+      color[x] = 0;
+      while(!q.empty()){
+        std::pair<T, int> current = q.front();
+        q.pop();
+        T v = current.first;
+        int col = current.second;
+        for(std::pair<T, int64_t> & x : adj[v]){
+          if(color.find(x.first) != color.end() && color[x.first] == col){
+            return false;
+          }
+          if(color.find(x.first) == color.end()){
+            color[x.first] = (col) ? 0 : 1;
+            q.push({x.first, color[x.first]});
+          }
+        }
+      }
+    }
+  }
+  return true;
 }
 
 #endif
