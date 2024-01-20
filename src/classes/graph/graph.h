@@ -45,6 +45,15 @@ public:
     __elements.insert(v);
   }
 
+  void clear(){
+    __elements.clear();
+    adj.clear();
+  }
+  
+  bool empty(){
+    return __elements.empty();
+  }
+
   size_t size();
 
   std::vector<T> dfs(T start);
@@ -79,8 +88,11 @@ private:
 template<typename T> size_t graph<T>::size(){return __elements.size();}
 
 template <typename T> std::vector<T> graph<T>::dfs(T start) {
-  std::stack<T> s;
   std::vector<T> path;
+  if(this -> empty()){
+    return path;
+  }
+  std::stack<T> s;
   std::unordered_map<T, bool> visited;
   s.push(start);
   visited[start] = true;
@@ -99,8 +111,11 @@ template <typename T> std::vector<T> graph<T>::dfs(T start) {
 }
 
 template <typename T> std::vector<T> graph<T>::bfs(T start) {
-  std::queue<T> q;
   std::vector<T> path;
+  if(this -> empty()){
+    return path;
+  }
+  std::queue<T> q;
   std::unordered_map<T, bool> visited;
   q.push(start);
   visited[start] = true;
@@ -278,6 +293,15 @@ public:
     __elements.insert(v);
   }
 
+  void clear(){
+    __elements.clear();
+    adj.clear();
+  }
+
+  bool empty(){
+    return __elements.empty();
+  }
+
   size_t size();
 
   std::vector<T> dfs(T start);
@@ -374,8 +398,12 @@ template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
 }
 
 template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
-  std::queue<T> q;
+
   std::vector<T> path;
+  if(this -> empty()){
+    return path;
+  }
+  std::queue<T> q;
   std::unordered_map<T, bool> visited;
   q.push(start);
   visited[start] = true;
@@ -397,8 +425,11 @@ template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
 }
 
 template <typename T> std::vector<T> weighted_graph<T>::bfs(T start) {
-  std::queue<T> q;
   std::vector<T> path;
+  if(this -> empty()){
+    return path;
+  }
+  std::queue<T> q;
   std::unordered_map<T, bool> visited;
   q.push(start);
   visited[start] = true;

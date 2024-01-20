@@ -3,6 +3,18 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
+TEST_CASE("testing clearing of a graph"){
+  weighted_graph<int> g("directed");
+  g.add_edge(1, 2, 4);
+  g.add_edge(2, 3, 4);
+  g.add_edge(4, 5, 5);
+  g.clear();
+  std::vector<int> v = g.topological_sort();
+  std::vector<int> v2 = g.dfs(1);
+  REQUIRE(v.empty() == true);
+  REQUIRE(v2.empty() == true);
+}
+
 TEST_CASE("testing shortest path") {
   weighted_graph<int> g("undirected");
   g.add_edge(1, 2, 5);

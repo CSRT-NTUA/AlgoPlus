@@ -3,6 +3,15 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
+TEST_CASE("testing clearing of a graph"){
+  graph<int> g("directed", { {1,2}, {3,4}, {4,5}});
+  g.clear();
+  std::vector<int> v = g.topological_sort();
+  std::vector<int> v2 = g.dfs(0);
+  REQUIRE(v2.empty() == true);
+  REQUIRE(v.empty() == true);
+}
+
 TEST_CASE("testing dfs") {
   graph<int> g("directed");
   g.add_edge(1, 3);
@@ -60,6 +69,11 @@ TEST_CASE("testing cycle detection") {
   g3.add_edge(5, 6);
   g3.add_edge(4, 6);
   REQUIRE(g3.cycle() == false);
+
+  graph<char> g4("directed");
+  g4.add_edge('a', 'c');
+  g4.add_edge('c', 'a');
+  REQUIRE(g4.cycle() == true);
 }
 
 TEST_CASE("testing topological sorting") {
@@ -80,3 +94,4 @@ TEST_CASE("testing bipartite check"){
   g.add_edge('d', 'a');
   REQUIRE(g.bipartite() == true);
 }
+
