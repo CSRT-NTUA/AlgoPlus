@@ -89,7 +89,7 @@ template<typename T> size_t graph<T>::size(){return __elements.size();}
 
 template <typename T> std::vector<T> graph<T>::dfs(T start) {
   std::vector<T> path;
-  if(this -> empty()){
+  if(this -> empty() || __elements.find(start) == __elements.end()){
     return path;
   }
   std::stack<T> s;
@@ -112,7 +112,7 @@ template <typename T> std::vector<T> graph<T>::dfs(T start) {
 
 template <typename T> std::vector<T> graph<T>::bfs(T start) {
   std::vector<T> path;
-  if(this -> empty()){
+  if(this -> empty() || __elements.find(start) == __elements.end()){
     return path;
   }
   std::queue<T> q;
@@ -400,7 +400,7 @@ template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
 template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
 
   std::vector<T> path;
-  if(this -> empty()){
+  if(this -> empty() || __elements.find(start) == __elements.end()){
     return path;
   }
   std::queue<T> q;
@@ -426,7 +426,7 @@ template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
 
 template <typename T> std::vector<T> weighted_graph<T>::bfs(T start) {
   std::vector<T> path;
-  if(this -> empty()){
+  if(this -> empty() || __elements.find(start) == __elements.end()){
     return path;
   }
   std::queue<T> q;
