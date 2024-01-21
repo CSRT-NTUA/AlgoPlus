@@ -4,7 +4,7 @@
 #include <string>
 
 TEST_CASE("testing clearing of a graph"){
-  graph<int> g("directed", { {1,2}, {3,4}, {4,5}});
+  graph<int> g("directed", { {0, {1,2}}, {1, {3,4}}, {2, {4,5}}});
   g.clear();
   std::vector<int> v = g.topological_sort();
   std::vector<int> v2 = g.dfs(0);

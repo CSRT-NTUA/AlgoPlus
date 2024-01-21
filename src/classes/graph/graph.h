@@ -1,10 +1,13 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include "../../visualization/graph_visual/graph_visualization.h"
+
 #ifdef __cplusplus
 #include <iostream>
 #include <queue>
 #include <stack>
+#include <type_traits>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
@@ -13,7 +16,7 @@
 
 template <typename T> class graph {
 public:
-  graph(std::string __type, std::vector<std::vector<T>> __adj = {}) {
+  graph(std::string __type, std::vector<std::pair<T, std::vector<T> > > __adj = {}) {
     try {
       if (__type == "directed" || __type == "undirected") {
         this->__type = __type;
@@ -21,9 +24,9 @@ public:
         throw std::invalid_argument("Can't recognize the type of graph");
       }
       if (!__adj.empty()) {
-        for (size_t i = 0; i < __adj.size(); i++) {
-          for (T &x : __adj[i]) {
-            this->add_edge(i, x);
+        for(size_t i = 0; i<__adj.size(); i++){
+          for(T &neigh: __adj[i].second){
+            this -> add_edge(__adj[i].first, neigh);
           }
         }
       }
@@ -67,6 +70,8 @@ public:
   std::vector<T> topological_sort();
 
   bool bipartite();
+  
+  void visualize();
 
   friend std::ostream & operator <<(std::ostream &out, graph<T> &g){
     out << '{';
@@ -258,10 +263,65 @@ template <typename T> bool graph<T>::bipartite(){
 }
 
 
+template <typename T> void graph<T>::visualize(){
+  std::string s;
+  if(__type == "directed"){
+    if(std::is_same_v<T, char> || std::is_same_v<T, std::string>){
+      for(auto &[element, neighbors]: adj){
+        for(T &x : neighbors){
+          s += element;
+          s += "->";
+          s += x;
+          s += '\n';
+        }
+      }
+    }
+    else{
+      for(auto &[element, neighbors]: adj){
+        for(T &x : neighbors){
+          s += std::to_string(element);
+          s += "->";
+          s += std::to_string(x);
+          s += '\n'; 
+        }
+      }
+    }
+  }
+  else{
+    if(std::is_same_v<T, char> || std::is_same_v<T, std::string>){
+      for(auto &[element, neighbors]: adj){
+        for(T &x : neighbors){
+          s += element;
+          s += "--";
+          s += x;
+          s += '\n';
+        }
+      }
+    }
+    else{
+      for(auto &[element, neighbors]: adj){
+        for(T &x : neighbors){
+          s += std::to_string(element);
+          s += "--";
+          s += std::to_string(x);
+          s += '\n';
+        }
+      }
+    }
+  }
+  s += '\n';
+  if(__type == "directed"){
+    digraph_visualization::visualize(s);
+  }
+  else{
+    graph_visualization::visualize(s);
+  }
+}
+
 template <typename T> class weighted_graph {
 public:
   weighted_graph(std::string __type,
-                 std::vector<std::vector<std::pair<T, int64_t>>> __adj = {{}}) {
+                 std::vector<std::pair<std::pair<T,T>, int64_t>> __adj = {}) {
     try {
       if (__type == "directed" || __type == "undirected") {
         this->__type = __type;
@@ -270,9 +330,7 @@ public:
       }
       if (!__adj.empty()) {
         for (size_t i = 0; i < __adj.size(); i++) {
-          for (std::pair<T, int64_t> &x : __adj[i]) {
-            this->add_edge(i, x.first, x.second);
-          }
+          this->add_edge(__adj[i].first.first, __adj[i].first.second, __adj[i].second);  
         }
       }
     } catch (std::invalid_argument &e) {
@@ -319,6 +377,8 @@ public:
   int64_t prim(T start);
 
   bool bipartite();
+
+  void visualize();
 
   friend std::ostream &operator <<(std::ostream &out, weighted_graph<T> &g){
     out << '{';
@@ -594,6 +654,85 @@ template <typename T> bool weighted_graph<T>::bipartite(){
     }
   }
   return true;
+}
+
+template <typename T> void weighted_graph<T>::visualize(){
+  std::string s;
+  if(__type == "directed"){
+    if(std::is_same_v<T, char> || std::is_same_v<T, std::string>){
+      for(auto &[element, neighbors]: adj){
+        for(std::pair<T, int64_t> &x : neighbors){
+          if(x.first == element){
+            continue;
+          }
+          s += element;
+          s += "->";
+          s += x.first;
+          s += "[weight=";
+          s += std::to_string(x.second);
+          s += "]";
+          s += '\n';
+        }
+      }
+    }
+    else{
+      for(auto &[element, neighbors]: adj){
+        for(std::pair<T, int64_t> &x : neighbors){
+          if(x.first == element){
+            continue;
+          }
+          s += std::to_string(element);
+          s += "->";
+          s += std::to_string(x.first);
+          s += "[weight=";
+          s += std::to_string(x.second);
+          s += "]";
+          s += '\n';
+        }
+      }
+    }
+  }
+  else{
+    if(std::is_same_v<T, char> || std::is_same_v<T, std::string>){
+      for(auto &[element, neighbors]: adj){
+        for(std::pair<T, int64_t> &x : neighbors){
+          if(x.first == element){
+            continue;
+          }
+          s += element;
+          s += "--";
+          s += x.first;
+          s += "[weight=";
+          s += std::to_string(x.second);
+          s += "]";
+          s += '\n';
+        }
+      }
+    }
+    else{
+      for(auto &[element, neighbors]: adj){
+        for(std::pair<T,int64_t> &x : neighbors){
+          if(x.first == element){
+            continue;
+          }
+          s += std::to_string(element);
+          s += "--";
+          s += std::to_string(x.first);
+          s += "[weight=";
+          s += std::to_string(x.second);
+          s += "]";
+          s += '\n';
+        }
+      }
+    }
+  }
+  if(__type == "directed"){
+    digraph_visualization::visualize(s);
+  }
+  else{
+    graph_visualization::visualize(s);
+  }
+
 }
 
 #endif
