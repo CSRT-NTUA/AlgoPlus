@@ -6,7 +6,7 @@
 template <typename T> class doubly_linked_list {
 public:
   explicit doubly_linked_list(std::vector<T> __elements = {})
-      : root(std::make_shared<doubly_link<T>>()), tail(nullptr) {
+      : root(std::make_shared<doubly_link<T>>()), tail(nullptr), __size(0) {
     if (!__elements.empty()) {
       for (T &x : __elements) {
         this->push_back(x);
@@ -15,6 +15,8 @@ public:
   }
 
   bool empty() { return tail == nullptr; }
+
+  size_t size(){return __size;}
 
   doubly_list_iter<T> begin() { return doubly_list_iter<T>(root); }
 
@@ -47,6 +49,7 @@ public:
     p->succ() = nullptr;
     p->prev() = tail;
     tail = p;
+    __size++;
   }
 
   void push_front(T key) {
@@ -57,6 +60,7 @@ public:
       root->prev() = p;
     }
     root = p;
+    __size++;
   }
 
   std::vector<T> elements() {
@@ -73,18 +77,20 @@ public:
   }
 
   friend std::ostream &operator<<(std::ostream &out, doubly_linked_list<T> &l) {
-    doubly_link<T> it = l.begin();
+    doubly_list_iter<T> it = l.begin();
     it++;
     out << '{';
     for (; it != l.end(); it++) {
       out << *(it) << ' ';
     }
     out << '}' << '\n';
+    return out;
   }
 
 private:
   std::shared_ptr<doubly_link<T>> root;
   std::shared_ptr<doubly_link<T>> tail;
+  size_t __size;
 
   std::shared_ptr<doubly_link<T>> new_node(T key) {
     std::shared_ptr<doubly_link<T>> p = std::make_shared<doubly_link<T>>(key);
