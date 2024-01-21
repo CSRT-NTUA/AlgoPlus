@@ -14,8 +14,19 @@
 #include <utility>
 #endif
 
+/*
+ *
+ * Class for Unweighted Graph
+ * 
+ */
 template <typename T> class graph {
 public:
+  /* 
+   * Constructor for the unweighted graph.
+   * @param __type: type of the graph, either "directed" or "undirected"
+   * @param __adj: vector<pair<T,vector<T>>, you can pass a vector of pairs to contruct the graph without
+   * doing multiple add_edge.
+   */
   graph(std::string __type, std::vector<std::pair<T, std::vector<T> > > __adj = {}) {
     try {
       if (__type == "directed" || __type == "undirected") {
@@ -36,7 +47,12 @@ public:
     }
   }
   ~graph() {}
-
+  
+  /*
+   * add_edge function
+   * @param u: first node
+   * @param v: second node
+   */
   void add_edge(T u, T v) {
     if (__type == "undirected") {
       adj[u].push_back(v);
@@ -47,32 +63,77 @@ public:
     __elements.insert(u);
     __elements.insert(v);
   }
-
+  
+  /*
+   * clear function
+   * Clearing the entire graph.
+   */
   void clear(){
     __elements.clear();
     adj.clear();
   }
   
+  /*
+   * empty function
+   * Checks if a graph is empty.
+   */
   bool empty(){
     return __elements.empty();
   }
 
+  /*
+   * size function
+   * Returns the size of the graph.
+   */
   size_t size();
-
+  
+  /*
+   * dfs function
+   * @param start: starting node of the dfs.
+   * Returns vector<T>, the path of the dfs.
+   */
   std::vector<T> dfs(T start);
-
+  
+  /*
+   * bfs function
+   * @param start: starting node of the bfs.
+   * Returns vector<T>, the path of the bfs.
+   */
   std::vector<T> bfs(T start);
-
+  
+  /*
+   * connected_components function.
+   * Returns the connected components(islands) of the graph.
+   */
   int64_t connected_components();
-
+  
+  /* 
+   * cycle function.
+   * Returns true if a cycle exist in the graph.
+   * */
   bool cycle();
-
+  
+  /*
+   * topological_sort function.
+   * Returns vector<T> the topological order of the elements of the graph.
+   */
   std::vector<T> topological_sort();
-
+  
+  /* bipartite() function.
+   * Returns true if the graph is bipartite.
+   */
   bool bipartite();
   
+  /*
+   * visualize function.
+   * Returns .dot file that can be previewed in vscode with graphviz.
+   *
+  */
   void visualize();
-
+  
+  /* << operator 
+   * Returns ostream &out for std::cout.
+  */
   friend std::ostream & operator <<(std::ostream &out, graph<T> &g){
     out << '{';
 
@@ -85,6 +146,11 @@ public:
   }
 
 private:
+  /*
+   * @param adj: adjacency list for the graph.
+   * @param __elements: set of the total elements of the graph.
+   * @param __type: the type of the graph, either "directed" or "undirected".
+  */
   std::unordered_map<T, std::vector<T>> adj;
   std::unordered_set<T> __elements;
   std::string __type;
