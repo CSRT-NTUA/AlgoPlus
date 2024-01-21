@@ -1,14 +1,22 @@
 #ifdef __cplusplus
+#include "../../visualization/tree_visual/tree_visualization.h"
 #include <functional>
 #include <queue>
-#include <vector>
 #include <string>
 #include <type_traits>
-#include "../../visualization/tree_visual/tree_visualization.h"
+#include <vector>
 #endif
 
+/*
+ *Class for BST tree.
+ */
 template <typename T> class bst {
 public:
+  /*
+   *Contructor for BST tree class.
+   *@param __elements: you can directly pass a vector<T> so you don't have to do
+   *insert multiple times.
+   */
   explicit bst(std::vector<T> __elements = {}) noexcept : root(nullptr) {
     if (!__elements.empty()) {
       for (T &x : __elements) {
@@ -18,10 +26,22 @@ public:
   }
   ~bst() noexcept {}
 
+  /*
+   *insert function.
+   *@param key: key to be inserted.
+   */
   void insert(T key) { root = __insert(root, key); }
 
+  /*
+   *remove function.
+   *@param key: key to be removed.
+   */
   void remove(T key) { root = __remove(root, key); }
 
+  /*
+   *level order function.
+   *Returns vector<vector<T>>, the level order of the Tree.
+   */
   std::vector<std::vector<T>> level_order() {
     std::vector<std::vector<T>> levels;
     if (!root) {
@@ -48,6 +68,10 @@ public:
     return levels;
   }
 
+  /*
+   *inorder function.
+   *Returns vector<T>, the elements inorder.
+   */
   std::vector<T> inorder() {
     std::vector<T> path;
     __inorder([&](node *callbacked) { path.push_back(callbacked->info); },
@@ -55,6 +79,10 @@ public:
     return path;
   }
 
+  /*
+   *preorder function.
+   *Returns vector<T>, the elements preorder.
+   */
   std::vector<T> preorder() {
     std::vector<T> path;
     __preorder([&](node *callbacked) { path.push_back(callbacked->info); },
@@ -62,6 +90,10 @@ public:
     return path;
   }
 
+  /*
+   *postorder function.
+   *Returns vector<T>, the elements postorder.
+   */
   std::vector<T> postorder() {
     std::vector<T> path;
     __postorder([&](node *callbacked) { path.push_back(callbacked->info); },
@@ -69,17 +101,29 @@ public:
     return path;
   }
 
-  void visualize(){
+  /*
+   *visualize function
+   *Returns .dot file that can be previewed using graphviz in vscode.
+   */
+  void visualize() {
     std::string __generated = generate_visualization();
     visualization::visualize(__generated);
   }
 
 private:
-  struct node {
+  /*
+   *Struct for the node type pointer.
+   *@param info: the value of the node.
+   *@param left: pointer to the left.
+   *@param right: pointer to the right.
+   */
+  typedef struct node {
     T info;
-    node *right, *left;
-  };
+    node *right;
+    node *left;
+  } node;
   node *root;
+
   node *new_node(T &key) {
     node *p = new node;
     p->info = key;
@@ -157,32 +201,39 @@ private:
     }
   }
 
-  std::string generate_visualization(){
+  std::string generate_visualization() {
     std::string __generate = __inorder_gen(root);
     return __generate;
   }
 
-  std::string __inorder_gen(node *root){
+  std::string __inorder_gen(node *root) {
     std::string __s;
-    if(std::is_same_v<T, char> || std::is_same_v<T, std::string>){
-      if(root -> left){
+    if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
+      if (root->left) {
         __s += root->info;
-        __s +=  "->";
+        __s += "->";
         __s += root->left->info;
         __s += "\n";
-        __s +=  __inorder_gen(root->left);
+        __s += __inorder_gen(root->left);
       }
-      if(root -> right){
+      if (root->right) {
         __s += root->info;
-        __s += "->"; 
+        __s += "->";
         __s += root->right->info;
         __s += "\n";
         __s += __inorder_gen(root->right);
       }
-    }
-    else{
-      if(root -> left){__s += std::to_string(root->info) + "->" + std::to_string(root->left->info) + "\n" + __inorder_gen(root->left);}
-      if(root -> right){__s += std::to_string(root->info) + "->" + std::to_string(root->right->info) + "\n" + __inorder_gen(root->right);}
+    } else {
+      if (root->left) {
+        __s += std::to_string(root->info) + "->" +
+               std::to_string(root->left->info) + "\n" +
+               __inorder_gen(root->left);
+      }
+      if (root->right) {
+        __s += std::to_string(root->info) + "->" +
+               std::to_string(root->right->info) + "\n" +
+               __inorder_gen(root->right);
+      }
     }
     return __s;
   }

@@ -16,7 +16,7 @@ public:
 
   bool empty() { return tail == nullptr; }
 
-  size_t size(){return __size;}
+  size_t size() { return __size; }
 
   doubly_list_iter<T> begin() { return doubly_list_iter<T>(root); }
 
