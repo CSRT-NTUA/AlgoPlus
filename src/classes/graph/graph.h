@@ -384,8 +384,17 @@ template <typename T> void graph<T>::visualize(){
   }
 }
 
+/*
+ * class for weighted graph
+ */
 template <typename T> class weighted_graph {
 public:
+  /*
+   * Constructor for weighted graph.
+   * @param __type: type of the graph, either "directed" or "undirected".
+   * @param __adj: vector<pair<pair<T,T>, int64_t>>, you can pass a vector of pairs to construct the graph
+   * without doing multiple add_edge.
+   */
   weighted_graph(std::string __type,
                  std::vector<std::pair<std::pair<T,T>, int64_t>> __adj = {}) {
     try {
@@ -406,6 +415,12 @@ public:
   }
   ~weighted_graph() { adj.clear(); }
 
+  /*
+   * add_edge function.
+   * @param u: first node.
+   * @param v: second node.
+   * @param w: weight between u and v.
+   */
   void add_edge(T u, T v, int64_t w) {
     if (__type == "undirected") {
       adj[u].push_back(std::make_pair(v, w));
@@ -416,36 +431,90 @@ public:
     __elements.insert(u);
     __elements.insert(v);
   }
-
+  /*
+   * clear function.
+   * Clearing the entire graph.
+   */
   void clear(){
     __elements.clear();
     adj.clear();
   }
-
+  /*
+   * empty function.
+   * Checks if a graph is empty.
+   */
   bool empty(){
     return __elements.empty();
   }
-
+  
+  /*
+   * size function.
+   * Returns the size of the graph.
+   */
   size_t size();
-
+  
+  /*
+   * dfs function.
+   * @param start: starting node of the bfs.
+   * Returns vector<T>, the path of the dfs.
+   */
   std::vector<T> dfs(T start);
-
+  /*
+   * bfs function.
+   * @param start: starting node of the bfs.
+   * Returns vector<T>, the path of the bfs.
+   */
   std::vector<T> bfs(T start);
-
+  
+  /*
+   * shortest_path function.
+   * @param start: starting node.
+   * @param end: ending node.
+   * Returns int64_t, the total cost of the path.
+   */
   int64_t shortest_path(T start, T end);
-
+  
+  /*
+   * connected_components function.
+   * Returns the connected componenets(islands) of the graph.
+   */
   int64_t connected_components();
-
+  
+  /*
+   * cycle function.
+   * Returns true if a cycle exists in the graph.
+   */
   bool cycle();
-
+  
+  /* 
+   * topological sort function.
+   * Returns vector<T>, the topological order of the elements of the graph.
+   */
   std::vector<T> topological_sort();
-
+  
+  /*
+   * prim function.
+   * @param start: starting node.
+   * Returns int64_t, the total cost of the minimum spanning tree of the graph.
+   */
   int64_t prim(T start);
-
+  
+  /*
+   * bipartite function.
+   * Returns true if the graph is bipartite.
+   */
   bool bipartite();
-
+  
+  /*
+   * visualize function.
+   * Returns .dot file that can be previewed in vscode with graphviz.
+   */
   void visualize();
-
+  
+  /*
+   * << operator.
+   * Returns ostream &out for std::cout.
+   */
   friend std::ostream &operator <<(std::ostream &out, weighted_graph<T> &g){
     out << '{';
     std::vector<T> elements = g.topological_sort();
@@ -457,6 +526,11 @@ public:
   }
 
 private:
+  /*
+   * @param adj: adjacency list for the graph.
+   * @param __type: type of the graph, either "directed" or "undirected".
+   * @param __elements: set of total elements of the graph.
+   */
   std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
   std::unordered_set<T> __elements;
