@@ -3,7 +3,7 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing clearing of a graph"){
+TEST_CASE("testing clearing of a graph") {
   weighted_graph<int> g("directed");
   g.add_edge(1, 2, 4);
   g.add_edge(2, 3, 4);
@@ -84,12 +84,44 @@ TEST_CASE("testing mst with prim's algo") {
   REQUIRE(g.prim(0) == 3);
 }
 
-TEST_CASE("testing bipartite graph"){
+TEST_CASE("testing bipartite graph") {
   weighted_graph<char> g("undirected");
   g.add_edge('a', 'b', 1);
   g.add_edge('b', 'c', 2);
   g.add_edge('c', 'd', 3);
   g.add_edge('d', 'a', 4);
   REQUIRE(g.bipartite() == true);
+}
 
+TEST_CASE("testing size") {
+  weighted_graph<int> g("undirected");
+  g.add_edge(1, 2, 4);
+  g.add_edge(4, 5, 6);
+  g.add_edge(2, 4, 6);
+  g.add_edge(2, 7, 6);
+  g.add_edge(2, 44, 6);
+  g.add_edge(2, 1, 6);
+  g.add_edge(2, 100, 6);
+  g.add_edge(100, 4, 6);
+  g.add_edge(200, 4, 6);
+  REQUIRE(g.size() == 8);
+}
+
+TEST_CASE("testing if an edge exist") {
+  weighted_graph<char> g("directed");
+  g.add_edge('a', 'c', 5);
+  g.add_edge('a', 'd', 5);
+  g.add_edge('e', 'f', 5);
+  g.add_edge('f', 'a', 5);
+  REQUIRE(g.has_edge('a', 'd') == true);
+  REQUIRE(g.has_edge('a', 'f') == false);
+
+  weighted_graph<int> g2("undirected");
+  g2.add_edge(1, 3, 10);
+  g2.add_edge(5, 10, 30);
+  g2.add_edge(3, 5, 40);
+  g2.add_edge(1, 10000, 100);
+  REQUIRE(g2.has_edge(1, 10000) == true);
+  REQUIRE(g2.has_edge(10, 5) == true);
+  REQUIRE(g2.has_edge(1, 5) == false);
 }

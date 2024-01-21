@@ -3,8 +3,8 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing clearing of a graph"){
-  graph<int> g("directed", { {0, {1,2}}, {1, {3,4}}, {2, {4,5}}});
+TEST_CASE("testing clearing of a graph") {
+  graph<int> g("directed", {{0, {1, 2}}, {1, {3, 4}}, {2, {4, 5}}});
   g.clear();
   std::vector<int> v = g.topological_sort();
   std::vector<int> v2 = g.dfs(0);
@@ -86,7 +86,7 @@ TEST_CASE("testing topological sorting") {
   REQUIRE(g.topological_sort() == v1);
 }
 
-TEST_CASE("testing bipartite check"){
+TEST_CASE("testing bipartite check") {
   graph<char> g("undirected");
   g.add_edge('a', 'b');
   g.add_edge('b', 'c');
@@ -95,3 +95,31 @@ TEST_CASE("testing bipartite check"){
   REQUIRE(g.bipartite() == true);
 }
 
+TEST_CASE("testing size") {
+  graph<std::string> g("directed");
+  g.add_edge("hello", "there");
+  g.add_edge("i'm", "batman");
+  g.add_edge("batman", "hero");
+  g.add_edge("hero", "hello");
+  REQUIRE(g.size() == 5);
+}
+
+TEST_CASE("testing if an edge exists") {
+  graph<int> g("directed");
+  g.add_edge(1, 5);
+  g.add_edge(5, 10);
+  g.add_edge(3, 5);
+  g.add_edge(5, 1);
+  REQUIRE(g.has_edge(1, 5) == true);
+  REQUIRE(g.has_edge(1, 10) == false);
+  REQUIRE(g.has_edge(5, 1) == true);
+
+  graph<int> g2("undirected");
+  g2.add_edge(1, 3);
+  g2.add_edge(5, 10);
+  g2.add_edge(3, 5);
+  g2.add_edge(1, 10000);
+  REQUIRE(g2.has_edge(1, 10000) == true);
+  REQUIRE(g2.has_edge(10, 5) == true);
+  REQUIRE(g2.has_edge(1, 5) == false);
+}
