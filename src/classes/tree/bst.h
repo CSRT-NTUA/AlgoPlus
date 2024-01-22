@@ -45,36 +45,6 @@ public:
   void remove(T key) { root = __remove(root, key); }
 
   /*
-   *level order function.
-   *Returns vector<vector<T>>, the level order of the Tree.
-   */
-  std::vector<std::vector<T>> level_order() {
-    std::vector<std::vector<T>> levels;
-    if (!root) {
-      return levels;
-    }
-    std::queue<T> q;
-    q.push(root);
-    while (!q.empty()) {
-      int64_t size = q.size();
-      std::vector<T> row;
-      for (int64_t i = 0; i < size; i++) {
-        T current = q.front();
-        row.push_back(current);
-        q.pop();
-        if (current->right) {
-          q.push(current->right);
-        }
-        if (current->left) {
-          q.push(current->left);
-        }
-      }
-      levels.push_back(row);
-    }
-    return levels;
-  }
-
-  /*
    *inorder function.
    *Returns vector<T>, the elements inorder.
    */

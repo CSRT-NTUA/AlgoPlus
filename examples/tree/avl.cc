@@ -25,7 +25,7 @@ int main() {
     std::cout << x << " ";
   }
   std::cout << '\n';
-  
+
   // you can now visualize with Algo+
   avl_tree<int> b2;
   b2.insert(10);
@@ -35,4 +35,14 @@ int main() {
   b2.insert(-8);
 
   b2.visualize();
+
+  avl_tree<int> testing_avl;
+  testing_avl.insert(10);
+  testing_avl.visualize();
+  testing_avl.insert(5);
+  testing_avl.visualize();
+  testing_avl.insert(-5);
+  testing_avl.visualize();
+  testing_avl.insert(2);
+  testing_avl.visualize();
 }
