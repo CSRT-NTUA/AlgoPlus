@@ -33,6 +33,12 @@ public:
   void insert(T key) { root = __insert(root, key); }
 
   /*
+   *search function.
+   *@param key: key to be searched.
+   */
+  bool search(T key) { return __search(root, key); }
+
+  /*
    *remove function.
    *@param key: key to be removed.
    */
@@ -142,6 +148,19 @@ private:
       }
     }
     return root;
+  }
+
+  bool __search(node *root, T &key) {
+    while (root) {
+      if (root->info < key) {
+        root = root->right;
+      } else if (root->info > key) {
+        root = root->left;
+      } else {
+        return true;
+      }
+    }
+    return false;
   }
 
   node *__remove(node *root, T &key) {

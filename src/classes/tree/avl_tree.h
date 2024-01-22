@@ -31,6 +31,12 @@ public:
   void insert(T key) { root = __insert(root, key); }
 
   /*
+   *search function.
+   *@param key: key to be searched.
+   */
+  bool search(T key) { return __search(root, key); }
+
+  /*
    *remove function.
    *@param key: key to be removed.
    */
@@ -179,6 +185,18 @@ private:
       root->right = __remove(root->right, temp->info);
     }
     return root;
+  }
+  bool __search(node *root, T key) {
+    while (root) {
+      if (root->info < key) {
+        root = root->right;
+      } else if (root->info > key) {
+        root = root->left;
+      } else {
+        return true;
+      }
+    }
+    return false;
   }
 
   void __inorder(std::function<void(node *)> callback, node *root) {

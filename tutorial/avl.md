@@ -1,0 +1,128 @@
+### Mini Tutorial for the AVL tree class
+
+    avl_tree<T> -- creates an avl tree.
+
+avl tree contains:
+    - insert
+    - remove
+    - search
+    - inorder
+    - preorder
+    - postorder
+    - visualize
+  
+### **insert**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+//creates a tree with elements {4,5,10,13};
+```
+
+### **remove**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+//removes the element 4 from the tree.
+```
+
+### **remove**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+//removes the element 4 from the tree.
+```
+
+### **search**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+
+//returns true if an element is in the tree.
+if(a.search(4)){
+    std::cout<< "element 4 found in the tree" << '\n';
+}
+```
+
+### **inorder**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+
+//returns the elements in inorder fashion.
+std::vector<int> in = a.inorder();
+```
+
+### **preorder**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+
+//returns the elements in preorder fashion.
+std::vector<int> pre = a.preorder();
+```
+
+### **postorder**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+
+//returns the elements in postorder fashion.
+std::vector<int> in = a.postorder();
+```
+
+### **visualize**:
+```cpp
+#include <algoplus/avl>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+
+//returns a .dot file that can easily be previewed using
+//vscode plugin for graphviz or local command line tools.
+a.visualize();
+```
