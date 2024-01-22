@@ -9,6 +9,7 @@ graph class algorithms:
     - cycle
     - topological_sort
     - bipartite
+    - bridge
     - visualize
 
 weighted_graph class algorithms:
@@ -20,6 +21,7 @@ weighted_graph class algorithms:
     - topological_sort
     - prim
     - bipartite
+    - bridge
     - visualize
 
 There are also some functions for both classes like **has_edge(u, v)** that checks if an edge exists from node u to node v, **size()** that returns the number of elements in the graph, **empty()** that checks if a graph is empty and **empty()** that empties the graph.
@@ -100,6 +102,19 @@ g.add_edge(2, 8);
 if(g.bipartite()){
     std::cout << "graph is bipartite" << '\n'
 }
+```
+
+### **bridge**:
+```cpp
+#include <algoplus/graph>
+graph<int> g("undirected");
+g.add_edge(1, 4);
+g.add_edge(4, 5);
+g.add_edge(5, 2);
+g.add_edge(2, 8);
+
+//returns the bridges of the graph(works with weighted graph as well).
+std::vector<std::vector<int>> bridges = g.bridge(1);
 ```
 
 ### **visualize**:
