@@ -123,3 +123,15 @@ TEST_CASE("testing if an edge exists") {
   REQUIRE(g2.has_edge(10, 5) == true);
   REQUIRE(g2.has_edge(1, 5) == false);
 }
+
+TEST_CASE("testing bridge detection") {
+  graph<int> g("undirected");
+  g.add_edge(1, 0);
+  g.add_edge(0, 2);
+  g.add_edge(1, 2);
+  g.add_edge(0, 3);
+  g.add_edge(3, 4);
+
+  std::vector<std::vector<int>> bridges = {{4, 3}, {3, 0}};
+  REQUIRE(g.bridge(0) == bridges);
+}

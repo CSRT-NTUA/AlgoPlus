@@ -142,6 +142,14 @@ public:
   bool bipartite();
 
   /*
+   *bridge function.
+   *@param start: starting point of search for the bridges.
+   *Returns vector<vector<T>> the bridges of the graph.
+   */
+
+  std::vector<std::vector<T>> bridge(T start);
+
+  /*
    * visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
    *
@@ -171,6 +179,29 @@ private:
   std::unordered_map<T, std::vector<T>> adj;
   std::unordered_set<T> __elements;
   std::string __type;
+
+  /*
+   *helper function for bridge detection algorithm.
+   */
+  void dfs_bridge(T start, T parent, int64_t &time,
+                  std::unordered_map<T, bool> &visited,
+                  std::unordered_map<T, int64_t> &in,
+                  std::unordered_map<T, int64_t> &out,
+                  std::vector<std::vector<T>> &bridges) {
+    visited[start] = true;
+    in[start] = out[start] = time++;
+    for (T &x : adj[start]) {
+      if (x != parent) {
+        if (visited.find(x) == visited.end()) {
+          dfs_bridge(x, start, time, visited, in, out, bridges);
+          if (out[x] > in[start]) {
+            bridges.push_back({x, start});
+          }
+        }
+        out[start] = std::min(out[start], out[x]);
+      }
+    }
+  }
 };
 
 template <typename T> size_t graph<T>::size() { return __elements.size(); }
@@ -343,6 +374,19 @@ template <typename T> bool graph<T>::bipartite() {
     }
   }
   return true;
+}
+
+template <typename T> std::vector<std::vector<T>> graph<T>::bridge(T start) {
+  int64_t timer = 0;
+  std::vector<std::vector<T>> bridges;
+  std::unordered_map<T, bool> visited;
+  std::unordered_map<T, int64_t> in, out;
+  for (T x : __elements) {
+    in[x] = 0;
+    out[x] = 0;
+  }
+  dfs_bridge(start, -1, timer, visited, in, out, bridges);
+  return bridges;
 }
 
 template <typename T> void graph<T>::visualize() {
@@ -536,6 +580,13 @@ public:
   bool bipartite();
 
   /*
+   *bridge function.
+   *@param start: starting point of search for the bridges.
+   *Returns vector<vector<T>> the bridges of the graph.
+   */
+  std::vector<std::vector<T>> bridge(T start);
+
+  /*
    * visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
    */
@@ -564,6 +615,29 @@ private:
   std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
   std::unordered_set<T> __elements;
+
+  /*
+   *helper function for bridge detection algorithm.
+   */
+  void dfs_bridge(T start, T parent, int64_t &time,
+                  std::unordered_map<T, bool> &visited,
+                  std::unordered_map<T, int64_t> &in,
+                  std::unordered_map<T, int64_t> &out,
+                  std::vector<std::vector<T>> &bridges) {
+    visited[start] = true;
+    in[start] = out[start] = time++;
+    for (std::pair<T, int64_t> &x : adj[start]) {
+      if (x.first != parent) {
+        if (visited.find(x.first) == visited.end()) {
+          dfs_bridge(x.first, start, time, visited, in, out, bridges);
+          if (out[x.first] > in[start]) {
+            bridges.push_back({x.first, start});
+          }
+        }
+        out[start] = std::min(out[start], out[x.first]);
+      }
+    }
+  }
 };
 
 template <typename T> size_t weighted_graph<T>::size() {
@@ -826,6 +900,20 @@ template <typename T> bool weighted_graph<T>::bipartite() {
     }
   }
   return true;
+}
+
+template <typename T>
+std::vector<std::vector<T>> weighted_graph<T>::bridge(T start) {
+  int64_t timer = 0;
+  std::vector<std::vector<T>> bridges;
+  std::unordered_map<T, bool> visited;
+  std::unordered_map<T, int64_t> in, out;
+  for (T x : __elements) {
+    in[x] = 0;
+    out[x] = 0;
+  }
+  dfs_bridge(start, -1, timer, visited, in, out, bridges);
+  return bridges;
 }
 
 template <typename T> void weighted_graph<T>::visualize() {

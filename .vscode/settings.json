@@ -66,6 +66,7 @@
     "map": "cpp",
     "regex": "cpp",
     "set": "cpp",
-    "thread": "cpp"
+    "thread": "cpp",
+    "utility": "cpp"
   }
 }
