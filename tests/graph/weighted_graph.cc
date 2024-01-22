@@ -137,3 +137,19 @@ TEST_CASE("testing bridge detection") {
   std::vector<std::vector<int>> bridges = {{4, 3}, {3, 0}};
   REQUIRE(g.bridge(0) == bridges);
 }
+
+TEST_CASE("testing connectivity") {
+  weighted_graph<int> g("undirected");
+  g.add_edge(1, 0, 10);
+  g.add_edge(0, 2, 15);
+  g.add_edge(1, 2, 100);
+  g.add_edge(0, 3, 2);
+  g.add_edge(3, 4, 4);
+  g.add_edge(4, 0, 10);
+  REQUIRE(g.connected() == true);
+
+  weighted_graph<int> g2("undirected");
+  g2.add_edge(0, 1, 100);
+  g2.add_edge(5, 6, 9999);
+  REQUIRE(g2.connected() == false);
+}

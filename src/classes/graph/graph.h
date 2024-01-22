@@ -150,9 +150,19 @@ public:
   std::vector<std::vector<T>> bridge(T start);
 
   /*
+   *scc(strongly connected components) function.
+   */
+  int64_t scc();
+
+  /*
+   *connected function.
+   *Returns true if a graph is connected.
+   */
+  bool connected();
+
+  /*
    * visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
-   *
    */
   void visualize();
 
@@ -389,6 +399,42 @@ template <typename T> std::vector<std::vector<T>> graph<T>::bridge(T start) {
   return bridges;
 }
 
+template <typename T> bool graph<T>::connected() {
+  std::unordered_map<T, bool> visited;
+  bool check = 0;
+  T start;
+  for (auto &ele : adj) {
+    if (adj[ele.first].size() != 0) {
+      start = ele.first;
+      check = 1;
+      break;
+    }
+  }
+  if (!check) {
+    return false;
+  }
+  std::stack<T> s;
+  s.push(start);
+  visited[start] = true;
+  while (!s.empty()) {
+    T current = s.top();
+    s.pop();
+    for (T &x : adj[current]) {
+      if (visited.find(x) == visited.end()) {
+        visited[x] = true;
+        s.push(x);
+      }
+    }
+  }
+
+  for (T x : __elements) {
+    if (visited.find(x) == visited.end() && adj[x].size() > 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 template <typename T> void graph<T>::visualize() {
   std::string s;
   if (__type == "directed") {
@@ -585,6 +631,17 @@ public:
    *Returns vector<vector<T>> the bridges of the graph.
    */
   std::vector<std::vector<T>> bridge(T start);
+
+  /*
+   *scc(strongly connected components) function.
+   */
+  int64_t scc();
+
+  /*
+   *connected function.
+   *Returns true if a graph is connected.
+   */
+  bool connected();
 
   /*
    * visualize function.
@@ -914,6 +971,42 @@ std::vector<std::vector<T>> weighted_graph<T>::bridge(T start) {
   }
   dfs_bridge(start, -1, timer, visited, in, out, bridges);
   return bridges;
+}
+
+template <typename T> bool weighted_graph<T>::connected() {
+  std::unordered_map<T, bool> visited;
+  bool check = 0;
+  T start;
+  for (auto &ele : adj) {
+    if (adj[ele.first].size() != 0) {
+      start = ele.first;
+      check = 1;
+      break;
+    }
+  }
+  if (!check) {
+    return false;
+  }
+  std::stack<T> s;
+  s.push(start);
+  visited[start] = true;
+  while (!s.empty()) {
+    T current = s.top();
+    s.pop();
+    for (std::pair<T, int64_t> &x : adj[current]) {
+      if (visited.find(x.first) == visited.end()) {
+        visited[x.first] = true;
+        s.push(x.first);
+      }
+    }
+  }
+
+  for (T x : __elements) {
+    if (visited.find(x) == visited.end() && adj[x].size() > 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 template <typename T> void weighted_graph<T>::visualize() {

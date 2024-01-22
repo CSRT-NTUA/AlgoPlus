@@ -10,6 +10,7 @@ graph class algorithms:
     - topological_sort
     - bipartite
     - bridge
+    - connected
     - visualize
 
 weighted_graph class algorithms:
@@ -22,6 +23,7 @@ weighted_graph class algorithms:
     - prim
     - bipartite
     - bridge
+    - connected
     - visualize
 
 There are also some functions for both classes like **has_edge(u, v)** that checks if an edge exists from node u to node v, **size()** that returns the number of elements in the graph, **empty()** that checks if a graph is empty and **empty()** that empties the graph.
@@ -50,7 +52,6 @@ g.add_edge(2, 4);
 //returns the path of the bfs.
 std::vector<T> bfs = g.bfs();
 ```
-
 
 ### **connected_components**:
 ```cpp
@@ -158,4 +159,19 @@ g.add_edge("Athens", "Kozani", 100);
 // returns the minimum spanning tree starting 
 // from the node Athens.
 std::cout << g.prim("Athens") << '\n';
+```
+
+### **connected**:
+
+```cpp
+#include <algoplus/graph>
+graph<std::string> g("undirected");
+g.add_edge("hello", "world");
+g.add_edge("world", "universe");
+g.add_edge("hello", "universe");
+
+// return true if graph is connected 
+if(g.connected()){
+    std::cout << "graph is connected" << '\n';
+}
 ```
