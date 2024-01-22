@@ -45,6 +45,7 @@ doubly_linked_list<int> l1, l2;
 
 ### Classes
   * Graph
+  * Multigraph
   * AVL Tree
   * Binary Search Tree
   * B-Tree
