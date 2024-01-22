@@ -36,19 +36,6 @@ b.remove(4);
 //removes the element 4 from the tree.
 ```
 
-### **remove**:
-```cpp
-#include <algoplus/bst>
-
-bst<int> b;
-b.insert(10);
-b.insert(5);
-b.insert(4);
-b.insert(13);
-b.remove(4);
-//removes the element 4 from the tree.
-```
-
 ### **search**:
 ```cpp
 #include <algoplus/bst>
