@@ -26,7 +26,7 @@ There are also some functions for both classes like **has_edge(u, v)** that chec
 ### **DFS**:
 ```cpp
 #include <algoplus/graph>
-graph<int> g("directed);
+graph<int> g("directed");
 g.add_edge(1, 2);
 g.add_edge(4, 5);
 g.add_edge(5 , 6);
@@ -39,7 +39,7 @@ std::vector<T> dfs = g.dfs();
 ### **BFS**:
 ```cpp
 #include <algoplus/graph>
-graph<int> g("directed);
+graph<int> g("directed");
 g.add_edge(1, 2);
 g.add_edge(4, 5);
 g.add_edge(5 , 6);
@@ -53,7 +53,7 @@ std::vector<T> bfs = g.bfs();
 ### **connected_components**:
 ```cpp
 #include <algoplus/graph>
-graph<char> g("undirected);
+graph<char> g("undirected");
 g.add_edge('a', 'b');
 g.add_edge('b','c');
 g.add_edge('g','h');
