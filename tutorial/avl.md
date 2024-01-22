@@ -36,19 +36,6 @@ a.remove(4);
 //removes the element 4 from the tree.
 ```
 
-### **remove**:
-```cpp
-#include <algoplus/avl>
-
-avl_tree<int> a;
-a.insert(10);
-a.insert(5);
-a.insert(4);
-a.insert(13);
-a.remove(4);
-//removes the element 4 from the tree.
-```
-
 ### **search**:
 ```cpp
 #include <algoplus/avl>
