@@ -3,7 +3,8 @@
 #include <iostream>
 #include <vector>
 #endif
-
+ 
+ 
 template <typename T> class min_heap {
 private:
   T *arr;
