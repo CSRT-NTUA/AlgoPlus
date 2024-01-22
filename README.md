@@ -43,4 +43,17 @@ doubly_linked_list<int> l1, l2;
 4. Promote the repository on your local workshop/seminar and get a shout-out.
 
 ### Classes
+  * Graph
+  * AVL Tree
+  * Binary Search Tree
+  * B-Tree
+  * RB Tree
+  * Trie
+  * Single Linked List
+  * Doubly Linked List
+  * Skip List
+  * Disjoint set
+  * Min/Max Heap
+
+   
 
