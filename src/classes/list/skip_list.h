@@ -1,3 +1,6 @@
+#ifndef SKIP_LIST_H
+#define SKIP_LIST_H
+
 #ifdef __cplusplus
 #include "../../plotting/iterator/list_iterator.h"
 #include <iostream>
@@ -103,3 +106,5 @@ private:
   int level;
   std::shared_ptr<node> root;
 };
+
+#endif

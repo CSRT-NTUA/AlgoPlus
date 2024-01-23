@@ -1,3 +1,6 @@
+#ifndef DOUBLY_LINKED_LIST_H
+#define DOUBLY_LINKED_LIST_H
+
 #ifdef __cplusplus
 #include "../../plotting/iterator/list_iterator.h"
 #include <iostream>
@@ -99,3 +102,5 @@ private:
     return p;
   }
 };
+
+#endif

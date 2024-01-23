@@ -1,3 +1,6 @@
+#ifndef BST_H
+#define BST_H
+
 #ifdef __cplusplus
 #include "../../visualization/tree_visual/tree_visualization.h"
 #include <functional>
@@ -227,3 +230,5 @@ private:
     return __s;
   }
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef LIST_LINK_H
+#define LIST_LINK_H
+
 #ifdef __cplusplus
 #include <iostream>
 #endif
@@ -64,3 +67,5 @@ public:
    */
   std::shared_ptr<doubly_link> &prev() { return pprev; }
 };
+
+#endif

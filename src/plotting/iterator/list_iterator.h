@@ -1,3 +1,6 @@
+#ifndef LIST_ITERATOR_H
+#define LIST_ITERATOR_H
+
 #ifdef __cplusplus
 #include "list_link.h"
 #endif
@@ -103,3 +106,5 @@ public:
 private:
   std::shared_ptr<doubly_link<T>> curr;
 };
+
+#endif

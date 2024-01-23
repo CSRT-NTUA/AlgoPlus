@@ -1,3 +1,6 @@
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
+
 #ifdef __cplusplus
 #include "../../plotting/iterator/list_iterator.h"
 #include <iostream>
@@ -117,3 +120,5 @@ private:
   std::shared_ptr<__link<T>> root;
   std::shared_ptr<__link<T>> tail;
 };
+
+#endif
