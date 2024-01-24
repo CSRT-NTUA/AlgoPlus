@@ -161,6 +161,14 @@ public:
   bool connected();
 
   /*
+   *eulerian function.
+   *Returns 0 if a graph is not eulerian.
+   *Returns 1 if a graph is semi-eulerian.
+   *Returns 2 if a graph is eulerian.
+   */
+  int eulerian();
+
+  /*
    * visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
    */
@@ -435,6 +443,24 @@ template <typename T> bool graph<T>::connected() {
   return true;
 }
 
+template <typename T> int graph<T>::eulerian() {
+  if (this->connected() == false) {
+    return false;
+  }
+
+  int64_t odd = 0;
+  for (auto &el : adj) {
+    if (adj[el.first].size() & 1) {
+      odd++;
+    }
+  }
+
+  if (odd > 2) {
+    return false;
+  }
+  return (odd) ? 1 : 2;
+}
+
 template <typename T> void graph<T>::visualize() {
   std::string s;
   if (__type == "directed") {
@@ -642,6 +668,14 @@ public:
    *Returns true if a graph is connected.
    */
   bool connected();
+
+  /*
+   *eulerian function.
+   *Returns 0 if a graph is not eulerian.
+   *Returns 1 if a graph is semi-eulerian.
+   *Returns 2 if a graph is eulerian.
+   */
+  int eulerian();
 
   /*
    * visualize function.
@@ -1007,6 +1041,25 @@ template <typename T> bool weighted_graph<T>::connected() {
     }
   }
   return true;
+}
+
+template <typename T> int weighted_graph<T>::eulerian() {
+  if (this->connected() == false) {
+    return false;
+  }
+
+  int odd = 0;
+  for (auto &el : adj) {
+    if (adj[el.first].size() & 1) {
+      odd++;
+    }
+  }
+
+  if (odd > 2) {
+    return 0;
+  }
+
+  return (odd) ? 1 : 2;
 }
 
 template <typename T> void weighted_graph<T>::visualize() {

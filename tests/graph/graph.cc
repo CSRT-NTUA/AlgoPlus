@@ -151,3 +151,32 @@ TEST_CASE("testing connectivity") {
   g2.add_edge(5, 6);
   REQUIRE(g2.connected() == false);
 }
+
+TEST_CASE("testing eulerian check") {
+  graph<int> g("undirected");
+  g.add_edge(1, 3);
+  g.add_edge(1, 0);
+  g.add_edge(1, 2);
+  g.add_edge(2, 0);
+  g.add_edge(0, 3);
+  g.add_edge(3, 4);
+
+  REQUIRE(g.eulerian() == 0);
+
+  graph<int> g2("undirected");
+  g2.add_edge(1, 2);
+  g2.add_edge(2, 0);
+  g2.add_edge(1, 0);
+  g2.add_edge(0, 3);
+  g2.add_edge(3, 4);
+  REQUIRE(g2.eulerian() == 1);
+
+  graph<int> g3("undirected");
+  g3.add_edge(1, 0);
+  g3.add_edge(1, 2);
+  g3.add_edge(2, 0);
+  g3.add_edge(0, 3);
+  g3.add_edge(0, 4);
+  g3.add_edge(3, 4);
+  REQUIRE(g3.eulerian() == 2);
+}
