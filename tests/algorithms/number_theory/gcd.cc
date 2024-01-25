@@ -2,8 +2,6 @@
 #include "../../../src/algorithms/number_theory/gcd.h"
 #include "../../catch2/catch.hpp"
 
-using namespace gcd;
-
 TEST_CASE("testing binary gcd") {
   int64_t a = 100, b = 4;
   REQUIRE(binary_gcd(a, b) == 4);

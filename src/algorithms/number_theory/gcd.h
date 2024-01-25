@@ -5,8 +5,6 @@
 #ifndef GCD_H
 #define GCD_H
 
-namespace gcd {
-
 /*
  *binary_gcd function.
  *@param a: first element.
@@ -57,7 +55,5 @@ int64_t euclidean_gcd(int64_t a, int64_t b) {
   }
   return (a + b);
 }
-
-}; // namespace gcd
 
 #endif

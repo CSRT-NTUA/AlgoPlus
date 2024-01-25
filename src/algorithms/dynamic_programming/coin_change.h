@@ -6,7 +6,6 @@
 #include <vector>
 #endif
 
-namespace knapsack {
 int64_t min_cost(std::vector<int64_t> arr, int64_t N) {
   int max_of = N + 1;
   std::vector<int> dp(N + 1, max_of);
@@ -20,6 +19,5 @@ int64_t min_cost(std::vector<int64_t> arr, int64_t N) {
   }
   return dp[N] > N ? -1 : dp[N];
 }
-}; // namespace knapsack
 
 #endif

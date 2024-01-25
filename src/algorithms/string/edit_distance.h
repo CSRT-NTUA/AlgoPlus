@@ -6,7 +6,6 @@
 #include <string>
 #endif
 
-namespace string {
 int64_t min_dist(std::string word1, std::string word2) {
   if (word1.size() == 0 && word2.size() == 0) {
     return 0;
@@ -40,6 +39,5 @@ int64_t min_dist(std::string word1, std::string word2) {
 
   return dp[n][w];
 }
-}; // namespace string
 
 #endif
