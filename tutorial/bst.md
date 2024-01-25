@@ -13,7 +13,7 @@ avl tree contains:
   
 ### **insert**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);
@@ -25,7 +25,7 @@ b.insert(13);
 
 ### **remove**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);
@@ -38,7 +38,7 @@ b.remove(4);
 
 ### **search**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);
@@ -55,7 +55,7 @@ if(b.search(4)){
 
 ### **inorder**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);
@@ -70,7 +70,7 @@ std::vector<int> in = b.inorder();
 
 ### **preorder**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);
@@ -85,7 +85,7 @@ std::vector<int> pre = b.preorder();
 
 ### **postorder**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);
@@ -100,7 +100,7 @@ std::vector<int> in = a.postorder();
 
 ### **visualize**:
 ```cpp
-#include <algoplus/bst>
+#include <algoplus/bst.h>
 
 bst<int> b;
 b.insert(10);

@@ -13,7 +13,7 @@ avl tree contains:
   
 ### **insert**:
 ```cpp
-#include <algoplus/avl>
+#include <algoplus/avl.h>
 
 avl_tree<int> a;
 a.insert(10);
@@ -25,7 +25,7 @@ a.insert(13);
 
 ### **remove**:
 ```cpp
-#include <algoplus/avl>
+#include <algoplus/avl.h>
 
 avl_tree<int> a;
 a.insert(10);
@@ -38,7 +38,7 @@ a.remove(4);
 
 ### **search**:
 ```cpp
-#include <algoplus/avl>
+#include <algoplus/avl.h>
 
 avl_tree<int> a;
 a.insert(10);
@@ -70,7 +70,7 @@ std::vector<int> in = a.inorder();
 
 ### **preorder**:
 ```cpp
-#include <algoplus/avl>
+#include <algoplus/avl.h>
 
 avl_tree<int> a;
 a.insert(10);
@@ -85,7 +85,7 @@ std::vector<int> pre = a.preorder();
 
 ### **postorder**:
 ```cpp
-#include <algoplus/avl>
+#include <algoplus/avl.h>
 
 avl_tree<int> a;
 a.insert(10);
@@ -100,7 +100,7 @@ std::vector<int> in = a.postorder();
 
 ### **visualize**:
 ```cpp
-#include <algoplus/avl>
+#include <algoplus/avl.h>
 
 avl_tree<int> a;
 a.insert(10);
