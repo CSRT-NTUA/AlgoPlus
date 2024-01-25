@@ -5,7 +5,7 @@
 using namespace std;
 
 TEST_CASE("testing knapsack") {
-  std::vector<int64_t> v = {1, 2, 5};
+  std::vector<int> v = {1, 2, 5};
   int amount = 11;
   REQUIRE(min_cost(v, amount) == 3);
 

@@ -6,7 +6,7 @@
 #include <vector>
 #endif
 
-int64_t min_cost(std::vector<int64_t> arr, int64_t N) {
+int64_t min_cost(std::vector<int> arr, int N) {
   int max_of = N + 1;
   std::vector<int> dp(N + 1, max_of);
   dp[0] = 0;
