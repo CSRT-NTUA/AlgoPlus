@@ -58,13 +58,17 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 
    
 ### How to contribute  
-1. [Contribute](/CONTRIBUTE.md) **new implementations** on our already implemented data structures & algorithms, or  **new classes / algorithms**.
+1. Povide **new implementations** on our already implemented data structures & algorithms.
+
+3. Implement **new classes / algorithms**.
 
 
 2. Contribute to **unit testing** by writting unit tests for our classes and algorithms.
 
 
-3. Contribute to the **API code for other languages**.
+3. Create and contribute to **APIs for other languages**.
 
 
 4. **Promote** the repository on your local workshop/seminar and **get a shout-out**.
+
+See more [here](/CONTRIBUTE.md).
