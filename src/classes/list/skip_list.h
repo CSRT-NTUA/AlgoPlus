@@ -7,8 +7,18 @@
 #include <stdexcept>
 #endif
 
+/*
+ *skip_list class.
+ */
+
 template <typename T> class skip_list {
 public:
+  /*
+   *skip_list constructor.
+   *@param __MAX_LEVEL: max height of the list.
+   *@param __PROB: probability of increasing the height each time(by default it
+   *should be 0.5).
+   */
   explicit skip_list(int __MAX_LEVEL, float __PROB) : level(0) {
     try {
       if (__MAX_LEVEL < 5) {
@@ -34,6 +44,10 @@ public:
 
   ~skip_list() noexcept {}
 
+  /*
+   *insert function.
+   *@param key: key to be inserted.
+   */
   void insert(T key) {
     std::shared_ptr<node> head = root;
     std::vector<std::shared_ptr<node>> update(MAX_LEVEL + 1, nullptr);
@@ -48,7 +62,6 @@ public:
     head = head->next[0];
     if (!head || head->key != key) {
       int lvl = rand_lvl();
-
       if (lvl > level) {
         for (int i = level + 1; i < lvl + 1; i++) {
           update[i] = root;
@@ -64,17 +77,68 @@ public:
     }
   }
 
+  /*
+   *remove function.
+   *@param key: key to be removed(if exist).
+   */
+  void remove(T key) {
+    std::shared_ptr<node> x = root;
+    std::vector<std::shared_ptr<node>> update(MAX_LEVEL + 1, nullptr);
+
+    for (int64_t i = level; i >= 0; i--) {
+      while (x->next[i] && x->next[i]->key < key) {
+        x = x->next[i];
+      }
+      update[i] = x;
+    }
+
+    x = x->next[0];
+    if (x && x->key == key) {
+      for (int64_t i = 0; i <= level; i++) {
+        if (update[i]->next[i] != x) {
+          break;
+        }
+        update[i]->next[i] = x->next[i];
+      }
+      while (level > 0 && root->next[level] == nullptr) {
+        level--;
+      }
+    }
+  }
+
+  /*
+   *search function.
+   *@param key: key to be searched.
+   *Returns true if the key exists in the list.
+   */
+  bool search(T key) {
+    std::shared_ptr<node> x = root;
+    for (int64_t i = level; i >= 0; i--) {
+      while (x->next[i] && x->next[i]->key < key) {
+        x = x->next[i];
+      }
+    }
+    x = x->next[0];
+    if (x && x->key == key) {
+      return true;
+    }
+    return false;
+  }
+
+  /*
+   *operator << for skip_list<T> class.
+   */
   friend std::ostream &operator<<(std::ostream &out, skip_list<T> &l) {
+    std::shared_ptr<node> root = l.root;
     out << "{";
-    for (int i = 0; i < l.level; i++) {
+    for (int i = 0; i <= l.level; i++) {
       out << i << ": ";
-      while (l.root->next[i] != nullptr) {
-        out << l.root->next[i]->key << ' ';
-        l.root->next[i] = l.root->next[i]->next[i];
+      std::shared_ptr<node> curr = l.root->next[i];
+      while (curr != nullptr) {
+        out << curr->key << " ";
+        curr = curr->next[i];
       }
-      if (i != l.level - 1) {
-        out << '\n';
-      }
+      out << '\n';
     }
     out << "}" << '\n';
     return out;
@@ -94,13 +158,13 @@ private:
   };
 
   int rand_lvl() {
-    int __level = 0;
-    while (static_cast<float>(std::rand()) / RAND_MAX < PROB &&
-           __level < MAX_LEVEL) {
-      std::cout << 1 << '\n';
-      __level++;
+    float r = (float)rand() / RAND_MAX;
+    int lvl = 0;
+    while (r < PROB && lvl < MAX_LEVEL) {
+      lvl++;
+      r = (float)rand() / RAND_MAX;
     }
-    return __level;
+    return lvl;
   }
 
   int level;
