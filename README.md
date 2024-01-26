@@ -37,8 +37,8 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 ### Classes
 
 **Graphs** 
-- [X] [Graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))
-- [X] [Multigraph](https://en.wikipedia.org/wiki/Multigraph)
+- [X] [Di-Graph](https://en.wikipedia.org/wiki/Directed_graph)
+- [X] [Graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
 
 **Trees**
 - [X] [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree)
