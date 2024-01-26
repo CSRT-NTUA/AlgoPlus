@@ -7,7 +7,7 @@
 #include <algoplus/list.h>
 
 skip_list<int> s(3, 0.5);
-s.insert(10); // inserts 10 to the list.
+s.insert(10); // inserts 10 to the list.    
 s.insert(5); // inserts 5 to the list.
 s.insert(13); // inserts 13 to the list.
 ```

@@ -26,7 +26,7 @@ weighted_graph class algorithms:
     - connected
     - visualize
 
-There are also some functions for both classes like **has_edge(u, v)** that checks if an edge exists from node u to node v, **size()** that returns the number of elements in the graph, **empty()** that checks if a graph is empty and **empty()** that empties the graph.
+There are also some functions for both classes like **has_edge(u, v)** that checks if an edge exists from node u to node v, **size()** that returns the number of elements in the graph, **empty()** that checks if a graph is empty and **empty()** that empties the graph.You can see more about graph algorithms [here](https://github.com/nikolasfil/AlgoDay/tree/main/AlgoDay-1/Spiros).
 ### **DFS**:
 ```cpp
 #include <algoplus/graph.h>
