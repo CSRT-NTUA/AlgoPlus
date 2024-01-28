@@ -22,6 +22,10 @@ jobs:
         run: |
           git config --global user.name github-actions[bot]
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       #- name: Configure for static lint checks
         # compiling first gives clang-tidy access to all the header files and settings used to compile the programs. 
         # This will check for macros, if any, on linux and not for Windows. But the use of portability checks should 
