@@ -1,9 +1,9 @@
+#ifndef GCD_H
+#define GCD_H
+
 #ifdef __cplusplus
 #include <iostream>
 #endif
-
-#ifndef GCD_H
-#define GCD_H
 
 /*
  *binary_gcd function.
