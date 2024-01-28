@@ -179,8 +179,8 @@ private:
 
   void __postorder(std::function<void(node *)> callback, node *root) {
     if (root) {
-      __inorder(callback, root->left);
-      __inorder(callback, root->right);
+      __postorder(callback, root->left);
+      __postorder(callback, root->right);
       callback(root);
     }
   }
@@ -188,8 +188,8 @@ private:
   void __preorder(std::function<void(node *)> callback, node *root) {
     if (root) {
       callback(root);
-      __inorder(callback, root->left);
-      __inorder(callback, root->right);
+      __preorder(callback, root->left);
+      __preorder(callback, root->right);
     }
   }
 
