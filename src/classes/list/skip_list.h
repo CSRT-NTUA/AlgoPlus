@@ -2,7 +2,6 @@
 #define SKIP_LIST_H
 
 #ifdef __cplusplus
-#include "../../plotting/iterator/list_iterator.h"
 #include <iostream>
 #include <stdexcept>
 #endif
