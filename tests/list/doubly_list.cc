@@ -69,3 +69,15 @@ TEST_CASE("testing search") {
   REQUIRE(l3.search("hello") == true);
   REQUIRE(l3.search("hellos") == false);
 }
+
+TEST_CASE("testing erase") {
+  doubly_linked_list<int> l({4, 5, 6, 7, 8});
+  REQUIRE(l.search(4) == true);
+  REQUIRE(l.search(7) == true);
+  l.erase(4);
+  REQUIRE(l.search(4) == false);
+  l.erase(7);
+  REQUIRE(l.search(7) == false);
+  l.erase(6);
+  REQUIRE(l.search(6) == false);
+}

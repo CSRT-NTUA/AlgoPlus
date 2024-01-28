@@ -5,8 +5,17 @@
 #include <iostream>
 #endif
 
+/*
+ *single linked list class
+ */
+
 template <typename T> class linked_list {
 public:
+  /*
+   *linked_list class constructor
+   *@param __elements: you can provide the constructor with a vector of elements
+   *so you dont have to do multiple push backs yourself.
+   */
   explicit linked_list(std::vector<T> __elements = {}) noexcept
       : root(nullptr), tail(nullptr), __size(0) {
     if (!__elements.empty()) {
@@ -16,10 +25,22 @@ public:
     }
   }
 
+  /*
+   *empty function.
+   *Returns true if the list is empty.
+   */
   bool empty() { return root == nullptr; }
 
+  /*
+   *size function.
+   *Returns the size of the list.
+   */
   size_t size() { return __size; }
 
+  /*
+   *push_back function.
+   *@param key: the key to be pushed back.
+   */
   void push_back(T key) {
     std::shared_ptr<node> p = std::make_shared<node>(key);
     if (root == nullptr) {
@@ -31,6 +52,10 @@ public:
     __size++;
   }
 
+  /*
+   *push_front function.
+   *@param key: the key to be pushed in front.
+   */
   void push_front(T key) {
     std::shared_ptr<node> p = std::make_shared<node>(key);
     p->next = root;
@@ -38,6 +63,10 @@ public:
     __size++;
   }
 
+  /*
+   *erase function.
+   *@param key: the key to be erased.
+   */
   void erase(T key) {
     if (empty()) {
       return;
@@ -62,6 +91,11 @@ public:
     __size--;
   }
 
+  /*
+   *search function.
+   *@param key: the key to be searched.
+   *Returns true if key exists in the list.
+   */
   bool search(T key) {
     try {
       if (empty()) {
@@ -82,6 +116,10 @@ public:
     }
   }
 
+  /*
+   *elements function.
+   *Returns vector<T>: the elements of the list.
+   */
   std::vector<T> elements() {
     std::vector<T> __elements;
 
@@ -97,6 +135,9 @@ public:
     return __elements;
   }
 
+  /*
+   *<< operator for the linked_list class.
+   */
   friend std::ostream &operator<<(std::ostream &out, linked_list<T> &l1) {
     out << '{';
     std::shared_ptr<node> head = l1.root;
