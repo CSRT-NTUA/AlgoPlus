@@ -7,12 +7,12 @@
 TEST_CASE("testing push back") {
   doubly_linked_list<int> l1;
   doubly_linked_list<char> l2;
-  // doubly_linked_list<std::string> l3;
+  doubly_linked_list<std::string> l3;
 
-  l1.push_back(1);
-  l1.push_back(4);
-  l1.push_back(5);
-  std::vector<int> v = {1, 4, 5};
+  l1.push_front(1);
+  l1.push_front(4);
+  l1.push_front(5);
+  std::vector<int> v = {5, 4, 1};
   std::vector<int> elem = l1.elements();
   REQUIRE(v == elem);
 
@@ -23,12 +23,12 @@ TEST_CASE("testing push back") {
   std::vector<char> _elem = l2.elements();
   REQUIRE(_v == _elem);
 
-  // l3.push_back("hello");
-  // l3.push_back("from");
-  // l3.push_back("mars");
-  // std::vector<std::string> __v = {"hello", "from", "mars"};
-  // std::vector<std::string> __elem = l3.elements();
-  // REQUIRE(__v == __elem);
+  l3.push_back("hello");
+  l3.push_back("from");
+  l3.push_back("mars");
+  std::vector<std::string> __v = {"hello", "from", "mars"};
+  std::vector<std::string> __elem = l3.elements();
+  REQUIRE(__v == __elem);
 }
 
 TEST_CASE("testing push front") {

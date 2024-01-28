@@ -2,14 +2,13 @@
 #define LINKED_LIST_H
 
 #ifdef __cplusplus
-#include "../../plotting/iterator/list_iterator.h"
 #include <iostream>
 #endif
 
 template <typename T> class linked_list {
 public:
-  explicit linked_list(std::vector<T> __elements = {})
-      : root(std::make_shared<__link<T>>()), tail(nullptr) {
+  explicit linked_list(std::vector<T> __elements = {}) noexcept
+      : root(nullptr), tail(nullptr), __size(0) {
     if (!__elements.empty()) {
       for (T &x : __elements) {
         this->push_back(x);
@@ -17,56 +16,50 @@ public:
     }
   }
 
-  bool empty() { return tail == nullptr; }
+  bool empty() { return root == nullptr; }
 
-  list_iter<T> begin() { return list_iter<T>(root); }
-
-  list_iter<T> end() { return list_iter<T>(nullptr); }
+  size_t size() { return __size; }
 
   void push_back(T key) {
-    if (empty()) {
-      root->succ() = std::make_shared<__link<T>>(key);
-      tail = root->succ();
+    std::shared_ptr<node> p = std::make_shared<node>(key);
+    if (root == nullptr) {
+      root = p;
     } else {
-      tail->succ() = std::make_shared<__link<T>>(key);
-      tail = tail->succ();
+      tail->next = p;
     }
+    tail = p;
+    __size++;
   }
 
   void push_front(T key) {
-    if (empty()) {
-      root->succ() = std::make_shared<__link<T>>(key);
-      tail = root->succ();
-    } else {
-      std::shared_ptr<__link<T>> p = std::make_shared<__link<T>>(key);
-      p->succ() = root->succ();
-      root->succ() = p;
-    }
+    std::shared_ptr<node> p = std::make_shared<node>(key);
+    p->next = root;
+    root = p;
+    __size++;
   }
 
   void erase(T key) {
     if (empty()) {
-      std::cout << "List is Empty!";
       return;
     }
-    std::shared_ptr<__link<T>> t = root;
-    std::shared_ptr<__link<T>> to_be_removed = nullptr;
-    while (t != tail && t->succ()->val() != key) {
-      t = t->succ();
+    std::shared_ptr<node> t = root;
+    std::shared_ptr<node> to_be_removed = nullptr;
+    while (t != tail && t->next->val != key) {
+      t = t->next;
     }
     if (t == tail) {
-      std::cout << "Element not found\n";
       return;
     }
-    to_be_removed = t->succ();
-    t->succ() = t->succ()->succ();
+    to_be_removed = t->next;
+    t->next = t->next->next;
     to_be_removed.reset();
-    if (t->succ() == nullptr) {
+    if (t->next == nullptr) {
       tail = t;
     }
     if (root == tail) {
       tail = nullptr;
     }
+    __size--;
   }
 
   bool search(T key) {
@@ -74,9 +67,9 @@ public:
       if (empty()) {
         return false;
       } else {
-        std::shared_ptr<__link<T>> t = root;
-        while (t != tail && t->succ()->val() != key) {
-          t = t->succ();
+        std::shared_ptr<node> t = root;
+        while (t != tail && t->val != key) {
+          t = t->next;
         }
         if (t == tail || t == nullptr) {
           return false;
@@ -91,13 +84,14 @@ public:
 
   std::vector<T> elements() {
     std::vector<T> __elements;
+
     if (this->empty()) {
       return __elements;
     }
-    list_iter<T> it = this->begin();
-    it++;
-    for (; it != this->end(); it++) {
-      __elements.push_back(*(it));
+    std::shared_ptr<node> head = root;
+    while (head) {
+      __elements.push_back(head->val);
+      head = head->next;
     }
 
     return __elements;
@@ -105,20 +99,24 @@ public:
 
   friend std::ostream &operator<<(std::ostream &out, linked_list<T> &l1) {
     out << '{';
-    list_iter<T> it = l1.begin();
-    it++;
-    for (; it != l1.end(); it++) {
-      out << *it << ' ';
+    std::shared_ptr<node> head = l1.root;
+    while (head) {
+      out << head->val << ' ';
+      head = head->next;
     }
     out << '}' << '\n';
     return out;
   }
-  friend constexpr linked_list &operator+(const linked_list<__link<T>> &l1,
-                                          const linked_list<__link<T>> &l2);
 
 private:
-  std::shared_ptr<__link<T>> root;
-  std::shared_ptr<__link<T>> tail;
+  struct node {
+    T val;
+    std::shared_ptr<node> next;
+    node(T key = 0) : val(key), next(nullptr) {}
+  };
+  std::shared_ptr<node> root;
+  std::shared_ptr<node> tail;
+  size_t __size;
 };
 
 #endif

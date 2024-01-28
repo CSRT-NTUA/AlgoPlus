@@ -21,13 +21,13 @@ TEST_CASE("push front") {
   REQUIRE(v == elem);
 }
 
-// TEST_CASE("testing linked list with strings") {
-//   std::vector<std::string> __first = {"hello", "world"};
-//   linked_list<std::string> l1(__first);
-//   REQUIRE(l1.search("hello") == true);
-//   l1.push_back("check");
-//   // REQUIRE(l1.search("chec") == false); // needs to be fixed
-// }
+TEST_CASE("testing linked list with strings") {
+  std::vector<std::string> __first = {"hello", "world"};
+  linked_list<std::string> l1(__first);
+  REQUIRE(l1.search("hello") == true);
+  l1.push_back("check");
+  REQUIRE(l1.search("chec") == false); // needs to be fixed
+}
 
 TEST_CASE("testing linked list with chars") {
   std::vector<char> __first = {'a', 'b', 'c', 'd'};
