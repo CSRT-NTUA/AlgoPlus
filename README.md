@@ -46,6 +46,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [B-Tree](https://en.wikipedia.org/wiki/B-tree)
 - [X] [RB Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 - [X] [Trie](https://en.wikipedia.org/wiki/Trie)
+- [X] [Interval Tree](https://en.wikipedia.org/wiki/Interval_tree) 
 - [X] [Min/Max Heap](https://en.wikipedia.org/wiki/Min-max_heap)
 
 **Lists**
