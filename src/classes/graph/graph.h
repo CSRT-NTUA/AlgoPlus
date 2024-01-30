@@ -25,7 +25,7 @@ public:
    * Constructor for the unweighted graph.
    * @param __type: type of the graph, either "directed" or "undirected"
    * @param __adj: vector<pair<T,vector<T>>, you can pass a vector of pairs to
-   * contruct the graph without doing multiple add_edge.
+   * construct the graph without doing multiple add_edge.
    */
   graph(std::string __type,
         std::vector<std::pair<T, std::vector<T>>> __adj = {}) {
