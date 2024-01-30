@@ -107,7 +107,21 @@ i.insert({10, 15});
 std::vector<int> postorder = i.postorder();
 ```
 
+### **visualize**:
+```cpp
+#include <algoplus/tree.h>
 
+interval_tree<int> i;
+i.insert({20, 36});
+i.insert({3, 41});
+i.insert({29, 99});
+i.insert({0, 1});
+i.insert({10, 15});
+// returns a .dot file that automatically opens
+// using graphviz plugins on vscode(or locally with 
+// command lines).
+i.visualize();
+```
 
 
 
