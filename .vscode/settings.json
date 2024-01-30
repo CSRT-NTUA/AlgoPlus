@@ -67,6 +67,5 @@
     "regex": "cpp",
     "set": "cpp",
     "thread": "cpp",
-    "utility": "cpp"
   }
 }
