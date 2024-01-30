@@ -9,11 +9,8 @@ int main() {
   l1.push_back(3);
   l1.push_back(4);
   std::cout << l1.size() << '\n';
-  std:: cout << l1 << '\n';
-  if(l1.search(3)){
+  std::cout << l1 << '\n';
+  if (l1.search(3)) {
     std::cout << "YAY" << '\n';
-  }
-  for (doubly_list_iter<int> it = l1.begin(); it != l1.end(); it++) {
-    std::cout << *(it) << '\n';
   }
 }

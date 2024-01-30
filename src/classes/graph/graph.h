@@ -144,9 +144,35 @@ public:
   bool bipartite();
 
   /*
+   *bridge function.
+   *@param start: starting point of search for the bridges.
+   *Returns vector<vector<T>> the bridges of the graph.
+   */
+
+  std::vector<std::vector<T>> bridge(T start);
+
+  /*
+   *scc(strongly connected components) function.
+   */
+  int64_t scc();
+
+  /*
+   *connected function.
+   *Returns true if a graph is connected.
+   */
+  bool connected();
+
+  /*
+   *eulerian function.
+   *Returns 0 if a graph is not eulerian.
+   *Returns 1 if a graph is semi-eulerian.
+   *Returns 2 if a graph is eulerian.
+   */
+  int eulerian();
+
+  /*
    * visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
-   *
    */
   void visualize();
 
@@ -173,6 +199,29 @@ private:
   std::unordered_map<T, std::vector<T>> adj;
   std::unordered_set<T> __elements;
   std::string __type;
+
+  /*
+   *helper function for bridge detection algorithm.
+   */
+  void dfs_bridge(T start, T parent, int64_t &time,
+                  std::unordered_map<T, bool> &visited,
+                  std::unordered_map<T, int64_t> &in,
+                  std::unordered_map<T, int64_t> &out,
+                  std::vector<std::vector<T>> &bridges) {
+    visited[start] = true;
+    in[start] = out[start] = time++;
+    for (T &x : adj[start]) {
+      if (x != parent) {
+        if (visited.find(x) == visited.end()) {
+          dfs_bridge(x, start, time, visited, in, out, bridges);
+          if (out[x] > in[start]) {
+            bridges.push_back({x, start});
+          }
+        }
+        out[start] = std::min(out[start], out[x]);
+      }
+    }
+  }
 };
 
 template <typename T> size_t graph<T>::size() { return __elements.size(); }
@@ -345,6 +394,73 @@ template <typename T> bool graph<T>::bipartite() {
     }
   }
   return true;
+}
+
+template <typename T> std::vector<std::vector<T>> graph<T>::bridge(T start) {
+  int64_t timer = 0;
+  std::vector<std::vector<T>> bridges;
+  std::unordered_map<T, bool> visited;
+  std::unordered_map<T, int64_t> in, out;
+  for (T x : __elements) {
+    in[x] = 0;
+    out[x] = 0;
+  }
+  dfs_bridge(start, -1, timer, visited, in, out, bridges);
+  return bridges;
+}
+
+template <typename T> bool graph<T>::connected() {
+  std::unordered_map<T, bool> visited;
+  bool check = 0;
+  T start;
+  for (auto &ele : adj) {
+    if (adj[ele.first].size() != 0) {
+      start = ele.first;
+      check = 1;
+      break;
+    }
+  }
+  if (!check) {
+    return false;
+  }
+  std::stack<T> s;
+  s.push(start);
+  visited[start] = true;
+  while (!s.empty()) {
+    T current = s.top();
+    s.pop();
+    for (T &x : adj[current]) {
+      if (visited.find(x) == visited.end()) {
+        visited[x] = true;
+        s.push(x);
+      }
+    }
+  }
+
+  for (T x : __elements) {
+    if (visited.find(x) == visited.end() && adj[x].size() > 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+template <typename T> int graph<T>::eulerian() {
+  if (this->connected() == false) {
+    return false;
+  }
+
+  int64_t odd = 0;
+  for (auto &el : adj) {
+    if (adj[el.first].size() & 1) {
+      odd++;
+    }
+  }
+
+  if (odd > 2) {
+    return false;
+  }
+  return (odd) ? 1 : 2;
 }
 
 template <typename T> void graph<T>::visualize() {
@@ -538,6 +654,32 @@ public:
   bool bipartite();
 
   /*
+   *bridge function.
+   *@param start: starting point of search for the bridges.
+   *Returns vector<vector<T>> the bridges of the graph.
+   */
+  std::vector<std::vector<T>> bridge(T start);
+
+  /*
+   *scc(strongly connected components) function.
+   */
+  int64_t scc();
+
+  /*
+   *connected function.
+   *Returns true if a graph is connected.
+   */
+  bool connected();
+
+  /*
+   *eulerian function.
+   *Returns 0 if a graph is not eulerian.
+   *Returns 1 if a graph is semi-eulerian.
+   *Returns 2 if a graph is eulerian.
+   */
+  int eulerian();
+
+  /*
    * visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
    */
@@ -566,6 +708,29 @@ private:
   std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
   std::string __type;
   std::unordered_set<T> __elements;
+
+  /*
+   *helper function for bridge detection algorithm.
+   */
+  void dfs_bridge(T start, T parent, int64_t &time,
+                  std::unordered_map<T, bool> &visited,
+                  std::unordered_map<T, int64_t> &in,
+                  std::unordered_map<T, int64_t> &out,
+                  std::vector<std::vector<T>> &bridges) {
+    visited[start] = true;
+    in[start] = out[start] = time++;
+    for (std::pair<T, int64_t> &x : adj[start]) {
+      if (x.first != parent) {
+        if (visited.find(x.first) == visited.end()) {
+          dfs_bridge(x.first, start, time, visited, in, out, bridges);
+          if (out[x.first] > in[start]) {
+            bridges.push_back({x.first, start});
+          }
+        }
+        out[start] = std::min(out[start], out[x.first]);
+      }
+    }
+  }
 };
 
 template <typename T> size_t weighted_graph<T>::size() {
@@ -828,6 +993,75 @@ template <typename T> bool weighted_graph<T>::bipartite() {
     }
   }
   return true;
+}
+
+template <typename T>
+std::vector<std::vector<T>> weighted_graph<T>::bridge(T start) {
+  int64_t timer = 0;
+  std::vector<std::vector<T>> bridges;
+  std::unordered_map<T, bool> visited;
+  std::unordered_map<T, int64_t> in, out;
+  for (T x : __elements) {
+    in[x] = 0;
+    out[x] = 0;
+  }
+  dfs_bridge(start, -1, timer, visited, in, out, bridges);
+  return bridges;
+}
+
+template <typename T> bool weighted_graph<T>::connected() {
+  std::unordered_map<T, bool> visited;
+  bool check = 0;
+  T start;
+  for (auto &ele : adj) {
+    if (adj[ele.first].size() != 0) {
+      start = ele.first;
+      check = 1;
+      break;
+    }
+  }
+  if (!check) {
+    return false;
+  }
+  std::stack<T> s;
+  s.push(start);
+  visited[start] = true;
+  while (!s.empty()) {
+    T current = s.top();
+    s.pop();
+    for (std::pair<T, int64_t> &x : adj[current]) {
+      if (visited.find(x.first) == visited.end()) {
+        visited[x.first] = true;
+        s.push(x.first);
+      }
+    }
+  }
+
+  for (T x : __elements) {
+    if (visited.find(x) == visited.end() && adj[x].size() > 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+template <typename T> int weighted_graph<T>::eulerian() {
+  if (this->connected() == false) {
+    return false;
+  }
+
+  int odd = 0;
+  for (auto &el : adj) {
+    if (adj[el.first].size() & 1) {
+      odd++;
+    }
+  }
+
+  if (odd > 2) {
+    return 0;
+  }
+
+  return (odd) ? 1 : 2;
 }
 
 template <typename T> void weighted_graph<T>::visualize() {

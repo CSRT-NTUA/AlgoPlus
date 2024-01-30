@@ -1,10 +1,11 @@
+#ifndef MIN_HEAP_H
+#define MIN_HEAP_H
 #ifdef __cplusplus
 #include <functional>
 #include <iostream>
 #include <vector>
 #endif
- 
- 
+
 template <typename T> class min_heap {
 private:
   T *arr;
@@ -90,3 +91,5 @@ public:
     }
   }
 };
+
+#endif

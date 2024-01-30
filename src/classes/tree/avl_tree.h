@@ -1,6 +1,10 @@
+#ifndef AVL_TREE_H
+#define AVL_TREE_H
+
 #ifdef __cplusplus
 #include "../../visualization/tree_visual/tree_visualization.h"
 #include <functional>
+#include <queue>
 #include <string>
 #include <vector>
 #endif
@@ -29,6 +33,15 @@ public:
    *@param key: key to be inserted.
    */
   void insert(T key) { root = __insert(root, key); }
+
+  /*
+   *clear function
+   *Erase all the nodes from the tree.
+   */
+  void clear() {
+    free(root);
+    return;
+  }
 
   /*
    *search function.
@@ -186,6 +199,7 @@ private:
     }
     return root;
   }
+
   bool __search(node *root, T key) {
     while (root) {
       if (root->info < key) {
@@ -260,3 +274,5 @@ private:
     return __s;
   }
 };
+
+#endif

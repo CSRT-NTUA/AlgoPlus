@@ -125,3 +125,60 @@ TEST_CASE("testing if an edge exist") {
   REQUIRE(g2.has_edge(10, 5) == true);
   REQUIRE(g2.has_edge(1, 5) == false);
 }
+
+TEST_CASE("testing bridge detection") {
+  weighted_graph<int> g("undirected");
+  g.add_edge(1, 0, 5);
+  g.add_edge(0, 2, 10);
+  g.add_edge(1, 2, 3);
+  g.add_edge(0, 3, 9);
+  g.add_edge(3, 4, 11);
+
+  std::vector<std::vector<int>> bridges = {{4, 3}, {3, 0}};
+  REQUIRE(g.bridge(0) == bridges);
+}
+
+TEST_CASE("testing connectivity") {
+  weighted_graph<int> g("undirected");
+  g.add_edge(1, 0, 10);
+  g.add_edge(0, 2, 15);
+  g.add_edge(1, 2, 100);
+  g.add_edge(0, 3, 2);
+  g.add_edge(3, 4, 4);
+  g.add_edge(4, 0, 10);
+  REQUIRE(g.connected() == true);
+
+  weighted_graph<int> g2("undirected");
+  g2.add_edge(0, 1, 100);
+  g2.add_edge(5, 6, 9999);
+  REQUIRE(g2.connected() == false);
+}
+
+TEST_CASE("testing eulerian check") {
+  weighted_graph<int> g("undirected");
+  g.add_edge(1, 3, 5);
+  g.add_edge(1, 0, 10);
+  g.add_edge(1, 2, 4);
+  g.add_edge(2, 0, 3);
+  g.add_edge(0, 3, 14);
+  g.add_edge(3, 4, 13);
+
+  REQUIRE(g.eulerian() == 0);
+
+  weighted_graph<int> g2("undirected");
+  g2.add_edge(1, 2, 11);
+  g2.add_edge(2, 0, 10);
+  g2.add_edge(1, 0, 8);
+  g2.add_edge(0, 3, 4);
+  g2.add_edge(3, 4, 3);
+  REQUIRE(g2.eulerian() == 1);
+
+  weighted_graph<int> g3("undirected");
+  g3.add_edge(1, 0, 10);
+  g3.add_edge(1, 2, 12);
+  g3.add_edge(2, 0, 13);
+  g3.add_edge(0, 3, 15);
+  g3.add_edge(0, 4, 13);
+  g3.add_edge(3, 4, 8);
+  REQUIRE(g3.eulerian() == 2);
+}

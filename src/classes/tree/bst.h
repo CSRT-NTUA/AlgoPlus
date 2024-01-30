@@ -1,3 +1,6 @@
+#ifndef BST_H
+#define BST_H
+
 #ifdef __cplusplus
 #include "../../visualization/tree_visual/tree_visualization.h"
 #include <functional>
@@ -43,36 +46,6 @@ public:
    *@param key: key to be removed.
    */
   void remove(T key) { root = __remove(root, key); }
-
-  /*
-   *level order function.
-   *Returns vector<vector<T>>, the level order of the Tree.
-   */
-  std::vector<std::vector<T>> level_order() {
-    std::vector<std::vector<T>> levels;
-    if (!root) {
-      return levels;
-    }
-    std::queue<T> q;
-    q.push(root);
-    while (!q.empty()) {
-      int64_t size = q.size();
-      std::vector<T> row;
-      for (int64_t i = 0; i < size; i++) {
-        T current = q.front();
-        row.push_back(current);
-        q.pop();
-        if (current->right) {
-          q.push(current->right);
-        }
-        if (current->left) {
-          q.push(current->left);
-        }
-      }
-      levels.push_back(row);
-    }
-    return levels;
-  }
 
   /*
    *inorder function.
@@ -206,8 +179,8 @@ private:
 
   void __postorder(std::function<void(node *)> callback, node *root) {
     if (root) {
-      __inorder(callback, root->left);
-      __inorder(callback, root->right);
+      __postorder(callback, root->left);
+      __postorder(callback, root->right);
       callback(root);
     }
   }
@@ -215,8 +188,8 @@ private:
   void __preorder(std::function<void(node *)> callback, node *root) {
     if (root) {
       callback(root);
-      __inorder(callback, root->left);
-      __inorder(callback, root->right);
+      __preorder(callback, root->left);
+      __preorder(callback, root->right);
     }
   }
 
@@ -257,3 +230,5 @@ private:
     return __s;
   }
 };
+
+#endif
