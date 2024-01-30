@@ -22,11 +22,26 @@ public:
 
   /*
    *insert function.
-   8@param p: interval to be inserted.
-  */
+   *@param p: interval to be inserted.
+   */
   void insert(std::pair<T, T> p) {
     interval i = interval(p);
     root = __insert(root, i);
+  }
+
+  /*
+   *search function.
+   *Returns true if an interval exist in the tree.
+   */
+  bool search(std::pair<T, T> p) {
+    if (!root) {
+      return false;
+    }
+    interval i = interval(p);
+    if (this->overlap({root->i->low, root->i->high}, p)) {
+      return true;
+    }
+    return __search(root, i);
   }
 
   /*
@@ -152,6 +167,19 @@ private:
       root->max = i.high;
     }
     return root;
+  }
+
+  /*
+   *helper function for search
+   */
+  bool __search(std::shared_ptr<node> root, interval i) {
+    if (!root) {
+      return false;
+    }
+    if (root->left && root->left->max >= i.low) {
+      return __search(root->left, i);
+    }
+    return __search(root->right, i);
   }
 
   /*

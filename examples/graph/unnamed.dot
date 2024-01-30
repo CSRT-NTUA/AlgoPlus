@@ -1,7 +1,10 @@
-digraph G{
-2->4
-2->5
-1->2
-1->3
-
+graph G{
+2--0[weight=7]
+0--1[weight=6]
+0--2[weight=7]
+4--3[weight=5]
+3--1[weight=4]
+3--4[weight=5]
+1--3[weight=4]
+1--0[weight=6]
 }

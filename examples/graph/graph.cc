@@ -19,5 +19,5 @@ int main() {
   std::cout << '\n';
 
   // now you can visualize graphs with algoplus
-  g2.visualize();
+  g.visualize();
 }

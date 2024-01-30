@@ -25,3 +25,14 @@ TEST_CASE("testing overlap") {
   REQUIRE(i.overlap({20, 36}, {3, 41}) == true);
   REQUIRE(i.overlap({20, 36}, {10, 15}) == false);
 }
+
+TEST_CASE("testing remove") {
+  interval_tree<char> i({{'a', 'b'}, {'c', 'd'}, {'a', 'd'}});
+  REQUIRE(i.search({'a', 'b'}) == true);
+  i.remove({'a', 'b'});
+  REQUIRE(i.search({'a', 'b'}) == false);
+  i.remove({'w', 'w'});
+  REQUIRE(i.search({'w', 'w'}) == false);
+  REQUIRE(i.search({'c', 'd'}));
+  REQUIRE(i.search({'a', 'd'}) == true);
+}
