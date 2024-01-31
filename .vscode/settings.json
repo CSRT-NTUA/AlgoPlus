@@ -67,5 +67,6 @@
     "regex": "cpp",
     "set": "cpp",
     "thread": "cpp",
+    "random": "cpp"
   }
 }
