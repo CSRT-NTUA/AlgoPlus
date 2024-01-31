@@ -7,13 +7,12 @@
 
 class dsu {
 private:
-  std::vector<uint64_t> p;       ///< keeps track of the parent of ith element
-  std::vector<uint64_t> depth;   ///< tracks the depth(rank) of i in the tree
-  std::vector<uint64_t> setSize; ///< size of each chunk(set)
-  std::vector<uint64_t>
-      maxElement; ///< maximum of each set to which i belongs to
-  std::vector<uint64_t>
-      minElement; ///< minimum of each set to which i belongs to
+  std::vector<uint64_t> p;
+  std::vector<uint64_t> depth;
+  std::vector<uint64_t> ssize;
+  std::vector<uint64_t> max_el;
+  std::vector<uint64_t> min_el;
+
 public:
   explicit dsu(uint64_t n) {
     p.assign(n, 0);
@@ -21,32 +20,32 @@ public:
       p[i] = i;
     }
     depth.assign(n, 0);
-    maxElement.assign(n, 0);
-    minElement.assign(n, 0);
+    max_el.assign(n, 0);
+    min_el.assign(n, 0);
     for (uint64_t i = 0; i < n; i++) {
       depth[i] = 0;
-      maxElement[i] = i;
-      minElement[i] = i;
+      max_el[i] = i;
+      min_el[i] = i;
     }
-    setSize.assign(n, 0);
+    ssize.assign(n, 0);
     for (uint64_t i = 0; i < n; i++) {
-      setSize[i] = 1;
+      ssize[i] = 1;
     }
   }
 
-  uint64_t findSet(uint64_t i) {
+  uint64_t find(uint64_t i) {
     if (p[i] == i) {
       return i;
     }
-    return (p[i] = findSet(p[i]));
+    return (p[i] = find(p[i]));
   }
-  void UnionSet(uint64_t i, uint64_t j) {
-    if (isSame(i, j)) {
+  void join(uint64_t i, uint64_t j) {
+    if (same(i, j)) {
       return;
     }
 
-    uint64_t x = findSet(i);
-    uint64_t y = findSet(j);
+    uint64_t x = find(i);
+    uint64_t y = find(j);
 
     if (depth[x] > depth[y]) {
       std::swap(x, y);
@@ -56,13 +55,13 @@ public:
     if (depth[x] == depth[y]) {
       depth[y]++;
     }
-    setSize[y] += setSize[x];
-    maxElement[y] = std::max(maxElement[x], maxElement[y]);
-    minElement[y] = std::min(minElement[x], minElement[y]);
+    ssize[y] += ssize[x];
+    max_el[y] = std::max(max_el[x], max_el[y]);
+    min_el[y] = std::min(min_el[x], min_el[y]);
   }
 
-  bool isSame(uint64_t i, uint64_t j) {
-    if (findSet(i) == findSet(j)) {
+  bool same(uint64_t i, uint64_t j) {
+    if (find(i) == find(j)) {
       return true;
     }
     return false;
@@ -76,11 +75,11 @@ public:
     return ans;
   }
 
-  uint64_t size(uint64_t i) { return setSize[findSet(i)]; }
+  uint64_t size(uint64_t i) { return ssize[find(i)]; }
 
-  uint64_t get_max(uint64_t i) { return maxElement[findSet(i)]; }
+  uint64_t get_max(uint64_t i) { return max_el[find(i)]; }
 
-  uint64_t get_min(uint64_t i) { return minElement[findSet(i)]; }
+  uint64_t get_min(uint64_t i) { return min_el[find(i)]; }
 };
 
 #endif
