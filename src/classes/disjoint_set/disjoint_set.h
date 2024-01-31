@@ -22,12 +22,12 @@ public:
     depth.assign(n, 0);
     max_el.assign(n, 0);
     min_el.assign(n, 0);
+    ssize.assign(n, 0);
     for (uint64_t i = 0; i < n; i++) {
       depth[i] = 0;
       max_el[i] = i;
       min_el[i] = i;
     }
-    ssize.assign(n, 0);
     for (uint64_t i = 0; i < n; i++) {
       ssize[i] = 1;
     }
