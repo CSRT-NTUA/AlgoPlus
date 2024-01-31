@@ -39,7 +39,7 @@ public:
    *Erase all the nodes from the tree.
    */
   void clear() {
-    free(root);
+    root = std::make_shared<node>(nullptr);
     return;
   }
 
@@ -61,8 +61,11 @@ public:
    */
   std::vector<T> inorder() {
     std::vector<T> path;
-    __inorder([&](node *callbacked) { path.push_back(callbacked->info); },
-              root);
+    __inorder(
+        [&](std::shared_ptr<node> callbacked) {
+          path.push_back(callbacked->info);
+        },
+        root);
     return path;
   }
   /*
@@ -71,8 +74,11 @@ public:
    */
   std::vector<T> preorder() {
     std::vector<T> path;
-    __preorder([&](node *callbacked) { path.push_back(callbacked->info); },
-               root);
+    __preorder(
+        [&](std::shared_ptr<node> callbacked) {
+          path.push_back(callbacked->info);
+        },
+        root);
     return path;
   }
   /*
@@ -81,8 +87,11 @@ public:
    */
   std::vector<T> postorder() {
     std::vector<T> path;
-    __postorder([&](node *callbacked) { path.push_back(callbacked->info); },
-                root);
+    __postorder(
+        [&](std::shared_ptr<node> callbacked) {
+          path.push_back(callbacked->info);
+        },
+        root);
     return path;
   }
 
@@ -106,54 +115,51 @@ private:
   typedef struct node {
     T info;
     int64_t height;
-    struct node *left;
-    struct node *right;
+    std::shared_ptr<node> left;
+    std::shared_ptr<node> right;
+    node(T key) : info(key), left(nullptr), right(nullptr), height(0) {}
   } node;
-  node *root;
+  std::shared_ptr<node> root;
 
-  int64_t height(node *root) {
+  int64_t height(std::shared_ptr<node> root) {
     if (root == nullptr)
       return 0;
     return 1 + std::max(height(root->left), height(root->right));
   }
 
-  node *createNode(T info) {
-    node *nn = new node();
-    nn->info = info;
-    nn->height = 0;
-    nn->left = nullptr;
-    nn->right = nullptr;
+  std::shared_ptr<node> createNode(T info) {
+    std::shared_ptr<node> nn = std::make_shared<node>(info);
     return nn;
   }
 
-  int64_t getBalance(node *root) {
+  int64_t getBalance(std::shared_ptr<node> root) {
     return height(root->left) - height(root->right);
   }
 
-  node *rightRotate(node *root) {
-    node *t = root->left;
-    node *u = t->right;
+  std::shared_ptr<node> rightRotate(std::shared_ptr<node> root) {
+    std::shared_ptr<node> t = root->left;
+    std::shared_ptr<node> u = t->right;
     t->right = root;
     root->left = u;
     return t;
   }
 
-  node *leftRotate(node *root) {
-    node *t = root->right;
-    node *u = t->left;
+  std::shared_ptr<node> leftRotate(std::shared_ptr<node> root) {
+    std::shared_ptr<node> t = root->right;
+    std::shared_ptr<node> u = t->left;
     t->left = root;
     root->right = u;
     return t;
   }
 
-  node *minValue(node *root) {
+  std::shared_ptr<node> minValue(std::shared_ptr<node> root) {
     if (root->left == nullptr)
       return root;
     return minValue(root->left);
   }
 
-  node *__insert(node *root, T item) {
-    node *nn = createNode(item);
+  std::shared_ptr<node> __insert(std::shared_ptr<node> root, T item) {
+    std::shared_ptr<node> nn = createNode(item);
     if (root == nullptr)
       return nn;
     if (item < root->info)
@@ -163,17 +169,17 @@ private:
     int b = getBalance(root);
     if (b > 1) {
       if (getBalance(root->left) < 0)
-        root->left = leftRotate(root->left); // Left-Right Case
-      return rightRotate(root);              // Left-Left Case
+        root->left = leftRotate(root->left);
+      return rightRotate(root);
     } else if (b < -1) {
       if (getBalance(root->right) > 0)
-        root->right = rightRotate(root->right); // Right-Left Case
-      return leftRotate(root);                  // Right-Right Case
+        root->right = rightRotate(root->right);
+      return leftRotate(root);
     }
     return root;
   }
 
-  node *__remove(node *root, T key) {
+  std::shared_ptr<node> __remove(std::shared_ptr<node> root, T key) {
     if (root == nullptr)
       return root;
     if (key < root->info)
@@ -183,24 +189,22 @@ private:
 
     else {
       if (!root->right) {
-        node *temp = root->left;
-        delete (root);
+        std::shared_ptr<node> temp = root->left;
         root = nullptr;
         return temp;
       } else if (!root->left) {
-        node *temp = root->right;
-        delete (root);
+        std::shared_ptr<node> temp = root->right;
         root = nullptr;
         return temp;
       }
-      node *temp = minValue(root->right);
+      std::shared_ptr<node> temp = minValue(root->right);
       root->info = temp->info;
       root->right = __remove(root->right, temp->info);
     }
     return root;
   }
 
-  bool __search(node *root, T key) {
+  bool __search(std::shared_ptr<node> root, T key) {
     while (root) {
       if (root->info < key) {
         root = root->right;
@@ -213,7 +217,8 @@ private:
     return false;
   }
 
-  void __inorder(std::function<void(node *)> callback, node *root) {
+  void __inorder(std::function<void(std::shared_ptr<node>)> callback,
+                 std::shared_ptr<node> root) {
     if (root) {
       __inorder(callback, root->left);
       callback(root);
@@ -221,7 +226,8 @@ private:
     }
   }
 
-  void __postorder(std::function<void(node *)> callback, node *root) {
+  void __postorder(std::function<void(std::shared_ptr<node>)> callback,
+                   std::shared_ptr<node> root) {
     if (root) {
       __inorder(callback, root->left);
       __inorder(callback, root->right);
@@ -229,7 +235,8 @@ private:
     }
   }
 
-  void __preorder(std::function<void(node *)> callback, node *root) {
+  void __preorder(std::function<void(std::shared_ptr<node>)> callback,
+                  std::shared_ptr<node> root) {
     if (root) {
       callback(root);
       __inorder(callback, root->left);
@@ -242,7 +249,7 @@ private:
     return __generate;
   }
 
-  std::string __inorder_gen(node *root) {
+  std::string __inorder_gen(std::shared_ptr<node> root) {
     std::string __s;
     if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
       if (root->left) {
