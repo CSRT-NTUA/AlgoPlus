@@ -9,6 +9,7 @@ template <typename T> class rb_tree {
 private:
   struct node {
     T val;
+    int64_t height;
     std::shared_ptr<node> right;
     std::shared_ptr<node> left;
     std::shared_ptr<node> parent;
@@ -45,6 +46,26 @@ public:
   std::vector<T> postorder();
 
 private:
+  int64_t getBalance(std::shared_ptr<node> root) {
+    return height(root->left) - height(root->right);
+  }
+
+  std::shared_ptr<node> rightRotate(std::shared_ptr<node> root) {
+    std::shared_ptr<node> t = root->left;
+    std::shared_ptr<node> u = t->right;
+    t->right = root;
+    root->left = u;
+    return t;
+  }
+
+  std::shared_ptr<node> leftRotate(std::shared_ptr<node> root) {
+    std::shared_ptr<node> t = root->right;
+    std::shared_ptr<node> u = t->left;
+    t->left = root;
+    root->right = u;
+    return t;
+  }
+
   void __insert(std::shared_ptr<node> root, T key) {
     if (!root) {
       std::shared_ptr<node> nn = std::make_shared<node>(key, 0);
@@ -52,6 +73,7 @@ private:
       return;
     } else {
       if (root->parent && root->parent->color == 0) {
+        std::shared_ptr<node> nn = std::make_shared<node>(key, 1);
       }
     }
   }
