@@ -53,8 +53,11 @@ public:
    */
   std::vector<T> inorder() {
     std::vector<T> path;
-    __inorder([&](node *callbacked) { path.push_back(callbacked->info); },
-              root);
+    __inorder(
+        [&](std::shared_ptr<node> callbacked) {
+          path.push_back(callbacked->info);
+        },
+        root);
     return path;
   }
 
@@ -64,8 +67,11 @@ public:
    */
   std::vector<T> preorder() {
     std::vector<T> path;
-    __preorder([&](node *callbacked) { path.push_back(callbacked->info); },
-               root);
+    __preorder(
+        [&](std::shared_ptr<node> callbacked) {
+          path.push_back(callbacked->info);
+        },
+        root);
     return path;
   }
 
@@ -75,8 +81,11 @@ public:
    */
   std::vector<T> postorder() {
     std::vector<T> path;
-    __postorder([&](node *callbacked) { path.push_back(callbacked->info); },
-                root);
+    __postorder(
+        [&](std::shared_ptr<node> callbacked) {
+          path.push_back(callbacked->info);
+        },
+        root);
     return path;
   }
 
@@ -98,19 +107,18 @@ private:
    */
   typedef struct node {
     T info;
-    node *right;
-    node *left;
+    std::shared_ptr<node> right;
+    std::shared_ptr<node> left;
+    node(T key) : info(key), right(nullptr), left(nullptr) {}
   } node;
-  node *root;
+  std::shared_ptr<node> root;
 
-  node *new_node(T &key) {
-    node *p = new node;
-    p->info = key;
-    p->right = p->left = nullptr;
+  std::shared_ptr<node> new_node(T &key) {
+    std::shared_ptr<node> p = std::make_shared<node>(key);
     return p;
   }
 
-  node *__insert(node *root, T &key) {
+  std::shared_ptr<node> __insert(std::shared_ptr<node> root, T &key) {
     if (!root) {
       return new_node(key);
     } else {
@@ -123,7 +131,7 @@ private:
     return root;
   }
 
-  bool __search(node *root, T &key) {
+  bool __search(std::shared_ptr<node> root, T &key) {
     while (root) {
       if (root->info < key) {
         root = root->right;
@@ -136,7 +144,7 @@ private:
     return false;
   }
 
-  node *__remove(node *root, T &key) {
+  std::shared_ptr<node> __remove(std::shared_ptr<node> root, T &key) {
     if (!root) {
       return root;
     }
@@ -147,18 +155,15 @@ private:
       root->left = __remove(root->left, key);
     } else {
       if (!root->left && !root->right) {
-        free(root);
         root = nullptr;
       } else if (!root->left) {
-        node *temp = root->right;
-        free(root);
+        std::shared_ptr<node> temp = root->right;
         return temp;
       } else if (!root->right) {
-        node *temp = root->left;
-        free(root);
+        std::shared_ptr<node> temp = root->left;
         return temp;
       } else {
-        node *temp = root->right;
+        std::shared_ptr<node> temp = root->right;
         while (temp->left) {
           temp = temp->left;
         }
@@ -169,7 +174,8 @@ private:
     return root;
   }
 
-  void __inorder(std::function<void(node *)> callback, node *root) {
+  void __inorder(std::function<void(std::shared_ptr<node>)> callback,
+                 std::shared_ptr<node> root) {
     if (root) {
       __inorder(callback, root->left);
       callback(root);
@@ -177,7 +183,8 @@ private:
     }
   }
 
-  void __postorder(std::function<void(node *)> callback, node *root) {
+  void __postorder(std::function<void(std::shared_ptr<node>)> callback,
+                   std::shared_ptr<node> root) {
     if (root) {
       __postorder(callback, root->left);
       __postorder(callback, root->right);
@@ -185,7 +192,8 @@ private:
     }
   }
 
-  void __preorder(std::function<void(node *)> callback, node *root) {
+  void __preorder(std::function<void(std::shared_ptr<node>)> callback,
+                  std::shared_ptr<node> root) {
     if (root) {
       callback(root);
       __preorder(callback, root->left);
@@ -198,7 +206,7 @@ private:
     return __generate;
   }
 
-  std::string __inorder_gen(node *root) {
+  std::string __inorder_gen(std::shared_ptr<node> root) {
     std::string __s;
     if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
       if (root->left) {

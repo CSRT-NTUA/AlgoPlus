@@ -82,6 +82,6 @@ TEST_CASE("checking postorder") {
   b.insert('a');
   b.insert('b');
   b.insert('w');
-  std::vector<char> post = {'a', 'b', 'w', 'g'};
+  std::vector<char> post = {'b', 'a', 'w', 'g'};
   REQUIRE(b.postorder() == post);
 }
