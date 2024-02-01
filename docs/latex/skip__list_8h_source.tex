@@ -1,0 +1,154 @@
+\doxysection{skip\+\_\+list.\+h}
+\hypertarget{skip__list_8h_source}{}\label{skip__list_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/classes/list/skip\_list.h@{/Users/spirosmag/Documents/AlgoPlus/src/classes/list/skip\_list.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SKIP\_LIST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SKIP\_LIST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classskip__list}{skip\_list}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classskip__list_a9319489b15a937d372a0233e130bb513}{skip\_list}}(\textcolor{keywordtype}{int}\ \_\_MAX\_LEVEL,\ \textcolor{keywordtype}{float}\ \_\_PROB)\ :\ level(0)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_MAX\_LEVEL\ <\ 5)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ MAX\_LEVEL\ =\ \_\_MAX\_LEVEL;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ root\ =\ std::make\_shared<node>(0,\ \_\_MAX\_LEVEL);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Max\ level\ value\ is\ too\ high"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_PROB\ >\ 0.0\ \&\&\ \_\_PROB\ <\ 1.0)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ PROB\ =\ \_\_PROB;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_\_PROB\ >=\ 1.0)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Probability\ value\ is\ greater\ or\ equal\ to\ 1"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_\_PROB\ <=\ 0.0)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Probability\ value\ is\ smaller\ or\ equal\ to\ 0"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classskip__list}{\string~skip\_list}}()\ noexcept\ \{\}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classskip__list_ad7a2f526cda9ab87d50b9e745222ae98}{insert}}(T\ key)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ std::shared\_ptr<node>\ head\ =\ root;}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<std::shared\_ptr<node>>\ update(MAX\_LEVEL\ +\ 1,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ level;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (head-\/>next[i]\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ head-\/>next[i]-\/>key\ <\ key)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ head\ =\ head-\/>next[i];}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ update[i]\ =\ head;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ head\ =\ head-\/>next[0];}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (!head\ ||\ head-\/>key\ !=\ key)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lvl\ =\ rand\_lvl();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lvl\ >\ level)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ level\ +\ 1;\ i\ <\ lvl\ +\ 1;\ i++)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ update[i]\ =\ root;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ level\ =\ lvl;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key,\ lvl);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ lvl;\ i++)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ nn-\/>next[i]\ =\ update[i]-\/>next[i];}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ update[i]-\/>next[i]\ =\ nn;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classskip__list_a5f586433aeedb6b248625e6cccee4eff}{remove}}(T\ key)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ std::shared\_ptr<node>\ x\ =\ root;}
+\DoxyCodeLine{00085\ \ \ \ \ std::vector<std::shared\_ptr<node>>\ update(MAX\_LEVEL\ +\ 1,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ level;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (x-\/>next[i]\ \&\&\ x-\/>next[i]-\/>key\ <\ key)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ x\ =\ x-\/>next[i];}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ update[i]\ =\ x;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ x\ =\ x-\/>next[0];}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ \&\&\ x-\/>key\ ==\ key)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <=\ level;\ i++)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (update[i]-\/>next[i]\ !=\ x)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ update[i]-\/>next[i]\ =\ x-\/>next[i];}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (level\ >\ 0\ \&\&\ root-\/>next[level]\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ level-\/-\/;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classskip__list_af53fbbb2e9761d71c6d53d3969aac1c9}{search}}(T\ key)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ std::shared\_ptr<node>\ x\ =\ root;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ level;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (x-\/>next[i]\ \&\&\ x-\/>next[i]-\/>key\ <\ key)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ x\ =\ x-\/>next[i];}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ x\ =\ x-\/>next[0];}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ \&\&\ x-\/>key\ ==\ key)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classskip__list_a8f64399c87d929894ff113f7a6ff8b54}{operator<<}}(std::ostream\ \&out,\ \mbox{\hyperlink{classskip__list}{skip\_list<T>}}\ \&l)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ std::shared\_ptr<node>\ root\ =\ l.root;}
+\DoxyCodeLine{00132\ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\{"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ l.level;\ i++)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ out\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ std::shared\_ptr<node>\ curr\ =\ l.root-\/>next[i];}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ out\ <<\ curr-\/>key\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ curr\ =\ curr-\/>next[i];}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\}"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00144\ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordtype}{int}\ MAX\_LEVEL;}
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordtype}{float}\ PROB;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{struct\ }node\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ T\ key;}
+\DoxyCodeLine{00157\ \ \ \ \ std::vector<std::shared\_ptr<node>>\ next;}
+\DoxyCodeLine{00158\ \ \ \ \ node(T\ key,\ \textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{void}\ *value\ =\ \textcolor{keyword}{nullptr})\ :\ key(key)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ level\ +\ 1;\ i++)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ next.push\_back(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{int}\ rand\_lvl()\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ (float)rand()\ /\ RAND\_MAX;}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{int}\ lvl\ =\ 0;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{while}\ (r\ <\ PROB\ \&\&\ lvl\ <\ MAX\_LEVEL)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ lvl++;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ r\ =\ (float)rand()\ /\ RAND\_MAX;}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{return}\ lvl;}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{int}\ level;}
+\DoxyCodeLine{00176\ \ \ std::shared\_ptr<node>\ root;}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

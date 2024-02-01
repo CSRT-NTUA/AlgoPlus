@@ -5,19 +5,19 @@
 #include <iostream>
 #endif
 
-/*
- *single linked list class
+/**
+ *@brief single linked list class
  */
 
 template <typename T> class linked_list {
 public:
-  /*
-   *linked_list class constructor
+  /**
+   *@brief linked_list class constructor
    *@param __elements: you can provide the constructor with a vector of elements
    *so you dont have to do multiple push backs yourself.
    */
   explicit linked_list(std::vector<T> __elements = {}) noexcept
-    : root(nullptr), tail(nullptr), __size(0) {
+      : root(nullptr), tail(nullptr), __size(0) {
     if (!__elements.empty()) {
       for (T &x : __elements) {
         this->push_back(x);
@@ -25,57 +25,56 @@ public:
     }
   }
 
-  /*
-   *empty function.
+  /**
+   *@brief empty function.
    *Returns true if the list is empty.
    */
   bool empty() { return root == nullptr; }
 
-  /*
-   *size function.
+  /**
+   *@brief size function.
    *Returns the size of the list.
    */
   size_t size() { return __size; }
 
-  /*
-   *push_back function.
+  /**
+   *@brief push_back function.
    *@param key: the key to be pushed back.
    */
-  void push_back(T key); 
+  void push_back(T key);
 
-
-  /*
-   *push_front function.
+  /**
+   *@brief push_front function.
    *@param key: the key to be pushed in front.
    */
   void push_front(T key);
 
-  /*
-   *erase function.
+  /**
+   *@brief erase function.
    *@param key: the key to be erased.
    */
   void erase(T key);
 
-  /*
-   *search function.
+  /**
+   *@brief search function.
    *@param key: the key to be searched.
    *Returns true if key exists in the list.
    */
   bool search(T key);
 
-  /*
-   *elements function.
+  /**
+   *@brief elements function.
    *Returns vector<T>: the elements of the list.
    */
   std::vector<T> elements();
-  
-  /*
-   * reverse function.
+
+  /**
+   *@brief reverse function.
    */
   void reverse();
 
-  /*
-   *<< operator for the linked_list class.
+  /**
+   *@brief << operator for the linked_list class.
    */
   friend std::ostream &operator<<(std::ostream &out, linked_list<T> &l1) {
     out << '{';
@@ -89,6 +88,11 @@ public:
   }
 
 private:
+  /**
+   * @brief struct for the node
+   * @param val: the value of the node
+   * @param next: pointer to the next.
+   */
   struct node {
     T val;
     std::shared_ptr<node> next;
@@ -99,8 +103,7 @@ private:
   size_t __size;
 };
 
-
-template <typename T> void linked_list<T>::push_back(T key){
+template <typename T> void linked_list<T>::push_back(T key) {
   std::shared_ptr<node> p = std::make_shared<node>(key);
   if (root == nullptr) {
     root = p;
@@ -111,14 +114,14 @@ template <typename T> void linked_list<T>::push_back(T key){
   __size++;
 }
 
-template <typename T> void linked_list<T>::push_front(T key){
+template <typename T> void linked_list<T>::push_front(T key) {
   std::shared_ptr<node> p = std::make_shared<node>(key);
   p->next = root;
   root = p;
   __size++;
 }
 
-template <typename T> void linked_list<T>::erase(T key){
+template <typename T> void linked_list<T>::erase(T key) {
   if (empty()) {
     return;
   }
@@ -142,7 +145,7 @@ template <typename T> void linked_list<T>::erase(T key){
   __size--;
 }
 
-template <typename T> bool linked_list<T>::search(T key){
+template <typename T> bool linked_list<T>::search(T key) {
   try {
     if (empty()) {
       return false;
@@ -162,7 +165,7 @@ template <typename T> bool linked_list<T>::search(T key){
   }
 }
 
-template <typename T> std::vector<T> linked_list<T>::elements(){
+template <typename T> std::vector<T> linked_list<T>::elements() {
   std::vector<T> __elements;
 
   if (this->empty()) {
@@ -176,18 +179,17 @@ template <typename T> std::vector<T> linked_list<T>::elements(){
   return __elements;
 }
 
-template <typename T> void linked_list<T>::reverse(){
+template <typename T> void linked_list<T>::reverse() {
   std::shared_ptr<node> current = root;
   std::shared_ptr<node> prev{nullptr}, next{nullptr};
 
-  while(current != nullptr){
-    next = current -> next;
-    current -> next = prev;
+  while (current != nullptr) {
+    next = current->next;
+    current->next = prev;
     prev = current;
     current = next;
   }
   root = prev;
 }
-
 
 #endif

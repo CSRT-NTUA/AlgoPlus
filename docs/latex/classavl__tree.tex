@@ -1,0 +1,117 @@
+\doxysection{avl\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classavl__tree}{}\label{classavl__tree}\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+
+
+Class for AVL tree.  
+
+
+
+
+{\ttfamily \#include $<$avl\+\_\+tree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classavl__tree_a048c3bc01286503d3d540a8910551317}{avl\+\_\+tree}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
+\begin{DoxyCompactList}\small\item\em Contructor for AVL tree class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}} (T key)
+\begin{DoxyCompactList}\small\item\em insert function. \end{DoxyCompactList}\item 
+\Hypertarget{classavl__tree_a35687925c37c49e535771da125388100}\label{classavl__tree_a35687925c37c49e535771da125388100} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em clear function Erase all the nodes from the tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classavl__tree_a599641fb0e256bfa25deb206a7bf1b29}{search}} (T key)
+\begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}} (T key)
+\begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
+\Hypertarget{classavl__tree_aef655e5753555d705e58d39bd094c55a}\label{classavl__tree_aef655e5753555d705e58d39bd094c55a} 
+std\+::vector$<$ T $>$ {\bfseries inorder} ()
+\begin{DoxyCompactList}\small\item\em inorder function. Returns vector$<$\+T$>$, the elements inorder. \end{DoxyCompactList}\item 
+\Hypertarget{classavl__tree_a8b6368356a04a58f29b1f56f835b7548}\label{classavl__tree_a8b6368356a04a58f29b1f56f835b7548} 
+std\+::vector$<$ T $>$ {\bfseries preorder} ()
+\begin{DoxyCompactList}\small\item\em preorder function. Returns vector$<$\+T$>$, the elements preorder. \end{DoxyCompactList}\item 
+\Hypertarget{classavl__tree_a82a19335d79d5f6928369635278c1c24}\label{classavl__tree_a82a19335d79d5f6928369635278c1c24} 
+std\+::vector$<$ T $>$ {\bfseries postorder} ()
+\begin{DoxyCompactList}\small\item\em postorder function. Returns vector$<$\+T$>$, the elements postorder. \end{DoxyCompactList}\item 
+\Hypertarget{classavl__tree_a517f38f7f770647b80322fc7cd1192af}\label{classavl__tree_a517f38f7f770647b80322fc7cd1192af} 
+void {\bfseries visualize} ()
+\begin{DoxyCompactList}\small\item\em visualize function Returns .dot file that can be previewed using graphviz in vscode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class avl\+\_\+tree$<$ T $>$}
+Class for AVL tree. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classavl__tree_a048c3bc01286503d3d540a8910551317}\label{classavl__tree_a048c3bc01286503d3d540a8910551317} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!avl\_tree@{avl\_tree}}
+\index{avl\_tree@{avl\_tree}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{avl\_tree()}{avl\_tree()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classavl__tree}{\+::avl\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{\+\_\+\+\_\+elements = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Contructor for AVL tree class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+elements} & you can directly pass a vector$<$\+T$>$ so you don\textquotesingle{}t have to do insert multiple times. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}\label{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insert function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key to be inserted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}\label{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classavl__tree_a599641fb0e256bfa25deb206a7bf1b29}\label{classavl__tree_a599641fb0e256bfa25deb206a7bf1b29} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!search@{search}}
+\index{search@{search}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+search function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key to be searched. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/src/classes/tree/avl\+\_\+tree.\+h\end{DoxyCompactItemize}

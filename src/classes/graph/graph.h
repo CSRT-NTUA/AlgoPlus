@@ -4,6 +4,8 @@
 #include "../../visualization/graph_visual/graph_visualization.h"
 
 #ifdef __cplusplus
+#include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <queue>
 #include <stack>
@@ -12,19 +14,17 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
-#include <algorithm>
-#include <chrono>
 #endif
 
-/*
+/**
  *
- * Class for Unweighted Graph
+ * @brief Class for Unweighted Graph
  *
  */
 template <typename T> class graph {
 public:
-  /*
-   * Constructor for the unweighted graph.
+  /**
+   * @brief Constructor for the unweighted graph.
    * @param __type: type of the graph, either "directed" or "undirected"
    * @param __adj: vector<pair<T,vector<T>>, you can pass a vector of pairs to
    * construct the graph without doing multiple add_edge.
@@ -51,8 +51,8 @@ public:
   }
   ~graph() {}
 
-  /*
-   * add_edge function
+  /**
+   * @brief add_edge function
    * @param u: first node
    * @param v: second node
    */
@@ -67,8 +67,8 @@ public:
     __elements.insert(v);
   }
 
-  /*
-   *has_edge function.
+  /**
+   *@brief has_edge function.
    *@param start: starting node.
    *@param end: ending node.
    Returns true if a direct edge from start to end exists.
@@ -85,8 +85,8 @@ public:
     return false;
   }
 
-  /*
-   * clear function
+  /**
+   * @brief clear function
    * Clearing the entire graph.
    */
   void clear() {
@@ -94,89 +94,91 @@ public:
     adj.clear();
   }
 
-  /*
-   * empty function
+  /**
+   * @brief empty function
    * Checks if a graph is empty.
    */
   bool empty() { return __elements.empty(); }
 
-  /*
-   * size function
+  /**
+   * @brief size function
    * Returns the size of the graph.
    */
   size_t size();
 
-  /*
-   * dfs function
+  /**
+   * @brief dfs function
    * @param start: starting node of the dfs.
    * Returns vector<T>, the path of the dfs.
    */
   std::vector<T> dfs(T start);
 
-  /*
-   * bfs function
+  /**
+   * @brief bfs function
    * @param start: starting node of the bfs.
    * Returns vector<T>, the path of the bfs.
    */
   std::vector<T> bfs(T start);
 
-  /*
-   * connected_components function.
+  /**
+   * @brief connected_components function.
    * Returns the connected components(islands) of the graph.
    */
   int64_t connected_components();
 
-  /*
-   * cycle function.
+  /**
+   * @brief cycle function.
    * Returns true if a cycle exist in the graph.
    * */
   bool cycle();
 
-  /*
-   * topological_sort function.
+  /**
+   * @brief topological_sort function.
    * Returns vector<T> the topological order of the elements of the graph.
    */
   std::vector<T> topological_sort();
 
-  /* bipartite() function.
+  /**
+   * @brief bipartite function.
    * Returns true if the graph is bipartite.
    */
   bool bipartite();
 
-  /*
-   *bridge function.
+  /**
+   *@brief bridge function.
    *@param start: starting point of search for the bridges.
    *Returns vector<vector<T>> the bridges of the graph.
    */
 
   std::vector<std::vector<T>> bridge(T start);
 
-  /*
-   *scc(strongly connected components) function.
+  /**
+   *@brief scc(strongly connected components) function.
    */
   int64_t scc();
 
-  /*
-   *connected function.
+  /**
+   *@brief connected function.
    *Returns true if a graph is connected.
    */
   bool connected();
 
-  /*
-   *eulerian function.
+  /**
+   *@brief eulerian function.
    *Returns 0 if a graph is not eulerian.
    *Returns 1 if a graph is semi-eulerian.
    *Returns 2 if a graph is eulerian.
    */
   int eulerian();
 
-  /*
-   * visualize function.
+  /**
+   * @brief visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
    */
   void visualize();
 
-  /* << operator
+  /**
+   * @brief operator << for the graph class.
    * Returns ostream &out for std::cout.
    */
   friend std::ostream &operator<<(std::ostream &out, graph<T> &g) {
@@ -191,7 +193,7 @@ public:
   }
 
 private:
-  /*
+  /**
    * @param adj: adjacency list for the graph.
    * @param __elements: set of the total elements of the graph.
    * @param __type: the type of the graph, either "directed" or "undirected".
@@ -200,8 +202,8 @@ private:
   std::unordered_set<T> __elements;
   std::string __type;
 
-  /*
-   *helper function for bridge detection algorithm.
+  /**
+   *@brief helper function for bridge detection algorithm.
    */
   void dfs_bridge(T start, T parent, int64_t &time,
                   std::unordered_map<T, bool> &visited,
@@ -514,13 +516,13 @@ template <typename T> void graph<T>::visualize() {
   }
 }
 
-/*
- * class for weighted graph
+/**
+ * @brief class for weighted graph
  */
 template <typename T> class weighted_graph {
 public:
-  /*
-   * Constructor for weighted graph.
+  /**
+   * @brief Constructor for weighted graph.
    * @param __type: type of the graph, either "directed" or "undirected".
    * @param __adj: vector<pair<pair<T,T>, int64_t>>, you can pass a vector of
    * pairs to construct the graph without doing multiple add_edge.
@@ -546,8 +548,8 @@ public:
   }
   ~weighted_graph() { adj.clear(); }
 
-  /*
-   * add_edge function.
+  /**
+   * @brief add_edge function.
    * @param u: first node.
    * @param v: second node.
    * @param w: weight between u and v.
@@ -563,8 +565,8 @@ public:
     __elements.insert(v);
   }
 
-  /*
-   *has_edge function.
+  /**
+   *@brief has_edge function.
    *@param start: starting node.
    *@param end: ending node.
    Returns true if a direct edge from start to end exists.
@@ -581,112 +583,113 @@ public:
     return false;
   }
 
-  /*
-   * clear function.
+  /**
+   * @brief clear function.
    * Clearing the entire graph.
    */
   void clear() {
     __elements.clear();
     adj.clear();
   }
-  /*
-   * empty function.
+  /**
+   * @brief empty function.
    * Checks if a graph is empty.
    */
   bool empty() { return __elements.empty(); }
 
-  /*
-   * size function.
+  /**
+   * @brief size function.
    * Returns the size of the graph.
    */
   size_t size();
 
-  /*
-   * dfs function.
+  /**
+   * @brief dfs function.
    * @param start: starting node of the bfs.
    * Returns vector<T>, the path of the dfs.
    */
   std::vector<T> dfs(T start);
-  /*
-   * bfs function.
+
+  /**
+   * @brief bfs function.
    * @param start: starting node of the bfs.
    * Returns vector<T>, the path of the bfs.
    */
   std::vector<T> bfs(T start);
 
-  /*
-   * shortest_path function.
+  /**
+   * @brief shortest_path function.
    * @param start: starting node.
    * @param end: ending node.
    * Returns int64_t, the total cost of the path.
    */
   int64_t shortest_path(T start, T end);
 
-  /*
-   * connected_components function.
+  /**
+   * @brief connected_components function.
    * Returns the connected componenets(islands) of the graph.
    */
   int64_t connected_components();
 
-  /*
-   * cycle function.
+  /**
+   * @brief cycle function.
    * Returns true if a cycle exists in the graph.
    */
   bool cycle();
 
-  /*
-   * topological sort function.
+  /**
+   * @brief topological sort function.
    * Returns vector<T>, the topological order of the elements of the graph.
    */
   std::vector<T> topological_sort();
 
-  /*
-   * prim function.
+  /**
+   * @brief prim function.
    * @param start: starting node.
    * Returns int64_t, the total cost of the minimum spanning tree of the graph.
    */
   int64_t prim(T start);
 
-  /*
-   * bipartite function.
+  /**
+   * @brief bipartite function.
    * Returns true if the graph is bipartite.
    */
   bool bipartite();
 
-  /*
-   *bridge function.
+  /**
+   *@brief bridge function.
    *@param start: starting point of search for the bridges.
    *Returns vector<vector<T>> the bridges of the graph.
    */
   std::vector<std::vector<T>> bridge(T start);
 
-  /*
-   *scc(strongly connected components) function.
+  /**
+   *@brief scc(strongly connected components) function.
    */
   int64_t scc();
 
-  /*
-   *connected function.
+  /**
+   *@brief connected function.
    *Returns true if a graph is connected.
    */
   bool connected();
 
-  /*
-   *eulerian function.
+  /**
+   *@brief eulerian function.
    *Returns 0 if a graph is not eulerian.
    *Returns 1 if a graph is semi-eulerian.
    *Returns 2 if a graph is eulerian.
    */
   int eulerian();
 
-  /*
-   * visualize function.
+  /**
+   *@brief visualize function.
    * Returns .dot file that can be previewed in vscode with graphviz.
    */
   void visualize();
 
-  /*
-   * << operator.
+  /**
+   * @brief << operator for the weighted graph class.
    * Returns ostream &out for std::cout.
    */
   friend std::ostream &operator<<(std::ostream &out, weighted_graph<T> &g) {
@@ -700,7 +703,7 @@ public:
   }
 
 private:
-  /*
+  /**
    * @param adj: adjacency list for the graph.
    * @param __type: type of the graph, either "directed" or "undirected".
    * @param __elements: set of total elements of the graph.
@@ -709,8 +712,8 @@ private:
   std::string __type;
   std::unordered_set<T> __elements;
 
-  /*
-   *helper function for bridge detection algorithm.
+  /**
+   *@brief helper function for bridge detection algorithm.
    */
   void dfs_bridge(T start, T parent, int64_t &time,
                   std::unordered_map<T, bool> &visited,

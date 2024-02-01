@@ -9,13 +9,13 @@
 #include <vector>
 #endif
 
-/*
- *Class for AVL tree.
+/**
+ *@brief Class for AVL tree.
  */
 template <typename T> class avl_tree {
 public:
-  /*
-   *Contructor for AVL tree class.
+  /**
+   *@brief Contructor for AVL tree class.
    *@param __elements: you can directly pass a vector<T> so you don't have to do
    *insert multiple times.
    */
@@ -28,14 +28,14 @@ public:
   }
   ~avl_tree() noexcept {}
 
-  /*
-   *insert function.
+  /**
+   *@brief insert function.
    *@param key: key to be inserted.
    */
   void insert(T key) { root = __insert(root, key); }
 
-  /*
-   *clear function
+  /**
+   *@brief clear function
    *Erase all the nodes from the tree.
    */
   void clear() {
@@ -43,20 +43,20 @@ public:
     return;
   }
 
-  /*
-   *search function.
+  /**
+   *@brief search function.
    *@param key: key to be searched.
    */
   bool search(T key) { return __search(root, key); }
 
-  /*
-   *remove function.
+  /**
+   *@brief remove function.
    *@param key: key to be removed.
    */
   void remove(T key) { root = __remove(root, key); }
 
-  /*
-   *inorder function.
+  /**
+   *@brief inorder function.
    *Returns vector<T>, the elements inorder.
    */
   std::vector<T> inorder() {
@@ -68,8 +68,8 @@ public:
         root);
     return path;
   }
-  /*
-   *preorder function.
+  /**
+   @brief preorder function.
    *Returns vector<T>, the elements preorder.
    */
   std::vector<T> preorder() {
@@ -81,8 +81,8 @@ public:
         root);
     return path;
   }
-  /*
-   *postorder function.
+  /**
+   *@brief postorder function.
    *Returns vector<T>, the elements postorder.
    */
   std::vector<T> postorder() {
@@ -95,8 +95,8 @@ public:
     return path;
   }
 
-  /*
-   *visualize function
+  /**
+   *@brief visualize function
    *Returns .dot file that can be previewed using graphviz in vscode.
    */
   void visualize() {
@@ -105,8 +105,8 @@ public:
   }
 
 private:
-  /*
-   *Struct for the node type pointer.
+  /**
+   *@brief Struct for the node type pointer.
    *@param info: the value of the node.
    *@param height: height of each node.
    *@param left: pointer to the left.

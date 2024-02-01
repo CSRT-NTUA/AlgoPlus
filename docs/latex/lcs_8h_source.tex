@@ -1,0 +1,52 @@
+\doxysection{lcs.\+h}
+\hypertarget{lcs_8h_source}{}\label{lcs_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/lcs.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/lcs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LCS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LCS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{int}\ lcs(std::string\ a,\ std::string\ b)\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordtype}{int}\ m\ =\ a.length(),\ n\ =\ b.length();}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{int}\ res[m\ +\ 1][n\ +\ 1];}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{int}\ trace[20][20];}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ m\ +\ 1;\ i++)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ n\ +\ 1;\ j++)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ res[i][j]\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ trace[i][j]\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ m\ +\ 1;\ ++i)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ n\ +\ 1;\ ++j)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ ||\ j\ ==\ 0)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ res[i][j]\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ trace[i][j]\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a[i\ -\/\ 1]\ ==\ b[j\ -\/\ 1])\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ res[i][j]\ =\ 1\ +\ res[i\ -\/\ 1][j\ -\/\ 1];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ trace[i][j]\ =\ 1;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (res[i\ -\/\ 1][j]\ >\ res[i][j\ -\/\ 1])\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ res[i][j]\ =\ res[i\ -\/\ 1][j];}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ trace[i][j]\ =\ 2;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ res[i][j]\ =\ res[i][j\ -\/\ 1];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ trace[i][j]\ =\ 3;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordflow}{return}\ res[m][n];}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

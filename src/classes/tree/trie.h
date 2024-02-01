@@ -5,8 +5,8 @@
 #include <iostream>
 #endif
 
-/*
- *trie class
+/**
+ *@brief trie class
  */
 class trie {
 private:
@@ -18,6 +18,11 @@ private:
   std::shared_ptr<node> root;
 
 public:
+  /**
+   * @brief Construct a new trie object
+   *
+   * @param v : vector of strings for initializer.
+   */
   explicit trie(std::vector<std::string> v = {}) noexcept
       : root(std::make_shared<node>()) {
     if (!v.empty()) {
@@ -27,24 +32,24 @@ public:
     }
   }
 
-  /*
-   *empty function.
+  /**
+   *@brief empty function.
    *returns true if the trie is empty.
    */
   bool empty() { return root == nullptr; }
-  /*
-   *insert function.
+  /**
+   *@brief insert function.
    *@param key: the key to be inserted.
    */
   void insert(std::string key);
 
-  /*
-   *remove function.
+  /**
+   *@brief remove function.
    *@param key: the key to be removed.
    */
   void remove(std::string key);
-  /*
-   *search function.
+  /**
+   *@brief search function.
    *@param key: the key to be searched.
    *returns true if the word exist in the tree.
    */
@@ -53,8 +58,8 @@ public:
   friend std::ostream &operator<<(std::ostream &out, trie &t);
 
 private:
-  /*
-   *__children function.
+  /**
+   *@brief __children function.
    *checks if a node has children or not.
    */
   bool __children(std::shared_ptr<node> root) {
@@ -65,8 +70,8 @@ private:
     }
     return false;
   }
-  /*
-   *__remove function.
+  /**
+   *@brief __remove function.
    *helper function of remove().
    */
   std::shared_ptr<node> __remove(std::shared_ptr<node> current,

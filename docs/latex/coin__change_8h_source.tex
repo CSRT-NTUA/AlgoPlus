@@ -1,0 +1,29 @@
+\doxysection{coin\+\_\+change.\+h}
+\hypertarget{coin__change_8h_source}{}\label{coin__change_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/coin\_change.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/coin\_change.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COIN\_CHANGE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COIN\_CHANGE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ int64\_t\ min\_cost(std::vector<int>\ arr,\ \textcolor{keywordtype}{int}\ N)\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordtype}{int}\ max\_of\ =\ N\ +\ 1;}
+\DoxyCodeLine{00011\ \ \ std::vector<int>\ dp(N\ +\ 1,\ max\_of);}
+\DoxyCodeLine{00012\ \ \ dp[0]\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ N;\ i++)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ arr)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <=\ i)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ dp[i]\ =\ std::min(dp[i],\ 1\ +\ dp[i\ -\/\ x]);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{return}\ dp[N]\ >\ N\ ?\ -\/1\ :\ dp[N];}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

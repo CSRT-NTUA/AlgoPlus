@@ -1,0 +1,34 @@
+\doxysection{lis.\+h}
+\hypertarget{lis_8h_source}{}\label{lis_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/lis.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/lis.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LIS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LIS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *lis\ function.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *@param\ arr:\ the\ input\ array.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *Returns\ the\ longest\ increasing\ subsequence\ of\ the\ array.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ lis(std::vector<T>\ arr)\ \{}
+\DoxyCodeLine{00015\ \ \ std::vector<T>\ ans;}
+\DoxyCodeLine{00016\ \ \ int64\_t\ n\ =\ arr.size();}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::lower\_bound(ans.begin(),\ ans.end(),\ arr[i]);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ ans.end())\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ ans.push\_back(arr[i]);}
+\DoxyCodeLine{00021\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ *it\ =\ arr[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{return}\ ans.size();}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,125 @@
+\doxysection{interval\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classinterval__tree}{}\label{classinterval__tree}\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+
+
+interval tree class  
+
+
+
+
+{\ttfamily \#include $<$interval\+\_\+tree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classinterval__tree_a425c09376a776f6e00211d92ea26b7e7}{interval\+\_\+tree}} (std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ v=\{\})
+\begin{DoxyCompactList}\small\item\em Construct a new interval tree object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}} (std\+::pair$<$ T, T $>$ p)
+\begin{DoxyCompactList}\small\item\em insert function. \end{DoxyCompactList}\item 
+\Hypertarget{classinterval__tree_a5757bdc67f3a8a46d786676691b2d461}\label{classinterval__tree_a5757bdc67f3a8a46d786676691b2d461} 
+bool {\bfseries search} (std\+::pair$<$ T, T $>$ p)
+\begin{DoxyCompactList}\small\item\em search function. Returns true if an interval exist in the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classinterval__tree_a7ddb8375fc087cdbebc397a03f5092c9}{remove}} (std\+::pair$<$ T, T $>$ p)
+\begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f}{overlap}} (std\+::pair$<$ T, T $>$ p1, std\+::pair$<$ T, T $>$ p2)
+\begin{DoxyCompactList}\small\item\em overlap function. \end{DoxyCompactList}\item 
+\Hypertarget{classinterval__tree_a6472215cc03add0b3704c3d5e3249259}\label{classinterval__tree_a6472215cc03add0b3704c3d5e3249259} 
+std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ {\bfseries inorder} ()
+\begin{DoxyCompactList}\small\item\em inorder function. Returns vector$<$pair$<$\+T,\+T$>$$>$, the elements inorder. \end{DoxyCompactList}\item 
+\Hypertarget{classinterval__tree_ab8c4a843dab72278f269ffe034f30f06}\label{classinterval__tree_ab8c4a843dab72278f269ffe034f30f06} 
+std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ {\bfseries preorder} ()
+\begin{DoxyCompactList}\small\item\em preorder function. Returns vector$<$pair$<$\+T,\+T$>$$>$, the elements preorder. \end{DoxyCompactList}\item 
+\Hypertarget{classinterval__tree_ad9fdedfea81952b61fb60b966849d911}\label{classinterval__tree_ad9fdedfea81952b61fb60b966849d911} 
+std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ {\bfseries postorder} ()
+\begin{DoxyCompactList}\small\item\em postorder function. Returns vector$<$pair$<$\+T, T$>$$>$, the elements postorder. \end{DoxyCompactList}\item 
+\Hypertarget{classinterval__tree_aae0fc69adeddfe24e3c08c315aae9137}\label{classinterval__tree_aae0fc69adeddfe24e3c08c315aae9137} 
+void {\bfseries visualize} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classinterval__tree_a9ec9c06e600dc687b3ec921559634fb9}\label{classinterval__tree_a9ec9c06e600dc687b3ec921559634fb9} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator for \doxylink{classinterval__tree}{interval\+\_\+tree} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class interval\+\_\+tree$<$ T $>$}
+interval tree class 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classinterval__tree_a425c09376a776f6e00211d92ea26b7e7}\label{classinterval__tree_a425c09376a776f6e00211d92ea26b7e7} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!interval\_tree@{interval\_tree}}
+\index{interval\_tree@{interval\_tree}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{interval\_tree()}{interval\_tree()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classinterval__tree}{\+::interval\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new interval tree object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: vector$<$pair$<$\+T,\+T$>$$>$ initializer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}\label{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::pair$<$ T, T $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insert function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & interval to be inserted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f}\label{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!overlap@{overlap}}
+\index{overlap@{overlap}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{overlap()}{overlap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::overlap (\begin{DoxyParamCaption}\item[{std\+::pair$<$ T, T $>$}]{p1,  }\item[{std\+::pair$<$ T, T $>$}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overlap function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first interval. \\
+\hline
+{\em p2} & second interval. Returns true if p1 overlaps p2. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classinterval__tree_a7ddb8375fc087cdbebc397a03f5092c9}\label{classinterval__tree_a7ddb8375fc087cdbebc397a03f5092c9} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{std\+::pair$<$ T, T $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & interval to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/src/classes/tree/interval\+\_\+tree.\+h\end{DoxyCompactItemize}

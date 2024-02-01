@@ -1,0 +1,29 @@
+\doxysection{kadane.\+h}
+\hypertarget{kadane_8h_source}{}\label{kadane_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/kadane.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/kadane.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ KADANE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ KADANE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ int64\_t\ kadane(std::vector<int>\ arr)\ \{}
+\DoxyCodeLine{00010\ \ \ int64\_t\ mmax\ =\ INT\_MIN,\ temp\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ temp\ +=\ arr[i];}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ >\ mmax)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ mmax\ =\ temp;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ <\ 0)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ temp\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{return}\ mmax;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

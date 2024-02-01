@@ -1,0 +1,114 @@
+\doxysection{bst\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classbst}{}\label{classbst}\index{bst$<$ T $>$@{bst$<$ T $>$}}
+
+
+Class for BST tree.  
+
+
+
+
+{\ttfamily \#include $<$bst.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbst_a6f3db633f32d9c984357adaf2aa1ea14}{bst}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
+\begin{DoxyCompactList}\small\item\em Contructor for BST tree class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}} (T key)
+\begin{DoxyCompactList}\small\item\em insert function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbst_acd2ed132fc83a3a50a4085b4b7a90f47}{search}} (T key)
+\begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}} (T key)
+\begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
+\Hypertarget{classbst_ab9d984aab9247a36c78b115484ccb623}\label{classbst_ab9d984aab9247a36c78b115484ccb623} 
+std\+::vector$<$ T $>$ {\bfseries inorder} ()
+\begin{DoxyCompactList}\small\item\em inorder function. Returns vector$<$\+T$>$, the elements inorder. \end{DoxyCompactList}\item 
+\Hypertarget{classbst_a4c3359b500e074fce8d1f3eae21dfdca}\label{classbst_a4c3359b500e074fce8d1f3eae21dfdca} 
+std\+::vector$<$ T $>$ {\bfseries preorder} ()
+\begin{DoxyCompactList}\small\item\em preorder function. Returns vector$<$\+T$>$, the elements preorder. \end{DoxyCompactList}\item 
+\Hypertarget{classbst_a60575db4d925e7f08202549df73d0d9b}\label{classbst_a60575db4d925e7f08202549df73d0d9b} 
+std\+::vector$<$ T $>$ {\bfseries postorder} ()
+\begin{DoxyCompactList}\small\item\em postorder function. Returns vector$<$\+T$>$, the elements postorder. \end{DoxyCompactList}\item 
+\Hypertarget{classbst_a0198118bc2eb3d58607ce6acadb770a6}\label{classbst_a0198118bc2eb3d58607ce6acadb770a6} 
+void {\bfseries visualize} ()
+\begin{DoxyCompactList}\small\item\em visualize function Returns .dot file that can be previewed using graphviz in vscode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class bst$<$ T $>$}
+Class for BST tree. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbst_a6f3db633f32d9c984357adaf2aa1ea14}\label{classbst_a6f3db633f32d9c984357adaf2aa1ea14} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!bst@{bst}}
+\index{bst@{bst}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{bst()}{bst()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classbst}{bst}}$<$ T $>$\mbox{\hyperlink{classbst}{\+::bst}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{\+\_\+\+\_\+elements = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Contructor for BST tree class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+elements} & you can directly pass a vector$<$\+T$>$ so you don\textquotesingle{}t have to do insert multiple times. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbst_ad7def8a09da61a43c7033365ea226d06}\label{classbst_ad7def8a09da61a43c7033365ea226d06} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insert function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key to be inserted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbst_a46aaefd422947e3f209db2e24119643a}\label{classbst_a46aaefd422947e3f209db2e24119643a} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbst_acd2ed132fc83a3a50a4085b4b7a90f47}\label{classbst_acd2ed132fc83a3a50a4085b4b7a90f47} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!search@{search}}
+\index{search@{search}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+search function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key to be searched. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/src/classes/tree/bst.\+h\end{DoxyCompactItemize}

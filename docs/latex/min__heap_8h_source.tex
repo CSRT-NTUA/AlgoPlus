@@ -1,0 +1,101 @@
+\doxysection{min\+\_\+heap.\+h}
+\hypertarget{min__heap_8h_source}{}\label{min__heap_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/classes/heap/min\_heap.h@{/Users/spirosmag/Documents/AlgoPlus/src/classes/heap/min\_heap.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MIN\_HEAP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MIN\_HEAP\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmin__heap}{min\_heap}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ T\ *arr;}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{size\_t}\ max\_size;}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{size\_t}\ heap\_size;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classmin__heap}{min\_heap}}(\textcolor{keywordtype}{size\_t}\ max\_size)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ heap\_size\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ this-\/>max\_size\ =\ max\_size;}
+\DoxyCodeLine{00019\ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[max\_size];}
+\DoxyCodeLine{00020\ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classmin__heap}{\string~min\_heap}}()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keyword}{delete}[]\ arr;\ \}}
+\DoxyCodeLine{00023\ \ \ T\ parent(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (i\ -\/\ 1)\ /\ 2;\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ T\ \_\_left(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (2\ *\ i\ +\ 1);\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ T\ \_\_right(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (2\ *\ i\ +\ 2);\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ T\ \_\_min()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ <=\ 0)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INT\_MAX;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ ==\ 1)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ heap\_size-\/-\/;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[0];}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ T\ root\ =\ arr[0];}
+\DoxyCodeLine{00038\ \ \ \ \ arr[0]\ =\ arr[heap\_size\ -\/\ 1];}
+\DoxyCodeLine{00039\ \ \ \ \ heap\_size-\/-\/;}
+\DoxyCodeLine{00040\ \ \ \ \ heapify(0);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ T\ min()\ \{\ \textcolor{keywordflow}{return}\ arr[0];\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ decrease\_key(T\ i,\ T\ key)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ arr[i]\ =\ key;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0\ \&\&\ arr[parent(i)]\ >\ arr[i])\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ std::swap(arr[i],\ arr[parent(i)]);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ i\ =\ parent(i);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ insert(T\ key)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ ==\ max\_size)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heap\ reached\ maximum\ size"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ heap\_size++;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ heap\_size\ -\/\ 1;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ arr[i]\ =\ key;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0\ \&\&\ arr[parent(i)]\ >\ arr[i])\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ std::swap(arr[i],\ arr[parent(i)]);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ i\ =\ parent(i);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ remove(T\ key)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ decrease\_key(key,\ INT\_MIN);}
+\DoxyCodeLine{00075\ \ \ \ \ \_\_min();}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ heapify(T\ i)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ T\ left\ =\ \_\_left(i);}
+\DoxyCodeLine{00080\ \ \ \ \ T\ right\ =\ \_\_right(i);}
+\DoxyCodeLine{00081\ \ \ \ \ T\ minim\ =\ i;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ <\ heap\_size\ \&\&\ arr[left]\ <\ arr[i])\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ minim\ =\ left;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (right\ <\ heap\_size\ \&\&\ arr[right]\ <\ arr[i])\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ minim\ =\ right;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (minim\ !=\ i)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ std::swap(arr[i],\ arr[minim]);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ heapify(minim);}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \}}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -6,14 +6,14 @@
 #include <stdexcept>
 #endif
 
-/*
- *skip_list class.
+/**
+ *@brief skip_list class.
  */
 
 template <typename T> class skip_list {
 public:
-  /*
-   *skip_list constructor.
+  /**
+   *@brief skip_list constructor.
    *@param __MAX_LEVEL: max height of the list.
    *@param __PROB: probability of increasing the height each time(by default it
    *should be 0.5).
@@ -43,8 +43,8 @@ public:
 
   ~skip_list() noexcept {}
 
-  /*
-   *insert function.
+  /**
+   *@brief insert function.
    *@param key: key to be inserted.
    */
   void insert(T key) {
@@ -76,8 +76,8 @@ public:
     }
   }
 
-  /*
-   *remove function.
+  /**
+   *@brief remove function.
    *@param key: key to be removed(if exist).
    */
   void remove(T key) {
@@ -105,8 +105,8 @@ public:
     }
   }
 
-  /*
-   *search function.
+  /**
+   *@brief search function.
    *@param key: key to be searched.
    *Returns true if the key exists in the list.
    */
@@ -124,8 +124,8 @@ public:
     return false;
   }
 
-  /*
-   *operator << for skip_list<T> class.
+  /**
+   *@brief operator << for skip_list<T> class.
    */
   friend std::ostream &operator<<(std::ostream &out, skip_list<T> &l) {
     std::shared_ptr<node> root = l.root;
@@ -146,6 +146,12 @@ public:
 private:
   int MAX_LEVEL;
   float PROB;
+
+  /**
+   * @brief struct for the node
+   * @param key: the value of the node
+   * @param next: vector of pointers to the next
+   */
   struct node {
     T key;
     std::vector<std::shared_ptr<node>> next;

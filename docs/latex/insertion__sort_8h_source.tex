@@ -1,0 +1,25 @@
+\doxysection{insertion\+\_\+sort.\+h}
+\hypertarget{insertion__sort_8h_source}{}\label{insertion__sort_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/insertion\_sort.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/insertion\_sort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INSERTION\_SORT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INSERTION\_SORT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ insertion\_sort(std::vector<T>\ \&arr)\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 1;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ int64\_t\ j\ =\ i\ -\/\ 1;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ j\ >=\ 0\ \&\&\ arr[j]\ >\ arr[i];\ j-\/-\/)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ arr[j\ +\ 1]\ =\ arr[j];}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ arr[j\ +\ 1]\ =\ arr[i];}
+\DoxyCodeLine{00016\ \ \ \}}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

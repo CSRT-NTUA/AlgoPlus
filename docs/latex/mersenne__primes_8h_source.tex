@@ -1,0 +1,33 @@
+\doxysection{mersenne\+\_\+primes.\+h}
+\hypertarget{mersenne__primes_8h_source}{}\label{mersenne__primes_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/number\_theory/mersenne\_primes.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/number\_theory/mersenne\_primes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MERSENNE\_PRIMES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MERSENNE\_PRIMES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}eratosthenes\_sieve.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *mersenne\ function.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *@param\ n:\ the\ upper\ bound}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *Returns\ vector<int>:\ the\ vector\ includes\ the\ elements\ "{}p"{}\ from\ m\ =\ 2\string^p\ -\/\ 1\ for}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *which\ p\ gives\ us\ a\ mersenne\ prime\ number.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ std::vector<int>\ mersenne(int64\_t\ n)\ \{}
+\DoxyCodeLine{00016\ \ \ std::vector<bool>\ prime\ =\ soe(n);}
+\DoxyCodeLine{00017\ \ \ std::vector<int>\ elements;}
+\DoxyCodeLine{00018\ \ \ int64\_t\ k\ =\ 2;}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{while}\ ((1\ <<\ k)\ -\/\ 1\ <=\ n)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (prime[(1\ <<\ k)\ -\/\ 1])\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ elements.push\_back(k);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ k++;}
+\DoxyCodeLine{00024\ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{return}\ elements;}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

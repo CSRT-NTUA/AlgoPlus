@@ -7,11 +7,16 @@
 #include <iostream>
 #endif
 
-/*
- *interval tree class
+/**
+ *@brief interval tree class
  */
 template <typename T> class interval_tree {
 public:
+  /**
+   * @brief Construct a new interval tree object
+   *
+   * @param v : vector<pair<T,T>> initializer
+   */
   interval_tree(std::vector<std::pair<T, T>> v = {}) {
     if (!v.empty()) {
       for (auto &x : v) {
@@ -20,8 +25,8 @@ public:
     }
   }
 
-  /*
-   *insert function.
+  /**
+   *@brief insert function.
    *@param p: interval to be inserted.
    */
   void insert(std::pair<T, T> p) {
@@ -29,8 +34,8 @@ public:
     root = __insert(root, i);
   }
 
-  /*
-   *search function.
+  /**
+   *@brief search function.
    *Returns true if an interval exist in the tree.
    */
   bool search(std::pair<T, T> p) {
@@ -44,8 +49,8 @@ public:
     return __search(root, i);
   }
 
-  /*
-   *remove function.
+  /**
+   *@brief remove function.
    *@param p: interval to be removed.
    */
   void remove(std::pair<T, T> p) {
@@ -53,8 +58,8 @@ public:
     root = __remove(root, i);
   }
 
-  /*
-   *overlap function.
+  /**
+   *@brief overlap function.
    *@param p1: first interval.
    *@param p2: second interval.
    *Returns true if p1 overlaps p2.
@@ -64,8 +69,8 @@ public:
     return i1.high >= i2.low && i1.low <= i2.high;
   }
 
-  /*
-   *inorder function.
+  /**
+   *@brief inorder function.
    *Returns vector<pair<T,T>>, the elements inorder.
    */
   std::vector<std::pair<T, T>> inorder() {
@@ -78,8 +83,8 @@ public:
     return path;
   }
 
-  /*
-   *preorder function.
+  /**
+   *@brief preorder function.
    *Returns vector<pair<T,T>>, the elements preorder.
    */
   std::vector<std::pair<T, T>> preorder() {
@@ -92,8 +97,8 @@ public:
     return path;
   }
 
-  /*
-   *postorder function.
+  /**
+   *@brief postorder function.
    *Returns vector<pair<T, T>>, the elements postorder.
    */
   std::vector<std::pair<T, T>> postorder() {
@@ -111,8 +116,8 @@ public:
     visualization::visualize(__generated);
   }
 
-  /*
-   *<< operator for interval_tree class.
+  /**
+   *@brief << operator for interval_tree class.
    */
   friend std::ostream &operator<<(std::ostream &out, interval_tree<T> &t) {
     if (!t.root) {
@@ -129,12 +134,26 @@ public:
   }
 
 private:
+  /**
+   * @brief struct for the intervals
+   * @param low: the min of the pair
+   * @param high: the high of the pair
+   */
   struct interval {
     T low;
     T high;
     interval(std::pair<T, T> p)
         : low(std::min(p.first, p.second)), high(std::max(p.first, p.second)) {}
   };
+
+  /**
+   * @brief struct for the node
+   * @param i: the interval
+   * @param max: max of the interval
+   * @param right: pointer to the right
+   * @param left: pointer to the left
+   *
+   */
   struct node {
     interval *i;
     int max;
@@ -150,8 +169,8 @@ private:
     return p;
   }
 
-  /*
-   *helper function for insertion
+  /**
+   *@brief helper function for insertion
    */
   std::shared_ptr<node> __insert(std::shared_ptr<node> root, interval i) {
     if (!root) {
@@ -169,8 +188,8 @@ private:
     return root;
   }
 
-  /*
-   *helper function for search
+  /**
+   *@brief helper function for search
    */
   bool __search(std::shared_ptr<node> root, interval i) {
     if (!root) {
@@ -182,8 +201,8 @@ private:
     return __search(root->right, i);
   }
 
-  /*
-   *helper function for remove.
+  /**
+   *@brief helper function for remove.
    */
   std::shared_ptr<node> __remove(std::shared_ptr<node> root, interval i) {
     if (!root) {

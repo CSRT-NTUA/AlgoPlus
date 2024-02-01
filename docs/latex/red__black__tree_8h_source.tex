@@ -1,0 +1,88 @@
+\doxysection{red\+\_\+black\+\_\+tree.\+h}
+\hypertarget{red__black__tree_8h_source}{}\label{red__black__tree_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/classes/tree/red\_black\_tree.h@{/Users/spirosmag/Documents/AlgoPlus/src/classes/tree/red\_black\_tree.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RED\_BLACK\_TREE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RED\_BLACK\_TREE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classrb__tree}{rb\_tree}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{struct\ }node\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ T\ val;}
+\DoxyCodeLine{00012\ \ \ \ \ int64\_t\ height;}
+\DoxyCodeLine{00013\ \ \ \ \ std::shared\_ptr<node>\ right;}
+\DoxyCodeLine{00014\ \ \ \ \ std::shared\_ptr<node>\ left;}
+\DoxyCodeLine{00015\ \ \ \ \ std::shared\_ptr<node>\ parent;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ color;\ \textcolor{comment}{//\ 0\ for\ black\ 1\ for\ red}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ node(T\ key\ =\ 0,\ \textcolor{keywordtype}{int}\ \_\_color)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ :\ val(key),\ right(\textcolor{keyword}{nullptr}),\ left(\textcolor{keyword}{nullptr}),\ parent(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ color(\_\_color)\ \{\}}
+\DoxyCodeLine{00021\ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ std::shared\_ptr<node>\ root;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{classrb__tree}{rb\_tree}}(std::vector<T>\ v\ =\ \{\})\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ v)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ this-\/>insert(x);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classrb__tree}{\string~rb\_tree}}()\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ insert(T\ key);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ remove(T\ key);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{bool}\ search(T\ key);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ std::vector<T>\ inorder();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ std::vector<T>\ preorder();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ std::vector<T>\ postorder();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ int64\_t\ getBalance(std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ height(root-\/>left)\ -\/\ height(root-\/>right);}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ std::shared\_ptr<node>\ rightRotate(std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ std::shared\_ptr<node>\ t\ =\ root-\/>left;}
+\DoxyCodeLine{00055\ \ \ \ \ std::shared\_ptr<node>\ u\ =\ t-\/>right;}
+\DoxyCodeLine{00056\ \ \ \ \ t-\/>right\ =\ root;}
+\DoxyCodeLine{00057\ \ \ \ \ root-\/>left\ =\ u;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ std::shared\_ptr<node>\ leftRotate(std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ std::shared\_ptr<node>\ t\ =\ root-\/>right;}
+\DoxyCodeLine{00063\ \ \ \ \ std::shared\_ptr<node>\ u\ =\ t-\/>left;}
+\DoxyCodeLine{00064\ \ \ \ \ t-\/>left\ =\ root;}
+\DoxyCodeLine{00065\ \ \ \ \ root-\/>right\ =\ u;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ \_\_insert(std::shared\_ptr<node>\ root,\ T\ key)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key,\ 0);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ root\ =\ nn;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00074\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>parent\ \&\&\ root-\/>parent-\/>color\ ==\ 0)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key,\ 1);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
