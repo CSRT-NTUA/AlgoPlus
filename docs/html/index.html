@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AlgoPlus: Main Page</title>
+<title>AlgoPlus: Algoplus</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,10 +71,73 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">AlgoPlus Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Algoplus </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__2_users_2spirosmag_2_documents_2_algo_plus_2_r_e_a_d_m_e"></a> AlgoPlus is a C++ library that includes ready to use complex Data Structures.</p>
+<p><img src="https://github.com/CSRT-NTUA/AlgoPlus/blob/main/assets/logo.png" alt="Algoplus" class="inline"/></p>
+<p><a href="https://gitpod.io/#https://github.com/CSRT-NTUA/AlgoPlus"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code" class="inline"/></a> <a href="https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/codeql.yml"><img src="https://github.com/TheAlgorithms/C-Plus-Plus/actions/workflows/codeql.yml/badge.svg" alt="CodeQL CI" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/CSRT-NTUA/AlgoPlus/actions?query=workflow%3A%22Awesome+CI+Workflow%22"><img src="https://github.com/CSRT-NTUA/AlgoPlus/workflows/Awesome%20CI%20Workflow/badge.svg" alt="Awesome CI" style="pointer-events: none;" class="inline"/></a> <a href="https://codecov.io/gh/spirosmaggioros/AlgoPlus"><img src="https://codecov.io/gh/spirosmaggioros/AlgoPlus/graph/badge.svg?token=OQGIP2OTC7" alt="codecov" style="pointer-events: none;" class="inline"/></a> </p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Example:</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;std::string&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
+<div class="line">g.add_edge(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);</div>
+<div class="line">g.add_edge(<span class="stringliteral">&quot;world&quot;</span>, <span class="stringliteral">&quot;universe&quot;</span>);</div>
+<div class="line">g.add_edge(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;universe&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span>(g.connected()){</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;graph is connected&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="line"><a class="code hl_class" href="classweighted__graph.html">weighted_graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
+<div class="line">g.add_edge(1, 4, 2);</div>
+<div class="line">g.add_edge(4, 5, 6);</div>
+<div class="line">g.add_edge(5, 2, 9);</div>
+<div class="line">g.add_edge(2, 8, 10);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// returns the shortest path from 1 to 2.</span></div>
+<div class="line">std::cout &lt;&lt; g.shortest_path(1, 2) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="ttc" id="aclassgraph_html"><div class="ttname"><a href="classgraph.html">graph</a></div><div class="ttdoc">Class for Unweighted Graph.</div><div class="ttdef"><b>Definition</b> graph.h:24</div></div>
+<div class="ttc" id="aclassweighted__graph_html"><div class="ttname"><a href="classweighted__graph.html">weighted_graph</a></div><div class="ttdoc">class for weighted graph</div><div class="ttdef"><b>Definition</b> graph.h:522</div></div>
+</div><!-- fragment --><p> You can see more <a href="/examples">examples</a> or follow the <a href="/tutorial">Tutorials</a>.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Classes</h2>
+<p><b>Graphs</b></p><ul>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Directed_graph">Di-Graph</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">Graph</a></li>
+</ul>
+<p><b>Trees</b></p><ul>
+<li>[X] <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL Tree</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree">RB Tree</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Trie">Trie</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Interval_tree">Interval Tree</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Min-max_heap">Min/Max Heap</a></li>
+</ul>
+<p><b>Lists</b></p><ul>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Linked_list">Single Linked List</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Doubly_linked_list">Doubly Linked List</a></li>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Skip_list">Skip List</a></li>
+</ul>
+<p><b>Other</b></p><ul>
+<li>[X] <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">Disjoint set</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+How to contribute</h2>
+<ol type="1">
+<li>Povide <b>new implementations</b> on our already implemented data structures &amp; algorithms.</li>
+<li>Implement <b>new classes / algorithms</b>.</li>
+</ol>
+<ol type="1">
+<li>Contribute to <b>unit testing</b> by writting unit tests for our classes and algorithms.</li>
+<li>Create and contribute to <b>APIs for other languages</b>.</li>
+<li><b>Promote</b> the repository on your local workshop/seminar and <b>get a shout-out</b>.</li>
+</ol>
+<p>See more here. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 <!-- start footer part -->

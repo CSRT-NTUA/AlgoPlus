@@ -1,0 +1,126 @@
+\chapter{Mini Tutorial for the BST class}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst}{}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst}\index{Mini Tutorial for the BST class@{Mini Tutorial for the BST class}}
+\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md13}%
+\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md13}%
+\begin{DoxyVerb}bst<T> -- creates an avl tree.
+\end{DoxyVerb}
+ avl tree contains\+:
+\begin{DoxyItemize}
+\item insert
+\item remove
+\item search
+\item inorder
+\item preorder
+\item postorder
+\item visualize
+\end{DoxyItemize}\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md14}{}\doxysubsection{\texorpdfstring{{\bfseries{insert}}\+:}{{\bfseries{insert}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{\textcolor{comment}{//creates\ a\ tree\ with\ elements\ \{4,5,10,13\};}}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md15}{}\doxysubsection{\texorpdfstring{{\bfseries{remove}}\+:}{{\bfseries{remove}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{\textcolor{comment}{//removes\ the\ element\ 4\ from\ the\ tree.}}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md16}{}\doxysubsection{\texorpdfstring{{\bfseries{search}}\+:}{{\bfseries{search}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//returns\ true\ if\ an\ element\ is\ in\ the\ tree.}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(b.\mbox{\hyperlink{classbst_acd2ed132fc83a3a50a4085b4b7a90f47}{search}}(4))\{}
+\DoxyCodeLine{\ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{}element\ 4\ found\ in\ the\ tree"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md17}{}\doxysubsection{\texorpdfstring{{\bfseries{inorder}}\+:}{{\bfseries{inorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md17}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ inorder\ fashion.}}
+\DoxyCodeLine{std::vector<int>\ in\ =\ b.\mbox{\hyperlink{classbst_ab9d984aab9247a36c78b115484ccb623}{inorder}}();}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md18}{}\doxysubsection{\texorpdfstring{{\bfseries{preorder}}\+:}{{\bfseries{preorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md18}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ preorder\ fashion.}}
+\DoxyCodeLine{std::vector<int>\ pre\ =\ b.\mbox{\hyperlink{classbst_a4c3359b500e074fce8d1f3eae21dfdca}{preorder}}();}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md19}{}\doxysubsection{\texorpdfstring{{\bfseries{postorder}}\+:}{{\bfseries{postorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ postorder\ fashion.}}
+\DoxyCodeLine{std::vector<int>\ in\ =\ a.postorder();}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md20}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md20}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/bst.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//returns\ a\ .dot\ file\ that\ can\ easily\ be\ previewed\ using}}
+\DoxyCodeLine{\textcolor{comment}{//vscode\ plugin\ for\ graphviz\ or\ local\ command\ line\ tools.}}
+\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a0198118bc2eb3d58607ce6acadb770a6}{visualize}}();}
+
+\end{DoxyCode}
+ 

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['topological_5fsort_0',['topological_sort',['../classgraph.html#a5fa36c46613b6a5252f263dde594cf1f',1,'graph::topological_sort()'],['../classweighted__graph.html#a4b6919e5c07fa6b655169b6a30592771',1,'weighted_graph::topological_sort()']]],
-  ['trie_1',['trie',['../classtrie.html',1,'trie'],['../classtrie.html#a8d07730e7c6071a78b872f7f73613d14',1,'trie::trie()']]]
+  ['rb_5ftree_0',['rb_tree',['../classrb__tree.html',1,'']]],
+  ['remove_1',['remove',['../classskip__list.html#a5f586433aeedb6b248625e6cccee4eff',1,'skip_list::remove()'],['../classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b',1,'avl_tree::remove()'],['../classbst.html#a46aaefd422947e3f209db2e24119643a',1,'bst::remove()'],['../classinterval__tree.html#a7ddb8375fc087cdbebc397a03f5092c9',1,'interval_tree::remove()'],['../classtrie.html#a856e569e4c40b5d5ebdaef26d8ec2a27',1,'trie::remove()']]],
+  ['remove_20strong_20_3a_2',['Remove strong :',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html#autotoc_md7',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst.html#autotoc_md15',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html#autotoc_md36',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2skip__list.html#autotoc_md44',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html#autotoc_md49',1,'&lt;strong&gt;remove&lt;/strong&gt;:']]],
+  ['reverse_3',['reverse',['../classdoubly__linked__list.html#aa610759539cd3fc651f7ad950a19adaf',1,'doubly_linked_list::reverse()'],['../classlinked__list.html#a15bc074e7cee3245e603ce2e136c65e1',1,'linked_list::reverse()']]]
 ];
