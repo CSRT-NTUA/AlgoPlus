@@ -104,7 +104,7 @@ $(function() {
 <p>There are also some functions for both classes like <b>has_edge(u, v)</b> that checks if an edge exists from node u to node v, <b>size()</b> that returns the number of elements in the graph, <b>empty()</b> that checks if a graph is empty and <b>empty()</b> that empties the graph.You can see more about graph algorithms <a href="https://github.com/nikolasfil/AlgoDay/tree/main/AlgoDay-1/Spiros">here</a>. </p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 <b>DFS</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;directed&quot;</span>);</div>
 <div class="line">g.add_edge(1, 2);</div>
 <div class="line">g.add_edge(4, 5);</div>
@@ -116,7 +116,7 @@ $(function() {
 <div class="ttc" id="aclassgraph_html"><div class="ttname"><a href="classgraph.html">graph</a></div><div class="ttdoc">Class for Unweighted Graph.</div><div class="ttdef"><b>Definition</b> graph.h:24</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md23"></a>
 <b>BFS</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;directed&quot;</span>);</div>
 <div class="line">g.add_edge(1, 2);</div>
 <div class="line">g.add_edge(4, 5);</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line">std::vector&lt;T&gt; bfs = g.bfs();</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
 <b>connected_components</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;char&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(<span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;b&#39;</span>);</div>
 <div class="line">g.add_edge(<span class="charliteral">&#39;b&#39;</span>,<span class="charliteral">&#39;c&#39;</span>);</div>
@@ -136,7 +136,7 @@ $(function() {
 <div class="line">std::cout &lt;&lt; g.connected_components() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
 <b>cycle</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;std::string&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);</div>
@@ -148,7 +148,7 @@ $(function() {
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
 <b>topological_sort</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(1, 4);</div>
 <div class="line">g.add_edge(4, 5);</div>
@@ -159,7 +159,7 @@ $(function() {
 <div class="line">std::vector&lt;int&gt; topo = g.topological_sort();</div>
 </div><!-- fragment --> <h2><a class="anchor" id="autotoc_md27"></a>
 <b>bipartite</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(1, 4);</div>
 <div class="line">g.add_edge(4, 5);</div>
@@ -172,7 +172,7 @@ $(function() {
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md28"></a>
 <b>bridge</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(1, 4);</div>
 <div class="line">g.add_edge(4, 5);</div>
@@ -183,7 +183,7 @@ $(function() {
 <div class="line">std::vector&lt;std::vector&lt;int&gt;&gt; bridges = g.bridge(1);</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md29"></a>
 <b>visualize</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(1, 4);</div>
 <div class="line">g.add_edge(4, 5);</div>
@@ -196,7 +196,7 @@ $(function() {
 <div class="line">g.visualize();</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md30"></a>
 <b>shortest_path</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classweighted__graph.html">weighted_graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(1, 4, 2);</div>
 <div class="line">g.add_edge(4, 5, 6);</div>
@@ -208,7 +208,7 @@ $(function() {
 <div class="ttc" id="aclassweighted__graph_html"><div class="ttname"><a href="classweighted__graph.html">weighted_graph</a></div><div class="ttdoc">class for weighted graph</div><div class="ttdef"><b>Definition</b> graph.h:524</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md31"></a>
 <b>prim</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classweighted__graph.html">weighted_graph&lt;std::string&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(<span class="stringliteral">&quot;Athens&quot;</span>, <span class="stringliteral">&quot;Thessaloniki&quot;</span>, 15);</div>
 <div class="line">g.add_edge(<span class="stringliteral">&quot;Patras&quot;</span>, <span class="stringliteral">&quot;Lamia&quot;</span>, 50);</div>
@@ -221,7 +221,7 @@ $(function() {
 <div class="line">std::cout &lt;&lt; g.prim(<span class="stringliteral">&quot;Athens&quot;</span>) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md32"></a>
 <b>connected</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algoplus/graph.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;std::string&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);</div>
 <div class="line">g.add_edge(<span class="stringliteral">&quot;world&quot;</span>, <span class="stringliteral">&quot;universe&quot;</span>);</div>

@@ -36,7 +36,7 @@
 There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, v)}} that checks if an edge exists from node u to node v, {\bfseries{size()}} that returns the number of elements in the graph, {\bfseries{empty()}} that checks if a graph is empty and {\bfseries{empty()}} that empties the graph.\+You can see more about graph algorithms \href{https://github.com/nikolasfil/AlgoDay/tree/main/AlgoDay-1/Spiros}{\texttt{ here}}. \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md22}{}\doxysubsection{\texorpdfstring{{\bfseries{DFS}}\+:}{{\bfseries{DFS}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md22}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<int>}}\ g(\textcolor{stringliteral}{"{}directed"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 2);}
 \DoxyCodeLine{g.add\_edge(4,\ 5);}
@@ -50,7 +50,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md23}{}\doxysubsection{\texorpdfstring{{\bfseries{BFS}}\+:}{{\bfseries{BFS}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md23}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<int>}}\ g(\textcolor{stringliteral}{"{}directed"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 2);}
 \DoxyCodeLine{g.add\_edge(4,\ 5);}
@@ -64,7 +64,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md24}{}\doxysubsection{\texorpdfstring{{\bfseries{connected\+\_\+components}}\+:}{{\bfseries{connected\+\_\+components}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md24}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<char>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(\textcolor{charliteral}{'a'},\ \textcolor{charliteral}{'b'});}
 \DoxyCodeLine{g.add\_edge(\textcolor{charliteral}{'b'},\textcolor{charliteral}{'c'});}
@@ -76,7 +76,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md25}{}\doxysubsection{\texorpdfstring{{\bfseries{cycle}}\+:}{{\bfseries{cycle}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md25}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<std::string>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}world"{}});}
@@ -91,7 +91,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md26}{}\doxysubsection{\texorpdfstring{{\bfseries{topological\+\_\+sort}}\+:}{{\bfseries{topological\+\_\+sort}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md26}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4);}
 \DoxyCodeLine{g.add\_edge(4,\ 5);}
@@ -105,7 +105,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
  \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md27}{}\doxysubsection{\texorpdfstring{{\bfseries{bipartite}}\+:}{{\bfseries{bipartite}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md27}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4);}
 \DoxyCodeLine{g.add\_edge(4,\ 5);}
@@ -121,7 +121,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md28}{}\doxysubsection{\texorpdfstring{{\bfseries{bridge}}\+:}{{\bfseries{bridge}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md28}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4);}
 \DoxyCodeLine{g.add\_edge(4,\ 5);}
@@ -135,7 +135,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md29}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md29}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4);}
 \DoxyCodeLine{g.add\_edge(4,\ 5);}
@@ -151,7 +151,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md30}{}\doxysubsection{\texorpdfstring{{\bfseries{shortest\+\_\+path}}\+:}{{\bfseries{shortest\+\_\+path}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md30}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4,\ 2);}
 \DoxyCodeLine{g.add\_edge(4,\ 5,\ 6);}
@@ -165,7 +165,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md31}{}\doxysubsection{\texorpdfstring{{\bfseries{prim}}\+:}{{\bfseries{prim}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md31}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<std::string>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}Athens"{}},\ \textcolor{stringliteral}{"{}Thessaloniki"{}},\ 15);}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}Patras"{}},\ \textcolor{stringliteral}{"{}Lamia"{}},\ 50);}
@@ -181,7 +181,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md32}{}\doxysubsection{\texorpdfstring{{\bfseries{connected}}\+:}{{\bfseries{connected}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md32}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algoplus/graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<std::string>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}world"{}});}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}world"{}},\ \textcolor{stringliteral}{"{}universe"{}});}
