@@ -4,7 +4,7 @@
 
 ### **insert**:
 ```cpp
-#include <algoplus/list.h>
+#include <skip_list.h>
 
 skip_list<int> s(3, 0.5);
 s.insert(10); // inserts 10 to the list.    
@@ -14,7 +14,7 @@ s.insert(13); // inserts 13 to the list.
 
 ### **remove**:
 ```cpp
-#include <algoplus/list.h>
+#include <skip_list.h>
 
 skip_list<int> s(3, 0.5);
 s.insert(10); // inserts 10 to the list.
@@ -26,7 +26,7 @@ s.remove(13); // removes 13 from the list.
 
 ### **search**:
 ```cpp
-#include <algoplus/list.h>
+#include <skip_list.h>
 
 skip_list<int> s(3, 0.5);
 s.insert(10); // inserts 10 to the list.

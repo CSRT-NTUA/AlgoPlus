@@ -4,7 +4,7 @@
 
 ### **insert**:
 ```cpp
-#include <algoplus/trie.h>
+#include <trie.h>
 
 trie t;
 t.insert("hello");
@@ -14,7 +14,7 @@ t.insert("universe");
 ```
 ### **search**:
 ```cpp
-#include <algoplus/trie.h>
+#include <trie.h>
 
 trie t;
 t.insert("hello");
@@ -30,7 +30,7 @@ if(t.search("world")){
 
 ### **remove**:
 ```cpp
-#include <algoplus/trie.h>
+#include <trie.h>
 
 trie t;
 t.insert("hello");

@@ -29,7 +29,7 @@ weighted_graph class algorithms:
 There are also some functions for both classes like **has_edge(u, v)** that checks if an edge exists from node u to node v, **size()** that returns the number of elements in the graph, **empty()** that checks if a graph is empty and **empty()** that empties the graph.You can see more about graph algorithms [here](https://github.com/nikolasfil/AlgoDay/tree/main/AlgoDay-1/Spiros).
 ### **DFS**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<int> g("directed");
 g.add_edge(1, 2);
 g.add_edge(4, 5);
@@ -42,7 +42,7 @@ std::vector<T> dfs = g.dfs();
 
 ### **BFS**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<int> g("directed");
 g.add_edge(1, 2);
 g.add_edge(4, 5);
@@ -55,7 +55,7 @@ std::vector<T> bfs = g.bfs();
 
 ### **connected_components**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<char> g("undirected");
 g.add_edge('a', 'b');
 g.add_edge('b','c');
@@ -66,7 +66,7 @@ std::cout << g.connected_components() << '\n';
 
 ### **cycle**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 #include <string>
 graph<std::string> g("undirected");
 g.add_edge("hello", "world");
@@ -80,7 +80,7 @@ if(g.cycle()){
 
 ### **topological_sort**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<int> g("undirected");
 g.add_edge(1, 4);
 g.add_edge(4, 5);
@@ -92,7 +92,7 @@ std::vector<int> topo = g.topological_sort();
 ```
 ### **bipartite**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<int> g("undirected");
 g.add_edge(1, 4);
 g.add_edge(4, 5);
@@ -107,7 +107,7 @@ if(g.bipartite()){
 
 ### **bridge**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<int> g("undirected");
 g.add_edge(1, 4);
 g.add_edge(4, 5);
@@ -120,7 +120,7 @@ std::vector<std::vector<int>> bridges = g.bridge(1);
 
 ### **visualize**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<int> g("undirected");
 g.add_edge(1, 4);
 g.add_edge(4, 5);
@@ -135,7 +135,7 @@ g.visualize();
 
 ### **shortest_path**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 weighted_graph<int> g("undirected");
 g.add_edge(1, 4, 2);
 g.add_edge(4, 5, 6);
@@ -148,7 +148,7 @@ std::cout << g.shortest_path(1, 2) << '\n';
 
 ### **prim**:
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 weighted_graph<std::string> g("undirected");
 g.add_edge("Athens", "Thessaloniki", 15);
 g.add_edge("Patras", "Lamia", 50);
@@ -164,7 +164,7 @@ std::cout << g.prim("Athens") << '\n';
 ### **connected**:
 
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<std::string> g("undirected");
 g.add_edge("hello", "world");
 g.add_edge("world", "universe");

@@ -4,7 +4,7 @@
 
 ### **insert**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -16,7 +16,7 @@ i.insert({10, 15});
 
 ### **search**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -33,7 +33,7 @@ if(i.search({10,15})){
 
 ### **remove**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -49,7 +49,7 @@ assert(i.search({0,1}) == false)
 
 ### **overlap**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -64,7 +64,7 @@ if(i.overlap({0,5}, {1,6})){
 ```
 ### **inorder**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -79,7 +79,7 @@ std::vector<int> inorder = i.inorder();
 
 ### **preorder**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -94,7 +94,7 @@ std::vector<int> preorder = i.preorder();
 
 ### **postorder**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});
@@ -109,7 +109,7 @@ std::vector<int> postorder = i.postorder();
 
 ### **visualize**:
 ```cpp
-#include <algoplus/tree.h>
+#include <interval_tree.h>
 
 interval_tree<int> i;
 i.insert({20, 36});

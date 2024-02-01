@@ -11,7 +11,7 @@ AlgoPlus is a C++ library that includes ready to use complex Data Structures.
 ### Example:
 
 ```cpp
-#include <algoplus/graph.h>
+#include <graph.h>
 graph<std::string> g("undirected");
 g.add_edge("hello", "world");
 g.add_edge("world", "universe");
@@ -21,7 +21,7 @@ if(g.connected()){
     std::cout << "graph is connected" << '\n';
 }
 
-#include <algoplus/graph.h>
+#include <graph.h>
 weighted_graph<int> g("undirected");
 g.add_edge(1, 4, 2);
 g.add_edge(4, 5, 6);
