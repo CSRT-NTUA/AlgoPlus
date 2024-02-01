@@ -81,3 +81,15 @@ TEST_CASE("testing erase") {
   l.erase(6);
   REQUIRE(l.search(6) == false);
 }
+
+TEST_CASE("testing reverse"){
+  doubly_linked_list<int> l;
+  l.push_back(10);
+  l.push_back(11);
+  l.push_back(12);
+  l.push_back(13);
+  l.reverse();
+  std::vector<int> els = l.elements();
+  std::vector<int> v = {13,12,11,10};
+  REQUIRE(els == v);
+}

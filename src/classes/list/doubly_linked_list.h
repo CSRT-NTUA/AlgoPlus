@@ -133,6 +133,22 @@ public:
     return __elements;
   }
 
+  void reverse(){
+    std::shared_ptr<node> current = root;
+    std::shared_ptr<node> temp{nullptr};
+
+    while(current != nullptr){
+      temp = current -> prev;
+      current -> prev = current -> next;
+      current -> next = temp;
+      current = current -> prev;
+    }
+
+    if(temp){
+      root = temp -> prev;
+    }
+  }
+
   /*
    *<< operator for the doubly_linked_list class.
    */
