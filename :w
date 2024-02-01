@@ -160,6 +160,7 @@ template <typename T> bool linked_list<T>::search(T key){
     std::cerr << e.what() << '\n';
     return false;
   }
+
 }
 
 template <typename T> std::vector<T> linked_list<T>::elements(){
@@ -173,21 +174,8 @@ template <typename T> std::vector<T> linked_list<T>::elements(){
     __elements.push_back(head->val);
     head = head->next;
   }
+
   return __elements;
+
 }
-
-template <typename T> void linked_list<T>::reverse(){
-  std::shared_ptr<node> current = root;
-  std::shared_ptr<node> prev{nullptr}, next{nullptr};
-
-  while(current != nullptr){
-    next = current -> next;
-    current -> next = prev;
-    prev = current;
-    current = next;
-  }
-  root = prev;
-}
-
-
 #endif

@@ -48,3 +48,21 @@ TEST_CASE("testing iteration") {
   std::vector<char> elem = l1.elements();
   REQUIRE(elem == ans);
 }
+
+TEST_CASE("testing reverse"){
+  linked_list<int> l1;
+  l1.push_back(10);
+  l1.push_back(11);
+  l1.push_back(12);
+  l1.push_back(13);
+  l1.reverse();
+  std::vector<int> elem = l1.elements();
+  std::vector<int> v = {13,12,11,10};
+  REQUIRE(elem == v);
+
+  linked_list<std::string> l2({"hello", "world", "universe"});
+  l2.reverse();
+  std::vector<std::string> els = l2.elements();
+  std::vector<std::string> v2 = {"universe", "world", "hello"};
+  REQUIRE(els == v2);
+}
