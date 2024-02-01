@@ -23,18 +23,14 @@ bool \mbox{\hyperlink{classavl__tree_a599641fb0e256bfa25deb206a7bf1b29}{search}}
 \begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}} (T key)
 \begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
-\Hypertarget{classavl__tree_aef655e5753555d705e58d39bd094c55a}\label{classavl__tree_aef655e5753555d705e58d39bd094c55a} 
-std\+::vector$<$ T $>$ {\bfseries inorder} ()
-\begin{DoxyCompactList}\small\item\em inorder function. Returns vector$<$\+T$>$, the elements inorder. \end{DoxyCompactList}\item 
-\Hypertarget{classavl__tree_a8b6368356a04a58f29b1f56f835b7548}\label{classavl__tree_a8b6368356a04a58f29b1f56f835b7548} 
-std\+::vector$<$ T $>$ {\bfseries preorder} ()
-\begin{DoxyCompactList}\small\item\em preorder function. Returns vector$<$\+T$>$, the elements preorder. \end{DoxyCompactList}\item 
-\Hypertarget{classavl__tree_a82a19335d79d5f6928369635278c1c24}\label{classavl__tree_a82a19335d79d5f6928369635278c1c24} 
-std\+::vector$<$ T $>$ {\bfseries postorder} ()
-\begin{DoxyCompactList}\small\item\em postorder function. Returns vector$<$\+T$>$, the elements postorder. \end{DoxyCompactList}\item 
-\Hypertarget{classavl__tree_a517f38f7f770647b80322fc7cd1192af}\label{classavl__tree_a517f38f7f770647b80322fc7cd1192af} 
-void {\bfseries visualize} ()
-\begin{DoxyCompactList}\small\item\em visualize function Returns .dot file that can be previewed using graphviz in vscode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree_aef655e5753555d705e58d39bd094c55a}{inorder}} ()
+\begin{DoxyCompactList}\small\item\em inorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree_a8b6368356a04a58f29b1f56f835b7548}{preorder}} ()
+\begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree_a82a19335d79d5f6928369635278c1c24}{postorder}} ()
+\begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classavl__tree_a517f38f7f770647b80322fc7cd1192af}{visualize}} ()
+\begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -62,6 +58,20 @@ Contructor for AVL tree class.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classavl__tree_aef655e5753555d705e58d39bd094c55a}\label{classavl__tree_aef655e5753555d705e58d39bd094c55a} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!inorder@{inorder}}
+\index{inorder@{inorder}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::inorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+inorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements inorder. 
+\end{DoxyReturn}
 \Hypertarget{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}\label{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
@@ -78,6 +88,34 @@ insert function.
 {\em key} & key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classavl__tree_a82a19335d79d5f6928369635278c1c24}\label{classavl__tree_a82a19335d79d5f6928369635278c1c24} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!postorder@{postorder}}
+\index{postorder@{postorder}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{postorder()}{postorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::postorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+postorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements postorder. 
+\end{DoxyReturn}
+\Hypertarget{classavl__tree_a8b6368356a04a58f29b1f56f835b7548}\label{classavl__tree_a8b6368356a04a58f29b1f56f835b7548} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!preorder@{preorder}}
+\index{preorder@{preorder}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::preorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+preorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements preorder. 
+\end{DoxyReturn}
 \Hypertarget{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}\label{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!remove@{remove}}
 \index{remove@{remove}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
@@ -110,6 +148,23 @@ search function.
 {\em key} & key to be searched. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key exists in the tree. 
+\end{DoxyReturn}
+\Hypertarget{classavl__tree_a517f38f7f770647b80322fc7cd1192af}\label{classavl__tree_a517f38f7f770647b80322fc7cd1192af} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!visualize@{visualize}}
+\index{visualize@{visualize}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{visualize()}{visualize()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::visualize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+visualize function 
+
+\begin{DoxyReturn}{Returns}
+.dot file that can be previewed using graphviz in vscode. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

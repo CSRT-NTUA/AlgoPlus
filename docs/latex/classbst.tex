@@ -20,18 +20,14 @@ bool \mbox{\hyperlink{classbst_acd2ed132fc83a3a50a4085b4b7a90f47}{search}} (T ke
 \begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}} (T key)
 \begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
-\Hypertarget{classbst_ab9d984aab9247a36c78b115484ccb623}\label{classbst_ab9d984aab9247a36c78b115484ccb623} 
-std\+::vector$<$ T $>$ {\bfseries inorder} ()
-\begin{DoxyCompactList}\small\item\em inorder function. Returns vector$<$\+T$>$, the elements inorder. \end{DoxyCompactList}\item 
-\Hypertarget{classbst_a4c3359b500e074fce8d1f3eae21dfdca}\label{classbst_a4c3359b500e074fce8d1f3eae21dfdca} 
-std\+::vector$<$ T $>$ {\bfseries preorder} ()
-\begin{DoxyCompactList}\small\item\em preorder function. Returns vector$<$\+T$>$, the elements preorder. \end{DoxyCompactList}\item 
-\Hypertarget{classbst_a60575db4d925e7f08202549df73d0d9b}\label{classbst_a60575db4d925e7f08202549df73d0d9b} 
-std\+::vector$<$ T $>$ {\bfseries postorder} ()
-\begin{DoxyCompactList}\small\item\em postorder function. Returns vector$<$\+T$>$, the elements postorder. \end{DoxyCompactList}\item 
-\Hypertarget{classbst_a0198118bc2eb3d58607ce6acadb770a6}\label{classbst_a0198118bc2eb3d58607ce6acadb770a6} 
-void {\bfseries visualize} ()
-\begin{DoxyCompactList}\small\item\em visualize function Returns .dot file that can be previewed using graphviz in vscode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_ab9d984aab9247a36c78b115484ccb623}{inorder}} ()
+\begin{DoxyCompactList}\small\item\em inorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_a4c3359b500e074fce8d1f3eae21dfdca}{preorder}} ()
+\begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_a60575db4d925e7f08202549df73d0d9b}{postorder}} ()
+\begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbst_a0198118bc2eb3d58607ce6acadb770a6}{visualize}} ()
+\begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -59,6 +55,20 @@ Contructor for BST tree class.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classbst_ab9d984aab9247a36c78b115484ccb623}\label{classbst_ab9d984aab9247a36c78b115484ccb623} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!inorder@{inorder}}
+\index{inorder@{inorder}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::inorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+inorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements inorder. 
+\end{DoxyReturn}
 \Hypertarget{classbst_ad7def8a09da61a43c7033365ea226d06}\label{classbst_ad7def8a09da61a43c7033365ea226d06} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!bst$<$ T $>$@{bst$<$ T $>$}}
@@ -75,6 +85,34 @@ insert function.
 {\em key} & key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classbst_a60575db4d925e7f08202549df73d0d9b}\label{classbst_a60575db4d925e7f08202549df73d0d9b} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!postorder@{postorder}}
+\index{postorder@{postorder}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{postorder()}{postorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::postorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+postorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements postorder. 
+\end{DoxyReturn}
+\Hypertarget{classbst_a4c3359b500e074fce8d1f3eae21dfdca}\label{classbst_a4c3359b500e074fce8d1f3eae21dfdca} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!preorder@{preorder}}
+\index{preorder@{preorder}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::preorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+preorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements preorder. 
+\end{DoxyReturn}
 \Hypertarget{classbst_a46aaefd422947e3f209db2e24119643a}\label{classbst_a46aaefd422947e3f209db2e24119643a} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!remove@{remove}}
 \index{remove@{remove}!bst$<$ T $>$@{bst$<$ T $>$}}
@@ -107,6 +145,23 @@ search function.
 {\em key} & key to be searched. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key exists in the tree. 
+\end{DoxyReturn}
+\Hypertarget{classbst_a0198118bc2eb3d58607ce6acadb770a6}\label{classbst_a0198118bc2eb3d58607ce6acadb770a6} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!visualize@{visualize}}
+\index{visualize@{visualize}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{visualize()}{visualize()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::visualize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+visualize function 
+
+\begin{DoxyReturn}{Returns}
+.dot file that can be previewed using graphviz in vscode. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

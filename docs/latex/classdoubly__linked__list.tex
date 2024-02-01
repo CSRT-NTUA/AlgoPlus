@@ -14,9 +14,8 @@ doubly linked list class
 \item 
 \mbox{\hyperlink{classdoubly__linked__list_af67dbea314bda7c8d66a5fca2ac0c2f7}{doubly\+\_\+linked\+\_\+list}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em \doxylink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list} class constructor \end{DoxyCompactList}\item 
-\Hypertarget{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4a}\label{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4a} 
-bool {\bfseries empty} ()
-\begin{DoxyCompactList}\small\item\em empty function. Returns true if the list is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4a}{empty}} ()
+\begin{DoxyCompactList}\small\item\em empty function. \end{DoxyCompactList}\item 
 \Hypertarget{classdoubly__linked__list_a8b82160daf391c5fdca95c2b3e6af353}\label{classdoubly__linked__list_a8b82160daf391c5fdca95c2b3e6af353} 
 size\+\_\+t {\bfseries size} ()
 \begin{DoxyCompactList}\small\item\em size function. Returns the size of the list. \end{DoxyCompactList}\item 
@@ -28,9 +27,8 @@ void \mbox{\hyperlink{classdoubly__linked__list_a9132ebf985d2c3192cd93e91736c2bb
 \begin{DoxyCompactList}\small\item\em push\+\_\+front function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdoubly__linked__list_afdab563c67f317578ea7839150c0f5f7}{erase}} (T key)
 \begin{DoxyCompactList}\small\item\em erase function. \end{DoxyCompactList}\item 
-\Hypertarget{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd}\label{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd} 
-std\+::vector$<$ T $>$ {\bfseries elements} ()
-\begin{DoxyCompactList}\small\item\em elements function. Returns vector$<$\+T$>$\+: the elements of the list. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd}{elements}} ()
+\begin{DoxyCompactList}\small\item\em elements function. \end{DoxyCompactList}\item 
 \Hypertarget{classdoubly__linked__list_aa610759539cd3fc651f7ad950a19adaf}\label{classdoubly__linked__list_aa610759539cd3fc651f7ad950a19adaf} 
 void {\bfseries reverse} ()
 \begin{DoxyCompactList}\small\item\em reverse function. reverses the linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -67,6 +65,34 @@ doubly linked list class
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd}\label{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd} 
+\index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!elements@{elements}}
+\index{elements@{elements}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+elements function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$\+: the elements of the list. 
+\end{DoxyReturn}
+\Hypertarget{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4a}\label{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4a} 
+\index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+empty function. 
+
+\begin{DoxyReturn}{Returns}
+true if the list is empty. 
+\end{DoxyReturn}
 \Hypertarget{classdoubly__linked__list_afdab563c67f317578ea7839150c0f5f7}\label{classdoubly__linked__list_afdab563c67f317578ea7839150c0f5f7} 
 \index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
@@ -128,9 +154,12 @@ search function.
 
 
 \begin{DoxyParams}{Parameters}
-{\em key} & the key to be searched. Returns true if key exists in the list. \\
+{\em key} & the key to be searched. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if key exists in the list. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -90,9 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8d07730e7c6071a78b872f7f73613d14" id="r_a8d07730e7c6071a78b872f7f73613d14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d07730e7c6071a78b872f7f73613d14">trie</a> (std::vector&lt; std::string &gt; v={}) noexcept</td></tr>
 <tr class="memdesc:a8d07730e7c6071a78b872f7f73613d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new trie object.  <br /></td></tr>
 <tr class="separator:a8d07730e7c6071a78b872f7f73613d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad581a02dd94fc7d214f5488bb02fe4ee" id="r_ad581a02dd94fc7d214f5488bb02fe4ee"><td class="memItemLeft" align="right" valign="top"><a id="ad581a02dd94fc7d214f5488bb02fe4ee" name="ad581a02dd94fc7d214f5488bb02fe4ee"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> ()</td></tr>
-<tr class="memdesc:ad581a02dd94fc7d214f5488bb02fe4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">empty function. returns true if the trie is empty. <br /></td></tr>
+<tr class="memitem:ad581a02dd94fc7d214f5488bb02fe4ee" id="r_ad581a02dd94fc7d214f5488bb02fe4ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad581a02dd94fc7d214f5488bb02fe4ee">empty</a> ()</td></tr>
+<tr class="memdesc:ad581a02dd94fc7d214f5488bb02fe4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">empty function.  <br /></td></tr>
 <tr class="separator:ad581a02dd94fc7d214f5488bb02fe4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb61c311b6d076114a48194cbf7e4822" id="r_adb61c311b6d076114a48194cbf7e4822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb61c311b6d076114a48194cbf7e4822">insert</a> (std::string key)</td></tr>
 <tr class="memdesc:adb61c311b6d076114a48194cbf7e4822"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert function.  <br /></td></tr>
@@ -147,6 +146,34 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad581a02dd94fc7d214f5488bb02fe4ee" name="ad581a02dd94fc7d214f5488bb02fe4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad581a02dd94fc7d214f5488bb02fe4ee">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool trie::empty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>empty function. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the trie is empty. </dd></dl>
+
+</div>
+</div>
 <a id="adb61c311b6d076114a48194cbf7e4822" name="adb61c311b6d076114a48194cbf7e4822"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb61c311b6d076114a48194cbf7e4822">&#9670;&#160;</a></span>insert()</h2>
 
@@ -215,10 +242,11 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <p>search function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>the key to be searched. returns true if the word exist in the tree. </td></tr>
+    <tr><td class="paramname">key</td><td>the key to be searched. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the word exist in the tree. </dd></dl>
 
 </div>
 </div>

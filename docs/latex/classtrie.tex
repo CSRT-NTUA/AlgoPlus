@@ -14,9 +14,8 @@ trie class
 \item 
 \mbox{\hyperlink{classtrie_a8d07730e7c6071a78b872f7f73613d14}{trie}} (std\+::vector$<$ std\+::string $>$ v=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new trie object. \end{DoxyCompactList}\item 
-\Hypertarget{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee}\label{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee} 
-bool {\bfseries empty} ()
-\begin{DoxyCompactList}\small\item\em empty function. returns true if the trie is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee}{empty}} ()
+\begin{DoxyCompactList}\small\item\em empty function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtrie_adb61c311b6d076114a48194cbf7e4822}{insert}} (std\+::string key)
 \begin{DoxyCompactList}\small\item\em insert function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtrie_a856e569e4c40b5d5ebdaef26d8ec2a27}{remove}} (std\+::string key)
@@ -53,6 +52,19 @@ Construct a new trie object.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee}\label{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee} 
+\index{trie@{trie}!empty@{empty}}
+\index{empty@{empty}!trie@{trie}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool trie\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+empty function. 
+
+\begin{DoxyReturn}{Returns}
+true if the trie is empty. 
+\end{DoxyReturn}
 \Hypertarget{classtrie_adb61c311b6d076114a48194cbf7e4822}\label{classtrie_adb61c311b6d076114a48194cbf7e4822} 
 \index{trie@{trie}!insert@{insert}}
 \index{insert@{insert}!trie@{trie}}
@@ -95,9 +107,12 @@ search function.
 
 
 \begin{DoxyParams}{Parameters}
-{\em key} & the key to be searched. returns true if the word exist in the tree. \\
+{\em key} & the key to be searched. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the word exist in the tree. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

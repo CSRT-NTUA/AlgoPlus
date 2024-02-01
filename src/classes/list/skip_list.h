@@ -108,7 +108,7 @@ public:
   /**
    *@brief search function.
    *@param key: key to be searched.
-   *Returns true if the key exists in the list.
+   *@returns true if the key exists in the list.
    */
   bool search(T key) {
     std::shared_ptr<node> x = root;

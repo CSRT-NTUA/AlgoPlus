@@ -26,7 +26,7 @@ public:
 
   /**
    *@brief empty function.
-   *Returns true if the list is empty.
+   *@returns true if the list is empty.
    */
   bool empty() { return root == nullptr; }
 
@@ -39,7 +39,7 @@ public:
   /**
    *@brief search function.
    *@param key: the key to be searched.
-   *Returns true if key exists in the list.
+   *@returns true if key exists in the list.
    */
   bool search(T key) {
     if (this->empty()) {
@@ -118,7 +118,7 @@ public:
 
   /**
    *@brief elements function.
-   *Returns vector<T>: the elements of the list.
+   *@returns vector<T>: the elements of the list.
    */
   std::vector<T> elements() {
     std::vector<T> __elements;

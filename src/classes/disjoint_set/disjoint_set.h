@@ -5,47 +5,70 @@
 #include <vector>
 #endif
 
+/**
+ * @brief disjoint set class
+ *
+ */
 class dsu {
 private:
-  std::vector<uint64_t> p;
-  std::vector<uint64_t> depth;
-  std::vector<uint64_t> ssize;
-  std::vector<uint64_t> max_el;
-  std::vector<uint64_t> min_el;
+  std::vector<int64_t> p;
+  std::vector<int64_t> depth;
+  std::vector<int64_t> ssize;
+  std::vector<int64_t> max_el;
+  std::vector<int64_t> min_el;
 
 public:
-  explicit dsu(uint64_t n) {
+  /**
+   * @brief Construct a new dsu object
+   *
+   * @param n number of elements
+   */
+  explicit dsu(int64_t n) {
     p.assign(n, 0);
-    for (uint64_t i = 0; i < n; i++) {
+    for (int64_t i = 0; i < n; i++) {
       p[i] = i;
     }
     depth.assign(n, 0);
     max_el.assign(n, 0);
     min_el.assign(n, 0);
     ssize.assign(n, 0);
-    for (uint64_t i = 0; i < n; i++) {
+    for (int64_t i = 0; i < n; i++) {
       depth[i] = 0;
       max_el[i] = i;
       min_el[i] = i;
     }
-    for (uint64_t i = 0; i < n; i++) {
+    for (int64_t i = 0; i < n; i++) {
       ssize[i] = 1;
     }
   }
 
-  uint64_t find(uint64_t i) {
+  /**
+   * @brief find function
+   *
+   * @param i the element we want to search
+   * @return int64_t the set it exists in
+   */
+  int64_t find(int64_t i) {
     if (p[i] == i) {
       return i;
     }
     return (p[i] = find(p[i]));
   }
-  void join(uint64_t i, uint64_t j) {
+
+  /**
+   * @brief join function
+   *
+   * @param i first element
+   * @param j second element
+   * union of i and j
+   */
+  void join(int64_t i, int64_t j) {
     if (same(i, j)) {
       return;
     }
 
-    uint64_t x = find(i);
-    uint64_t y = find(j);
+    int64_t x = find(i);
+    int64_t y = find(j);
 
     if (depth[x] > depth[y]) {
       std::swap(x, y);
@@ -60,26 +83,52 @@ public:
     min_el[y] = std::min(min_el[x], min_el[y]);
   }
 
-  bool same(uint64_t i, uint64_t j) {
+  /**
+   * @brief
+   *
+   * @param i first element
+   * @param j second element
+   * @return true if i and j exists in the same set
+   * @return false if i and j does not exist in the same set
+   */
+  bool same(int64_t i, int64_t j) {
     if (find(i) == find(j)) {
       return true;
     }
     return false;
   }
 
-  std::vector<uint64_t> get(uint64_t i) {
-    std::vector<uint64_t> ans;
+  std::vector<int64_t> get(int64_t i) {
+    std::vector<int64_t> ans;
     ans.push_back(get_min(i));
     ans.push_back(get_max(i));
     ans.push_back(size(i));
     return ans;
   }
 
-  uint64_t size(uint64_t i) { return ssize[find(i)]; }
+  /**
+   * @brief size function
+   *
+   * @param i element we are looking for
+   * @return int64_t the size of the set that i exists in
+   */
+  int64_t size(int64_t i) { return ssize[find(i)]; }
 
-  uint64_t get_max(uint64_t i) { return max_el[find(i)]; }
+  /**
+   * @brief get the maximum element of the set that i exists in
+   *
+   * @param i the object that we want to search for
+   * @return int64_t the maximum element
+   */
+  int64_t get_max(int64_t i) { return max_el[find(i)]; }
 
-  uint64_t get_min(uint64_t i) { return min_el[find(i)]; }
+  /**
+   * @brief get the minimum element of the set that i exists in
+   *
+   * @param i the object that we want to search for
+   * @return int64_t the minimum element
+   */
+  int64_t get_min(int64_t i) { return min_el[find(i)]; }
 };
 
 #endif

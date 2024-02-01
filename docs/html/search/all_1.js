@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['add_5fedge_0',['add_edge',['../classgraph.html#a3b397af35ce0c1db49a6a814e68bffc3',1,'graph::add_edge()'],['../classweighted__graph.html#ad652cc371c4ae27df7bfd45380865726',1,'weighted_graph::add_edge()']]],
-  ['algoplus_1',['Algoplus',['../index.html',1,'']]],
-  ['avl_20tree_20class_2',['Mini Tutorial for the AVL tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html',1,'']]],
-  ['avl_5ftree_3',['avl_tree',['../classavl__tree.html',1,'avl_tree&lt; T &gt;'],['../classavl__tree.html#a048c3bc01286503d3d540a8910551317',1,'avl_tree::avl_tree()']]]
+  ['_5f_5fleft_0',['__left',['../classmin__heap.html#a85cdcef636a8e76e46a108d8a0395201',1,'min_heap']]],
+  ['_5f_5fmin_1',['__min',['../classmin__heap.html#acfd0f3259fb5f6792a0435cdcb0bea75',1,'min_heap']]],
+  ['_5f_5fright_2',['__right',['../classmin__heap.html#a41ea56c3393f6da46f663ec0a1847454',1,'min_heap']]]
 ];

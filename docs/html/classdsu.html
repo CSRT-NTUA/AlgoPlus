@@ -78,34 +78,288 @@ $(function() {
   <div class="headertitle"><div class="title">dsu Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>disjoint set class  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="disjoint__set_8h_source.html">disjoint_set.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a126e3002a464e53cd54b07ba56482a72" id="r_a126e3002a464e53cd54b07ba56482a72"><td class="memItemLeft" align="right" valign="top"><a id="a126e3002a464e53cd54b07ba56482a72" name="a126e3002a464e53cd54b07ba56482a72"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>dsu</b> (uint64_t n)</td></tr>
-<tr class="separator:a126e3002a464e53cd54b07ba56482a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a418ebd2c14f10426e85bc0ec12396e10" id="r_a418ebd2c14f10426e85bc0ec12396e10"><td class="memItemLeft" align="right" valign="top"><a id="a418ebd2c14f10426e85bc0ec12396e10" name="a418ebd2c14f10426e85bc0ec12396e10"></a>
-uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (uint64_t i)</td></tr>
-<tr class="separator:a418ebd2c14f10426e85bc0ec12396e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad51b87047cd85e7dd7311c47957cd041" id="r_ad51b87047cd85e7dd7311c47957cd041"><td class="memItemLeft" align="right" valign="top"><a id="ad51b87047cd85e7dd7311c47957cd041" name="ad51b87047cd85e7dd7311c47957cd041"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>join</b> (uint64_t i, uint64_t j)</td></tr>
-<tr class="separator:ad51b87047cd85e7dd7311c47957cd041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7264c154f3e1662d4bdc95cbed95bcd6" id="r_a7264c154f3e1662d4bdc95cbed95bcd6"><td class="memItemLeft" align="right" valign="top"><a id="a7264c154f3e1662d4bdc95cbed95bcd6" name="a7264c154f3e1662d4bdc95cbed95bcd6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>same</b> (uint64_t i, uint64_t j)</td></tr>
-<tr class="separator:a7264c154f3e1662d4bdc95cbed95bcd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0edfbe0b3c33be1429d666f1f76a070" id="r_ae0edfbe0b3c33be1429d666f1f76a070"><td class="memItemLeft" align="right" valign="top"><a id="ae0edfbe0b3c33be1429d666f1f76a070" name="ae0edfbe0b3c33be1429d666f1f76a070"></a>
-std::vector&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (uint64_t i)</td></tr>
-<tr class="separator:ae0edfbe0b3c33be1429d666f1f76a070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c24228b0f2f49220133fb8c3566a55c" id="r_a1c24228b0f2f49220133fb8c3566a55c"><td class="memItemLeft" align="right" valign="top"><a id="a1c24228b0f2f49220133fb8c3566a55c" name="a1c24228b0f2f49220133fb8c3566a55c"></a>
-uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> (uint64_t i)</td></tr>
-<tr class="separator:a1c24228b0f2f49220133fb8c3566a55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a696141b8b092466767f4bfe1c5e46cde" id="r_a696141b8b092466767f4bfe1c5e46cde"><td class="memItemLeft" align="right" valign="top"><a id="a696141b8b092466767f4bfe1c5e46cde" name="a696141b8b092466767f4bfe1c5e46cde"></a>
-uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_max</b> (uint64_t i)</td></tr>
-<tr class="separator:a696141b8b092466767f4bfe1c5e46cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac713a5b496d0405c82e2808a85e58415" id="r_ac713a5b496d0405c82e2808a85e58415"><td class="memItemLeft" align="right" valign="top"><a id="ac713a5b496d0405c82e2808a85e58415" name="ac713a5b496d0405c82e2808a85e58415"></a>
-uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_min</b> (uint64_t i)</td></tr>
-<tr class="separator:ac713a5b496d0405c82e2808a85e58415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dc73a1ea0238ed4814c42c22622e4e" id="r_af5dc73a1ea0238ed4814c42c22622e4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5dc73a1ea0238ed4814c42c22622e4e">dsu</a> (int64_t n)</td></tr>
+<tr class="memdesc:af5dc73a1ea0238ed4814c42c22622e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new dsu object.  <br /></td></tr>
+<tr class="separator:af5dc73a1ea0238ed4814c42c22622e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd4a28e59cfa897185bc28b39d85e50" id="r_acdd4a28e59cfa897185bc28b39d85e50"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdd4a28e59cfa897185bc28b39d85e50">find</a> (int64_t i)</td></tr>
+<tr class="memdesc:acdd4a28e59cfa897185bc28b39d85e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">find function  <br /></td></tr>
+<tr class="separator:acdd4a28e59cfa897185bc28b39d85e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02acccd340bf9e6818fb3a8e4415311d" id="r_a02acccd340bf9e6818fb3a8e4415311d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02acccd340bf9e6818fb3a8e4415311d">join</a> (int64_t i, int64_t j)</td></tr>
+<tr class="memdesc:a02acccd340bf9e6818fb3a8e4415311d"><td class="mdescLeft">&#160;</td><td class="mdescRight">join function  <br /></td></tr>
+<tr class="separator:a02acccd340bf9e6818fb3a8e4415311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19200aa5382ec3527a5029f1134fc254" id="r_a19200aa5382ec3527a5029f1134fc254"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19200aa5382ec3527a5029f1134fc254">same</a> (int64_t i, int64_t j)</td></tr>
+<tr class="separator:a19200aa5382ec3527a5029f1134fc254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cbf56f634e2d9729e17fef0994a16f" id="r_af3cbf56f634e2d9729e17fef0994a16f"><td class="memItemLeft" align="right" valign="top"><a id="af3cbf56f634e2d9729e17fef0994a16f" name="af3cbf56f634e2d9729e17fef0994a16f"></a>
+std::vector&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (int64_t i)</td></tr>
+<tr class="separator:af3cbf56f634e2d9729e17fef0994a16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104ab7f0c4d8ac6e3acd61d79647e04a" id="r_a104ab7f0c4d8ac6e3acd61d79647e04a"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a104ab7f0c4d8ac6e3acd61d79647e04a">size</a> (int64_t i)</td></tr>
+<tr class="memdesc:a104ab7f0c4d8ac6e3acd61d79647e04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">size function  <br /></td></tr>
+<tr class="separator:a104ab7f0c4d8ac6e3acd61d79647e04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac163ca40183c6c72422d95124344feb8" id="r_ac163ca40183c6c72422d95124344feb8"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac163ca40183c6c72422d95124344feb8">get_max</a> (int64_t i)</td></tr>
+<tr class="memdesc:ac163ca40183c6c72422d95124344feb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the maximum element of the set that i exists in  <br /></td></tr>
+<tr class="separator:ac163ca40183c6c72422d95124344feb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64902f4fb5cc8d65bdbaa284bec8db11" id="r_a64902f4fb5cc8d65bdbaa284bec8db11"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64902f4fb5cc8d65bdbaa284bec8db11">get_min</a> (int64_t i)</td></tr>
+<tr class="memdesc:a64902f4fb5cc8d65bdbaa284bec8db11"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the minimum element of the set that i exists in  <br /></td></tr>
+<tr class="separator:a64902f4fb5cc8d65bdbaa284bec8db11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>disjoint set class </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af5dc73a1ea0238ed4814c42c22622e4e" name="af5dc73a1ea0238ed4814c42c22622e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5dc73a1ea0238ed4814c42c22622e4e">&#9670;&#160;</a></span>dsu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dsu::dsu </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new dsu object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>number of elements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acdd4a28e59cfa897185bc28b39d85e50" name="acdd4a28e59cfa897185bc28b39d85e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd4a28e59cfa897185bc28b39d85e50">&#9670;&#160;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t dsu::find </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>find function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the element we want to search </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t the set it exists in </dd></dl>
+
+</div>
+</div>
+<a id="ac163ca40183c6c72422d95124344feb8" name="ac163ca40183c6c72422d95124344feb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac163ca40183c6c72422d95124344feb8">&#9670;&#160;</a></span>get_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t dsu::get_max </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the maximum element of the set that i exists in </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the object that we want to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t the maximum element </dd></dl>
+
+</div>
+</div>
+<a id="a64902f4fb5cc8d65bdbaa284bec8db11" name="a64902f4fb5cc8d65bdbaa284bec8db11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64902f4fb5cc8d65bdbaa284bec8db11">&#9670;&#160;</a></span>get_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t dsu::get_min </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the minimum element of the set that i exists in </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the object that we want to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t the minimum element </dd></dl>
+
+</div>
+</div>
+<a id="a02acccd340bf9e6818fb3a8e4415311d" name="a02acccd340bf9e6818fb3a8e4415311d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02acccd340bf9e6818fb3a8e4415311d">&#9670;&#160;</a></span>join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsu::join </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>i</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>j</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>join function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>first element </td></tr>
+    <tr><td class="paramname">j</td><td>second element union of i and j </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a19200aa5382ec3527a5029f1134fc254" name="a19200aa5382ec3527a5029f1134fc254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19200aa5382ec3527a5029f1134fc254">&#9670;&#160;</a></span>same()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dsu::same </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>i</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>j</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>first element </td></tr>
+    <tr><td class="paramname">j</td><td>second element </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if i and j exists in the same set </dd>
+<dd>
+false if i and j does not exist in the same set </dd></dl>
+
+</div>
+</div>
+<a id="a104ab7f0c4d8ac6e3acd61d79647e04a" name="a104ab7f0c4d8ac6e3acd61d79647e04a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104ab7f0c4d8ac6e3acd61d79647e04a">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t dsu::size </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>size function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>element we are looking for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t the size of the set that i exists in </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/spirosmag/Documents/AlgoPlus/src/classes/disjoint_set/<a class="el" href="disjoint__set_8h_source.html">disjoint_set.h</a></li>
 </ul>

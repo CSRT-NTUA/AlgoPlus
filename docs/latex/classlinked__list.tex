@@ -28,9 +28,8 @@ void \mbox{\hyperlink{classlinked__list_a51f423f30e8e01fdc8ee72d952b3ec3f}{erase
 \begin{DoxyCompactList}\small\item\em erase function. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classlinked__list_a17a10ae353d0dc8fc7ffe309f0e68c60}{search}} (T key)
 \begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
-\Hypertarget{classlinked__list_aea64a6c4db632c0569f66a753c3003af}\label{classlinked__list_aea64a6c4db632c0569f66a753c3003af} 
-std\+::vector$<$ T $>$ {\bfseries elements} ()
-\begin{DoxyCompactList}\small\item\em elements function. Returns vector$<$\+T$>$\+: the elements of the list. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classlinked__list_aea64a6c4db632c0569f66a753c3003af}{elements}} ()
+\begin{DoxyCompactList}\small\item\em elements function. \end{DoxyCompactList}\item 
 \Hypertarget{classlinked__list_a15bc074e7cee3245e603ce2e136c65e1}\label{classlinked__list_a15bc074e7cee3245e603ce2e136c65e1} 
 void {\bfseries reverse} ()
 \begin{DoxyCompactList}\small\item\em reverse function. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -67,6 +66,20 @@ single linked list class
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classlinked__list_aea64a6c4db632c0569f66a753c3003af}\label{classlinked__list_aea64a6c4db632c0569f66a753c3003af} 
+\index{linked\_list$<$ T $>$@{linked\_list$<$ T $>$}!elements@{elements}}
+\index{elements@{elements}!linked\_list$<$ T $>$@{linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classlinked__list}{linked\+\_\+list}}$<$ T $>$\+::elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+elements function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$\+: the elements of the list. 
+\end{DoxyReturn}
 \Hypertarget{classlinked__list_a51f423f30e8e01fdc8ee72d952b3ec3f}\label{classlinked__list_a51f423f30e8e01fdc8ee72d952b3ec3f} 
 \index{linked\_list$<$ T $>$@{linked\_list$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!linked\_list$<$ T $>$@{linked\_list$<$ T $>$}}
@@ -128,9 +141,12 @@ search function.
 
 
 \begin{DoxyParams}{Parameters}
-{\em key} & the key to be searched. Returns true if key exists in the list. \\
+{\em key} & the key to be searched. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if key exists in the list. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

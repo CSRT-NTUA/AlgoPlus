@@ -1,23 +1,7 @@
 var searchData=
 [
-  ['the_20avl_20tree_20class_0',['Mini Tutorial for the AVL tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html',1,'']]],
-  ['the_20bst_20class_1',['Mini Tutorial for the BST class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst.html',1,'']]],
-  ['the_20graph_20class_2',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]],
-  ['the_20interval_20tree_20class_3',['Mini Tutorial for the Interval Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html',1,'']]],
-  ['the_20skip_20list_20class_4',['Mini Tutorial for the Skip List class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2skip__list.html',1,'']]],
-  ['the_20trie_20class_5',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]],
-  ['to_20contribute_6',['How to contribute',['../index.html#autotoc_md4',1,'']]],
-  ['to_20contribute_20strong_7',['&lt;strong&gt;How to contribute?&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'']]],
-  ['topological_5fsort_8',['topological_sort',['../classgraph.html#a5fa36c46613b6a5252f263dde594cf1f',1,'graph::topological_sort()'],['../classweighted__graph.html#a4b6919e5c07fa6b655169b6a30592771',1,'weighted_graph::topological_sort()']]],
-  ['topological_5fsort_20strong_20_3a_9',['&lt;strong&gt;topological_sort&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md26',1,'']]],
-  ['tree_20class_10',['Mini Tutorial for the AVL tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html',1,'']]],
-  ['tree_20class_11',['Mini Tutorial for the Interval Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html',1,'']]],
-  ['trie_12',['trie',['../classtrie.html',1,'trie'],['../classtrie.html#a8d07730e7c6071a78b872f7f73613d14',1,'trie::trie()']]],
-  ['trie_20class_13',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]],
-  ['tutorial_20for_20the_20avl_20tree_20class_14',['Mini Tutorial for the AVL tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html',1,'']]],
-  ['tutorial_20for_20the_20bst_20class_15',['Mini Tutorial for the BST class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst.html',1,'']]],
-  ['tutorial_20for_20the_20graph_20class_16',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]],
-  ['tutorial_20for_20the_20interval_20tree_20class_17',['Mini Tutorial for the Interval Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html',1,'']]],
-  ['tutorial_20for_20the_20skip_20list_20class_18',['Mini Tutorial for the Skip List class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2skip__list.html',1,'']]],
-  ['tutorial_20for_20the_20trie_20class_19',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]]
+  ['rb_5ftree_0',['rb_tree',['../classrb__tree.html',1,'']]],
+  ['remove_1',['remove',['../classmin__heap.html#ad5364af3e61a8e296e524968f1925de2',1,'min_heap::remove()'],['../classskip__list.html#a5f586433aeedb6b248625e6cccee4eff',1,'skip_list::remove()'],['../classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b',1,'avl_tree::remove()'],['../classbst.html#a46aaefd422947e3f209db2e24119643a',1,'bst::remove()'],['../classinterval__tree.html#a7ddb8375fc087cdbebc397a03f5092c9',1,'interval_tree::remove()'],['../classtrie.html#a856e569e4c40b5d5ebdaef26d8ec2a27',1,'trie::remove()']]],
+  ['remove_20strong_20_3a_2',['Remove strong :',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html#autotoc_md7',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst.html#autotoc_md15',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html#autotoc_md36',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2skip__list.html#autotoc_md44',1,'&lt;strong&gt;remove&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html#autotoc_md49',1,'&lt;strong&gt;remove&lt;/strong&gt;:']]],
+  ['reverse_3',['reverse',['../classdoubly__linked__list.html#aa610759539cd3fc651f7ad950a19adaf',1,'doubly_linked_list::reverse()'],['../classlinked__list.html#a15bc074e7cee3245e603ce2e136c65e1',1,'linked_list::reverse()']]]
 ];

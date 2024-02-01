@@ -58,13 +58,13 @@ public:
   /**
    *@brief search function.
    *@param key: the key to be searched.
-   *Returns true if key exists in the list.
+   *@returns true if key exists in the list.
    */
   bool search(T key);
 
   /**
    *@brief elements function.
-   *Returns vector<T>: the elements of the list.
+   *@returns vector<T>: the elements of the list.
    */
   std::vector<T> elements();
 

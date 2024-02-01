@@ -6,6 +6,10 @@
 #include <vector>
 #endif
 
+/**
+ * @brief min heap class
+ *
+ */
 template <typename T> class min_heap {
 private:
   T *arr;
@@ -13,6 +17,11 @@ private:
   size_t heap_size;
 
 public:
+  /**
+   * @brief Construct a new min heap object
+   *
+   * @param max_size : maximum size of the heap
+   */
   explicit min_heap(size_t max_size) noexcept {
     heap_size = 0;
     this->max_size = max_size;
@@ -20,12 +29,32 @@ public:
   }
 
   ~min_heap() noexcept { delete[] arr; }
+
+  /**
+   * @brief parent function
+   *
+   * @param i the element we want to find the parent
+   */
   T parent(T i) { return (i - 1) / 2; }
 
+  /**
+   * @brief __left function
+   *
+   * @param i: the element we want to find the left
+   */
   T __left(T i) { return (2 * i + 1); }
 
+  /**
+   * @brief __right function
+   *
+   * @param i: the element we want to find the right
+   */
   T __right(T i) { return (2 * i + 2); }
 
+  /**
+   * @brief __min function
+   * Returns the minimum with heapify
+   */
   T __min() {
     if (heap_size <= 0) {
       return INT_MAX;
@@ -41,6 +70,10 @@ public:
     return root;
   }
 
+  /**
+   * @brief min function.
+   * Returns the minimum of the heap(the first element)
+   */
   T min() { return arr[0]; }
 
   void decrease_key(T i, T key) {
@@ -51,6 +84,11 @@ public:
     }
   }
 
+  /**
+   * @brief insert function
+   *
+   * @param key the key to be inserted
+   */
   void insert(T key) {
     try {
       if (heap_size == max_size) {
@@ -70,11 +108,21 @@ public:
     }
   }
 
+  /**
+   * @brief remove function
+   *
+   * @param key the key to be removed
+   */
   void remove(T key) {
     decrease_key(key, INT_MIN);
     __min();
   }
 
+  /**
+   * @brief heapify function
+   *
+   * @param i the element we want to heapify from
+   */
   void heapify(T i) {
     T left = __left(i);
     T right = __right(i);

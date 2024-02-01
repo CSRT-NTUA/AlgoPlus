@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['has_5fedge_0',['has_edge',['../classgraph.html#a4d434612e87f3e4a5f10c653167da8df',1,'graph::has_edge()'],['../classweighted__graph.html#a47d3931f45d5cc56894589b048e695dc',1,'weighted_graph::has_edge()']]],
-  ['how_20to_20contribute_1',['How to contribute',['../index.html#autotoc_md4',1,'']]],
-  ['how_20to_20contribute_20strong_2',['&lt;strong&gt;How to contribute?&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'']]]
+  ['get_5fmax_0',['get_max',['../classdsu.html#ac163ca40183c6c72422d95124344feb8',1,'dsu']]],
+  ['get_5fmin_1',['get_min',['../classdsu.html#a64902f4fb5cc8d65bdbaa284bec8db11',1,'dsu']]],
+  ['graph_2',['graph',['../classgraph.html',1,'graph&lt; T &gt;'],['../classgraph.html#ad88980a06f2a3c4b4bb38e3a474573ff',1,'graph::graph()']]],
+  ['graph_20class_3',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]]
 ];

@@ -38,6 +38,7 @@ public:
   /**
    *@brief search function.
    *@param key: key to be searched.
+   *@returns true if the key exists in the tree.
    */
   bool search(T key) { return __search(root, key); }
 
@@ -49,7 +50,7 @@ public:
 
   /**
    *@brief inorder function.
-   *Returns vector<T>, the elements inorder.
+   *@returns vector<T>, the elements inorder.
    */
   std::vector<T> inorder() {
     std::vector<T> path;
@@ -63,7 +64,7 @@ public:
 
   /**
    *@brief preorder function.
-   *Returns vector<T>, the elements preorder.
+   *@returns vector<T>, the elements preorder.
    */
   std::vector<T> preorder() {
     std::vector<T> path;
@@ -77,7 +78,7 @@ public:
 
   /**
    *@brief postorder function.
-   *Returns vector<T>, the elements postorder.
+   *@returns vector<T>, the elements postorder.
    */
   std::vector<T> postorder() {
     std::vector<T> path;
@@ -91,7 +92,7 @@ public:
 
   /**
    *@brief visualize function
-   *Returns .dot file that can be previewed using graphviz in vscode.
+   *@returns .dot file that can be previewed using graphviz in vscode.
    */
   void visualize() {
     std::string __generated = generate_visualization();

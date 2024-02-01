@@ -36,7 +36,7 @@ public:
 
   /**
    *@brief search function.
-   *Returns true if an interval exist in the tree.
+   *@returns true if an interval exist in the tree.
    */
   bool search(std::pair<T, T> p) {
     if (!root) {
@@ -62,7 +62,7 @@ public:
    *@brief overlap function.
    *@param p1: first interval.
    *@param p2: second interval.
-   *Returns true if p1 overlaps p2.
+   *@returns true if p1 overlaps p2.
    */
   bool overlap(std::pair<T, T> p1, std::pair<T, T> p2) {
     interval i1 = interval(p1), i2 = interval(p2);
@@ -71,7 +71,7 @@ public:
 
   /**
    *@brief inorder function.
-   *Returns vector<pair<T,T>>, the elements inorder.
+   *@returns vector<pair<T,T>>, the elements inorder.
    */
   std::vector<std::pair<T, T>> inorder() {
     std::vector<std::pair<T, T>> path;
@@ -85,7 +85,7 @@ public:
 
   /**
    *@brief preorder function.
-   *Returns vector<pair<T,T>>, the elements preorder.
+   *@returns vector<pair<T,T>>, the elements preorder.
    */
   std::vector<std::pair<T, T>> preorder() {
     std::vector<std::pair<T, T>> path;
@@ -99,7 +99,7 @@ public:
 
   /**
    *@brief postorder function.
-   *Returns vector<pair<T, T>>, the elements postorder.
+   *@returns vector<pair<T, T>>, the elements postorder.
    */
   std::vector<std::pair<T, T>> postorder() {
     std::vector<std::pair<T, T>> path;

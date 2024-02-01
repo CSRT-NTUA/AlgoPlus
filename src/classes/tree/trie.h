@@ -34,7 +34,7 @@ public:
 
   /**
    *@brief empty function.
-   *returns true if the trie is empty.
+   *@returns true if the trie is empty.
    */
   bool empty() { return root == nullptr; }
   /**
@@ -51,7 +51,7 @@ public:
   /**
    *@brief search function.
    *@param key: the key to be searched.
-   *returns true if the word exist in the tree.
+   *@returns true if the word exist in the tree.
    */
   bool search(std::string key);
 
