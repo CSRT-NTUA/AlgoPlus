@@ -38,7 +38,7 @@ public:
             tail->next = p;
             tail = p;
         }
-        tail->next = root; // Make the list circular
+        tail->next = root; 
         __size++;
     }
 
@@ -54,7 +54,7 @@ public:
         {
             p->next = root;
             root = p;
-            tail->next = root; // Update tail to maintain circularity
+            tail->next = root;
         }
         __size++;
     }
@@ -80,7 +80,7 @@ public:
 
                 if (t->next == root)
                 {
-                    tail = t; // Update tail if the last element is removed
+                    tail = t; 
                 }
 
                 if (root == tail)
@@ -93,8 +93,6 @@ public:
 
             t = t->next;
         } while (t != root);
-
-        // If the key is not found
     }
 
     bool search(T key)
