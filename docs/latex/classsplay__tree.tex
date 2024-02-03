@@ -1,0 +1,119 @@
+\doxysection{splay\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classsplay__tree}{}\label{classsplay__tree}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}{splay\+\_\+tree}} (std\+::vector$<$ T $>$ v=\{\}) noexcept
+\begin{DoxyCompactList}\small\item\em Construct a new splay tree object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsplay__tree_a28eea5f755129c69077896c03bb0406e}{insert}} (T key)
+\begin{DoxyCompactList}\small\item\em insert function \end{DoxyCompactList}\item 
+\Hypertarget{classsplay__tree_ab022b141626c54e2e09ab870e7000f89}\label{classsplay__tree_ab022b141626c54e2e09ab870e7000f89} 
+void {\bfseries remove} (T key)
+\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}} ()
+\begin{DoxyCompactList}\small\item\em inorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43}{preorder}} ()
+\begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a0a344c13f06a9f9666d8225264897553}{postorder}} ()
+\begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}{visualize}} ()
+\begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}\label{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
+\index{splay\_tree@{splay\_tree}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{splay\_tree()}{splay\_tree()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Construct a new splay tree object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector$<$\+T$>$ initializer vector \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}\label{classsplay__tree_a3418b2394bd2f5295edeb0444292938a} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!inorder@{inorder}}
+\index{inorder@{inorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::inorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+inorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements inorder. 
+\end{DoxyReturn}
+\Hypertarget{classsplay__tree_a28eea5f755129c69077896c03bb0406e}\label{classsplay__tree_a28eea5f755129c69077896c03bb0406e} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insert function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to be inserted \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsplay__tree_a0a344c13f06a9f9666d8225264897553}\label{classsplay__tree_a0a344c13f06a9f9666d8225264897553} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!postorder@{postorder}}
+\index{postorder@{postorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{postorder()}{postorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::postorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+postorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements postorder. 
+\end{DoxyReturn}
+\Hypertarget{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43}\label{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!preorder@{preorder}}
+\index{preorder@{preorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::preorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+preorder function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the elements preorder. 
+\end{DoxyReturn}
+\Hypertarget{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}\label{classsplay__tree_adf366c059ecbece708bd23db98ce94c0} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!visualize@{visualize}}
+\index{visualize@{visualize}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{visualize()}{visualize()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::visualize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+visualize function 
+
+\begin{DoxyReturn}{Returns}
+.dot file that can be previewed using graphviz in vscode. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/src/classes/tree/splay\+\_\+tree.\+h\end{DoxyCompactItemize}

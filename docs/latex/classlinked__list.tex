@@ -9,6 +9,11 @@ single linked list class
 
 {\ttfamily \#include $<$linked\+\_\+list.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlinked__list_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlinked__list_1_1_iterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +25,10 @@ bool {\bfseries empty} ()
 \Hypertarget{classlinked__list_aa54b9549d40d9c23c8e22983198e0f73}\label{classlinked__list_aa54b9549d40d9c23c8e22983198e0f73} 
 size\+\_\+t {\bfseries size} ()
 \begin{DoxyCompactList}\small\item\em size function. Returns the size of the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlinked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classlinked__list_a352ebf16cbb0839ea099a5be0df89123}{begin}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to begin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlinked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classlinked__list_a77f0b9fe3aeef4ca425847cec358a796}{end}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to end \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlinked__list_a6ca7bbbcf82ba896aa89dde77ee48fde}{push\+\_\+back}} (T key)
 \begin{DoxyCompactList}\small\item\em push\+\_\+back function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlinked__list_a102388da0f9ed50e736eed9ada84a920}{push\+\_\+front}} (T key)
@@ -66,6 +75,20 @@ single linked list class
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classlinked__list_a352ebf16cbb0839ea099a5be0df89123}\label{classlinked__list_a352ebf16cbb0839ea099a5be0df89123} 
+\index{linked\_list$<$ T $>$@{linked\_list$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!linked\_list$<$ T $>$@{linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classlinked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classlinked__list}{linked\+\_\+list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to begin 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classlinked__list_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classlinked__list_aea64a6c4db632c0569f66a753c3003af}\label{classlinked__list_aea64a6c4db632c0569f66a753c3003af} 
 \index{linked\_list$<$ T $>$@{linked\_list$<$ T $>$}!elements@{elements}}
 \index{elements@{elements}!linked\_list$<$ T $>$@{linked\_list$<$ T $>$}}
@@ -79,6 +102,20 @@ elements function.
 
 \begin{DoxyReturn}{Returns}
 vector$<$\+T$>$\+: the elements of the list. 
+\end{DoxyReturn}
+\Hypertarget{classlinked__list_a77f0b9fe3aeef4ca425847cec358a796}\label{classlinked__list_a77f0b9fe3aeef4ca425847cec358a796} 
+\index{linked\_list$<$ T $>$@{linked\_list$<$ T $>$}!end@{end}}
+\index{end@{end}!linked\_list$<$ T $>$@{linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classlinked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classlinked__list}{linked\+\_\+list}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to end 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classlinked__list_1_1_iterator}{Iterator} 
 \end{DoxyReturn}
 \Hypertarget{classlinked__list_a51f423f30e8e01fdc8ee72d952b3ec3f}\label{classlinked__list_a51f423f30e8e01fdc8ee72d952b3ec3f} 
 \index{linked\_list$<$ T $>$@{linked\_list$<$ T $>$}!erase@{erase}}

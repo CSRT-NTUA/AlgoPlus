@@ -9,6 +9,11 @@ interval tree class
 
 {\ttfamily \#include $<$interval\+\_\+tree.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classinterval__tree_1_1_iterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,6 +27,12 @@ void \mbox{\hyperlink{classinterval__tree_a7ddb8375fc087cdbebc397a03f5092c9}{rem
 \begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f}{overlap}} (std\+::pair$<$ T, T $>$ p1, std\+::pair$<$ T, T $>$ p2)
 \begin{DoxyCompactList}\small\item\em overlap function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classinterval__tree_aabb5a5b119dfe11b997d3eb19989363e}{begin}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to begin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classinterval__tree_a04dd9337397e8afe44810c1169ac64b7}{end}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to end \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classinterval__tree_ab91c1aba599b826ab6dbfae678fadb10}{size}} ()
+\begin{DoxyCompactList}\small\item\em size function \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ \mbox{\hyperlink{classinterval__tree_a6472215cc03add0b3704c3d5e3249259}{inorder}} ()
 \begin{DoxyCompactList}\small\item\em inorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ \mbox{\hyperlink{classinterval__tree_ab8c4a843dab72278f269ffe034f30f06}{preorder}} ()
@@ -64,6 +75,34 @@ Construct a new interval tree object.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classinterval__tree_aabb5a5b119dfe11b997d3eb19989363e}\label{classinterval__tree_aabb5a5b119dfe11b997d3eb19989363e} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to begin 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classinterval__tree_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{classinterval__tree_a04dd9337397e8afe44810c1169ac64b7}\label{classinterval__tree_a04dd9337397e8afe44810c1169ac64b7} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!end@{end}}
+\index{end@{end}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to end 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classinterval__tree_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classinterval__tree_a6472215cc03add0b3704c3d5e3249259}\label{classinterval__tree_a6472215cc03add0b3704c3d5e3249259} 
 \index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!inorder@{inorder}}
 \index{inorder@{inorder}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
@@ -172,6 +211,20 @@ search function.
 
 \begin{DoxyReturn}{Returns}
 true if an interval exist in the tree. 
+\end{DoxyReturn}
+\Hypertarget{classinterval__tree_ab91c1aba599b826ab6dbfae678fadb10}\label{classinterval__tree_ab91c1aba599b826ab6dbfae678fadb10} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!size@{size}}
+\index{size@{size}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+size function 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t the size of the tree 
 \end{DoxyReturn}
 
 

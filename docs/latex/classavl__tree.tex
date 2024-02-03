@@ -9,6 +9,11 @@ Class for AVL tree.
 
 {\ttfamily \#include $<$avl\+\_\+tree.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classavl__tree_1_1_iterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,6 +26,12 @@ void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em clear function Erase all the nodes from the tree. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classavl__tree_a599641fb0e256bfa25deb206a7bf1b29}{search}} (T key)
 \begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classavl__tree_a2e4eb06ce68b6b9cf7e906cb786fc818}{begin}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to begin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classavl__tree_a015ac0902d879a52fd7a8940ab36ab7a}{end}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to end \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classavl__tree_aab0ba446f1ee02bd5c6be467e1645ab2}{size}} ()
+\begin{DoxyCompactList}\small\item\em size function \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}} (T key)
 \begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree_aef655e5753555d705e58d39bd094c55a}{inorder}} ()
@@ -58,6 +69,34 @@ Contructor for AVL tree class.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classavl__tree_a2e4eb06ce68b6b9cf7e906cb786fc818}\label{classavl__tree_a2e4eb06ce68b6b9cf7e906cb786fc818} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to begin 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classavl__tree_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{classavl__tree_a015ac0902d879a52fd7a8940ab36ab7a}\label{classavl__tree_a015ac0902d879a52fd7a8940ab36ab7a} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!end@{end}}
+\index{end@{end}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}} \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to end 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classavl__tree_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classavl__tree_aef655e5753555d705e58d39bd094c55a}\label{classavl__tree_aef655e5753555d705e58d39bd094c55a} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!inorder@{inorder}}
 \index{inorder@{inorder}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
@@ -150,6 +189,20 @@ search function.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if the key exists in the tree. 
+\end{DoxyReturn}
+\Hypertarget{classavl__tree_aab0ba446f1ee02bd5c6be467e1645ab2}\label{classavl__tree_aab0ba446f1ee02bd5c6be467e1645ab2} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!size@{size}}
+\index{size@{size}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+size function 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t the size of the tree 
 \end{DoxyReturn}
 \Hypertarget{classavl__tree_a517f38f7f770647b80322fc7cd1192af}\label{classavl__tree_a517f38f7f770647b80322fc7cd1192af} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!visualize@{visualize}}

@@ -1,0 +1,37 @@
+\doxysection{exponential\+\_\+search.\+h}
+\hypertarget{exponential__search_8h_source}{}\label{exponential__search_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/searching/exponential\_search.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/searching/exponential\_search.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EXPONENTIAL\_SEARCH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EXPONENTIAL\_SEARCH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}binary\_search.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ exponential\_search(std::vector<T>\ arr,\ T\ key)\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordflow}{if}\ (arr[0]\ ==\ key)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00012\ \ \ \}}
+\DoxyCodeLine{00013\ \ \ int64\_t\ i\ =\ 1,\ n\ =\ arr.size();}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n\ \&\&\ arr[i]\ <\ key)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ i\ *=\ 2;}
+\DoxyCodeLine{00016\ \ \ \}}
+\DoxyCodeLine{00017\ \ \ int64\_t\ lo\ =\ i\ /\ 2,\ hi\ =\ std::min(i,\ n\ -\/\ 1);}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordflow}{while}\ (lo\ <=\ hi)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ int64\_t\ mid\ =\ (lo\ +\ hi)\ /\ 2;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[mid]\ ==\ key)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mid;}
+\DoxyCodeLine{00022\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (arr[mid]\ <\ key)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ lo\ =\ mid\ +\ 1;}
+\DoxyCodeLine{00024\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ hi\ =\ mid\ -\/\ 1;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

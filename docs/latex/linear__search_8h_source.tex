@@ -1,0 +1,23 @@
+\doxysection{linear\+\_\+search.\+h}
+\hypertarget{linear__search_8h_source}{}\label{linear__search_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/searching/linear\_search.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/searching/linear\_search.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LINEAR\_SEARCH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LINEAR\_SEARCH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ linear\_search(std::vector<T>\ arr,\ T\ key)\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ arr)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ key)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

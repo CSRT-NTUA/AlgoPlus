@@ -9,6 +9,11 @@ doubly linked list class
 
 {\ttfamily \#include $<$doubly\+\_\+linked\+\_\+list.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classdoubly__linked__list_1_1_iterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,6 +24,10 @@ bool \mbox{\hyperlink{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4
 \Hypertarget{classdoubly__linked__list_a8b82160daf391c5fdca95c2b3e6af353}\label{classdoubly__linked__list_a8b82160daf391c5fdca95c2b3e6af353} 
 size\+\_\+t {\bfseries size} ()
 \begin{DoxyCompactList}\small\item\em size function. Returns the size of the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classdoubly__linked__list_ab855e34667c93dd84e552618669e7b9e}{begin}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to begin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classdoubly__linked__list_a0ce9b9113a172c246e556672921f8a0f}{end}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to end \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classdoubly__linked__list_aca40a97ffdf597eaaf90c6a37feddbaf}{search}} (T key)
 \begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdoubly__linked__list_a0d7d611c1c937954e4fdbe866d542c23}{push\+\_\+back}} (T key)
@@ -65,12 +74,26 @@ doubly linked list class
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classdoubly__linked__list_ab855e34667c93dd84e552618669e7b9e}\label{classdoubly__linked__list_ab855e34667c93dd84e552618669e7b9e} 
+\index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to begin 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classdoubly__linked__list_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd}\label{classdoubly__linked__list_af7ef1ea3c8d19ca5f42118600e5d92cd} 
 \index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!elements@{elements}}
 \index{elements@{elements}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{elements()}{elements()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::vector$<$ T $>$ \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -93,12 +116,26 @@ empty function.
 \begin{DoxyReturn}{Returns}
 true if the list is empty. 
 \end{DoxyReturn}
+\Hypertarget{classdoubly__linked__list_a0ce9b9113a172c246e556672921f8a0f}\label{classdoubly__linked__list_a0ce9b9113a172c246e556672921f8a0f} 
+\index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!end@{end}}
+\index{end@{end}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to end 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classdoubly__linked__list_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classdoubly__linked__list_afdab563c67f317578ea7839150c0f5f7}\label{classdoubly__linked__list_afdab563c67f317578ea7839150c0f5f7} 
 \index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{erase()}{erase()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
 
 
 
@@ -114,7 +151,7 @@ erase function.
 \index{push\_back@{push\_back}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
 
 
 
@@ -130,7 +167,7 @@ push\+\_\+back function.
 \index{push\_front@{push\_front}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
 
 
 
@@ -146,7 +183,7 @@ push\+\_\+front function.
 \index{search@{search}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{search()}{search()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-bool \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
 
 
 

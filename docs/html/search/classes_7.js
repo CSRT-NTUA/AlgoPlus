@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rb_5ftree_0',['rb_tree',['../classrb__tree.html',1,'']]]
+  ['min_5fheap_0',['min_heap',['../classmin__heap.html',1,'']]]
 ];

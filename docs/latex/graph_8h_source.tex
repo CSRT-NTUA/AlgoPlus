@@ -42,910 +42,911 @@
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00050\ \ \ \ \ \}}
 \DoxyCodeLine{00051\ \ \ \}}
-\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classgraph}{\string~graph}}()\ \{\}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_a3b397af35ce0c1db49a6a814e68bffc3}{add\_edge}}(T\ u,\ T\ v)\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}undirected"{}})\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ adj[u].push\_back(v);}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ adj[v].push\_back(u);}
-\DoxyCodeLine{00063\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ adj[u].push\_back(v);}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \_\_elements.insert(u);}
-\DoxyCodeLine{00067\ \ \ \ \ \_\_elements.insert(v);}
-\DoxyCodeLine{00068\ \ \ \}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a4d434612e87f3e4a5f10c653167da8df}{has\_edge}}(T\ start,\ T\ end)\ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00080\ \ \ \ \ \}}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[start])\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ end)\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00087\ \ \ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_ab00bf74c17ce8df8b93321229f562c73}{clear}}()\ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \_\_elements.clear();}
-\DoxyCodeLine{00095\ \ \ \ \ adj.clear();}
-\DoxyCodeLine{00096\ \ \ \}}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00102\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_ae1202555cd550bdc9654ed9b43584066}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_elements.empty();\ \}}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classgraph_ad3abf678df30b6091870278e1ffadfe7}{size}}();}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00115\ \ \ std::vector<T>\ \mbox{\hyperlink{classgraph_a552cbdacd1d280bdaa5400e9edeb10a9}{dfs}}(T\ start);}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00122\ \ \ std::vector<T>\ \mbox{\hyperlink{classgraph_a3cc331d692642bfdee0f8bcf87071176}{bfs}}(T\ start);}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00128\ \ \ int64\_t\ \mbox{\hyperlink{classgraph_ad69569f1cfb90b440a5e66635eaa2622}{connected\_components}}();}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a77cab44c928701b32e0d0610392ed5cc}{cycle}}();}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00140\ \ \ std::vector<T>\ \mbox{\hyperlink{classgraph_a5fa36c46613b6a5252f263dde594cf1f}{topological\_sort}}();}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a24409517a5d6bd3689a11ce1ec18eaab}{bipartite}}();}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00154\ \ \ std::vector<std::vector<T>>\ \mbox{\hyperlink{classgraph_a3db835fe4f1f0ef665e1ad1251493879}{bridge}}(T\ start);}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00160\ \ \ int64\_t\ \mbox{\hyperlink{classgraph_a0172e168010c9ddc2e85da6aea42b23f}{scc}}();}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_ac72a23cebe0d10617d971aca1256de2c}{connected}}();}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgraph_ae0b3a47ae3062d4ff07e5709110190d8}{eulerian}}();}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00180\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_aa60f2cd22020a5126dbef4c7e735eecf}{visualize}}();}
-\DoxyCodeLine{00181\ }
-\DoxyCodeLine{00186\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classgraph_a192732806b0edc5242c55a045ca77421}{operator<<}}(std::ostream\ \&out,\ \mbox{\hyperlink{classgraph}{graph<T>}}\ \&g)\ \{}
-\DoxyCodeLine{00187\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\{'};}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ std::vector<T>\ elements\ =\ g.\mbox{\hyperlink{classgraph_a5fa36c46613b6a5252f263dde594cf1f}{topological\_sort}}();}
-\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ elements)\ \{}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ out\ <<\ x\ <<\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{00192\ \ \ \ \ \}}
-\DoxyCodeLine{00193\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\}'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
-\DoxyCodeLine{00195\ \ \ \}}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00197\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00203\ \ \ std::unordered\_map<T,\ std::vector<T>>\ adj;}
-\DoxyCodeLine{00204\ \ \ std::unordered\_set<T>\ \_\_elements;}
-\DoxyCodeLine{00205\ \ \ std::string\ \_\_type;}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00210\ \ \ \textcolor{keywordtype}{void}\ dfs\_bridge(T\ start,\ T\ parent,\ int64\_t\ \&time,}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ bool>\ \&visited,}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&in,}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&out,}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<T>>\ \&bridges)\ \{}
-\DoxyCodeLine{00215\ \ \ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00216\ \ \ \ \ in[start]\ =\ out[start]\ =\ time++;}
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[start])\ \{}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ !=\ parent)\ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ dfs\_bridge(x,\ start,\ time,\ visited,\ in,\ out,\ bridges);}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (out[x]\ >\ in[start])\ \{}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ bridges.push\_back(\{x,\ start\});}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ out[start]\ =\ std::min(out[start],\ out[x]);}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00227\ \ \ \ \ \}}
-\DoxyCodeLine{00228\ \ \ \}}
-\DoxyCodeLine{00229\ \};}
-\DoxyCodeLine{00230\ }
-\DoxyCodeLine{00231\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classgraph_ad3abf678df30b6091870278e1ffadfe7}{graph<T>::size}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_elements.size();\ \}}
-\DoxyCodeLine{00232\ }
-\DoxyCodeLine{00233\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classgraph_a552cbdacd1d280bdaa5400e9edeb10a9}{graph<T>::dfs}}(T\ start)\ \{}
-\DoxyCodeLine{00234\ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00235\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00237\ \ \ \}}
-\DoxyCodeLine{00238\ \ \ std::stack<T>\ s;}
-\DoxyCodeLine{00239\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00240\ \ \ s.push(start);}
-\DoxyCodeLine{00241\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00242\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
-\DoxyCodeLine{00243\ \ \ \ \ T\ current\ =\ s.top();}
-\DoxyCodeLine{00244\ \ \ \ \ path.push\_back(current);}
-\DoxyCodeLine{00245\ \ \ \ \ s.pop();}
-\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ s.push(x);}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00251\ \ \ \ \ \}}
-\DoxyCodeLine{00252\ \ \ \}}
-\DoxyCodeLine{00253\ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00254\ \}}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00256\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classgraph_a3cc331d692642bfdee0f8bcf87071176}{graph<T>::bfs}}(T\ start)\ \{}
-\DoxyCodeLine{00257\ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00258\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00260\ \ \ \}}
-\DoxyCodeLine{00261\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00262\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00263\ \ \ q.push(start);}
-\DoxyCodeLine{00264\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00265\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00266\ \ \ \ \ int64\_t\ size\ =\ q.size();}
-\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ path.push\_back(current);}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00277\ \ \ \ \ \}}
-\DoxyCodeLine{00278\ \ \ \}}
-\DoxyCodeLine{00279\ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00280\ \}}
-\DoxyCodeLine{00281\ }
-\DoxyCodeLine{00282\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classgraph_ad69569f1cfb90b440a5e66635eaa2622}{graph<T>::connected\_components}}()\ \{}
-\DoxyCodeLine{00283\ \ \ \textcolor{keyword}{auto}\ explore\ =\ [\&](std::unordered\_map<T,\ bool>\ \&visited,\ T\ element)\ -\/>\ \textcolor{keywordtype}{void}\ \{}
-\DoxyCodeLine{00284\ \ \ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00285\ \ \ \ \ q.push(element);}
-\DoxyCodeLine{00286\ \ \ \ \ visited[element]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00296\ \ \ \ \ \}}
-\DoxyCodeLine{00297\ \ \ \};}
-\DoxyCodeLine{00298\ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ \_\_elements.size();}
-\DoxyCodeLine{00299\ \ \ int64\_t\ cc\ =\ 0;}
-\DoxyCodeLine{00300\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00301\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ explore(visited,\ x);}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ cc++;}
-\DoxyCodeLine{00305\ \ \ \ \ \}}
-\DoxyCodeLine{00306\ \ \ \}}
-\DoxyCodeLine{00307\ \ \ \textcolor{keywordflow}{return}\ cc;}
-\DoxyCodeLine{00308\ \}}
-\DoxyCodeLine{00309\ }
-\DoxyCodeLine{00310\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a77cab44c928701b32e0d0610392ed5cc}{graph<T>::cycle}}()\ \{}
-\DoxyCodeLine{00311\ \ \ std::unordered\_map<T,\ int>\ indeg;}
-\DoxyCodeLine{00312\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00313\ \ \ \textcolor{keywordtype}{size\_t}\ visited\ =\ 0;}
-\DoxyCodeLine{00314\ }
-\DoxyCodeLine{00315\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&y\ :\ adj[x])\ \{}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ indeg[y]++;}
-\DoxyCodeLine{00318\ \ \ \ \ \}}
-\DoxyCodeLine{00319\ \ \ \}}
-\DoxyCodeLine{00320\ }
-\DoxyCodeLine{00321\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00324\ \ \ \ \ \}}
-\DoxyCodeLine{00325\ \ \ \}}
-\DoxyCodeLine{00326\ }
-\DoxyCodeLine{00327\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00328\ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00329\ \ \ \ \ q.pop();}
-\DoxyCodeLine{00330\ \ \ \ \ visited++;}
-\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x]\ ==\ 0)\ \{}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00335\ \ \ \ \ \}}
-\DoxyCodeLine{00336\ \ \ \}}
-\DoxyCodeLine{00337\ \ \ \textcolor{keywordflow}{return}\ visited\ ==\ 0;}
-\DoxyCodeLine{00338\ \}}
-\DoxyCodeLine{00339\ }
-\DoxyCodeLine{00340\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classgraph_a5fa36c46613b6a5252f263dde594cf1f}{graph<T>::topological\_sort}}()\ \{}
-\DoxyCodeLine{00341\ \ \ std::vector<T>\ top\_sort;}
-\DoxyCodeLine{00342\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00343\ \ \ std::unordered\_map<T,\ int64\_t>\ indeg;}
-\DoxyCodeLine{00344\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&y\ :\ adj[x])\ \{}
-\DoxyCodeLine{00346\ \ \ \ \ \ \ indeg[y]++;}
-\DoxyCodeLine{00347\ \ \ \ \ \}}
-\DoxyCodeLine{00348\ \ \ \}}
-\DoxyCodeLine{00349\ }
-\DoxyCodeLine{00350\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00351\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00355\ \ \ \ \ \}}
-\DoxyCodeLine{00356\ \ \ \}}
-\DoxyCodeLine{00357\ }
-\DoxyCodeLine{00358\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00359\ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00360\ \ \ \ \ q.pop();}
-\DoxyCodeLine{00361\ \ \ \ \ top\_sort.push\_back(current);}
-\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x]\ ==\ 0)\ \{}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00369\ \ \ \ \ \}}
-\DoxyCodeLine{00370\ \ \ \}}
-\DoxyCodeLine{00371\ }
-\DoxyCodeLine{00372\ \ \ \textcolor{keywordflow}{return}\ top\_sort;}
-\DoxyCodeLine{00373\ \}}
-\DoxyCodeLine{00374\ }
-\DoxyCodeLine{00375\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a24409517a5d6bd3689a11ce1ec18eaab}{graph<T>::bipartite}}()\ \{}
-\DoxyCodeLine{00376\ \ \ std::unordered\_map<T,\ int>\ color;}
-\DoxyCodeLine{00377\ \ \ std::queue<std::pair<T,\ int>>\ q;}
-\DoxyCodeLine{00378\ }
-\DoxyCodeLine{00379\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ ==\ color.end())\ \{}
-\DoxyCodeLine{00381\ \ \ \ \ \ \ q.push(\{x,\ 0\});}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ color[x]\ =\ 0;}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ std::pair<T,\ int>\ current\ =\ q.front();}
-\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ T\ v\ =\ current.first;}
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ current.second;}
-\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[v])\ \{}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ !=\ color.end()\ \&\&\ color[x]\ ==\ col)\ \{}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ ==\ color.end())\ \{}
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ color[x]\ =\ (col)\ ?\ 0\ :\ 1;}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ q.push(\{x,\ color[x]\});}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00398\ \ \ \ \ \}}
-\DoxyCodeLine{00399\ \ \ \}}
-\DoxyCodeLine{00400\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00401\ \}}
-\DoxyCodeLine{00402\ }
-\DoxyCodeLine{00403\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<std::vector<T>>\ \mbox{\hyperlink{classgraph_a3db835fe4f1f0ef665e1ad1251493879}{graph<T>::bridge}}(T\ start)\ \{}
-\DoxyCodeLine{00404\ \ \ int64\_t\ timer\ =\ 0;}
-\DoxyCodeLine{00405\ \ \ std::vector<std::vector<T>>\ bridges;}
-\DoxyCodeLine{00406\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00407\ \ \ std::unordered\_map<T,\ int64\_t>\ in,\ out;}
-\DoxyCodeLine{00408\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00409\ \ \ \ \ in[x]\ =\ 0;}
-\DoxyCodeLine{00410\ \ \ \ \ out[x]\ =\ 0;}
-\DoxyCodeLine{00411\ \ \ \}}
-\DoxyCodeLine{00412\ \ \ dfs\_bridge(start,\ -\/1,\ timer,\ visited,\ in,\ out,\ bridges);}
-\DoxyCodeLine{00413\ \ \ \textcolor{keywordflow}{return}\ bridges;}
-\DoxyCodeLine{00414\ \}}
-\DoxyCodeLine{00415\ }
-\DoxyCodeLine{00416\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_ac72a23cebe0d10617d971aca1256de2c}{graph<T>::connected}}()\ \{}
-\DoxyCodeLine{00417\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00418\ \ \ \textcolor{keywordtype}{bool}\ check\ =\ 0;}
-\DoxyCodeLine{00419\ \ \ T\ start;}
-\DoxyCodeLine{00420\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&ele\ :\ adj)\ \{}
-\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[ele.first].size()\ !=\ 0)\ \{}
-\DoxyCodeLine{00422\ \ \ \ \ \ \ start\ =\ ele.first;}
-\DoxyCodeLine{00423\ \ \ \ \ \ \ check\ =\ 1;}
-\DoxyCodeLine{00424\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00425\ \ \ \ \ \}}
-\DoxyCodeLine{00426\ \ \ \}}
-\DoxyCodeLine{00427\ \ \ \textcolor{keywordflow}{if}\ (!check)\ \{}
-\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00429\ \ \ \}}
-\DoxyCodeLine{00430\ \ \ std::stack<T>\ s;}
-\DoxyCodeLine{00431\ \ \ s.push(start);}
-\DoxyCodeLine{00432\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00433\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
-\DoxyCodeLine{00434\ \ \ \ \ T\ current\ =\ s.top();}
-\DoxyCodeLine{00435\ \ \ \ \ s.pop();}
-\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ s.push(x);}
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00441\ \ \ \ \ \}}
-\DoxyCodeLine{00442\ \ \ \}}
-\DoxyCodeLine{00443\ }
-\DoxyCodeLine{00444\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end()\ \&\&\ adj[x].size()\ >\ 0)\ \{}
-\DoxyCodeLine{00446\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00447\ \ \ \ \ \}}
-\DoxyCodeLine{00448\ \ \ \}}
-\DoxyCodeLine{00449\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00450\ \}}
-\DoxyCodeLine{00451\ }
-\DoxyCodeLine{00452\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgraph_ae0b3a47ae3062d4ff07e5709110190d8}{graph<T>::eulerian}}()\ \{}
-\DoxyCodeLine{00453\ \ \ \textcolor{keywordflow}{if}\ (this-\/>connected()\ ==\ \textcolor{keyword}{false})\ \{}
-\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00455\ \ \ \}}
-\DoxyCodeLine{00456\ }
-\DoxyCodeLine{00457\ \ \ int64\_t\ odd\ =\ 0;}
-\DoxyCodeLine{00458\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&el\ :\ adj)\ \{}
-\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[el.first].size()\ \&\ 1)\ \{}
-\DoxyCodeLine{00460\ \ \ \ \ \ \ odd++;}
-\DoxyCodeLine{00461\ \ \ \ \ \}}
-\DoxyCodeLine{00462\ \ \ \}}
-\DoxyCodeLine{00463\ }
-\DoxyCodeLine{00464\ \ \ \textcolor{keywordflow}{if}\ (odd\ >\ 2)\ \{}
-\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00466\ \ \ \}}
-\DoxyCodeLine{00467\ \ \ \textcolor{keywordflow}{return}\ (odd)\ ?\ 1\ :\ 2;}
-\DoxyCodeLine{00468\ \}}
-\DoxyCodeLine{00469\ }
-\DoxyCodeLine{00470\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_aa60f2cd22020a5126dbef4c7e735eecf}{graph<T>::visualize}}()\ \{}
-\DoxyCodeLine{00471\ \ \ std::string\ s;}
-\DoxyCodeLine{00472\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
-\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
-\DoxyCodeLine{00474\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
-\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
-\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x;}
-\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00481\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00482\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00483\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
-\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
-\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x);}
-\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00490\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00491\ \ \ \ \ \}}
-\DoxyCodeLine{00492\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
-\DoxyCodeLine{00494\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
-\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
-\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x;}
-\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00501\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00502\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00503\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
-\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
-\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x);}
-\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00510\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00511\ \ \ \ \ \}}
-\DoxyCodeLine{00512\ \ \ \}}
-\DoxyCodeLine{00513\ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00514\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
-\DoxyCodeLine{00515\ \ \ \ \ digraph\_visualization::visualize(s);}
-\DoxyCodeLine{00516\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00517\ \ \ \ \ graph\_visualization::visualize(s);}
-\DoxyCodeLine{00518\ \ \ \}}
-\DoxyCodeLine{00519\ \}}
-\DoxyCodeLine{00520\ }
-\DoxyCodeLine{00524\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classweighted__graph}{weighted\_graph}}\ \{}
-\DoxyCodeLine{00525\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00532\ \ \ \mbox{\hyperlink{classweighted__graph_a10766091642efeb0d932f52fdeff789b}{weighted\_graph}}(std::string\ \_\_type,}
-\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<std::pair<T,\ T>,\ int64\_t>>\ \_\_adj\ =\ \{\})\ \{}
-\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00535\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}}\ ||\ \_\_type\ ==\ \textcolor{stringliteral}{"{}undirected"{}})\ \{}
-\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ this-\/>\_\_type\ =\ \_\_type;}
-\DoxyCodeLine{00537\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Can't\ recognize\ the\ type\ of\ graph"{}});}
-\DoxyCodeLine{00539\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00540\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_\_adj.empty())\ \{}
-\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_\_adj.size();\ i++)\ \{}
-\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classweighted__graph_ad652cc371c4ae27df7bfd45380865726}{add\_edge}}(\_\_adj[i].first.first,\ \_\_adj[i].first.second,}
-\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_adj[i].second);}
-\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00545\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00546\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
-\DoxyCodeLine{00547\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00548\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00549\ \ \ \ \ \}}
-\DoxyCodeLine{00550\ \ \ \}}
-\DoxyCodeLine{00551\ \ \ \mbox{\hyperlink{classweighted__graph}{\string~weighted\_graph}}()\ \{\ adj.\mbox{\hyperlink{classweighted__graph_aee58213295bc0b7e7336b82446fd512d}{clear}}();\ \}}
-\DoxyCodeLine{00552\ }
-\DoxyCodeLine{00559\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_ad652cc371c4ae27df7bfd45380865726}{add\_edge}}(T\ u,\ T\ v,\ int64\_t\ w)\ \{}
-\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}undirected"{}})\ \{}
-\DoxyCodeLine{00561\ \ \ \ \ \ \ adj[u].push\_back(std::make\_pair(v,\ w));}
-\DoxyCodeLine{00562\ \ \ \ \ \ \ adj[v].push\_back(std::make\_pair(u,\ w));}
-\DoxyCodeLine{00563\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
-\DoxyCodeLine{00564\ \ \ \ \ \ \ adj[u].push\_back(std::make\_pair(v,\ w));}
-\DoxyCodeLine{00565\ \ \ \ \ \}}
-\DoxyCodeLine{00566\ \ \ \ \ \_\_elements.insert(u);}
-\DoxyCodeLine{00567\ \ \ \ \ \_\_elements.insert(v);}
-\DoxyCodeLine{00568\ \ \ \}}
-\DoxyCodeLine{00569\ }
-\DoxyCodeLine{00576\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a47d3931f45d5cc56894589b048e695dc}{has\_edge}}(T\ start,\ T\ end)\ \{}
-\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00578\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00579\ \ \ \ \ \}}
-\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[start])\ \{}
-\DoxyCodeLine{00581\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ end)\ \{}
-\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00583\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00584\ \ \ \ \ \}}
-\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00586\ \ \ \}}
-\DoxyCodeLine{00587\ }
-\DoxyCodeLine{00592\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_aee58213295bc0b7e7336b82446fd512d}{clear}}()\ \{}
-\DoxyCodeLine{00593\ \ \ \ \ \_\_elements.clear();}
-\DoxyCodeLine{00594\ \ \ \ \ adj.clear();}
-\DoxyCodeLine{00595\ \ \ \}}
-\DoxyCodeLine{00600\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a87a3e7e1b00794bcaf369e3802b63069}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_elements.empty();\ \}}
-\DoxyCodeLine{00601\ }
-\DoxyCodeLine{00606\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classweighted__graph_ad835cebb7cd2d06e05faaad1c61b0e50}{size}}();}
-\DoxyCodeLine{00607\ }
-\DoxyCodeLine{00613\ \ \ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_ad24e575e96678198f7750640a533cc12}{dfs}}(T\ start);}
-\DoxyCodeLine{00614\ }
-\DoxyCodeLine{00620\ \ \ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a5407df31013d7d9d1bd5cbfa63082404}{bfs}}(T\ start);}
-\DoxyCodeLine{00621\ }
-\DoxyCodeLine{00628\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_a45b5f6269cf710025139eac881c9d9cb}{shortest\_path}}(T\ start,\ T\ end);}
-\DoxyCodeLine{00629\ }
-\DoxyCodeLine{00634\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_a2c9730ab4d207d10ab355570d5164cac}{connected\_components}}();}
-\DoxyCodeLine{00635\ }
-\DoxyCodeLine{00640\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a4aa2ada9ac5954730d10abadcc16b2e1}{cycle}}();}
-\DoxyCodeLine{00641\ }
-\DoxyCodeLine{00646\ \ \ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a4b6919e5c07fa6b655169b6a30592771}{topological\_sort}}();}
-\DoxyCodeLine{00647\ }
-\DoxyCodeLine{00653\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_af6623f21c14c98732dc1c2595307fb7a}{prim}}(T\ start);}
-\DoxyCodeLine{00654\ }
-\DoxyCodeLine{00659\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a3400015dc6c8bd365042d4fbc48017ce}{bipartite}}();}
-\DoxyCodeLine{00660\ }
-\DoxyCodeLine{00666\ \ \ std::vector<std::vector<T>>\ \mbox{\hyperlink{classweighted__graph_a3dd0f3f2729700069a1a6f8e28681b9e}{bridge}}(T\ start);}
-\DoxyCodeLine{00667\ }
-\DoxyCodeLine{00672\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_a0a49aa40e429a2f9c13096e5d11a33e6}{scc}}();}
-\DoxyCodeLine{00673\ }
-\DoxyCodeLine{00678\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a8cebbcf6366ce3fb31cb0b711ad8f600}{connected}}();}
-\DoxyCodeLine{00679\ }
-\DoxyCodeLine{00686\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classweighted__graph_a0375e2db5858f1ea2b1dc598c2621227}{eulerian}}();}
-\DoxyCodeLine{00687\ }
-\DoxyCodeLine{00692\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_a9184c90aa32ad1c81cddedcd6940802e}{visualize}}();}
-\DoxyCodeLine{00693\ }
-\DoxyCodeLine{00698\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classweighted__graph_afa0c1b6af0f7b36d24ce876abbc92107}{operator<<}}(std::ostream\ \&out,\ \mbox{\hyperlink{classweighted__graph}{weighted\_graph<T>}}\ \&g)\ \{}
-\DoxyCodeLine{00699\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\{'};}
-\DoxyCodeLine{00700\ \ \ \ \ std::vector<T>\ elements\ =\ g.\mbox{\hyperlink{classweighted__graph_a4b6919e5c07fa6b655169b6a30592771}{topological\_sort}}();}
-\DoxyCodeLine{00701\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ elements)\ \{}
-\DoxyCodeLine{00702\ \ \ \ \ \ \ out\ <<\ x\ <<\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{00703\ \ \ \ \ \}}
-\DoxyCodeLine{00704\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\}'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00705\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
-\DoxyCodeLine{00706\ \ \ \}}
-\DoxyCodeLine{00707\ }
-\DoxyCodeLine{00708\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00714\ \ \ std::unordered\_map<T,\ std::vector<std::pair<T,\ int64\_t>>>\ adj;}
-\DoxyCodeLine{00715\ \ \ std::string\ \_\_type;}
-\DoxyCodeLine{00716\ \ \ std::unordered\_set<T>\ \_\_elements;}
-\DoxyCodeLine{00717\ }
-\DoxyCodeLine{00721\ \ \ \textcolor{keywordtype}{void}\ dfs\_bridge(T\ start,\ T\ parent,\ int64\_t\ \&time,}
-\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ bool>\ \&visited,}
-\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&in,}
-\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&out,}
-\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<T>>\ \&bridges)\ \{}
-\DoxyCodeLine{00726\ \ \ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00727\ \ \ \ \ in[start]\ =\ out[start]\ =\ time++;}
-\DoxyCodeLine{00728\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[start])\ \{}
-\DoxyCodeLine{00729\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ !=\ parent)\ \{}
-\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ dfs\_bridge(x.first,\ start,\ time,\ visited,\ in,\ out,\ bridges);}
-\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (out[x.first]\ >\ in[start])\ \{}
-\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ bridges.push\_back(\{x.first,\ start\});}
-\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ out[start]\ =\ std::min(out[start],\ out[x.first]);}
-\DoxyCodeLine{00737\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00738\ \ \ \ \ \}}
-\DoxyCodeLine{00739\ \ \ \}}
-\DoxyCodeLine{00740\ \};}
-\DoxyCodeLine{00741\ }
-\DoxyCodeLine{00742\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classweighted__graph_ad835cebb7cd2d06e05faaad1c61b0e50}{weighted\_graph<T>::size}}()\ \{}
-\DoxyCodeLine{00743\ \ \ \textcolor{keywordflow}{return}\ \_\_elements.size();}
-\DoxyCodeLine{00744\ \}}
-\DoxyCodeLine{00745\ }
-\DoxyCodeLine{00746\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classweighted__graph_a45b5f6269cf710025139eac881c9d9cb}{weighted\_graph<T>::shortest\_path}}(T\ start,\ T\ end)\ \{}
-\DoxyCodeLine{00747\ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00748\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Element:\ "{}}\ <<\ start\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ found\ in\ the\ Graph"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00749\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00750\ \ \ \}}
-\DoxyCodeLine{00751\ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(end)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00752\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Element:\ "{}}\ <<\ end\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ found\ in\ the\ Graph"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00753\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00754\ \ \ \}}
-\DoxyCodeLine{00755\ }
-\DoxyCodeLine{00756\ \ \ \textcolor{keywordflow}{if}\ (!cycle()\ \&\&\ \_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
-\DoxyCodeLine{00757\ \ \ \ \ std::vector<T>\ top\_sort\ =\ topological\_sort();}
-\DoxyCodeLine{00758\ \ \ \ \ std::reverse(top\_sort.begin(),\ top\_sort.end());}
-\DoxyCodeLine{00759\ \ \ \ \ std::stack<T>\ s;}
-\DoxyCodeLine{00760\ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ dist;}
-\DoxyCodeLine{00761\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00762\ \ \ \ \ \ \ dist[x]\ =\ INT\_MAX;}
-\DoxyCodeLine{00763\ \ \ \ \ \}}
-\DoxyCodeLine{00764\ \ \ \ \ dist[start]\ =\ 0;}
-\DoxyCodeLine{00765\ \ \ \ \ \textcolor{keywordflow}{while}\ (!top\_sort.empty())\ \{}
-\DoxyCodeLine{00766\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ current\ =\ top\_sort.back();}
-\DoxyCodeLine{00767\ \ \ \ \ \ \ top\_sort.pop\_back();}
-\DoxyCodeLine{00768\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dist[current]\ !=\ INT\_MAX)\ \{}
-\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dist[x.first]\ >\ dist[current]\ +\ x.second)\ \{}
-\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ dist[x.first]\ =\ dist[current]\ +\ x.second;}
-\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ top\_sort.push\_back(x.first);}
-\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00775\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00776\ \ \ \ \ \}}
-\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keywordflow}{return}\ (dist[end]\ !=\ INT\_MAX)\ ?\ dist[end]\ :\ -\/1;}
-\DoxyCodeLine{00778\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00779\ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ dist;}
-\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00781\ \ \ \ \ \ \ dist[x]\ =\ INT\_MAX;}
-\DoxyCodeLine{00782\ \ \ \ \ \}}
-\DoxyCodeLine{00783\ \ \ \ \ std::priority\_queue<std::pair<int64\_t,\ T>,}
-\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<int64\_t,\ T>>,}
-\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::greater<std::pair<int64\_t,\ T>>>}
-\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ pq;}
-\DoxyCodeLine{00787\ \ \ \ \ pq.push(std::make\_pair(0,\ start));}
-\DoxyCodeLine{00788\ \ \ \ \ dist[start]\ =\ 0;}
-\DoxyCodeLine{00789\ \ \ \ \ \textcolor{keywordflow}{while}\ (!pq.empty())\ \{}
-\DoxyCodeLine{00790\ \ \ \ \ \ \ T\ currentNode\ =\ pq.top().second;}
-\DoxyCodeLine{00791\ \ \ \ \ \ \ T\ currentDist\ =\ pq.top().first;}
-\DoxyCodeLine{00792\ \ \ \ \ \ \ pq.pop();}
-\DoxyCodeLine{00793\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&edge\ :\ adj[currentNode])\ \{}
-\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentDist\ +\ edge.second\ <\ dist[edge.first])\ \{}
-\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ dist[edge.first]\ =\ currentDist\ +\ edge.second;}
-\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ pq.push(std::make\_pair(dist[edge.first],\ edge.first));}
-\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00798\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00799\ \ \ \ \ \}}
-\DoxyCodeLine{00800\ \ \ \ \ \textcolor{keywordflow}{return}\ (dist[end]\ !=\ INT\_MAX)\ ?\ dist[end]\ :\ -\/1;}
-\DoxyCodeLine{00801\ \ \ \}}
-\DoxyCodeLine{00802\ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00803\ \}}
-\DoxyCodeLine{00804\ }
-\DoxyCodeLine{00805\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_ad24e575e96678198f7750640a533cc12}{weighted\_graph<T>::dfs}}(T\ start)\ \{}
-\DoxyCodeLine{00806\ }
-\DoxyCodeLine{00807\ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00808\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00809\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00810\ \ \ \}}
-\DoxyCodeLine{00811\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00812\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00813\ \ \ q.push(start);}
-\DoxyCodeLine{00814\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00815\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00816\ \ \ \ \ int64\_t\ size\ =\ q.size();}
-\DoxyCodeLine{00817\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
-\DoxyCodeLine{00818\ \ \ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00819\ \ \ \ \ \ \ path.push\_back(current);}
-\DoxyCodeLine{00820\ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00821\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
-\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00826\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00827\ \ \ \ \ \}}
-\DoxyCodeLine{00828\ \ \ \}}
-\DoxyCodeLine{00829\ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00830\ \}}
-\DoxyCodeLine{00831\ }
-\DoxyCodeLine{00832\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a5407df31013d7d9d1bd5cbfa63082404}{weighted\_graph<T>::bfs}}(T\ start)\ \{}
-\DoxyCodeLine{00833\ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00834\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
-\DoxyCodeLine{00835\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00836\ \ \ \}}
-\DoxyCodeLine{00837\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00838\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00839\ \ \ q.push(start);}
-\DoxyCodeLine{00840\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00841\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00842\ \ \ \ \ int64\_t\ size\ =\ q.size();}
-\DoxyCodeLine{00843\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
-\DoxyCodeLine{00844\ \ \ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00845\ \ \ \ \ \ \ path.push\_back(current);}
-\DoxyCodeLine{00846\ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00847\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
-\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00852\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00853\ \ \ \ \ \}}
-\DoxyCodeLine{00854\ \ \ \}}
-\DoxyCodeLine{00855\ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00856\ \}}
-\DoxyCodeLine{00857\ }
-\DoxyCodeLine{00858\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classweighted__graph_a2c9730ab4d207d10ab355570d5164cac}{weighted\_graph<T>::connected\_components}}()\ \{}
-\DoxyCodeLine{00859\ \ \ \textcolor{keyword}{auto}\ explore\ =\ [\&](std::unordered\_map<T,\ bool>\ \&visited,\ T\ element)\ -\/>\ \textcolor{keywordtype}{void}\ \{}
-\DoxyCodeLine{00860\ \ \ \ \ std::stack<T>\ s;}
-\DoxyCodeLine{00861\ \ \ \ \ s.push(element);}
-\DoxyCodeLine{00862\ \ \ \ \ visited[element]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00863\ \ \ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
-\DoxyCodeLine{00864\ \ \ \ \ \ \ T\ current\ =\ s.top();}
-\DoxyCodeLine{00865\ \ \ \ \ \ \ s.pop();}
-\DoxyCodeLine{00866\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ s.push(x.first);}
-\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00871\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00872\ \ \ \ \ \}}
-\DoxyCodeLine{00873\ \ \ \};}
-\DoxyCodeLine{00874\ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ \_\_elements.size();}
-\DoxyCodeLine{00875\ \ \ int64\_t\ cc\ =\ 0;}
-\DoxyCodeLine{00876\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00877\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00878\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00879\ \ \ \ \ \ \ explore(visited,\ x);}
-\DoxyCodeLine{00880\ \ \ \ \ \ \ cc++;}
-\DoxyCodeLine{00881\ \ \ \ \ \}}
-\DoxyCodeLine{00882\ \ \ \}}
-\DoxyCodeLine{00883\ \ \ \textcolor{keywordflow}{return}\ cc;}
-\DoxyCodeLine{00884\ \}}
-\DoxyCodeLine{00885\ }
-\DoxyCodeLine{00886\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a4aa2ada9ac5954730d10abadcc16b2e1}{weighted\_graph<T>::cycle}}()\ \{}
-\DoxyCodeLine{00887\ \ \ std::unordered\_map<T,\ int>\ indeg;}
-\DoxyCodeLine{00888\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00889\ \ \ \textcolor{keywordtype}{size\_t}\ visited\ =\ 0;}
-\DoxyCodeLine{00890\ }
-\DoxyCodeLine{00891\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00892\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&y\ :\ adj[x])\ \{}
-\DoxyCodeLine{00893\ \ \ \ \ \ \ indeg[y.first]++;}
-\DoxyCodeLine{00894\ \ \ \ \ \}}
-\DoxyCodeLine{00895\ \ \ \}}
-\DoxyCodeLine{00896\ }
-\DoxyCodeLine{00897\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00898\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
-\DoxyCodeLine{00899\ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00900\ \ \ \ \ \}}
-\DoxyCodeLine{00901\ \ \ \}}
-\DoxyCodeLine{00902\ }
-\DoxyCodeLine{00903\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00904\ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00905\ \ \ \ \ q.pop();}
-\DoxyCodeLine{00906\ \ \ \ \ visited++;}
-\DoxyCodeLine{00907\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00908\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x.first]\ ==\ 0)\ \{}
-\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ q.push(x.first);}
-\DoxyCodeLine{00910\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00911\ \ \ \ \ \}}
-\DoxyCodeLine{00912\ \ \ \}}
-\DoxyCodeLine{00913\ \ \ \textcolor{keywordflow}{return}\ visited\ ==\ 0;}
-\DoxyCodeLine{00914\ \}}
-\DoxyCodeLine{00915\ }
-\DoxyCodeLine{00916\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a4b6919e5c07fa6b655169b6a30592771}{weighted\_graph<T>::topological\_sort}}()\ \{}
-\DoxyCodeLine{00917\ \ \ std::vector<T>\ top\_sort;}
-\DoxyCodeLine{00918\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00919\ \ \ std::unordered\_map<T,\ int64\_t>\ indeg;}
-\DoxyCodeLine{00920\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00921\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&y\ :\ adj[x])\ \{}
-\DoxyCodeLine{00922\ \ \ \ \ \ \ indeg[y.first]++;}
-\DoxyCodeLine{00923\ \ \ \ \ \}}
-\DoxyCodeLine{00924\ \ \ \}}
-\DoxyCodeLine{00925\ }
-\DoxyCodeLine{00926\ \ \ std::queue<T>\ q;}
-\DoxyCodeLine{00927\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00928\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
-\DoxyCodeLine{00929\ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00930\ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00931\ \ \ \ \ \}}
-\DoxyCodeLine{00932\ \ \ \}}
-\DoxyCodeLine{00933\ }
-\DoxyCodeLine{00934\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00935\ \ \ \ \ T\ current\ =\ q.front();}
-\DoxyCodeLine{00936\ \ \ \ \ q.pop();}
-\DoxyCodeLine{00937\ \ \ \ \ top\_sort.push\_back(current);}
-\DoxyCodeLine{00938\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{00939\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x.first]\ ==\ 0)\ \{}
-\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
-\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00944\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00945\ \ \ \ \ \}}
-\DoxyCodeLine{00946\ \ \ \}}
-\DoxyCodeLine{00947\ }
-\DoxyCodeLine{00948\ \ \ \textcolor{keywordflow}{return}\ top\_sort;}
-\DoxyCodeLine{00949\ \}}
-\DoxyCodeLine{00950\ }
-\DoxyCodeLine{00951\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classweighted__graph_af6623f21c14c98732dc1c2595307fb7a}{weighted\_graph<T>::prim}}(T\ \_\_temp)\ \{}
-\DoxyCodeLine{00952\ \ \ std::priority\_queue<std::pair<T,\ int64\_t>,\ std::vector<std::pair<T,\ int64\_t>>,}
-\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::greater<std::pair<T,\ int64\_t>>>}
-\DoxyCodeLine{00954\ \ \ \ \ \ \ q;}
-\DoxyCodeLine{00955\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00956\ \ \ int64\_t\ cost\ =\ 0;}
-\DoxyCodeLine{00957\ \ \ q.push(std::make\_pair(0,\ \_\_temp));}
-\DoxyCodeLine{00958\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00959\ \ \ \ \ std::pair<T,\ int64\_t>\ current\ =\ q.top();}
-\DoxyCodeLine{00960\ \ \ \ \ q.pop();}
-\DoxyCodeLine{00961\ \ \ \ \ \_\_temp\ =\ current.first;}
-\DoxyCodeLine{00962\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(\_\_temp)\ !=\ visited.end())\ \{}
-\DoxyCodeLine{00963\ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00964\ \ \ \ \ \}}
-\DoxyCodeLine{00965\ \ \ \ \ cost\ +=\ current.second;}
-\DoxyCodeLine{00966\ \ \ \ \ visited[\_\_temp]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00967\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current.first])\ \{}
-\DoxyCodeLine{00968\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00970\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00971\ \ \ \ \ \}}
-\DoxyCodeLine{00972\ \ \ \}}
-\DoxyCodeLine{00973\ \ \ \textcolor{keywordflow}{return}\ cost;}
-\DoxyCodeLine{00974\ \}}
-\DoxyCodeLine{00975\ }
-\DoxyCodeLine{00976\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a3400015dc6c8bd365042d4fbc48017ce}{weighted\_graph<T>::bipartite}}()\ \{}
-\DoxyCodeLine{00977\ \ \ std::unordered\_map<T,\ int>\ color;}
-\DoxyCodeLine{00978\ \ \ std::queue<std::pair<T,\ int>>\ q;}
-\DoxyCodeLine{00979\ }
-\DoxyCodeLine{00980\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00981\ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ ==\ color.end())\ \{}
-\DoxyCodeLine{00982\ \ \ \ \ \ \ q.push(\{x,\ 0\});}
-\DoxyCodeLine{00983\ \ \ \ \ \ \ color[x]\ =\ 0;}
-\DoxyCodeLine{00984\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ std::pair<T,\ int>\ current\ =\ q.front();}
-\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ T\ v\ =\ current.first;}
-\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ current.second;}
-\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[v])\ \{}
-\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x.first)\ !=\ color.end()\ \&\&\ color[x.first]\ ==\ col)\ \{}
-\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x.first)\ ==\ color.end())\ \{}
-\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ color[x.first]\ =\ (col)\ ?\ 0\ :\ 1;}
-\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ q.push(\{x.first,\ color[x.first]\});}
-\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00998\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00999\ \ \ \ \ \}}
-\DoxyCodeLine{01000\ \ \ \}}
-\DoxyCodeLine{01001\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{01002\ \}}
-\DoxyCodeLine{01003\ }
-\DoxyCodeLine{01004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{01005\ std::vector<std::vector<T>>\ \mbox{\hyperlink{classweighted__graph_a3dd0f3f2729700069a1a6f8e28681b9e}{weighted\_graph<T>::bridge}}(T\ start)\ \{}
-\DoxyCodeLine{01006\ \ \ int64\_t\ timer\ =\ 0;}
-\DoxyCodeLine{01007\ \ \ std::vector<std::vector<T>>\ bridges;}
-\DoxyCodeLine{01008\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{01009\ \ \ std::unordered\_map<T,\ int64\_t>\ in,\ out;}
-\DoxyCodeLine{01010\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{01011\ \ \ \ \ in[x]\ =\ 0;}
-\DoxyCodeLine{01012\ \ \ \ \ out[x]\ =\ 0;}
-\DoxyCodeLine{01013\ \ \ \}}
-\DoxyCodeLine{01014\ \ \ dfs\_bridge(start,\ -\/1,\ timer,\ visited,\ in,\ out,\ bridges);}
-\DoxyCodeLine{01015\ \ \ \textcolor{keywordflow}{return}\ bridges;}
-\DoxyCodeLine{01016\ \}}
-\DoxyCodeLine{01017\ }
-\DoxyCodeLine{01018\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a8cebbcf6366ce3fb31cb0b711ad8f600}{weighted\_graph<T>::connected}}()\ \{}
-\DoxyCodeLine{01019\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{01020\ \ \ \textcolor{keywordtype}{bool}\ check\ =\ 0;}
-\DoxyCodeLine{01021\ \ \ T\ start;}
-\DoxyCodeLine{01022\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&ele\ :\ adj)\ \{}
-\DoxyCodeLine{01023\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[ele.first].size()\ !=\ 0)\ \{}
-\DoxyCodeLine{01024\ \ \ \ \ \ \ start\ =\ ele.first;}
-\DoxyCodeLine{01025\ \ \ \ \ \ \ check\ =\ 1;}
-\DoxyCodeLine{01026\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{01027\ \ \ \ \ \}}
-\DoxyCodeLine{01028\ \ \ \}}
-\DoxyCodeLine{01029\ \ \ \textcolor{keywordflow}{if}\ (!check)\ \{}
-\DoxyCodeLine{01030\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{01031\ \ \ \}}
-\DoxyCodeLine{01032\ \ \ std::stack<T>\ s;}
-\DoxyCodeLine{01033\ \ \ s.push(start);}
-\DoxyCodeLine{01034\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{01035\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
-\DoxyCodeLine{01036\ \ \ \ \ T\ current\ =\ s.top();}
-\DoxyCodeLine{01037\ \ \ \ \ s.pop();}
-\DoxyCodeLine{01038\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
-\DoxyCodeLine{01039\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ s.push(x.first);}
-\DoxyCodeLine{01042\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01043\ \ \ \ \ \}}
-\DoxyCodeLine{01044\ \ \ \}}
-\DoxyCodeLine{01045\ }
-\DoxyCodeLine{01046\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{01047\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end()\ \&\&\ adj[x].size()\ >\ 0)\ \{}
-\DoxyCodeLine{01048\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{01049\ \ \ \ \ \}}
-\DoxyCodeLine{01050\ \ \ \}}
-\DoxyCodeLine{01051\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{01052\ \}}
-\DoxyCodeLine{01053\ }
-\DoxyCodeLine{01054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classweighted__graph_a0375e2db5858f1ea2b1dc598c2621227}{weighted\_graph<T>::eulerian}}()\ \{}
-\DoxyCodeLine{01055\ \ \ \textcolor{keywordflow}{if}\ (this-\/>connected()\ ==\ \textcolor{keyword}{false})\ \{}
-\DoxyCodeLine{01056\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{01057\ \ \ \}}
-\DoxyCodeLine{01058\ }
-\DoxyCodeLine{01059\ \ \ \textcolor{keywordtype}{int}\ odd\ =\ 0;}
-\DoxyCodeLine{01060\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&el\ :\ adj)\ \{}
-\DoxyCodeLine{01061\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[el.first].size()\ \&\ 1)\ \{}
-\DoxyCodeLine{01062\ \ \ \ \ \ \ odd++;}
-\DoxyCodeLine{01063\ \ \ \ \ \}}
-\DoxyCodeLine{01064\ \ \ \}}
-\DoxyCodeLine{01065\ }
-\DoxyCodeLine{01066\ \ \ \textcolor{keywordflow}{if}\ (odd\ >\ 2)\ \{}
-\DoxyCodeLine{01067\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{01068\ \ \ \}}
-\DoxyCodeLine{01069\ }
-\DoxyCodeLine{01070\ \ \ \textcolor{keywordflow}{return}\ (odd)\ ?\ 1\ :\ 2;}
-\DoxyCodeLine{01071\ \}}
-\DoxyCodeLine{01072\ }
-\DoxyCodeLine{01073\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_a9184c90aa32ad1c81cddedcd6940802e}{weighted\_graph<T>::visualize}}()\ \{}
-\DoxyCodeLine{01074\ \ \ std::string\ s;}
-\DoxyCodeLine{01075\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
-\DoxyCodeLine{01076\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
-\DoxyCodeLine{01077\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
-\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
-\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
-\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x.first;}
-\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
-\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
-\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01090\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01091\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{01092\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
-\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
-\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
-\DoxyCodeLine{01099\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.first);}
-\DoxyCodeLine{01100\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
-\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
-\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01105\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01106\ \ \ \ \ \}}
-\DoxyCodeLine{01107\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{01108\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
-\DoxyCodeLine{01109\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
-\DoxyCodeLine{01112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{01113\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01114\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
-\DoxyCodeLine{01115\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
-\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x.first;}
-\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
-\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
-\DoxyCodeLine{01119\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{01120\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{01121\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01122\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01123\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{01124\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
-\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
-\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
-\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{01128\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01129\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
-\DoxyCodeLine{01130\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
-\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.first);}
-\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
-\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
-\DoxyCodeLine{01134\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{01135\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{01136\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01137\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{01138\ \ \ \ \ \}}
-\DoxyCodeLine{01139\ \ \ \}}
-\DoxyCodeLine{01140\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
-\DoxyCodeLine{01141\ \ \ \ \ digraph\_visualization::visualize(s);}
-\DoxyCodeLine{01142\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{01143\ \ \ \ \ graph\_visualization::visualize(s);}
-\DoxyCodeLine{01144\ \ \ \}}
-\DoxyCodeLine{01145\ \}}
-\DoxyCodeLine{01146\ }
-\DoxyCodeLine{01147\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classgraph}{\string~graph}}()\ \{\ adj.clear();\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_a3b397af35ce0c1db49a6a814e68bffc3}{add\_edge}}(T\ u,\ T\ v)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}undirected"{}})\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ adj[u].push\_back(v);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ adj[v].push\_back(u);}
+\DoxyCodeLine{00064\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ adj[u].push\_back(v);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \_\_elements.insert(u);}
+\DoxyCodeLine{00068\ \ \ \ \ \_\_elements.insert(v);}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a4d434612e87f3e4a5f10c653167da8df}{has\_edge}}(T\ start,\ T\ end)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[start])\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ end)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_ab00bf74c17ce8df8b93321229f562c73}{clear}}()\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \_\_elements.clear();}
+\DoxyCodeLine{00096\ \ \ \ \ adj.clear();}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_ae1202555cd550bdc9654ed9b43584066}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_elements.empty();\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classgraph_ad3abf678df30b6091870278e1ffadfe7}{size}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ std::vector<T>\ \mbox{\hyperlink{classgraph_a552cbdacd1d280bdaa5400e9edeb10a9}{dfs}}(T\ start);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ std::vector<T>\ \mbox{\hyperlink{classgraph_a3cc331d692642bfdee0f8bcf87071176}{bfs}}(T\ start);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \ \ int64\_t\ \mbox{\hyperlink{classgraph_ad69569f1cfb90b440a5e66635eaa2622}{connected\_components}}();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a77cab44c928701b32e0d0610392ed5cc}{cycle}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ std::vector<T>\ \mbox{\hyperlink{classgraph_a5fa36c46613b6a5252f263dde594cf1f}{topological\_sort}}();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a24409517a5d6bd3689a11ce1ec18eaab}{bipartite}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00155\ \ \ std::vector<std::vector<T>>\ \mbox{\hyperlink{classgraph_a3db835fe4f1f0ef665e1ad1251493879}{bridge}}(T\ start);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00161\ \ \ int64\_t\ \mbox{\hyperlink{classgraph_a0172e168010c9ddc2e85da6aea42b23f}{scc}}();}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_ac72a23cebe0d10617d971aca1256de2c}{connected}}();}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgraph_ae0b3a47ae3062d4ff07e5709110190d8}{eulerian}}();}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_aa60f2cd22020a5126dbef4c7e735eecf}{visualize}}();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00187\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classgraph_a192732806b0edc5242c55a045ca77421}{operator<<}}(std::ostream\ \&out,\ \mbox{\hyperlink{classgraph}{graph<T>}}\ \&g)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\{'};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ std::vector<T>\ elements\ =\ g.\mbox{\hyperlink{classgraph_a5fa36c46613b6a5252f263dde594cf1f}{topological\_sort}}();}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ elements)\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ out\ <<\ x\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\}'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00196\ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00204\ \ \ std::unordered\_map<T,\ std::vector<T>>\ adj;}
+\DoxyCodeLine{00205\ \ \ std::unordered\_set<T>\ \_\_elements;}
+\DoxyCodeLine{00206\ \ \ std::string\ \_\_type;}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00211\ \ \ \textcolor{keywordtype}{void}\ dfs\_bridge(T\ start,\ T\ parent,\ int64\_t\ \&time,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ bool>\ \&visited,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&in,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&out,}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<T>>\ \&bridges)\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00217\ \ \ \ \ in[start]\ =\ out[start]\ =\ time++;}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[start])\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ !=\ parent)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ dfs\_bridge(x,\ start,\ time,\ visited,\ in,\ out,\ bridges);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (out[x]\ >\ in[start])\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ bridges.push\_back(\{x,\ start\});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ out[start]\ =\ std::min(out[start],\ out[x]);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \}}
+\DoxyCodeLine{00230\ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classgraph_ad3abf678df30b6091870278e1ffadfe7}{graph<T>::size}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_elements.size();\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classgraph_a552cbdacd1d280bdaa5400e9edeb10a9}{graph<T>::dfs}}(T\ start)\ \{}
+\DoxyCodeLine{00235\ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00236\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00238\ \ \ \}}
+\DoxyCodeLine{00239\ \ \ std::stack<T>\ s;}
+\DoxyCodeLine{00240\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00241\ \ \ s.push(start);}
+\DoxyCodeLine{00242\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00243\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ T\ current\ =\ s.top();}
+\DoxyCodeLine{00245\ \ \ \ \ path.push\_back(current);}
+\DoxyCodeLine{00246\ \ \ \ \ s.pop();}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ s.push(x);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00255\ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classgraph_a3cc331d692642bfdee0f8bcf87071176}{graph<T>::bfs}}(T\ start)\ \{}
+\DoxyCodeLine{00258\ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00259\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00261\ \ \ \}}
+\DoxyCodeLine{00262\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00263\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00264\ \ \ q.push(start);}
+\DoxyCodeLine{00265\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00266\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ int64\_t\ size\ =\ q.size();}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ path.push\_back(current);}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00281\ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classgraph_ad69569f1cfb90b440a5e66635eaa2622}{graph<T>::connected\_components}}()\ \{}
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{auto}\ explore\ =\ [\&](std::unordered\_map<T,\ bool>\ \&visited,\ T\ element)\ -\/>\ \textcolor{keywordtype}{void}\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00286\ \ \ \ \ q.push(element);}
+\DoxyCodeLine{00287\ \ \ \ \ visited[element]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \};}
+\DoxyCodeLine{00299\ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ \_\_elements.size();}
+\DoxyCodeLine{00300\ \ \ int64\_t\ cc\ =\ 0;}
+\DoxyCodeLine{00301\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00302\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ explore(visited,\ x);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ cc++;}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \textcolor{keywordflow}{return}\ cc;}
+\DoxyCodeLine{00309\ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a77cab44c928701b32e0d0610392ed5cc}{graph<T>::cycle}}()\ \{}
+\DoxyCodeLine{00312\ \ \ std::unordered\_map<T,\ int>\ indeg;}
+\DoxyCodeLine{00313\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00314\ \ \ \textcolor{keywordtype}{size\_t}\ visited\ =\ 0;}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&y\ :\ adj[x])\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ indeg[y]++;}
+\DoxyCodeLine{00319\ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00325\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00330\ \ \ \ \ q.pop();}
+\DoxyCodeLine{00331\ \ \ \ \ visited++;}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \textcolor{keywordflow}{return}\ visited\ ==\ 0;}
+\DoxyCodeLine{00339\ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classgraph_a5fa36c46613b6a5252f263dde594cf1f}{graph<T>::topological\_sort}}()\ \{}
+\DoxyCodeLine{00342\ \ \ std::vector<T>\ top\_sort;}
+\DoxyCodeLine{00343\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00344\ \ \ std::unordered\_map<T,\ int64\_t>\ indeg;}
+\DoxyCodeLine{00345\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&y\ :\ adj[x])\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ indeg[y]++;}
+\DoxyCodeLine{00348\ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00352\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00356\ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00360\ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00361\ \ \ \ \ q.pop();}
+\DoxyCodeLine{00362\ \ \ \ \ top\_sort.push\_back(current);}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \textcolor{keywordflow}{return}\ top\_sort;}
+\DoxyCodeLine{00374\ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_a24409517a5d6bd3689a11ce1ec18eaab}{graph<T>::bipartite}}()\ \{}
+\DoxyCodeLine{00377\ \ \ std::unordered\_map<T,\ int>\ color;}
+\DoxyCodeLine{00378\ \ \ std::queue<std::pair<T,\ int>>\ q;}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ ==\ color.end())\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ q.push(\{x,\ 0\});}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ color[x]\ =\ 0;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ std::pair<T,\ int>\ current\ =\ q.front();}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ T\ v\ =\ current.first;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ current.second;}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[v])\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ !=\ color.end()\ \&\&\ color[x]\ ==\ col)\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ ==\ color.end())\ \{}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ color[x]\ =\ (col)\ ?\ 0\ :\ 1;}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ q.push(\{x,\ color[x]\});}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \}}
+\DoxyCodeLine{00400\ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00402\ \}}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<std::vector<T>>\ \mbox{\hyperlink{classgraph_a3db835fe4f1f0ef665e1ad1251493879}{graph<T>::bridge}}(T\ start)\ \{}
+\DoxyCodeLine{00405\ \ \ int64\_t\ timer\ =\ 0;}
+\DoxyCodeLine{00406\ \ \ std::vector<std::vector<T>>\ bridges;}
+\DoxyCodeLine{00407\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00408\ \ \ std::unordered\_map<T,\ int64\_t>\ in,\ out;}
+\DoxyCodeLine{00409\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ in[x]\ =\ 0;}
+\DoxyCodeLine{00411\ \ \ \ \ out[x]\ =\ 0;}
+\DoxyCodeLine{00412\ \ \ \}}
+\DoxyCodeLine{00413\ \ \ dfs\_bridge(start,\ -\/1,\ timer,\ visited,\ in,\ out,\ bridges);}
+\DoxyCodeLine{00414\ \ \ \textcolor{keywordflow}{return}\ bridges;}
+\DoxyCodeLine{00415\ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgraph_ac72a23cebe0d10617d971aca1256de2c}{graph<T>::connected}}()\ \{}
+\DoxyCodeLine{00418\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00419\ \ \ \textcolor{keywordtype}{bool}\ check\ =\ 0;}
+\DoxyCodeLine{00420\ \ \ T\ start;}
+\DoxyCodeLine{00421\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&ele\ :\ adj)\ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[ele.first].size()\ !=\ 0)\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ start\ =\ ele.first;}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ check\ =\ 1;}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00426\ \ \ \ \ \}}
+\DoxyCodeLine{00427\ \ \ \}}
+\DoxyCodeLine{00428\ \ \ \textcolor{keywordflow}{if}\ (!check)\ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00430\ \ \ \}}
+\DoxyCodeLine{00431\ \ \ std::stack<T>\ s;}
+\DoxyCodeLine{00432\ \ \ s.push(start);}
+\DoxyCodeLine{00433\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00434\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
+\DoxyCodeLine{00435\ \ \ \ \ T\ current\ =\ s.top();}
+\DoxyCodeLine{00436\ \ \ \ \ s.pop();}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ s.push(x);}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \}}
+\DoxyCodeLine{00443\ \ \ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end()\ \&\&\ adj[x].size()\ >\ 0)\ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00448\ \ \ \ \ \}}
+\DoxyCodeLine{00449\ \ \ \}}
+\DoxyCodeLine{00450\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00451\ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgraph_ae0b3a47ae3062d4ff07e5709110190d8}{graph<T>::eulerian}}()\ \{}
+\DoxyCodeLine{00454\ \ \ \textcolor{keywordflow}{if}\ (this-\/>connected()\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00456\ \ \ \}}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ int64\_t\ odd\ =\ 0;}
+\DoxyCodeLine{00459\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&el\ :\ adj)\ \{}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[el.first].size()\ \&\ 1)\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ odd++;}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
+\DoxyCodeLine{00463\ \ \ \}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \textcolor{keywordflow}{if}\ (odd\ >\ 2)\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00467\ \ \ \}}
+\DoxyCodeLine{00468\ \ \ \textcolor{keywordflow}{return}\ (odd)\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{00469\ \}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgraph_aa60f2cd22020a5126dbef4c7e735eecf}{graph<T>::visualize}}()\ \{}
+\DoxyCodeLine{00472\ \ \ std::string\ s;}
+\DoxyCodeLine{00473\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00483\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x);}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00492\ \ \ \ \ \}}
+\DoxyCodeLine{00493\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x;}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00503\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x);}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00512\ \ \ \ \ \}}
+\DoxyCodeLine{00513\ \ \ \}}
+\DoxyCodeLine{00514\ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00515\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
+\DoxyCodeLine{00516\ \ \ \ \ digraph\_visualization::visualize(s);}
+\DoxyCodeLine{00517\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00518\ \ \ \ \ graph\_visualization::visualize(s);}
+\DoxyCodeLine{00519\ \ \ \}}
+\DoxyCodeLine{00520\ \}}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00525\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classweighted__graph}{weighted\_graph}}\ \{}
+\DoxyCodeLine{00526\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00533\ \ \ \mbox{\hyperlink{classweighted__graph_a10766091642efeb0d932f52fdeff789b}{weighted\_graph}}(std::string\ \_\_type,}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<std::pair<T,\ T>,\ int64\_t>>\ \_\_adj\ =\ \{\})\ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}}\ ||\ \_\_type\ ==\ \textcolor{stringliteral}{"{}undirected"{}})\ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ this-\/>\_\_type\ =\ \_\_type;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Can't\ recognize\ the\ type\ of\ graph"{}});}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_\_adj.empty())\ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_\_adj.size();\ i++)\ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classweighted__graph_ad652cc371c4ae27df7bfd45380865726}{add\_edge}}(\_\_adj[i].first.first,\ \_\_adj[i].first.second,}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_adj[i].second);}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00547\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00550\ \ \ \ \ \}}
+\DoxyCodeLine{00551\ \ \ \}}
+\DoxyCodeLine{00552\ \ \ \mbox{\hyperlink{classweighted__graph}{\string~weighted\_graph}}()\ \{\ adj.\mbox{\hyperlink{classweighted__graph_aee58213295bc0b7e7336b82446fd512d}{clear}}();\ \}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00560\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_ad652cc371c4ae27df7bfd45380865726}{add\_edge}}(T\ u,\ T\ v,\ int64\_t\ w)\ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}undirected"{}})\ \{}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ adj[u].push\_back(std::make\_pair(v,\ w));}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ adj[v].push\_back(std::make\_pair(u,\ w));}
+\DoxyCodeLine{00564\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ adj[u].push\_back(std::make\_pair(v,\ w));}
+\DoxyCodeLine{00566\ \ \ \ \ \}}
+\DoxyCodeLine{00567\ \ \ \ \ \_\_elements.insert(u);}
+\DoxyCodeLine{00568\ \ \ \ \ \_\_elements.insert(v);}
+\DoxyCodeLine{00569\ \ \ \}}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00577\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a47d3931f45d5cc56894589b048e695dc}{has\_edge}}(T\ start,\ T\ end)\ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00580\ \ \ \ \ \}}
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[start])\ \{}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ end)\ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00585\ \ \ \ \ \}}
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00587\ \ \ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00593\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_aee58213295bc0b7e7336b82446fd512d}{clear}}()\ \{}
+\DoxyCodeLine{00594\ \ \ \ \ \_\_elements.clear();}
+\DoxyCodeLine{00595\ \ \ \ \ adj.clear();}
+\DoxyCodeLine{00596\ \ \ \}}
+\DoxyCodeLine{00601\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a87a3e7e1b00794bcaf369e3802b63069}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_elements.empty();\ \}}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00607\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classweighted__graph_ad835cebb7cd2d06e05faaad1c61b0e50}{size}}();}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00614\ \ \ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_ad24e575e96678198f7750640a533cc12}{dfs}}(T\ start);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00621\ \ \ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a5407df31013d7d9d1bd5cbfa63082404}{bfs}}(T\ start);}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00629\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_a45b5f6269cf710025139eac881c9d9cb}{shortest\_path}}(T\ start,\ T\ end);}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00635\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_a2c9730ab4d207d10ab355570d5164cac}{connected\_components}}();}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00641\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a4aa2ada9ac5954730d10abadcc16b2e1}{cycle}}();}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00647\ \ \ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a4b6919e5c07fa6b655169b6a30592771}{topological\_sort}}();}
+\DoxyCodeLine{00648\ }
+\DoxyCodeLine{00654\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_af6623f21c14c98732dc1c2595307fb7a}{prim}}(T\ start);}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00660\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a3400015dc6c8bd365042d4fbc48017ce}{bipartite}}();}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00667\ \ \ std::vector<std::vector<T>>\ \mbox{\hyperlink{classweighted__graph_a3dd0f3f2729700069a1a6f8e28681b9e}{bridge}}(T\ start);}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00673\ \ \ int64\_t\ \mbox{\hyperlink{classweighted__graph_a0a49aa40e429a2f9c13096e5d11a33e6}{scc}}();}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00679\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a8cebbcf6366ce3fb31cb0b711ad8f600}{connected}}();}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00687\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classweighted__graph_a0375e2db5858f1ea2b1dc598c2621227}{eulerian}}();}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00693\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_a9184c90aa32ad1c81cddedcd6940802e}{visualize}}();}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00699\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classweighted__graph_afa0c1b6af0f7b36d24ce876abbc92107}{operator<<}}(std::ostream\ \&out,\ \mbox{\hyperlink{classweighted__graph}{weighted\_graph<T>}}\ \&g)\ \{}
+\DoxyCodeLine{00700\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\{'};}
+\DoxyCodeLine{00701\ \ \ \ \ std::vector<T>\ elements\ =\ g.\mbox{\hyperlink{classweighted__graph_a4b6919e5c07fa6b655169b6a30592771}{topological\_sort}}();}
+\DoxyCodeLine{00702\ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ elements)\ \{}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ out\ <<\ x\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00704\ \ \ \ \ \}}
+\DoxyCodeLine{00705\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\}'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00706\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00707\ \ \ \}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00715\ \ \ std::unordered\_map<T,\ std::vector<std::pair<T,\ int64\_t>>>\ adj;}
+\DoxyCodeLine{00716\ \ \ std::string\ \_\_type;}
+\DoxyCodeLine{00717\ \ \ std::unordered\_set<T>\ \_\_elements;}
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00722\ \ \ \textcolor{keywordtype}{void}\ dfs\_bridge(T\ start,\ T\ parent,\ int64\_t\ \&time,}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ bool>\ \&visited,}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&in,}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ \&out,}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<T>>\ \&bridges)\ \{}
+\DoxyCodeLine{00727\ \ \ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00728\ \ \ \ \ in[start]\ =\ out[start]\ =\ time++;}
+\DoxyCodeLine{00729\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[start])\ \{}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ !=\ parent)\ \{}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ dfs\_bridge(x.first,\ start,\ time,\ visited,\ in,\ out,\ bridges);}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (out[x.first]\ >\ in[start])\ \{}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ bridges.push\_back(\{x.first,\ start\});}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ out[start]\ =\ std::min(out[start],\ out[x.first]);}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00739\ \ \ \ \ \}}
+\DoxyCodeLine{00740\ \ \ \}}
+\DoxyCodeLine{00741\ \};}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classweighted__graph_ad835cebb7cd2d06e05faaad1c61b0e50}{weighted\_graph<T>::size}}()\ \{}
+\DoxyCodeLine{00744\ \ \ \textcolor{keywordflow}{return}\ \_\_elements.size();}
+\DoxyCodeLine{00745\ \}}
+\DoxyCodeLine{00746\ }
+\DoxyCodeLine{00747\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classweighted__graph_a45b5f6269cf710025139eac881c9d9cb}{weighted\_graph<T>::shortest\_path}}(T\ start,\ T\ end)\ \{}
+\DoxyCodeLine{00748\ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00749\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Element:\ "{}}\ <<\ start\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ found\ in\ the\ Graph"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00751\ \ \ \}}
+\DoxyCodeLine{00752\ \ \ \textcolor{keywordflow}{if}\ (\_\_elements.find(end)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00753\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Element:\ "{}}\ <<\ end\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ found\ in\ the\ Graph"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00754\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00755\ \ \ \}}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00757\ \ \ \textcolor{keywordflow}{if}\ (!cycle()\ \&\&\ \_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
+\DoxyCodeLine{00758\ \ \ \ \ std::vector<T>\ top\_sort\ =\ topological\_sort();}
+\DoxyCodeLine{00759\ \ \ \ \ std::reverse(top\_sort.begin(),\ top\_sort.end());}
+\DoxyCodeLine{00760\ \ \ \ \ std::stack<T>\ s;}
+\DoxyCodeLine{00761\ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ dist;}
+\DoxyCodeLine{00762\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ dist[x]\ =\ INT\_MAX;}
+\DoxyCodeLine{00764\ \ \ \ \ \}}
+\DoxyCodeLine{00765\ \ \ \ \ dist[start]\ =\ 0;}
+\DoxyCodeLine{00766\ \ \ \ \ \textcolor{keywordflow}{while}\ (!top\_sort.empty())\ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ current\ =\ top\_sort.back();}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ top\_sort.pop\_back();}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dist[current]\ !=\ INT\_MAX)\ \{}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dist[x.first]\ >\ dist[current]\ +\ x.second)\ \{}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ dist[x.first]\ =\ dist[current]\ +\ x.second;}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ top\_sort.push\_back(x.first);}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00777\ \ \ \ \ \}}
+\DoxyCodeLine{00778\ \ \ \ \ \textcolor{keywordflow}{return}\ (dist[end]\ !=\ INT\_MAX)\ ?\ dist[end]\ :\ -\/1;}
+\DoxyCodeLine{00779\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00780\ \ \ \ \ std::unordered\_map<T,\ int64\_t>\ dist;}
+\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ dist[x]\ =\ INT\_MAX;}
+\DoxyCodeLine{00783\ \ \ \ \ \}}
+\DoxyCodeLine{00784\ \ \ \ \ std::priority\_queue<std::pair<int64\_t,\ T>,}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<int64\_t,\ T>>,}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::greater<std::pair<int64\_t,\ T>>>}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ pq;}
+\DoxyCodeLine{00788\ \ \ \ \ pq.push(std::make\_pair(0,\ start));}
+\DoxyCodeLine{00789\ \ \ \ \ dist[start]\ =\ 0;}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{while}\ (!pq.empty())\ \{}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ T\ currentNode\ =\ pq.top().second;}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ T\ currentDist\ =\ pq.top().first;}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ pq.pop();}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&edge\ :\ adj[currentNode])\ \{}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentDist\ +\ edge.second\ <\ dist[edge.first])\ \{}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ dist[edge.first]\ =\ currentDist\ +\ edge.second;}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ pq.push(std::make\_pair(dist[edge.first],\ edge.first));}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00800\ \ \ \ \ \}}
+\DoxyCodeLine{00801\ \ \ \ \ \textcolor{keywordflow}{return}\ (dist[end]\ !=\ INT\_MAX)\ ?\ dist[end]\ :\ -\/1;}
+\DoxyCodeLine{00802\ \ \ \}}
+\DoxyCodeLine{00803\ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00804\ \}}
+\DoxyCodeLine{00805\ }
+\DoxyCodeLine{00806\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_ad24e575e96678198f7750640a533cc12}{weighted\_graph<T>::dfs}}(T\ start)\ \{}
+\DoxyCodeLine{00807\ }
+\DoxyCodeLine{00808\ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00809\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00810\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00811\ \ \ \}}
+\DoxyCodeLine{00812\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00813\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00814\ \ \ q.push(start);}
+\DoxyCodeLine{00815\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00816\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00817\ \ \ \ \ int64\_t\ size\ =\ q.size();}
+\DoxyCodeLine{00818\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ path.push\_back(current);}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00828\ \ \ \ \ \}}
+\DoxyCodeLine{00829\ \ \ \}}
+\DoxyCodeLine{00830\ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00831\ \}}
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00833\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a5407df31013d7d9d1bd5cbfa63082404}{weighted\_graph<T>::bfs}}(T\ start)\ \{}
+\DoxyCodeLine{00834\ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00835\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
+\DoxyCodeLine{00836\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00837\ \ \ \}}
+\DoxyCodeLine{00838\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00839\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00840\ \ \ q.push(start);}
+\DoxyCodeLine{00841\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00842\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00843\ \ \ \ \ int64\_t\ size\ =\ q.size();}
+\DoxyCodeLine{00844\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ path.push\_back(current);}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00854\ \ \ \ \ \}}
+\DoxyCodeLine{00855\ \ \ \}}
+\DoxyCodeLine{00856\ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00857\ \}}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00859\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classweighted__graph_a2c9730ab4d207d10ab355570d5164cac}{weighted\_graph<T>::connected\_components}}()\ \{}
+\DoxyCodeLine{00860\ \ \ \textcolor{keyword}{auto}\ explore\ =\ [\&](std::unordered\_map<T,\ bool>\ \&visited,\ T\ element)\ -\/>\ \textcolor{keywordtype}{void}\ \{}
+\DoxyCodeLine{00861\ \ \ \ \ std::stack<T>\ s;}
+\DoxyCodeLine{00862\ \ \ \ \ s.push(element);}
+\DoxyCodeLine{00863\ \ \ \ \ visited[element]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00864\ \ \ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ T\ current\ =\ s.top();}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ s.pop();}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ s.push(x.first);}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00873\ \ \ \ \ \}}
+\DoxyCodeLine{00874\ \ \ \};}
+\DoxyCodeLine{00875\ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ \_\_elements.size();}
+\DoxyCodeLine{00876\ \ \ int64\_t\ cc\ =\ 0;}
+\DoxyCodeLine{00877\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00878\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00879\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ explore(visited,\ x);}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ cc++;}
+\DoxyCodeLine{00882\ \ \ \ \ \}}
+\DoxyCodeLine{00883\ \ \ \}}
+\DoxyCodeLine{00884\ \ \ \textcolor{keywordflow}{return}\ cc;}
+\DoxyCodeLine{00885\ \}}
+\DoxyCodeLine{00886\ }
+\DoxyCodeLine{00887\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a4aa2ada9ac5954730d10abadcc16b2e1}{weighted\_graph<T>::cycle}}()\ \{}
+\DoxyCodeLine{00888\ \ \ std::unordered\_map<T,\ int>\ indeg;}
+\DoxyCodeLine{00889\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00890\ \ \ \textcolor{keywordtype}{size\_t}\ visited\ =\ 0;}
+\DoxyCodeLine{00891\ }
+\DoxyCodeLine{00892\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&y\ :\ adj[x])\ \{}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ indeg[y.first]++;}
+\DoxyCodeLine{00895\ \ \ \ \ \}}
+\DoxyCodeLine{00896\ \ \ \}}
+\DoxyCodeLine{00897\ }
+\DoxyCodeLine{00898\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00899\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00901\ \ \ \ \ \}}
+\DoxyCodeLine{00902\ \ \ \}}
+\DoxyCodeLine{00903\ }
+\DoxyCodeLine{00904\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00905\ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00906\ \ \ \ \ q.pop();}
+\DoxyCodeLine{00907\ \ \ \ \ visited++;}
+\DoxyCodeLine{00908\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x.first]\ ==\ 0)\ \{}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ q.push(x.first);}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00912\ \ \ \ \ \}}
+\DoxyCodeLine{00913\ \ \ \}}
+\DoxyCodeLine{00914\ \ \ \textcolor{keywordflow}{return}\ visited\ ==\ 0;}
+\DoxyCodeLine{00915\ \}}
+\DoxyCodeLine{00916\ }
+\DoxyCodeLine{00917\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classweighted__graph_a4b6919e5c07fa6b655169b6a30592771}{weighted\_graph<T>::topological\_sort}}()\ \{}
+\DoxyCodeLine{00918\ \ \ std::vector<T>\ top\_sort;}
+\DoxyCodeLine{00919\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00920\ \ \ std::unordered\_map<T,\ int64\_t>\ indeg;}
+\DoxyCodeLine{00921\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00922\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&y\ :\ adj[x])\ \{}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ indeg[y.first]++;}
+\DoxyCodeLine{00924\ \ \ \ \ \}}
+\DoxyCodeLine{00925\ \ \ \}}
+\DoxyCodeLine{00926\ }
+\DoxyCodeLine{00927\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00928\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00929\ \ \ \ \ \textcolor{keywordflow}{if}\ (indeg[x]\ ==\ 0)\ \{}
+\DoxyCodeLine{00930\ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ visited[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00932\ \ \ \ \ \}}
+\DoxyCodeLine{00933\ \ \ \}}
+\DoxyCodeLine{00934\ }
+\DoxyCodeLine{00935\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00936\ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00937\ \ \ \ \ q.pop();}
+\DoxyCodeLine{00938\ \ \ \ \ top\_sort.push\_back(current);}
+\DoxyCodeLine{00939\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (-\/-\/indeg[x.first]\ ==\ 0)\ \{}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00946\ \ \ \ \ \}}
+\DoxyCodeLine{00947\ \ \ \}}
+\DoxyCodeLine{00948\ }
+\DoxyCodeLine{00949\ \ \ \textcolor{keywordflow}{return}\ top\_sort;}
+\DoxyCodeLine{00950\ \}}
+\DoxyCodeLine{00951\ }
+\DoxyCodeLine{00952\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ int64\_t\ \mbox{\hyperlink{classweighted__graph_af6623f21c14c98732dc1c2595307fb7a}{weighted\_graph<T>::prim}}(T\ \_\_temp)\ \{}
+\DoxyCodeLine{00953\ \ \ std::priority\_queue<std::pair<T,\ int64\_t>,\ std::vector<std::pair<T,\ int64\_t>>,}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::greater<std::pair<T,\ int64\_t>>>}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ q;}
+\DoxyCodeLine{00956\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00957\ \ \ int64\_t\ cost\ =\ 0;}
+\DoxyCodeLine{00958\ \ \ q.push(std::make\_pair(0,\ \_\_temp));}
+\DoxyCodeLine{00959\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00960\ \ \ \ \ std::pair<T,\ int64\_t>\ current\ =\ q.top();}
+\DoxyCodeLine{00961\ \ \ \ \ q.pop();}
+\DoxyCodeLine{00962\ \ \ \ \ \_\_temp\ =\ current.first;}
+\DoxyCodeLine{00963\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(\_\_temp)\ !=\ visited.end())\ \{}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00965\ \ \ \ \ \}}
+\DoxyCodeLine{00966\ \ \ \ \ cost\ +=\ current.second;}
+\DoxyCodeLine{00967\ \ \ \ \ visited[\_\_temp]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00968\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current.first])\ \{}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00972\ \ \ \ \ \}}
+\DoxyCodeLine{00973\ \ \ \}}
+\DoxyCodeLine{00974\ \ \ \textcolor{keywordflow}{return}\ cost;}
+\DoxyCodeLine{00975\ \}}
+\DoxyCodeLine{00976\ }
+\DoxyCodeLine{00977\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a3400015dc6c8bd365042d4fbc48017ce}{weighted\_graph<T>::bipartite}}()\ \{}
+\DoxyCodeLine{00978\ \ \ std::unordered\_map<T,\ int>\ color;}
+\DoxyCodeLine{00979\ \ \ std::queue<std::pair<T,\ int>>\ q;}
+\DoxyCodeLine{00980\ }
+\DoxyCodeLine{00981\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00982\ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x)\ ==\ color.end())\ \{}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ q.push(\{x,\ 0\});}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ color[x]\ =\ 0;}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ std::pair<T,\ int>\ current\ =\ q.front();}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ T\ v\ =\ current.first;}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ current.second;}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[v])\ \{}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x.first)\ !=\ color.end()\ \&\&\ color[x.first]\ ==\ col)\ \{}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.find(x.first)\ ==\ color.end())\ \{}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ color[x.first]\ =\ (col)\ ?\ 0\ :\ 1;}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ q.push(\{x.first,\ color[x.first]\});}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01000\ \ \ \ \ \}}
+\DoxyCodeLine{01001\ \ \ \}}
+\DoxyCodeLine{01002\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01003\ \}}
+\DoxyCodeLine{01004\ }
+\DoxyCodeLine{01005\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01006\ std::vector<std::vector<T>>\ \mbox{\hyperlink{classweighted__graph_a3dd0f3f2729700069a1a6f8e28681b9e}{weighted\_graph<T>::bridge}}(T\ start)\ \{}
+\DoxyCodeLine{01007\ \ \ int64\_t\ timer\ =\ 0;}
+\DoxyCodeLine{01008\ \ \ std::vector<std::vector<T>>\ bridges;}
+\DoxyCodeLine{01009\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{01010\ \ \ std::unordered\_map<T,\ int64\_t>\ in,\ out;}
+\DoxyCodeLine{01011\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{01012\ \ \ \ \ in[x]\ =\ 0;}
+\DoxyCodeLine{01013\ \ \ \ \ out[x]\ =\ 0;}
+\DoxyCodeLine{01014\ \ \ \}}
+\DoxyCodeLine{01015\ \ \ dfs\_bridge(start,\ -\/1,\ timer,\ visited,\ in,\ out,\ bridges);}
+\DoxyCodeLine{01016\ \ \ \textcolor{keywordflow}{return}\ bridges;}
+\DoxyCodeLine{01017\ \}}
+\DoxyCodeLine{01018\ }
+\DoxyCodeLine{01019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweighted__graph_a8cebbcf6366ce3fb31cb0b711ad8f600}{weighted\_graph<T>::connected}}()\ \{}
+\DoxyCodeLine{01020\ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{01021\ \ \ \textcolor{keywordtype}{bool}\ check\ =\ 0;}
+\DoxyCodeLine{01022\ \ \ T\ start;}
+\DoxyCodeLine{01023\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&ele\ :\ adj)\ \{}
+\DoxyCodeLine{01024\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[ele.first].size()\ !=\ 0)\ \{}
+\DoxyCodeLine{01025\ \ \ \ \ \ \ start\ =\ ele.first;}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ check\ =\ 1;}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01028\ \ \ \ \ \}}
+\DoxyCodeLine{01029\ \ \ \}}
+\DoxyCodeLine{01030\ \ \ \textcolor{keywordflow}{if}\ (!check)\ \{}
+\DoxyCodeLine{01031\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01032\ \ \ \}}
+\DoxyCodeLine{01033\ \ \ std::stack<T>\ s;}
+\DoxyCodeLine{01034\ \ \ s.push(start);}
+\DoxyCodeLine{01035\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01036\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
+\DoxyCodeLine{01037\ \ \ \ \ T\ current\ =\ s.top();}
+\DoxyCodeLine{01038\ \ \ \ \ s.pop();}
+\DoxyCodeLine{01039\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ s.push(x.first);}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01044\ \ \ \ \ \}}
+\DoxyCodeLine{01045\ \ \ \}}
+\DoxyCodeLine{01046\ }
+\DoxyCodeLine{01047\ \ \ \textcolor{keywordflow}{for}\ (T\ x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{01048\ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x)\ ==\ visited.end()\ \&\&\ adj[x].size()\ >\ 0)\ \{}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01050\ \ \ \ \ \}}
+\DoxyCodeLine{01051\ \ \ \}}
+\DoxyCodeLine{01052\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01053\ \}}
+\DoxyCodeLine{01054\ }
+\DoxyCodeLine{01055\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classweighted__graph_a0375e2db5858f1ea2b1dc598c2621227}{weighted\_graph<T>::eulerian}}()\ \{}
+\DoxyCodeLine{01056\ \ \ \textcolor{keywordflow}{if}\ (this-\/>connected()\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{01057\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01058\ \ \ \}}
+\DoxyCodeLine{01059\ }
+\DoxyCodeLine{01060\ \ \ \textcolor{keywordtype}{int}\ odd\ =\ 0;}
+\DoxyCodeLine{01061\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&el\ :\ adj)\ \{}
+\DoxyCodeLine{01062\ \ \ \ \ \textcolor{keywordflow}{if}\ (adj[el.first].size()\ \&\ 1)\ \{}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ odd++;}
+\DoxyCodeLine{01064\ \ \ \ \ \}}
+\DoxyCodeLine{01065\ \ \ \}}
+\DoxyCodeLine{01066\ }
+\DoxyCodeLine{01067\ \ \ \textcolor{keywordflow}{if}\ (odd\ >\ 2)\ \{}
+\DoxyCodeLine{01068\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{01069\ \ \ \}}
+\DoxyCodeLine{01070\ }
+\DoxyCodeLine{01071\ \ \ \textcolor{keywordflow}{return}\ (odd)\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{01072\ \}}
+\DoxyCodeLine{01073\ }
+\DoxyCodeLine{01074\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classweighted__graph_a9184c90aa32ad1c81cddedcd6940802e}{weighted\_graph<T>::visualize}}()\ \{}
+\DoxyCodeLine{01075\ \ \ std::string\ s;}
+\DoxyCodeLine{01076\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
+\DoxyCodeLine{01077\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x.first;}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01092\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
+\DoxyCodeLine{01099\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
+\DoxyCodeLine{01100\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.first);}
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
+\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01107\ \ \ \ \ \}}
+\DoxyCodeLine{01108\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01109\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
+\DoxyCodeLine{01110\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{01112\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
+\DoxyCodeLine{01113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01114\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01115\ \ \ \ \ \ \ \ \ \ \ s\ +=\ element;}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \ \ s\ +=\ x.first;}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
+\DoxyCodeLine{01119\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
+\DoxyCodeLine{01120\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{01121\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{01122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01124\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[element,\ neighbors]\ :\ adj)\ \{}
+\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ neighbors)\ \{}
+\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.first\ ==\ element)\ \{}
+\DoxyCodeLine{01128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{01129\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01130\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(element);}
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}-\/-\/"{}};}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.first);}
+\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}[weight="{}};}
+\DoxyCodeLine{01134\ \ \ \ \ \ \ \ \ \ \ s\ +=\ std::to\_string(x.second);}
+\DoxyCodeLine{01135\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{01136\ \ \ \ \ \ \ \ \ \ \ s\ +=\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{01137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01138\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01139\ \ \ \ \ \}}
+\DoxyCodeLine{01140\ \ \ \}}
+\DoxyCodeLine{01141\ \ \ \textcolor{keywordflow}{if}\ (\_\_type\ ==\ \textcolor{stringliteral}{"{}directed"{}})\ \{}
+\DoxyCodeLine{01142\ \ \ \ \ digraph\_visualization::visualize(s);}
+\DoxyCodeLine{01143\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01144\ \ \ \ \ graph\_visualization::visualize(s);}
+\DoxyCodeLine{01145\ \ \ \}}
+\DoxyCodeLine{01146\ \}}
+\DoxyCodeLine{01147\ }
+\DoxyCodeLine{01148\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

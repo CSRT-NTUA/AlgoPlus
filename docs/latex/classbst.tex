@@ -9,6 +9,11 @@ Class for BST tree.
 
 {\ttfamily \#include $<$bst.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classbst_1_1_iterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +25,12 @@ bool \mbox{\hyperlink{classbst_acd2ed132fc83a3a50a4085b4b7a90f47}{search}} (T ke
 \begin{DoxyCompactList}\small\item\em search function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}} (T key)
 \begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbst_1_1_iterator}{Iterator}} \mbox{\hyperlink{classbst_a64edfd3a7c05023cef487ef40a07a322}{begin}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to begin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbst_1_1_iterator}{Iterator}} \mbox{\hyperlink{classbst_aa3db0ba407a005ce61feb9c605bbb187}{end}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to end \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classbst_a8a04b4ab8c11fe64c9a3f282aa6eb187}{size}} ()
+\begin{DoxyCompactList}\small\item\em size function \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_ab9d984aab9247a36c78b115484ccb623}{inorder}} ()
 \begin{DoxyCompactList}\small\item\em inorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_a4c3359b500e074fce8d1f3eae21dfdca}{preorder}} ()
@@ -55,6 +66,34 @@ Contructor for BST tree class.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classbst_a64edfd3a7c05023cef487ef40a07a322}\label{classbst_a64edfd3a7c05023cef487ef40a07a322} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classbst_1_1_iterator}{Iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to begin 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classbst_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{classbst_aa3db0ba407a005ce61feb9c605bbb187}\label{classbst_aa3db0ba407a005ce61feb9c605bbb187} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!end@{end}}
+\index{end@{end}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classbst_1_1_iterator}{Iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to end 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classbst_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classbst_ab9d984aab9247a36c78b115484ccb623}\label{classbst_ab9d984aab9247a36c78b115484ccb623} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!inorder@{inorder}}
 \index{inorder@{inorder}!bst$<$ T $>$@{bst$<$ T $>$}}
@@ -147,6 +186,20 @@ search function.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if the key exists in the tree. 
+\end{DoxyReturn}
+\Hypertarget{classbst_a8a04b4ab8c11fe64c9a3f282aa6eb187}\label{classbst_a8a04b4ab8c11fe64c9a3f282aa6eb187} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!size@{size}}
+\index{size@{size}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+size function 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t the size of the tree 
 \end{DoxyReturn}
 \Hypertarget{classbst_a0198118bc2eb3d58607ce6acadb770a6}\label{classbst_a0198118bc2eb3d58607ce6acadb770a6} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!visualize@{visualize}}
