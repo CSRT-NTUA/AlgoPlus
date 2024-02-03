@@ -372,7 +372,7 @@ public:
   /**
    * @brief Construct a new Iterator object
    *
-   * @param els vector<T> - the elements in inorder fashion
+   * @param els vector<pair<T,T>> - the elements in inorder fashion
    */
   explicit Iterator(const int64_t &index,
                     std::vector<std::pair<T, T>> &els) noexcept
@@ -424,7 +424,7 @@ public:
   /**
    * @brief operator * for type Iterator
    *
-   * @return T the value of the node
+   * @return std::pair<T,T> the value of the node
    */
   std::pair<T, T> operator*() {
     return {elements[index].first, elements[index].second};
