@@ -22,4 +22,4 @@ We are happy to see you contribute :).
 ### **Fixing a bug**
 
 * First and foremost, report the bug with an **Issue**
-* if you are able to solve the issue yourself, then we are happy to see you solving the issue yourself, otherwise, we hope that someone else will solve the issue.
+* if you are able to solve the issue yourself, then we are happy to see you solving the issue, otherwise, we hope that someone else will solve the issue.
