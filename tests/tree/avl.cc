@@ -103,4 +103,10 @@ TEST_CASE("testing clear function") {
   a.clear();
   std::vector<char> v = a.inorder();
   REQUIRE(v.size() == 0);
+  a.insert('g');
+  a.insert('w');
+  a.insert('a');
+  std::vector<char> v2 = a.inorder();
+  std::vector<char> check = {'a', 'g', 'w'};
+  REQUIRE(v2 == check);
 }

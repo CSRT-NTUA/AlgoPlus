@@ -41,6 +41,15 @@ public:
       }
     }
   }
+
+  /**
+   * @brief clear function
+   */
+  void clear() {
+    root = nullptr;
+    __size = 0;
+  }
+
   /**
    * @brief size functon
    *
