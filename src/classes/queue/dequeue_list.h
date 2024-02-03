@@ -1,5 +1,5 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #ifdef __cplusplus
 #include <iostream>
@@ -7,9 +7,9 @@
 #endif
 
 /**
- * @brief stack_list class
+ * @brief dequeue list class
  */
-template <typename T> class stack_list {
+template <typename T> class dequeue_list {
 private:
   /**
    * @brief struct for the node
@@ -25,19 +25,20 @@ private:
   };
 
   std::shared_ptr<node> root;
+  std::shared_ptr<node> tail;
   size_t __size;
 
 public:
   /**
-   * @brief Construct a new stack list object
+   * @brief Construct a new dequeue list object
    *
    * @param v initializer vector
    */
-  explicit stack_list(std::vector<T> v = {}) noexcept
-      : root(nullptr), __size(0) {
+  explicit dequeue_list(std::vector<T> v = {}) noexcept
+      : root(nullptr), tail(nullptr), __size(0) {
     if (!v.empty()) {
       for (T &x : v) {
-        this->push(x);
+        this->push_back(x);
       }
     }
   }
@@ -47,6 +48,7 @@ public:
    */
   void clear() {
     root = nullptr;
+    tail = nullptr;
     __size = 0;
   }
 
@@ -58,19 +60,40 @@ public:
   size_t size() { return __size; }
 
   /**
-   * @brief push function
+   * @brief push_back function
    *
-   * @param key the key to be pushed
+   * @param key the key to be pushed back
    */
-  void push(T key) {
+  void push_back(T key) {
     std::shared_ptr<node> nn = std::make_shared<node>(key);
     if (!root) {
       root = nn;
+      tail = nn;
       __size++;
       return;
     } else {
-      root->next = nn;
-      nn->prev = root;
+      tail->next = nn;
+      nn->prev = tail;
+      tail = nn;
+      __size++;
+    }
+  }
+
+  /**
+   * @brief push_front function
+   *
+   * @param key the key to be pushed front
+   */
+  void push_front(T key) {
+    std::shared_ptr<node> nn = std::make_shared<node>(key);
+    if (!root) {
+      root = nn;
+      tail = nn;
+      __size++;
+      return;
+    } else {
+      root->prev = nn;
+      nn->next = root;
       root = nn;
       __size++;
     }
@@ -79,31 +102,48 @@ public:
   /**
    * @brief top function
    *
-   * @return T the top of the stack
+   * @return T the top of the dequeue
    */
-  T top() { return root->val; }
+  T front() { return root->val; }
 
   /**
-   * @brief pop function
-   * removes the top of the stack
+   * @brief back function
+   *
+   * @return T the back of the dequeue
    */
-  void pop() {
-    root = root->prev;
-    root->next = nullptr;
+  T back() { return tail->val; }
+
+  /**
+   * @brief pop_front function
+   * removes the front from the dequeue
+   */
+  void pop_front() {
+    root = root->next;
+    root->prev = nullptr;
+    __size--;
+  }
+
+  /**
+   * @brief pop_back function
+   *removes the back from the queue
+   */
+  void pop_back() {
+    tail = tail->prev;
+    tail->next = nullptr;
     __size--;
   }
 
   class Iterator;
 
   /**
-   * @brief pointer to the top of the stack
+   * @brief pointer to the front of the dequeue
    *
    * @return Iterator
    */
   Iterator begin() { return Iterator(root); }
 
   /**
-   * @brief pointer to the end of the stack
+   * @brief pointer to the end of the dequeue
    *
    * @return Iterator
    */
@@ -113,7 +153,7 @@ public:
 /**
  * @brief Iterator class
  */
-template <typename T> class stack_list<T>::Iterator {
+template <typename T> class dequeue_list<T>::Iterator {
 private:
   std::shared_ptr<node> curr_root;
 
@@ -121,9 +161,9 @@ public:
   /**
    * @brief Construct a new Iterator object
    *
-   * @param s stack_list pointer
+   * @param q dequeue_list pointer
    */
-  explicit Iterator(const std::shared_ptr<node> &s) noexcept : curr_root(s) {}
+  explicit Iterator(const std::shared_ptr<node> &q) noexcept : curr_root(q) {}
 
   /**
    * @brief = operator for Iterator type
@@ -143,7 +183,7 @@ public:
    */
   Iterator &operator++() {
     if (curr_root) {
-      curr_root = curr_root->prev;
+      curr_root = curr_root->next;
     }
     return *(this);
   }
