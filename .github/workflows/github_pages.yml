@@ -15,7 +15,7 @@ jobs:
           submodules: true
       - name: Install requirements
         run: |
-          sudo apt install graphviz ninja doxygen
+          sudo apt install graphviz doxygen
       - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
