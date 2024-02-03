@@ -1,20 +1,18 @@
-name: Doxygen CI
+name: Doxygen GitHub Pages Deploy Action
 
-on: 
+on:
   push:
-    branches: [master]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: macos-latest
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
-          submodules: true
-      - name: Install requirements
-        run: |
-          brew install graphviz ninja doxygen
-      - name: build
-        run: cmake --build build -t doc
-      - name: Doxygen Action              
-        uses: mattnotmitt/doxygen-action@1.9.5
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/html
+          config_file: Doxyfile
