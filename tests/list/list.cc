@@ -49,7 +49,7 @@ TEST_CASE("testing iteration") {
   REQUIRE(elem == ans);
 }
 
-TEST_CASE("testing reverse"){
+TEST_CASE("testing reverse") {
   linked_list<int> l1;
   l1.push_back(10);
   l1.push_back(11);
@@ -57,7 +57,7 @@ TEST_CASE("testing reverse"){
   l1.push_back(13);
   l1.reverse();
   std::vector<int> elem = l1.elements();
-  std::vector<int> v = {13,12,11,10};
+  std::vector<int> v = {13, 12, 11, 10};
   REQUIRE(elem == v);
 
   linked_list<std::string> l2({"hello", "world", "universe"});
@@ -65,4 +65,14 @@ TEST_CASE("testing reverse"){
   std::vector<std::string> els = l2.elements();
   std::vector<std::string> v2 = {"universe", "world", "hello"};
   REQUIRE(els == v2);
+}
+
+TEST_CASE("testing iterators") {
+  linked_list<int> l({4, 7, 1, 2, 3, 41, 32});
+  std::vector<int> els = l.elements();
+  std::vector<int> v;
+  for (auto it = l.begin(); it != l.end(); it++) {
+    v.push_back(*(it));
+  }
+  REQUIRE(v == els);
 }

@@ -49,7 +49,8 @@ public:
       return;
     }
   }
-  ~graph() {}
+
+  ~graph() { adj.clear(); }
 
   /**
    * @brief add_edge function

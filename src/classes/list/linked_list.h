@@ -37,6 +37,22 @@ public:
    */
   size_t size() { return __size; }
 
+  class Iterator;
+
+  /**
+   * @brief pointer that points to begin
+   *
+   * @return Iterator
+   */
+  Iterator begin() { return Iterator(root); }
+
+  /**
+   * @brief pointer that points to end
+   *
+   * @return Iterator
+   */
+  Iterator end() { return Iterator(nullptr); }
+
   /**
    *@brief push_back function.
    *@param key: the key to be pushed back.
@@ -191,5 +207,71 @@ template <typename T> void linked_list<T>::reverse() {
   }
   root = prev;
 }
+
+/**
+ * @brief Iterator class
+ */
+template <typename T> class linked_list<T>::Iterator {
+private:
+  std::shared_ptr<node> curr_root;
+
+public:
+  /**
+   * @brief Construct a new Iterator object
+   *
+   * @param l doubly linked list type
+   */
+  explicit Iterator(const std::shared_ptr<node> &l) noexcept : curr_root(l) {}
+
+  /**
+   * @brief = operator for Iterator type
+   *
+   * @param current smart pointer of type node
+   * @return Iterator&
+   */
+  Iterator &operator=(std::shared_ptr<node> current) {
+    this->curr_root = current;
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator &operator++() {
+    if (curr_root) {
+      curr_root = curr_root->next;
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator
+   */
+  Iterator operator++(int) {
+    Iterator it = *this;
+    ++*(this);
+    return it;
+  }
+
+  /**
+   * @brief operator != for type Iterator
+   *
+   * @param it const Iterator
+   * @return true if curr_root == it.curr_root
+   * @return false otherwise
+   */
+  bool operator!=(const Iterator &it) { return curr_root != it.curr_root; }
+
+  /**
+   * @brief operator * for type Iterator
+   *
+   * @return T the value of the node
+   */
+  T operator*() { return curr_root->val; }
+};
 
 #endif

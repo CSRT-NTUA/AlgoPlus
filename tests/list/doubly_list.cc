@@ -82,7 +82,7 @@ TEST_CASE("testing erase") {
   REQUIRE(l.search(6) == false);
 }
 
-TEST_CASE("testing reverse"){
+TEST_CASE("testing reverse") {
   doubly_linked_list<int> l;
   l.push_back(10);
   l.push_back(11);
@@ -90,6 +90,16 @@ TEST_CASE("testing reverse"){
   l.push_back(13);
   l.reverse();
   std::vector<int> els = l.elements();
-  std::vector<int> v = {13,12,11,10};
+  std::vector<int> v = {13, 12, 11, 10};
   REQUIRE(els == v);
+}
+
+TEST_CASE("testing iterators") {
+  doubly_linked_list<int> l({1, 5, 6, 3, 2, 4});
+  std::vector<int> v = l.elements();
+  std::vector<int> check;
+  for (auto it = l.begin(); it != l.end(); it++) {
+    check.push_back(*(it));
+  }
+  REQUIRE(v == check);
 }
