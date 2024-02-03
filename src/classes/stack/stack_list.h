@@ -6,8 +6,17 @@
 #include <vector>
 #endif
 
+/**
+ * @brief stack_list class
+ */
 template <typename T> class stack_list {
 private:
+  /**
+   * @brief struct for the node
+   * @param val: the value of the node
+   * @param next: pointer to the next node
+   * @param prev: pointer to the previous node
+   */
   struct node {
     T val;
     std::shared_ptr<node> next;
@@ -19,6 +28,11 @@ private:
   size_t __size;
 
 public:
+  /**
+   * @brief Construct a new stack list object
+   *
+   * @param v initializer vector
+   */
   explicit stack_list(std::vector<T> v = {}) noexcept
       : root(nullptr), __size(0) {
     if (!v.empty()) {
@@ -27,9 +41,18 @@ public:
       }
     }
   }
-
+  /**
+   * @brief size functon
+   *
+   * @return size_t the size of the stack
+   */
   size_t size() { return __size; }
 
+  /**
+   * @brief push function
+   *
+   * @param key the key to be pushed
+   */
   void push(T key) {
     std::shared_ptr<node> nn = std::make_shared<node>(key);
     if (!root) {
@@ -44,8 +67,17 @@ public:
     }
   }
 
+  /**
+   * @brief top function
+   *
+   * @return T the top of the stack
+   */
   T top() { return root->val; }
 
+  /**
+   * @brief pop function
+   * removes the top of the stack
+   */
   void pop() {
     root = root->prev;
     __size--;
@@ -53,8 +85,18 @@ public:
 
   class Iterator;
 
+  /**
+   * @brief pointer to the top of the stack
+   *
+   * @return Iterator
+   */
   Iterator begin() { return Iterator(root); }
 
+  /**
+   * @brief pointer to the end of the stack
+   *
+   * @return Iterator
+   */
   Iterator end() { return Iterator(nullptr); }
 };
 
