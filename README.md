@@ -51,7 +51,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 **Lists**
 - [X] [Single Linked List](https://en.wikipedia.org/wiki/Linked_list)
 - [X] [Doubly Linked List](https://en.wikipedia.org/wiki/Doubly_linked_list)
-- [Χ] [Circular Linked List](https://www.geeksforgeeks.org/circular-linked-list)
+- [X] [Circular Linked List](https://www.geeksforgeeks.org/circular-linked-list)
 - [X] [Skip List](https://en.wikipedia.org/wiki/Skip_list)
 
 **Other** 
