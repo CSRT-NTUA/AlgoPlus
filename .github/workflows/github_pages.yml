@@ -16,8 +16,8 @@ jobs:
       - name: Install requirements
         run: |
           sudo apt install graphviz doxygen
-      - name: gh-pages
+      - name: github_pages
         uses: actions/checkout@v4
         with:
-          ref: "github-pages"
+          ref: "github_pages"
           clean: false
