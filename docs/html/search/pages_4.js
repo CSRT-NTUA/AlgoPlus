@@ -5,5 +5,7 @@ var searchData=
   ['for_20the_20graph_20class_2',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]],
   ['for_20the_20interval_20tree_20class_3',['Mini Tutorial for the Interval Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html',1,'']]],
   ['for_20the_20skip_20list_20class_4',['Mini Tutorial for the Skip List class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2skip__list.html',1,'']]],
-  ['for_20the_20trie_20class_5',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]]
+  ['for_20the_20splay_20tree_20class_5',['Mini Tutorial for the Splay Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2splay__tree.html',1,'']]],
+  ['for_20the_20stack_20class_6',['for the Stack class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html',1,'Mini Tutorial for the Stack class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack.html',1,'Mini Tutorial for the Stack class']]],
+  ['for_20the_20trie_20class_7',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]]
 ];

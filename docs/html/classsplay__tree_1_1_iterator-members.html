@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AlgoPlus: Mini Tutorial for the Skip List class</title>
+<title>AlgoPlus: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,46 +70,25 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="classsplay__tree.html">splay_tree</a></li><li class="navelem"><a class="el" href="classsplay__tree_1_1_iterator.html">Iterator</a></li>  </ul>
+</div>
 </div><!-- top -->
-<div><div class="header">
-  <div class="headertitle"><div class="title">Mini Tutorial for the Skip List class</div></div>
+<div class="header">
+  <div class="headertitle"><div class="title">splay_tree&lt; T &gt;::Iterator Member List</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md54"></a></p><pre class="fragment">1. skip_list&lt;T&gt; -- creates a skip list with T type elements.
-</pre> <h2><a class="anchor" id="autotoc_md55"></a>
-<b>insert</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;skip_list.h&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classskip__list.html">skip_list&lt;int&gt;</a> s(3, 0.5);</div>
-<div class="line">s.insert(10); <span class="comment">// inserts 10 to the list.    </span></div>
-<div class="line">s.insert(5); <span class="comment">// inserts 5 to the list.</span></div>
-<div class="line">s.insert(13); <span class="comment">// inserts 13 to the list.</span></div>
-<div class="ttc" id="aclassskip__list_html"><div class="ttname"><a href="classskip__list.html">skip_list</a></div><div class="ttdoc">skip_list class.</div><div class="ttdef"><b>Definition</b> skip_list.h:13</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
-<b>remove</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;skip_list.h&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classskip__list.html">skip_list&lt;int&gt;</a> s(3, 0.5);</div>
-<div class="line">s.insert(10); <span class="comment">// inserts 10 to the list.</span></div>
-<div class="line">s.insert(5); <span class="comment">// inserts 5 to the list.</span></div>
-<div class="line">s.insert(13); <span class="comment">// inserts 13 to the list.</span></div>
-<div class="line"> </div>
-<div class="line">s.remove(13); <span class="comment">// removes 13 from the list.</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
-<b>search</b>:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;skip_list.h&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classskip__list.html">skip_list&lt;int&gt;</a> s(3, 0.5);</div>
-<div class="line">s.insert(10); <span class="comment">// inserts 10 to the list.</span></div>
-<div class="line">s.insert(5); <span class="comment">// inserts 5 to the list.</span></div>
-<div class="line">s.insert(13); <span class="comment">// inserts 13 to the list.</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// returns true if the key is in the list.</span></div>
-<div class="line"><span class="keywordflow">if</span>(s.search(13)){</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;element 13 found in the list&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">}</div>
-</div><!-- fragment --> </div></div><!-- contents -->
-</div><!-- PageDoc -->
+
+<p>This is the complete list of members for <a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html#afc9327f8cb72ba7c6947aca4dbcb5d72">Iterator</a>(const int64_t &amp;index, std::vector&lt; T &gt; &amp;els) noexcept</td><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html#a8327888e21ed84758168e857525b0357">operator!=</a>(const Iterator &amp;it)</td><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html#a278afb2dcf7708a7c9e5367699fbbd1d">operator*</a>()</td><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html#afe74db91ec3efca1808a05e40a766417">operator++</a>()</td><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html#a5eeda4f4b0871e9f47badd59b88a65fb">operator++</a>(int)</td><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html#a380f4b06e38351d43dedcfda5d6a503e">operator=</a>(int64_t index)</td><td class="entry"><a class="el" href="classsplay__tree_1_1_iterator.html">splay_tree&lt; T &gt;::Iterator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0

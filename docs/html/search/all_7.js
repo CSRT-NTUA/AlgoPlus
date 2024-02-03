@@ -7,6 +7,10 @@ var searchData=
   ['for_20the_20graph_20class_4',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]],
   ['for_20the_20interval_20tree_20class_5',['Mini Tutorial for the Interval Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html',1,'']]],
   ['for_20the_20skip_20list_20class_6',['Mini Tutorial for the Skip List class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2skip__list.html',1,'']]],
-  ['for_20the_20trie_20class_7',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]],
-  ['front_8',['front',['../classdequeue__list.html#a7a9f8326f96b1a42057ef0ec2a020a39',1,'dequeue_list']]]
+  ['for_20the_20splay_20tree_20class_7',['Mini Tutorial for the Splay Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2splay__tree.html',1,'']]],
+  ['for_20the_20stack_20class_8',['for the Stack class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html',1,'Mini Tutorial for the Stack class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack.html',1,'Mini Tutorial for the Stack class']]],
+  ['for_20the_20trie_20class_9',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]],
+  ['front_10',['front',['../classdequeue__list.html#a7a9f8326f96b1a42057ef0ec2a020a39',1,'dequeue_list']]],
+  ['front_20strong_20_3a_11',['&lt;strong&gt;front&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html#autotoc_md29',1,'']]],
+  ['full_20documentation_20a_20href_20https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_12',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md5',1,'']]]
 ];
