@@ -16,9 +16,8 @@ jobs:
       - name: Install requirements
         run: |
           sudo apt install graphviz doxygen
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+      - name: gh-pages
+        uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs/html
-          config_file: Doxyfile
+          ref: "github-pages"
+          clean: false
