@@ -50,6 +50,28 @@ public:
    */
   bool search(T key) { return __search(root, key); }
 
+  class Iterator;
+
+  /**
+   * @brief pointer that points to begin
+   *
+   * @return Iterator
+   */
+  Iterator begin() {
+    std::vector<T> ino = this->inorder();
+    return Iterator(0, ino);
+  }
+
+  /**
+   * @brief pointer that points to end
+   *
+   * @return Iterator
+   */
+  Iterator end() {
+    std::vector<T> ino = this->inorder();
+    return Iterator(ino.size(), ino);
+  }
+
   /**
    *@brief remove function.
    *@param key: key to be removed.
@@ -281,6 +303,74 @@ private:
     }
     return __s;
   }
+};
+
+/**
+ * @brief Iterator class
+ */
+template <typename T> class avl_tree<T>::Iterator {
+private:
+  std::vector<T> elements;
+  int64_t index;
+
+public:
+  /**
+   * @brief Construct a new Iterator object
+   *
+   * @param els vector<T> - the elements in inorder fashion
+   */
+  explicit Iterator(const int64_t &index, std::vector<T> &els) noexcept
+      : index(index), elements(els) {}
+
+  /**
+   * @brief = operator for Iterator type
+   *
+   * @param current smart pointer of type node
+   * @return Iterator&
+   */
+  Iterator &operator=(int64_t index) {
+    this->index = index;
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator &operator++() {
+    if (this->index < elements.size()) {
+      this->index++;
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator
+   */
+  Iterator operator++(int) {
+    Iterator it = *this;
+    ++*(this);
+    return it;
+  }
+
+  /**
+   * @brief operator != for type Iterator
+   *
+   * @param it const Iterator
+   * @return true if curr_root == it.curr_root
+   * @return false otherwise
+   */
+  bool operator!=(const Iterator &it) { return index != it.index; }
+
+  /**
+   * @brief operator * for type Iterator
+   *
+   * @return T the value of the node
+   */
+  T operator*() { return elements[index]; }
 };
 
 #endif

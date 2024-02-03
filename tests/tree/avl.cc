@@ -77,3 +77,23 @@ TEST_CASE("checking postorder") {
   std::vector<int> __postorder = {-5, 2, 10, 5};
   REQUIRE(a.postorder() == __postorder);
 }
+
+TEST_CASE("testing iterators") {
+  avl_tree<int> a({8, 4, 3, 1, 5, 6});
+  std::vector<int> els = a.inorder();
+  std::vector<int> check;
+  for (auto it = a.begin(); it != a.end(); it++) {
+    check.push_back(*(it));
+  }
+
+  REQUIRE(check == els);
+
+  avl_tree<char> b({'a', 'g', 'd', 'w', 'v', 's'});
+  std::vector<char> els2 = b.inorder();
+  std::vector<char> check2;
+  for (auto it = b.begin(); it != b.end(); it++) {
+    check2.push_back(*(it));
+  }
+
+  REQUIRE(check2 == els2);
+}

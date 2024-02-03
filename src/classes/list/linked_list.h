@@ -219,7 +219,7 @@ public:
   /**
    * @brief Construct a new Iterator object
    *
-   * @param l doubly linked list type
+   * @param l linked list type
    */
   explicit Iterator(const std::shared_ptr<node> &l) noexcept : curr_root(l) {}
 
