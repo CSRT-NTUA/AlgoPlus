@@ -10,6 +10,8 @@ AlgoPlus is a C++ library that includes ready to use complex Data Structures.
 
 ### **See the full documentation [here](https://csrt-ntua.github.io/AlgoPlus/)**
 
+### **[Join](https://discord.gg/M9nYv4MHz6) our Discord** 
+
 ### Example:
 
 ```cpp
