@@ -32,6 +32,7 @@ public:
   void insert(std::pair<T, T> p) {
     interval i = interval(p);
     root = __insert(root, i);
+    __size++;
   }
 
   /**
@@ -56,6 +57,7 @@ public:
   void remove(std::pair<T, T> p) {
     interval i = interval(p);
     root = __remove(root, i);
+    __size--;
   }
 
   /**
@@ -90,6 +92,13 @@ public:
     std::vector<std::pair<T, T>> ino = this->inorder();
     return Iterator(ino.size(), ino);
   }
+
+  /**
+   * @brief size function
+   *
+   * @return size_t the size of the tree
+   */
+  size_t size() { return __size; }
 
   /**
    *@brief inorder function.
@@ -184,7 +193,9 @@ private:
     node(interval n)
         : i(new interval(n)), max(n.high), right(nullptr), left(nullptr) {}
   };
+
   std::shared_ptr<node> root;
+  size_t __size;
 
   std::shared_ptr<node> new_node(interval i) {
     std::shared_ptr<node> p = std::make_shared<node>(i);

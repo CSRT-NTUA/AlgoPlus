@@ -32,7 +32,10 @@ public:
    *@brief insert function.
    *@param key: key to be inserted.
    */
-  void insert(T key) { root = __insert(root, key); }
+  void insert(T key) {
+    root = __insert(root, key);
+    __size++;
+  }
 
   /**
    *@brief clear function
@@ -40,6 +43,7 @@ public:
    */
   void clear() {
     root = std::make_shared<node>(nullptr);
+    __size = 0;
     return;
   }
 
@@ -73,10 +77,19 @@ public:
   }
 
   /**
+   * @brief size function
+   *
+   * @return size_t the size of the tree
+   */
+  size_t size() { return __size; }
+  /**
    *@brief remove function.
    *@param key: key to be removed.
    */
-  void remove(T key) { root = __remove(root, key); }
+  void remove(T key) {
+    root = __remove(root, key);
+    __size--;
+  }
 
   /**
    *@brief inorder function.
@@ -142,7 +155,9 @@ private:
     std::shared_ptr<node> right;
     node(T key) : info(key), left(nullptr), right(nullptr), height(0) {}
   } node;
+
   std::shared_ptr<node> root;
+  size_t __size;
 
   int64_t height(std::shared_ptr<node> root) {
     if (root == nullptr)

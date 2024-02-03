@@ -33,7 +33,10 @@ public:
    *@brief insert function.
    *@param key: key to be inserted.
    */
-  void insert(T key) { root = __insert(root, key); }
+  void insert(T key) {
+    root = __insert(root, key);
+    __size++;
+  }
 
   /**
    *@brief search function.
@@ -46,7 +49,10 @@ public:
    *@brief remove function.
    *@param key: key to be removed.
    */
-  void remove(T key) { root = __remove(root, key); }
+  void remove(T key) {
+    root = __remove(root, key);
+    __size--;
+  }
 
   class Iterator;
 
@@ -69,6 +75,13 @@ public:
     std::vector<T> ino = this->inorder();
     return Iterator(ino.size(), ino);
   }
+
+  /**
+   * @brief size function
+   *
+   * @return size_t the size of the tree
+   */
+  size_t size() { return __size; }
 
   /**
    *@brief inorder function.
@@ -134,7 +147,9 @@ private:
     std::shared_ptr<node> left;
     node(T key) : info(key), right(nullptr), left(nullptr) {}
   } node;
+
   std::shared_ptr<node> root;
+  size_t __size;
 
   std::shared_ptr<node> new_node(T &key) {
     std::shared_ptr<node> p = std::make_shared<node>(key);
