@@ -6,17 +6,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      - uses: codecov/codecov-action@v4
         with:
-          fetch-depth: 2
-      - name: Install dependencies
-        run: yarn install
-      - name: Run tests
-        run: yarn run test --coverage # generates coverage
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
-          verbose: true
+          fail_ci_if_error: true # optional (default = false)
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          token: ${{ secrets.CODECOV_TOKEN }} # required
+          verbose: true # optional (default = false)
