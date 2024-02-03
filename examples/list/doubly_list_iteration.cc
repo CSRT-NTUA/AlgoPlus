@@ -11,6 +11,6 @@ int main() {
   std::cout << l1.size() << '\n';
   std::cout << l1 << '\n';
   if (l1.search(3)) {
-    std::cout << "YAY" << '\n';
+    std::cout << "3 exists in the list" << '\n';
   }
 }

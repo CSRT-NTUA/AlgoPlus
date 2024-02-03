@@ -5,6 +5,7 @@
 avl tree contains:
     - insert
     - remove
+    - clear
     - search
     - inorder
     - preorder
