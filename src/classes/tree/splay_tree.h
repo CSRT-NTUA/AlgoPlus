@@ -7,6 +7,9 @@
 #include <iostream>
 #endif
 
+/**
+ * @brief splay tree class
+ */
 template <typename T> class splay_tree {
 private:
   /**
