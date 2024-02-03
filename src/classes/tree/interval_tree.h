@@ -69,6 +69,28 @@ public:
     return i1.high >= i2.low && i1.low <= i2.high;
   }
 
+  class Iterator;
+
+  /**
+   * @brief pointer that points to begin
+   *
+   * @return Iterator
+   */
+  Iterator begin() {
+    std::vector<std::pair<T, T>> ino = this->inorder();
+    return Iterator(0, ino);
+  }
+
+  /**
+   * @brief pointer that points to end
+   *
+   * @return Iterator
+   */
+  Iterator end() {
+    std::vector<std::pair<T, T>> ino = this->inorder();
+    return Iterator(ino.size(), ino);
+  }
+
   /**
    *@brief inorder function.
    *@returns vector<pair<T,T>>, the elements inorder.
@@ -335,6 +357,77 @@ private:
       }
     }
     return __s;
+  }
+};
+
+/**
+ * @brief Iterator class
+ */
+template <typename T> class interval_tree<T>::Iterator {
+private:
+  std::vector<std::pair<T, T>> elements;
+  int64_t index;
+
+public:
+  /**
+   * @brief Construct a new Iterator object
+   *
+   * @param els vector<T> - the elements in inorder fashion
+   */
+  explicit Iterator(const int64_t &index,
+                    std::vector<std::pair<T, T>> &els) noexcept
+      : index(index), elements(els) {}
+
+  /**
+   * @brief = operator for Iterator type
+   *
+   * @param index the current index
+   * @return Iterator&
+   */
+  Iterator &operator=(int64_t index) {
+    this->index = index;
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator &operator++() {
+    if (this->index < elements.size()) {
+      this->index++;
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator
+   */
+  Iterator operator++(int) {
+    Iterator it = *this;
+    ++*(this);
+    return it;
+  }
+
+  /**
+   * @brief operator != for type Iterator
+   *
+   * @param it const Iterator
+   * @return true if index == it.index
+   * @return false otherwise
+   */
+  bool operator!=(const Iterator &it) { return index != it.index; }
+
+  /**
+   * @brief operator * for type Iterator
+   *
+   * @return T the value of the node
+   */
+  std::pair<T, T> operator*() {
+    return {elements[index].first, elements[index].second};
   }
 };
 

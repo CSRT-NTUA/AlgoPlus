@@ -36,3 +36,13 @@ TEST_CASE("testing remove") {
   REQUIRE(i.search({'c', 'd'}));
   REQUIRE(i.search({'a', 'd'}) == true);
 }
+
+TEST_CASE("testing iterators") {
+  interval_tree<int> i({{1, 3}, {5, 6}, {2, 4}, {9, 10}});
+  std::vector<std::pair<int, int>> els = i.inorder();
+  std::vector<std::pair<int, int>> check;
+  for (auto it = i.begin(); it != i.end(); it++) {
+    check.push_back(*(it));
+  }
+  REQUIRE(check == els);
+}
