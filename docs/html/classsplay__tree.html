@@ -84,12 +84,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42c17e85ad2c1bacd934ca0ccc51e398" id="r_a42c17e85ad2c1bacd934ca0ccc51e398"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c17e85ad2c1bacd934ca0ccc51e398">splay_tree</a> (std::vector&lt; T &gt; v={}) noexcept</td></tr>
 <tr class="memdesc:a42c17e85ad2c1bacd934ca0ccc51e398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new splay tree object.  <br /></td></tr>
 <tr class="separator:a42c17e85ad2c1bacd934ca0ccc51e398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da70f39990b6c677cf0022378fd4b17" id="r_a2da70f39990b6c677cf0022378fd4b17"><td class="memItemLeft" align="right" valign="top"><a id="a2da70f39990b6c677cf0022378fd4b17" name="a2da70f39990b6c677cf0022378fd4b17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memdesc:a2da70f39990b6c677cf0022378fd4b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear function <br /></td></tr>
+<tr class="separator:a2da70f39990b6c677cf0022378fd4b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28eea5f755129c69077896c03bb0406e" id="r_a28eea5f755129c69077896c03bb0406e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28eea5f755129c69077896c03bb0406e">insert</a> (T key)</td></tr>
 <tr class="memdesc:a28eea5f755129c69077896c03bb0406e"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert function  <br /></td></tr>
 <tr class="separator:a28eea5f755129c69077896c03bb0406e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab022b141626c54e2e09ab870e7000f89" id="r_ab022b141626c54e2e09ab870e7000f89"><td class="memItemLeft" align="right" valign="top"><a id="ab022b141626c54e2e09ab870e7000f89" name="ab022b141626c54e2e09ab870e7000f89"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (T key)</td></tr>
+<tr class="memitem:ab022b141626c54e2e09ab870e7000f89" id="r_ab022b141626c54e2e09ab870e7000f89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab022b141626c54e2e09ab870e7000f89">remove</a> (T key)</td></tr>
+<tr class="memdesc:ab022b141626c54e2e09ab870e7000f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove function  <br /></td></tr>
 <tr class="separator:ab022b141626c54e2e09ab870e7000f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15a430689cfc7d6f75c35f8420e36b4" id="r_ae15a430689cfc7d6f75c35f8420e36b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae15a430689cfc7d6f75c35f8420e36b4">search</a> (T key)</td></tr>
+<tr class="memdesc:ae15a430689cfc7d6f75c35f8420e36b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">search function  <br /></td></tr>
+<tr class="separator:ae15a430689cfc7d6f75c35f8420e36b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0b17cab8207f3162e02835259100c6" id="r_aea0b17cab8207f3162e02835259100c6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea0b17cab8207f3162e02835259100c6">size</a> ()</td></tr>
+<tr class="memdesc:aea0b17cab8207f3162e02835259100c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">size function  <br /></td></tr>
+<tr class="separator:aea0b17cab8207f3162e02835259100c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3418b2394bd2f5295edeb0444292938a" id="r_a3418b2394bd2f5295edeb0444292938a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3418b2394bd2f5295edeb0444292938a">inorder</a> ()</td></tr>
 <tr class="memdesc:a3418b2394bd2f5295edeb0444292938a"><td class="mdescLeft">&#160;</td><td class="mdescRight">inorder function.  <br /></td></tr>
 <tr class="separator:a3418b2394bd2f5295edeb0444292938a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,6 +272,109 @@ template&lt;typename T &gt; </div>
 
 <p>preorder function. </p>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;T&gt;, the elements preorder. </dd></dl>
+
+</div>
+</div>
+<a id="ab022b141626c54e2e09ab870e7000f89" name="ab022b141626c54e2e09ab870e7000f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab022b141626c54e2e09ab870e7000f89">&#9670;&#160;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>the key to be removed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae15a430689cfc7d6f75c35f8420e36b4" name="ae15a430689cfc7d6f75c35f8420e36b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae15a430689cfc7d6f75c35f8420e36b4">&#9670;&#160;</a></span>search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt;::search </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>search function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if key exists in the tree </dd>
+<dd>
+false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aea0b17cab8207f3162e02835259100c6" name="aea0b17cab8207f3162e02835259100c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0b17cab8207f3162e02835259100c6">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>size function </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t the size of the tree </dd></dl>
 
 </div>
 </div>

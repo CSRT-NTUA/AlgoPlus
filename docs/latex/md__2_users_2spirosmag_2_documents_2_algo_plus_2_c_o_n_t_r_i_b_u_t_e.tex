@@ -1,13 +1,28 @@
 \chapter{\texorpdfstring{$<$}{<}strong\texorpdfstring{$>$}{>}How to contribute?\texorpdfstring{$<$}{<}/strong\texorpdfstring{$>$}{>}}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e}{}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e}\index{$<$strong$>$How to contribute?$<$/strong$>$@{$<$strong$>$How to contribute?$<$/strong$>$}}
-\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md0}%
-\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md0}%
+\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md1}%
+\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md1}%
 
 \begin{DoxyItemize}
 \item Open a {\bfseries{pull request}} explaining your addition/fix. If it is an addition of a class or an algorithm please explain why it\textquotesingle{}s useful and provide a url to a wikipedia page for the algorithm/data structure you\textquotesingle{}re suggesting. \texorpdfstring{$\ast$}{*}(Note that the code {\bfseries{must}} follow our code-\/style to be accepted)\texorpdfstring{$\ast$}{*}.
-\item Implementation is not everyting, you have to provide test cases in the {\bfseries{tests}} folder for {\bfseries{EVERY}} function you implement.
+\item Implementation is not everyting, you have to provide test cases in the {\bfseries{tests}} folder for {\bfseries{EVERY}} function you implement(see how to write unit tests \doxysectlink{md__2_users_2spirosmag_2_documents_2_algo_plus_2_u_n_i_t___t_e_s_t_s}{here}{0}).
 \item Last but not least, you have to write some documentation in the {\bfseries{tutorial}} folder for the users to know how to use your code.
 \end{DoxyItemize}
 
 We are happy to see you contribute \+:). ~\newline
- 
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md2}{}\doxysubsection{\texorpdfstring{{\bfseries{Creating a new Class}}}{{\bfseries{Creating a new Class}}}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item The header file/s must be in .h format.
+\item Always define the header files on the first and the second line(ifndef and define)
+\item Make sure the comments are exactly like it should be(see more \doxysectlink{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s}{here}{0})
+\item Do not include \texorpdfstring{$<$}{<}bits/stdc++.h\texorpdfstring{$>$}{>} and only include libraries that you\textquotesingle{}ll need in the class
+\item Make sure you use the {\bfseries{optimal}} algorithms and not the ones that are slower
+\item You have to create a folder in the {\bfseries{tests}} directory and test every function of your class, make sure you add a good ammount of test cases
+\item Add a small documentation .md file in the {\bfseries{tutorial}} directory.
+\end{DoxyItemize}\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{{\bfseries{Fixing a bug}}}{{\bfseries{Fixing a bug}}}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item First and foremost, report the bug with an {\bfseries{Issue}}
+\item if you are able to solve the issue yourself, then we are happy to see you solving the issue, otherwise, we hope that someone else will solve the issue. 
+\end{DoxyItemize}
