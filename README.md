@@ -1,6 +1,6 @@
 ## Algoplus{BETA Version}
 
-AlgoPlus is a C++ library that includes ready to use complex Data Structures.
+AlgoPlus is a C++ library that includes ready-to-use complex **data structures** and **algorithms**.
 
 ![Algoplus](https://github.com/CSRT-NTUA/AlgoPlus/blob/main/assets/logo.png)
 
@@ -38,7 +38,6 @@ std::cout << g.shortest_path(1, 2) << '\n';
 g.visualize() // You can visualize almost any of our implemented data structures!
 ```
 You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
-
 
 ### Classes
 
@@ -81,3 +80,5 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 4. **Promote** the repository on your local workshop/seminar and **get a shout-out**.
 
 See more [here](/CONTRIBUTE.md).
+
+The authors
