@@ -17,7 +17,7 @@ jobs:
       - name: configure
         run: cmake -G Ninja -B ./build -S .
       - name: build
-        run: cmake --build build -t doc
+        run: cmake --build build -t docs
       - name: gh-pages
         uses: actions/checkout@v4
         with:
