@@ -16,6 +16,13 @@ TEST_CASE("testing push") {
     check.push_back(*(it));
   }
   REQUIRE(els == check);
+
+  stack_list<std::string> s2;
+  s2.push("world");
+  s2.push("hello");
+  REQUIRE(s2.top() == "hello");
+  s2.pop();
+  REQUIRE(s2.top() == "world");
 }
 
 TEST_CASE("testing pop") {
