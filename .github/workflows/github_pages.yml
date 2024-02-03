@@ -10,14 +10,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
       - name: Install requirements
         run: |
-          sudo apt install graphviz doxygen
-      - name: github_pages
-        uses: actions/checkout@v4
+          sudo apt-get install doxygen graphviz -y
+      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
-          ref: "github_pages"
-          clean: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/html
+          config_file: Doxyfile
