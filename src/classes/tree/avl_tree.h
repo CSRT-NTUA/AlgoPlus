@@ -325,7 +325,7 @@ public:
   /**
    * @brief = operator for Iterator type
    *
-   * @param current smart pointer of type node
+   * @param index the current index
    * @return Iterator&
    */
   Iterator &operator=(int64_t index) {
@@ -360,7 +360,7 @@ public:
    * @brief operator != for type Iterator
    *
    * @param it const Iterator
-   * @return true if curr_root == it.curr_root
+   * @return true if index == it.index
    * @return false otherwise
    */
   bool operator!=(const Iterator &it) { return index != it.index; }

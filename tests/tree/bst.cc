@@ -85,3 +85,14 @@ TEST_CASE("checking postorder") {
   std::vector<char> post = {'b', 'a', 'w', 'g'};
   REQUIRE(b.postorder() == post);
 }
+
+TEST_CASE("checking iterators") {
+  bst<int> b({5, 3, -10, 4, 15, 20});
+  std::vector<int> els = b.inorder();
+  std::vector<int> check;
+  for (auto it = b.begin(); it != b.end(); it++) {
+    check.push_back(*(it));
+  }
+
+  REQUIRE(els == check);
+}
