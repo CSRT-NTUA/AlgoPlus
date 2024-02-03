@@ -22,6 +22,7 @@ private:
     node(T key = 0) : info(key), right(nullptr), left(nullptr) {}
   };
   std::shared_ptr<node> root;
+  size_t __size;
 
 public:
   /**
@@ -29,7 +30,8 @@ public:
    *
    * @param v vector<T> initializer vector
    */
-  explicit splay_tree(std::vector<T> v = {}) noexcept : root(nullptr) {
+  explicit splay_tree(std::vector<T> v = {}) noexcept
+      : root(nullptr), __size(0) {
     if (!v.empty()) {
       for (T &x : v) {
         this->insert(x);
@@ -40,13 +42,51 @@ public:
   ~splay_tree() { root = nullptr; }
 
   /**
+   * @brief clear function
+   */
+  void clear() {
+    root = nullptr;
+    __size = 0;
+  }
+
+  /**
    * @brief insert function
    *
    * @param key the key to be inserted
    */
-  void insert(T key) { root = __insert(root, key); }
+  void insert(T key) {
+    root = __insert(root, key);
+    __size++;
+  }
 
-  void remove(T key);
+  /**
+   * @brief remove function
+   *
+   * @param key the key to be removed
+   */
+  void remove(T key) {
+    root = __remove(root, key);
+    __size--;
+  }
+
+  /**
+   * @brief search function
+   *
+   * @param key
+   * @return true if key exists in the tree
+   * @return false otherwise
+   */
+  bool search(T key) {
+    std::shared_ptr<node> ans = splay(root, key);
+    return (ans && ans->info == key);
+  }
+
+  /**
+   * @brief size function
+   *
+   * @return size_t the size of the tree
+   */
+  size_t size() { return __size; }
 
   /**
    *@brief inorder function.
@@ -166,6 +206,26 @@ private:
       root->right = nullptr;
     }
     return nn;
+  }
+
+  std::shared_ptr<node> __remove(std::shared_ptr<node> root, T key) {
+    if (!root) {
+      return nullptr;
+    }
+    root = splay(root, key);
+    if (key != root->info) {
+      return root;
+    }
+
+    std::shared_ptr<node> temp;
+    temp = root;
+    if (!root->left) {
+      root = root->right;
+    } else {
+      root = splay(root->left, key);
+      root->right = temp->right;
+    }
+    return root;
   }
 
   void __inorder(std::function<void(std::shared_ptr<node>)> callback,

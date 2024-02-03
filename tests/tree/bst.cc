@@ -96,3 +96,10 @@ TEST_CASE("checking iterators") {
 
   REQUIRE(els == check);
 }
+
+TEST_CASE("testing clear function") {
+  bst<char> b({'a', 'w', 'd', 'g', 'u', 'l'});
+  b.clear();
+  std::vector<char> v = b.inorder();
+  REQUIRE(v.size() == 0);
+}

@@ -16,6 +16,7 @@ private:
   };
 
   std::shared_ptr<node> root;
+  size_t __size;
 
 public:
   /**
@@ -43,6 +44,12 @@ public:
    */
   void insert(std::string key);
 
+  /**
+   * @brief size function
+   *
+   * @return size_t the size of the tree
+   */
+  size_t size() { return __size; }
   /**
    *@brief remove function.
    *@param key: the key to be removed.
@@ -108,9 +115,13 @@ void trie::insert(std::string key) {
     current = current->characters[index];
   }
   current->end_word = true;
+  __size++;
 }
 
-void trie::remove(std::string key) { root = __remove(root, key, 0); }
+void trie::remove(std::string key) {
+  root = __remove(root, key, 0);
+  __size--;
+}
 
 bool trie::search(std::string key) {
   std::shared_ptr<node> current = root;

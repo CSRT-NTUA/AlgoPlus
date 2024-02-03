@@ -25,6 +25,16 @@ public:
     }
   }
 
+  ~interval_tree() { root = nullptr; }
+
+  /**
+   * @brief clear function
+   */
+  void clear() {
+    root = nullptr;
+    __size = 0;
+  }
+
   /**
    *@brief insert function.
    *@param p: interval to be inserted.

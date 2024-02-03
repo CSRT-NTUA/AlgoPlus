@@ -97,3 +97,10 @@ TEST_CASE("testing iterators") {
 
   REQUIRE(check2 == els2);
 }
+
+TEST_CASE("testing clear function") {
+  avl_tree<char> a({'g', 'w', 'h', 'p', 'u'});
+  a.clear();
+  std::vector<char> v = a.inorder();
+  REQUIRE(v.size() == 0);
+}

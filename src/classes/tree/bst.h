@@ -27,7 +27,15 @@ public:
       }
     }
   }
-  ~bst() noexcept {}
+  ~bst() noexcept { root = nullptr; }
+
+  /**
+   * @brief clear function
+   */
+  void clear() {
+    root = nullptr;
+    __size = 0;
+  }
 
   /**
    *@brief insert function.

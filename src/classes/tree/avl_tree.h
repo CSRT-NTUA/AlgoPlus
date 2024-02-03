@@ -42,7 +42,7 @@ public:
    *Erase all the nodes from the tree.
    */
   void clear() {
-    root = std::make_shared<node>(nullptr);
+    root = nullptr;
     __size = 0;
     return;
   }
