@@ -64,3 +64,19 @@ TEST_CASE("testing clear function") {
   std::vector<int> els = s.inorder();
   REQUIRE(els.size() == 0);
 }
+
+TEST_CASE("testing iterators") {
+  splay_tree<int> s;
+  s.insert(10);
+  s.insert(12);
+  s.insert(16);
+  s.insert(5);
+  s.insert(-10);
+  s.insert(6);
+  std::vector<int> v = {-10, 5, 6, 10, 12, 16};
+  std::vector<int> check;
+  for (auto it = s.begin(); it != s.end(); it++) {
+    check.push_back(*(it));
+  }
+  REQUIRE(check == v);
+}
