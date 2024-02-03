@@ -56,6 +56,8 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 
 **Other** 
 - [X] [Disjoint set](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
+- [X] [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+- [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
    
 ### How to contribute  
