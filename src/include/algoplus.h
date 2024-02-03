@@ -23,8 +23,11 @@
 #include "../classes/list/doubly_linked_list.h"
 #include "../classes/list/linked_list.h"
 #include "../classes/list/skip_list.h"
+#include "../classes/queue/dequeue_list.h"
+#include "../classes/stack/stack_list.h"
 #include "../classes/tree/avl_tree.h"
 #include "../classes/tree/bst.h"
 #include "../classes/tree/interval_tree.h"
+#include "../classes/tree/splay_tree.h"
 #include "../classes/tree/trie.h"
 #endif

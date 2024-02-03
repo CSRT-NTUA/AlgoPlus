@@ -30,6 +30,7 @@ g.add_edge(2, 8, 10);
 
 // returns the shortest path from 1 to 2.
 std::cout << g.shortest_path(1, 2) << '\n';
+g.visualize() // You can visualize almost any of our implemented data structures!
 ```
 You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 
