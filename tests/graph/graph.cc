@@ -180,3 +180,16 @@ TEST_CASE("testing eulerian check") {
   g3.add_edge(3, 4);
   REQUIRE(g3.eulerian() == 2);
 }
+
+TEST_CASE("testing copy constructor") {
+  graph<int> g("undirected");
+  g.add_edge(1, 3);
+  g.add_edge(1, 0);
+  g.add_edge(1, 2);
+  g.add_edge(2, 0);
+  g.add_edge(0, 3);
+  g.add_edge(3, 4);
+  graph<int> g1(g);
+  REQUIRE(g.dfs(1) == g1.dfs(1));
+}
+
