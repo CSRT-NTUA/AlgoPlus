@@ -193,5 +193,16 @@ TEST_CASE("testing copy constructor") {
   graph<int> g2 = g;
   REQUIRE(g.dfs(1) == g1.dfs(1));
   REQUIRE(g.dfs(1) == g2.dfs(1));
-}
 
+  graph<char> g3("directed");
+  g3.add_edge('a', 'b');
+  g3.add_edge('b', 'd');
+  g3.add_edge('c', 'd');
+  g3.add_edge('w', 'd');
+  g3.add_edge('d', 'a');
+
+  graph<char> g4 = g3;
+  graph<char> g5(g3);
+  REQUIRE(g4.dfs('a') == g3.dfs('a'));
+  REQUIRE(g5.dfs('a') == g3.dfs('a'));
+}
