@@ -35,4 +35,4 @@ void quick_sort(Iter begin, Iter end) {
     quick_sort(middle2, end);
 }
 
-#endif //ALGOPLUS_QUICK_SORT_H
+#endif //QUICK_SORT_H
