@@ -52,15 +52,15 @@ public:
 
   ~graph() { adj.clear(); }
 
-  graph(const graph& original) {
-    adj = original.adj;
-    __elements = original.__elements;
-    __type = original.__type;
+  graph(const graph& g) {
+    adj = g.adj;
+    __elements = g.__elements;
+    __type = g.__type;
   }
-  graph& operator=(const graph& original) {
-    adj = original.adj;
-    __elements = original.__elements;
-    __type = original.__type;
+  graph& operator=(const graph& g) {
+    adj = g.adj;
+    __elements = g.__elements;
+    __type = g.__type;
     return *this;
   }
 
