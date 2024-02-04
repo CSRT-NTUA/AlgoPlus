@@ -2,7 +2,6 @@
 #include "../../../src/algorithms/sorting/merge_sort.h"
 #include "../../catch2/catch.hpp"
 #include <random>
-#include <string>
 #include <vector>
 
 TEST_CASE("testing merge sort") {
