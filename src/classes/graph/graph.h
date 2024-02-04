@@ -50,6 +50,33 @@ public:
     }
   }
 
+  /**
+   * @brief Construct a new graph object
+   *
+   * @param g the graph we want to copy
+   */
+  graph(const graph &g) {
+    adj = g.adj;
+    __elements = g.__elements;
+    __type = g.__type;
+  }
+
+  /**
+   * @brief operator = for the graph class
+   *
+   * @param g the graph we want to copy
+   * @return graph&
+   */
+  graph &operator=(const graph &g) {
+    adj = g.adj;
+    __elements = g.__elements;
+    __type = g.__type;
+    return *this;
+  }
+
+  /**
+   * @brief Destroy the graph object
+   */
   ~graph() { adj.clear(); }
 
   /**
