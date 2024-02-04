@@ -7,16 +7,12 @@
  * @brief Sorts a range of elements using the Quick Sort algorithm
  * @param begin An iterator to the beginning of the range to be sorted.
  * @param end An iterator to the end of the range to be sorted.
- *
- * @details
- * The implementation requires that the iterator type `Iter` supports Random Access to enable
+ * @details The implementation requires that the iterator type `Iter` supports Random Access to enable
  * efficient partitioning and element swapping. The elements in the range must be move-assignable
  * and should support comparison with the '<' operator. If these requirements are not met,
  * the behavior of the function is undefined.
- *
  * This function sorts the elements in the range [begin, end) into ascending order.
  * The sort is performed in-place.
- *
  * Its performance is generally O(n log n) on average, though worst-case performance is O(n^2)
 */
 template<typename Iter>
@@ -39,4 +35,4 @@ void quick_sort(Iter begin, Iter end) {
     quick_sort(middle2, end);
 }
 
-#endif //QUICK_SORT_H
+#endif //ALGOPLUS_QUICK_SORT_H
