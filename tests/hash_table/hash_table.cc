@@ -4,23 +4,23 @@
 #include <string>
 
 TEST_CASE("checking insertions, overriding insertions and retrievals") {
-    hash_table<int, std::string> table;
+    hash_table<std::string, int> table;
 
-    table.insert(1, "abc");
-    table.insert(1, "def");
-    table.insert(2, "ghi");
+    table.insert("abc", 1);
+    table.insert("abc", 2);
+    table.insert("def", 3);
 
-    REQUIRE(table.retreive(1) == "def");
-    REQUIRE(table.retreive(3) == std::nullopt);
+    REQUIRE(table.retreive("abc") == 3);
+    REQUIRE(table.retreive("ghi") == std::nullopt);
 }
 
 TEST_CASE("checking removals") {
-    hash_table<int, std::string> table;
+    hash_table<std::string, int> table;
 
-    table.insert(1, "abc");
-    table.insert(2, "def");
-    table.remove(1);
+    table.insert("abc", 1);
+    table.insert("def", 2);
+    table.remove("abc");
 
-    REQUIRE(table.retreive(1) == std::nullopt);
-    REQUIRE(table.retreive(2) == "def")
+    REQUIRE(table.retreive("abc") == std::nullopt);
+    REQUIRE(table.retreive("def") == 2)
 }
