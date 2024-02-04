@@ -5,11 +5,12 @@
 #include <iostream>
 #endif
 
-/*
- *binary_gcd function.
- *@param a: first element.
- *@param b: second element.
- *Returns the gcd(a,b).
+/**
+ * @brief binary gcd function
+ *
+ * @param a first number
+ * @param b second number
+ * @return int64_t the greatest common divisor of a and b
  */
 int64_t binary_gcd(const int64_t a, const int64_t b) {
   if (a == b) {
@@ -39,11 +40,12 @@ int64_t binary_gcd(const int64_t a, const int64_t b) {
   return binary_gcd((b - a) >> 1, a);
 }
 
-/*
- *euclidean_gcd function.
- *@param a: first element.
- *@param b: second element.
- *Returns the gcd(a,b).
+/**
+ * @brief euclidian gcd function
+ *
+ * @param a first number
+ * @param b second number
+ * @return int64_t the greatest common divisor of a and b
  */
 int64_t euclidean_gcd(int64_t a, int64_t b) {
   while (a > 0 && b > 0) {

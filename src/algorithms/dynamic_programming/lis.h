@@ -6,10 +6,10 @@
 #include <vector>
 #endif
 
-/*
- *lis function.
- *@param arr: the input array.
- *Returns the longest increasing subsequence of the array.
+/**
+ * @brief Longest increasing subsequence function
+ * @param arr input array
+ * @return int64_t the size of the longest increasing subsequence
  */
 template <typename T> int64_t lis(std::vector<T> arr) {
   std::vector<T> ans;

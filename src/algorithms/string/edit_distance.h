@@ -6,6 +6,13 @@
 #include <string>
 #endif
 
+/**
+ * @brief edit distance function
+ * @param word1 first string
+ * @param word2 second string
+ * @return int64_t the minimum steps to make word1 equal to word2(i.e. the
+ * distance of word1 and word2)
+ */
 int64_t min_dist(std::string word1, std::string word2) {
   if (word1.size() == 0 && word2.size() == 0) {
     return 0;

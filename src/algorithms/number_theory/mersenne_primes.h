@@ -6,11 +6,11 @@
 #include <iostream>
 #endif
 
-/*
- *mersenne function.
- *@param n: the upper bound
- *Returns vector<int>: the vector includes the elements "p" from m = 2^p - 1 for
- *which p gives us a mersenne prime number.
+/**
+ * @brief mersenne prime function
+ *
+ * @param n the upper bound
+ * @return std::vector<int> the total mersenne primes till the upper bound n
  */
 std::vector<int> mersenne(int64_t n) {
   std::vector<bool> prime = soe(n);

@@ -6,6 +6,13 @@
 #include <iostream>
 #endif
 
+/**
+ * @brief exponential search function
+ * @param arr input array
+ * @param key the element we want to search
+ * @return int64_t index of the key in the array if it exists, otherwise returns
+ * -1
+ */
 template <typename T> int64_t exponential_search(std::vector<T> arr, T key) {
   if (arr[0] == key) {
     return true;

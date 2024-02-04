@@ -6,6 +6,10 @@
 #include <vector>
 #endif
 
+/**
+ * @brief insertion sort function
+ * @param arr input array
+ */
 template <typename T> void insertion_sort(std::vector<T> &arr) {
   for (int64_t i = 1; i < arr.size(); i++) {
     int64_t j = i - 1;

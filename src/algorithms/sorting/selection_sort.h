@@ -6,9 +6,9 @@
 #include <vector>
 #endif
 
-/*
- *selection sort function.
- *O(N^2) time complexity.
+/**
+ * @brief selection sort function
+ * @param arr input array
  */
 template <typename T> void selection_sort(std::vector<T> &arr) {
   int64_t min_idx;

@@ -6,20 +6,27 @@
 #include <string>
 #endif
 
-int lcs(std::string a, std::string b) {
-  int m = a.length(), n = b.length();
-  int res[m + 1][n + 1];
-  int trace[20][20];
+/**
+ * @brief longest common subsequence function
+ *
+ * @param a first input string
+ * @param b second input string
+ * @return int64_t the longest common subsequence of a to b
+ */
+int64_t lcs(std::string a, std::string b) {
+  int64_t m = a.length(), n = b.length();
+  int64_t res[m + 1][n + 1];
+  int64_t trace[20][20];
 
-  for (int i = 0; i < m + 1; i++) {
-    for (int j = 0; j < n + 1; j++) {
+  for (int64_t i = 0; i < m + 1; i++) {
+    for (int64_t j = 0; j < n + 1; j++) {
       res[i][j] = 0;
       trace[i][j] = 0;
     }
   }
 
-  for (int i = 0; i < m + 1; ++i) {
-    for (int j = 0; j < n + 1; ++j) {
+  for (int64_t i = 0; i < m + 1; ++i) {
+    for (int64_t j = 0; j < n + 1; ++j) {
       if (i == 0 || j == 0) {
         res[i][j] = 0;
         trace[i][j] = 0;

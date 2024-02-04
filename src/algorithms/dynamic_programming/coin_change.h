@@ -6,6 +6,12 @@
 #include <vector>
 #endif
 
+/**
+ * @brief minimum cost function for the coin change problem
+ *
+ * @param arr input array
+ * @return int64_t the minimum cost
+ */
 int64_t min_cost(std::vector<int> arr, int N) {
   int max_of = N + 1;
   std::vector<int> dp(N + 1, max_of);
