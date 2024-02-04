@@ -190,6 +190,8 @@ TEST_CASE("testing copy constructor") {
   g.add_edge(0, 3);
   g.add_edge(3, 4);
   graph<int> g1(g);
+  graph<int> g2 = g;
   REQUIRE(g.dfs(1) == g1.dfs(1));
+  REQUIRE(g.dfs(1) == g2.dfs(1));
 }
 
