@@ -14,6 +14,7 @@
  * two halves, recursively sorts each half, and then merges the two sorted
  * halves together. The function requires that the range of elements is sortable
  * by the criteria used in std::inplace_merge.
+ * Merge sort performs in O(n log (n)) in the best, average, and worst case.
  */
 template <typename Iter> void merge_sort(Iter begin, Iter end) {
   if (end - begin > 1) {
