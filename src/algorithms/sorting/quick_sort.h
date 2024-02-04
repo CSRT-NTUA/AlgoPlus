@@ -2,7 +2,38 @@
 #define ALGOPLUS_QUICK_SORT_H
 
 #include <iterator> // For std::iterator_traits
-#include <algorithm> // For std::partition
+#include <algorithm> // For std::partition and std::swap
+
+
+/**
+ * @brief Finds and returns the median of three elements of a container.
+ * @param a An iterator pointing to the first element.
+ * @param b An iterator pointing to the second element.
+ * @param c An iterator pointing to the third element.
+ * @details This function takes iterators to three elements in a container, compares these
+ * elements, and returns an iterator pointing to the median value.
+ * The function doesn't mutate the original elements.
+ * @return An iterator pointing to the median of the three input element.
+ */
+template<typename Iter>
+Iter median_of_three(Iter a, Iter b, Iter c) {
+    if (*a < *b) {
+        if (*b < *c)
+            return b;
+        else if (*a < *c)
+            return c;
+        else
+            return a;
+    } else {
+        if (*a < *c)
+            return a;
+        else if (*b < *c)
+            return c;
+        else
+            return b;
+    }
+}
+
 /**
  * @brief Sorts a range of elements using the Quick Sort algorithm
  * @param begin An iterator to the beginning of the range to be sorted.
@@ -18,11 +49,18 @@
 template<typename Iter>
 void quick_sort(Iter begin, Iter end) {
     auto distance = std::distance(begin, end);
-    if (distance <= 1) return; // Base case: 0 or 1 element
+    if (distance <= 1)
+        return;
 
-    auto pivot = *begin;
+    // choose the pivot as median of first, middle and last element
+    Iter mid = begin + distance/2;
+    Iter pivot_pos = median_of_three(begin, mid, end-1);
+    auto pivot = *pivot_pos;
 
-    Iter middle1 = std::partition(begin, end, [pivot](const auto& elem) {
+    // swap pivot to start
+    std::swap(*begin, *pivot_pos);
+
+    Iter middle1 = std::partition(begin+1, end, [pivot](const auto& elem) {
         return elem < pivot;
     });
 
@@ -30,8 +68,11 @@ void quick_sort(Iter begin, Iter end) {
         return !(pivot < elem);
     });
 
-    // Recursively apply quick_sort to the partitions
-    quick_sort(begin, middle1);
+    // swap pivot to its final place
+    std::swap(*begin, *(middle1-1));
+
+    // recursively apply quick_sort to partitions
+    quick_sort(begin, middle1-1);
     quick_sort(middle2, end);
 }
 
