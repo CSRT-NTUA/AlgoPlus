@@ -52,6 +52,18 @@ public:
 
   ~graph() { adj.clear(); }
 
+  graph(const graph& original) {
+    adj = original.adj;
+    __elements = original.__elements;
+    __type = original.__type;
+  }
+  graph& operator=(const graph& original) {
+    adj = original.adj;
+    __elements = original.__elements;
+    __type = original.__type;
+    return *this;
+  }
+
   /**
    * @brief add_edge function
    * @param u: first node
