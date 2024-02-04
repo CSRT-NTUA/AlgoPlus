@@ -64,6 +64,10 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
+### **Our contributors**
+<a href="https://github.com/CSRT-NTUA/AlgoPlus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=CSRT-NTUA/AlgoPlus" />
+</a>
    
 ### How to contribute  
 1. Povide **new implementations** on our already implemented data structures & algorithms.
@@ -80,5 +84,3 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 4. **Promote** the repository on your local workshop/seminar and **get a shout-out**.
 
 See more [here](/CONTRIBUTE.md).
-
-The authors
