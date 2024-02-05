@@ -3,6 +3,8 @@
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
+#include <vector>
 #endif
 
 /**

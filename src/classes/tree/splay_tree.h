@@ -1,10 +1,11 @@
 #ifndef SPLAY_TREE_H
 #define SPLAY_TREE_H
 
-#include <memory>
 #ifdef __cplusplus
 #include "../../visualization/tree_visual/tree_visualization.h"
 #include <iostream>
+#include <memory>
+#include <vector>
 #endif
 
 /**

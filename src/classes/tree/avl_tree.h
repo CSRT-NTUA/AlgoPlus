@@ -3,7 +3,9 @@
 
 #ifdef __cplusplus
 #include "../../visualization/tree_visual/tree_visualization.h"
+#include <chrono>
 #include <functional>
+#include <memory>
 #include <queue>
 #include <string>
 #include <vector>

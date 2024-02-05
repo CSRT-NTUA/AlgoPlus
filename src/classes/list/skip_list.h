@@ -3,7 +3,9 @@
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
 #include <stdexcept>
+#include <vector>
 #endif
 
 /**
