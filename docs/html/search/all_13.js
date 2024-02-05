@@ -15,7 +15,7 @@ var searchData=
   ['to_20contribute_12',['How to contribute',['../index.html#autotoc_md10',1,'']]],
   ['to_20contribute_20strong_13',['&lt;strong&gt;How to contribute?&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'']]],
   ['top_14',['top',['../classstack__list.html#a02d7021eceefc2638fde93f38cdeb589',1,'stack_list']]],
-  ['top_20strong_20_3a_15',['&lt;strong&gt;top&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack.html#autotoc_md75',1,'']]],
+  ['top_20strong_20_3a_15',['&lt;strong&gt;top&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack.html#autotoc_md74',1,'']]],
   ['topological_5fsort_16',['topological_sort',['../classgraph.html#a5fa36c46613b6a5252f263dde594cf1f',1,'graph::topological_sort()'],['../classweighted__graph.html#a4b6919e5c07fa6b655169b6a30592771',1,'weighted_graph::topological_sort()']]],
   ['topological_5fsort_20strong_20_3a_17',['&lt;strong&gt;topological_sort&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md39',1,'']]],
   ['tree_20class_18',['Mini Tutorial for the AVL tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html',1,'']]],

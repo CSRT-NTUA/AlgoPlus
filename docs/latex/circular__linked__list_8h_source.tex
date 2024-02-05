@@ -7,184 +7,186 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcircular__linked__list}{circular\_linked\_list}}\ \{}
-\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcircular__linked__list_a3527cdb59754d739a9b52a4a02c183d2}{circular\_linked\_list}}(std::vector<T>\ \_\_elements\ =\ \{\})\ \textcolor{keyword}{noexcept}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ :\ root(nullptr),\ tail(nullptr),\ \_\_size(0)\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_\_elements.empty())\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ \_\_elements)\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}{push\_back}}(x);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ \}}
-\DoxyCodeLine{00025\ \ \ \}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_afa30d61d17468c5b52b2c70cdd87228f}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ root\ ==\ \textcolor{keyword}{nullptr};\ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classcircular__linked__list_ae0e6f2aa4f4b5433fe3829ee99aca74a}{size}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_size;\ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{class\ }Iterator;}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcircular__linked__list}{circular\_linked\_list}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcircular__linked__list_a3527cdb59754d739a9b52a4a02c183d2}{circular\_linked\_list}}(std::vector<T>\ \_\_elements\ =\ \{\})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ :\ root(nullptr),\ tail(nullptr),\ \_\_size(0)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_\_elements.empty())\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ \_\_elements)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}{push\_back}}(x);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_afa30d61d17468c5b52b2c70cdd87228f}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ root\ ==\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classcircular__linked__list_ae0e6f2aa4f4b5433fe3829ee99aca74a}{size}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_size;\ \}}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classcircular__linked__list_a4326741c71783cf7752ec54744853266}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}(root);\ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classcircular__linked__list_ac44983a3c6787b338f41f99edcdfabf9}{end}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});\ \}}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}{push\_back}}(T\ key);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5caccafa9f77dcfdfb1bad669877f609}{push\_front}}(T\ key);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5b325ae99060b57f15ca46ec4d9d22de}{erase}}(T\ key);}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_a1c978c5b99bc577c81e8d6d654a40b29}{search}}(T\ key);}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00093\ \ \ std::vector<T>\ \mbox{\hyperlink{classcircular__linked__list_a539edebbf066da0d2aaf90a06a82d045}{elements}}();}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classcircular__linked__list_ad28b4924b79de5736accc4576f40ac0a}{operator<<}}(std::ostream\ \&out,}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcircular__linked__list}{circular\_linked\_list<T>}}\ \&l1)\ \{}
-\DoxyCodeLine{00100\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\{'};}
-\DoxyCodeLine{00101\ \ \ \ \ std::shared\_ptr<node>\ head\ =\ l1.root;}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ out\ <<\ head-\/>val\ <<\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ head\ =\ head-\/>next;}
-\DoxyCodeLine{00105\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (head\ !=\ l1.root);}
-\DoxyCodeLine{00106\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\}'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
-\DoxyCodeLine{00108\ \ \ \}}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{struct\ }node\ \{}
-\DoxyCodeLine{00117\ \ \ \ \ T\ val;}
-\DoxyCodeLine{00118\ \ \ \ \ std::shared\_ptr<node>\ next;}
-\DoxyCodeLine{00119\ \ \ \ \ node(T\ key\ =\ 0)\ :\ val(key),\ next(nullptr)\ \{\}}
-\DoxyCodeLine{00120\ \ \ \};}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ std::shared\_ptr<node>\ root;}
-\DoxyCodeLine{00123\ \ \ std::shared\_ptr<node>\ tail;}
-\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{size\_t}\ \_\_size;}
-\DoxyCodeLine{00125\ \};}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}{circular\_linked\_list<T>::push\_back}}(T\ key)\ \{}
-\DoxyCodeLine{00128\ \ \ std::shared\_ptr<node>\ p\ =\ std::make\_shared<node>(key);}
-\DoxyCodeLine{00129\ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00130\ \ \ \ \ root\ =\ p;}
-\DoxyCodeLine{00131\ \ \ \ \ tail\ =\ p;}
-\DoxyCodeLine{00132\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00133\ \ \ \ \ tail-\/>next\ =\ p;}
-\DoxyCodeLine{00134\ \ \ \ \ tail\ =\ p;}
-\DoxyCodeLine{00135\ \ \ \}}
-\DoxyCodeLine{00136\ \ \ tail-\/>next\ =\ root;}
-\DoxyCodeLine{00137\ \ \ \_\_size++;}
-\DoxyCodeLine{00138\ \}}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5caccafa9f77dcfdfb1bad669877f609}{circular\_linked\_list<T>::push\_front}}(T\ key)\ \{}
-\DoxyCodeLine{00141\ \ \ std::shared\_ptr<node>\ p\ =\ std::make\_shared<node>(key);}
-\DoxyCodeLine{00142\ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00143\ \ \ \ \ root\ =\ p;}
-\DoxyCodeLine{00144\ \ \ \ \ tail\ =\ p;}
-\DoxyCodeLine{00145\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00146\ \ \ \ \ p-\/>next\ =\ root;}
-\DoxyCodeLine{00147\ \ \ \ \ root\ =\ p;}
-\DoxyCodeLine{00148\ \ \ \ \ tail-\/>next\ =\ root;}
-\DoxyCodeLine{00149\ \ \ \}}
-\DoxyCodeLine{00150\ \ \ \_\_size++;}
-\DoxyCodeLine{00151\ \}}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5b325ae99060b57f15ca46ec4d9d22de}{circular\_linked\_list<T>::erase}}(T\ key)\ \{}
-\DoxyCodeLine{00154\ \ \ \textcolor{keywordflow}{if}\ (empty())\ \{}
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00156\ \ \ \}}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ std::shared\_ptr<node>\ t\ =\ root;}
-\DoxyCodeLine{00159\ \ \ std::shared\_ptr<node>\ to\_be\_removed\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \ \ \textcolor{keywordflow}{do}\ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (t-\/>next-\/>val\ ==\ key)\ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ to\_be\_removed\ =\ t-\/>next;}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ t-\/>next\ =\ t-\/>next-\/>next;}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ to\_be\_removed.reset();}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \_\_size-\/-\/;}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t-\/>next\ ==\ root)\ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ tail\ =\ t;}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ tail)\ \{}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ tail\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00177\ \ \ \ \ \}}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \ \ \ \ t\ =\ t-\/>next;}
-\DoxyCodeLine{00180\ \ \ \}\ \textcolor{keywordflow}{while}\ (t\ !=\ root);}
-\DoxyCodeLine{00181\ \}}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_a1c978c5b99bc577c81e8d6d654a40b29}{circular\_linked\_list<T>::search}}(T\ key)\ \{}
-\DoxyCodeLine{00184\ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty())\ \{}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00187\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ std::shared\_ptr<node>\ t\ =\ root;}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t-\/>val\ ==\ key)\ \{}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ t\ =\ t-\/>next;}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (t\ !=\ root);}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00197\ \ \ \ \ \}}
-\DoxyCodeLine{00198\ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
-\DoxyCodeLine{00199\ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00201\ \ \ \}}
-\DoxyCodeLine{00202\ \}}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00204\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classcircular__linked__list_a539edebbf066da0d2aaf90a06a82d045}{circular\_linked\_list<T>::elements}}()\ \{}
-\DoxyCodeLine{00205\ \ \ std::vector<T>\ \_\_elements;}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00207\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty())\ \{}
-\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_elements;}
-\DoxyCodeLine{00209\ \ \ \}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ std::shared\_ptr<node>\ head\ =\ root;}
-\DoxyCodeLine{00212\ \ \ \textcolor{keywordflow}{do}\ \{}
-\DoxyCodeLine{00213\ \ \ \ \ \_\_elements.push\_back(head-\/>val);}
-\DoxyCodeLine{00214\ \ \ \ \ head\ =\ head-\/>next;}
-\DoxyCodeLine{00215\ \ \ \}\ \textcolor{keywordflow}{while}\ (head\ !=\ root);}
-\DoxyCodeLine{00216\ }
-\DoxyCodeLine{00217\ \ \ \textcolor{keywordflow}{return}\ \_\_elements;}
-\DoxyCodeLine{00218\ \}}
-\DoxyCodeLine{00222\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcircular__linked__list}{circular\_linked\_list}}<T>::\mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \{}
-\DoxyCodeLine{00223\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00224\ \ \ std::shared\_ptr<node>\ curr\_root;}
-\DoxyCodeLine{00225\ }
-\DoxyCodeLine{00226\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00232\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a56a79c0ca0b2174983bcb4824ccd2282}{Iterator}}(\textcolor{keyword}{const}\ std::shared\_ptr<node>\ \&l)\ noexcept\ :\ curr\_root(l)\ \{\}}
-\DoxyCodeLine{00233\ }
-\DoxyCodeLine{00240\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a5791b47de8bba74a6b6f7bb4e45760e9}{operator=}}(std::shared\_ptr<node>\ current)\ \{}
-\DoxyCodeLine{00241\ \ \ \ \ this-\/>curr\_root\ =\ current;}
-\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
-\DoxyCodeLine{00243\ \ \ \}}
-\DoxyCodeLine{00244\ }
-\DoxyCodeLine{00250\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a0d911391c75f678914deb0e6c455963d}{operator++}}()\ \{}
-\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_root)\ \{}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ curr\_root\ =\ curr\_root-\/>next;}
-\DoxyCodeLine{00253\ \ \ \ \ \}}
-\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
-\DoxyCodeLine{00255\ \ \ \}}
-\DoxyCodeLine{00256\ }
-\DoxyCodeLine{00262\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_afd285480fcc5da38ef4452aa9a14e482}{operator++}}(\textcolor{keywordtype}{int})\ \{}
-\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00264\ \ \ \ \ ++*(\textcolor{keyword}{this});}
-\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
-\DoxyCodeLine{00266\ \ \ \}}
-\DoxyCodeLine{00267\ }
-\DoxyCodeLine{00275\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a82b8b936cea11f0b4d8e8faea3d72f14}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ curr\_root\ !=\ it.curr\_root;\ \}}
-\DoxyCodeLine{00276\ }
-\DoxyCodeLine{00282\ \ \ T\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a4adee3dae88804ade451791db61c7040}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ curr\_root-\/>val;\ \}}
-\DoxyCodeLine{00283\ \};}
-\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{class\ }Iterator;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classcircular__linked__list_a4326741c71783cf7752ec54744853266}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}(root);\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classcircular__linked__list_ac44983a3c6787b338f41f99edcdfabf9}{end}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}{push\_back}}(T\ key);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5caccafa9f77dcfdfb1bad669877f609}{push\_front}}(T\ key);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5b325ae99060b57f15ca46ec4d9d22de}{erase}}(T\ key);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_a1c978c5b99bc577c81e8d6d654a40b29}{search}}(T\ key);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ std::vector<T>\ \mbox{\hyperlink{classcircular__linked__list_a539edebbf066da0d2aaf90a06a82d045}{elements}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classcircular__linked__list_ad28b4924b79de5736accc4576f40ac0a}{operator<<}}(std::ostream\ \&out,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcircular__linked__list}{circular\_linked\_list<T>}}\ \&l1)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\{'};}
+\DoxyCodeLine{00103\ \ \ \ \ std::shared\_ptr<node>\ head\ =\ l1.root;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ out\ <<\ head-\/>val\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00107\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (head\ !=\ l1.root);}
+\DoxyCodeLine{00108\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\}'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{struct\ }node\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ T\ val;}
+\DoxyCodeLine{00120\ \ \ \ \ std::shared\_ptr<node>\ next;}
+\DoxyCodeLine{00121\ \ \ \ \ node(T\ key\ =\ 0)\ :\ val(key),\ next(nullptr)\ \{\}}
+\DoxyCodeLine{00122\ \ \ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ std::shared\_ptr<node>\ root;}
+\DoxyCodeLine{00125\ \ \ std::shared\_ptr<node>\ tail;}
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{size\_t}\ \_\_size;}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}{circular\_linked\_list<T>::push\_back}}(T\ key)\ \{}
+\DoxyCodeLine{00130\ \ \ std::shared\_ptr<node>\ p\ =\ std::make\_shared<node>(key);}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ root\ =\ p;}
+\DoxyCodeLine{00133\ \ \ \ \ tail\ =\ p;}
+\DoxyCodeLine{00134\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ tail-\/>next\ =\ p;}
+\DoxyCodeLine{00136\ \ \ \ \ tail\ =\ p;}
+\DoxyCodeLine{00137\ \ \ \}}
+\DoxyCodeLine{00138\ \ \ tail-\/>next\ =\ root;}
+\DoxyCodeLine{00139\ \ \ \_\_size++;}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5caccafa9f77dcfdfb1bad669877f609}{circular\_linked\_list<T>::push\_front}}(T\ key)\ \{}
+\DoxyCodeLine{00143\ \ \ std::shared\_ptr<node>\ p\ =\ std::make\_shared<node>(key);}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ root\ =\ p;}
+\DoxyCodeLine{00146\ \ \ \ \ tail\ =\ p;}
+\DoxyCodeLine{00147\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ p-\/>next\ =\ root;}
+\DoxyCodeLine{00149\ \ \ \ \ root\ =\ p;}
+\DoxyCodeLine{00150\ \ \ \ \ tail-\/>next\ =\ root;}
+\DoxyCodeLine{00151\ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \_\_size++;}
+\DoxyCodeLine{00153\ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcircular__linked__list_a5b325ae99060b57f15ca46ec4d9d22de}{circular\_linked\_list<T>::erase}}(T\ key)\ \{}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordflow}{if}\ (empty())\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00158\ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ std::shared\_ptr<node>\ t\ =\ root;}
+\DoxyCodeLine{00161\ \ \ std::shared\_ptr<node>\ to\_be\_removed\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (t-\/>next-\/>val\ ==\ key)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ to\_be\_removed\ =\ t-\/>next;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ t-\/>next\ =\ t-\/>next-\/>next;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ to\_be\_removed.reset();}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \_\_size-\/-\/;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t-\/>next\ ==\ root)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ tail\ =\ t;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ tail)\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ tail\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ t\ =\ t-\/>next;}
+\DoxyCodeLine{00182\ \ \ \}\ \textcolor{keywordflow}{while}\ (t\ !=\ root);}
+\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_a1c978c5b99bc577c81e8d6d654a40b29}{circular\_linked\_list<T>::search}}(T\ key)\ \{}
+\DoxyCodeLine{00186\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty())\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00189\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ std::shared\_ptr<node>\ t\ =\ root;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t-\/>val\ ==\ key)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ t\ =\ t-\/>next;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (t\ !=\ root);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00203\ \ \ \}}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<T>\ \mbox{\hyperlink{classcircular__linked__list_a539edebbf066da0d2aaf90a06a82d045}{circular\_linked\_list<T>::elements}}()\ \{}
+\DoxyCodeLine{00207\ \ \ std::vector<T>\ \_\_elements;}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty())\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_elements;}
+\DoxyCodeLine{00211\ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ std::shared\_ptr<node>\ head\ =\ root;}
+\DoxyCodeLine{00214\ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \_\_elements.push\_back(head-\/>val);}
+\DoxyCodeLine{00216\ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00217\ \ \ \}\ \textcolor{keywordflow}{while}\ (head\ !=\ root);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordflow}{return}\ \_\_elements;}
+\DoxyCodeLine{00220\ \}}
+\DoxyCodeLine{00224\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcircular__linked__list}{circular\_linked\_list}}<T>::\mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \{}
+\DoxyCodeLine{00225\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00226\ \ \ std::shared\_ptr<node>\ curr\_root;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00234\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a56a79c0ca0b2174983bcb4824ccd2282}{Iterator}}(\textcolor{keyword}{const}\ std::shared\_ptr<node>\ \&l)\ noexcept\ :\ curr\_root(l)\ \{\}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00242\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a5791b47de8bba74a6b6f7bb4e45760e9}{operator=}}(std::shared\_ptr<node>\ current)\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ this-\/>curr\_root\ =\ current;}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00245\ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00252\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a0d911391c75f678914deb0e6c455963d}{operator++}}()\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_root)\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ curr\_root\ =\ curr\_root-\/>next;}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00257\ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_afd285480fcc5da38ef4452aa9a14e482}{operator++}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00266\ \ \ \ \ ++*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00268\ \ \ \}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00277\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a82b8b936cea11f0b4d8e8faea3d72f14}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ curr\_root\ !=\ it.curr\_root;\ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00284\ \ \ T\ \mbox{\hyperlink{classcircular__linked__list_1_1_iterator_a4adee3dae88804ade451791db61c7040}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ curr\_root-\/>val;\ \}}
+\DoxyCodeLine{00285\ \};}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

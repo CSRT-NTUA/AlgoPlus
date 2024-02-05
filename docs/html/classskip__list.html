@@ -97,6 +97,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9319489b15a937d372a0233e130bb513" id="r_a9319489b15a937d372a0233e130bb513"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9319489b15a937d372a0233e130bb513">skip_list</a> (int __MAX_LEVEL, float __PROB)</td></tr>
 <tr class="memdesc:a9319489b15a937d372a0233e130bb513"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> constructor.  <br /></td></tr>
 <tr class="separator:a9319489b15a937d372a0233e130bb513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b67f580f2c6ef6a7bfa2aa4dbc31274" id="r_a7b67f580f2c6ef6a7bfa2aa4dbc31274"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b67f580f2c6ef6a7bfa2aa4dbc31274">skip_list</a> (const <a class="el" href="classskip__list.html">skip_list</a> &amp;s)</td></tr>
+<tr class="memdesc:a7b67f580f2c6ef6a7bfa2aa4dbc31274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for the <a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class.  <br /></td></tr>
+<tr class="separator:a7b67f580f2c6ef6a7bfa2aa4dbc31274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64217373d3d42f50efee572ec320a455" id="r_a64217373d3d42f50efee572ec320a455"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classskip__list.html">skip_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64217373d3d42f50efee572ec320a455">operator=</a> (const <a class="el" href="classskip__list.html">skip_list</a> &amp;s)</td></tr>
+<tr class="memdesc:a64217373d3d42f50efee572ec320a455"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for the <a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class  <br /></td></tr>
+<tr class="separator:a64217373d3d42f50efee572ec320a455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6082ffc0f5cd0c86b09a4c3b12b3ab0d" id="r_a6082ffc0f5cd0c86b09a4c3b12b3ab0d"><td class="memItemLeft" align="right" valign="top"><a id="a6082ffc0f5cd0c86b09a4c3b12b3ab0d" name="a6082ffc0f5cd0c86b09a4c3b12b3ab0d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~skip_list</b> () noexcept</td></tr>
+<tr class="memdesc:a6082ffc0f5cd0c86b09a4c3b12b3ab0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the skip list object. <br /></td></tr>
+<tr class="separator:a6082ffc0f5cd0c86b09a4c3b12b3ab0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7a2f526cda9ab87d50b9e745222ae98" id="r_ad7a2f526cda9ab87d50b9e745222ae98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a2f526cda9ab87d50b9e745222ae98">insert</a> (T key)</td></tr>
 <tr class="memdesc:ad7a2f526cda9ab87d50b9e745222ae98"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert function.  <br /></td></tr>
 <tr class="separator:ad7a2f526cda9ab87d50b9e745222ae98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,7 +135,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 class skip_list&lt; T &gt;</div><p><a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9319489b15a937d372a0233e130bb513" name="a9319489b15a937d372a0233e130bb513"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9319489b15a937d372a0233e130bb513">&#9670;&#160;</a></span>skip_list()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9319489b15a937d372a0233e130bb513">&#9670;&#160;</a></span>skip_list() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,6 +168,41 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">__MAX_LEVEL</td><td>max height of the list. </td></tr>
     <tr><td class="paramname">__PROB</td><td>probability of increasing the height each time(by default it should be 0.5). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b67f580f2c6ef6a7bfa2aa4dbc31274" name="a7b67f580f2c6ef6a7bfa2aa4dbc31274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b67f580f2c6ef6a7bfa2aa4dbc31274">&#9670;&#160;</a></span>skip_list() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classskip__list.html">skip_list</a>&lt; T &gt;<a class="el" href="classskip__list.html">::skip_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classskip__list.html">skip_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for the <a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -257,6 +302,42 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a64217373d3d42f50efee572ec320a455" name="a64217373d3d42f50efee572ec320a455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64217373d3d42f50efee572ec320a455">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classskip__list.html">skip_list</a> &amp; <a class="el" href="classskip__list.html">skip_list</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classskip__list.html">skip_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for the <a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the list we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a>&amp; </dd></dl>
 
 </div>
 </div>

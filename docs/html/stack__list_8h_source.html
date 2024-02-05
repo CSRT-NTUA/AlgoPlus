@@ -89,132 +89,133 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classstack__list.html">   12</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classstack__list.html">stack_list</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">struct </span>node {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    T val;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::shared_ptr&lt;node&gt; next;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::shared_ptr&lt;node&gt; prev;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    node(T key) : val(key), next(<span class="keyword">nullptr</span>), prev(<span class="keyword">nullptr</span>) {}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  };</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  std::shared_ptr&lt;node&gt; root;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">size_t</span> __size;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f">   36</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f">stack_list</a>(std::vector&lt;T&gt; v = {}) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      : root(nullptr), __size(0) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!v.empty()) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordflow">for</span> (T &amp;x : v) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        this-&gt;<a class="code hl_function" href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">push</a>(x);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classstack__list.html">   13</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classstack__list.html">stack_list</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">struct </span>node {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    T val;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::shared_ptr&lt;node&gt; next;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::shared_ptr&lt;node&gt; prev;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    node(T key) : val(key), next(<span class="keyword">nullptr</span>), prev(<span class="keyword">nullptr</span>) {}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::shared_ptr&lt;node&gt; root;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">size_t</span> __size;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f">   37</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f">stack_list</a>(std::vector&lt;T&gt; v = {}) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      : root(nullptr), __size(0) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span> (!v.empty()) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keywordflow">for</span> (T &amp;x : v) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        this-&gt;<a class="code hl_function" href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">push</a>(x);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classstack__list.html#ac4bbd668428be00fdeb47c6cfeec86a2">   48</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classstack__list.html#ac4bbd668428be00fdeb47c6cfeec86a2">clear</a>() {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    root = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    __size = 0;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classstack__list.html#ac4bbd668428be00fdeb47c6cfeec86a2">   49</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classstack__list.html#ac4bbd668428be00fdeb47c6cfeec86a2">clear</a>() {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    root = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    __size = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classstack__list.html#a2d39d7c7cd615ad374b06c15d20fdb21">   58</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classstack__list.html#a2d39d7c7cd615ad374b06c15d20fdb21">size</a>() { <span class="keywordflow">return</span> __size; }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">   65</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">push</a>(T key) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::shared_ptr&lt;node&gt; nn = std::make_shared&lt;node&gt;(key);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!root) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      root = nn;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      __size++;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      root-&gt;next = nn;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      nn-&gt;prev = root;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      root = nn;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      __size++;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classstack__list.html#a2d39d7c7cd615ad374b06c15d20fdb21">   59</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classstack__list.html#a2d39d7c7cd615ad374b06c15d20fdb21">size</a>() { <span class="keywordflow">return</span> __size; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">push</a>(T key) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::shared_ptr&lt;node&gt; nn = std::make_shared&lt;node&gt;(key);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!root) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      root = nn;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      __size++;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      root-&gt;next = nn;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      nn-&gt;prev = root;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      root = nn;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      __size++;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classstack__list.html#a02d7021eceefc2638fde93f38cdeb589">   84</a></span>  T <a class="code hl_function" href="classstack__list.html#a02d7021eceefc2638fde93f38cdeb589">top</a>() { <span class="keywordflow">return</span> root-&gt;val; }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classstack__list.html#a1e95582086ed2d898a62c17d8a237e5d">   90</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classstack__list.html#a1e95582086ed2d898a62c17d8a237e5d">pop</a>() {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    root = root-&gt;prev;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    root-&gt;next = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    __size--;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classstack__list.html#a02d7021eceefc2638fde93f38cdeb589">   85</a></span>  T <a class="code hl_function" href="classstack__list.html#a02d7021eceefc2638fde93f38cdeb589">top</a>() { <span class="keywordflow">return</span> root-&gt;val; }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classstack__list.html#a1e95582086ed2d898a62c17d8a237e5d">   91</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classstack__list.html#a1e95582086ed2d898a62c17d8a237e5d">pop</a>() {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    root = root-&gt;prev;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    root-&gt;next = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    __size--;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">class </span>Iterator;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classstack__list.html#a87901e2453fe4db8587cfd37de3fcaae">  103</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classstack__list.html#a87901e2453fe4db8587cfd37de3fcaae">begin</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a>(root); }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classstack__list.html#a53037d6540ac5dbe9582c68af99b3139">  110</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classstack__list.html#a53037d6540ac5dbe9582c68af99b3139">end</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a>(<span class="keyword">nullptr</span>); }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">class </span>Iterator;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classstack__list.html#a87901e2453fe4db8587cfd37de3fcaae">  104</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classstack__list.html#a87901e2453fe4db8587cfd37de3fcaae">begin</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a>(root); }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classstack__list.html#a53037d6540ac5dbe9582c68af99b3139">  111</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classstack__list.html#a53037d6540ac5dbe9582c68af99b3139">end</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a>(<span class="keyword">nullptr</span>); }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>};</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="foldopen" id="foldopen00116" data-start="{" data-end="};">
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html">  116</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classstack__list.html">stack_list</a>&lt;T&gt;::<a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  std::shared_ptr&lt;node&gt; curr_root;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a81854ce2874a2a5f5d4f3636d5b26cce">  126</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classstack__list_1_1_iterator.html#a81854ce2874a2a5f5d4f3636d5b26cce">Iterator</a>(<span class="keyword">const</span> std::shared_ptr&lt;node&gt; &amp;s) noexcept : curr_root(s) {}</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a981ee13d3cc916a6dce5fb568cc23700">  134</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classstack__list_1_1_iterator.html#a981ee13d3cc916a6dce5fb568cc23700">operator=</a>(std::shared_ptr&lt;node&gt; current) {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    this-&gt;curr_root = current;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="};">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html">  117</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classstack__list.html">stack_list</a>&lt;T&gt;::<a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  std::shared_ptr&lt;node&gt; curr_root;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a81854ce2874a2a5f5d4f3636d5b26cce">  127</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classstack__list_1_1_iterator.html#a81854ce2874a2a5f5d4f3636d5b26cce">Iterator</a>(<span class="keyword">const</span> std::shared_ptr&lt;node&gt; &amp;s) noexcept : curr_root(s) {}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a981ee13d3cc916a6dce5fb568cc23700">  135</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classstack__list_1_1_iterator.html#a981ee13d3cc916a6dce5fb568cc23700">operator=</a>(std::shared_ptr&lt;node&gt; current) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    this-&gt;curr_root = current;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
 </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a4bb844064ea51919f90658ebf608f316">  144</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classstack__list_1_1_iterator.html#a4bb844064ea51919f90658ebf608f316">operator++</a>() {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">if</span> (curr_root) {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      curr_root = curr_root-&gt;prev;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a4bb844064ea51919f90658ebf608f316">  145</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classstack__list_1_1_iterator.html#a4bb844064ea51919f90658ebf608f316">operator++</a>() {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (curr_root) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      curr_root = curr_root-&gt;prev;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
 </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a20be9fe10442543bb6e3885e666c820f">  156</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classstack__list_1_1_iterator.html#a20be9fe10442543bb6e3885e666c820f">operator++</a>(<span class="keywordtype">int</span>) {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> it = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    ++*(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">return</span> it;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a20be9fe10442543bb6e3885e666c820f">  157</a></span>  <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classstack__list_1_1_iterator.html#a20be9fe10442543bb6e3885e666c820f">operator++</a>(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> it = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    ++*(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> it;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  }</div>
 </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a114d7b1bb68fe730c895750d846e62eb">  169</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classstack__list_1_1_iterator.html#a114d7b1bb68fe730c895750d846e62eb">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> &amp;it) { <span class="keywordflow">return</span> curr_root != it.curr_root; }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#aed643fbe3ef5eca5d197c163f47f81a3">  176</a></span>  T <a class="code hl_function" href="classstack__list_1_1_iterator.html#aed643fbe3ef5eca5d197c163f47f81a3">operator*</a>() { <span class="keywordflow">return</span> curr_root-&gt;val; }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>};</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#a114d7b1bb68fe730c895750d846e62eb">  170</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classstack__list_1_1_iterator.html#a114d7b1bb68fe730c895750d846e62eb">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classstack__list_1_1_iterator.html">Iterator</a> &amp;it) { <span class="keywordflow">return</span> curr_root != it.curr_root; }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classstack__list_1_1_iterator.html#aed643fbe3ef5eca5d197c163f47f81a3">  177</a></span>  T <a class="code hl_function" href="classstack__list_1_1_iterator.html#aed643fbe3ef5eca5d197c163f47f81a3">operator*</a>() { <span class="keywordflow">return</span> curr_root-&gt;val; }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>};</div>
 </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html"><div class="ttname"><a href="classstack__list_1_1_iterator.html">stack_list::Iterator</a></div><div class="ttdoc">Iterator class.</div><div class="ttdef"><b>Definition</b> stack_list.h:116</div></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html_a114d7b1bb68fe730c895750d846e62eb"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a114d7b1bb68fe730c895750d846e62eb">stack_list::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;it)</div><div class="ttdoc">operator != for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:169</div></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html_a20be9fe10442543bb6e3885e666c820f"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a20be9fe10442543bb6e3885e666c820f">stack_list::Iterator::operator++</a></div><div class="ttdeci">Iterator operator++(int)</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:156</div></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html_a4bb844064ea51919f90658ebf608f316"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a4bb844064ea51919f90658ebf608f316">stack_list::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:144</div></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html_a81854ce2874a2a5f5d4f3636d5b26cce"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a81854ce2874a2a5f5d4f3636d5b26cce">stack_list::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const std::shared_ptr&lt; node &gt; &amp;s) noexcept</div><div class="ttdoc">Construct a new Iterator object.</div><div class="ttdef"><b>Definition</b> stack_list.h:126</div></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html_a981ee13d3cc916a6dce5fb568cc23700"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a981ee13d3cc916a6dce5fb568cc23700">stack_list::Iterator::operator=</a></div><div class="ttdeci">Iterator &amp; operator=(std::shared_ptr&lt; node &gt; current)</div><div class="ttdoc">= operator for Iterator type</div><div class="ttdef"><b>Definition</b> stack_list.h:134</div></div>
-<div class="ttc" id="aclassstack__list_1_1_iterator_html_aed643fbe3ef5eca5d197c163f47f81a3"><div class="ttname"><a href="classstack__list_1_1_iterator.html#aed643fbe3ef5eca5d197c163f47f81a3">stack_list::Iterator::operator*</a></div><div class="ttdeci">T operator*()</div><div class="ttdoc">operator * for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:176</div></div>
-<div class="ttc" id="aclassstack__list_html"><div class="ttname"><a href="classstack__list.html">stack_list</a></div><div class="ttdoc">stack_list class</div><div class="ttdef"><b>Definition</b> stack_list.h:12</div></div>
-<div class="ttc" id="aclassstack__list_html_a02d7021eceefc2638fde93f38cdeb589"><div class="ttname"><a href="classstack__list.html#a02d7021eceefc2638fde93f38cdeb589">stack_list::top</a></div><div class="ttdeci">T top()</div><div class="ttdoc">top function</div><div class="ttdef"><b>Definition</b> stack_list.h:84</div></div>
-<div class="ttc" id="aclassstack__list_html_a1e95582086ed2d898a62c17d8a237e5d"><div class="ttname"><a href="classstack__list.html#a1e95582086ed2d898a62c17d8a237e5d">stack_list::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdoc">pop function removes the top of the stack</div><div class="ttdef"><b>Definition</b> stack_list.h:90</div></div>
-<div class="ttc" id="aclassstack__list_html_a2d39d7c7cd615ad374b06c15d20fdb21"><div class="ttname"><a href="classstack__list.html#a2d39d7c7cd615ad374b06c15d20fdb21">stack_list::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">size functon</div><div class="ttdef"><b>Definition</b> stack_list.h:58</div></div>
-<div class="ttc" id="aclassstack__list_html_a2e5e4063aeedaf398ff182e124e5fa3f"><div class="ttname"><a href="classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f">stack_list::stack_list</a></div><div class="ttdeci">stack_list(std::vector&lt; T &gt; v={}) noexcept</div><div class="ttdoc">Construct a new stack list object.</div><div class="ttdef"><b>Definition</b> stack_list.h:36</div></div>
-<div class="ttc" id="aclassstack__list_html_a4ba916c3846e16b81bfd18194bab9808"><div class="ttname"><a href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">stack_list::push</a></div><div class="ttdeci">void push(T key)</div><div class="ttdoc">push function</div><div class="ttdef"><b>Definition</b> stack_list.h:65</div></div>
-<div class="ttc" id="aclassstack__list_html_a53037d6540ac5dbe9582c68af99b3139"><div class="ttname"><a href="classstack__list.html#a53037d6540ac5dbe9582c68af99b3139">stack_list::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">pointer to the end of the stack</div><div class="ttdef"><b>Definition</b> stack_list.h:110</div></div>
-<div class="ttc" id="aclassstack__list_html_a87901e2453fe4db8587cfd37de3fcaae"><div class="ttname"><a href="classstack__list.html#a87901e2453fe4db8587cfd37de3fcaae">stack_list::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">pointer to the top of the stack</div><div class="ttdef"><b>Definition</b> stack_list.h:103</div></div>
-<div class="ttc" id="aclassstack__list_html_ac4bbd668428be00fdeb47c6cfeec86a2"><div class="ttname"><a href="classstack__list.html#ac4bbd668428be00fdeb47c6cfeec86a2">stack_list::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clear function</div><div class="ttdef"><b>Definition</b> stack_list.h:48</div></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html"><div class="ttname"><a href="classstack__list_1_1_iterator.html">stack_list::Iterator</a></div><div class="ttdoc">Iterator class.</div><div class="ttdef"><b>Definition</b> stack_list.h:117</div></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html_a114d7b1bb68fe730c895750d846e62eb"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a114d7b1bb68fe730c895750d846e62eb">stack_list::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;it)</div><div class="ttdoc">operator != for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:170</div></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html_a20be9fe10442543bb6e3885e666c820f"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a20be9fe10442543bb6e3885e666c820f">stack_list::Iterator::operator++</a></div><div class="ttdeci">Iterator operator++(int)</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:157</div></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html_a4bb844064ea51919f90658ebf608f316"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a4bb844064ea51919f90658ebf608f316">stack_list::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:145</div></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html_a81854ce2874a2a5f5d4f3636d5b26cce"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a81854ce2874a2a5f5d4f3636d5b26cce">stack_list::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const std::shared_ptr&lt; node &gt; &amp;s) noexcept</div><div class="ttdoc">Construct a new Iterator object.</div><div class="ttdef"><b>Definition</b> stack_list.h:127</div></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html_a981ee13d3cc916a6dce5fb568cc23700"><div class="ttname"><a href="classstack__list_1_1_iterator.html#a981ee13d3cc916a6dce5fb568cc23700">stack_list::Iterator::operator=</a></div><div class="ttdeci">Iterator &amp; operator=(std::shared_ptr&lt; node &gt; current)</div><div class="ttdoc">= operator for Iterator type</div><div class="ttdef"><b>Definition</b> stack_list.h:135</div></div>
+<div class="ttc" id="aclassstack__list_1_1_iterator_html_aed643fbe3ef5eca5d197c163f47f81a3"><div class="ttname"><a href="classstack__list_1_1_iterator.html#aed643fbe3ef5eca5d197c163f47f81a3">stack_list::Iterator::operator*</a></div><div class="ttdeci">T operator*()</div><div class="ttdoc">operator * for type Iterator</div><div class="ttdef"><b>Definition</b> stack_list.h:177</div></div>
+<div class="ttc" id="aclassstack__list_html"><div class="ttname"><a href="classstack__list.html">stack_list</a></div><div class="ttdoc">stack_list class</div><div class="ttdef"><b>Definition</b> stack_list.h:13</div></div>
+<div class="ttc" id="aclassstack__list_html_a02d7021eceefc2638fde93f38cdeb589"><div class="ttname"><a href="classstack__list.html#a02d7021eceefc2638fde93f38cdeb589">stack_list::top</a></div><div class="ttdeci">T top()</div><div class="ttdoc">top function</div><div class="ttdef"><b>Definition</b> stack_list.h:85</div></div>
+<div class="ttc" id="aclassstack__list_html_a1e95582086ed2d898a62c17d8a237e5d"><div class="ttname"><a href="classstack__list.html#a1e95582086ed2d898a62c17d8a237e5d">stack_list::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdoc">pop function removes the top of the stack</div><div class="ttdef"><b>Definition</b> stack_list.h:91</div></div>
+<div class="ttc" id="aclassstack__list_html_a2d39d7c7cd615ad374b06c15d20fdb21"><div class="ttname"><a href="classstack__list.html#a2d39d7c7cd615ad374b06c15d20fdb21">stack_list::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">size functon</div><div class="ttdef"><b>Definition</b> stack_list.h:59</div></div>
+<div class="ttc" id="aclassstack__list_html_a2e5e4063aeedaf398ff182e124e5fa3f"><div class="ttname"><a href="classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f">stack_list::stack_list</a></div><div class="ttdeci">stack_list(std::vector&lt; T &gt; v={}) noexcept</div><div class="ttdoc">Construct a new stack list object.</div><div class="ttdef"><b>Definition</b> stack_list.h:37</div></div>
+<div class="ttc" id="aclassstack__list_html_a4ba916c3846e16b81bfd18194bab9808"><div class="ttname"><a href="classstack__list.html#a4ba916c3846e16b81bfd18194bab9808">stack_list::push</a></div><div class="ttdeci">void push(T key)</div><div class="ttdoc">push function</div><div class="ttdef"><b>Definition</b> stack_list.h:66</div></div>
+<div class="ttc" id="aclassstack__list_html_a53037d6540ac5dbe9582c68af99b3139"><div class="ttname"><a href="classstack__list.html#a53037d6540ac5dbe9582c68af99b3139">stack_list::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">pointer to the end of the stack</div><div class="ttdef"><b>Definition</b> stack_list.h:111</div></div>
+<div class="ttc" id="aclassstack__list_html_a87901e2453fe4db8587cfd37de3fcaae"><div class="ttname"><a href="classstack__list.html#a87901e2453fe4db8587cfd37de3fcaae">stack_list::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">pointer to the top of the stack</div><div class="ttdef"><b>Definition</b> stack_list.h:104</div></div>
+<div class="ttc" id="aclassstack__list_html_ac4bbd668428be00fdeb47c6cfeec86a2"><div class="ttname"><a href="classstack__list.html#ac4bbd668428be00fdeb47c6cfeec86a2">stack_list::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clear function</div><div class="ttdef"><b>Definition</b> stack_list.h:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
