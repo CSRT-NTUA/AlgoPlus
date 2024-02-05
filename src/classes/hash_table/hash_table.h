@@ -1,11 +1,13 @@
-#ifndef ALGOPLUS_HASH_TABLE_H
-#define ALGOPLUS_HASH_TABLE_H
+#ifndef HASH_TABLE_H
+#define HASH_TABLE_H
 
-#include <list>
-#include <vector>
-#include <optional>
 #include <functional>
 #include <iostream>
+#include <list>
+#include <optional>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 /**
  * @class hash_table
@@ -14,87 +16,126 @@
  *
  * @brief A simple implementation of a hash table.
  * @details
- * This is a templated class for a hash table, a data structure that provides fast data
- * retrieval and storage operations based on keys. The template parameters are the type of
- * the keys and the type of the values stored in the hash table. Keys cannot be duplicate
- * and an insertion of an existing key leads to an update of the corresponding value.
+ * This is a templated class for a hash table, a data structure that provides
+ * fast data retrieval and storage operations based on keys. The template
+ * parameters are the type of the keys and the type of the values stored in the
+ * hash table. Keys cannot be duplicate and an insertion of an existing key
+ * leads to an update of the corresponding value.
  *
  * The following are the class methods
  *
  * @note Use only types that can be hashed as the KeyType.
  */
-template<typename KeyType, typename ValueType> class hash_table {
+template <typename KeyType, typename ValueType> class hash_table {
 public:
-    /**
-    * @brief Construct a hash_table object
-    * @param int64_t defaultSize The initial size of the hash table (default = 101)
-    */
-    hash_table(int64_t defaultSize = 101) : bucketList(defaultSize) {}
-
-    /**
-    * @brief Inserts a key-value pair into the hash table.
-    * @details
-    * This function inserts a key-value pair into the hash table. If a pair with the same key already exists, it updates the value.
-    * @param key The key to insert.
-    * @param value The value to insert.
-    */
-    void insert(const KeyType &key, const ValueType &value) {
-        auto& list = bucketList[hash(key)];
-        for(auto& pair : list) {
-            if(pair.first == key) {
-                pair.second = value;
-                return;
-            }
-        }
-        list.emplace_back(key, value);
+  /**
+   * @brief Construct a new hash table object
+   *
+   * @param v the initializer vector
+   */
+  hash_table(std::vector<std::pair<KeyType, ValueType>> v = {}) {
+    if (!v.empty()) {
+      for (auto &x : v) {
+        this->insert(x.first, x.second);
+      }
     }
+  }
 
+  /**
+   * @brief Copy constructor of the hash_table
+   *
+   * @param h the hash table we want to copy
+   */
+  hash_table(const hash_table &h) {
+    bucketList = h.bucketList;
+    hash = h.hash;
+  }
 
-    /**
-    * @brief Retrieves the value associated with the given key.
-    * @param key The key to retrieve the value for.
-    * @return The value associated with the given key, if it exists. Otherwise, returns std::nullopt.
-    */
-    std::optional<ValueType> retrieve(const KeyType& key) {
-        auto& list = bucketList[hash(key)];
-        for(auto& pair : list) {
-            if(pair.first == key) {
-                return pair.second;
-            }
-        }
-        return std::nullopt;
+  /**
+   * @brief operator = for the hash_table class
+   * @param h the hash table we want to copy
+   * @return hash_table&
+   */
+  hash_table &operator=(const hash_table &h) {
+    bucketList = h.bucketList;
+    hash = h.hash;
+    return *this;
+  }
+
+  /**
+   * @brief Destroy the hash table object
+   */
+  ~hash_table() { bucketList.clear(); }
+
+  /**
+   * @brief Inserts a key-value pair into the hash table.
+   * @details
+   * This function inserts a key-value pair into the hash table. If a pair with
+   * the same key already exists, it updates the value.
+   * @param key The key to insert.
+   * @param value The value to insert.
+   */
+  void insert(const KeyType &key, const ValueType &value) {
+    auto &list = bucketList[hash(key)];
+    for (auto &pair : list) {
+      if (pair.first == key) {
+        pair.second = value;
+        return;
+      }
     }
+    list.emplace_back(key, value);
+  }
 
-    /**
-    * @brief Removes the key-value pair associated with the given key from the hash table.
-    * @details
-    * This function removes the key-value pair associated with the given key from the hash table.
-    * @param key The key to remove.
-    */
-    void remove(const KeyType& key) {
-        auto& list = bucketList[hash(key)];
-        list.remove_if([key](const auto& pair){ return pair.first == key; });
+  /**
+   * @brief Retrieves the value associated with the given key.
+   * @param key The key to retrieve the value for.
+   * @return The value associated with the given key, if it exists. Otherwise,
+   * returns std::nullopt.
+   */
+  std::optional<ValueType> retrieve(const KeyType &key) {
+    auto &list = bucketList[hash(key)];
+    for (auto &pair : list) {
+      if (pair.first == key) {
+        return pair.second;
+      }
     }
+    return std::nullopt;
+  }
 
-    /**
-    * @brief Prints the contents of the hash table.
-    * @details
-    * This function iterates through each bucket in the hash table and prints the key-value pairs in each bucket.
-    * @note An empty bucket is denoted as an empty line.
-    */
-    void printList() {
-        for(int i = 0; i < bucketList.size(); i++) {
-            std::cout << "Bucket " << i << " : ";
-            for(auto& pair : bucketList[i]) {
-                std::cout << "{" << pair.first << ", " << pair.second << "} ";
-            }
-            std::cout << std::endl;
-        }
+  /**
+   * @brief Removes the key-value pair associated with the given key from the
+   * hash table.
+   * @details
+   * This function removes the key-value pair associated with the given key from
+   * the hash table.
+   * @param key The key to remove.
+   */
+  void remove(const KeyType &key) {
+    auto &list = bucketList[hash(key)];
+    list.remove_if([key](const auto &pair) { return pair.first == key; });
+  }
+
+  /**
+   * @brief << operator for hash_table class
+   * @return std::ostream&
+   */
+  friend std::ostream &operator<<(std::ostream &out,
+                                  hash_table<KeyType, ValueType> &h) {
+    out << '[';
+    for (auto &[key, list] : h.bucketList) {
+      for (auto &pair : h.bucketList[key]) {
+        out << "{" << pair.first << ", " << pair.second << "} ";
+      }
+      out << '\n';
     }
+    out << ']';
+  }
 
 private:
-    std::hash<KeyType> hash;
-    std::vector<std::list<std::pair<KeyType, ValueType>>> bucketList;
+  std::hash<KeyType> hash;
+  // std::vector<std::list<std::pair<KeyType, ValueType>>> bucketList;
+  std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
+      bucketList;
 };
 
-#endif //ALGOPLUS_HASH_TABLE_H
+#endif // HASH_TABLE_H
