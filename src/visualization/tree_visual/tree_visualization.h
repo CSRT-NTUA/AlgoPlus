@@ -1,3 +1,6 @@
+#ifndef TREE_VISUALIZATION_H
+#define TREE_VISUALIZATION_H
+
 #ifdef __cplusplus
 #include <chrono>
 #include <fstream>
@@ -85,3 +88,5 @@ void visualize(std::string &__generate,
 };
 
 }; // namespace visualization
+
+#endif // TREE_VISUALIZATION_H
