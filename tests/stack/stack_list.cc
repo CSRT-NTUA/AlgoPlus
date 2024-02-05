@@ -2,7 +2,7 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing push") {
+TEST_CASE("testing push in stack") {
   stack_list<int> s;
   s.push(10);
   s.push(11);
@@ -24,7 +24,7 @@ TEST_CASE("testing push") {
   REQUIRE(s2.top() == "world");
 }
 
-TEST_CASE("testing pop") {
+TEST_CASE("testing pop in stack") {
   stack_list<int> s;
   s.push(10);
   s.push(11);
@@ -38,7 +38,7 @@ TEST_CASE("testing pop") {
   REQUIRE(s.top() == 10);
 }
 
-TEST_CASE("testing size") {
+TEST_CASE("testing size in stack") {
   stack_list<int> s;
   s.push(10);
   s.push(11);

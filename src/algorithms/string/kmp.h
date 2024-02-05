@@ -1,3 +1,4 @@
+#pragma once
 #ifndef KMP_H
 #define KMP_H
 

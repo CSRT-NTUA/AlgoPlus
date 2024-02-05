@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MIN_HEAP_H
 #define MIN_HEAP_H
 #ifdef __cplusplus

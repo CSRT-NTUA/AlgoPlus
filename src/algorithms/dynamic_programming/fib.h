@@ -1,11 +1,12 @@
+#pragma once
 #ifndef FIB_H
 #define FIB_H
 
 #ifdef __cplusplus
-#include <iostream>
-#include <vector>
-#include <math.h>
 #include <cstdint>
+#include <iostream>
+#include <math.h>
+#include <vector>
 #endif
 
 /**
@@ -64,6 +65,6 @@ int64_t fibonacci_bottom_up(int64_t n) {
  */
 int64_t fibonacci_binet(int64_t n) {
   double phi = (std::sqrt(5) + 1) / 2;
-  return (int64_t) std::round(std::pow(phi, n) / sqrt(5));
+  return (int64_t)std::round(std::pow(phi, n) / sqrt(5));
 }
 #endif

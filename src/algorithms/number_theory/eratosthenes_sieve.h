@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ERATOSTHENES_SIEVE_H
 #define ERATOSTHENES_SIEVE_H
 

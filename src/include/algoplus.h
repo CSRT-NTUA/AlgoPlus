@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ALGOPLUS_H
 #define ALGOPLUS_H
 
@@ -12,7 +13,6 @@
 #include "../algorithms/sorting/bubble_sort.h"
 #include "../algorithms/sorting/bucket_sort.h"
 #include "../algorithms/sorting/insertion_sort.h"
-#include "../algorithms/sorting/radix_sort.h"
 #include "../algorithms/sorting/selection_sort.h"
 #include "../algorithms/string/edit_distance.h"
 #include "../algorithms/string/kmp.h"

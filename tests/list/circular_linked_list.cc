@@ -2,7 +2,7 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing search") {
+TEST_CASE("testing search in circular list") {
   // this is an example of a unit test to check if any algo or class works as it
   // should
   circular_linked_list<int> l1({1, 4, 5, 10});
@@ -10,7 +10,7 @@ TEST_CASE("testing search") {
   REQUIRE(l1.search(150) == false);
 }
 
-TEST_CASE("push front") {
+TEST_CASE("push front in circular list") {
   circular_linked_list<int> l1;
   l1.push_front(1);
   l1.push_front(2);
@@ -20,7 +20,7 @@ TEST_CASE("push front") {
   REQUIRE(v == elem);
 }
 
-TEST_CASE("testing linked list with strings") {
+TEST_CASE("testing linked list with strings in circular list") {
   std::vector<std::string> __first = {"hello", "world"};
   circular_linked_list<std::string> l1(__first);
   REQUIRE(l1.search("hello") == true);
@@ -28,7 +28,7 @@ TEST_CASE("testing linked list with strings") {
   REQUIRE(l1.search("chec") == false); // needs to be fixed
 }
 
-TEST_CASE("testing linked list with chars") {
+TEST_CASE("testing linked list with chars in circular list") {
   std::vector<char> __first = {'a', 'b', 'c', 'd'};
   circular_linked_list<char> l1(__first);
   l1.erase('b');
@@ -41,7 +41,7 @@ TEST_CASE("testing linked list with chars") {
   REQUIRE(elem == __second);
 }
 
-TEST_CASE("testing iteration") {
+TEST_CASE("testing iteration in circular list") {
   circular_linked_list<char> l1({'a', 'b', 'c', 'd'});
   std::vector<char> ans = {'a', 'b', 'c', 'd'};
   std::vector<char> elem = l1.elements();
@@ -66,7 +66,7 @@ TEST_CASE("testing iteration") {
 //   REQUIRE(els == v2);
 // }
 
-TEST_CASE("testing iterators") {
+TEST_CASE("testing iterators in circular list") {
   circular_linked_list<int> l({4, 7, 1, 2, 3, 41, 32});
   std::vector<int> els = {4, 7, 1, 2, 3, 41, 32, 4, 7, 1, 2, 3, 41, 32};
   std::vector<int> v;

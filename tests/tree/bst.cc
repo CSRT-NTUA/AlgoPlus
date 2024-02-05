@@ -14,7 +14,7 @@ TEST_CASE("checking insertions and traversals") {
   REQUIRE(v == inorder);
 }
 
-TEST_CASE("checking removals") {
+TEST_CASE("checking removals in bst") {
   bst<int> b1;
   b1.insert(10);
   b1.insert(2);
@@ -28,7 +28,7 @@ TEST_CASE("checking removals") {
   REQUIRE(v == inorder);
 }
 
-TEST_CASE("checking search") {
+TEST_CASE("checking search in bst") {
   bst<int> b;
   b.insert(1);
   b.insert(10);
@@ -46,7 +46,7 @@ TEST_CASE("checking search") {
   REQUIRE(b1.search("im") == false);
 }
 
-TEST_CASE("checking inorder") {
+TEST_CASE("checking inorder in bst") {
   bst<char> b2;
   b2.insert('g');
   b2.insert('k');
@@ -65,7 +65,7 @@ TEST_CASE("checking inorder") {
   REQUIRE(__v == __inorder);
 }
 
-TEST_CASE("checking preorder") {
+TEST_CASE("checking preorder in bst") {
   bst<char> b;
   b.insert('g');
   b.insert('a');
@@ -75,7 +75,7 @@ TEST_CASE("checking preorder") {
   REQUIRE(b.preorder() == pre);
 }
 
-TEST_CASE("checking postorder") {
+TEST_CASE("checking postorder in bst") {
   bst<char> b;
   b.insert('g');
   b.insert('a');
@@ -85,7 +85,7 @@ TEST_CASE("checking postorder") {
   REQUIRE(b.postorder() == post);
 }
 
-TEST_CASE("checking iterators") {
+TEST_CASE("checking iterators in bst") {
   bst<int> b({5, 3, -10, 4, 15, 20});
   std::vector<int> els = b.inorder();
   std::vector<int> check;
@@ -96,7 +96,7 @@ TEST_CASE("checking iterators") {
   REQUIRE(els == check);
 }
 
-TEST_CASE("testing clear function") {
+TEST_CASE("testing clear function in bst") {
   bst<char> b({'a', 'w', 'd', 'g', 'u', 'l'});
   b.clear();
   std::vector<char> v = b.inorder();

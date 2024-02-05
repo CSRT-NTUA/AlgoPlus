@@ -1,10 +1,11 @@
+#pragma once
 #ifndef BINARY_SEARCH_H
 #define BINARY_SEARCH_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <vector>
-#include <cstdint>
 #endif
 
 /**

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BST_H
 #define BST_H
 

@@ -1,9 +1,10 @@
+#pragma once
 #ifndef BUBBLE_SORT_H
 #define BUBBLE_SORT_H
 
 #ifdef __cplusplus
-#include <iostream>
 #include <cstdint>
+#include <iostream>
 #include <vector>
 #endif
 

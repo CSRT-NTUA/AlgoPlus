@@ -2,7 +2,7 @@
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing search") {
+TEST_CASE("testing search in skip list") {
   skip_list<int> s(3, 0.5);
   s.insert(3);
   s.insert(6);
@@ -22,7 +22,7 @@ TEST_CASE("testing search") {
   REQUIRE(s.search(1234) == true);
 }
 
-TEST_CASE("testing deletion") {
+TEST_CASE("testing deletion in skip list") {
   skip_list<char> s(3, 0.5);
   s.insert('a');
   s.insert('b');
@@ -35,7 +35,7 @@ TEST_CASE("testing deletion") {
   REQUIRE(s.search('b') == false);
 }
 
-TEST_CASE("testing iterators") {
+TEST_CASE("testing iterators in skip list") {
   skip_list<int> s(3, 0.5);
   s.insert(10);
   s.insert(11);
@@ -51,7 +51,7 @@ TEST_CASE("testing iterators") {
   REQUIRE(els == v);
 }
 
-TEST_CASE("testing copy constructors") {
+TEST_CASE("testing copy constructors in skip list") {
   skip_list<char> s(3, 0.5);
   s.insert('a');
   s.insert('b');

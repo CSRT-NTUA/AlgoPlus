@@ -1,3 +1,4 @@
+#pragma once
 #ifndef DISJOINT_SET_H
 #define DISJOINT_SET_H
 

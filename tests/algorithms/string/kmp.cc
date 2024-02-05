@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/string/kmp.h"
 #include "../../catch2/catch.hpp"
 #include <string>

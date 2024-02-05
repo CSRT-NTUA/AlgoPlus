@@ -3,7 +3,8 @@
 #include <list>
 #include <string>
 
-TEST_CASE("checking insertions, overriding insertions and retrievals") {
+TEST_CASE(
+    "checking insertions, overriding insertions and retrievals in hash table") {
   hash_table<std::string, int> table;
 
   table.insert("abc", 1);
@@ -14,7 +15,7 @@ TEST_CASE("checking insertions, overriding insertions and retrievals") {
   REQUIRE(table.retrieve("ghi") == std::nullopt);
 }
 
-TEST_CASE("checking removals") {
+TEST_CASE("checking removals in hash table") {
   hash_table<std::string, int> table;
 
   table.insert("abc", 1);
@@ -25,7 +26,7 @@ TEST_CASE("checking removals") {
   REQUIRE(table.retrieve("def") == 2);
 }
 
-TEST_CASE("testing copy constructor") {
+TEST_CASE("testing copy constructor in hash table") {
   hash_table<int, std::string> table;
   table.insert(1, "abc");
   table.insert(2, "bcd");
@@ -38,7 +39,7 @@ TEST_CASE("testing copy constructor") {
   }
 }
 
-TEST_CASE("testing operator =") {
+TEST_CASE("testing operator = in hash table") {
   hash_table<int, std::string> table;
   table.insert(1, "abc");
   table.insert(2, "bcd");
@@ -51,7 +52,7 @@ TEST_CASE("testing operator =") {
   }
 }
 
-TEST_CASE("testing iterators") {
+TEST_CASE("testing iterators in hash table") {
   hash_table<int, std::string> table;
   table.insert(1, "abc");
   table.insert(2, "bcd");

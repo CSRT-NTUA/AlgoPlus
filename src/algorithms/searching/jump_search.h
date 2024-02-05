@@ -1,11 +1,12 @@
+#pragma once
 #ifndef JUMP_SEARCH_H
 #define JUMP_SEARCH_H
 
 #ifdef __cplusplus
-#include <iostream>
-#include <cstdint>
-#include <vector>
 #include <cmath>
+#include <cstdint>
+#include <iostream>
+#include <vector>
 #endif
 
 /**

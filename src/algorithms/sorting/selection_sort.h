@@ -1,10 +1,11 @@
+#pragma once
 #ifndef SELECTION_SORT_H
 #define SELECTION_SORT_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <vector>
-#include <cstdint>
 #endif
 
 /**
