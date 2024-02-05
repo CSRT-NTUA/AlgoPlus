@@ -9,8 +9,9 @@ int main()
     int N = sizeof(arr)/sizeof(arr[0]);
     std::vector<int> vect(arr, arr+N);
     heap_sort(vect, N);
-    for (int i = 0; i<N;i++)
+    std::vector<int>::iterator it;
+    for (it = vect.begin(); it != vect.end();it++)
     {
-        std::cout << vect[i] << " ";
+        std::cout << *it << " ";
     }
 }
