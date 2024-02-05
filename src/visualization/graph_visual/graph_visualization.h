@@ -1,7 +1,10 @@
+#ifdef __cplusplus
+#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <thread>
+#endif
 
 using namespace std;
 
