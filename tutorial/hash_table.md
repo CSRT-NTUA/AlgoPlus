@@ -54,16 +54,3 @@ ht.insert("carrot", 3);
 ht.remove("carrot");
 assert(!ht.retrieve("carrot"));
 ```
-
-### **printList**:
-```cpp
-#include <hash_table.h>
-
-hash_table<std::string, int> ht;
-ht.insert("apple", 1);
-ht.insert("banana", 2);
-ht.insert("carrot", 3);
-
-// prints the contents of the hash_table to the console
-ht.printList();
-```
