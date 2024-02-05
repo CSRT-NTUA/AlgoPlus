@@ -13,6 +13,8 @@
 #include <type_traits>
 #include <unordered_map>
 #include <unordered_set>
+#include <limits>
+#include <climits>
 #include <utility>
 #endif
 
@@ -693,6 +695,12 @@ public:
   void visualize();
 
   /**
+   *@brief find SSSP and identify negative cycles.
+   *@returns unordered_map of SSSP.
+   */
+  std::unordered_map<T, double> BellmanFord(T start);
+
+  /**
    * @brief << operator for the weighted graph class.
    * @returns ostream &out for std::cout.
    */
@@ -1143,6 +1151,38 @@ template <typename T> void weighted_graph<T>::visualize() {
   } else {
     graph_visualization::visualize(s);
   }
+}
+
+template <typename T> std::unordered_map<T, double> weighted_graph<T>::BellmanFord(T start){
+    std::unordered_map<T, double> dist;
+    // Initialize the distance to all nodes to be infinity
+    // except for the starting node which is zero.
+    for(auto it: adj)
+        dist[it.first] = std::numeric_limits<double>::infinity();
+    dist[start] = 0;
+    
+    //Get number of vertices present in the graph
+    int v = adj.size();
+
+    // For each vertex, apply relaxation for all the edges
+    for(int i=0; i<v-1; i++)
+        for(const auto j: adj)
+            for(const auto edge: adj[j.first])
+                if(dist[j.first]+edge.second < dist[edge.first])
+                    dist[edge.first] = dist[j.first]+edge.second;
+
+    // Run algorithm a second time to detect which nodes are part
+    // of a negative cycle. A negative cycle has occurred if we
+    // can find a better path beyond the optimal solution.
+    for(int i=0; i<v-1; i++)
+        for(const auto j: adj)
+            for(const auto edge: adj[j.first])
+                if(dist[j.first]+edge.second < dist[edge.first])
+                    dist[edge.first] = -std::numeric_limits<double>::infinity();
+
+    // Return the array containing the shortest distance to every node
+    return dist;
+    
 }
 
 #endif
