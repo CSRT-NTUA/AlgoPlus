@@ -182,3 +182,32 @@ TEST_CASE("testing eulerian check") {
   g3.add_edge(3, 4, 8);
   REQUIRE(g3.eulerian() == 2);
 }
+
+TEST_CASE("testing bellman ford algorithm") {
+  weighted_graph<int> g2("undirected");
+  g2.add_edge(1, 2, 11);
+  g2.add_edge(2, 0, 10);
+  g2.add_edge(1, 0, 8);
+  g2.add_edge(0, 3, 4);
+  g2.add_edge(3, 4, 3);
+  unordered_map<int, double> test = g2.bellman_ford(1);
+  unordered_map<int, double> check;
+  check[1] = 0.0;
+  check[2] = 11.0;
+  check[0] = 8;
+  check[3] = 12;
+  check[4] = 15;
+
+  REQUIRE(check == test);
+
+  weighted_graph<int> g("directed");
+  g.add_edge(1, 2, -6);
+  g.add_edge(2, 3, 5);
+  g.add_edge(3, 1, -2);
+  unordered_map<int, double> test2 = g.bellman_ford(1);
+  unordered_map<int, double> check2;
+  check2[2] = -std::numeric_limits<double>::infinity();
+  check2[3] = -std::numeric_limits<double>::infinity();
+  check2[1] = -std::numeric_limits<double>::infinity();
+  REQUIRE(check2 == test2);
+}
