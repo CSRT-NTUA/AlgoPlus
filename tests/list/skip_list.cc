@@ -51,3 +51,22 @@ TEST_CASE("testing iterators") {
   }
   REQUIRE(els == v);
 }
+
+TEST_CASE("testing copy constructors") {
+  skip_list<char> s(3, 0.5);
+  s.insert('a');
+  s.insert('b');
+  s.insert('d');
+  s.insert('r');
+
+  skip_list<char> s2(s);
+  std::vector<char> v1, v2;
+  for (auto it = s.begin(); it != s.end(); it++) {
+    v1.push_back(*(it));
+  }
+  for (auto it = s2.begin(); it != s2.end(); it++) {
+    v2.push_back(*(it));
+  }
+
+  REQUIRE(v1 == v2);
+}

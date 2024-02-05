@@ -41,6 +41,34 @@ public:
     }
   }
 
+  /**
+   * @brief Copy constructor for the skip_list class
+   *
+   * @param s
+   */
+  skip_list(const skip_list &s) {
+    level = s.level;
+    PROB = s.PROB;
+    MAX_LEVEL = s.MAX_LEVEL;
+    root = s.root;
+  }
+
+  /**
+   * @brief operator = for the skip_list class
+   * @param s the list we want to copy
+   * @return skip_list&
+   */
+  skip_list &operator=(const skip_list &s) {
+    level = s.level;
+    PROB = s.PROB;
+    MAX_LEVEL = s.MAX_LEVEL;
+    root = s.root;
+    return *this;
+  }
+
+  /**
+   * @brief Destroy the skip list object
+   */
   ~skip_list() noexcept {}
 
   /**
