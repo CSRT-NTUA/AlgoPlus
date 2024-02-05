@@ -35,3 +35,14 @@ TEST_CASE("testing deletion") {
   // std::cout << s << '\n';
   REQUIRE(s.search('b') == false);
 }
+
+TEST_CASE("testing iterators"){
+    skip_list<int> s({1, 7, 4, 80, 12, 8, 28, 400});
+    std::vector <int> els = s.elements();
+    std::vector <int> v;
+    for (auto it = s.begin(); it != s.end(); it++){
+      v.push_back(*it);
+    }
+    REQUIRE(els == v);
+    
+  }
