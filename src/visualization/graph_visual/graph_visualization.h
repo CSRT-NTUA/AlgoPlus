@@ -1,3 +1,6 @@
+#ifndef GRAPH_VISUALIZATION_H
+#define GRAPH_VISUALIZATION_H
+
 #ifdef __cplusplus
 #include <chrono>
 #include <fstream>
@@ -154,3 +157,5 @@ void visualize(std::string &__generate,
 };
 
 }; // namespace digraph_visualization
+
+#endif // GRAPH_VISUALIZATION_H
