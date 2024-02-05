@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/hash_table/hash_table.h"
 #include "../catch2/catch.hpp"
 #include <list>

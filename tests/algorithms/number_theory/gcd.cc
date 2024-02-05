@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/number_theory/gcd.h"
 #include "../../catch2/catch.hpp"
 

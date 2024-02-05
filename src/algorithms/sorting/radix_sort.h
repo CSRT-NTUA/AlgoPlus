@@ -4,6 +4,7 @@
 #ifdef __cplusplus
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #endif
 
 template <typename T> void radix_sort(std::vector<T> &arr) {

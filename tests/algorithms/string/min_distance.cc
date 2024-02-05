@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/string/edit_distance.h"
 #include "../../catch2/catch.hpp"
 #include <string>
