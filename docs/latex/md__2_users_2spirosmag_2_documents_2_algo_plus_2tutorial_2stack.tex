@@ -1,7 +1,7 @@
 \chapter{Mini Tutorial for the Stack class}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack}{}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack}\index{Mini Tutorial for the Stack class@{Mini Tutorial for the Stack class}}
-\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md72}%
-\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md72}%
+\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md79}%
+\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md79}%
 \begin{DoxyVerb}stack_list<T> -- creates a stack implemented with a list.
 \end{DoxyVerb}
  splay tree contains\+:
@@ -11,7 +11,7 @@
 \item pop
 \item clear
 \item size
-\end{DoxyItemize}\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md73}{}\doxysubsection{\texorpdfstring{{\bfseries{push}}\+:}{{\bfseries{push}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md73}
+\end{DoxyItemize}\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md80}{}\doxysubsection{\texorpdfstring{{\bfseries{push}}\+:}{{\bfseries{push}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md80}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stack\_list.h>}}
@@ -24,7 +24,7 @@
 \DoxyCodeLine{\textcolor{comment}{//\ now\ the\ stack\ contains\ \{10,5,4,13\}}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md74}{}\doxysubsection{\texorpdfstring{{\bfseries{top}}\+:}{{\bfseries{top}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md74}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md81}{}\doxysubsection{\texorpdfstring{{\bfseries{top}}\+:}{{\bfseries{top}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md81}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stack\_list.h>}}
@@ -39,7 +39,7 @@
 \DoxyCodeLine{std::cout\ <<\ s.\mbox{\hyperlink{classstack__list_a02d7021eceefc2638fde93f38cdeb589}{top}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md75}{}\doxysubsection{\texorpdfstring{{\bfseries{pop}}\+:}{{\bfseries{pop}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md75}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md82}{}\doxysubsection{\texorpdfstring{{\bfseries{pop}}\+:}{{\bfseries{pop}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md82}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stack\_list.h>}}
@@ -55,6 +55,23 @@
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//this\ should\ return\ 4}}
 \DoxyCodeLine{std::cout\ <<\ s.\mbox{\hyperlink{classstack__list_a02d7021eceefc2638fde93f38cdeb589}{top}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md83}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack_autotoc_md83}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stack\_list.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classstack__list}{stack\_list<int>}}\ s;}
+\DoxyCodeLine{s.\mbox{\hyperlink{classstack__list_a4ba916c3846e16b81bfd18194bab9808}{push}}(10);}
+\DoxyCodeLine{s.\mbox{\hyperlink{classstack__list_a4ba916c3846e16b81bfd18194bab9808}{push}}(5);}
+\DoxyCodeLine{s.\mbox{\hyperlink{classstack__list_a4ba916c3846e16b81bfd18194bab9808}{push}}(4);}
+\DoxyCodeLine{s.\mbox{\hyperlink{classstack__list_a4ba916c3846e16b81bfd18194bab9808}{push}}(13);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ s.\mbox{\hyperlink{classstack__list_a87901e2453fe4db8587cfd37de3fcaae}{begin}}();\ it\ !=\ s.\mbox{\hyperlink{classstack__list_a53037d6540ac5dbe9582c68af99b3139}{end}}();\ it++)\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ value\ of\ each\ node\ starting\ from\ the\ top}}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ *(it)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\}}
 
 \end{DoxyCode}
  

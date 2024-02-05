@@ -289,11 +289,13 @@
 \DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
 \DoxyCodeLine{00373\ \ \ \}}
 \DoxyCodeLine{00374\ }
-\DoxyCodeLine{00382\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classavl__tree_1_1_iterator_a0fd4ebd930bd4fe986438e203685d2fd}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
-\DoxyCodeLine{00383\ }
-\DoxyCodeLine{00389\ \ \ T\ \mbox{\hyperlink{classavl__tree_1_1_iterator_aa638b723e1ef408bf1406d6c9db06dd8}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
-\DoxyCodeLine{00390\ \};}
-\DoxyCodeLine{00391\ }
-\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00383\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classavl__tree_1_1_iterator_a0fd4ebd930bd4fe986438e203685d2fd}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ \&it)\ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordflow}{return}\ index\ !=\ it.index\ \&\&\ elements[index]\ !=\ it.elements[it.index];}
+\DoxyCodeLine{00385\ \ \ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00392\ \ \ T\ \mbox{\hyperlink{classavl__tree_1_1_iterator_aa638b723e1ef408bf1406d6c9db06dd8}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
+\DoxyCodeLine{00393\ \};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
