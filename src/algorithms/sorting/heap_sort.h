@@ -3,9 +3,10 @@
 
 #ifdef __cplusplus
 #include <iostream>
+#include <vector>
 #endif
 
-static void heapify_method(int arr[], int arrayLength, int parent) {
+template<typename T> static void heapify_method(std::vector<T> &arr, int arrayLength, int parent) {
     
     //largest node
     int largest = parent;
@@ -38,7 +39,7 @@ static void heapify_method(int arr[], int arrayLength, int parent) {
  * @param arr input array
  * @param arrayLength input length array
  */
-void heap_sort(int arr[], int arrayLength) {
+template<typename T> void heap_sort(std::vector<T> &arr, int arrayLength) {
     //heapify the array at first
     for(int i = arrayLength/2 -1; i>=0; i--)
     {
