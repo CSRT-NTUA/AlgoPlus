@@ -1182,7 +1182,6 @@ template <typename T> std::unordered_map<T, double> weighted_graph<T>::BellmanFo
 
     // Return the array containing the shortest distance to every node
     return dist;
-    
 }
 
 #endif

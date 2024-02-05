@@ -1,9 +1,6 @@
-// #include<iostream>
-// #include<vector>
-// #include<unordered_map>
-// #include<utility>
-// #include<limits>
+#ifndef GRAPH_H
 #include "../../src/classes/graph/graph.h"
+#endif
 
 int main(){
     weighted_graph<char> graph("directed");
