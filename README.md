@@ -67,6 +67,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 
 
 ### **How to run test cases**
+We have unit tests for every function of our implemented algorithms & data structures.It is very important to make sure that your code works before making any pull requests!
 ```
 mkdir build && cd build
 cmake ..
