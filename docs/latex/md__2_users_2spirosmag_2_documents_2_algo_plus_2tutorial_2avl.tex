@@ -123,4 +123,23 @@
 \DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a517f38f7f770647b80322fc7cd1192af}{visualize}}();}
 
 \end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md19}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
+\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
+\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
+\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
+\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
+\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ a.\mbox{\hyperlink{classavl__tree_a2e4eb06ce68b6b9cf7e906cb786fc818}{begin}}();\ it\ !=\ a.\mbox{\hyperlink{classavl__tree_a015ac0902d879a52fd7a8940ab36ab7a}{end}}();\ it++)\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ value\ of\ the\ node}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//note\ that\ begin\ starts\ from\ the\ leftmost\ value}}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ *(it)\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
  

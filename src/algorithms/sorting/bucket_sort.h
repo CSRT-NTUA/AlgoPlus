@@ -4,6 +4,7 @@
 #ifdef __cplusplus
 #include <iostream>
 #include <vector>
+#include <cstdint>
 #include <algorithm>
 #endif
 

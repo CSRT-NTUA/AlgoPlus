@@ -99,6 +99,25 @@ b.remove(4);
 std::vector<int> in = a.postorder();
 ```
 
+### **iterator**:
+```cpp
+#include <bst.h>
+
+bst<int> b;
+b.insert(10);
+b.insert(5);
+b.insert(4);
+b.insert(13);
+b.remove(4);
+
+
+for(auto it = b.begin(); it != b.end(); it++){
+    // *(it) returns the value of the node
+    //note that begin starts from the leftmost value
+    std::cout << *(it) << ' ';
+}
+```
+
 ### **visualize**:
 ```cpp
 #include <bst.h>
@@ -114,3 +133,4 @@ b.remove(4);
 //vscode plugin for graphviz or local command line tools.
 b.visualize();
 ```
+

@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/searching/linear_search.h"
 #include "../../catch2/catch.hpp"
 

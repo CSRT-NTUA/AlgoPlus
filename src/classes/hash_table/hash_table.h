@@ -115,6 +115,12 @@ public:
     list.remove_if([key](const auto &pair) { return pair.first == key; });
   }
 
+  class Iterator;
+
+  Iterator begin() { return Iterator(bucketList, 0); }
+
+  Iterator end() { return Iterator(bucketList, bucketList.size()); }
+
   /**
    * @brief << operator for hash_table class
    * @return std::ostream&
@@ -136,6 +142,96 @@ private:
   // std::vector<std::list<std::pair<KeyType, ValueType>>> bucketList;
   std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
       bucketList;
+};
+
+/**
+ * @brief Iterator class
+ */
+template <typename KeyType, typename ValueType>
+class hash_table<KeyType, ValueType>::Iterator {
+private:
+  std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
+      bucketList;
+  std::vector<size_t> key_values;
+  int64_t index;
+
+public:
+  /**
+   * @brief Construct a new Iterator object
+   *
+   * @param bucket the bucket list
+   */
+  explicit Iterator(
+      const std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
+          &bucket,
+      int64_t index) noexcept
+      : bucketList(bucket), index(index) {
+    for (auto &x : bucketList) {
+      key_values.push_back(x.first);
+    }
+  }
+
+  /**
+   * @brief operator = for hash table iterator class
+   *
+   * @param bucket the bucket list
+   * @return Iterator&
+   */
+  Iterator &operator=(
+      const std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
+          &bucket) {
+    this->bucketList = bucket;
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator &operator++() {
+    if (index < key_values.size()) {
+      index++;
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator operator++(int) {
+    Iterator it = *this;
+    ++*(this);
+    return it;
+  }
+
+  /**
+   * @brief operator != for Type Iterator
+   *
+   * @param it the iterator we want to make the check
+   * @return true if the current list that exist in the index is not equal to
+   * the it.list that exist in the it.index
+   * @return false otherwise
+   */
+  bool operator!=(const Iterator &it) {
+    std::list<std::pair<KeyType, ValueType>> l1 = bucketList[key_values[index]];
+    std::list<std::pair<KeyType, ValueType>> l2 =
+        bucketList[it.key_values[it.index]];
+    return index != it.index && l1 != l2;
+    return false;
+  }
+
+  /**
+   * @brief operator * for Type Iterator
+   *
+   * @return std::list<std::pair<KeyType, ValueType>> the list of the current
+   * index
+   */
+  std::list<std::pair<KeyType, ValueType>> operator*() {
+    return bucketList[key_values[index]];
+  }
 };
 
 #endif // HASH_TABLE_H

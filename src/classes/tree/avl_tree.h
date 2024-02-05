@@ -376,10 +376,13 @@ public:
    * @brief operator != for type Iterator
    *
    * @param it const Iterator
-   * @return true if index == it.index
+   * @return true if the current element that exist in the index is not equal to
+   * the it.element that exist in the it.index
    * @return false otherwise
    */
-  bool operator!=(const Iterator &it) { return index != it.index; }
+  bool operator!=(const Iterator &it) {
+    return index != it.index && elements[index] != it.elements[it.index];
+  }
 
   /**
    * @brief operator * for type Iterator

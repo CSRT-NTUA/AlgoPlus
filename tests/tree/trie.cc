@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/tree/trie.h"
 #include "../catch2/catch.hpp"
 #include <string>

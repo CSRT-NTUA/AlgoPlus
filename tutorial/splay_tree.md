@@ -100,6 +100,24 @@ s.remove(4);
 std::vector<int> in = a.postorder();
 ```
 
+### **iterator**:
+```cpp
+#include <splay_tree.h>
+
+splay_tree<int> s;
+s.insert(10);
+s.insert(5);
+s.insert(4);
+s.insert(13);
+s.remove(4);
+
+for(auto it = s.begin(); it != s.end(); it++){
+    // *(it) returns the value of the node
+    //note that begin starts from the leftmost value
+    std::cout << *(it) << ' ';
+}
+```
+
 ### **visualize**:
 ```cpp
 #include <splay_tree.h>

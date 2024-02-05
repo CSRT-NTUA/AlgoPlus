@@ -1,7 +1,7 @@
 \chapter{Mini Tutorial for the Graph class}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph}{}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph}\index{Mini Tutorial for the Graph class@{Mini Tutorial for the Graph class}}
-\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md34}%
-\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md34}%
+\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md37}%
+\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md37}%
 \begin{DoxyVerb}1. graph<T> -- unweighted graph
 2. weighted_graph<T> -- weighted graph
 \end{DoxyVerb}
@@ -33,7 +33,7 @@
 \item visualize
 \end{DoxyItemize}
 
-There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, v)}} that checks if an edge exists from node u to node v, {\bfseries{size()}} that returns the number of elements in the graph, {\bfseries{empty()}} that checks if a graph is empty and {\bfseries{empty()}} that empties the graph.\+You can see more about graph algorithms \href{https://github.com/nikolasfil/AlgoDay/tree/main/AlgoDay-1/Spiros}{\texttt{ here}}. \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md35}{}\doxysubsection{\texorpdfstring{{\bfseries{DFS}}\+:}{{\bfseries{DFS}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md35}
+There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, v)}} that checks if an edge exists from node u to node v, {\bfseries{size()}} that returns the number of elements in the graph, {\bfseries{empty()}} that checks if a graph is empty and {\bfseries{empty()}} that empties the graph.\+You can see more about graph algorithms \href{https://github.com/nikolasfil/AlgoDay/tree/main/AlgoDay-1/Spiros}{\texttt{ here}}. \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md38}{}\doxysubsection{\texorpdfstring{{\bfseries{DFS}}\+:}{{\bfseries{DFS}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md38}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -47,7 +47,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::vector<T>\ dfs\ =\ g.dfs();}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md36}{}\doxysubsection{\texorpdfstring{{\bfseries{BFS}}\+:}{{\bfseries{BFS}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md36}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md39}{}\doxysubsection{\texorpdfstring{{\bfseries{BFS}}\+:}{{\bfseries{BFS}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md39}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -61,7 +61,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::vector<T>\ bfs\ =\ g.bfs();}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md37}{}\doxysubsection{\texorpdfstring{{\bfseries{connected\+\_\+components}}\+:}{{\bfseries{connected\+\_\+components}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md37}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md40}{}\doxysubsection{\texorpdfstring{{\bfseries{connected\+\_\+components}}\+:}{{\bfseries{connected\+\_\+components}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md40}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -73,7 +73,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::cout\ <<\ g.connected\_components()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md38}{}\doxysubsection{\texorpdfstring{{\bfseries{cycle}}\+:}{{\bfseries{cycle}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md38}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md41}{}\doxysubsection{\texorpdfstring{{\bfseries{cycle}}\+:}{{\bfseries{cycle}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md41}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -88,7 +88,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md39}{}\doxysubsection{\texorpdfstring{{\bfseries{topological\+\_\+sort}}\+:}{{\bfseries{topological\+\_\+sort}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md39}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md42}{}\doxysubsection{\texorpdfstring{{\bfseries{topological\+\_\+sort}}\+:}{{\bfseries{topological\+\_\+sort}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md42}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -102,7 +102,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::vector<int>\ topo\ =\ g.topological\_sort();}
 
 \end{DoxyCode}
- \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md40}{}\doxysubsection{\texorpdfstring{{\bfseries{bipartite}}\+:}{{\bfseries{bipartite}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md40}
+ \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md43}{}\doxysubsection{\texorpdfstring{{\bfseries{bipartite}}\+:}{{\bfseries{bipartite}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md43}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -118,7 +118,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md41}{}\doxysubsection{\texorpdfstring{{\bfseries{bridge}}\+:}{{\bfseries{bridge}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md41}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md44}{}\doxysubsection{\texorpdfstring{{\bfseries{bridge}}\+:}{{\bfseries{bridge}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md44}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -132,7 +132,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::vector<std::vector<int>>\ bridges\ =\ g.bridge(1);}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md42}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md42}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md45}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md45}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -148,7 +148,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{g.visualize();}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md43}{}\doxysubsection{\texorpdfstring{{\bfseries{shortest\+\_\+path}}\+:}{{\bfseries{shortest\+\_\+path}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md43}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md46}{}\doxysubsection{\texorpdfstring{{\bfseries{shortest\+\_\+path}}\+:}{{\bfseries{shortest\+\_\+path}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md46}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -162,7 +162,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::cout\ <<\ g.shortest\_path(1,\ 2)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md44}{}\doxysubsection{\texorpdfstring{{\bfseries{prim}}\+:}{{\bfseries{prim}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md44}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md47}{}\doxysubsection{\texorpdfstring{{\bfseries{prim}}\+:}{{\bfseries{prim}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md47}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -178,7 +178,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::cout\ <<\ g.prim(\textcolor{stringliteral}{"{}Athens"{}})\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md45}{}\doxysubsection{\texorpdfstring{{\bfseries{connected}}\+:}{{\bfseries{connected}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md45}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md48}{}\doxysubsection{\texorpdfstring{{\bfseries{connected}}\+:}{{\bfseries{connected}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md48}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
