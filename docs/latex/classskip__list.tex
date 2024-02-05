@@ -9,6 +9,11 @@
 
 {\ttfamily \#include $<$skip\+\_\+list.\+h$>$}
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classskip__list_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classskip__list_1_1_iterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,6 +21,10 @@
 \begin{DoxyCompactList}\small\item\em \doxylink{classskip__list}{skip\+\_\+list} constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classskip__list_ad7a2f526cda9ab87d50b9e745222ae98}{insert}} (T key)
 \begin{DoxyCompactList}\small\item\em insert function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classskip__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classskip__list_ace4f6bb9a3a58c1b993565dc29689b55}{begin}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to the first element of the list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classskip__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classskip__list_a296bad7f6368effc2d9a546f004a5ab0}{end}} ()
+\begin{DoxyCompactList}\small\item\em pointer that points to the last element of the list \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classskip__list_a5f586433aeedb6b248625e6cccee4eff}{remove}} (T key)
 \begin{DoxyCompactList}\small\item\em remove function. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classskip__list_af53fbbb2e9761d71c6d53d3969aac1c9}{search}} (T key)
@@ -55,6 +64,34 @@ class skip\+\_\+list$<$ T $>$}
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classskip__list_ace4f6bb9a3a58c1b993565dc29689b55}\label{classskip__list_ace4f6bb9a3a58c1b993565dc29689b55} 
+\index{skip\_list$<$ T $>$@{skip\_list$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!skip\_list$<$ T $>$@{skip\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classskip__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classskip__list}{skip\+\_\+list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to the first element of the list 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classskip__list_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{classskip__list_a296bad7f6368effc2d9a546f004a5ab0}\label{classskip__list_a296bad7f6368effc2d9a546f004a5ab0} 
+\index{skip\_list$<$ T $>$@{skip\_list$<$ T $>$}!end@{end}}
+\index{end@{end}!skip\_list$<$ T $>$@{skip\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classskip__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classskip__list}{skip\+\_\+list}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pointer that points to the last element of the list 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classskip__list_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
 \Hypertarget{classskip__list_ad7a2f526cda9ab87d50b9e745222ae98}\label{classskip__list_ad7a2f526cda9ab87d50b9e745222ae98} 
 \index{skip\_list$<$ T $>$@{skip\_list$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!skip\_list$<$ T $>$@{skip\_list$<$ T $>$}}

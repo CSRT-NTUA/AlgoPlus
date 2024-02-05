@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weighted_5fgraph_0',['weighted_graph',['../classweighted__graph.html',1,'']]]
+  ['trie_0',['trie',['../classtrie.html',1,'']]]
 ];
