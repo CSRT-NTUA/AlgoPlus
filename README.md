@@ -65,6 +65,16 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 - [X] [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
 
+
+### **How to run test cases**
+```
+mkdir build && cd build
+cmake ..
+make
+cd tests
+./runUnitTests
+```
+
 ### **Our contributors**
 <a href="https://github.com/CSRT-NTUA/AlgoPlus/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=CSRT-NTUA/AlgoPlus" />
