@@ -99,23 +99,7 @@ b.remove(4);
 std::vector<int> in = a.postorder();
 ```
 
-### **visualize**:
-```cpp
-#include <bst.h>
-
-bst<int> b;
-b.insert(10);
-b.insert(5);
-b.insert(4);
-b.insert(13);
-b.remove(4);
-
-//returns a .dot file that can easily be previewed using
-//vscode plugin for graphviz or local command line tools.
-b.visualize();
-```
-
-### **visualize**:
+### **iterator**:
 ```cpp
 #include <bst.h>
 
@@ -132,5 +116,21 @@ for(auto it = b.begin(); it != b.end(); it++){
     //note that begin starts from the leftmost value
     std::cout << *(it) << ' ';
 }
+```
+
+### **visualize**:
+```cpp
+#include <bst.h>
+
+bst<int> b;
+b.insert(10);
+b.insert(5);
+b.insert(4);
+b.insert(13);
+b.remove(4);
+
+//returns a .dot file that can easily be previewed using
+//vscode plugin for graphviz or local command line tools.
+b.visualize();
 ```
 

@@ -114,7 +114,7 @@ a.remove(4);
 a.visualize();
 ```
 
-### **iterators**:
+### **iterator**:
 ```cpp
 #include <avl.h>
 
