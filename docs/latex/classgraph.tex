@@ -14,6 +14,13 @@ Class for Unweighted Graph.
 \item 
 \mbox{\hyperlink{classgraph_ad88980a06f2a3c4b4bb38e3a474573ff}{graph}} (std\+::string \+\_\+\+\_\+type, std\+::vector$<$ std\+::pair$<$ T, std\+::vector$<$ T $>$ $>$ $>$ \+\_\+\+\_\+adj=\{\})
 \begin{DoxyCompactList}\small\item\em Constructor for the unweighted graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraph_ade08163a9b85ae16b5e898d0e6bb1353}{graph}} (const \mbox{\hyperlink{classgraph}{graph}} \&g)
+\begin{DoxyCompactList}\small\item\em Construct a new graph object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgraph}{graph}} \& \mbox{\hyperlink{classgraph_ae1111eaf01c6fb231e4d6f73bd3f17a1}{operator=}} (const \mbox{\hyperlink{classgraph}{graph}} \&g)
+\begin{DoxyCompactList}\small\item\em operator = for the graph class \end{DoxyCompactList}\item 
+\Hypertarget{classgraph_ac1f9920571d2000f6ee9c6f69015d402}\label{classgraph_ac1f9920571d2000f6ee9c6f69015d402} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}graph} ()
+\begin{DoxyCompactList}\small\item\em Destroy the graph object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgraph_a3b397af35ce0c1db49a6a814e68bffc3}{add\+\_\+edge}} (T u, T v)
 \begin{DoxyCompactList}\small\item\em add\+\_\+edge function \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classgraph_a4d434612e87f3e4a5f10c653167da8df}{has\+\_\+edge}} (T start, T end)
@@ -64,7 +71,7 @@ Class for Unweighted Graph.
 \Hypertarget{classgraph_ad88980a06f2a3c4b4bb38e3a474573ff}\label{classgraph_ad88980a06f2a3c4b4bb38e3a474573ff} 
 \index{graph$<$ T $>$@{graph$<$ T $>$}!graph@{graph}}
 \index{graph@{graph}!graph$<$ T $>$@{graph$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{graph()}{graph()}}
+\doxysubsubsection{\texorpdfstring{graph()}{graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classgraph}{graph}}$<$ T $>$\mbox{\hyperlink{classgraph}{\+::graph}} (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+\+\_\+type,  }\item[{std\+::vector$<$ std\+::pair$<$ T, std\+::vector$<$ T $>$ $>$ $>$}]{\+\_\+\+\_\+adj = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -77,6 +84,22 @@ Constructor for the unweighted graph.
 {\em \+\_\+\+\_\+type} & type of the graph, either "{}directed"{} or "{}undirected"{} \\
 \hline
 {\em \+\_\+\+\_\+adj} & vector\texorpdfstring{$<$}{<}pair$<$\+T,vector$<$\+T$>$$>$, you can pass a vector of pairs to construct the graph without doing multiple add\+\_\+edge. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgraph_ade08163a9b85ae16b5e898d0e6bb1353}\label{classgraph_ade08163a9b85ae16b5e898d0e6bb1353} 
+\index{graph$<$ T $>$@{graph$<$ T $>$}!graph@{graph}}
+\index{graph@{graph}!graph$<$ T $>$@{graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{graph()}{graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classgraph}{graph}}$<$ T $>$\mbox{\hyperlink{classgraph}{\+::graph}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgraph}{graph}}$<$ T $>$ \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new graph object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & the graph we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -247,6 +270,25 @@ has\+\_\+edge function.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if a direct edge from start to end exists. false if a direct edge from start to end does not exist. 
+\end{DoxyReturn}
+\Hypertarget{classgraph_ae1111eaf01c6fb231e4d6f73bd3f17a1}\label{classgraph_ae1111eaf01c6fb231e4d6f73bd3f17a1} 
+\index{graph$<$ T $>$@{graph$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!graph$<$ T $>$@{graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classgraph}{graph}} \& \mbox{\hyperlink{classgraph}{graph}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classgraph}{graph}}$<$ T $>$ \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for the graph class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & the graph we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+graph\& 
 \end{DoxyReturn}
 \Hypertarget{classgraph_a0172e168010c9ddc2e85da6aea42b23f}\label{classgraph_a0172e168010c9ddc2e85da6aea42b23f} 
 \index{graph$<$ T $>$@{graph$<$ T $>$}!scc@{scc}}

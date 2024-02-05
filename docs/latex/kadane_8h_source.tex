@@ -10,20 +10,20 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ int64\_t\ kadane(std::vector<int>\ arr)\ \{}
-\DoxyCodeLine{00010\ \ \ int64\_t\ mmax\ =\ INT\_MIN,\ temp\ =\ 0;}
-\DoxyCodeLine{00011\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ temp\ +=\ arr[i];}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ >\ mmax)\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ mmax\ =\ temp;}
-\DoxyCodeLine{00015\ \ \ \ \ \}}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ <\ 0)\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ temp\ =\ 0;}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \}}
-\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{return}\ mmax;}
-\DoxyCodeLine{00021\ \}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ int64\_t\ kadane(std::vector<int>\ arr)\ \{}
+\DoxyCodeLine{00016\ \ \ int64\_t\ mmax\ =\ INT\_MIN,\ temp\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ temp\ +=\ arr[i];}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ >\ mmax)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ mmax\ =\ temp;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ <\ 0)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ temp\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordflow}{return}\ mmax;}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -25,18 +25,18 @@
 \DoxyCodeLine{00021\ \}}
 \DoxyCodeLine{00022\ \};\ \textcolor{comment}{//\ namespace\ helper\_array}}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keywordtype}{bool}\ kmp(std::string\ pattern,\ std::string\ text)\ \{}
-\DoxyCodeLine{00025\ \ \ std::vector<int>\ failure\ =\ helper\_array::get\_array(pattern);}
-\DoxyCodeLine{00026\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0,\ k\ =\ 0;\ j\ <\ text.size();\ j++)\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{while}\ (k\ !=\ -\/1\ \&\&\ pattern[k]\ !=\ text[j])\ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ k\ =\ failure[k];}
-\DoxyCodeLine{00029\ \ \ \ \ \}}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (++k\ ==\ pattern.size())}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00032\ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00034\ \}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{bool}\ kmp(std::string\ pattern,\ std::string\ text)\ \{}
+\DoxyCodeLine{00033\ \ \ std::vector<int>\ failure\ =\ helper\_array::get\_array(pattern);}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0,\ k\ =\ 0;\ j\ <\ text.size();\ j++)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (k\ !=\ -\/1\ \&\&\ pattern[k]\ !=\ text[j])\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ k\ =\ failure[k];}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (++k\ ==\ pattern.size())}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
