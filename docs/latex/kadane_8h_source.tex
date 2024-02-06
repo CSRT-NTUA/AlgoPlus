@@ -10,22 +10,23 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00017\ int64\_t\ kadane(std::vector<int>\ arr)\ \{}
-\DoxyCodeLine{00018\ \ \ int64\_t\ mmax\ =\ INT\_MIN,\ temp\ =\ 0;}
-\DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ temp\ +=\ arr[i];}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ >\ mmax)\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ mmax\ =\ temp;}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ <\ 0)\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ temp\ =\ 0;}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
-\DoxyCodeLine{00027\ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \textcolor{keywordflow}{return}\ mmax;}
-\DoxyCodeLine{00029\ \}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ int64\_t\ kadane(std::vector<int>\ arr)\ \{}
+\DoxyCodeLine{00019\ \ \ int64\_t\ mmax\ =\ INT\_MIN,\ temp\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ temp\ +=\ arr[i];}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ >\ mmax)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ mmax\ =\ temp;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ <\ 0)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ temp\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordflow}{return}\ mmax;}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
