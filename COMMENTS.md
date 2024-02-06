@@ -1,4 +1,4 @@
-### **How should i comment my code?**
+### How should i comment my code?
 
 The following is a **must** if you want to contribute, note that no maintaner or admin will add comments for you, the comments are strictly like this because the documentation is updated from the legacy code.
 

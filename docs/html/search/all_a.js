@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['i_20comment_20my_20code_20strong_0',['&lt;strong&gt;How should i comment my code?&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
+  ['i_20comment_20my_20code_0',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
   ['i_20write_20unit_20tests_1',['How do i write unit tests?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_u_n_i_t___t_e_s_t_s.html',1,'']]],
   ['inorder_2',['inorder',['../classavl__tree.html#aef655e5753555d705e58d39bd094c55a',1,'avl_tree::inorder()'],['../classbst.html#ab9d984aab9247a36c78b115484ccb623',1,'bst::inorder()'],['../classinterval__tree.html#a6472215cc03add0b3704c3d5e3249259',1,'interval_tree::inorder()'],['../classsplay__tree.html#a3418b2394bd2f5295edeb0444292938a',1,'splay_tree::inorder()']]],
   ['inorder_20strong_20_3a_3',['Inorder strong :',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl.html#autotoc_md16',1,'&lt;strong&gt;inorder&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst.html#autotoc_md25',1,'&lt;strong&gt;inorder&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree.html#autotoc_md77',1,'&lt;strong&gt;inorder&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2splay__tree.html#autotoc_md99',1,'&lt;strong&gt;inorder&lt;/strong&gt;:']]],

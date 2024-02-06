@@ -1,4 +1,4 @@
-### **Mini tutorial for single linked list class**
+### Mini tutorial for single linked list class
 
     linked_list<T> -- creates a linked list with elements of type T
 

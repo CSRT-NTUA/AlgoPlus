@@ -1,4 +1,4 @@
-### Mini tutorial for circular linked list class
+### Mini tutorial for doubly linked list class
 
     doubly_linked_list<T> -- creates a doubly linked list with elements of type T
 
