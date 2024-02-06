@@ -214,7 +214,7 @@ public:
    * @return Iterator&
    */
   Iterator &operator--() {
-    if (this->index >= 0) {
+    if (this->index > 0) {
       this->index--;
     }
     return *(this);
