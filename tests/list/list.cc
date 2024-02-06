@@ -75,3 +75,21 @@ TEST_CASE("testing iterators in single list") {
   }
   REQUIRE(v == els);
 }
+
+TEST_CASE("testing copy constructors in single list") {
+  linked_list<int> l({2, 5, 46, 2, 8, 5});
+  linked_list<int> l2(l);
+  std::vector<int> v = l.elements();
+  std::vector<int> v2 = l2.elements();
+  REQUIRE(v == v2);
+}
+
+TEST_CASE("testing operator = in single list") {
+  linked_list<int> l({2, 5, 46, 2, 8, 5});
+  std::vector<int> v = l.elements();
+
+  linked_list<int> l2;
+  l2 = l;
+  std::vector<int> v2 = l2.elements();
+  REQUIRE(v2 == v);
+}

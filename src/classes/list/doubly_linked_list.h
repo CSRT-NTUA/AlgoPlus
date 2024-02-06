@@ -28,6 +28,28 @@ public:
   }
 
   /**
+   * @brief copy constructor for the doubly_linked_list class
+   * @param l the list we want to copy
+   */
+  explicit doubly_linked_list(const doubly_linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+  }
+
+  /**
+   * @brief operator = for doubly linked list class
+   * @param l the list we want to copy
+   * @return doubly_linked_list&
+   */
+  doubly_linked_list &operator=(const doubly_linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+    return *this;
+  }
+
+  /**
    *@brief empty function.
    *@returns true if the list is empty.
    */
