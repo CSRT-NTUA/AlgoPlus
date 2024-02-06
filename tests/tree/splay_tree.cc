@@ -78,6 +78,21 @@ TEST_CASE("testing iterators in splay tree") {
     check.push_back(*(it));
   }
   REQUIRE(check == v);
+
+  splay_tree<int> tree;
+  tree.insert(1);
+  tree.insert(4);
+  tree.insert(2);
+  tree.insert(3);
+  std::vector<int> v2;
+  auto it = tree.end();
+  it--;
+  for (; it != tree.begin(); it--) {
+    v2.push_back(*(it));
+  }
+  v2.push_back(*(it));
+  std::vector<int> check3 = {4, 3, 2, 1};
+  REQUIRE(v2 == check3);
 }
 
 TEST_CASE("testing copy constructor for splay tree class") {

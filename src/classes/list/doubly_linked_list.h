@@ -288,6 +288,29 @@ public:
   }
 
   /**
+   * @brief operator -- for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator &operator--() {
+    if (curr_root) {
+      curr_root = curr_root->prev;
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator -- for type iterator
+   *
+   * @return Iterator
+   */
+  Iterator operator--(int) {
+    Iterator it = *this;
+    --*(this);
+    return it;
+  }
+
+  /**
    * @brief operator != for type Iterator
    *
    * @param it const Iterator

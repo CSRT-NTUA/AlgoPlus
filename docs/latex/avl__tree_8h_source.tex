@@ -302,13 +302,26 @@
 \DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
 \DoxyCodeLine{00399\ \ \ \}}
 \DoxyCodeLine{00400\ }
-\DoxyCodeLine{00409\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classavl__tree_1_1_iterator_a0fd4ebd930bd4fe986438e203685d2fd}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ \&it)\ \{}
-\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{return}\ index\ !=\ it.index\ \&\&\ elements[index]\ !=\ it.elements[it.index];}
+\DoxyCodeLine{00406\ \ \ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classavl__tree_1_1_iterator_a65b932177f6fef4039696b434c239848}{operator-\/-\/}}()\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>index\ >=\ 0)\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ this-\/>index-\/-\/;}
+\DoxyCodeLine{00409\ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
 \DoxyCodeLine{00411\ \ \ \}}
 \DoxyCodeLine{00412\ }
-\DoxyCodeLine{00418\ \ \ T\ \mbox{\hyperlink{classavl__tree_1_1_iterator_aa638b723e1ef408bf1406d6c9db06dd8}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
-\DoxyCodeLine{00419\ \};}
-\DoxyCodeLine{00420\ }
-\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00418\ \ \ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classavl__tree_1_1_iterator_afa6a01a6f7a1cf8186fde6f4779f53c0}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00420\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00422\ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00432\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classavl__tree_1_1_iterator_a0fd4ebd930bd4fe986438e203685d2fd}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}\ \&it)\ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordflow}{return}\ index\ !=\ it.index\ \&\&\ elements[index]\ !=\ it.elements[it.index];}
+\DoxyCodeLine{00434\ \ \ \}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00441\ \ \ T\ \mbox{\hyperlink{classavl__tree_1_1_iterator_aa638b723e1ef408bf1406d6c9db06dd8}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
+\DoxyCodeLine{00442\ \};}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

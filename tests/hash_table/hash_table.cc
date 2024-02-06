@@ -83,4 +83,22 @@ TEST_CASE("testing iterators in hash table") {
     REQUIRE(*(it) == *(iter2));
     iter2++;
   }
+
+  hash_table<int, std::string> t3;
+  t3.insert(1, "a");
+  t3.insert(2, "b");
+  t3.insert(3, "c");
+  t3.insert(4, "d");
+
+  std::vector<std::list<std::pair<int, std::string>>> v3;
+  auto it = t3.begin();
+  v3.push_back(*(it));
+  it++;
+  v3.push_back(*(it));
+  it--;
+  v3.push_back(*(it));
+
+  std::vector<std::list<std::pair<int, std::string>>> check_v3 = {
+      {{1, "a"}}, {{2, "b"}}, {{1, "a"}}};
+  REQUIRE(v3 == check_v3);
 }

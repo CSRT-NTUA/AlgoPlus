@@ -209,6 +209,29 @@ public:
   }
 
   /**
+   * @brief operator -- for type Iterator
+   *
+   * @return Iterator&
+   */
+  Iterator &operator--() {
+    if (this->index >= 0) {
+      this->index--;
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator -- for type Iterator
+   *
+   * @return Iterator
+   */
+  Iterator operator--(int) {
+    Iterator it = *this;
+    --*(this);
+    return it;
+  }
+
+  /**
    * @brief operator != for Type Iterator
    *
    * @param it the iterator we want to make the check

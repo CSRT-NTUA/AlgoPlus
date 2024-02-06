@@ -298,11 +298,24 @@
 \DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
 \DoxyCodeLine{00383\ \ \ \}}
 \DoxyCodeLine{00384\ }
-\DoxyCodeLine{00392\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a8327888e21ed84758168e857525b0357}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
-\DoxyCodeLine{00393\ }
-\DoxyCodeLine{00399\ \ \ T\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a278afb2dcf7708a7c9e5367699fbbd1d}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
-\DoxyCodeLine{00400\ \};}
-\DoxyCodeLine{00401\ }
-\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00390\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classsplay__tree_1_1_iterator_a0b7363ee87a58c48f0121ea4ab6492a7}{operator-\/-\/}}()\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>index\ >\ 0)\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ this-\/>index-\/-\/;}
+\DoxyCodeLine{00393\ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00395\ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00402\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a6e24c00277f09dd44bee63ff96c57c18}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00404\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00406\ \ \ \}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00415\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a8327888e21ed84758168e857525b0357}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00422\ \ \ T\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a278afb2dcf7708a7c9e5367699fbbd1d}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
+\DoxyCodeLine{00423\ \};}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

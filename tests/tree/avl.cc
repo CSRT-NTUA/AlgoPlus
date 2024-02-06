@@ -95,6 +95,21 @@ TEST_CASE("testing iterators in avl") {
   }
 
   REQUIRE(check2 == els2);
+
+  avl_tree<int> tree;
+  tree.insert(1);
+  tree.insert(2);
+  tree.insert(3);
+  tree.insert(4);
+  std::vector<int> v;
+  auto it = tree.end();
+  it--;
+  for (; it != tree.begin(); it--) {
+    v.push_back(*(it));
+  }
+  v.push_back(*(it));
+  std::vector<int> check3 = {4, 3, 2, 1};
+  REQUIRE(v == check3);
 }
 
 TEST_CASE("testing clear function in avl") {

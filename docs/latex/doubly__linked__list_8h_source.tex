@@ -198,11 +198,24 @@
 \DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
 \DoxyCodeLine{00288\ \ \ \}}
 \DoxyCodeLine{00289\ }
-\DoxyCodeLine{00297\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator_ad3a8e48f57e9de41b732afdf6632373e}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ curr\_root\ !=\ it.curr\_root;\ \}}
-\DoxyCodeLine{00298\ }
-\DoxyCodeLine{00304\ \ \ T\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator_ae37008c3828d7d83f9e401ce4873dcee}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ curr\_root-\/>val;\ \}}
-\DoxyCodeLine{00305\ \};}
-\DoxyCodeLine{00306\ }
-\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00295\ \ \ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classdoubly__linked__list_1_1_iterator_a8f9c43e5a4b5171ac2558afb8b3c8da3}{operator-\/-\/}}()\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_root)\ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ curr\_root\ =\ curr\_root-\/>prev;}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00300\ \ \ \}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00307\ \ \ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator_a264bc843dc3baa8a5c76826c99a8032c}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00309\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00311\ \ \ \}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00320\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator_ad3a8e48f57e9de41b732afdf6632373e}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ curr\_root\ !=\ it.curr\_root;\ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00327\ \ \ T\ \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator_ae37008c3828d7d83f9e401ce4873dcee}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ curr\_root-\/>val;\ \}}
+\DoxyCodeLine{00328\ \};}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -101,6 +101,16 @@ TEST_CASE("testing iterators in doubly list") {
     check.push_back(*(it));
   }
   REQUIRE(v == check);
+
+  auto it = l.begin();
+  std::vector<int> v2;
+  v2.push_back(*(it));
+  it++;
+  v2.push_back(*(it));
+  it--;
+  v2.push_back(*(it));
+  std::vector<int> check2 = {1, 5, 1};
+  REQUIRE(v2 == check2);
 }
 
 TEST_CASE("testing copy constructors in doubly list") {

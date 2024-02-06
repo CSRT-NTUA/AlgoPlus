@@ -346,13 +346,26 @@
 \DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
 \DoxyCodeLine{00458\ \ \ \}}
 \DoxyCodeLine{00459\ }
-\DoxyCodeLine{00467\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classinterval__tree_1_1_iterator_a19e329cb93f58dde93d780239371ebab}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
-\DoxyCodeLine{00468\ }
-\DoxyCodeLine{00474\ \ \ std::pair<T,\ T>\ \mbox{\hyperlink{classinterval__tree_1_1_iterator_a3d70ea6c854c517edab72b0c437ff1e3}{operator*}}()\ \{}
-\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordflow}{return}\ \{elements[index].first,\ elements[index].second\};}
-\DoxyCodeLine{00476\ \ \ \}}
-\DoxyCodeLine{00477\ \};}
-\DoxyCodeLine{00478\ }
-\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00465\ \ \ \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classinterval__tree_1_1_iterator_ad7d9d4df18b3b10023883cf51f785116}{operator-\/-\/}}()\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>index\ >\ 0)\ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ this-\/>index-\/-\/;}
+\DoxyCodeLine{00468\ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00470\ \ \ \}}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00477\ \ \ \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classinterval__tree_1_1_iterator_a27b3580fe02e848553ba2a38841b96f5}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00479\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00481\ \ \ \}}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00490\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classinterval__tree_1_1_iterator_a19e329cb93f58dde93d780239371ebab}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00497\ \ \ std::pair<T,\ T>\ \mbox{\hyperlink{classinterval__tree_1_1_iterator_a3d70ea6c854c517edab72b0c437ff1e3}{operator*}}()\ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordflow}{return}\ \{elements[index].first,\ elements[index].second\};}
+\DoxyCodeLine{00499\ \ \ \}}
+\DoxyCodeLine{00500\ \};}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

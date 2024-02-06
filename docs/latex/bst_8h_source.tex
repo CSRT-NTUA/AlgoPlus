@@ -269,11 +269,24 @@
 \DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
 \DoxyCodeLine{00360\ \ \ \}}
 \DoxyCodeLine{00361\ }
-\DoxyCodeLine{00369\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbst_1_1_iterator_a1616df45e8c86a48b6677dc34e4e1e02}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
-\DoxyCodeLine{00370\ }
-\DoxyCodeLine{00376\ \ \ T\ \mbox{\hyperlink{classbst_1_1_iterator_ad4a6b980b608ccbc56e69c0045095a6e}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
-\DoxyCodeLine{00377\ \};}
-\DoxyCodeLine{00378\ }
-\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00367\ \ \ \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classbst_1_1_iterator_a32b6da1cbf76589e92772303c44514f1}{operator-\/-\/}}()\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>index\ >\ 0)\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ this-\/>index-\/-\/;}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00372\ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00379\ \ \ \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classbst_1_1_iterator_a4e1a56581560b927501554c6032ad65c}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00381\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00383\ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00392\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classbst_1_1_iterator_a1616df45e8c86a48b6677dc34e4e1e02}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00399\ \ \ T\ \mbox{\hyperlink{classbst_1_1_iterator_ad4a6b980b608ccbc56e69c0045095a6e}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
+\DoxyCodeLine{00400\ \};}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
