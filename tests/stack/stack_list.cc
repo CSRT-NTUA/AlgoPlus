@@ -46,3 +46,46 @@ TEST_CASE("testing size in stack") {
   s.push(13);
   REQUIRE(s.size() == 4);
 }
+
+TEST_CASE("testing copy constructor for stack list class") {
+  stack_list<char> s;
+  s.push('a');
+  s.push('b');
+  s.push('c');
+  s.push('d');
+  s.push('e');
+
+  stack_list<char> s2(s);
+  std::vector<char> v1, v2;
+  for (auto it = s.begin(); it != s.end(); it++) {
+    v1.push_back(*(it));
+  }
+
+  for (auto it = s2.begin(); it != s2.end(); it++) {
+    v2.push_back(*(it));
+  }
+
+  REQUIRE(v1 == v2);
+}
+
+TEST_CASE("testing operator = for stack list class") {
+  stack_list<char> s;
+  s.push('a');
+  s.push('b');
+  s.push('c');
+  s.push('d');
+  s.push('e');
+
+  stack_list<char> s2;
+  s2 = s;
+  std::vector<char> v1, v2;
+  for (auto it = s.begin(); it != s.end(); it++) {
+    v1.push_back(*(it));
+  }
+
+  for (auto it = s2.begin(); it != s2.end(); it++) {
+    v2.push_back(*(it));
+  }
+
+  REQUIRE(v1 == v2);
+}

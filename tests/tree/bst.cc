@@ -102,3 +102,18 @@ TEST_CASE("testing clear function in bst") {
   std::vector<char> v = b.inorder();
   REQUIRE(v.size() == 0);
 }
+
+TEST_CASE("testing copy constructor for bst class") {
+  bst<int> b({5, 3, -10, 4, 15, 20});
+  bst<int> b2(b);
+  REQUIRE(b.inorder() == b2.inorder());
+  REQUIRE(b.preorder() == b2.preorder());
+}
+
+TEST_CASE("testing operator = for bst class") {
+  bst<int> b({5, 3, -10, 4, 15, 20});
+  bst<int> b2;
+  b2 = b;
+  REQUIRE(b.inorder() == b2.inorder());
+  REQUIRE(b.preorder() == b2.preorder());
+}

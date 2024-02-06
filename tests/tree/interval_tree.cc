@@ -45,3 +45,23 @@ TEST_CASE("testing iterators in interval tree") {
   }
   REQUIRE(check == els);
 }
+
+TEST_CASE("testing copy constructor for interval_tree class") {
+  interval_tree<int> i({{1, 3}, {5, 6}, {2, 4}, {9, 10}});
+  interval_tree<int> i2(i);
+  REQUIRE(i.inorder() == i2.inorder());
+  REQUIRE(i.preorder() == i2.preorder());
+
+  interval_tree<char> i3({{'a', 'b'}, {'c', 'd'}, {'a', 'd'}});
+  interval_tree<char> i4(i3);
+  REQUIRE(i3.inorder() == i4.inorder());
+  REQUIRE(i3.preorder() == i4.preorder());
+}
+
+TEST_CASE("testing operator = for interval tree class") {
+  interval_tree<int> i({{1, 3}, {5, 6}, {2, 4}, {9, 10}});
+  interval_tree<int> i2;
+  i2 = i;
+  REQUIRE(i.inorder() == i2.inorder());
+  REQUIRE(i.preorder() == i2.preorder());
+}

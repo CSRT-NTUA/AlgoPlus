@@ -28,6 +28,31 @@ public:
       }
     }
   }
+
+  /**
+   * @brief Copy constructor for avl tree class
+   * @param a the tree we want to copy
+   */
+  explicit avl_tree(const avl_tree &a) {
+    root = a.root;
+    __size = a.__size;
+  }
+
+  /**
+   * @brief operator = for avl tree class
+   * @param a the tree we want to copy
+   * @return avl_tree&
+   */
+  avl_tree &operator=(const avl_tree &a) {
+    root = a.root;
+    __size = a.__size;
+    return *this;
+  }
+
+  /**
+   * @brief Destroy the avl tree object
+   *
+   */
   ~avl_tree() noexcept {}
 
   /**

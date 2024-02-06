@@ -578,6 +578,33 @@ public:
       return;
     }
   }
+
+  /**
+   * @brief Copy constructor for weighted graph class
+   * @param g the graph we want to copy
+   */
+  explicit weighted_graph(const weighted_graph &g) {
+    adj = g.adj;
+    __elements = g.__elements;
+    __type = g.__type;
+  }
+
+  /**
+   * @brief operator = for weighted graph class
+   * @param g the graph we want to copy
+   * @return weighted_graph&
+   */
+  weighted_graph &operator=(const weighted_graph &g) {
+    adj = g.adj;
+    __elements = g.__elements;
+    __type = g.__type;
+    return *this;
+  }
+
+  /**
+   * @brief Destroy the weighted graph object
+   *
+   */
   ~weighted_graph() { adj.clear(); }
 
   /**

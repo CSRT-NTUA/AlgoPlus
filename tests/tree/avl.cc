@@ -109,3 +109,18 @@ TEST_CASE("testing clear function in avl") {
   std::vector<char> check = {'a', 'g', 'w'};
   REQUIRE(v2 == check);
 }
+
+TEST_CASE("testing copy constructor for avl tree class") {
+  avl_tree<int> a({8, 4, 3, 1, 5, 6});
+  avl_tree<int> b(a);
+  REQUIRE(a.inorder() == b.inorder());
+  REQUIRE(a.preorder() == b.preorder());
+}
+
+TEST_CASE("testing operator = for avl tree class") {
+  avl_tree<int> a({8, 4, 3, 1, 5, 6});
+  avl_tree<int> b;
+  b = a;
+  REQUIRE(a.inorder() == b.inorder());
+  REQUIRE(a.preorder() == b.preorder());
+}

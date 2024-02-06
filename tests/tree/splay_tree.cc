@@ -79,3 +79,18 @@ TEST_CASE("testing iterators in splay tree") {
   }
   REQUIRE(check == v);
 }
+
+TEST_CASE("testing copy constructor for splay tree class") {
+  splay_tree<char> s({'a', 'w', 'g', 'o', 's', 'v'});
+  splay_tree<char> s2(s);
+  REQUIRE(s.inorder() == s2.inorder());
+  REQUIRE(s.preorder() == s2.preorder());
+}
+
+TEST_CASE("testing operator = for splay tree class") {
+  splay_tree<char> s({'a', 'w', 'g', 'o', 's', 'v'});
+  splay_tree<char> s2;
+  s2 = s;
+  REQUIRE(s.inorder() == s2.inorder());
+  REQUIRE(s.preorder() == s2.preorder());
+}

@@ -45,6 +45,26 @@ public:
     }
   }
 
+  /**
+   * @brief Copy constructor for splay tree class
+   * @param s the tree we want to copy
+   */
+  explicit splay_tree(const splay_tree &s) {
+    root = s.root;
+    __size = s.__size;
+  }
+
+  /**
+   * @brief operator = for splay tree class
+   * @param s the tree we want to copy
+   * @return splay_tree&
+   */
+  splay_tree &operator=(const splay_tree &s) {
+    root = s.root;
+    __size = s.__size;
+    return *this;
+  }
+
   ~splay_tree() { root = nullptr; }
 
   /**

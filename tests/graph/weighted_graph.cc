@@ -210,3 +210,30 @@ TEST_CASE("testing bellman ford algorithm in weighted graph") {
   check2[1] = -std::numeric_limits<double>::infinity();
   REQUIRE(check2 == test2);
 }
+
+TEST_CASE("testing copy constructor for weighted graph class") {
+  weighted_graph<int> g2("undirected");
+  g2.add_edge(1, 2, 11);
+  g2.add_edge(2, 0, 10);
+  g2.add_edge(1, 0, 8);
+  g2.add_edge(0, 3, 4);
+  g2.add_edge(3, 4, 3);
+
+  weighted_graph<int> g3(g2);
+  REQUIRE(g2.dfs(1) == g3.dfs(1));
+  REQUIRE(g2.dfs(0) == g3.dfs(0));
+}
+
+TEST_CASE("testing operator = for weighted graph class") {
+  weighted_graph<std::string> g("undirected");
+  g.add_edge("a", "b", 12);
+  g.add_edge("b", "c", 10);
+  g.add_edge("c", "w", 110);
+  g.add_edge("w", "b", 2);
+  g.add_edge("a", "g", 5);
+
+  weighted_graph<std::string> g2("undirected");
+  g2 = g;
+  REQUIRE(g.dfs("a") == g2.dfs("a"));
+  REQUIRE(g.dfs("b") == g2.dfs("b"));
+}

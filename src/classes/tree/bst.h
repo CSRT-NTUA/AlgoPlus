@@ -29,6 +29,27 @@ public:
       }
     }
   }
+
+  /**
+   * @brief Copy constructor for bst class
+   * @param b the tree we want to copy
+   */
+  explicit bst(const bst &b) {
+    root = b.root;
+    __size = b.__size;
+  }
+
+  /**
+   * @brief operator = for bst class
+   * @param b the tree we want to copy
+   * @return bst&
+   */
+  bst &operator=(const bst &b) {
+    root = b.root;
+    __size = b.__size;
+    return *this;
+  }
+
   ~bst() noexcept { root = nullptr; }
 
   /**

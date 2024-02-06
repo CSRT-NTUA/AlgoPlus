@@ -28,6 +28,27 @@ public:
     }
   }
 
+  /**
+   * @brief Copy constructor for interval tree class
+   *
+   * @param i the tree we want to copy
+   */
+  explicit interval_tree(const interval_tree &i) {
+    root = i.root;
+    __size = i.__size;
+  }
+
+  /**
+   * @brief operator = for interval tree class
+   * @param i the tree we want to copy
+   * @return interval_tree&
+   */
+  interval_tree &operator=(const interval_tree &i) {
+    root = i.root;
+    __size = i.__size;
+    return *this;
+  }
+
   ~interval_tree() { root = nullptr; }
 
   /**
