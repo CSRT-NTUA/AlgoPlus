@@ -28,6 +28,17 @@ public:
   }
 
   /**
+   * @brief copy constructor for the doubly_linked_list class
+   * 
+   * @param d4
+  */
+  explicit doubly_linked_list(const doubly_linked_list &d4) {
+    root = d4.root;
+    tail = d4.tail;
+    __size = d4.__size;
+  }
+
+  /**
    *@brief empty function.
    *@returns true if the list is empty.
    */

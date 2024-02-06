@@ -28,6 +28,17 @@ public:
     }
   }
 
+/**
+ * @brief copy constructor for the linked_list class
+ * 
+ * @param l4
+ */
+explicit linked_list(const linked_list &l4) {
+    root = l4.root;
+    tail = l4.tail;
+    __size = l4.__size;
+  }
+
   /**
    *@brief empty function.
    *Returns true if the list is empty.

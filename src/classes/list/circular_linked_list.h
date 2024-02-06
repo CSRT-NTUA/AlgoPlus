@@ -28,6 +28,17 @@ public:
   }
 
   /**
+   * @brief copy constructor for the circular linked list class
+   * 
+   * @param c4
+  */
+ explicit circular_linked_list(const circular_linked_list &c4) {
+    root = c4.root;
+    tail = c4.tail;
+    __size = c4.__size;
+  }
+
+  /**
    * @brief empty function
    *
    * @return true if the list is empty
