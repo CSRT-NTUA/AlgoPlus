@@ -85,3 +85,12 @@ TEST_CASE("testing copy constructors in circular list") {
   std::vector<int> v2 = l2.elements();
   REQUIRE(v == v2);
 }
+
+TEST_CASE("testing operator = in circular list") {
+  circular_linked_list<int> l({2, 4, 6, 7, 12, 9});
+  std::vector<int> v = l.elements();
+  circular_linked_list<int> l2;
+  l2 = l;
+  std::vector<int> v2 = l2.elements();
+  REQUIRE(v2 == v);
+}

@@ -29,13 +29,24 @@ public:
 
   /**
    * @brief copy constructor for the circular linked list class
-   * 
-   * @param c4
-  */
- explicit circular_linked_list(const circular_linked_list &c4) {
-    root = c4.root;
-    tail = c4.tail;
-    __size = c4.__size;
+   * @param c the list we want to copy
+   */
+  explicit circular_linked_list(const circular_linked_list &c) {
+    root = c.root;
+    tail = c.tail;
+    __size = c.__size;
+  }
+
+  /**
+   * @brief operator = for circular linked list class
+   * @param c the list we want to copy
+   * @return circular_linked_list&
+   */
+  circular_linked_list &operator=(const circular_linked_list &c) {
+    root = c.root;
+    tail = c.tail;
+    __size = c.__size;
+    return *this;
   }
 
   /**

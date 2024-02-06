@@ -28,15 +28,26 @@ public:
     }
   }
 
-/**
- * @brief copy constructor for the linked_list class
- * 
- * @param l4
- */
-explicit linked_list(const linked_list &l4) {
-    root = l4.root;
-    tail = l4.tail;
-    __size = l4.__size;
+  /**
+   * @brief copy constructor for the linked_list class
+   * @param l the list we want to copy
+   */
+  explicit linked_list(const linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+  }
+
+  /**
+   * @brief operator = for linked list class
+   * @param l the list we want to copy
+   * @return linked_list&
+   */
+  linked_list &operator=(const linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+    return *this;
   }
 
   /**
