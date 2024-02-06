@@ -89,3 +89,14 @@ for(auto it = l.begin(); it != l.end(); it++){
 }
 ```
 
+### **visualize**:
+```cpp
+#include <circular_linked_list.h>
+
+circular_linked_list<int> l;
+l.push_front(1);
+l.push_front(2);
+l.push_front(3);
+l.visualize();
+```
+

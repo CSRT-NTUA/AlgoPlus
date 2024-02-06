@@ -15,6 +15,6 @@ var searchData=
   ['for_20the_20stack_20class_12',['for the Stack class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html',1,'Mini Tutorial for the Stack class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack.html',1,'Mini Tutorial for the Stack class']]],
   ['for_20the_20trie_20class_13',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]],
   ['front_14',['front',['../classdequeue__list.html#a7a9f8326f96b1a42057ef0ec2a020a39',1,'dequeue_list']]],
-  ['front_20strong_20_3a_15',['&lt;strong&gt;front&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html#autotoc_md41',1,'']]],
+  ['front_20strong_20_3a_15',['&lt;strong&gt;front&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html#autotoc_md42',1,'']]],
   ['full_20documentation_20a_20href_20https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_16',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md5',1,'']]]
 ];

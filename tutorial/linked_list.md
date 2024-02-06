@@ -88,3 +88,14 @@ for(auto it = l.begin(); it != l.end(); it++){
 }
 ```
 
+### **visualize**:
+```cpp
+#include <linked_list.h>
+
+linked_list<int> l;
+l.push_front(1);
+l.push_front(2);
+l.push_front(3);
+l.visualize();
+```
+

@@ -75,8 +75,8 @@ $(function() {
   <div class="headertitle"><div class="title">Mini Tutorial for the Interval Tree class</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md72"></a></p><pre class="fragment">1. interval_tree&lt;T&gt; -- creates an interval tree with pairs of &lt;T,T&gt;
-</pre> <h2><a class="anchor" id="autotoc_md73"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md74"></a></p><pre class="fragment">1. interval_tree&lt;T&gt; -- creates an interval tree with pairs of &lt;T,T&gt;
+</pre> <h2><a class="anchor" id="autotoc_md75"></a>
 <b>insert</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -88,7 +88,7 @@ $(function() {
 <div class="line">i.<a class="code hl_function" href="classinterval__tree.html#aa850e677df1d50f7fa3b4e2a5c8cd2b2">insert</a>({10, 15});</div>
 <div class="ttc" id="aclassinterval__tree_html"><div class="ttname"><a href="classinterval__tree.html">interval_tree</a></div><div class="ttdoc">interval tree class</div><div class="ttdef"><b>Definition</b> interval_tree.h:16</div></div>
 <div class="ttc" id="aclassinterval__tree_html_aa850e677df1d50f7fa3b4e2a5c8cd2b2"><div class="ttname"><a href="classinterval__tree.html#aa850e677df1d50f7fa3b4e2a5c8cd2b2">interval_tree::insert</a></div><div class="ttdeci">void insert(std::pair&lt; T, T &gt; p)</div><div class="ttdoc">insert function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:66</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md74"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
 <b>search</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;interval {10,15} found in the tree&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassinterval__tree_html_a5757bdc67f3a8a46d786676691b2d461"><div class="ttname"><a href="classinterval__tree.html#a5757bdc67f3a8a46d786676691b2d461">interval_tree::search</a></div><div class="ttdeci">bool search(std::pair&lt; T, T &gt; p)</div><div class="ttdoc">search function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:76</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md75"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
 <b>remove</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -118,7 +118,7 @@ $(function() {
 <div class="line">i.<a class="code hl_function" href="classinterval__tree.html#a7ddb8375fc087cdbebc397a03f5092c9">remove</a>({0,1});</div>
 <div class="line">assert(i.<a class="code hl_function" href="classinterval__tree.html#a5757bdc67f3a8a46d786676691b2d461">search</a>({0,1}) == <span class="keyword">false</span>)</div>
 <div class="ttc" id="aclassinterval__tree_html_a7ddb8375fc087cdbebc397a03f5092c9"><div class="ttname"><a href="classinterval__tree.html#a7ddb8375fc087cdbebc397a03f5092c9">interval_tree::remove</a></div><div class="ttdeci">void remove(std::pair&lt; T, T &gt; p)</div><div class="ttdoc">remove function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:91</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
 <b>overlap</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -133,7 +133,7 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Overlap between {0,5} and {1,6} exist!&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassinterval__tree_html_a4f7fa294476721da36f1542b71a5e79f"><div class="ttname"><a href="classinterval__tree.html#a4f7fa294476721da36f1542b71a5e79f">interval_tree::overlap</a></div><div class="ttdeci">bool overlap(std::pair&lt; T, T &gt; p1, std::pair&lt; T, T &gt; p2)</div><div class="ttdoc">overlap function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:103</div></div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md77"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md79"></a>
 <b>inorder</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -147,7 +147,7 @@ $(function() {
 <div class="line"><span class="comment">// returns the elements of the tree in inorder fashion</span></div>
 <div class="line">std::vector&lt;int&gt; inorder = i.<a class="code hl_function" href="classinterval__tree.html#a6472215cc03add0b3704c3d5e3249259">inorder</a>();</div>
 <div class="ttc" id="aclassinterval__tree_html_a6472215cc03add0b3704c3d5e3249259"><div class="ttname"><a href="classinterval__tree.html#a6472215cc03add0b3704c3d5e3249259">interval_tree::inorder</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; T, T &gt; &gt; inorder()</div><div class="ttdoc">inorder function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:141</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
 <b>preorder</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -161,7 +161,7 @@ $(function() {
 <div class="line"><span class="comment">// returns the elements of the tree in preorder fashion</span></div>
 <div class="line">std::vector&lt;int&gt; preorder = i.<a class="code hl_function" href="classinterval__tree.html#ab8c4a843dab72278f269ffe034f30f06">preorder</a>();</div>
 <div class="ttc" id="aclassinterval__tree_html_ab8c4a843dab72278f269ffe034f30f06"><div class="ttname"><a href="classinterval__tree.html#ab8c4a843dab72278f269ffe034f30f06">interval_tree::preorder</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; T, T &gt; &gt; preorder()</div><div class="ttdoc">preorder function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:155</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
 <b>postorder</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -175,7 +175,7 @@ $(function() {
 <div class="line"><span class="comment">// returns the elements of the tree in preorder fashion</span></div>
 <div class="line">std::vector&lt;int&gt; postorder = i.<a class="code hl_function" href="classinterval__tree.html#ad9fdedfea81952b61fb60b966849d911">postorder</a>();</div>
 <div class="ttc" id="aclassinterval__tree_html_ad9fdedfea81952b61fb60b966849d911"><div class="ttname"><a href="classinterval__tree.html#ad9fdedfea81952b61fb60b966849d911">interval_tree::postorder</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; T, T &gt; &gt; postorder()</div><div class="ttdoc">postorder function.</div><div class="ttdef"><b>Definition</b> interval_tree.h:169</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md82"></a>
 <b>visualize</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>
@@ -189,7 +189,7 @@ $(function() {
 <div class="line"><span class="comment">// using graphviz plugins on vscode(or locally with </span></div>
 <div class="line"><span class="comment">// command lines).</span></div>
 <div class="line">i.visualize();</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
 <b>iterator</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;interval_tree.h&gt;</span></div>
 <div class="line"> </div>

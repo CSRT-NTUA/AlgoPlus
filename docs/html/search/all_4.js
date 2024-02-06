@@ -10,15 +10,15 @@ var searchData=
   ['code_7',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
   ['comment_20my_20code_8',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
   ['connected_9',['connected',['../classgraph.html#ac72a23cebe0d10617d971aca1256de2c',1,'graph::connected()'],['../classweighted__graph.html#a8cebbcf6366ce3fb31cb0b711ad8f600',1,'weighted_graph::connected()']]],
-  ['connected_20strong_20_3a_10',['&lt;strong&gt;connected&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md65',1,'']]],
+  ['connected_20strong_20_3a_10',['&lt;strong&gt;connected&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md67',1,'']]],
   ['connected_5fcomponents_11',['connected_components',['../classgraph.html#ad69569f1cfb90b440a5e66635eaa2622',1,'graph::connected_components()'],['../classweighted__graph.html#a2c9730ab4d207d10ab355570d5164cac',1,'weighted_graph::connected_components()']]],
-  ['connected_5fcomponents_20strong_20_3a_12',['&lt;strong&gt;connected_components&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md57',1,'']]],
+  ['connected_5fcomponents_20strong_20_3a_12',['&lt;strong&gt;connected_components&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md59',1,'']]],
   ['contribute_13',['How to contribute',['../index.html#autotoc_md11',1,'']]],
   ['contribute_14',['How to contribute?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'']]],
   ['contributors_20strong_15',['&lt;strong&gt;Our contributors&lt;/strong&gt;',['../index.html#autotoc_md10',1,'']]],
-  ['create_20an_20instance_20of_20the_20hash_5ftable_3a_20strong_20_3a_16',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md67',1,'']]],
+  ['create_20an_20instance_20of_20the_20hash_5ftable_3a_20strong_20_3a_16',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md69',1,'']]],
   ['creating_20a_20new_20class_20strong_17',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md2',1,'']]],
   ['csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_18',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md5',1,'']]],
   ['cycle_19',['cycle',['../classgraph.html#a77cab44c928701b32e0d0610392ed5cc',1,'graph::cycle()'],['../classweighted__graph.html#a4aa2ada9ac5954730d10abadcc16b2e1',1,'weighted_graph::cycle()']]],
-  ['cycle_20strong_20_3a_20',['&lt;strong&gt;cycle&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md58',1,'']]]
+  ['cycle_20strong_20_3a_20',['&lt;strong&gt;cycle&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md60',1,'']]]
 ];
