@@ -162,7 +162,7 @@ public:
    */
   void visualize() {
     std::string __generated = generate_visualization();
-    visualization::visualize(__generated);
+    tree_visualization::visualize(__generated);
   }
 
 private:

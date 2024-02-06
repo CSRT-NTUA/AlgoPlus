@@ -13,7 +13,7 @@ using namespace std;
 
 // COLORS FOR TEXT
 
-namespace visualization {
+namespace linked_list_visualization {
 
 #define OPEN_COMMAND "open"
 
@@ -61,6 +61,6 @@ inline void visualize(std::string &__generate,
   }
 };
 
-}; // namespace visualization
+}; // namespace linked_list_visualization
 
-#endif // TREE_VISUALIZATION_H
+#endif // LINKED_LIST_VISUALIZATION_H
