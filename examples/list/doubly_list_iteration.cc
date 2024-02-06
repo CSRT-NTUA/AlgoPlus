@@ -13,4 +13,5 @@ int main() {
   if (l1.search(3)) {
     std::cout << "3 exists in the list" << '\n';
   }
+  l1.visualize();
 }

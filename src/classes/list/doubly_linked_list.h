@@ -3,8 +3,11 @@
 #define DOUBLY_LINKED_LIST_H
 
 #ifdef __cplusplus
+#include "../../visualization/list_visual/linked_list_visualization.h"
 #include <iostream>
 #include <memory>
+#include <string>
+#include <type_traits>
 #include <vector>
 #endif
 
@@ -115,6 +118,12 @@ public:
   void reverse();
 
   /**
+   * @brief visualize function
+   * returns a .dot file that can be previewd with graphviz plugin in vscode
+   */
+  void visualize();
+
+  /**
    *@brief << operator for the doubly_linked_list class.
    */
   friend std::ostream &operator<<(std::ostream &out, doubly_linked_list<T> &l) {
@@ -144,6 +153,8 @@ private:
   std::shared_ptr<node> root;
   std::shared_ptr<node> tail;
   size_t __size;
+
+  std::string generate();
 };
 
 template <typename T> bool doubly_linked_list<T>::search(T key) {
@@ -236,6 +247,72 @@ template <typename T> void doubly_linked_list<T>::reverse() {
   if (temp) {
     root = temp->prev;
   }
+}
+
+template <typename T> std::string doubly_linked_list<T>::generate() {
+  std::string gen;
+  gen += "rankdir=LR;";
+  gen += '\n';
+  gen += "node [shape=record;]";
+  gen += '\n';
+  std::vector<T> els = this->elements();
+  if (std::is_same_v<T, std::string> || std::is_same_v<T, char>) {
+    for (auto &x : els) {
+      gen += x;
+      gen += " [label=<{ ";
+      gen += x;
+      gen += " | }>] ;";
+      gen += '\n';
+    }
+
+    std::shared_ptr<node> curr = root;
+    while (curr->next) {
+      gen += curr->val;
+      gen += ":ref -> ";
+      gen += curr->next->val;
+      gen += ":data [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      gen += curr->next->val;
+      gen += ":data -> ";
+      gen += curr->val;
+      gen += ":ref [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      curr = curr->next;
+    }
+  } else {
+    for (auto &x : els) {
+      gen += std::to_string(x);
+      gen += " [label=<{ ";
+      gen += std::to_string(x);
+      gen += " | }>] ;";
+      gen += '\n';
+    }
+
+    std::shared_ptr<node> curr = root;
+    while (curr->next) {
+      gen += std::to_string(curr->val);
+      gen += ":ref -> ";
+      gen += std::to_string(curr->next->val);
+      gen += ":data [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      gen += std::to_string(curr->next->val);
+      gen += ":data -> ";
+      gen += std::to_string(curr->val);
+      gen += ":ref [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      curr = curr->next;
+    }
+  }
+  return gen;
+}
+
+template <typename T> void doubly_linked_list<T>::visualize() {
+  std::string generated = this->generate();
+  visualization::visualize(generated);
 }
 
 /**

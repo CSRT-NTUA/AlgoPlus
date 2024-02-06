@@ -1,0 +1,12 @@
+digraph list {
+rankdir=LR;
+node [shape=record;]
+a [label=<{ a | }>] ;
+b [label=<{ b | }>] ;
+c [label=<{ c | }>] ;
+d [label=<{ d | }>] ;
+a:ref -> b:data [arrowhead=vee, arrowtail=dot, dir=both];
+b:ref -> c:data [arrowhead=vee, arrowtail=dot, dir=both];
+c:ref -> d:data [arrowhead=vee, arrowtail=dot, dir=both];
+d:ref -> a:data [arrowhead=vee, arrowtail=dot, dir=both];
+}

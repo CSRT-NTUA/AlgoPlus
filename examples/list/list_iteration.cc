@@ -13,4 +13,8 @@ int main() {
   if (l1.search(0)) {
     std::cout << "Yes" << '\n';
   }
+  l1.visualize();
+
+  // linked_list<char> l2({'a', 'b', 'c', 'd', 'e'});
+  // l2.visualize();
 }
