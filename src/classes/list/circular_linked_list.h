@@ -307,7 +307,7 @@ template <typename T> std::string circular_linked_list<T>::generate() {
 
 template <typename T> void circular_linked_list<T>::visualize() {
   std::string generated = this->generate();
-  visualization::visualize(generated);
+  linked_list_visualization::visualize(generated);
 }
 
 /**
