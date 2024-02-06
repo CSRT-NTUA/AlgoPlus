@@ -102,3 +102,12 @@ TEST_CASE("testing iterators in doubly list") {
   }
   REQUIRE(v == check);
 }
+
+
+TEST_CASE("testing copy constructors in doubly list") {
+  doubly_linked_list<int> l({1, 5, 12, 7, 8, 4});
+  doubly_linked_list<int> l2(l);
+  std::vector<int> v = l.elements();
+  std::vector<int> v2 = l2.elements();
+  REQUIRE(v == v2);
+}
