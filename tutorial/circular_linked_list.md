@@ -1,4 +1,4 @@
-### **Mini tutorial for single linked list class**
+### Mini tutorial for circular linked list class
 
     circular_linked_list<T> -- creates a circular linked list with elements of type T
 
