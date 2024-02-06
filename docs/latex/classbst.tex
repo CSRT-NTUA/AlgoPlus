@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classbst_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classbst_a6f3db633f32d9c984357adaf2aa1ea14}{bst}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Contructor for BST tree class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbst_a7461a2607495eab0f2621708b554e926}{bst}} (const \mbox{\hyperlink{classbst}{bst}} \&b)
+\begin{DoxyCompactList}\small\item\em Copy constructor for bst class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbst}{bst}} \& \mbox{\hyperlink{classbst_a8d1fb0829946f59b93a261ffdb8d044d}{operator=}} (const \mbox{\hyperlink{classbst}{bst}} \&b)
+\begin{DoxyCompactList}\small\item\em operator = for bst class \end{DoxyCompactList}\item 
 \Hypertarget{classbst_a24e453a8f1f0926bf1d1eaa557c97285}\label{classbst_a24e453a8f1f0926bf1d1eaa557c97285} 
 void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em clear function \end{DoxyCompactList}\item 
@@ -53,7 +57,7 @@ Class for BST tree.
 \Hypertarget{classbst_a6f3db633f32d9c984357adaf2aa1ea14}\label{classbst_a6f3db633f32d9c984357adaf2aa1ea14} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!bst@{bst}}
 \index{bst@{bst}!bst$<$ T $>$@{bst$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{bst()}{bst()}}
+\doxysubsubsection{\texorpdfstring{bst()}{bst()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\mbox{\hyperlink{classbst}{\+::bst}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{\+\_\+\+\_\+elements = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -64,6 +68,22 @@ Contructor for BST tree class.
 
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+\+\_\+elements} & you can directly pass a vector$<$\+T$>$ so you don\textquotesingle{}t have to do insert multiple times. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbst_a7461a2607495eab0f2621708b554e926}\label{classbst_a7461a2607495eab0f2621708b554e926} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!bst@{bst}}
+\index{bst@{bst}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{bst()}{bst()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classbst}{bst}}$<$ T $>$\mbox{\hyperlink{classbst}{\+::bst}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbst}{bst}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for bst class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & the tree we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -127,6 +147,25 @@ insert function.
 {\em key} & key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classbst_a8d1fb0829946f59b93a261ffdb8d044d}\label{classbst_a8d1fb0829946f59b93a261ffdb8d044d} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classbst}{bst}} \& \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbst}{bst}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for bst class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & the tree we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bst\& 
+\end{DoxyReturn}
 \Hypertarget{classbst_a60575db4d925e7f08202549df73d0d9b}\label{classbst_a60575db4d925e7f08202549df73d0d9b} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!postorder@{postorder}}
 \index{postorder@{postorder}!bst$<$ T $>$@{bst$<$ T $>$}}

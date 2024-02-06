@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classcircular__linked__list_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classcircular__linked__list_a3527cdb59754d739a9b52a4a02c183d2}{circular\+\_\+linked\+\_\+list}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new circular linked list object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcircular__linked__list_ad5dda465f2a71a4a271d67ac73649330}{circular\+\_\+linked\+\_\+list}} (const \mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}} \&c)
+\begin{DoxyCompactList}\small\item\em copy constructor for the circular linked list class \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}} \& \mbox{\hyperlink{classcircular__linked__list_a9d79aae4fb8aa50458445316882f9a47}{operator=}} (const \mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}} \&c)
+\begin{DoxyCompactList}\small\item\em operator = for circular linked list class \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classcircular__linked__list_afa30d61d17468c5b52b2c70cdd87228f}{empty}} ()
 \begin{DoxyCompactList}\small\item\em empty function \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classcircular__linked__list_ae0e6f2aa4f4b5433fe3829ee99aca74a}{size}} ()
@@ -54,7 +58,7 @@ circular linked list class
 \Hypertarget{classcircular__linked__list_a3527cdb59754d739a9b52a4a02c183d2}\label{classcircular__linked__list_a3527cdb59754d739a9b52a4a02c183d2} 
 \index{circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}!circular\_linked\_list@{circular\_linked\_list}}
 \index{circular\_linked\_list@{circular\_linked\_list}!circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{circular\_linked\_list()}{circular\_linked\_list()}}
+\doxysubsubsection{\texorpdfstring{circular\_linked\_list()}{circular\_linked\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classcircular__linked__list}{\+::circular\+\_\+linked\+\_\+list}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{\+\_\+\+\_\+elements = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -65,6 +69,22 @@ Construct a new circular linked list object.
 
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+\+\_\+elements} & vector$<$\+T$>$ so you dont have to do multiple insertions \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcircular__linked__list_ad5dda465f2a71a4a271d67ac73649330}\label{classcircular__linked__list_ad5dda465f2a71a4a271d67ac73649330} 
+\index{circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}!circular\_linked\_list@{circular\_linked\_list}}
+\index{circular\_linked\_list@{circular\_linked\_list}!circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{circular\_linked\_list()}{circular\_linked\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classcircular__linked__list}{\+::circular\+\_\+linked\+\_\+list}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}}$<$ T $>$ \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+copy constructor for the circular linked list class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the list we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -144,6 +164,25 @@ erase function
 {\em key} & the key to be erased \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classcircular__linked__list_a9d79aae4fb8aa50458445316882f9a47}\label{classcircular__linked__list_a9d79aae4fb8aa50458445316882f9a47} 
+\index{circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}} \& \mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}}$<$ T $>$ \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for circular linked list class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the list we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classcircular__linked__list}{circular\+\_\+linked\+\_\+list}\& 
+\end{DoxyReturn}
 \Hypertarget{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651}\label{classcircular__linked__list_a3f7dae009cc9d2cbf634f9cad3eb3651} 
 \index{circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!circular\_linked\_list$<$ T $>$@{circular\_linked\_list$<$ T $>$}}

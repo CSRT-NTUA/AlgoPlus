@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}{splay\+\_\+tree}} (std\+::vector$<$ T $>$ v=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new splay tree object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a}{splay\+\_\+tree}} (const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}} \&s)
+\begin{DoxyCompactList}\small\item\em Copy constructor for splay tree class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}} \& \mbox{\hyperlink{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e}{operator=}} (const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}} \&s)
+\begin{DoxyCompactList}\small\item\em operator = for splay tree class \end{DoxyCompactList}\item 
 \Hypertarget{classsplay__tree_a2da70f39990b6c677cf0022378fd4b17}\label{classsplay__tree_a2da70f39990b6c677cf0022378fd4b17} 
 void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em clear function \end{DoxyCompactList}\item 
@@ -55,7 +59,7 @@ splay tree class
 \Hypertarget{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}\label{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398} 
 \index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
 \index{splay\_tree@{splay\_tree}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{splay\_tree()}{splay\_tree()}}
+\doxysubsubsection{\texorpdfstring{splay\_tree()}{splay\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -66,6 +70,22 @@ Construct a new splay tree object.
 
 \begin{DoxyParams}{Parameters}
 {\em v} & vector$<$\+T$>$ initializer vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a}\label{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
+\index{splay\_tree@{splay\_tree}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{splay\_tree()}{splay\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for splay tree class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the tree we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -101,6 +121,25 @@ insert function
 {\em key} & the key to be inserted \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e}\label{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}} \& \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for splay tree class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the tree we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classsplay__tree}{splay\+\_\+tree}\& 
+\end{DoxyReturn}
 \Hypertarget{classsplay__tree_a0a344c13f06a9f9666d8225264897553}\label{classsplay__tree_a0a344c13f06a9f9666d8225264897553} 
 \index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!postorder@{postorder}}
 \index{postorder@{postorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}

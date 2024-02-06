@@ -96,6 +96,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a048c3bc01286503d3d540a8910551317" id="r_a048c3bc01286503d3d540a8910551317"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a048c3bc01286503d3d540a8910551317">avl_tree</a> (std::vector&lt; T &gt; __elements={}) noexcept</td></tr>
 <tr class="memdesc:a048c3bc01286503d3d540a8910551317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructor for AVL tree class.  <br /></td></tr>
 <tr class="separator:a048c3bc01286503d3d540a8910551317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cab4d4112e58e6f90f36d0c23cbe3f6" id="r_a3cab4d4112e58e6f90f36d0c23cbe3f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cab4d4112e58e6f90f36d0c23cbe3f6">avl_tree</a> (const <a class="el" href="classavl__tree.html">avl_tree</a> &amp;a)</td></tr>
+<tr class="memdesc:a3cab4d4112e58e6f90f36d0c23cbe3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for avl tree class.  <br /></td></tr>
+<tr class="separator:a3cab4d4112e58e6f90f36d0c23cbe3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7170cb4310ced0ab7d002efba16fc32f" id="r_a7170cb4310ced0ab7d002efba16fc32f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classavl__tree.html">avl_tree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7170cb4310ced0ab7d002efba16fc32f">operator=</a> (const <a class="el" href="classavl__tree.html">avl_tree</a> &amp;a)</td></tr>
+<tr class="memdesc:a7170cb4310ced0ab7d002efba16fc32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for avl tree class  <br /></td></tr>
+<tr class="separator:a7170cb4310ced0ab7d002efba16fc32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f52559d18953b8e44416c9a9bf5a5fb" id="r_a7f52559d18953b8e44416c9a9bf5a5fb"><td class="memItemLeft" align="right" valign="top"><a id="a7f52559d18953b8e44416c9a9bf5a5fb" name="a7f52559d18953b8e44416c9a9bf5a5fb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~avl_tree</b> () noexcept</td></tr>
+<tr class="memdesc:a7f52559d18953b8e44416c9a9bf5a5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the avl tree object. <br /></td></tr>
+<tr class="separator:a7f52559d18953b8e44416c9a9bf5a5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdeb1d0610c350618d64fdb69f50ab08" id="r_acdeb1d0610c350618d64fdb69f50ab08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdeb1d0610c350618d64fdb69f50ab08">insert</a> (T key)</td></tr>
 <tr class="memdesc:acdeb1d0610c350618d64fdb69f50ab08"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert function.  <br /></td></tr>
 <tr class="separator:acdeb1d0610c350618d64fdb69f50ab08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +146,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 class avl_tree&lt; T &gt;</div><p>Class for AVL tree. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a048c3bc01286503d3d540a8910551317" name="a048c3bc01286503d3d540a8910551317"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a048c3bc01286503d3d540a8910551317">&#9670;&#160;</a></span>avl_tree()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a048c3bc01286503d3d540a8910551317">&#9670;&#160;</a></span>avl_tree() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +174,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__elements</td><td>you can directly pass a vector&lt;T&gt; so you don't have to do insert multiple times. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3cab4d4112e58e6f90f36d0c23cbe3f6" name="a3cab4d4112e58e6f90f36d0c23cbe3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cab4d4112e58e6f90f36d0c23cbe3f6">&#9670;&#160;</a></span>avl_tree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt;<a class="el" href="classavl__tree.html">::avl_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for avl tree class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>the tree we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,6 +338,42 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7170cb4310ced0ab7d002efba16fc32f" name="a7170cb4310ced0ab7d002efba16fc32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7170cb4310ced0ab7d002efba16fc32f">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classavl__tree.html">avl_tree</a> &amp; <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for avl tree class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>the tree we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classavl__tree.html" title="Class for AVL tree.">avl_tree</a>&amp; </dd></dl>
 
 </div>
 </div>

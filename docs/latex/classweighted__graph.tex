@@ -14,6 +14,13 @@ class for weighted graph
 \item 
 \mbox{\hyperlink{classweighted__graph_a10766091642efeb0d932f52fdeff789b}{weighted\+\_\+graph}} (std\+::string \+\_\+\+\_\+type, std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ T, T $>$, int64\+\_\+t $>$ $>$ \+\_\+\+\_\+adj=\{\})
 \begin{DoxyCompactList}\small\item\em Constructor for weighted graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classweighted__graph_a493f37a7541c2545fd572702909e6eef}{weighted\+\_\+graph}} (const \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}} \&g)
+\begin{DoxyCompactList}\small\item\em Copy constructor for weighted graph class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}} \& \mbox{\hyperlink{classweighted__graph_af16cc99c33739bdbd6cee4c7f5b9ad1f}{operator=}} (const \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}} \&g)
+\begin{DoxyCompactList}\small\item\em operator = for weighted graph class \end{DoxyCompactList}\item 
+\Hypertarget{classweighted__graph_a320b97cb3de98b240890567a2bd3b792}\label{classweighted__graph_a320b97cb3de98b240890567a2bd3b792} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}weighted\+\_\+graph} ()
+\begin{DoxyCompactList}\small\item\em Destroy the weighted graph object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classweighted__graph_ad652cc371c4ae27df7bfd45380865726}{add\+\_\+edge}} (T u, T v, int64\+\_\+t w)
 \begin{DoxyCompactList}\small\item\em add\+\_\+edge function. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classweighted__graph_a47d3931f45d5cc56894589b048e695dc}{has\+\_\+edge}} (T start, T end)
@@ -72,7 +79,7 @@ class for weighted graph
 \Hypertarget{classweighted__graph_a10766091642efeb0d932f52fdeff789b}\label{classweighted__graph_a10766091642efeb0d932f52fdeff789b} 
 \index{weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}!weighted\_graph@{weighted\_graph}}
 \index{weighted\_graph@{weighted\_graph}!weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{weighted\_graph()}{weighted\_graph()}}
+\doxysubsubsection{\texorpdfstring{weighted\_graph()}{weighted\_graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}}$<$ T $>$\mbox{\hyperlink{classweighted__graph}{\+::weighted\+\_\+graph}} (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+\+\_\+type,  }\item[{std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ T, T $>$, int64\+\_\+t $>$ $>$}]{\+\_\+\+\_\+adj = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -85,6 +92,22 @@ Constructor for weighted graph.
 {\em \+\_\+\+\_\+type} & type of the graph, either "{}directed"{} or "{}undirected"{}. \\
 \hline
 {\em \+\_\+\+\_\+adj} & vector\texorpdfstring{$<$}{<}pair\texorpdfstring{$<$}{<}pair$<$\+T,\+T$>$, int64\+\_\+t\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}, you can pass a vector of pairs to construct the graph without doing multiple add\+\_\+edge. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classweighted__graph_a493f37a7541c2545fd572702909e6eef}\label{classweighted__graph_a493f37a7541c2545fd572702909e6eef} 
+\index{weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}!weighted\_graph@{weighted\_graph}}
+\index{weighted\_graph@{weighted\_graph}!weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{weighted\_graph()}{weighted\_graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}}$<$ T $>$\mbox{\hyperlink{classweighted__graph}{\+::weighted\+\_\+graph}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}}$<$ T $>$ \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for weighted graph class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & the graph we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -288,6 +311,25 @@ has\+\_\+edge function.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if a direct edge from start to end exists. 
+\end{DoxyReturn}
+\Hypertarget{classweighted__graph_af16cc99c33739bdbd6cee4c7f5b9ad1f}\label{classweighted__graph_af16cc99c33739bdbd6cee4c7f5b9ad1f} 
+\index{weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}} \& \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}}$<$ T $>$ \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for weighted graph class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & the graph we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classweighted__graph}{weighted\+\_\+graph}\& 
 \end{DoxyReturn}
 \Hypertarget{classweighted__graph_af6623f21c14c98732dc1c2595307fb7a}\label{classweighted__graph_af6623f21c14c98732dc1c2595307fb7a} 
 \index{weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}!prim@{prim}}

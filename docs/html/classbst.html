@@ -96,6 +96,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f3db633f32d9c984357adaf2aa1ea14" id="r_a6f3db633f32d9c984357adaf2aa1ea14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f3db633f32d9c984357adaf2aa1ea14">bst</a> (std::vector&lt; T &gt; __elements={}) noexcept</td></tr>
 <tr class="memdesc:a6f3db633f32d9c984357adaf2aa1ea14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructor for BST tree class.  <br /></td></tr>
 <tr class="separator:a6f3db633f32d9c984357adaf2aa1ea14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7461a2607495eab0f2621708b554e926" id="r_a7461a2607495eab0f2621708b554e926"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7461a2607495eab0f2621708b554e926">bst</a> (const <a class="el" href="classbst.html">bst</a> &amp;b)</td></tr>
+<tr class="memdesc:a7461a2607495eab0f2621708b554e926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for bst class.  <br /></td></tr>
+<tr class="separator:a7461a2607495eab0f2621708b554e926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1fb0829946f59b93a261ffdb8d044d" id="r_a8d1fb0829946f59b93a261ffdb8d044d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbst.html">bst</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d1fb0829946f59b93a261ffdb8d044d">operator=</a> (const <a class="el" href="classbst.html">bst</a> &amp;b)</td></tr>
+<tr class="memdesc:a8d1fb0829946f59b93a261ffdb8d044d"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for bst class  <br /></td></tr>
+<tr class="separator:a8d1fb0829946f59b93a261ffdb8d044d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24e453a8f1f0926bf1d1eaa557c97285" id="r_a24e453a8f1f0926bf1d1eaa557c97285"><td class="memItemLeft" align="right" valign="top"><a id="a24e453a8f1f0926bf1d1eaa557c97285" name="a24e453a8f1f0926bf1d1eaa557c97285"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="memdesc:a24e453a8f1f0926bf1d1eaa557c97285"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear function <br /></td></tr>
@@ -136,7 +142,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 class bst&lt; T &gt;</div><p>Class for BST tree. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6f3db633f32d9c984357adaf2aa1ea14" name="a6f3db633f32d9c984357adaf2aa1ea14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f3db633f32d9c984357adaf2aa1ea14">&#9670;&#160;</a></span>bst()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f3db633f32d9c984357adaf2aa1ea14">&#9670;&#160;</a></span>bst() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +170,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__elements</td><td>you can directly pass a vector&lt;T&gt; so you don't have to do insert multiple times. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7461a2607495eab0f2621708b554e926" name="a7461a2607495eab0f2621708b554e926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7461a2607495eab0f2621708b554e926">&#9670;&#160;</a></span>bst() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbst.html">bst</a>&lt; T &gt;<a class="el" href="classbst.html">::bst</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbst.html">bst</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for bst class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>the tree we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,6 +334,42 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8d1fb0829946f59b93a261ffdb8d044d" name="a8d1fb0829946f59b93a261ffdb8d044d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1fb0829946f59b93a261ffdb8d044d">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbst.html">bst</a> &amp; <a class="el" href="classbst.html">bst</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbst.html">bst</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for bst class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>the tree we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bst&amp; </dd></dl>
 
 </div>
 </div>

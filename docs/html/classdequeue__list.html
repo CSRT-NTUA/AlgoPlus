@@ -96,6 +96,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42603e6d5dab281bac54316f61a07660" id="r_a42603e6d5dab281bac54316f61a07660"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42603e6d5dab281bac54316f61a07660">dequeue_list</a> (std::vector&lt; T &gt; v={}) noexcept</td></tr>
 <tr class="memdesc:a42603e6d5dab281bac54316f61a07660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new dequeue list object.  <br /></td></tr>
 <tr class="separator:a42603e6d5dab281bac54316f61a07660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b03e08df7aa6a3a597ab9afaec89c60" id="r_a2b03e08df7aa6a3a597ab9afaec89c60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b03e08df7aa6a3a597ab9afaec89c60">dequeue_list</a> (const <a class="el" href="classdequeue__list.html">dequeue_list</a> &amp;q)</td></tr>
+<tr class="memdesc:a2b03e08df7aa6a3a597ab9afaec89c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for dequeue list class.  <br /></td></tr>
+<tr class="separator:a2b03e08df7aa6a3a597ab9afaec89c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34497ca3d303b684b1011b5588a29613" id="r_a34497ca3d303b684b1011b5588a29613"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdequeue__list.html">dequeue_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34497ca3d303b684b1011b5588a29613">operator=</a> (const <a class="el" href="classdequeue__list.html">dequeue_list</a> &amp;q)</td></tr>
+<tr class="memdesc:a34497ca3d303b684b1011b5588a29613"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for dequeue list class  <br /></td></tr>
+<tr class="separator:a34497ca3d303b684b1011b5588a29613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca5f157a4c65e4c3ecddd8f412ac13ae" id="r_aca5f157a4c65e4c3ecddd8f412ac13ae"><td class="memItemLeft" align="right" valign="top"><a id="aca5f157a4c65e4c3ecddd8f412ac13ae" name="aca5f157a4c65e4c3ecddd8f412ac13ae"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="memdesc:aca5f157a4c65e4c3ecddd8f412ac13ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear function <br /></td></tr>
@@ -135,7 +141,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pop_back</b> ()</td><
 class dequeue_list&lt; T &gt;</div><p>dequeue list class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a42603e6d5dab281bac54316f61a07660" name="a42603e6d5dab281bac54316f61a07660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42603e6d5dab281bac54316f61a07660">&#9670;&#160;</a></span>dequeue_list()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a42603e6d5dab281bac54316f61a07660">&#9670;&#160;</a></span>dequeue_list() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +169,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>initializer vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b03e08df7aa6a3a597ab9afaec89c60" name="a2b03e08df7aa6a3a597ab9afaec89c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b03e08df7aa6a3a597ab9afaec89c60">&#9670;&#160;</a></span>dequeue_list() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdequeue__list.html">dequeue_list</a>&lt; T &gt;<a class="el" href="classdequeue__list.html">::dequeue_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdequeue__list.html">dequeue_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>q</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for dequeue list class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the dequeue we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -287,6 +328,42 @@ template&lt;typename T &gt; </div>
 
 <p>top function </p>
 <dl class="section return"><dt>Returns</dt><dd>T the top of the dequeue </dd></dl>
+
+</div>
+</div>
+<a id="a34497ca3d303b684b1011b5588a29613" name="a34497ca3d303b684b1011b5588a29613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34497ca3d303b684b1011b5588a29613">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdequeue__list.html">dequeue_list</a> &amp; <a class="el" href="classdequeue__list.html">dequeue_list</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdequeue__list.html">dequeue_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>q</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for dequeue list class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the dequeue we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classdequeue__list.html" title="dequeue list class">dequeue_list</a>&amp; </dd></dl>
 
 </div>
 </div>

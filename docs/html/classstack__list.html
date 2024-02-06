@@ -96,6 +96,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e5e4063aeedaf398ff182e124e5fa3f" id="r_a2e5e4063aeedaf398ff182e124e5fa3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e5e4063aeedaf398ff182e124e5fa3f">stack_list</a> (std::vector&lt; T &gt; v={}) noexcept</td></tr>
 <tr class="memdesc:a2e5e4063aeedaf398ff182e124e5fa3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new stack list object.  <br /></td></tr>
 <tr class="separator:a2e5e4063aeedaf398ff182e124e5fa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fac43e1e6e4188ea37331d7c7db90a" id="r_aa2fac43e1e6e4188ea37331d7c7db90a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2fac43e1e6e4188ea37331d7c7db90a">stack_list</a> (const <a class="el" href="classstack__list.html">stack_list</a> &amp;s)</td></tr>
+<tr class="memdesc:aa2fac43e1e6e4188ea37331d7c7db90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for stack list class.  <br /></td></tr>
+<tr class="separator:aa2fac43e1e6e4188ea37331d7c7db90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ef72bdebdbc8f49ea6c1969ea5d04a" id="r_a54ef72bdebdbc8f49ea6c1969ea5d04a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstack__list.html">stack_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54ef72bdebdbc8f49ea6c1969ea5d04a">operator=</a> (const <a class="el" href="classstack__list.html">stack_list</a> &amp;s)</td></tr>
+<tr class="memdesc:a54ef72bdebdbc8f49ea6c1969ea5d04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for stack list class  <br /></td></tr>
+<tr class="separator:a54ef72bdebdbc8f49ea6c1969ea5d04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4bbd668428be00fdeb47c6cfeec86a2" id="r_ac4bbd668428be00fdeb47c6cfeec86a2"><td class="memItemLeft" align="right" valign="top"><a id="ac4bbd668428be00fdeb47c6cfeec86a2" name="ac4bbd668428be00fdeb47c6cfeec86a2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="memdesc:ac4bbd668428be00fdeb47c6cfeec86a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear function <br /></td></tr>
@@ -125,7 +131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
 class stack_list&lt; T &gt;</div><p><a class="el" href="classstack__list.html" title="stack_list class">stack_list</a> class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2e5e4063aeedaf398ff182e124e5fa3f" name="a2e5e4063aeedaf398ff182e124e5fa3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e5e4063aeedaf398ff182e124e5fa3f">&#9670;&#160;</a></span>stack_list()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5e4063aeedaf398ff182e124e5fa3f">&#9670;&#160;</a></span>stack_list() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,6 +159,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>initializer vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa2fac43e1e6e4188ea37331d7c7db90a" name="aa2fac43e1e6e4188ea37331d7c7db90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fac43e1e6e4188ea37331d7c7db90a">&#9670;&#160;</a></span>stack_list() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classstack__list.html">stack_list</a>&lt; T &gt;<a class="el" href="classstack__list.html">::stack_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classstack__list.html">stack_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for stack list class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the stack we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -217,6 +258,42 @@ template&lt;typename T &gt; </div>
 
 <p>pointer to the end of the stack </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classstack__list_1_1_iterator.html" title="Iterator class.">Iterator</a> </dd></dl>
+
+</div>
+</div>
+<a id="a54ef72bdebdbc8f49ea6c1969ea5d04a" name="a54ef72bdebdbc8f49ea6c1969ea5d04a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ef72bdebdbc8f49ea6c1969ea5d04a">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classstack__list.html">stack_list</a> &amp; <a class="el" href="classstack__list.html">stack_list</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classstack__list.html">stack_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for stack list class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the stack we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classstack__list.html" title="stack_list class">stack_list</a>&amp; </dd></dl>
 
 </div>
 </div>

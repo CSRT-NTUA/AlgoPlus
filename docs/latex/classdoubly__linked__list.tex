@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classdoubly__linked__list_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classdoubly__linked__list_af67dbea314bda7c8d66a5fca2ac0c2f7}{doubly\+\_\+linked\+\_\+list}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em \doxylink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list} class constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdoubly__linked__list_a7e5532b9af94792ee2067a0fd95328f1}{doubly\+\_\+linked\+\_\+list}} (const \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}} \&l)
+\begin{DoxyCompactList}\small\item\em copy constructor for the \doxylink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list} class \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}} \& \mbox{\hyperlink{classdoubly__linked__list_a507a83da3b92fe52b02080400dc7dba2}{operator=}} (const \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}} \&l)
+\begin{DoxyCompactList}\small\item\em operator = for doubly linked list class \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classdoubly__linked__list_a818f06a2233ae79b9de46179a008ae4a}{empty}} ()
 \begin{DoxyCompactList}\small\item\em empty function. \end{DoxyCompactList}\item 
 \Hypertarget{classdoubly__linked__list_a8b82160daf391c5fdca95c2b3e6af353}\label{classdoubly__linked__list_a8b82160daf391c5fdca95c2b3e6af353} 
@@ -58,7 +62,7 @@ doubly linked list class
 \Hypertarget{classdoubly__linked__list_af67dbea314bda7c8d66a5fca2ac0c2f7}\label{classdoubly__linked__list_af67dbea314bda7c8d66a5fca2ac0c2f7} 
 \index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!doubly\_linked\_list@{doubly\_linked\_list}}
 \index{doubly\_linked\_list@{doubly\_linked\_list}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{doubly\_linked\_list()}{doubly\_linked\_list()}}
+\doxysubsubsection{\texorpdfstring{doubly\_linked\_list()}{doubly\_linked\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classdoubly__linked__list}{\+::doubly\+\_\+linked\+\_\+list}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{\+\_\+\+\_\+elements = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -69,6 +73,22 @@ doubly linked list class
 
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+\+\_\+elements} & you can provide the constructor with a vector of elements so you dont have to do multiple push backs yourself. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdoubly__linked__list_a7e5532b9af94792ee2067a0fd95328f1}\label{classdoubly__linked__list_a7e5532b9af94792ee2067a0fd95328f1} 
+\index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!doubly\_linked\_list@{doubly\_linked\_list}}
+\index{doubly\_linked\_list@{doubly\_linked\_list}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{doubly\_linked\_list()}{doubly\_linked\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classdoubly__linked__list}{\+::doubly\+\_\+linked\+\_\+list}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+copy constructor for the \doxylink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list} class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the list we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -146,6 +166,25 @@ erase function.
 {\em key} & the key to be erased from the list. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classdoubly__linked__list_a507a83da3b92fe52b02080400dc7dba2}\label{classdoubly__linked__list_a507a83da3b92fe52b02080400dc7dba2} 
+\index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}} \& \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for doubly linked list class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & the list we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classdoubly__linked__list}{doubly\+\_\+linked\+\_\+list}\& 
+\end{DoxyReturn}
 \Hypertarget{classdoubly__linked__list_a0d7d611c1c937954e4fdbe866d542c23}\label{classdoubly__linked__list_a0d7d611c1c937954e4fdbe866d542c23} 
 \index{doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!doubly\_linked\_list$<$ T $>$@{doubly\_linked\_list$<$ T $>$}}

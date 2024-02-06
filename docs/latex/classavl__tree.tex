@@ -19,6 +19,13 @@ class \mbox{\hyperlink{classavl__tree_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classavl__tree_a048c3bc01286503d3d540a8910551317}{avl\+\_\+tree}} (std\+::vector$<$ T $>$ \+\_\+\+\_\+elements=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Contructor for AVL tree class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classavl__tree_a3cab4d4112e58e6f90f36d0c23cbe3f6}{avl\+\_\+tree}} (const \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}} \&a)
+\begin{DoxyCompactList}\small\item\em Copy constructor for avl tree class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}} \& \mbox{\hyperlink{classavl__tree_a7170cb4310ced0ab7d002efba16fc32f}{operator=}} (const \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}} \&a)
+\begin{DoxyCompactList}\small\item\em operator = for avl tree class \end{DoxyCompactList}\item 
+\Hypertarget{classavl__tree_a7f52559d18953b8e44416c9a9bf5a5fb}\label{classavl__tree_a7f52559d18953b8e44416c9a9bf5a5fb} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}avl\+\_\+tree} () noexcept
+\begin{DoxyCompactList}\small\item\em Destroy the avl tree object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}} (T key)
 \begin{DoxyCompactList}\small\item\em insert function. \end{DoxyCompactList}\item 
 \Hypertarget{classavl__tree_a35687925c37c49e535771da125388100}\label{classavl__tree_a35687925c37c49e535771da125388100} 
@@ -53,7 +60,7 @@ Class for AVL tree.
 \Hypertarget{classavl__tree_a048c3bc01286503d3d540a8910551317}\label{classavl__tree_a048c3bc01286503d3d540a8910551317} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!avl\_tree@{avl\_tree}}
 \index{avl\_tree@{avl\_tree}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{avl\_tree()}{avl\_tree()}}
+\doxysubsubsection{\texorpdfstring{avl\_tree()}{avl\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classavl__tree}{\+::avl\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{\+\_\+\+\_\+elements = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -64,6 +71,22 @@ Contructor for AVL tree class.
 
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+\+\_\+elements} & you can directly pass a vector$<$\+T$>$ so you don\textquotesingle{}t have to do insert multiple times. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classavl__tree_a3cab4d4112e58e6f90f36d0c23cbe3f6}\label{classavl__tree_a3cab4d4112e58e6f90f36d0c23cbe3f6} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!avl\_tree@{avl\_tree}}
+\index{avl\_tree@{avl\_tree}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{avl\_tree()}{avl\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classavl__tree}{\+::avl\+\_\+tree}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$ \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for avl tree class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the tree we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -127,6 +150,25 @@ insert function.
 {\em key} & key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classavl__tree_a7170cb4310ced0ab7d002efba16fc32f}\label{classavl__tree_a7170cb4310ced0ab7d002efba16fc32f} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}} \& \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$ \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for avl tree class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the tree we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classavl__tree}{avl\+\_\+tree}\& 
+\end{DoxyReturn}
 \Hypertarget{classavl__tree_a82a19335d79d5f6928369635278c1c24}\label{classavl__tree_a82a19335d79d5f6928369635278c1c24} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!postorder@{postorder}}
 \index{postorder@{postorder}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}

@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classstack__list_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classstack__list_a2e5e4063aeedaf398ff182e124e5fa3f}{stack\+\_\+list}} (std\+::vector$<$ T $>$ v=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new stack list object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstack__list_aa2fac43e1e6e4188ea37331d7c7db90a}{stack\+\_\+list}} (const \mbox{\hyperlink{classstack__list}{stack\+\_\+list}} \&s)
+\begin{DoxyCompactList}\small\item\em Copy constructor for stack list class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstack__list}{stack\+\_\+list}} \& \mbox{\hyperlink{classstack__list_a54ef72bdebdbc8f49ea6c1969ea5d04a}{operator=}} (const \mbox{\hyperlink{classstack__list}{stack\+\_\+list}} \&s)
+\begin{DoxyCompactList}\small\item\em operator = for stack list class \end{DoxyCompactList}\item 
 \Hypertarget{classstack__list_ac4bbd668428be00fdeb47c6cfeec86a2}\label{classstack__list_ac4bbd668428be00fdeb47c6cfeec86a2} 
 void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em clear function \end{DoxyCompactList}\item 
@@ -46,7 +50,7 @@ class stack\+\_\+list$<$ T $>$}
 \Hypertarget{classstack__list_a2e5e4063aeedaf398ff182e124e5fa3f}\label{classstack__list_a2e5e4063aeedaf398ff182e124e5fa3f} 
 \index{stack\_list$<$ T $>$@{stack\_list$<$ T $>$}!stack\_list@{stack\_list}}
 \index{stack\_list@{stack\_list}!stack\_list$<$ T $>$@{stack\_list$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{stack\_list()}{stack\_list()}}
+\doxysubsubsection{\texorpdfstring{stack\_list()}{stack\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classstack__list}{stack\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classstack__list}{\+::stack\+\_\+list}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -57,6 +61,22 @@ Construct a new stack list object.
 
 \begin{DoxyParams}{Parameters}
 {\em v} & initializer vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classstack__list_aa2fac43e1e6e4188ea37331d7c7db90a}\label{classstack__list_aa2fac43e1e6e4188ea37331d7c7db90a} 
+\index{stack\_list$<$ T $>$@{stack\_list$<$ T $>$}!stack\_list@{stack\_list}}
+\index{stack\_list@{stack\_list}!stack\_list$<$ T $>$@{stack\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{stack\_list()}{stack\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classstack__list}{stack\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classstack__list}{\+::stack\+\_\+list}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classstack__list}{stack\+\_\+list}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for stack list class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the stack we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -89,6 +109,25 @@ pointer to the end of the stack
 
 \begin{DoxyReturn}{Returns}
 \doxylink{classstack__list_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{classstack__list_a54ef72bdebdbc8f49ea6c1969ea5d04a}\label{classstack__list_a54ef72bdebdbc8f49ea6c1969ea5d04a} 
+\index{stack\_list$<$ T $>$@{stack\_list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!stack\_list$<$ T $>$@{stack\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classstack__list}{stack\+\_\+list}} \& \mbox{\hyperlink{classstack__list}{stack\+\_\+list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classstack__list}{stack\+\_\+list}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for stack list class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the stack we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classstack__list}{stack\+\_\+list}\& 
 \end{DoxyReturn}
 \Hypertarget{classstack__list_a4ba916c3846e16b81bfd18194bab9808}\label{classstack__list_a4ba916c3846e16b81bfd18194bab9808} 
 \index{stack\_list$<$ T $>$@{stack\_list$<$ T $>$}!push@{push}}

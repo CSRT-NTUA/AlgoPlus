@@ -2,161 +2,140 @@
 \hypertarget{graph__visualization_8h_source}{}\label{graph__visualization_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/visualization/graph\_visual/graph\_visualization.h@{/Users/spirosmag/Documents/AlgoPlus/src/visualization/graph\_visual/graph\_visualization.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <chrono>}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <thread>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ OPEN\_COMMAND\ "{}open"{}}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ GRAPH\_VISUALIZATION\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GRAPH\_VISUALIZATION\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{comment}{//\ COLORS\ FOR\ TEXT}}
-\DoxyCodeLine{00014\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *reset\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}};}
-\DoxyCodeLine{00015\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *black\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[30m"{}};}
-\DoxyCodeLine{00016\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *red\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[31m"{}};}
-\DoxyCodeLine{00017\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *green\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}};}
-\DoxyCodeLine{00018\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *yellow\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[33m"{}};}
-\DoxyCodeLine{00019\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *blue\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[34m"{}};}
-\DoxyCodeLine{00020\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *magenta\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[35m"{}};}
-\DoxyCodeLine{00021\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *cyan\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[36m"{}};}
-\DoxyCodeLine{00022\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *white\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}};}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *blackbackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[40m"{}};}
-\DoxyCodeLine{00025\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *redbackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[41m"{}};}
-\DoxyCodeLine{00026\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *greenbackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[42m"{}};}
-\DoxyCodeLine{00027\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *yellowbackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[43m"{}};}
-\DoxyCodeLine{00028\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *bluebackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[44m"{}};}
-\DoxyCodeLine{00029\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *magentabackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[45m"{}};}
-\DoxyCodeLine{00030\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *cyanbackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[46m"{}};}
-\DoxyCodeLine{00031\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *whitebackground\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[47m"{}};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *bold\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[1m"{}};}
-\DoxyCodeLine{00034\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *underline\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[4m"{}};}
-\DoxyCodeLine{00035\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *blink\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[5m"{}};}
-\DoxyCodeLine{00036\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *inverse\ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[7m"{}};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00039\ \textcolor{comment}{\ *namespace\ for\ graph\ visualization\ function\ and\ .dot\ files\ creation.}}
-\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }graph\_visualization\ \{}
-\DoxyCodeLine{00042\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00043\ \textcolor{comment}{\ *visualize\ function.}}
-\DoxyCodeLine{00044\ \textcolor{comment}{\ *@param\ \_\_generate:\ string\ that\ contains\ the\ needed\ data\ to\ generate\ the\ .dot}}
-\DoxyCodeLine{00045\ \textcolor{comment}{\ *file.}}
-\DoxyCodeLine{00046\ \textcolor{comment}{\ *@param\ newFileName:\ if\ needed,\ the\ filename\ can\ be\ changed(default}}
-\DoxyCodeLine{00047\ \textcolor{comment}{\ *"{}unnamed.dot"{})}}
-\DoxyCodeLine{00048\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ visualize(std::string\ \&\_\_generate,}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ newFileName\ =\ \textcolor{stringliteral}{"{}unnamed.dot"{}})\ \{}
-\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{auto}\ start\_time\ =\ std::chrono::high\_resolution\_clock::now();}
-\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (newFileName.size()\ <\ 5\ ||}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ newFileName.substr(newFileName.length()\ -\/\ 4)\ !=\ \textcolor{stringliteral}{"{}.dot"{}})}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ newFileName\ +=\ \textcolor{stringliteral}{"{}.dot"{}};}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ newFileName\ =\ "{}examples/"{}\ +\ newFileName;}}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ \ Open\ the\ file\ for\ writing}}
-\DoxyCodeLine{00058\ \ \ \ \ std::ofstream\ outFile(newFileName);}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *namespace\ for\ graph\ visualization\ function\ and\ .dot\ files\ creation.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }graph\_visualization\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ OPEN\_COMMAND\ "{}open"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *visualize\ function.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *@param\ \_\_generate:\ string\ that\ contains\ the\ needed\ data\ to\ generate\ the\ .dot}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *file.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *@param\ newFileName:\ if\ needed,\ the\ filename\ can\ be\ changed(default}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *"{}unnamed.dot"{})}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ visualize(std::string\ \&\_\_generate,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ newFileName\ =\ \textcolor{stringliteral}{"{}unnamed.dot"{}})\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{auto}\ start\_time\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (newFileName.size()\ <\ 5\ ||}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ newFileName.substr(newFileName.length()\ -\/\ 4)\ !=\ \textcolor{stringliteral}{"{}.dot"{}})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ newFileName\ +=\ \textcolor{stringliteral}{"{}.dot"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ newFileName\ =\ "{}examples/"{}\ +\ newFileName;}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ Open\ the\ file\ for\ writing}}
+\DoxyCodeLine{00038\ \ \ \ \ std::ofstream\ outFile(newFileName);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ file\ is\ successfully\ opened}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (outFile.is\_open())\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ header}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}graph\ G\{"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ DOT\ code\ recursively}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ outFile\ <<\ \_\_generate;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ footer}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}\}"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ the\ file}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ outFile.close();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Visualization\ file\ '"{}}\ <<\ newFileName}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ created\ successfully."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\_time\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ std::chrono::duration\_cast<std::chrono::microseconds>(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ end\_time\ -\/\ start\_time);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ runtime\_sec\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(duration.count())\ /\ 1e6;}
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ file\ is\ successfully\ opened}}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (outFile.is\_open())\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ header}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}graph\ G\{"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ DOT\ code\ recursively}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ outFile\ <<\ \_\_generate;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ footer}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}\}"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ the\ file}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ outFile.close();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Visualization\ runtime:\ "{}}\ <<\ runtime\_sec\ <<\ \textcolor{stringliteral}{"{}\ sec"{}}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ std::string\ openCommand\ =\ OPEN\_COMMAND\ +\ std::string(\textcolor{stringliteral}{"{}\ "{}})\ +\ newFileName;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ system(openCommand.c\_str());}
+\DoxyCodeLine{00064\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Unable\ to\ open\ file\ '"{}}\ <<\ newFileName}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ for\ writing."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\ \&e)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ \};}
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ std::cout\ <<\ green\ <<\ \textcolor{stringliteral}{"{}Visualization\ file\ '"{}}\ <<\ newFileName}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ created\ successfully."{}}\ <<\ std::endl}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ reset;}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\_time\ =\ std::chrono::high\_resolution\_clock::now();}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ std::chrono::duration\_cast<std::chrono::microseconds>(}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ end\_time\ -\/\ start\_time);}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ runtime\_sec\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(duration.count())\ /\ 1e6;}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ std::cout\ <<\ blue\ <<\ \textcolor{stringliteral}{"{}Visualization\ runtime:\ "{}}\ <<\ runtime\_sec\ <<\ \textcolor{stringliteral}{"{}\ sec"{}}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ reset;}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ std::string\ openCommand\ =\ OPEN\_COMMAND\ +\ std::string(\textcolor{stringliteral}{"{}\ "{}})\ +\ newFileName;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ system(openCommand.c\_str());}
-\DoxyCodeLine{00086\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ std::cerr\ <<\ red\ <<\ \textcolor{stringliteral}{"{}Error:\ Unable\ to\ open\ file\ '"{}}\ <<\ newFileName}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ for\ writing."{}}\ <<\ std::endl}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ reset;}
-\DoxyCodeLine{00090\ \ \ \ \ \}}
-\DoxyCodeLine{00091\ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\ \&e)\ \{}
-\DoxyCodeLine{00092\ \ \ \ \ std::cerr\ <<\ red\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl\ <<\ reset;}
-\DoxyCodeLine{00093\ \ \ \}}
-\DoxyCodeLine{00094\ \};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \};\ \textcolor{comment}{//\ namespace\ graph\_visualization}}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00099\ \textcolor{comment}{\ *namespace\ for\ di-\/graph\ visualization\ function\ and\ .dot\ files\ creation.}}
-\DoxyCodeLine{00100\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00101\ \textcolor{keyword}{namespace\ }digraph\_visualization\ \{}
-\DoxyCodeLine{00102\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00103\ \textcolor{comment}{\ *visualize\ function.}}
-\DoxyCodeLine{00104\ \textcolor{comment}{\ *@param\ \_\_generate:\ string\ that\ contains\ the\ needed\ data\ to\ generate\ the\ .dot}}
-\DoxyCodeLine{00105\ \textcolor{comment}{\ *file.}}
-\DoxyCodeLine{00106\ \textcolor{comment}{\ *@param\ newFileName:\ if\ needed,\ the\ filename\ can\ be\ changed(default}}
-\DoxyCodeLine{00107\ \textcolor{comment}{\ *"{}unnamed.dot"{})}}
-\DoxyCodeLine{00108\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ visualize(std::string\ \&\_\_generate,}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ newFileName\ =\ \textcolor{stringliteral}{"{}unnamed.dot"{}})\ \{}
-\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{auto}\ start\_time\ =\ std::chrono::high\_resolution\_clock::now();}
-\DoxyCodeLine{00112\ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{if}\ (newFileName.size()\ <\ 5\ ||}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ newFileName.substr(newFileName.length()\ -\/\ 4)\ !=\ \textcolor{stringliteral}{"{}.dot"{}})}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ newFileName\ +=\ \textcolor{stringliteral}{"{}.dot"{}};}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ newFileName\ =\ "{}examples/"{}\ +\ newFileName;}}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ \ Open\ the\ file\ for\ writing}}
-\DoxyCodeLine{00118\ \ \ \ \ std::ofstream\ outFile(newFileName);}
+\DoxyCodeLine{00073\ \};\ \textcolor{comment}{//\ namespace\ graph\_visualization}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *namespace\ for\ di-\/graph\ visualization\ function\ and\ .dot\ files\ creation.}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{namespace\ }digraph\_visualization\ \{}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ OPEN\_COMMAND\ "{}open"{}}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *visualize\ function.}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *@param\ \_\_generate:\ string\ that\ contains\ the\ needed\ data\ to\ generate\ the\ .dot}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *file.}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ *@param\ newFileName:\ if\ needed,\ the\ filename\ can\ be\ changed(default}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ *"{}unnamed.dot"{})}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00089\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ visualize(std::string\ \&\_\_generate,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ newFileName\ =\ \textcolor{stringliteral}{"{}unnamed.dot"{}})\ \{}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{auto}\ start\_time\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (newFileName.size()\ <\ 5\ ||}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ newFileName.substr(newFileName.length()\ -\/\ 4)\ !=\ \textcolor{stringliteral}{"{}.dot"{}})}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ newFileName\ +=\ \textcolor{stringliteral}{"{}.dot"{}};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ newFileName\ =\ "{}examples/"{}\ +\ newFileName;}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ \ Open\ the\ file\ for\ writing}}
+\DoxyCodeLine{00098\ \ \ \ \ std::ofstream\ outFile(newFileName);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ file\ is\ successfully\ opened}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (outFile.is\_open())\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ header}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}digraph\ G\{"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ DOT\ code\ recursively}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ outFile\ <<\ \_\_generate;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ footer}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}\}"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ the\ file}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ outFile.close();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Visualization\ file\ '"{}}\ <<\ newFileName}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ created\ successfully."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\_time\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ std::chrono::duration\_cast<std::chrono::microseconds>(}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ end\_time\ -\/\ start\_time);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ runtime\_sec\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(duration.count())\ /\ 1e6;}
 \DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ file\ is\ successfully\ opened}}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (outFile.is\_open())\ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ header}}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}digraph\ G\{"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ DOT\ code\ recursively}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ outFile\ <<\ \_\_generate;}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ the\ DOT\ format\ footer}}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ outFile\ <<\ \textcolor{stringliteral}{"{}\}"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ the\ file}}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ outFile.close();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Visualization\ runtime:\ "{}}\ <<\ runtime\_sec\ <<\ \textcolor{stringliteral}{"{}\ sec"{}}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ std::string\ openCommand\ =\ OPEN\_COMMAND\ +\ std::string(\textcolor{stringliteral}{"{}\ "{}})\ +\ newFileName;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ system(openCommand.c\_str());}
+\DoxyCodeLine{00124\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Unable\ to\ open\ file\ '"{}}\ <<\ newFileName}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ for\ writing."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\ \&e)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ \};}
 \DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \ \ \ \ \ \ std::cout\ <<\ green\ <<\ \textcolor{stringliteral}{"{}Visualization\ file\ '"{}}\ <<\ newFileName}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ created\ successfully."{}}\ <<\ std::endl}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ reset;}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\_time\ =\ std::chrono::high\_resolution\_clock::now();}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ std::chrono::duration\_cast<std::chrono::microseconds>(}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ end\_time\ -\/\ start\_time);}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ runtime\_sec\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(duration.count())\ /\ 1e6;}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \ \ \ \ \ \ std::cout\ <<\ blue\ <<\ \textcolor{stringliteral}{"{}Visualization\ runtime:\ "{}}\ <<\ runtime\_sec\ <<\ \textcolor{stringliteral}{"{}\ sec"{}}}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ reset;}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ std::string\ openCommand\ =\ OPEN\_COMMAND\ +\ std::string(\textcolor{stringliteral}{"{}\ "{}})\ +\ newFileName;}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ system(openCommand.c\_str());}
-\DoxyCodeLine{00146\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ std::cerr\ <<\ red\ <<\ \textcolor{stringliteral}{"{}Error:\ Unable\ to\ open\ file\ '"{}}\ <<\ newFileName}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ for\ writing."{}}\ <<\ std::endl}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ reset;}
-\DoxyCodeLine{00150\ \ \ \ \ \}}
-\DoxyCodeLine{00151\ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\ \&e)\ \{}
-\DoxyCodeLine{00152\ \ \ \ \ std::cerr\ <<\ red\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl\ <<\ reset;}
-\DoxyCodeLine{00153\ \ \ \}}
-\DoxyCodeLine{00154\ \};}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \};\ \textcolor{comment}{//\ namespace\ digraph\_visualization}}
+\DoxyCodeLine{00133\ \};\ \textcolor{comment}{//\ namespace\ digraph\_visualization}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GRAPH\_VISUALIZATION\_H}}
 
 \end{DoxyCode}

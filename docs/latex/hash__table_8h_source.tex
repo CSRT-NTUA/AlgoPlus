@@ -2,143 +2,144 @@
 \hypertarget{hash__table_8h_source}{}\label{hash__table_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/classes/hash\_table/hash\_table.h@{/Users/spirosmag/Documents/AlgoPlus/src/classes/hash\_table/hash\_table.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HASH\_TABLE\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HASH\_TABLE\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <list>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <optional>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ KeyType,\ \textcolor{keyword}{typename}\ ValueType>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhash__table}{hash\_table}}\ \{}
-\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classhash__table_adc831edf9651d7a2858e79624417749f}{hash\_table}}(std::vector<std::pair<KeyType,\ ValueType>>\ v\ =\ \{\})\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ v)\ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classhash__table_a075f7fb9d5f95b828e044dc49e6386ba}{insert}}(x.first,\ x.second);}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ \ \ \}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classhash__table_a72b8facb5a3c01227e96ca3cda64fa14}{hash\_table}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classhash__table}{hash\_table}}\ \&h)\ \{}
-\DoxyCodeLine{00050\ \ \ \ \ bucketList\ =\ h.bucketList;}
-\DoxyCodeLine{00051\ \ \ \ \ hash\ =\ h.hash;}
-\DoxyCodeLine{00052\ \ \ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classhash__table}{hash\_table}}\ \&\mbox{\hyperlink{classhash__table_a0646b760956296ae948e8da9a8fb098e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classhash__table}{hash\_table}}\ \&h)\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ bucketList\ =\ h.bucketList;}
-\DoxyCodeLine{00061\ \ \ \ \ hash\ =\ h.hash;}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00063\ \ \ \}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classhash__table_ae61d0f9b046db9dcd290b1263475fbce}{\string~hash\_table}}()\ \{\ bucketList.clear();\ \}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhash__table_a075f7fb9d5f95b828e044dc49e6386ba}{insert}}(\textcolor{keyword}{const}\ KeyType\ \&key,\ \textcolor{keyword}{const}\ ValueType\ \&value)\ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{auto}\ \&list\ =\ bucketList[hash(key)];}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ list)\ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ key)\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ pair.second\ =\ value;}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ list.emplace\_back(key,\ value);}
-\DoxyCodeLine{00087\ \ \ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00095\ \ \ std::optional<ValueType>\ \mbox{\hyperlink{classhash__table_a29bcecb383e67c1e322ffffda88706db}{retrieve}}(\textcolor{keyword}{const}\ KeyType\ \&key)\ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{auto}\ \&list\ =\ bucketList[hash(key)];}
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ list)\ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ key)\ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pair.second;}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00101\ \ \ \ \ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
-\DoxyCodeLine{00103\ \ \ \}}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhash__table_ac9a4f3f321ddf37bcc445ea2c56d44ed}{remove}}(\textcolor{keyword}{const}\ KeyType\ \&key)\ \{}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{auto}\ \&list\ =\ bucketList[hash(key)];}
-\DoxyCodeLine{00115\ \ \ \ \ list.remove\_if([key](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair)\ \{\ \textcolor{keywordflow}{return}\ pair.first\ ==\ key;\ \});}
-\DoxyCodeLine{00116\ \ \ \}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{class\ }Iterator;}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \ \ Iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ Iterator(bucketList,\ 0);\ \}}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ Iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ Iterator(bucketList,\ bucketList.size());\ \}}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classhash__table_a9699a70465c91ed86faf744d436af69a}{operator<<}}(std::ostream\ \&out,}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhash__table}{hash\_table<KeyType,\ ValueType>}}\ \&h)\ \{}
-\DoxyCodeLine{00130\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'['};}
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[key,\ list]\ :\ h.bucketList)\ \{}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ h.bucketList[key])\ \{}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\{"{}}\ <<\ pair.first\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ pair.second\ <<\ \textcolor{stringliteral}{"{}\}\ "{}};}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00136\ \ \ \ \ \}}
-\DoxyCodeLine{00137\ \ \ \ \ out\ <<\ \textcolor{charliteral}{']'};}
-\DoxyCodeLine{00138\ \ \ \}}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00141\ \ \ std::hash<KeyType>\ hash;}
-\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ std::vector<std::list<std::pair<KeyType,\ ValueType>>>\ bucketList;}}
-\DoxyCodeLine{00143\ \ \ std::unordered\_map<size\_t,\ std::list<std::pair<KeyType,\ ValueType>>>}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ bucketList;}
-\DoxyCodeLine{00145\ \};}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00150\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ KeyType,\ \textcolor{keyword}{typename}\ ValueType>}
-\DoxyCodeLine{00151\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhash__table}{hash\_table}}<KeyType,\ ValueType>::\mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \{}
-\DoxyCodeLine{00152\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00153\ \ \ std::unordered\_map<size\_t,\ std::list<std::pair<KeyType,\ ValueType>>>}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ bucketList;}
-\DoxyCodeLine{00155\ \ \ std::vector<size\_t>\ key\_values;}
-\DoxyCodeLine{00156\ \ \ int64\_t\ index;}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classhash__table_1_1_iterator_a70587e8da18d342c39b547941af14827}{Iterator}}(}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<\textcolor{keywordtype}{size\_t},\ std::list<std::pair<KeyType,\ ValueType>>>}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \&bucket,}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ int64\_t\ index)\ noexcept}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ :\ bucketList(bucket),\ index(index)\ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ bucketList)\ \{}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ key\_values.push\_back(x.first);}
-\DoxyCodeLine{00171\ \ \ \ \ \}}
-\DoxyCodeLine{00172\ \ \ \}}
-\DoxyCodeLine{00173\ }
-\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classhash__table_1_1_iterator_a365c4beeb31ebaa1084ec74487c16630}{operator=}}(}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<\textcolor{keywordtype}{size\_t},\ std::list<std::pair<KeyType,\ ValueType>>>}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \&bucket)\ \{}
-\DoxyCodeLine{00183\ \ \ \ \ this-\/>bucketList\ =\ bucket;}
-\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
-\DoxyCodeLine{00185\ \ \ \}}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00192\ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classhash__table_1_1_iterator_ac9de41755ab51c084ef42e80b3a32ead}{operator++}}()\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ key\_values.size())\ \{}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ index++;}
-\DoxyCodeLine{00195\ \ \ \ \ \}}
-\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
-\DoxyCodeLine{00197\ \ \ \}}
-\DoxyCodeLine{00198\ }
-\DoxyCodeLine{00204\ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classhash__table_1_1_iterator_ad615f01aae60ce9034361f5e82bb4df3}{operator++}}(\textcolor{keywordtype}{int})\ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00206\ \ \ \ \ ++*(\textcolor{keyword}{this});}
-\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
-\DoxyCodeLine{00208\ \ \ \}}
-\DoxyCodeLine{00209\ }
-\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhash__table_1_1_iterator_ae14d7db1eaf72b7ccef4232d118b5c47}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \&it)\ \{}
-\DoxyCodeLine{00219\ \ \ \ \ std::list<std::pair<KeyType,\ ValueType>>\ l1\ =\ bucketList[key\_values[index]];}
-\DoxyCodeLine{00220\ \ \ \ \ std::list<std::pair<KeyType,\ ValueType>>\ l2\ =}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ bucketList[it.key\_values[it.index]];}
-\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ index\ !=\ it.index\ \&\&\ l1\ !=\ l2;}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00224\ \ \ \}}
-\DoxyCodeLine{00225\ }
-\DoxyCodeLine{00232\ \ \ std::list<std::pair<KeyType,\ ValueType>>\ \mbox{\hyperlink{classhash__table_1_1_iterator_a8b8e7e544c5317f4fd9b656c5f156663}{operator*}}()\ \{}
-\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordflow}{return}\ bucketList[key\_values[index]];}
-\DoxyCodeLine{00234\ \ \ \}}
-\DoxyCodeLine{00235\ \};}
-\DoxyCodeLine{00236\ }
-\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HASH\_TABLE\_H}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ HASH\_TABLE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ HASH\_TABLE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ KeyType,\ \textcolor{keyword}{typename}\ ValueType>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhash__table}{hash\_table}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classhash__table_adc831edf9651d7a2858e79624417749f}{hash\_table}}(std::vector<std::pair<KeyType,\ ValueType>>\ v\ =\ \{\})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ v)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classhash__table_a075f7fb9d5f95b828e044dc49e6386ba}{insert}}(x.first,\ x.second);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classhash__table_a72b8facb5a3c01227e96ca3cda64fa14}{hash\_table}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classhash__table}{hash\_table}}\ \&h)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ bucketList\ =\ h.bucketList;}
+\DoxyCodeLine{00052\ \ \ \ \ hash\ =\ h.hash;}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classhash__table}{hash\_table}}\ \&\mbox{\hyperlink{classhash__table_a0646b760956296ae948e8da9a8fb098e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classhash__table}{hash\_table}}\ \&h)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ bucketList\ =\ h.bucketList;}
+\DoxyCodeLine{00062\ \ \ \ \ hash\ =\ h.hash;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00064\ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classhash__table_ae61d0f9b046db9dcd290b1263475fbce}{\string~hash\_table}}()\ \{\ bucketList.clear();\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhash__table_a075f7fb9d5f95b828e044dc49e6386ba}{insert}}(\textcolor{keyword}{const}\ KeyType\ \&key,\ \textcolor{keyword}{const}\ ValueType\ \&value)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{auto}\ \&list\ =\ bucketList[hash(key)];}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ list)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ key)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ pair.second\ =\ value;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ list.emplace\_back(key,\ value);}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \ \ std::optional<ValueType>\ \mbox{\hyperlink{classhash__table_a29bcecb383e67c1e322ffffda88706db}{retrieve}}(\textcolor{keyword}{const}\ KeyType\ \&key)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{auto}\ \&list\ =\ bucketList[hash(key)];}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ list)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ key)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pair.second;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{00104\ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhash__table_ac9a4f3f321ddf37bcc445ea2c56d44ed}{remove}}(\textcolor{keyword}{const}\ KeyType\ \&key)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{auto}\ \&list\ =\ bucketList[hash(key)];}
+\DoxyCodeLine{00116\ \ \ \ \ list.remove\_if([key](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair)\ \{\ \textcolor{keywordflow}{return}\ pair.first\ ==\ key;\ \});}
+\DoxyCodeLine{00117\ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{class\ }Iterator;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ Iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ Iterator(bucketList,\ 0);\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ Iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ Iterator(bucketList,\ bucketList.size());\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classhash__table_a9699a70465c91ed86faf744d436af69a}{operator<<}}(std::ostream\ \&out,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhash__table}{hash\_table<KeyType,\ ValueType>}}\ \&h)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'['};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[key,\ list]\ :\ h.bucketList)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ h.bucketList[key])\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\{"{}}\ <<\ pair.first\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ pair.second\ <<\ \textcolor{stringliteral}{"{}\}\ "{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ out\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ out\ <<\ \textcolor{charliteral}{']'};}
+\DoxyCodeLine{00139\ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00142\ \ \ std::hash<KeyType>\ hash;}
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ std::vector<std::list<std::pair<KeyType,\ ValueType>>>\ bucketList;}}
+\DoxyCodeLine{00144\ \ \ std::unordered\_map<size\_t,\ std::list<std::pair<KeyType,\ ValueType>>>}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ bucketList;}
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ KeyType,\ \textcolor{keyword}{typename}\ ValueType>}
+\DoxyCodeLine{00152\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhash__table}{hash\_table}}<KeyType,\ ValueType>::\mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \{}
+\DoxyCodeLine{00153\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00154\ \ \ std::unordered\_map<size\_t,\ std::list<std::pair<KeyType,\ ValueType>>>}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ bucketList;}
+\DoxyCodeLine{00156\ \ \ std::vector<size\_t>\ key\_values;}
+\DoxyCodeLine{00157\ \ \ int64\_t\ index;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00165\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classhash__table_1_1_iterator_a70587e8da18d342c39b547941af14827}{Iterator}}(}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<\textcolor{keywordtype}{size\_t},\ std::list<std::pair<KeyType,\ ValueType>>>}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \&bucket,}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ int64\_t\ index)\ noexcept}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ :\ bucketList(bucket),\ index(index)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ bucketList)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ key\_values.push\_back(x.first);}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classhash__table_1_1_iterator_a365c4beeb31ebaa1084ec74487c16630}{operator=}}(}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<\textcolor{keywordtype}{size\_t},\ std::list<std::pair<KeyType,\ ValueType>>>}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \&bucket)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ this-\/>bucketList\ =\ bucket;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00186\ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00193\ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classhash__table_1_1_iterator_ac9de41755ab51c084ef42e80b3a32ead}{operator++}}()\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ key\_values.size())\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00198\ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00205\ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classhash__table_1_1_iterator_ad615f01aae60ce9034361f5e82bb4df3}{operator++}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00207\ \ \ \ \ ++*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00209\ \ \ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhash__table_1_1_iterator_ae14d7db1eaf72b7ccef4232d118b5c47}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classhash__table_1_1_iterator}{Iterator}}\ \&it)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ std::list<std::pair<KeyType,\ ValueType>>\ l1\ =\ bucketList[key\_values[index]];}
+\DoxyCodeLine{00221\ \ \ \ \ std::list<std::pair<KeyType,\ ValueType>>\ l2\ =}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ bucketList[it.key\_values[it.index]];}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ index\ !=\ it.index\ \&\&\ l1\ !=\ l2;}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00225\ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00233\ \ \ std::list<std::pair<KeyType,\ ValueType>>\ \mbox{\hyperlink{classhash__table_1_1_iterator_a8b8e7e544c5317f4fd9b656c5f156663}{operator*}}()\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{return}\ bucketList[key\_values[index]];}
+\DoxyCodeLine{00235\ \ \ \}}
+\DoxyCodeLine{00236\ \};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HASH\_TABLE\_H}}
 
 \end{DoxyCode}

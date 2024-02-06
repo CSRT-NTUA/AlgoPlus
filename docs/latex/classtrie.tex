@@ -14,6 +14,10 @@ trie class
 \item 
 \mbox{\hyperlink{classtrie_a8d07730e7c6071a78b872f7f73613d14}{trie}} (std\+::vector$<$ std\+::string $>$ v=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new trie object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtrie_a6a3d9a7b2ad1393f5648e29d3963f3f5}{trie}} (const \mbox{\hyperlink{classtrie}{trie}} \&t)
+\begin{DoxyCompactList}\small\item\em Copy constructor for trie class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtrie}{trie}} \& \mbox{\hyperlink{classtrie_a55d98cca9c3d9a46f409db156fb36582}{operator=}} (const \mbox{\hyperlink{classtrie}{trie}} \&t)
+\begin{DoxyCompactList}\small\item\em operator = for trie class \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee}{empty}} ()
 \begin{DoxyCompactList}\small\item\em empty function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtrie_adb61c311b6d076114a48194cbf7e4822}{insert}} (std\+::string key)
@@ -39,7 +43,7 @@ trie class
 \Hypertarget{classtrie_a8d07730e7c6071a78b872f7f73613d14}\label{classtrie_a8d07730e7c6071a78b872f7f73613d14} 
 \index{trie@{trie}!trie@{trie}}
 \index{trie@{trie}!trie@{trie}}
-\doxysubsubsection{\texorpdfstring{trie()}{trie()}}
+\doxysubsubsection{\texorpdfstring{trie()}{trie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily trie\+::trie (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
@@ -49,6 +53,21 @@ Construct a new trie object.
 
 \begin{DoxyParams}{Parameters}
 {\em v} & \+: vector of strings for initializer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtrie_a6a3d9a7b2ad1393f5648e29d3963f3f5}\label{classtrie_a6a3d9a7b2ad1393f5648e29d3963f3f5} 
+\index{trie@{trie}!trie@{trie}}
+\index{trie@{trie}!trie@{trie}}
+\doxysubsubsection{\texorpdfstring{trie()}{trie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily trie\+::trie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtrie}{trie}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for trie class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the tree we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -82,6 +101,24 @@ insert function.
 {\em key} & the key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classtrie_a55d98cca9c3d9a46f409db156fb36582}\label{classtrie_a55d98cca9c3d9a46f409db156fb36582} 
+\index{trie@{trie}!operator=@{operator=}}
+\index{operator=@{operator=}!trie@{trie}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtrie}{trie}} \& trie\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtrie}{trie}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for trie class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the tree we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+trie\& 
+\end{DoxyReturn}
 \Hypertarget{classtrie_a856e569e4c40b5d5ebdaef26d8ec2a27}\label{classtrie_a856e569e4c40b5d5ebdaef26d8ec2a27} 
 \index{trie@{trie}!remove@{remove}}
 \index{remove@{remove}!trie@{trie}}

@@ -6,5 +6,5 @@ var searchData=
   ['bfs_3',['bfs',['../classgraph.html#a3cc331d692642bfdee0f8bcf87071176',1,'graph::bfs()'],['../classweighted__graph.html#a5407df31013d7d9d1bd5cbfa63082404',1,'weighted_graph::bfs()']]],
   ['bipartite_4',['bipartite',['../classgraph.html#a24409517a5d6bd3689a11ce1ec18eaab',1,'graph::bipartite()'],['../classweighted__graph.html#a3400015dc6c8bd365042d4fbc48017ce',1,'weighted_graph::bipartite()']]],
   ['bridge_5',['bridge',['../classgraph.html#a3db835fe4f1f0ef665e1ad1251493879',1,'graph::bridge()'],['../classweighted__graph.html#a3dd0f3f2729700069a1a6f8e28681b9e',1,'weighted_graph::bridge()']]],
-  ['bst_6',['bst',['../classbst.html#a6f3db633f32d9c984357adaf2aa1ea14',1,'bst']]]
+  ['bst_6',['bst',['../classbst.html#a6f3db633f32d9c984357adaf2aa1ea14',1,'bst::bst(std::vector&lt; T &gt; __elements={}) noexcept'],['../classbst.html#a7461a2607495eab0f2621708b554e926',1,'bst::bst(const bst &amp;b)']]]
 ];

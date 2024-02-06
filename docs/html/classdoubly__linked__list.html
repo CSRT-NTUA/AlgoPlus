@@ -97,6 +97,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af67dbea314bda7c8d66a5fca2ac0c2f7" id="r_af67dbea314bda7c8d66a5fca2ac0c2f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af67dbea314bda7c8d66a5fca2ac0c2f7">doubly_linked_list</a> (std::vector&lt; T &gt; __elements={}) noexcept</td></tr>
 <tr class="memdesc:af67dbea314bda7c8d66a5fca2ac0c2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classdoubly__linked__list.html" title="doubly linked list class">doubly_linked_list</a> class constructor  <br /></td></tr>
 <tr class="separator:af67dbea314bda7c8d66a5fca2ac0c2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e5532b9af94792ee2067a0fd95328f1" id="r_a7e5532b9af94792ee2067a0fd95328f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e5532b9af94792ee2067a0fd95328f1">doubly_linked_list</a> (const <a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a> &amp;l)</td></tr>
+<tr class="memdesc:a7e5532b9af94792ee2067a0fd95328f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy constructor for the <a class="el" href="classdoubly__linked__list.html" title="doubly linked list class">doubly_linked_list</a> class  <br /></td></tr>
+<tr class="separator:a7e5532b9af94792ee2067a0fd95328f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a507a83da3b92fe52b02080400dc7dba2" id="r_a507a83da3b92fe52b02080400dc7dba2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a507a83da3b92fe52b02080400dc7dba2">operator=</a> (const <a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a> &amp;l)</td></tr>
+<tr class="memdesc:a507a83da3b92fe52b02080400dc7dba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for doubly linked list class  <br /></td></tr>
+<tr class="separator:a507a83da3b92fe52b02080400dc7dba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a818f06a2233ae79b9de46179a008ae4a" id="r_a818f06a2233ae79b9de46179a008ae4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818f06a2233ae79b9de46179a008ae4a">empty</a> ()</td></tr>
 <tr class="memdesc:a818f06a2233ae79b9de46179a008ae4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">empty function.  <br /></td></tr>
 <tr class="separator:a818f06a2233ae79b9de46179a008ae4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +148,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 class doubly_linked_list&lt; T &gt;</div><p>doubly linked list class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af67dbea314bda7c8d66a5fca2ac0c2f7" name="af67dbea314bda7c8d66a5fca2ac0c2f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67dbea314bda7c8d66a5fca2ac0c2f7">&#9670;&#160;</a></span>doubly_linked_list()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af67dbea314bda7c8d66a5fca2ac0c2f7">&#9670;&#160;</a></span>doubly_linked_list() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,6 +176,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__elements</td><td>you can provide the constructor with a vector of elements so you dont have to do multiple push backs yourself. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e5532b9af94792ee2067a0fd95328f1" name="a7e5532b9af94792ee2067a0fd95328f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e5532b9af94792ee2067a0fd95328f1">&#9670;&#160;</a></span>doubly_linked_list() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a>&lt; T &gt;<a class="el" href="classdoubly__linked__list.html">::doubly_linked_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>l</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>copy constructor for the <a class="el" href="classdoubly__linked__list.html" title="doubly linked list class">doubly_linked_list</a> class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>the list we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -313,6 +354,42 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a507a83da3b92fe52b02080400dc7dba2" name="a507a83da3b92fe52b02080400dc7dba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a507a83da3b92fe52b02080400dc7dba2">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a> &amp; <a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdoubly__linked__list.html">doubly_linked_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>l</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for doubly linked list class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>the list we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classdoubly__linked__list.html" title="doubly linked list class">doubly_linked_list</a>&amp; </dd></dl>
 
 </div>
 </div>

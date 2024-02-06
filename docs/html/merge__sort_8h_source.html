@@ -84,24 +84,25 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">merge_sort.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MERGE_SORT_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MERGE_SORT_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;algorithm&gt;</span> <span class="comment">// Required for std::inplace_merge</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iter&gt; <span class="keywordtype">void</span> merge_sort(Iter begin, Iter end) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (end - begin &gt; 1) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Iter mid = begin + (end - begin) / 2; <span class="comment">// Assumes Random Access Iterator</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    merge_sort(begin, mid);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    merge_sort(mid, end);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::inplace_merge(begin, mid,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                       end); <span class="comment">// Elements must be comparable and move-assignable</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// MERGE_SORT_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef MERGE_SORT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define MERGE_SORT_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;algorithm&gt;</span> <span class="comment">// Required for std::inplace_merge</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iter&gt; <span class="keywordtype">void</span> merge_sort(Iter begin, Iter end) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> (end - begin &gt; 1) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Iter mid = begin + (end - begin) / 2; <span class="comment">// Assumes Random Access Iterator</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    merge_sort(begin, mid);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    merge_sort(mid, end);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::inplace_merge(begin, mid,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                       end); <span class="comment">// Elements must be comparable and move-assignable</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif </span><span class="comment">// MERGE_SORT_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

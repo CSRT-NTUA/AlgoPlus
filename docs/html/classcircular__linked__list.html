@@ -97,6 +97,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3527cdb59754d739a9b52a4a02c183d2" id="r_a3527cdb59754d739a9b52a4a02c183d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3527cdb59754d739a9b52a4a02c183d2">circular_linked_list</a> (std::vector&lt; T &gt; __elements={}) noexcept</td></tr>
 <tr class="memdesc:a3527cdb59754d739a9b52a4a02c183d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new circular linked list object.  <br /></td></tr>
 <tr class="separator:a3527cdb59754d739a9b52a4a02c183d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5dda465f2a71a4a271d67ac73649330" id="r_ad5dda465f2a71a4a271d67ac73649330"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5dda465f2a71a4a271d67ac73649330">circular_linked_list</a> (const <a class="el" href="classcircular__linked__list.html">circular_linked_list</a> &amp;c)</td></tr>
+<tr class="memdesc:ad5dda465f2a71a4a271d67ac73649330"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy constructor for the circular linked list class  <br /></td></tr>
+<tr class="separator:ad5dda465f2a71a4a271d67ac73649330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d79aae4fb8aa50458445316882f9a47" id="r_a9d79aae4fb8aa50458445316882f9a47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcircular__linked__list.html">circular_linked_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d79aae4fb8aa50458445316882f9a47">operator=</a> (const <a class="el" href="classcircular__linked__list.html">circular_linked_list</a> &amp;c)</td></tr>
+<tr class="memdesc:a9d79aae4fb8aa50458445316882f9a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for circular linked list class  <br /></td></tr>
+<tr class="separator:a9d79aae4fb8aa50458445316882f9a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa30d61d17468c5b52b2c70cdd87228f" id="r_afa30d61d17468c5b52b2c70cdd87228f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa30d61d17468c5b52b2c70cdd87228f">empty</a> ()</td></tr>
 <tr class="memdesc:afa30d61d17468c5b52b2c70cdd87228f"><td class="mdescLeft">&#160;</td><td class="mdescRight">empty function  <br /></td></tr>
 <tr class="separator:afa30d61d17468c5b52b2c70cdd87228f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,7 +143,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 class circular_linked_list&lt; T &gt;</div><p>circular linked list class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3527cdb59754d739a9b52a4a02c183d2" name="a3527cdb59754d739a9b52a4a02c183d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3527cdb59754d739a9b52a4a02c183d2">&#9670;&#160;</a></span>circular_linked_list()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3527cdb59754d739a9b52a4a02c183d2">&#9670;&#160;</a></span>circular_linked_list() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,6 +171,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__elements</td><td>vector&lt;T&gt; so you dont have to do multiple insertions </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5dda465f2a71a4a271d67ac73649330" name="ad5dda465f2a71a4a271d67ac73649330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5dda465f2a71a4a271d67ac73649330">&#9670;&#160;</a></span>circular_linked_list() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcircular__linked__list.html">circular_linked_list</a>&lt; T &gt;<a class="el" href="classcircular__linked__list.html">::circular_linked_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcircular__linked__list.html">circular_linked_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>copy constructor for the circular linked list class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the list we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -310,6 +351,42 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9d79aae4fb8aa50458445316882f9a47" name="a9d79aae4fb8aa50458445316882f9a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d79aae4fb8aa50458445316882f9a47">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcircular__linked__list.html">circular_linked_list</a> &amp; <a class="el" href="classcircular__linked__list.html">circular_linked_list</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcircular__linked__list.html">circular_linked_list</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for circular linked list class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the list we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcircular__linked__list.html" title="circular linked list class">circular_linked_list</a>&amp; </dd></dl>
 
 </div>
 </div>

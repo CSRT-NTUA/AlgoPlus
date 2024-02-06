@@ -90,6 +90,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10766091642efeb0d932f52fdeff789b" id="r_a10766091642efeb0d932f52fdeff789b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10766091642efeb0d932f52fdeff789b">weighted_graph</a> (std::string __type, std::vector&lt; std::pair&lt; std::pair&lt; T, T &gt;, int64_t &gt; &gt; __adj={})</td></tr>
 <tr class="memdesc:a10766091642efeb0d932f52fdeff789b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for weighted graph.  <br /></td></tr>
 <tr class="separator:a10766091642efeb0d932f52fdeff789b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493f37a7541c2545fd572702909e6eef" id="r_a493f37a7541c2545fd572702909e6eef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a493f37a7541c2545fd572702909e6eef">weighted_graph</a> (const <a class="el" href="classweighted__graph.html">weighted_graph</a> &amp;g)</td></tr>
+<tr class="memdesc:a493f37a7541c2545fd572702909e6eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for weighted graph class.  <br /></td></tr>
+<tr class="separator:a493f37a7541c2545fd572702909e6eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16cc99c33739bdbd6cee4c7f5b9ad1f" id="r_af16cc99c33739bdbd6cee4c7f5b9ad1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classweighted__graph.html">weighted_graph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af16cc99c33739bdbd6cee4c7f5b9ad1f">operator=</a> (const <a class="el" href="classweighted__graph.html">weighted_graph</a> &amp;g)</td></tr>
+<tr class="memdesc:af16cc99c33739bdbd6cee4c7f5b9ad1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for weighted graph class  <br /></td></tr>
+<tr class="separator:af16cc99c33739bdbd6cee4c7f5b9ad1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320b97cb3de98b240890567a2bd3b792" id="r_a320b97cb3de98b240890567a2bd3b792"><td class="memItemLeft" align="right" valign="top"><a id="a320b97cb3de98b240890567a2bd3b792" name="a320b97cb3de98b240890567a2bd3b792"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~weighted_graph</b> ()</td></tr>
+<tr class="memdesc:a320b97cb3de98b240890567a2bd3b792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the weighted graph object. <br /></td></tr>
+<tr class="separator:a320b97cb3de98b240890567a2bd3b792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad652cc371c4ae27df7bfd45380865726" id="r_ad652cc371c4ae27df7bfd45380865726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad652cc371c4ae27df7bfd45380865726">add_edge</a> (T u, T v, int64_t w)</td></tr>
 <tr class="memdesc:ad652cc371c4ae27df7bfd45380865726"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_edge function.  <br /></td></tr>
 <tr class="separator:ad652cc371c4ae27df7bfd45380865726"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,7 +173,7 @@ Friends</h2></td></tr>
 class weighted_graph&lt; T &gt;</div><p>class for weighted graph </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a10766091642efeb0d932f52fdeff789b" name="a10766091642efeb0d932f52fdeff789b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10766091642efeb0d932f52fdeff789b">&#9670;&#160;</a></span>weighted_graph()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a10766091642efeb0d932f52fdeff789b">&#9670;&#160;</a></span>weighted_graph() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,6 +206,41 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">__type</td><td>type of the graph, either "directed" or "undirected". </td></tr>
     <tr><td class="paramname">__adj</td><td>vector&lt;pair&lt;pair&lt;T,T&gt;, int64_t&gt;&gt;, you can pass a vector of pairs to construct the graph without doing multiple add_edge. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a493f37a7541c2545fd572702909e6eef" name="a493f37a7541c2545fd572702909e6eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493f37a7541c2545fd572702909e6eef">&#9670;&#160;</a></span>weighted_graph() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classweighted__graph.html">weighted_graph</a>&lt; T &gt;<a class="el" href="classweighted__graph.html">::weighted_graph</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classweighted__graph.html">weighted_graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for weighted graph class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the graph we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -536,6 +581,42 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if a direct edge from start to end exists. </dd></dl>
+
+</div>
+</div>
+<a id="af16cc99c33739bdbd6cee4c7f5b9ad1f" name="af16cc99c33739bdbd6cee4c7f5b9ad1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16cc99c33739bdbd6cee4c7f5b9ad1f">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classweighted__graph.html">weighted_graph</a> &amp; <a class="el" href="classweighted__graph.html">weighted_graph</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classweighted__graph.html">weighted_graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for weighted graph class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the graph we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classweighted__graph.html" title="class for weighted graph">weighted_graph</a>&amp; </dd></dl>
 
 </div>
 </div>

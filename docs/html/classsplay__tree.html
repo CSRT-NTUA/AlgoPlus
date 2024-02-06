@@ -96,6 +96,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42c17e85ad2c1bacd934ca0ccc51e398" id="r_a42c17e85ad2c1bacd934ca0ccc51e398"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c17e85ad2c1bacd934ca0ccc51e398">splay_tree</a> (std::vector&lt; T &gt; v={}) noexcept</td></tr>
 <tr class="memdesc:a42c17e85ad2c1bacd934ca0ccc51e398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new splay tree object.  <br /></td></tr>
 <tr class="separator:a42c17e85ad2c1bacd934ca0ccc51e398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a135c3d10e1e8b919b8d817d53f98a" id="r_aa9a135c3d10e1e8b919b8d817d53f98a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9a135c3d10e1e8b919b8d817d53f98a">splay_tree</a> (const <a class="el" href="classsplay__tree.html">splay_tree</a> &amp;s)</td></tr>
+<tr class="memdesc:aa9a135c3d10e1e8b919b8d817d53f98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for splay tree class.  <br /></td></tr>
+<tr class="separator:aa9a135c3d10e1e8b919b8d817d53f98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3545f2f8b26bcef4f938decb1ac276e" id="r_ad3545f2f8b26bcef4f938decb1ac276e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsplay__tree.html">splay_tree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3545f2f8b26bcef4f938decb1ac276e">operator=</a> (const <a class="el" href="classsplay__tree.html">splay_tree</a> &amp;s)</td></tr>
+<tr class="memdesc:ad3545f2f8b26bcef4f938decb1ac276e"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for splay tree class  <br /></td></tr>
+<tr class="separator:ad3545f2f8b26bcef4f938decb1ac276e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2da70f39990b6c677cf0022378fd4b17" id="r_a2da70f39990b6c677cf0022378fd4b17"><td class="memItemLeft" align="right" valign="top"><a id="a2da70f39990b6c677cf0022378fd4b17" name="a2da70f39990b6c677cf0022378fd4b17"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="memdesc:a2da70f39990b6c677cf0022378fd4b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear function <br /></td></tr>
@@ -136,7 +142,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 class splay_tree&lt; T &gt;</div><p>splay tree class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a42c17e85ad2c1bacd934ca0ccc51e398" name="a42c17e85ad2c1bacd934ca0ccc51e398"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42c17e85ad2c1bacd934ca0ccc51e398">&#9670;&#160;</a></span>splay_tree()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c17e85ad2c1bacd934ca0ccc51e398">&#9670;&#160;</a></span>splay_tree() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +170,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>vector&lt;T&gt; initializer vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9a135c3d10e1e8b919b8d817d53f98a" name="aa9a135c3d10e1e8b919b8d817d53f98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a135c3d10e1e8b919b8d817d53f98a">&#9670;&#160;</a></span>splay_tree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt;<a class="el" href="classsplay__tree.html">::splay_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for splay tree class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the tree we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -233,6 +274,42 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ad3545f2f8b26bcef4f938decb1ac276e" name="ad3545f2f8b26bcef4f938decb1ac276e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3545f2f8b26bcef4f938decb1ac276e">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsplay__tree.html">splay_tree</a> &amp; <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for splay tree class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the tree we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classsplay__tree.html" title="splay tree class">splay_tree</a>&amp; </dd></dl>
 
 </div>
 </div>

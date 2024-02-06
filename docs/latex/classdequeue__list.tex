@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classdequeue__list_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classdequeue__list_a42603e6d5dab281bac54316f61a07660}{dequeue\+\_\+list}} (std\+::vector$<$ T $>$ v=\{\}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new dequeue list object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdequeue__list_a2b03e08df7aa6a3a597ab9afaec89c60}{dequeue\+\_\+list}} (const \mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}} \&q)
+\begin{DoxyCompactList}\small\item\em Copy constructor for dequeue list class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}} \& \mbox{\hyperlink{classdequeue__list_a34497ca3d303b684b1011b5588a29613}{operator=}} (const \mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}} \&q)
+\begin{DoxyCompactList}\small\item\em operator = for dequeue list class \end{DoxyCompactList}\item 
 \Hypertarget{classdequeue__list_aca5f157a4c65e4c3ecddd8f412ac13ae}\label{classdequeue__list_aca5f157a4c65e4c3ecddd8f412ac13ae} 
 void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em clear function \end{DoxyCompactList}\item 
@@ -53,7 +57,7 @@ dequeue list class
 \Hypertarget{classdequeue__list_a42603e6d5dab281bac54316f61a07660}\label{classdequeue__list_a42603e6d5dab281bac54316f61a07660} 
 \index{dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}!dequeue\_list@{dequeue\_list}}
 \index{dequeue\_list@{dequeue\_list}!dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{dequeue\_list()}{dequeue\_list()}}
+\doxysubsubsection{\texorpdfstring{dequeue\_list()}{dequeue\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classdequeue__list}{\+::dequeue\+\_\+list}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -64,6 +68,22 @@ Construct a new dequeue list object.
 
 \begin{DoxyParams}{Parameters}
 {\em v} & initializer vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdequeue__list_a2b03e08df7aa6a3a597ab9afaec89c60}\label{classdequeue__list_a2b03e08df7aa6a3a597ab9afaec89c60} 
+\index{dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}!dequeue\_list@{dequeue\_list}}
+\index{dequeue\_list@{dequeue\_list}!dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dequeue\_list()}{dequeue\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}}$<$ T $>$\mbox{\hyperlink{classdequeue__list}{\+::dequeue\+\_\+list}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}}$<$ T $>$ \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for dequeue list class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the dequeue we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -124,6 +144,25 @@ top function
 
 \begin{DoxyReturn}{Returns}
 T the top of the dequeue 
+\end{DoxyReturn}
+\Hypertarget{classdequeue__list_a34497ca3d303b684b1011b5588a29613}\label{classdequeue__list_a34497ca3d303b684b1011b5588a29613} 
+\index{dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}} \& \mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdequeue__list}{dequeue\+\_\+list}}$<$ T $>$ \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for dequeue list class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the dequeue we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classdequeue__list}{dequeue\+\_\+list}\& 
 \end{DoxyReturn}
 \Hypertarget{classdequeue__list_a6bb8882f621456fea94b6023ced7c3bd}\label{classdequeue__list_a6bb8882f621456fea94b6023ced7c3bd} 
 \index{dequeue\_list$<$ T $>$@{dequeue\_list$<$ T $>$}!push\_back@{push\_back}}

@@ -2,294 +2,307 @@
 \hypertarget{splay__tree_8h_source}{}\label{splay__tree_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/classes/tree/splay\_tree.h@{/Users/spirosmag/Documents/AlgoPlus/src/classes/tree/splay\_tree.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SPLAY\_TREE\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SPLAY\_TREE\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../visualization/tree\_visual/tree\_visualization.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsplay__tree}{splay\_tree}}\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{struct\ }node\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ T\ info;}
-\DoxyCodeLine{00024\ \ \ \ \ std::shared\_ptr<node>\ right;}
-\DoxyCodeLine{00025\ \ \ \ \ std::shared\_ptr<node>\ left;}
-\DoxyCodeLine{00026\ \ \ \ \ node(T\ key\ =\ 0)\ :\ info(key),\ right(\textcolor{keyword}{nullptr}),\ left(\textcolor{keyword}{nullptr})\ \{\}}
-\DoxyCodeLine{00027\ \ \ \};}
-\DoxyCodeLine{00028\ \ \ std::shared\_ptr<node>\ root;}
-\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{size\_t}\ \_\_size;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}{splay\_tree}}(std::vector<T>\ v\ =\ \{\})\ \textcolor{keyword}{noexcept}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ :\ root(nullptr),\ \_\_size(0)\ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ v)\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classsplay__tree_a28eea5f755129c69077896c03bb0406e}{insert}}(x);}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \}}
-\DoxyCodeLine{00044\ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classsplay__tree}{\string~splay\_tree}}()\ \{\ root\ =\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ SPLAY\_TREE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ SPLAY\_TREE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../../visualization/tree\_visual/tree\_visualization.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsplay__tree}{splay\_tree}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{struct\ }node\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ T\ info;}
+\DoxyCodeLine{00026\ \ \ \ \ std::shared\_ptr<node>\ right;}
+\DoxyCodeLine{00027\ \ \ \ \ std::shared\_ptr<node>\ left;}
+\DoxyCodeLine{00028\ \ \ \ \ node(T\ key\ =\ 0)\ :\ info(key),\ right(\textcolor{keyword}{nullptr}),\ left(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00029\ \ \ \};}
+\DoxyCodeLine{00030\ \ \ std::shared\_ptr<node>\ root;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{size\_t}\ \_\_size;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}{splay\_tree}}(std::vector<T>\ v\ =\ \{\})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ :\ root(nullptr),\ \_\_size(0)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ v)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classsplay__tree_a28eea5f755129c69077896c03bb0406e}{insert}}(x);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \}}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_a2da70f39990b6c677cf0022378fd4b17}{clear}}()\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ root\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00053\ \ \ \ \ \_\_size\ =\ 0;}
-\DoxyCodeLine{00054\ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_a28eea5f755129c69077896c03bb0406e}{insert}}(T\ key)\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ root\ =\ \_\_insert(root,\ key);}
-\DoxyCodeLine{00063\ \ \ \ \ \_\_size++;}
-\DoxyCodeLine{00064\ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_ab022b141626c54e2e09ab870e7000f89}{remove}}(T\ key)\ \{}
-\DoxyCodeLine{00072\ \ \ \ \ root\ =\ \_\_remove(root,\ key);}
-\DoxyCodeLine{00073\ \ \ \ \ \_\_size-\/-\/;}
-\DoxyCodeLine{00074\ \ \ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsplay__tree_ae15a430689cfc7d6f75c35f8420e36b4}{search}}(T\ key)\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ std::shared\_ptr<node>\ ans\ =\ splay(root,\ key);}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ (ans\ \&\&\ ans-\/>info\ ==\ key);}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a}{splay\_tree}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsplay__tree}{splay\_tree}}\ \&s)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ root\ =\ s.root;}
+\DoxyCodeLine{00054\ \ \ \ \ \_\_size\ =\ s.\_\_size;}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classsplay__tree}{splay\_tree}}\ \&\mbox{\hyperlink{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsplay__tree}{splay\_tree}}\ \&s)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ root\ =\ s.root;}
+\DoxyCodeLine{00064\ \ \ \ \ \_\_size\ =\ s.\_\_size;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classsplay__tree}{\string~splay\_tree}}()\ \{\ root\ =\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_a2da70f39990b6c677cf0022378fd4b17}{clear}}()\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ root\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00075\ \ \ \ \ \_\_size\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_a28eea5f755129c69077896c03bb0406e}{insert}}(T\ key)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ root\ =\ \_\_insert(root,\ key);}
+\DoxyCodeLine{00085\ \ \ \ \ \_\_size++;}
 \DoxyCodeLine{00086\ \ \ \}}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsplay__tree_aea0b17cab8207f3162e02835259100c6}{size}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_size;\ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \textcolor{keyword}{class\ }Iterator;}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \ \ Iterator\ begin()\ \{}
-\DoxyCodeLine{00098\ \ \ \ \ std::vector<T>\ ino\ =\ this-\/>\mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}}();}
-\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(0,\ ino);}
-\DoxyCodeLine{00100\ \ \ \}}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ Iterator\ end()\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ std::vector<T>\ ino\ =\ this-\/>\mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}}();}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(ino.size(),\ ino);}
-\DoxyCodeLine{00105\ \ \ \}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00111\ \ \ std::vector<T>\ \mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}}()\ \{}
-\DoxyCodeLine{00112\ \ \ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00113\ \ \ \ \ \_\_inorder(}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ [\&](std::shared\_ptr<node>\ callbacked)\ \{}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ path.push\_back(callbacked-\/>info);}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ root);}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00119\ \ \ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00125\ \ \ std::vector<T>\ \mbox{\hyperlink{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43}{preorder}}()\ \{}
-\DoxyCodeLine{00126\ \ \ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00127\ \ \ \ \ \_\_preorder(}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ [\&](std::shared\_ptr<node>\ callbacked)\ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ path.push\_back(callbacked-\/>info);}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ root);}
-\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00133\ \ \ \}}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00139\ \ \ std::vector<T>\ \mbox{\hyperlink{classsplay__tree_a0a344c13f06a9f9666d8225264897553}{postorder}}()\ \{}
-\DoxyCodeLine{00140\ \ \ \ \ std::vector<T>\ path;}
-\DoxyCodeLine{00141\ \ \ \ \ \_\_postorder(}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ [\&](std::shared\_ptr<node>\ callbacked)\ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ path.push\_back(callbacked-\/>info);}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ root);}
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
-\DoxyCodeLine{00147\ \ \ \}}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}{visualize}}()\ \{}
-\DoxyCodeLine{00154\ \ \ \ \ std::string\ \_\_generated\ =\ generate\_visualization();}
-\DoxyCodeLine{00155\ \ \ \ \ visualization::visualize(\_\_generated);}
-\DoxyCodeLine{00156\ \ \ \}}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00159\ \ \ std::shared\_ptr<node>\ rrotate(std::shared\_ptr<node>\ \_node)\ \{}
-\DoxyCodeLine{00160\ \ \ \ \ std::shared\_ptr<node>\ y\ =\ \_node-\/>left;}
-\DoxyCodeLine{00161\ \ \ \ \ \_node-\/>left\ =\ y-\/>right;}
-\DoxyCodeLine{00162\ \ \ \ \ y-\/>right\ =\ \_node;}
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00164\ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ std::shared\_ptr<node>\ lrotate(std::shared\_ptr<node>\ \_node)\ \{}
-\DoxyCodeLine{00167\ \ \ \ \ std::shared\_ptr<node>\ y\ =\ \_node-\/>right;}
-\DoxyCodeLine{00168\ \ \ \ \ \_node-\/>right\ =\ y-\/>left;}
-\DoxyCodeLine{00169\ \ \ \ \ y-\/>left\ =\ \_node;}
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
-\DoxyCodeLine{00171\ \ \ \}}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ std::shared\_ptr<node>\ splay(std::shared\_ptr<node>\ \_node,\ T\ key)\ \{}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_node\ ||\ \_node-\/>info\ ==\ key)\ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_node;}
-\DoxyCodeLine{00176\ \ \ \ \ \}}
-\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>info\ >\ key)\ \{}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>left\ ==\ NULL)}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_node;}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>left-\/>info\ >\ key)\ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \_node-\/>left-\/>left\ =\ splay(\_node-\/>left-\/>left,\ key);}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \_node\ =\ rrotate(\_node);}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_node-\/>left-\/>info\ <\ key)\ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \_node-\/>left-\/>right\ =\ splay(\_node-\/>left-\/>right,\ key);}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>left-\/>right\ !=\ NULL)}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \_node-\/>left\ =\ lrotate(\_node-\/>left);}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_node-\/>left\ ==\ NULL)\ ?\ \_node\ :\ rrotate(\_node);}
-\DoxyCodeLine{00189\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>right\ ==\ NULL)}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_node;}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>right-\/>info\ >\ key)\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \_node-\/>right-\/>left\ =\ splay(\_node-\/>right-\/>left,\ key);}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>right-\/>left\ !=\ NULL)}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \_node-\/>right\ =\ rrotate(\_node-\/>right);}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_node-\/>right-\/>info\ <\ key)\ \{}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \_node-\/>right-\/>right\ =\ splay(\_node-\/>right-\/>right,\ key);}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \_node\ =\ lrotate(\_node);}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_node-\/>right\ ==\ NULL)\ ?\ \_node\ :\ lrotate(\_node);}
-\DoxyCodeLine{00201\ \ \ \ \ \}}
-\DoxyCodeLine{00202\ \ \ \}}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00204\ \ \ std::shared\_ptr<node>\ \_\_insert(std::shared\_ptr<node>\ root,\ T\ key)\ \{}
-\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root)\ \{}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key);}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nn;}
-\DoxyCodeLine{00208\ \ \ \ \ \}}
-\DoxyCodeLine{00209\ \ \ \ \ root\ =\ splay(root,\ key);}
-\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>info\ ==\ key)\ \{}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
-\DoxyCodeLine{00212\ \ \ \ \ \}}
-\DoxyCodeLine{00213\ }
-\DoxyCodeLine{00214\ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key);}
-\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>info\ >\ key)\ \{}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ nn-\/>right\ =\ root;}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ nn-\/>left\ =\ root-\/>left;}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ root-\/>left\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00219\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ nn-\/>left\ =\ root;}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ nn-\/>right\ =\ root-\/>right;}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ root-\/>right\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_ab022b141626c54e2e09ab870e7000f89}{remove}}(T\ key)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ root\ =\ \_\_remove(root,\ key);}
+\DoxyCodeLine{00095\ \ \ \ \ \_\_size-\/-\/;}
+\DoxyCodeLine{00096\ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsplay__tree_ae15a430689cfc7d6f75c35f8420e36b4}{search}}(T\ key)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ std::shared\_ptr<node>\ ans\ =\ splay(root,\ key);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ (ans\ \&\&\ ans-\/>info\ ==\ key);}
+\DoxyCodeLine{00108\ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsplay__tree_aea0b17cab8207f3162e02835259100c6}{size}}()\ \{\ \textcolor{keywordflow}{return}\ \_\_size;\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{class\ }Iterator;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ Iterator\ begin()\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ std::vector<T>\ ino\ =\ this-\/>\mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(0,\ ino);}
+\DoxyCodeLine{00122\ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ Iterator\ end()\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ std::vector<T>\ ino\ =\ this-\/>\mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}}();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ Iterator(ino.size(),\ ino);}
+\DoxyCodeLine{00127\ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ std::vector<T>\ \mbox{\hyperlink{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}{inorder}}()\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00135\ \ \ \ \ \_\_inorder(}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ [\&](std::shared\_ptr<node>\ callbacked)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ path.push\_back(callbacked-\/>info);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ root);}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00141\ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ std::vector<T>\ \mbox{\hyperlink{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43}{preorder}}()\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00149\ \ \ \ \ \_\_preorder(}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ [\&](std::shared\_ptr<node>\ callbacked)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ path.push\_back(callbacked-\/>info);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ root);}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00155\ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00161\ \ \ std::vector<T>\ \mbox{\hyperlink{classsplay__tree_a0a344c13f06a9f9666d8225264897553}{postorder}}()\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00163\ \ \ \ \ \_\_postorder(}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ [\&](std::shared\_ptr<node>\ callbacked)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ path.push\_back(callbacked-\/>info);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ root);}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00169\ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}{visualize}}()\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ std::string\ \_\_generated\ =\ generate\_visualization();}
+\DoxyCodeLine{00177\ \ \ \ \ visualization::visualize(\_\_generated);}
+\DoxyCodeLine{00178\ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00181\ \ \ std::shared\_ptr<node>\ rrotate(std::shared\_ptr<node>\ \_node)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ std::shared\_ptr<node>\ y\ =\ \_node-\/>left;}
+\DoxyCodeLine{00183\ \ \ \ \ \_node-\/>left\ =\ y-\/>right;}
+\DoxyCodeLine{00184\ \ \ \ \ y-\/>right\ =\ \_node;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00186\ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ std::shared\_ptr<node>\ lrotate(std::shared\_ptr<node>\ \_node)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ std::shared\_ptr<node>\ y\ =\ \_node-\/>right;}
+\DoxyCodeLine{00190\ \ \ \ \ \_node-\/>right\ =\ y-\/>left;}
+\DoxyCodeLine{00191\ \ \ \ \ y-\/>left\ =\ \_node;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00193\ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ std::shared\_ptr<node>\ splay(std::shared\_ptr<node>\ \_node,\ T\ key)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_node\ ||\ \_node-\/>info\ ==\ key)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_node;}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>info\ >\ key)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>left\ ==\ NULL)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_node;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>left-\/>info\ >\ key)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \_node-\/>left-\/>left\ =\ splay(\_node-\/>left-\/>left,\ key);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \_node\ =\ rrotate(\_node);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_node-\/>left-\/>info\ <\ key)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \_node-\/>left-\/>right\ =\ splay(\_node-\/>left-\/>right,\ key);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>left-\/>right\ !=\ NULL)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \_node-\/>left\ =\ lrotate(\_node-\/>left);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_node-\/>left\ ==\ NULL)\ ?\ \_node\ :\ rrotate(\_node);}
+\DoxyCodeLine{00211\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>right\ ==\ NULL)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_node;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>right-\/>info\ >\ key)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \_node-\/>right-\/>left\ =\ splay(\_node-\/>right-\/>left,\ key);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_node-\/>right-\/>left\ !=\ NULL)}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \_node-\/>right\ =\ rrotate(\_node-\/>right);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_node-\/>right-\/>info\ <\ key)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \_node-\/>right-\/>right\ =\ splay(\_node-\/>right-\/>right,\ key);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \_node\ =\ lrotate(\_node);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_node-\/>right\ ==\ NULL)\ ?\ \_node\ :\ lrotate(\_node);}
 \DoxyCodeLine{00223\ \ \ \ \ \}}
-\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{return}\ nn;}
-\DoxyCodeLine{00225\ \ \ \}}
-\DoxyCodeLine{00226\ }
-\DoxyCodeLine{00227\ \ \ std::shared\_ptr<node>\ \_\_remove(std::shared\_ptr<node>\ root,\ T\ key)\ \{}
-\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root)\ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00224\ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ std::shared\_ptr<node>\ \_\_insert(std::shared\_ptr<node>\ root,\ T\ key)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root)\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nn;}
 \DoxyCodeLine{00230\ \ \ \ \ \}}
 \DoxyCodeLine{00231\ \ \ \ \ root\ =\ splay(root,\ key);}
-\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ !=\ root-\/>info)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>info\ ==\ key)\ \{}
 \DoxyCodeLine{00233\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
 \DoxyCodeLine{00234\ \ \ \ \ \}}
 \DoxyCodeLine{00235\ }
-\DoxyCodeLine{00236\ \ \ \ \ std::shared\_ptr<node>\ temp;}
-\DoxyCodeLine{00237\ \ \ \ \ temp\ =\ root;}
-\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root-\/>left)\ \{}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ root\ =\ root-\/>right;}
-\DoxyCodeLine{00240\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ root\ =\ splay(root-\/>left,\ key);}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ root-\/>right\ =\ temp-\/>right;}
-\DoxyCodeLine{00243\ \ \ \ \ \}}
-\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
-\DoxyCodeLine{00245\ \ \ \}}
-\DoxyCodeLine{00246\ }
-\DoxyCodeLine{00247\ \ \ \textcolor{keywordtype}{void}\ \_\_inorder(std::function<\textcolor{keywordtype}{void}(std::shared\_ptr<node>)>\ callback,}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ root)\ \{}
-\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{if}\ (root)\ \{}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \_\_inorder(callback,\ root-\/>left);}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ callback(root);}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \_\_inorder(callback,\ root-\/>right);}
-\DoxyCodeLine{00253\ \ \ \ \ \}}
-\DoxyCodeLine{00254\ \ \ \}}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00256\ \ \ \textcolor{keywordtype}{void}\ \_\_postorder(std::function<\textcolor{keywordtype}{void}(std::shared\_ptr<node>)>\ callback,}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ root)\ \{}
-\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{if}\ (root)\ \{}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \_\_postorder(callback,\ root-\/>left);}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \_\_postorder(callback,\ root-\/>right);}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ callback(root);}
-\DoxyCodeLine{00262\ \ \ \ \ \}}
-\DoxyCodeLine{00263\ \ \ \}}
-\DoxyCodeLine{00264\ }
-\DoxyCodeLine{00265\ \ \ \textcolor{keywordtype}{void}\ \_\_preorder(std::function<\textcolor{keywordtype}{void}(std::shared\_ptr<node>)>\ callback,}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ root)\ \{}
-\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (root)\ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ callback(root);}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \_\_preorder(callback,\ root-\/>left);}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \_\_preorder(callback,\ root-\/>right);}
-\DoxyCodeLine{00271\ \ \ \ \ \}}
-\DoxyCodeLine{00272\ \ \ \}}
-\DoxyCodeLine{00273\ }
-\DoxyCodeLine{00274\ \ \ std::string\ generate\_visualization()\ \{}
-\DoxyCodeLine{00275\ \ \ \ \ std::string\ \_\_generate\ =\ \_\_inorder\_gen(root);}
-\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_generate;}
-\DoxyCodeLine{00277\ \ \ \}}
-\DoxyCodeLine{00278\ }
-\DoxyCodeLine{00279\ \ \ std::string\ \_\_inorder\_gen(std::shared\_ptr<node>\ root)\ \{}
-\DoxyCodeLine{00280\ \ \ \ \ std::string\ \_\_s;}
-\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>left)\ \{}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>info;}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>left-\/>info;}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \_\_inorder\_gen(root-\/>left);}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>right)\ \{}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>info;}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>right-\/>info;}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \_\_inorder\_gen(root-\/>right);}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00296\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>left)\ \{}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \_\_s\ +=\ std::to\_string(root-\/>info)\ +\ \textcolor{stringliteral}{"{}-\/>"{}}\ +}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(root-\/>left-\/>info)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_inorder\_gen(root-\/>left);}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>right)\ \{}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \_\_s\ +=\ std::to\_string(root-\/>info)\ +\ \textcolor{stringliteral}{"{}-\/>"{}}\ +}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(root-\/>right-\/>info)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +}
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_inorder\_gen(root-\/>right);}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00307\ \ \ \ \ \}}
-\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_s;}
-\DoxyCodeLine{00309\ \ \ \}}
-\DoxyCodeLine{00310\ \};}
-\DoxyCodeLine{00311\ }
-\DoxyCodeLine{00315\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsplay__tree}{splay\_tree}}<T>::\mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \{}
-\DoxyCodeLine{00316\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00317\ \ \ std::vector<T>\ elements;}
-\DoxyCodeLine{00318\ \ \ int64\_t\ index;}
-\DoxyCodeLine{00319\ }
-\DoxyCodeLine{00320\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00326\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_afc9327f8cb72ba7c6947aca4dbcb5d72}{Iterator}}(\textcolor{keyword}{const}\ int64\_t\ \&index,\ std::vector<T>\ \&els)\ noexcept}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ :\ index(index),\ elements(els)\ \{\}}
-\DoxyCodeLine{00328\ }
-\DoxyCodeLine{00335\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classsplay__tree_1_1_iterator_a380f4b06e38351d43dedcfda5d6a503e}{operator=}}(int64\_t\ index)\ \{}
-\DoxyCodeLine{00336\ \ \ \ \ this-\/>index\ =\ index;}
-\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
-\DoxyCodeLine{00338\ \ \ \}}
-\DoxyCodeLine{00339\ }
-\DoxyCodeLine{00345\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classsplay__tree_1_1_iterator_afe74db91ec3efca1808a05e40a766417}{operator++}}()\ \{}
-\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>index\ <\ elements.size())\ \{}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ this-\/>index++;}
-\DoxyCodeLine{00348\ \ \ \ \ \}}
-\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
-\DoxyCodeLine{00350\ \ \ \}}
-\DoxyCodeLine{00351\ }
-\DoxyCodeLine{00357\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a5eeda4f4b0871e9f47badd59b88a65fb}{operator++}}(\textcolor{keywordtype}{int})\ \{}
-\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00359\ \ \ \ \ ++*(\textcolor{keyword}{this});}
-\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
-\DoxyCodeLine{00361\ \ \ \}}
-\DoxyCodeLine{00362\ }
-\DoxyCodeLine{00370\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a8327888e21ed84758168e857525b0357}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
-\DoxyCodeLine{00371\ }
-\DoxyCodeLine{00377\ \ \ T\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a278afb2dcf7708a7c9e5367699fbbd1d}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
-\DoxyCodeLine{00378\ \};}
-\DoxyCodeLine{00379\ }
-\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00236\ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(key);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>info\ >\ key)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ nn-\/>right\ =\ root;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ nn-\/>left\ =\ root-\/>left;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ root-\/>left\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00241\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ nn-\/>left\ =\ root;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ nn-\/>right\ =\ root-\/>right;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ root-\/>right\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{return}\ nn;}
+\DoxyCodeLine{00247\ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ std::shared\_ptr<node>\ \_\_remove(std::shared\_ptr<node>\ root,\ T\ key)\ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root)\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ root\ =\ splay(root,\ key);}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ !=\ root-\/>info)\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00256\ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ std::shared\_ptr<node>\ temp;}
+\DoxyCodeLine{00259\ \ \ \ \ temp\ =\ root;}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{if}\ (!root-\/>left)\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ root\ =\ root-\/>right;}
+\DoxyCodeLine{00262\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ root\ =\ splay(root-\/>left,\ key);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ root-\/>right\ =\ temp-\/>right;}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00267\ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \textcolor{keywordtype}{void}\ \_\_inorder(std::function<\textcolor{keywordtype}{void}(std::shared\_ptr<node>)>\ callback,}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{if}\ (root)\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \_\_inorder(callback,\ root-\/>left);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ callback(root);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \_\_inorder(callback,\ root-\/>right);}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \textcolor{keywordtype}{void}\ \_\_postorder(std::function<\textcolor{keywordtype}{void}(std::shared\_ptr<node>)>\ callback,}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{if}\ (root)\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \_\_postorder(callback,\ root-\/>left);}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \_\_postorder(callback,\ root-\/>right);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ callback(root);}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \textcolor{keywordtype}{void}\ \_\_preorder(std::function<\textcolor{keywordtype}{void}(std::shared\_ptr<node>)>\ callback,}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{if}\ (root)\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ callback(root);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \_\_preorder(callback,\ root-\/>left);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \_\_preorder(callback,\ root-\/>right);}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ std::string\ generate\_visualization()\ \{}
+\DoxyCodeLine{00297\ \ \ \ \ std::string\ \_\_generate\ =\ \_\_inorder\_gen(root);}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_generate;}
+\DoxyCodeLine{00299\ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ std::string\ \_\_inorder\_gen(std::shared\_ptr<node>\ root)\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ std::string\ \_\_s;}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ char>\ ||\ std::is\_same\_v<T,\ std::string>)\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>left)\ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>info;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>left-\/>info;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \_\_inorder\_gen(root-\/>left);}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>right)\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>info;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}-\/>"{}};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \_\_s\ +=\ root-\/>right-\/>info;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \_\_s\ +=\ \_\_inorder\_gen(root-\/>right);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>left)\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \_\_s\ +=\ std::to\_string(root-\/>info)\ +\ \textcolor{stringliteral}{"{}-\/>"{}}\ +}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(root-\/>left-\/>info)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_inorder\_gen(root-\/>left);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>right)\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \_\_s\ +=\ std::to\_string(root-\/>info)\ +\ \textcolor{stringliteral}{"{}-\/>"{}}\ +}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(root-\/>right-\/>info)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_inorder\_gen(root-\/>right);}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_s;}
+\DoxyCodeLine{00331\ \ \ \}}
+\DoxyCodeLine{00332\ \};}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00337\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsplay__tree}{splay\_tree}}<T>::\mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \{}
+\DoxyCodeLine{00338\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00339\ \ \ std::vector<T>\ elements;}
+\DoxyCodeLine{00340\ \ \ int64\_t\ index;}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00348\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_afc9327f8cb72ba7c6947aca4dbcb5d72}{Iterator}}(\textcolor{keyword}{const}\ int64\_t\ \&index,\ std::vector<T>\ \&els)\ noexcept}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ :\ index(index),\ elements(els)\ \{\}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00357\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classsplay__tree_1_1_iterator_a380f4b06e38351d43dedcfda5d6a503e}{operator=}}(int64\_t\ index)\ \{}
+\DoxyCodeLine{00358\ \ \ \ \ this-\/>index\ =\ index;}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00360\ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00367\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classsplay__tree_1_1_iterator_afe74db91ec3efca1808a05e40a766417}{operator++}}()\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>index\ <\ elements.size())\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ this-\/>index++;}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00372\ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00379\ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a5eeda4f4b0871e9f47badd59b88a65fb}{operator++}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00381\ \ \ \ \ ++*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00383\ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00392\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a8327888e21ed84758168e857525b0357}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsplay__tree_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ index\ !=\ it.index;\ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00399\ \ \ T\ \mbox{\hyperlink{classsplay__tree_1_1_iterator_a278afb2dcf7708a7c9e5367699fbbd1d}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ elements[index];\ \}}
+\DoxyCodeLine{00400\ \};}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -19,6 +19,10 @@ class \mbox{\hyperlink{classinterval__tree_1_1_iterator}{Iterator}}
 \item 
 \mbox{\hyperlink{classinterval__tree_a425c09376a776f6e00211d92ea26b7e7}{interval\+\_\+tree}} (std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ v=\{\})
 \begin{DoxyCompactList}\small\item\em Construct a new interval tree object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classinterval__tree_ae2fd349af4b648eabc0acce807e195e5}{interval\+\_\+tree}} (const \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}} \&i)
+\begin{DoxyCompactList}\small\item\em Copy constructor for interval tree class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}} \& \mbox{\hyperlink{classinterval__tree_aaedefbcd20cca4389fb4e1bbd82fc15e}{operator=}} (const \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}} \&i)
+\begin{DoxyCompactList}\small\item\em operator = for interval tree class \end{DoxyCompactList}\item 
 \Hypertarget{classinterval__tree_a546f03111c95ed6f0cb68fcfce4e669f}\label{classinterval__tree_a546f03111c95ed6f0cb68fcfce4e669f} 
 void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em clear function \end{DoxyCompactList}\item 
@@ -62,7 +66,7 @@ interval tree class
 \Hypertarget{classinterval__tree_a425c09376a776f6e00211d92ea26b7e7}\label{classinterval__tree_a425c09376a776f6e00211d92ea26b7e7} 
 \index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!interval\_tree@{interval\_tree}}
 \index{interval\_tree@{interval\_tree}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{interval\_tree()}{interval\_tree()}}
+\doxysubsubsection{\texorpdfstring{interval\_tree()}{interval\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classinterval__tree}{\+::interval\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -73,6 +77,22 @@ Construct a new interval tree object.
 
 \begin{DoxyParams}{Parameters}
 {\em v} & \+: vector$<$pair$<$\+T,\+T$>$$>$ initializer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classinterval__tree_ae2fd349af4b648eabc0acce807e195e5}\label{classinterval__tree_ae2fd349af4b648eabc0acce807e195e5} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!interval\_tree@{interval\_tree}}
+\index{interval\_tree@{interval\_tree}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{interval\_tree()}{interval\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classinterval__tree}{\+::interval\+\_\+tree}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$ \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Copy constructor for interval tree class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & the tree we want to copy \\
 \hline
 \end{DoxyParams}
 
@@ -136,6 +156,25 @@ insert function.
 {\em p} & interval to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classinterval__tree_aaedefbcd20cca4389fb4e1bbd82fc15e}\label{classinterval__tree_aaedefbcd20cca4389fb4e1bbd82fc15e} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}} \& \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$ \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator = for interval tree class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & the tree we want to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classinterval__tree}{interval\+\_\+tree}\& 
+\end{DoxyReturn}
 \Hypertarget{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f}\label{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f} 
 \index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!overlap@{overlap}}
 \index{overlap@{overlap}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
