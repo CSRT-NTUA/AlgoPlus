@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/dynamic_programming/lis.h"
 #include "../../catch2/catch.hpp"
 

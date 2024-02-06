@@ -113,3 +113,21 @@ a.remove(4);
 //vscode plugin for graphviz or local command line tools.
 a.visualize();
 ```
+
+### **iterator**:
+```cpp
+#include <avl.h>
+
+avl_tree<int> a;
+a.insert(10);
+a.insert(5);
+a.insert(4);
+a.insert(13);
+a.remove(4);
+
+for(auto it = a.begin(); it != a.end(); it++){
+    // *(it) returns the value of the node
+    //note that begin starts from the leftmost value
+    std::cout << *(it) << ' ';
+}
+```

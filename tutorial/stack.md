@@ -51,3 +51,19 @@ s.pop();
 //this should return 4
 std::cout << s.top() << '\n';
 ```
+
+### **iterator**:
+```cpp
+#include <stack_list.h>
+
+stack_list<int> s;
+s.push(10);
+s.push(5);
+s.push(4);
+s.push(13);
+
+for(auto it = s.begin(); it != s.end(); it++){
+    // *(it) returns the value of each node starting from the top
+    std::cout << *(it) << '\n';
+}
+```

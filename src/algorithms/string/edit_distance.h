@@ -1,7 +1,9 @@
+#pragma once
 #ifndef MIN_DISTANCE_H
 #define MIN_DISTANCE_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <string>
 #endif

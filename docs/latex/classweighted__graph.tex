@@ -52,6 +52,8 @@ bool \mbox{\hyperlink{classweighted__graph_a8cebbcf6366ce3fb31cb0b711ad8f600}{co
 \begin{DoxyCompactList}\small\item\em connected function. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classweighted__graph_a0375e2db5858f1ea2b1dc598c2621227}{eulerian}} ()
 \begin{DoxyCompactList}\small\item\em eulerian function. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ T, double $>$ \mbox{\hyperlink{classweighted__graph_abc8468ebe6d73b583b3bb1876f3b0747}{bellman\+\_\+ford}} (T start)
+\begin{DoxyCompactList}\small\item\em find SSSP and identify negative cycles. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classweighted__graph_a9184c90aa32ad1c81cddedcd6940802e}{visualize}} ()
 \begin{DoxyCompactList}\small\item\em visualize function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
@@ -108,6 +110,20 @@ add\+\_\+edge function.
 {\em w} & weight between u and v. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classweighted__graph_abc8468ebe6d73b583b3bb1876f3b0747}\label{classweighted__graph_abc8468ebe6d73b583b3bb1876f3b0747} 
+\index{weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}!bellman\_ford@{bellman\_ford}}
+\index{bellman\_ford@{bellman\_ford}!weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{bellman\_ford()}{bellman\_ford()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::unordered\+\_\+map$<$ T, double $>$ \mbox{\hyperlink{classweighted__graph}{weighted\+\_\+graph}}$<$ T $>$\+::bellman\+\_\+ford (\begin{DoxyParamCaption}\item[{T}]{start }\end{DoxyParamCaption})}
+
+
+
+find SSSP and identify negative cycles. 
+
+\begin{DoxyReturn}{Returns}
+unordered\+\_\+map of SSSP. 
+\end{DoxyReturn}
 \Hypertarget{classweighted__graph_a5407df31013d7d9d1bd5cbfa63082404}\label{classweighted__graph_a5407df31013d7d9d1bd5cbfa63082404} 
 \index{weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}!bfs@{bfs}}
 \index{bfs@{bfs}!weighted\_graph$<$ T $>$@{weighted\_graph$<$ T $>$}}

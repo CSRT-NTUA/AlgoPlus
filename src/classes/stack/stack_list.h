@@ -1,8 +1,10 @@
+#pragma once
 #ifndef STACK_H
 #define STACK_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
 #include <vector>
 #endif
 

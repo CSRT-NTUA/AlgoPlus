@@ -1,8 +1,11 @@
+#pragma once
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
+#include <vector>
 #endif
 
 /**
@@ -23,6 +26,28 @@ public:
         this->push_back(x);
       }
     }
+  }
+
+  /**
+   * @brief copy constructor for the linked_list class
+   * @param l the list we want to copy
+   */
+  explicit linked_list(const linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+  }
+
+  /**
+   * @brief operator = for linked list class
+   * @param l the list we want to copy
+   * @return linked_list&
+   */
+  linked_list &operator=(const linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+    return *this;
   }
 
   /**

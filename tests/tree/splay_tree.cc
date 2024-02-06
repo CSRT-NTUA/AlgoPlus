@@ -1,9 +1,8 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/tree/splay_tree.h"
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing insertion") {
+TEST_CASE("testing insertion in splay tree") {
   splay_tree<int> s;
   s.insert(10);
   s.insert(12);
@@ -16,7 +15,7 @@ TEST_CASE("testing insertion") {
   REQUIRE(els == check);
 }
 
-TEST_CASE("testing remove") {
+TEST_CASE("testing remove in splay tree") {
   splay_tree<int> s;
   s.insert(10);
   s.insert(12);
@@ -35,7 +34,7 @@ TEST_CASE("testing remove") {
   REQUIRE(s.search(15) == true);
 }
 
-TEST_CASE("testing size") {
+TEST_CASE("testing size in splay tree") {
   splay_tree<int> s;
   s.insert(10);
   s.insert(12);
@@ -52,7 +51,7 @@ TEST_CASE("testing size") {
   REQUIRE(s2.size() == 6);
 }
 
-TEST_CASE("testing clear function") {
+TEST_CASE("testing clear function in splay tree") {
   splay_tree<int> s;
   s.insert(10);
   s.insert(12);
@@ -65,7 +64,7 @@ TEST_CASE("testing clear function") {
   REQUIRE(els.size() == 0);
 }
 
-TEST_CASE("testing iterators") {
+TEST_CASE("testing iterators in splay tree") {
   splay_tree<int> s;
   s.insert(10);
   s.insert(12);

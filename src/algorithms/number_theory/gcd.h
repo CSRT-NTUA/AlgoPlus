@@ -1,7 +1,9 @@
+#pragma once
 #ifndef GCD_H
 #define GCD_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #endif
 

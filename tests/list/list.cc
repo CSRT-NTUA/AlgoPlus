@@ -1,9 +1,8 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/list/linked_list.h"
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing search") {
+TEST_CASE("testing search in single list") {
   // this is an example of a unit test to check if any algo or class works as it
   // should
   linked_list<int> l1({1, 4, 5, 10});
@@ -11,7 +10,7 @@ TEST_CASE("testing search") {
   REQUIRE(l1.search(150) == false);
 }
 
-TEST_CASE("push front") {
+TEST_CASE("push front in single list") {
   linked_list<int> l1;
   l1.push_front(1);
   l1.push_front(2);
@@ -21,7 +20,7 @@ TEST_CASE("push front") {
   REQUIRE(v == elem);
 }
 
-TEST_CASE("testing linked list with strings") {
+TEST_CASE("testing linked list with strings in single list") {
   std::vector<std::string> __first = {"hello", "world"};
   linked_list<std::string> l1(__first);
   REQUIRE(l1.search("hello") == true);
@@ -29,7 +28,7 @@ TEST_CASE("testing linked list with strings") {
   REQUIRE(l1.search("chec") == false); // needs to be fixed
 }
 
-TEST_CASE("testing linked list with chars") {
+TEST_CASE("testing linked list with chars in single list") {
   std::vector<char> __first = {'a', 'b', 'c', 'd'};
   linked_list<char> l1(__first);
   l1.erase('b');
@@ -42,14 +41,14 @@ TEST_CASE("testing linked list with chars") {
   REQUIRE(elem == __second);
 }
 
-TEST_CASE("testing iteration") {
+TEST_CASE("testing iteration in single list") {
   linked_list<char> l1({'a', 'b', 'c', 'd'});
   std::vector<char> ans = {'a', 'b', 'c', 'd'};
   std::vector<char> elem = l1.elements();
   REQUIRE(elem == ans);
 }
 
-TEST_CASE("testing reverse") {
+TEST_CASE("testing reverse in single list") {
   linked_list<int> l1;
   l1.push_back(10);
   l1.push_back(11);
@@ -67,7 +66,7 @@ TEST_CASE("testing reverse") {
   REQUIRE(els == v2);
 }
 
-TEST_CASE("testing iterators") {
+TEST_CASE("testing iterators in single list") {
   linked_list<int> l({4, 7, 1, 2, 3, 41, 32});
   std::vector<int> els = l.elements();
   std::vector<int> v;
@@ -75,4 +74,22 @@ TEST_CASE("testing iterators") {
     v.push_back(*(it));
   }
   REQUIRE(v == els);
+}
+
+TEST_CASE("testing copy constructors in single list") {
+  linked_list<int> l({2, 5, 46, 2, 8, 5});
+  linked_list<int> l2(l);
+  std::vector<int> v = l.elements();
+  std::vector<int> v2 = l2.elements();
+  REQUIRE(v == v2);
+}
+
+TEST_CASE("testing operator = in single list") {
+  linked_list<int> l({2, 5, 46, 2, 8, 5});
+  std::vector<int> v = l.elements();
+
+  linked_list<int> l2;
+  l2 = l;
+  std::vector<int> v2 = l2.elements();
+  REQUIRE(v2 == v);
 }

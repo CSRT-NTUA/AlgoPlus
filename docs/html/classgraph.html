@@ -90,6 +90,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad88980a06f2a3c4b4bb38e3a474573ff" id="r_ad88980a06f2a3c4b4bb38e3a474573ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad88980a06f2a3c4b4bb38e3a474573ff">graph</a> (std::string __type, std::vector&lt; std::pair&lt; T, std::vector&lt; T &gt; &gt; &gt; __adj={})</td></tr>
 <tr class="memdesc:ad88980a06f2a3c4b4bb38e3a474573ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the unweighted graph.  <br /></td></tr>
 <tr class="separator:ad88980a06f2a3c4b4bb38e3a474573ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade08163a9b85ae16b5e898d0e6bb1353" id="r_ade08163a9b85ae16b5e898d0e6bb1353"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade08163a9b85ae16b5e898d0e6bb1353">graph</a> (const <a class="el" href="classgraph.html">graph</a> &amp;g)</td></tr>
+<tr class="memdesc:ade08163a9b85ae16b5e898d0e6bb1353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new graph object.  <br /></td></tr>
+<tr class="separator:ade08163a9b85ae16b5e898d0e6bb1353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1111eaf01c6fb231e4d6f73bd3f17a1" id="r_ae1111eaf01c6fb231e4d6f73bd3f17a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgraph.html">graph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1111eaf01c6fb231e4d6f73bd3f17a1">operator=</a> (const <a class="el" href="classgraph.html">graph</a> &amp;g)</td></tr>
+<tr class="memdesc:ae1111eaf01c6fb231e4d6f73bd3f17a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator = for the graph class  <br /></td></tr>
+<tr class="separator:ae1111eaf01c6fb231e4d6f73bd3f17a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1f9920571d2000f6ee9c6f69015d402" id="r_ac1f9920571d2000f6ee9c6f69015d402"><td class="memItemLeft" align="right" valign="top"><a id="ac1f9920571d2000f6ee9c6f69015d402" name="ac1f9920571d2000f6ee9c6f69015d402"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~graph</b> ()</td></tr>
+<tr class="memdesc:ac1f9920571d2000f6ee9c6f69015d402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the graph object. <br /></td></tr>
+<tr class="separator:ac1f9920571d2000f6ee9c6f69015d402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b397af35ce0c1db49a6a814e68bffc3" id="r_a3b397af35ce0c1db49a6a814e68bffc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b397af35ce0c1db49a6a814e68bffc3">add_edge</a> (T u, T v)</td></tr>
 <tr class="memdesc:a3b397af35ce0c1db49a6a814e68bffc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_edge function  <br /></td></tr>
 <tr class="separator:a3b397af35ce0c1db49a6a814e68bffc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,7 +162,7 @@ Friends</h2></td></tr>
 class graph&lt; T &gt;</div><p>Class for Unweighted Graph. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad88980a06f2a3c4b4bb38e3a474573ff" name="ad88980a06f2a3c4b4bb38e3a474573ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad88980a06f2a3c4b4bb38e3a474573ff">&#9670;&#160;</a></span>graph()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88980a06f2a3c4b4bb38e3a474573ff">&#9670;&#160;</a></span>graph() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,6 +195,41 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">__type</td><td>type of the graph, either "directed" or "undirected" </td></tr>
     <tr><td class="paramname">__adj</td><td>vector&lt;pair&lt;T,vector&lt;T&gt;&gt;, you can pass a vector of pairs to construct the graph without doing multiple add_edge. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade08163a9b85ae16b5e898d0e6bb1353" name="ade08163a9b85ae16b5e898d0e6bb1353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade08163a9b85ae16b5e898d0e6bb1353">&#9670;&#160;</a></span>graph() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgraph.html">graph</a>&lt; T &gt;<a class="el" href="classgraph.html">::graph</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgraph.html">graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new graph object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the graph we want to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -464,6 +509,42 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if a direct edge from start to end exists. false if a direct edge from start to end does not exist. </dd></dl>
+
+</div>
+</div>
+<a id="ae1111eaf01c6fb231e4d6f73bd3f17a1" name="ae1111eaf01c6fb231e4d6f73bd3f17a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1111eaf01c6fb231e4d6f73bd3f17a1">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgraph.html">graph</a> &amp; <a class="el" href="classgraph.html">graph</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgraph.html">graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator = for the graph class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the graph we want to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>graph&amp; </dd></dl>
 
 </div>
 </div>

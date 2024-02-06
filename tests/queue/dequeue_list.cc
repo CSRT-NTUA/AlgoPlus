@@ -1,9 +1,8 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/queue/dequeue_list.h"
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing push") {
+TEST_CASE("testing push in dequeue") {
   dequeue_list<int> q;
   q.push_front(10);
   q.push_back(20);
@@ -24,7 +23,7 @@ TEST_CASE("testing push") {
   REQUIRE(check2 == v2);
 }
 
-TEST_CASE("testing pop") {
+TEST_CASE("testing pop in dequeue") {
   dequeue_list<int> q;
   q.push_front(10);
   q.push_back(20);
@@ -38,7 +37,7 @@ TEST_CASE("testing pop") {
   REQUIRE(q.back() == 10);
 }
 
-TEST_CASE("testing size") {
+TEST_CASE("testing size in dequeue") {
   dequeue_list<int> q;
   q.push_front(10);
   q.push_back(20);

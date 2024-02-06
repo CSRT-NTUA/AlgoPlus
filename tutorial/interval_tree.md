@@ -123,6 +123,23 @@ i.insert({10, 15});
 i.visualize();
 ```
 
+### **iterator**:
+```cpp
+#include <interval_tree.h>
+
+interval_tree<int> i;
+i.insert({20, 36});
+i.insert({3, 41});
+i.insert({29, 99});
+i.insert({0, 1});
+i.insert({10, 15});
+
+for(auto it = i.begin(); it != i.end(); it++){
+    // *(it) returns the pair of each node
+    std::pair<int ,int> p = *(it);
+    std::cout << p.first << " " << p.second << '\n';
+}
+```
 
 
 

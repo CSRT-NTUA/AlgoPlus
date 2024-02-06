@@ -1,7 +1,9 @@
+#pragma once
 #ifndef INSERTION_SORT_H
 #define INSERTION_SORT_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <vector>
 #endif

@@ -1,7 +1,9 @@
+#pragma once
 #ifndef LIS_H
 #define LIS_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <vector>
 #endif

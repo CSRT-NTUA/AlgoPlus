@@ -1,8 +1,11 @@
+#pragma once
 #ifndef CIRCULAR_LINKED_LIST_H
 #define CIRCULAR_LINKED_LIST_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
+#include <vector>
 #endif
 
 /**
@@ -22,6 +25,28 @@ public:
         this->push_back(x);
       }
     }
+  }
+
+  /**
+   * @brief copy constructor for the circular linked list class
+   * @param c the list we want to copy
+   */
+  explicit circular_linked_list(const circular_linked_list &c) {
+    root = c.root;
+    tail = c.tail;
+    __size = c.__size;
+  }
+
+  /**
+   * @brief operator = for circular linked list class
+   * @param c the list we want to copy
+   * @return circular_linked_list&
+   */
+  circular_linked_list &operator=(const circular_linked_list &c) {
+    root = c.root;
+    tail = c.tail;
+    __size = c.__size;
+    return *this;
   }
 
   /**

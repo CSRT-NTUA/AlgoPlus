@@ -1,7 +1,9 @@
+#pragma once
 #ifndef LCS_H
 #define LCS_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <string>
 #endif

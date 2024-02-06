@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/graph/graph.h"
 #include "../catch2/catch.hpp"
 #include <string>
@@ -12,7 +11,7 @@ TEST_CASE("testing clearing of a graph") {
   REQUIRE(v.empty() == true);
 }
 
-TEST_CASE("testing dfs") {
+TEST_CASE("testing dfs in graph") {
   graph<int> g("directed");
   g.add_edge(1, 3);
   g.add_edge(3, 4);
@@ -23,7 +22,7 @@ TEST_CASE("testing dfs") {
   REQUIRE(v == dfs);
 }
 
-TEST_CASE("testing bfs") {
+TEST_CASE("testing bfs in graph") {
   graph<int> g("directed");
   g.add_edge(1, 4);
   g.add_edge(4, 5);
@@ -35,7 +34,7 @@ TEST_CASE("testing bfs") {
   REQUIRE(v2 == dfs2);
 }
 
-TEST_CASE("testing connecting components") {
+TEST_CASE("testing connecting components in graph") {
   graph<int> g("undirected");
   g.add_edge(1, 2);
   g.add_edge(2, 4);
@@ -51,7 +50,7 @@ TEST_CASE("testing connecting components") {
   REQUIRE(g2.connected_components() == 2);
 }
 
-TEST_CASE("testing cycle detection") {
+TEST_CASE("testing cycle detection in graph") {
   graph<int> g("undirected");
   g.add_edge(1, 2);
   g.add_edge(2, 3);
@@ -76,7 +75,7 @@ TEST_CASE("testing cycle detection") {
   REQUIRE(g4.cycle() == true);
 }
 
-TEST_CASE("testing topological sorting") {
+TEST_CASE("testing topological sorting in graph") {
   graph<int> g("directed");
   g.add_edge(0, 1);
   g.add_edge(1, 3);
@@ -86,7 +85,7 @@ TEST_CASE("testing topological sorting") {
   REQUIRE(g.topological_sort() == v1);
 }
 
-TEST_CASE("testing bipartite check") {
+TEST_CASE("testing bipartite check in graph") {
   graph<char> g("undirected");
   g.add_edge('a', 'b');
   g.add_edge('b', 'c');
@@ -95,7 +94,7 @@ TEST_CASE("testing bipartite check") {
   REQUIRE(g.bipartite() == true);
 }
 
-TEST_CASE("testing size") {
+TEST_CASE("testing size in graph") {
   graph<std::string> g("directed");
   g.add_edge("hello", "there");
   g.add_edge("i'm", "batman");
@@ -104,7 +103,7 @@ TEST_CASE("testing size") {
   REQUIRE(g.size() == 5);
 }
 
-TEST_CASE("testing if an edge exists") {
+TEST_CASE("testing if an edge exists in graph") {
   graph<int> g("directed");
   g.add_edge(1, 5);
   g.add_edge(5, 10);
@@ -124,7 +123,7 @@ TEST_CASE("testing if an edge exists") {
   REQUIRE(g2.has_edge(1, 5) == false);
 }
 
-TEST_CASE("testing bridge detection") {
+TEST_CASE("testing bridge detection in graph") {
   graph<int> g("undirected");
   g.add_edge(1, 0);
   g.add_edge(0, 2);
@@ -136,7 +135,7 @@ TEST_CASE("testing bridge detection") {
   REQUIRE(g.bridge(0) == bridges);
 }
 
-TEST_CASE("testing connectivity") {
+TEST_CASE("testing connectivity in graph") {
   graph<int> g("undirected");
   g.add_edge(1, 0);
   g.add_edge(0, 2);
@@ -152,7 +151,7 @@ TEST_CASE("testing connectivity") {
   REQUIRE(g2.connected() == false);
 }
 
-TEST_CASE("testing eulerian check") {
+TEST_CASE("testing eulerian check in graph") {
   graph<int> g("undirected");
   g.add_edge(1, 3);
   g.add_edge(1, 0);
@@ -181,7 +180,7 @@ TEST_CASE("testing eulerian check") {
   REQUIRE(g3.eulerian() == 2);
 }
 
-TEST_CASE("testing copy constructor") {
+TEST_CASE("testing copy constructor in graph") {
   graph<int> g("undirected");
   g.add_edge(1, 3);
   g.add_edge(1, 0);

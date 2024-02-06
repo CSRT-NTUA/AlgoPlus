@@ -1,9 +1,11 @@
+#pragma once
 #ifndef BST_H
 #define BST_H
 
 #ifdef __cplusplus
 #include "../../visualization/tree_visual/tree_visualization.h"
 #include <functional>
+#include <memory>
 #include <queue>
 #include <string>
 #include <type_traits>

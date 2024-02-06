@@ -75,7 +75,7 @@ $(function() {
   <div class="headertitle"><div class="title">Mini Tutorial for the BST class</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md18"></a></p><pre class="fragment">bst&lt;T&gt; -- creates an avl tree.
+<div class="textblock"><p><a class="anchor" id="autotoc_md20"></a></p><pre class="fragment">bst&lt;T&gt; -- creates an avl tree.
 </pre><p> avl tree contains:</p><ul>
 <li>insert</li>
 <li>remove</li>
@@ -86,7 +86,7 @@ $(function() {
 <li>postorder</li>
 <li>visualize</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 <b>insert</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -96,9 +96,9 @@ $(function() {
 <div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(4);</div>
 <div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(13);</div>
 <div class="line"><span class="comment">//creates a tree with elements {4,5,10,13};</span></div>
-<div class="ttc" id="aclassbst_html"><div class="ttname"><a href="classbst.html">bst</a></div><div class="ttdoc">Class for BST tree.</div><div class="ttdef"><b>Definition</b> bst.h:16</div></div>
-<div class="ttc" id="aclassbst_html_ad7def8a09da61a43c7033365ea226d06"><div class="ttname"><a href="classbst.html#ad7def8a09da61a43c7033365ea226d06">bst::insert</a></div><div class="ttdeci">void insert(T key)</div><div class="ttdoc">insert function.</div><div class="ttdef"><b>Definition</b> bst.h:44</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
+<div class="ttc" id="aclassbst_html"><div class="ttname"><a href="classbst.html">bst</a></div><div class="ttdoc">Class for BST tree.</div><div class="ttdef"><b>Definition</b> bst.h:17</div></div>
+<div class="ttc" id="aclassbst_html_ad7def8a09da61a43c7033365ea226d06"><div class="ttname"><a href="classbst.html#ad7def8a09da61a43c7033365ea226d06">bst::insert</a></div><div class="ttdeci">void insert(T key)</div><div class="ttdoc">insert function.</div><div class="ttdef"><b>Definition</b> bst.h:45</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md22"></a>
 <b>remove</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -109,8 +109,8 @@ $(function() {
 <div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(13);</div>
 <div class="line">b.<a class="code hl_function" href="classbst.html#a46aaefd422947e3f209db2e24119643a">remove</a>(4);</div>
 <div class="line"><span class="comment">//removes the element 4 from the tree.</span></div>
-<div class="ttc" id="aclassbst_html_a46aaefd422947e3f209db2e24119643a"><div class="ttname"><a href="classbst.html#a46aaefd422947e3f209db2e24119643a">bst::remove</a></div><div class="ttdeci">void remove(T key)</div><div class="ttdoc">remove function.</div><div class="ttdef"><b>Definition</b> bst.h:60</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
+<div class="ttc" id="aclassbst_html_a46aaefd422947e3f209db2e24119643a"><div class="ttname"><a href="classbst.html#a46aaefd422947e3f209db2e24119643a">bst::remove</a></div><div class="ttdeci">void remove(T key)</div><div class="ttdoc">remove function.</div><div class="ttdef"><b>Definition</b> bst.h:61</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md23"></a>
 <b>search</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -125,8 +125,8 @@ $(function() {
 <div class="line"><span class="keywordflow">if</span>(b.<a class="code hl_function" href="classbst.html#acd2ed132fc83a3a50a4085b4b7a90f47">search</a>(4)){</div>
 <div class="line">    std::cout&lt;&lt; <span class="stringliteral">&quot;element 4 found in the tree&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassbst_html_acd2ed132fc83a3a50a4085b4b7a90f47"><div class="ttname"><a href="classbst.html#acd2ed132fc83a3a50a4085b4b7a90f47">bst::search</a></div><div class="ttdeci">bool search(T key)</div><div class="ttdoc">search function.</div><div class="ttdef"><b>Definition</b> bst.h:54</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md22"></a>
+<div class="ttc" id="aclassbst_html_acd2ed132fc83a3a50a4085b4b7a90f47"><div class="ttname"><a href="classbst.html#acd2ed132fc83a3a50a4085b4b7a90f47">bst::search</a></div><div class="ttdeci">bool search(T key)</div><div class="ttdoc">search function.</div><div class="ttdef"><b>Definition</b> bst.h:55</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
 <b>inorder</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -139,8 +139,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">//returns the elements in inorder fashion.</span></div>
 <div class="line">std::vector&lt;int&gt; in = b.<a class="code hl_function" href="classbst.html#ab9d984aab9247a36c78b115484ccb623">inorder</a>();</div>
-<div class="ttc" id="aclassbst_html_ab9d984aab9247a36c78b115484ccb623"><div class="ttname"><a href="classbst.html#ab9d984aab9247a36c78b115484ccb623">bst::inorder</a></div><div class="ttdeci">std::vector&lt; T &gt; inorder()</div><div class="ttdoc">inorder function.</div><div class="ttdef"><b>Definition</b> bst.h:98</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md23"></a>
+<div class="ttc" id="aclassbst_html_ab9d984aab9247a36c78b115484ccb623"><div class="ttname"><a href="classbst.html#ab9d984aab9247a36c78b115484ccb623">bst::inorder</a></div><div class="ttdeci">std::vector&lt; T &gt; inorder()</div><div class="ttdoc">inorder function.</div><div class="ttdef"><b>Definition</b> bst.h:99</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
 <b>preorder</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -153,8 +153,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">//returns the elements in preorder fashion.</span></div>
 <div class="line">std::vector&lt;int&gt; pre = b.<a class="code hl_function" href="classbst.html#a4c3359b500e074fce8d1f3eae21dfdca">preorder</a>();</div>
-<div class="ttc" id="aclassbst_html_a4c3359b500e074fce8d1f3eae21dfdca"><div class="ttname"><a href="classbst.html#a4c3359b500e074fce8d1f3eae21dfdca">bst::preorder</a></div><div class="ttdeci">std::vector&lt; T &gt; preorder()</div><div class="ttdoc">preorder function.</div><div class="ttdef"><b>Definition</b> bst.h:112</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
+<div class="ttc" id="aclassbst_html_a4c3359b500e074fce8d1f3eae21dfdca"><div class="ttname"><a href="classbst.html#a4c3359b500e074fce8d1f3eae21dfdca">bst::preorder</a></div><div class="ttdeci">std::vector&lt; T &gt; preorder()</div><div class="ttdoc">preorder function.</div><div class="ttdef"><b>Definition</b> bst.h:113</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
 <b>postorder</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -167,7 +167,26 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">//returns the elements in postorder fashion.</span></div>
 <div class="line">std::vector&lt;int&gt; in = a.postorder();</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
+<b>iterator</b>:</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classbst.html">bst&lt;int&gt;</a> b;</div>
+<div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(10);</div>
+<div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(5);</div>
+<div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(4);</div>
+<div class="line">b.<a class="code hl_function" href="classbst.html#ad7def8a09da61a43c7033365ea226d06">insert</a>(13);</div>
+<div class="line">b.<a class="code hl_function" href="classbst.html#a46aaefd422947e3f209db2e24119643a">remove</a>(4);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> it = b.<a class="code hl_function" href="classbst.html#a64edfd3a7c05023cef487ef40a07a322">begin</a>(); it != b.<a class="code hl_function" href="classbst.html#aa3db0ba407a005ce61feb9c605bbb187">end</a>(); it++){</div>
+<div class="line">    <span class="comment">// *(it) returns the value of the node</span></div>
+<div class="line">    <span class="comment">//note that begin starts from the leftmost value</span></div>
+<div class="line">    std::cout &lt;&lt; *(it) &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassbst_html_a64edfd3a7c05023cef487ef40a07a322"><div class="ttname"><a href="classbst.html#a64edfd3a7c05023cef487ef40a07a322">bst::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">pointer that points to begin</div><div class="ttdef"><b>Definition</b> bst.h:73</div></div>
+<div class="ttc" id="aclassbst_html_aa3db0ba407a005ce61feb9c605bbb187"><div class="ttname"><a href="classbst.html#aa3db0ba407a005ce61feb9c605bbb187">bst::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">pointer that points to end</div><div class="ttdef"><b>Definition</b> bst.h:83</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md28"></a>
 <b>visualize</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;bst.h&gt;</span></div>
 <div class="line"> </div>
@@ -181,7 +200,7 @@ $(function() {
 <div class="line"><span class="comment">//returns a .dot file that can easily be previewed using</span></div>
 <div class="line"><span class="comment">//vscode plugin for graphviz or local command line tools.</span></div>
 <div class="line">b.<a class="code hl_function" href="classbst.html#a0198118bc2eb3d58607ce6acadb770a6">visualize</a>();</div>
-<div class="ttc" id="aclassbst_html_a0198118bc2eb3d58607ce6acadb770a6"><div class="ttname"><a href="classbst.html#a0198118bc2eb3d58607ce6acadb770a6">bst::visualize</a></div><div class="ttdeci">void visualize()</div><div class="ttdoc">visualize function</div><div class="ttdef"><b>Definition</b> bst.h:140</div></div>
+<div class="ttc" id="aclassbst_html_a0198118bc2eb3d58607ce6acadb770a6"><div class="ttname"><a href="classbst.html#a0198118bc2eb3d58607ce6acadb770a6">bst::visualize</a></div><div class="ttdeci">void visualize()</div><div class="ttdoc">visualize function</div><div class="ttdef"><b>Definition</b> bst.h:141</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

@@ -63,6 +63,18 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Disjoint set](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
 - [X] [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+- [X] [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
+
+
+### **How to run test cases**
+We have unit tests for every function of our implemented algorithms & data structures.It is very important to make sure that your code works before making any pull requests!
+```
+mkdir build && cd build
+cmake ..
+make
+cd tests
+./runUnitTests
+```
 
 ### **Our contributors**
 <a href="https://github.com/CSRT-NTUA/AlgoPlus/graphs/contributors">

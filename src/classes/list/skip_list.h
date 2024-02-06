@@ -1,9 +1,12 @@
+#pragma once
 #ifndef SKIP_LIST_H
 #define SKIP_LIST_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
 #include <stdexcept>
+#include <vector>
 #endif
 
 /**
@@ -41,6 +44,34 @@ public:
     }
   }
 
+  /**
+   * @brief Copy constructor for the skip_list class
+   *
+   * @param s
+   */
+  skip_list(const skip_list &s) {
+    level = s.level;
+    PROB = s.PROB;
+    MAX_LEVEL = s.MAX_LEVEL;
+    root = s.root;
+  }
+
+  /**
+   * @brief operator = for the skip_list class
+   * @param s the list we want to copy
+   * @return skip_list&
+   */
+  skip_list &operator=(const skip_list &s) {
+    level = s.level;
+    PROB = s.PROB;
+    MAX_LEVEL = s.MAX_LEVEL;
+    root = s.root;
+    return *this;
+  }
+
+  /**
+   * @brief Destroy the skip list object
+   */
   ~skip_list() noexcept {}
 
   /**
@@ -75,6 +106,22 @@ public:
       }
     }
   }
+
+  class Iterator;
+
+  /**
+   * @brief pointer that points to the first element of the list
+   *
+   * @return Iterator
+   */
+  Iterator begin() { return Iterator(root->next[0]); }
+
+  /**
+   * @brief pointer that points to the last element of the list
+   *
+   * @return Iterator
+   */
+  Iterator end() { return Iterator(nullptr); }
 
   /**
    *@brief remove function.
@@ -174,6 +221,70 @@ private:
 
   int level;
   std::shared_ptr<node> root;
+};
+
+/**
+ * @brief Iterator class
+ */
+template <typename T> class skip_list<T>::Iterator {
+private:
+  std::shared_ptr<node> ptr;
+
+public:
+  /**
+   * @brief Construct a new Iterator object
+   * @param ptr: pointer to the node
+   */
+  explicit Iterator(std::shared_ptr<node> ptr) noexcept : ptr(ptr) {}
+
+  /**
+   * @brief = operator for Iterator type*
+   *
+   * @param current  pointer to the node
+   * @return Iterator&
+   */
+  Iterator &operator=(std::shared_ptr<node> current) {
+    this->ptr = current;
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++
+   *
+   * @return Iterator
+   */
+  Iterator &operator++() {
+    if (ptr != nullptr) {
+      ptr = ptr->next[0];
+    }
+    return *(this);
+  }
+
+  /**
+   * @brief operator ++ for type Iterator
+   *
+   * @return Iterator
+   */
+  Iterator operator++(int) {
+    Iterator it = *this;
+    ++*(this);
+    return it;
+  }
+
+  /**
+   * @brief operator != for type Iterator
+   *
+   * @param it pointer to the node
+   * @return bool
+   */
+  bool operator!=(const Iterator &it) { return ptr != it.ptr; }
+
+  /**
+   * @brief operator * for type Iterator
+   *
+   * @return T
+   */
+  T operator*() { return ptr->key; }
 };
 
 #endif

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef EXPONENTIAL_SEARCH_H
 #define EXPONENTIAL_SEARCH_H
 

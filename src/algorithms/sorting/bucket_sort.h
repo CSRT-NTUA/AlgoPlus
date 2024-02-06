@@ -1,7 +1,10 @@
+#pragma once
 #ifndef BUCKET_SORT_H
 #define BUCKET_SORT_H
 
 #ifdef __cplusplus
+#include <algorithm>
+#include <cstdint>
 #include <iostream>
 #include <vector>
 #endif

@@ -1,9 +1,8 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/tree/trie.h"
 #include "../catch2/catch.hpp"
 #include <string>
 
-TEST_CASE("testing insertion") {
+TEST_CASE("testing insertion in trie") {
   trie t;
   t.insert("hello");
   t.insert("world");
@@ -11,7 +10,7 @@ TEST_CASE("testing insertion") {
   REQUIRE(t.search("helo") == false);
 }
 
-TEST_CASE("testing remove") {
+TEST_CASE("testing remove in trie") {
   trie t;
   t.insert("hello");
   t.insert("world");

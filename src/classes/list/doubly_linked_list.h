@@ -1,8 +1,11 @@
+#pragma once
 #ifndef DOUBLY_LINKED_LIST_H
 #define DOUBLY_LINKED_LIST_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
+#include <vector>
 #endif
 
 /**
@@ -22,6 +25,28 @@ public:
         this->push_back(x);
       }
     }
+  }
+
+  /**
+   * @brief copy constructor for the doubly_linked_list class
+   * @param l the list we want to copy
+   */
+  explicit doubly_linked_list(const doubly_linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+  }
+
+  /**
+   * @brief operator = for doubly linked list class
+   * @param l the list we want to copy
+   * @return doubly_linked_list&
+   */
+  doubly_linked_list &operator=(const doubly_linked_list &l) {
+    root = l.root;
+    tail = l.tail;
+    __size = l.__size;
+    return *this;
   }
 
   /**

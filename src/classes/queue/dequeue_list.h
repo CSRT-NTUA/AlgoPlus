@@ -1,8 +1,10 @@
+#pragma once
 #ifndef QUEUE_H
 #define QUEUE_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
 #include <vector>
 #endif
 

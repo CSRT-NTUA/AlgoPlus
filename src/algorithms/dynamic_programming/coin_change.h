@@ -1,7 +1,9 @@
+#pragma once
 #ifndef COIN_CHANGE_H
 #define COIN_CHANGE_H
 
 #ifdef __cplusplus
+#include <cstdint>
 #include <iostream>
 #include <vector>
 #endif

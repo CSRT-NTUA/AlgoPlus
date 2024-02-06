@@ -1,8 +1,11 @@
+#pragma once
 #ifndef TRIE_H
 #define TRIE_H
 
 #ifdef __cplusplus
 #include <iostream>
+#include <memory>
+#include <vector>
 #endif
 
 /**
