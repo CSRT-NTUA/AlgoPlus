@@ -1,6 +1,6 @@
 ### **Mini tutorial for single linked list class**
 
-    circular_linked_list<T> -- creates a linked list with elements of type T
+    circular_linked_list<T> -- creates a circular linked list with elements of type T
 
 ### **push_back**:
 ```cpp
