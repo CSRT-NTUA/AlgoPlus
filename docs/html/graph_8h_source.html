@@ -781,19 +781,19 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  <span class="keywordflow">if</span> (this-&gt;empty() || __elements.find(start) == __elements.end()) {</div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>  }</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  std::queue&lt;T&gt; q;</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  std::stack&lt;T&gt; s;</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  std::unordered_map&lt;T, bool&gt; visited;</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>  q.push(start);</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>  s.push(start);</div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>  visited[start] = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>  <span class="keywordflow">while</span> (!q.empty()) {</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    int64_t size = q.size();</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>  <span class="keywordflow">while</span> (!s.empty()) {</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    int64_t size = s.size();</div>
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; size; i++) {</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>      T current = q.front();</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>      T current = s.top();</div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>      path.push_back(current);</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>      q.pop();</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>      s.pop();</div>
 <div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>      <span class="keywordflow">for</span> (std::pair&lt;T, int64_t&gt; &amp;x : adj[current]) {</div>
 <div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>        <span class="keywordflow">if</span> (visited.find(x.first) == visited.end()) {</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>          q.push(x.first);</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>          s.push(x.first);</div>
 <div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>          visited[x.first] = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>        }</div>
 <div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>      }</div>

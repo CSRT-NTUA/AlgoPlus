@@ -871,19 +871,19 @@ template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
   if (this->empty() || __elements.find(start) == __elements.end()) {
     return path;
   }
-  std::queue<T> q;
+  std::stack<T> s;
   std::unordered_map<T, bool> visited;
-  q.push(start);
+  s.push(start);
   visited[start] = true;
-  while (!q.empty()) {
-    int64_t size = q.size();
+  while (!s.empty()) {
+    int64_t size = s.size();
     for (int64_t i = 0; i < size; i++) {
-      T current = q.front();
+      T current = s.top();
       path.push_back(current);
-      q.pop();
+      s.pop();
       for (std::pair<T, int64_t> &x : adj[current]) {
         if (visited.find(x.first) == visited.end()) {
-          q.push(x.first);
+          s.push(x.first);
           visited[x.first] = true;
         }
       }

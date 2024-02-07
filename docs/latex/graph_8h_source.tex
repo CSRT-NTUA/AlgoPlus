@@ -642,19 +642,19 @@
 \DoxyCodeLine{00871\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty()\ ||\ \_\_elements.find(start)\ ==\ \_\_elements.end())\ \{}
 \DoxyCodeLine{00872\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
 \DoxyCodeLine{00873\ \ \ \}}
-\DoxyCodeLine{00874\ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00874\ \ \ std::stack<T>\ s;}
 \DoxyCodeLine{00875\ \ \ std::unordered\_map<T,\ bool>\ visited;}
-\DoxyCodeLine{00876\ \ \ q.push(start);}
+\DoxyCodeLine{00876\ \ \ s.push(start);}
 \DoxyCodeLine{00877\ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00878\ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{00879\ \ \ \ \ int64\_t\ size\ =\ q.size();}
+\DoxyCodeLine{00878\ \ \ \textcolor{keywordflow}{while}\ (!s.empty())\ \{}
+\DoxyCodeLine{00879\ \ \ \ \ int64\_t\ size\ =\ s.size();}
 \DoxyCodeLine{00880\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
-\DoxyCodeLine{00881\ \ \ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ T\ current\ =\ s.top();}
 \DoxyCodeLine{00882\ \ \ \ \ \ \ path.push\_back(current);}
-\DoxyCodeLine{00883\ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ s.pop();}
 \DoxyCodeLine{00884\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::pair<T,\ int64\_t>\ \&x\ :\ adj[current])\ \{}
 \DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (visited.find(x.first)\ ==\ visited.end())\ \{}
-\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \ \ q.push(x.first);}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \ \ s.push(x.first);}
 \DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00889\ \ \ \ \ \ \ \}}
