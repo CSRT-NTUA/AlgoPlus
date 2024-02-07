@@ -261,52 +261,53 @@ private:
 template <typename T> size_t graph<T>::size() { return __elements.size(); }
 
 template <typename T> std::vector<T> graph<T>::dfs(T start) {
-  std::vector<T> path;
-  if (this->empty() || __elements.find(start) == __elements.end()) {
-    return path;
-  }
-  std::stack<T> s;
-  std::unordered_map<T, bool> visited;
-  s.push(start);
-  visited[start] = true;
-  while (!s.empty()) {
-    T current = s.top();
-    path.push_back(current);
-    s.pop();
-    for (T &x : adj[current]) {
-      if (visited.find(x) == visited.end()) {
-        s.push(x);
-        visited[x] = true;
-      }
+    std::vector<T> path;
+    if (this->empty() || __elements.find(start) == __elements.end()) {
+        return path;
     }
-  }
-  return path;
+    std::stack<T> s;
+    std::unordered_set<T> visited;
+    s.push(start);
+    visited.insert(start);
+    while (!s.empty()) {
+        T current = s.top();
+        path.push_back(current);
+        s.pop();
+        for (T &x : adj[current]) {
+            if (visited.find(x) == visited.end()) {
+                s.push(x);
+                visited.insert(x);
+            }
+        }
+    }
+    return path;
 }
 
 template <typename T> std::vector<T> graph<T>::bfs(T start) {
-  std::vector<T> path;
-  if (this->empty() || __elements.find(start) == __elements.end()) {
-    return path;
-  }
-  std::queue<T> q;
-  std::unordered_map<T, bool> visited;
-  q.push(start);
-  visited[start] = true;
-  while (!q.empty()) {
-    int64_t size = q.size();
-    for (int64_t i = 0; i < size; i++) {
-      T current = q.front();
-      path.push_back(current);
-      q.pop();
-      for (T &x : adj[current]) {
-        if (visited.find(x) == visited.end()) {
-          q.push(x);
-          visited[x] = true;
-        }
-      }
+    std::vector<T> path;
+    if (this->empty() || __elements.find(start) == __elements.end()) {
+        return path;
     }
-  }
-  return path;
+
+    std::queue<T> q;
+    std::unordered_set<T> visited;
+
+    q.push(start);
+    visited.insert(start);
+
+    while (!q.empty()) {
+        T current = q.front();
+        path.push_back(current);
+        q.pop();
+
+        for (T &x : adj[current]) {
+            if (visited.find(x) == visited.end()) {
+                q.push(x);
+                visited.insert(x);
+            }
+        }
+    }
+    return path;
 }
 
 template <typename T> int64_t graph<T>::connected_components() {
