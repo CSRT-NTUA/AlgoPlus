@@ -238,7 +238,7 @@ TEST_CASE("testing operator = for weighted graph class") {
   REQUIRE(g.dfs("b") == g2.dfs("b"));
 }
 
-TEST_CASE("BFS Traversal", "[bfs]") {
+TEST_CASE("BFS Traversal for weighted graphs", "[bfs]") {
     weighted_graph<int> graph("directed");
 
     graph.add_edge(1, 2, 1);
@@ -256,7 +256,7 @@ TEST_CASE("BFS Traversal", "[bfs]") {
     REQUIRE(bfsTraversal == expected);
 }
 
-TEST_CASE("DFS Traversal", "[dfs]") {
+TEST_CASE("DFS Traversal for weighted graphs", "[dfs]") {
     weighted_graph<int> graph("directed");
 
     graph.add_edge(1, 2, 1);
