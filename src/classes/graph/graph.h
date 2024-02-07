@@ -866,56 +866,55 @@ template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
 }
 
 template <typename T> std::vector<T> weighted_graph<T>::dfs(T start) {
-
-  std::vector<T> path;
-  if (this->empty() || __elements.find(start) == __elements.end()) {
-    return path;
-  }
-  std::queue<T> q;
-  std::unordered_map<T, bool> visited;
-  q.push(start);
-  visited[start] = true;
-  while (!q.empty()) {
-    int64_t size = q.size();
-    for (int64_t i = 0; i < size; i++) {
-      T current = q.front();
-      path.push_back(current);
-      q.pop();
-      for (std::pair<T, int64_t> &x : adj[current]) {
-        if (visited.find(x.first) == visited.end()) {
-          q.push(x.first);
-          visited[x.first] = true;
-        }
-      }
+    std::vector<T> path;
+    if (this->empty() || __elements.find(start) == __elements.end()) {
+        return path;
     }
-  }
-  return path;
+
+    std::stack<T> s;
+    std::unordered_map<T, bool> visited;
+
+    s.push(start);
+    visited[start] = true;
+
+    while (!s.empty()) {
+        T current = s.top();
+        path.push_back(current);
+        s.pop();
+        for (std::pair<T, int64_t> &x : adj[current]) {
+            if (visited.find(x.first) == visited.end()) {
+                s.push(x.first);
+                visited[x.first] = true;
+            }
+        }
+    }
+    return path;
 }
 
 template <typename T> std::vector<T> weighted_graph<T>::bfs(T start) {
-  std::vector<T> path;
-  if (this->empty() || __elements.find(start) == __elements.end()) {
-    return path;
-  }
-  std::queue<T> q;
-  std::unordered_map<T, bool> visited;
-  q.push(start);
-  visited[start] = true;
-  while (!q.empty()) {
-    int64_t size = q.size();
-    for (int64_t i = 0; i < size; i++) {
-      T current = q.front();
-      path.push_back(current);
-      q.pop();
-      for (std::pair<T, int64_t> &x : adj[current]) {
-        if (visited.find(x.first) == visited.end()) {
-          q.push(x.first);
-          visited[x.first] = true;
-        }
-      }
+    std::vector<T> path;
+    if (this->empty() || __elements.find(start) == __elements.end()) {
+        return path;
     }
-  }
-  return path;
+
+    std::queue<T> q;
+    std::unordered_set<T> visited;
+
+    q.push(start);
+    visited.insert(start);
+
+    while (!q.empty()) {
+        T current = q.front();
+        path.push_back(current);
+        q.pop();
+        for (std::pair<T, int64_t> &x : adj[current]) {
+            if (visited.find(x.first) == visited.end()) {
+                q.push(x.first);
+                visited.insert(x.first);
+            }
+        }
+    }
+    return path;
 }
 
 template <typename T> int64_t weighted_graph<T>::connected_components() {

@@ -237,3 +237,39 @@ TEST_CASE("testing operator = for weighted graph class") {
   REQUIRE(g.dfs("a") == g2.dfs("a"));
   REQUIRE(g.dfs("b") == g2.dfs("b"));
 }
+
+TEST_CASE("BFS Traversal", "[bfs]") {
+    weighted_graph<int> graph("directed");
+
+    graph.add_edge(1, 2, 1);
+    graph.add_edge(1, 3, 1);
+    graph.add_edge(2, 4, 1);
+    graph.add_edge(2, 5, 1);
+    graph.add_edge(4, 5, 1);
+    graph.add_edge(3, 6, 1);
+
+    // Perform BFS and store the result
+    std::vector<int> bfsTraversal = graph.bfs(1); // starting BFS from node 1
+
+    std::vector<int> expected = {1, 2, 3, 4, 5, 6};
+
+    REQUIRE(bfsTraversal == expected);
+}
+
+TEST_CASE("DFS Traversal", "[dfs]") {
+    weighted_graph<int> graph("directed");
+
+    graph.add_edge(1, 2, 1);
+    graph.add_edge(1, 3, 1);
+    graph.add_edge(2, 4, 1);
+    graph.add_edge(2, 5, 1);
+    graph.add_edge(4, 5, 1);
+    graph.add_edge(3, 6, 1);
+
+    // Perform DFS and store the result
+    std::vector<int> dfsTraversal = graph.dfs(1); // starting DFS from node 1
+
+    std::vector<int> expected = {1, 3, 6, 2, 5, 4};
+
+    REQUIRE(dfsTraversal == expected);
+}
