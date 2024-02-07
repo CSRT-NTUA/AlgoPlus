@@ -1,0 +1,41 @@
+#pragma once
+#ifndef ALGOPLUS_COUNTING_SORT_H
+#define ALGOPLUS_COUNTING_SORT_H
+
+#ifdef __cplusplus
+#include <vector>
+#include <algorithm>
+#endif
+
+
+/**
+ * @brief Performs counting sort on a vector of elements.
+ * @tparam T The type of elements in the vector.
+ * @param arr The vector to be sorted.
+ */
+template <typename T>
+void countingSort(std::vector<T>& arr) {
+    T maxElement = *max_element(arr.begin(), arr.end());
+    std::vector<T> count(maxElement + 1, 0);
+    std::vector<T> output(arr.size());
+
+    // Store count of each element
+    for(size_t i = 0; i < arr.size(); i++) {
+        count[arr[i]]++;
+    }
+
+    // Change count[i] so that count[i] now contains actual position of this element in output array
+    for(size_t i = 1; i <= maxElement; i++) {
+        count[i] += count[i-1];
+    }
+
+    // Build the output array
+    for(size_t i = arr.size(); i-- > 0; ) {
+        output[count[arr[i]]-1] = arr[i];
+        count[arr[i]]--;
+    }
+
+    arr = output;
+}
+
+#endif //ALGOPLUS_COUNTING_SORT_H
