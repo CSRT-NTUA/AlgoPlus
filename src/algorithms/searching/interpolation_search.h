@@ -5,6 +5,7 @@
 #ifdef __cplusplus
 #include <vector>
 #include <cstdint>
+#include <algorithm>
 #endif
 
 /**
@@ -23,7 +24,7 @@
  * @return Returns the index (location) of the key in the container if found, or -1 if the key is not found.
  */
 template <typename Iterator, typename T>
-int64_t interpolationSearch(Iterator begin, Iterator end, T key) {
+int64_t interpolation_search(Iterator begin, Iterator end, T key) {
     auto size = std::distance(begin, end);
 
     auto it_begin = begin;
