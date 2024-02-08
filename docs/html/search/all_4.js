@@ -16,7 +16,7 @@ var searchData=
   ['contribute_13',['How to contribute',['../index.html#autotoc_md11',1,'']]],
   ['contribute_14',['How to contribute?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'']]],
   ['contributors_20strong_15',['&lt;strong&gt;Our contributors&lt;/strong&gt;',['../index.html#autotoc_md10',1,'']]],
-  ['create_20an_20instance_20of_20the_20hash_5ftable_3a_20strong_20_3a_16',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md69',1,'']]],
+  ['create_20an_20instance_20of_20the_20hash_5ftable_3a_20strong_20_3a_16',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md70',1,'']]],
   ['creating_20a_20new_20class_20strong_17',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md2',1,'']]],
   ['csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_18',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md5',1,'']]],
   ['cycle_19',['cycle',['../classgraph.html#a77cab44c928701b32e0d0610392ed5cc',1,'graph::cycle()'],['../classweighted__graph.html#a4aa2ada9ac5954730d10abadcc16b2e1',1,'weighted_graph::cycle()']]],

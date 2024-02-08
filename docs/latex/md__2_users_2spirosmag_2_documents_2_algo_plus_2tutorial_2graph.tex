@@ -102,7 +102,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{std::vector<int>\ topo\ =\ g.topological\_sort();}
 
 \end{DoxyCode}
- \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md62}{}\doxysubsection{\texorpdfstring{{\bfseries{bipartite}}\+:}{{\bfseries{bipartite}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md62}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md62}{}\doxysubsection{\texorpdfstring{{\bfseries{bipartite}}\+:}{{\bfseries{bipartite}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md62}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
@@ -151,7 +151,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md65}{}\doxysubsection{\texorpdfstring{{\bfseries{shortest\+\_\+path}}\+:}{{\bfseries{shortest\+\_\+path}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md65}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <weighted\_graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4,\ 2);}
 \DoxyCodeLine{g.add\_edge(4,\ 5,\ 6);}
@@ -165,7 +165,7 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md66}{}\doxysubsection{\texorpdfstring{{\bfseries{prim}}\+:}{{\bfseries{prim}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md66}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <weighted\_graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<std::string>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}Athens"{}},\ \textcolor{stringliteral}{"{}Thessaloniki"{}},\ 15);}
 \DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}Patras"{}},\ \textcolor{stringliteral}{"{}Lamia"{}},\ 50);}
@@ -191,6 +191,21 @@ There are also some functions for both classes like {\bfseries{has\+\_\+edge(u, 
 \DoxyCodeLine{\textcolor{keywordflow}{if}(g.connected())\{}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}graph\ is\ connected"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md68}{}\doxysubsection{\texorpdfstring{{\bfseries{topological\+\_\+sort}}\+:}{{\bfseries{topological\+\_\+sort}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_autotoc_md68}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <weighted\_graph.h>}}
+\DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
+\DoxyCodeLine{g.add\_edge(1,\ 2,\ -\/6);}
+\DoxyCodeLine{g.add\_edge(2,\ 3,\ 5);}
+\DoxyCodeLine{g.add\_edge(3,\ 1,\ -\/2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ returns\ the\ shortest\ paths\ from\ starting\ point\ 1\ using\ an\ unordered\_map}}
+\DoxyCodeLine{\textcolor{comment}{//\ bellman\ ford\ algorithm\ is\ capable\ of\ detecting\ negative\ cycles}}
+\DoxyCodeLine{\textcolor{comment}{//\ so\ bell\_ford[2]\ =\ -\/INF,\ bell\_ford[3]\ =\ -\/INF,\ etc...}}
+\DoxyCodeLine{std::unordered\_map<std::string,\ double>\ bell\_ford\ =\ g.bellman\_ford(1);}
 
 \end{DoxyCode}
  

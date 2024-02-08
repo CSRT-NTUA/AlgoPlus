@@ -90,6 +90,7 @@ g.add_edge(2, 8);
 //returns the topological order of the elements.
 std::vector<int> topo = g.topological_sort();
 ```
+
 ### **bipartite**:
 ```cpp
 #include <graph.h>
@@ -135,7 +136,7 @@ g.visualize();
 
 ### **shortest_path**:
 ```cpp
-#include <graph.h>
+#include <weighted_graph.h>
 weighted_graph<int> g("undirected");
 g.add_edge(1, 4, 2);
 g.add_edge(4, 5, 6);
@@ -148,7 +149,7 @@ std::cout << g.shortest_path(1, 2) << '\n';
 
 ### **prim**:
 ```cpp
-#include <graph.h>
+#include <weighted_graph.h>
 weighted_graph<std::string> g("undirected");
 g.add_edge("Athens", "Thessaloniki", 15);
 g.add_edge("Patras", "Lamia", 50);
@@ -174,4 +175,18 @@ g.add_edge("hello", "universe");
 if(g.connected()){
     std::cout << "graph is connected" << '\n';
 }
+```
+
+### **topological_sort**:
+```cpp
+#include <weighted_graph.h>
+weighted_graph<int> g("undirected");
+g.add_edge(1, 2, -6);
+g.add_edge(2, 3, 5);
+g.add_edge(3, 1, -2);
+
+// returns the shortest paths from starting point 1 using an unordered_map
+// bellman ford algorithm is capable of detecting negative cycles
+// so bell_ford[2] = -INF, bell_ford[3] = -INF, etc...
+std::unordered_map<std::string, double> bell_ford = g.bellman_ford(1);
 ```
