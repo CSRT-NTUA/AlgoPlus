@@ -7,6 +7,9 @@
 #include <vector>
 #endif
 
+// This is needed to avoid conflict with windows __min macro
+#undef __min
+
 /**
  * @brief min heap class
  *
