@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ALGOPLUS_INTERPOLATION_SEARCH_H
-#define ALGOPLUS_INTERPOLATION_SEARCH_H
+#ifndef INTERPOLATION_SEARCH_H
+#define INTERPOLATION_SEARCH_H
 
 #ifdef __cplusplus
 #include <vector>
@@ -50,4 +50,4 @@ int64_t interpolation_search(Iterator begin, Iterator end, T key) {
     return static_cast<int64_t>(-1);
 }
 
-#endif //ALGOPLUS_INTERPOLATION_SEARCH_H
+#endif //INTERPOLATION_SEARCH_H

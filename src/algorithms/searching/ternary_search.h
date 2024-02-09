@@ -1,11 +1,12 @@
 #pragma once
-#ifndef ALGOPLUS_TERNARY_SEARCH_H
-#define ALGOPLUS_TERNARY_SEARCH_H
+#ifndef TERNARY_SEARCH_H
+#define TERNARY_SEARCH_H
 
 #ifdef __cplusplus
 #include <vector>
 #include <cstdint>
 #include <algorithm>
+#include <iostream>
 #endif
 
 /**
@@ -26,30 +27,30 @@
  */
 template <typename RandomAccessIterator, typename T>
 int64_t ternary_search(RandomAccessIterator start, RandomAccessIterator end, T key) {
-    int64_t baseIndex = std::distance(start, end);
+  int64_t baseIndex = std::distance(start, end);
 
-    while (end >= start) {
-        int64_t range = std::distance(start, end) / 3;
-        auto mid1 = start + range;
-        auto mid2 = mid1 + range;
+  while (end >= start) {
+    int64_t range = std::distance(start, end) / 3;
+    auto mid1 = start + range;
+    auto mid2 = mid1 + range;
 
-        if (*mid1 == key) {
-            return std::distance(start, mid1) + baseIndex;
-        }
-        if (*mid2 == key) {
-            return std::distance(start, mid2) + baseIndex;
-        }
-
-        if (key < *mid1) {
-            end = mid1 - 1;
-        } else if (key > *mid2) {
-            start = mid2 + 1;
-        } else {
-            start = mid1 + 1;
-            end = mid2 - 1;
-        }
+    if (*mid1 == key) {
+      return std::distance(start, mid1) + baseIndex;
     }
-    return -1;
+    if (*mid2 == key) {
+      return std::distance(start, mid2) + baseIndex;
+    }
+
+    if (key < *mid1) {
+      end = mid1 - 1;
+    } else if (key > *mid2) {
+      start = mid2 + 1;
+    } else {
+      start = mid1 + 1;
+      end = mid2 - 1;
+    }
+  }
+  return -1;
 }
 
-#endif //ALGOPLUS_TERNARY_SEARCH_H
+#endif //TERNARY_SEARCH_H

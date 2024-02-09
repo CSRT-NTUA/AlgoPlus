@@ -18,7 +18,7 @@ TEST_CASE("Searching for a non-existing element, ternary_search") {
 }
 
 TEST_CASE("Empty data array, ternary_search") {
-    std::vector<int> empty_data;
+    std::vector<int> empty_data = {};
 
     REQUIRE(ternary_search(empty_data.begin(), empty_data.end(), 1) == -1);
 }
