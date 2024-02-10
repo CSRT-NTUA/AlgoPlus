@@ -3,54 +3,53 @@
 #define BFS_H
 
 #ifdef __cplusplus
-#include <vector>
 #include <queue>
+#include <unordered_map>
+#include <vector>
 #include <unordered_set>
 #endif
 
 /**
  * @brief Breadth First Search (BFS) algorithm
  *
- * @param graph The graph to search
+ * @param adj The input graph 
  * @param start The starting node
  * @param key The key to search for
- * @return T The key if found
- * if not found, returns T{} (default value of T)
+ * @return true if the key is found
+ * @return false otherwise
  */
 template <typename T>
-T bfs(const std::vector<std::vector<T>> &graph, T start, T key)
+bool bfs(std::unordered_map<T, std::vector<T> > &adj, T start, T key)
 {
-    std::unordered_set<T> visited;
-    std::queue<T> queue;
+  std::unordered_set<T> visited;
+  std::queue<T> q;
 
-    visited.insert(start);
-    queue.push(start);
-    if (graph.empty() || graph[start].empty())
-    {
-        return T{};
-    }
-    else if (start == key)
-        return start;
+  visited.insert(start);
+  q.push(start);
+  if (adj.empty()){
+    return -1;
+  }
+  else if (start == key)
+    return start;
 
-    while (!queue.empty())
-    {
-        T current = queue.front();
-        queue.pop();
-
-        if (current == key)
-            return current;
-
-        for (T neighbor : graph[current])
-        {
-            if (visited.find(neighbor) == visited.end())
-            {
-                visited.insert(neighbor);
-                queue.push(neighbor);
-            }
+  while (!q.empty())
+  {
+    int64_t size = q.size();
+    for(int64_t i = 0; i<size; i++){
+      auto current = q.front();
+      if(current == key){
+        return true;
+      }
+      q.pop();
+      for(T x : adj[current]){
+        if(visited.find(x) == visited.end()){
+          visited.insert(x);
+          q.push(x);
         }
+      }
     }
-
-    return T{}; // Not found
+  }
+  return false; // Not found
 }
 
 #endif

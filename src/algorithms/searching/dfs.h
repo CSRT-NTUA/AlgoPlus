@@ -5,38 +5,43 @@
 #ifdef __cplusplus
 #include <vector>
 #include <unordered_set>
+#include <unordered_map>
+#include <stack>
 #endif
 
 /**
  * @brief Depth First Search (DFS) algorithm
  *
- * @param graph The graph to search
+ * @param adj The input graph 
  * @param start The starting node
- * @param visited The set of visited nodes
  * @param key The key to search for
- * @return T The key if found
- * if not found, returns T{} (default value of T)
+ * @return true if the key is found
+ * @return false otherwise
  */
 template <typename T>
-T dfs(const std::vector<std::vector<T>> &graph, T start, std::unordered_set<T> &visited, T key)
-{
-    visited.insert(start);
-
-    if (start == key)
-        return start;
-    for (int neighbor : graph[start])
-    {
-        if (visited.find(neighbor) == visited.end())
-        {
-            T res = dfs(graph, neighbor, visited, key);
-            if (res != T{})
-            {
-                return res;
-            }
-            dfs(graph, neighbor, visited);
-        }
+T dfs(std::unordered_map<T, std::vector<T>> &adj, T start, T key){
+  if(adj.empty()){
+    return false;
+  }
+  
+  std::unordered_set<T> visited;
+  std::stack<T> s;
+  s.push(start);
+  while(!s.empty()){
+    auto current = s.top();
+    s.pop();
+    if(current == key){
+      return true;
     }
-    return T{}; // Not found
+
+    for(T x : adj[current]){
+      if(visited.find(x) == visited.end()){
+        visited.insert(x);
+        s.push(x);
+      }
+    }
+  }
+  return false;
 }
 
 #endif
