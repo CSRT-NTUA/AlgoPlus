@@ -135,8 +135,13 @@ Classes</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md9"></a>
 <b>How to run test cases</b></h2>
-<p>We have unit tests for every function of our implemented algorithms &amp; data structures.It is very important to make sure that your code works before making any pull requests! </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+<p>We have unit tests for every function of our implemented algorithms &amp; data structures.It is very important to make sure that your code works before making any pull requests! <b>Linux/MacOS</b> </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake ..</div>
+<div class="line">make</div>
+<div class="line">cd tests</div>
+<div class="line">./runUnitTests</div>
+</div><!-- fragment --><p> <b>Windows</b> </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+<div class="line">cmake -G &quot;MinGW Makefiles&quot; ..</div>
 <div class="line">make</div>
 <div class="line">cd tests</div>
 <div class="line">./runUnitTests</div>
