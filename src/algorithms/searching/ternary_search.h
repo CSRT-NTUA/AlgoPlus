@@ -9,6 +9,41 @@
 #include <iostream>
 #endif
 
+ namespace {
+     /**
+      * @brief Performs a ternary search between two iterators.
+      *
+      * @details The function uses the ternary search algorithm to find a specified value
+      * within the range [first, last). The ternary search splits the
+      * search space into three parts and eliminates the non-possible regions in
+      * each iteration.
+      *
+      * @tparam Iter type of the iterator
+      * @tparam T type of the value to be searched
+      * @param first Iterator pointing to start of the range in which to search for the value.
+      * @param last Iterator pointing to end of the range in which to search for the value.
+      * @param value The value to search for in the range.
+      * @return Iterator pointing to the found value, or `last` if the value is not found.
+      */
+     template <typename Iter, typename T>
+     Iter ternary_search(Iter first, Iter last, T value) {
+         while (first < last) {
+             Iter mid1 = first + (last - first) / 3;
+             Iter mid2 = mid1 + (last - first) / 3;
+
+             if (*mid1 == value) return mid1; // Found value
+             else if (*mid2 == value) return mid2; // Found value
+
+             if (value < *mid1) last = mid1;
+             else if (value > *mid2) first = mid2 + 1;
+             else {
+                 first = mid1 + 1;
+                 last = mid2;
+             }
+         }
+         return last; // Not found
+     }
+ }
 /**
  * @brief Performs an interpolation search on a sorted container.
  *
@@ -18,39 +53,17 @@
  * dividing the search space into three equal parts and determining
  * in which part the key lies. This algorithm as a time complexity of O(log3 N)
  *
- * @tparam RandomAccessIterator A type of random-access iterator.
+ * @tparam Container A type of container.
  * @tparam T The type of elements in the sequence to be searched.
- * @param start The starting iterator of the sequence.
- * @param end The ending iterator of the sequence
+ * @param c The container to be searched in.
  * @param key The key value to search for in the sequence.
  * @return If the key is found, returns the index. If the key is not found, returns -1.
  */
-template <typename RandomAccessIterator, typename T>
-int64_t ternary_search(RandomAccessIterator start, RandomAccessIterator end, T key) {
-  int64_t baseIndex = std::distance(start, end);
-
-  while (end >= start) {
-    int64_t range = std::distance(start, end) / 3;
-    auto mid1 = start + range;
-    auto mid2 = mid1 + range;
-
-    if (*mid1 == key) {
-      return std::distance(start, mid1) + baseIndex;
-    }
-    if (*mid2 == key) {
-      return std::distance(start, mid2) + baseIndex;
-    }
-
-    if (key < *mid1) {
-      end = mid1 - 1;
-    } else if (key > *mid2) {
-      start = mid2 + 1;
-    } else {
-      start = mid1 + 1;
-      end = mid2 - 1;
-    }
-  }
-  return -1;
+template <typename Container, typename T>
+std::ptrdiff_t ternary_search(Container& c, const T& value) {
+    auto it = ternary_search(c.begin(), c.end(), value);
+    if (it != c.end() && *it == value) return std::distance(c.begin(), it);
+    else return -1;
 }
 
 #endif //TERNARY_SEARCH_H
