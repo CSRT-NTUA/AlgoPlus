@@ -60,9 +60,9 @@ namespace {
  * @return If the key is found, returns the index. If the key is not found, returns -1.
  */
 template <typename Container, typename T>
-std::ptrdiff_t ternary_search(Container& c, const T& value) {
+int64_t ternary_search(Container& c, const T& value) {
     auto it = ternary_search(c.begin(), c.end(), value);
-    if (it != c.end() && *it == value) return std::distance(c.begin(), it);
+    if (it != c.end() && *it == value) return static_cast<int64_t>(std::distance(c.begin(), it));
     else return -1;
 }
 
