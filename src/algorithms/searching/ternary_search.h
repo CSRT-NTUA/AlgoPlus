@@ -35,10 +35,10 @@ int64_t ternary_search(RandomAccessIterator start, RandomAccessIterator end, T k
     auto mid2 = mid1 + range;
 
     if (*mid1 == key) {
-      return std::distance(start, mid1) + baseIndex;
+        return std::distance(start, mid1);
     }
     if (*mid2 == key) {
-      return std::distance(start, mid2) + baseIndex;
+        return std::distance(start, mid2);
     }
 
     if (key < *mid1) {
