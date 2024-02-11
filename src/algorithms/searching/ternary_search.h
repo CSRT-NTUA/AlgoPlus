@@ -28,8 +28,10 @@ namespace {
     template <typename Iter, typename T>
     Iter ternary_search(Iter first, Iter last, T value) {
         while (first < last) {
-            Iter mid1 = first + (last - first) / 3;
-            Iter mid2 = mid1 + (last - first) / 3;
+            typedef typename std::iterator_traits<Iter>::difference_type diff_t;
+            diff_t diff = std::distance(first, last) / 3;
+            Iter mid1 = first + diff;
+            Iter mid2 = mid1 + diff;
 
             if (*mid1 == value) return mid1; // Found value
             else if (*mid2 == value) return mid2; // Found value
