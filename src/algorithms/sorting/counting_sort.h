@@ -5,6 +5,7 @@
 #ifdef __cplusplus
 #include <vector>
 #include <algorithm>
+#include <cstdint>
 #endif
 
 
