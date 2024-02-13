@@ -24,7 +24,7 @@ public:
   /**
    * @brief Construct a new min heap object
    *
-   * @param copy : maximum size of the heap to copy
+   * @param max_size : maximum size of the heap
    */
   explicit min_heap(size_t max_size) noexcept {
     heap_size = 0;
