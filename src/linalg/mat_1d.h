@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <climits>
 #include <optional>
+#include <vector>
 #include "../algorithms/sorting/quick_sort.h"
 #endif
 
@@ -49,13 +50,11 @@ public:
   /**
   *@brief constructor for Mat1d class with input value
   *@param val the value that we want all the elements of the array to have
-  *@return Mat1d&
   */
   explicit Mat1d(const T val) noexcept {
     for(size_t i = 0; i<__size; ++i){
       arr[i] = val;
     }
-    return *(this);
   }
 
   /**
