@@ -24,7 +24,7 @@ public:
   /**
    * @brief Construct a new min heap object
    *
-   * @param max_size : maximum size of the heap
+   * @param copy : maximum size of the heap to copy
    */
   explicit min_heap(size_t max_size) noexcept {
     heap_size = 0;
@@ -33,6 +33,20 @@ public:
   }
 
   ~min_heap() noexcept { delete[] arr; }
+
+  /**
+   * @brief copy constructor
+   *
+   * @param copy : item to be copied
+   */
+  min_heap(const min_heap &copy) noexcept {
+    max_size = copy.max_size;
+    heap_size = copy.heap_size;
+    arr = new T[max_size];
+    for (size_t i{0}; i < heap_size; ++1){
+      arr[i] = copy.arr[i];
+    }
+  }
 
   /**
    * @brief parent function
