@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <climits>
 #include <optional>
+#include <vector>
 #include "../algorithms/sorting/quick_sort.h"
 #endif
 
@@ -55,7 +56,6 @@ public:
     for(size_t i = 0; i<__size; ++i){
       arr[i] = val;
     }
-    return *(this);
   }
 
   /**
