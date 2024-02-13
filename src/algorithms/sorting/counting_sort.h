@@ -31,7 +31,7 @@ void counting_sort(std::vector<T>& arr) {
     }
 
     // Build the output array
-    for(int64_t i = arr.size(); i >= 0; i--) {
+    for(int64_t i = arr.size() - 1; i >= 0; i--) {
         output[count[arr[i]]-1] = arr[i];
         count[arr[i]]--;
     }
