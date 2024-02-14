@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/linalg/mat_2d.h"
 #include "../../catch2/catch.hpp"
 #include <string>

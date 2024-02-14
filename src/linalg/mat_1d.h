@@ -151,7 +151,13 @@ public:
       std::cerr << e.what() << '\n';
     }
   } 
-
+  
+  /**
+   *@brief operator == for Mat1d class
+   *@param mat the matrix to compare
+   *@return true if &this is equal to mat
+   *@return false otherwise
+   */
   bool operator ==(Mat1d &mat) const{
     if(mat.size() != __size){
       return false;
