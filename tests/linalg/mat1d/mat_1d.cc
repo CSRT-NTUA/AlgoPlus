@@ -1,9 +1,17 @@
+#define CATCH_CONFIG_MAIN
 #include "../../../src/linalg/mat_1d.h"
 #include "../../catch2/catch.hpp"
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <random>
+
+
+TEST_CASE("testing destructor for Mat1d"){
+  Mat1d<int, 5> mat;
+  mat[4] = 5;
+  REQUIRE(mat[4] == 5);
+}
 
 TEST_CASE("testing default constructor of mat_1d"){
   Mat1d<int, 5> mat;

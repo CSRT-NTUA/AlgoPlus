@@ -6,5 +6,6 @@ var searchData=
   ['retrieve_20strong_20_3a_3',['&lt;strong&gt;retrieve&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md72',1,'']]],
   ['reverse_4',['reverse',['../classdoubly__linked__list.html#aa610759539cd3fc651f7ad950a19adaf',1,'doubly_linked_list::reverse()'],['../classlinked__list.html#a15bc074e7cee3245e603ce2e136c65e1',1,'linked_list::reverse()']]],
   ['reverse_20strong_20_3a_5',['Reverse strong :',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2circular__linked__list.html#autotoc_md35',1,'&lt;strong&gt;reverse&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2doubly__linked__list.html#autotoc_md52',1,'&lt;strong&gt;reverse&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2linked__list.html#autotoc_md90',1,'&lt;strong&gt;reverse&lt;/strong&gt;:']]],
-  ['run_20test_20cases_20strong_6',['&lt;strong&gt;How to run test cases&lt;/strong&gt;',['../index.html#autotoc_md9',1,'']]]
+  ['rows_6',['rows',['../class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe',1,'Mat2d']]],
+  ['run_20test_20cases_20strong_7',['&lt;strong&gt;How to run test cases&lt;/strong&gt;',['../index.html#autotoc_md9',1,'']]]
 ];
