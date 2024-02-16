@@ -20,19 +20,6 @@
  *
  * This class should be used for, for example, tracking user choices, making them more accessible for the user in
  * the future, improving their experience.
- *
- * It offers the following functionalities:
- *  - Construct a frequency_list from a std::vector
- *  - Retrieve the size of the frequency_list
- *  - Search for an item in the frequency_list as well as retrieve/remove it, if found
- *  - Retrieve the frequency of an item
- *  - Print the frequency_list
- *  - Traverse the frequency_list using an iterator
- *
- * The implementation uses a self-organizing doubly linked list where each node stores an element and its frequency.
- * When a new item is inserted, its frequency is set to 1.
- * If the same item is re-inserted, it is not inserted again, but the frequency of that item is incremented.
- * It also provides an Iterator to traverse through the nodes.
  */
 template<typename T>
 class frequency_list {
