@@ -186,64 +186,170 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  </div>
 <div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_mat2d.html#a7df3d85ab6e27081df44f8d3ff91a4cb">  124</a></span>  <a class="code hl_class" href="class_mat1d.html">Mat1d&lt;T, COLS&gt;</a> &amp; <a class="code hl_function" href="class_mat2d.html#a7df3d85ab6e27081df44f8d3ff91a4cb">operator()</a>(<span class="keywordtype">size_t</span> i){</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = i*__cols; j&lt;i*__cols + __rows; j++){</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      mat[j] = arr[j];</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> mat;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">size_t</span> index = 0;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = i*__cols; j&lt;i*__cols + __rows; j++){</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      mat[index++] = arr[j];</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">return</span> mat;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  }</div>
 </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  </div>
-<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_mat2d.html#aab97c9be6c1f663322342a62cd0d5cd2">  135</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#aab97c9be6c1f663322342a62cd0d5cd2">size</a>(){</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">return</span> __size;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_mat2d.html#aab97c9be6c1f663322342a62cd0d5cd2">  136</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#aab97c9be6c1f663322342a62cd0d5cd2">size</a>(){</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> __size;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
 </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">  143</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>(){</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> __cols;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">  144</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>(){</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">return</span> __cols;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  }</div>
 </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">  151</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>(){</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">return</span> __rows;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">  152</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>(){</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">return</span> __rows;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  }</div>
 </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keyword">friend</span> std::ostream &amp; operator &lt;&lt;(std::ostream &amp;out, <a class="code hl_class" href="class_mat2d.html">Mat2d</a> &amp;mat){</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    out &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;mat.<a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>(); i++){</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      out &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j&lt;mat.<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>(); j++){</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        out &lt;&lt; mat.arr[i*mat.<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>() + j];</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordflow">if</span>(j != mat.<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>() - 1){</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>          out &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      }</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      out &lt;&lt; <span class="charliteral">&#39;]&#39;</span>;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <span class="keywordflow">if</span>(i != mat.<a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>() - 1){</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      }</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    out &lt;&lt; <span class="charliteral">&#39;]&#39;</span>;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keyword">class </span>Iterator;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="class_mat2d.html#a3ddd50ed0504d260eb5b092999edf313">  162</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="class_mat2d.html#a3ddd50ed0504d260eb5b092999edf313">begin</a>(){</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a>(arr, __rows, __cols, 0);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  }</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  </div>
+<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="class_mat2d.html#a926a8c7a4f4ebe62debbdc1659454c8b">  170</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="class_mat2d.html#a926a8c7a4f4ebe62debbdc1659454c8b">end</a>(){</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a>(arr, __rows, __cols, __size);</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>};</div>
 </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="};">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_mat2d.html#a30384f3df9404e379fde20edf403ea04">  177</a></span>  <span class="keyword">friend</span> std::ostream &amp; <a class="code hl_friend" href="class_mat2d.html#a30384f3df9404e379fde20edf403ea04">operator &lt;&lt;</a>(std::ostream &amp;out, <a class="code hl_class" href="class_mat2d.html">Mat2d</a> &amp;mat){</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    out &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;mat.<a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>(); i++){</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      out &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j&lt;mat.<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>(); j++){</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        out &lt;&lt; mat.arr[i*mat.<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>() + j];</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">if</span>(j != mat.<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>() - 1){</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>          out &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      out &lt;&lt; <span class="charliteral">&#39;]&#39;</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      <span class="keywordflow">if</span>(i != mat.<a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>() - 1){</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        out &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    out &lt;&lt; <span class="charliteral">&#39;]&#39;</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }</div>
+</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>};</div>
+</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="};">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html">  202</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> ROWS, <span class="keywordtype">size_t</span> COLS&gt; <span class="keyword">class </span><a class="code hl_class" href="class_mat2d.html">Mat2d</a>&lt;T, ROWS, COLS&gt;::<a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a>{</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  T *arr;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keywordtype">size_t</span> __rows;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keywordtype">size_t</span> __cols;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordtype">size_t</span> __index;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">size_t</span> __size;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <a class="code hl_class" href="class_mat1d.html">Mat1d&lt;T, COLS&gt;</a> mat;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00219" data-start="{" data-end="}">
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#a4f9c6a6e209acbf79167c645e872ba16">  219</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_mat2d_1_1_iterator.html#a4f9c6a6e209acbf79167c645e872ba16">Iterator</a>(T *__arr, <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>, <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>, <span class="keywordtype">size_t</span> index) noexcept : __rows(<a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>), __cols(<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>), __index(index){</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    __size = <a class="code hl_function" href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">rows</a>*<a class="code hl_function" href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">cols</a>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    arr = <span class="keyword">new</span> T[__size];</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;__size; i++){</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      arr[i] = __arr[i];</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  }</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  </div>
+<div class="foldopen" id="foldopen00232" data-start="{" data-end="}">
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#ab54274a8171afd31c4df5949c14bd739">  232</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp; <a class="code hl_function" href="class_mat2d_1_1_iterator.html#ab54274a8171afd31c4df5949c14bd739">operator=</a>(T *curr){</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;__size; i++){</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      arr[i] = curr[i];</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  }</div>
+</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  </div>
+<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#aa58d88889c6632f002837a5def00fc7a">  243</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp; operator ++(){</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span>(__index &lt; __size){</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      __index++;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  }</div>
+</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#af88f08f189beb71beecf3ccc763ad3e0">  254</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp;operator ++(<span class="keywordtype">int</span>){</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> it = *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    ++*(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">return</span> it;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  }</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  </div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#ac9f6e292c31de87d8912a9bf60345468">  264</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp;operator --(){</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">if</span>(__index &gt; 0){</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      __index--;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  }</div>
+</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  </div>
+<div class="foldopen" id="foldopen00275" data-start="{" data-end="}">
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#a716d0138bca74020f3b6dfd16f296eb8">  275</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp;operator --(<span class="keywordtype">int</span>){</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> it = *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    --*(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordflow">return</span> it;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  }</div>
+</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  </div>
+<div class="foldopen" id="foldopen00286" data-start="{" data-end="}">
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#a579f6129fa773eaeab2f5bb85ddb35ea">  286</a></span>  <span class="keywordtype">bool</span> operator !=(<span class="keyword">const</span> <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp;it){</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">return</span> it.arr[it.index] != arr[index];</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  }</div>
+</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  </div>
+<div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#a5043fd4d69e524170c57876051c5e758">  294</a></span>  <a class="code hl_class" href="class_mat1d.html">Mat1d&lt;T, COLS&gt;</a> operator *(){</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordtype">size_t</span> index = 0;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = __index * __cols; j &lt; __index * __cols + __rows; ++j){</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      mat[index++] = arr[j];</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">return</span> mat;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  }</div>
+</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>};</div>
+</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_mat1d_html"><div class="ttname"><a href="class_mat1d.html">Mat1d</a></div><div class="ttdoc">Class for 1-dimensional Matrix.</div><div class="ttdef"><b>Definition</b> mat_1d.h:19</div></div>
+<div class="ttc" id="aclass_mat2d_1_1_iterator_html"><div class="ttname"><a href="class_mat2d_1_1_iterator.html">Mat2d::Iterator</a></div><div class="ttdoc">Iterator for Mat2d class.</div><div class="ttdef"><b>Definition</b> mat_2d.h:202</div></div>
+<div class="ttc" id="aclass_mat2d_1_1_iterator_html_a4f9c6a6e209acbf79167c645e872ba16"><div class="ttname"><a href="class_mat2d_1_1_iterator.html#a4f9c6a6e209acbf79167c645e872ba16">Mat2d::Iterator::Iterator</a></div><div class="ttdeci">Iterator(T *__arr, size_t rows, size_t cols, size_t index) noexcept</div><div class="ttdoc">constructor for Iterator class</div><div class="ttdef"><b>Definition</b> mat_2d.h:219</div></div>
+<div class="ttc" id="aclass_mat2d_1_1_iterator_html_ab54274a8171afd31c4df5949c14bd739"><div class="ttname"><a href="class_mat2d_1_1_iterator.html#ab54274a8171afd31c4df5949c14bd739">Mat2d::Iterator::operator=</a></div><div class="ttdeci">Iterator &amp; operator=(T *curr)</div><div class="ttdoc">operator = for Iterator class</div><div class="ttdef"><b>Definition</b> mat_2d.h:232</div></div>
 <div class="ttc" id="aclass_mat2d_html"><div class="ttname"><a href="class_mat2d.html">Mat2d</a></div><div class="ttdoc">Class for 2-dimensional Matrix.</div><div class="ttdef"><b>Definition</b> mat_2d.h:18</div></div>
 <div class="ttc" id="aclass_mat2d_html_a071dfe4a1201f46444a40f28e1de6912"><div class="ttname"><a href="class_mat2d.html#a071dfe4a1201f46444a40f28e1de6912">Mat2d::operator()</a></div><div class="ttdeci">T &amp; operator()(size_t i, size_t j)</div><div class="ttdoc">operator (i, j) for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:115</div></div>
-<div class="ttc" id="aclass_mat2d_html_a1ccb776f2bbfdac2ac7d01b67068f7fe"><div class="ttname"><a href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">Mat2d::rows</a></div><div class="ttdeci">size_t rows()</div><div class="ttdoc">rows function</div><div class="ttdef"><b>Definition</b> mat_2d.h:151</div></div>
+<div class="ttc" id="aclass_mat2d_html_a1ccb776f2bbfdac2ac7d01b67068f7fe"><div class="ttname"><a href="class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe">Mat2d::rows</a></div><div class="ttdeci">size_t rows()</div><div class="ttdoc">rows function</div><div class="ttdef"><b>Definition</b> mat_2d.h:152</div></div>
+<div class="ttc" id="aclass_mat2d_html_a30384f3df9404e379fde20edf403ea04"><div class="ttname"><a href="class_mat2d.html#a30384f3df9404e379fde20edf403ea04">Mat2d::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, Mat2d &amp;mat)</div><div class="ttdoc">operator &lt;&lt; for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:177</div></div>
+<div class="ttc" id="aclass_mat2d_html_a3ddd50ed0504d260eb5b092999edf313"><div class="ttname"><a href="class_mat2d.html#a3ddd50ed0504d260eb5b092999edf313">Mat2d::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">begin() Iterator for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:162</div></div>
 <div class="ttc" id="aclass_mat2d_html_a4680fb6d236e63379d2d9c8366d04c7e"><div class="ttname"><a href="class_mat2d.html#a4680fb6d236e63379d2d9c8366d04c7e">Mat2d::Mat2d</a></div><div class="ttdeci">Mat2d(const T val) noexcept</div><div class="ttdoc">constructor for Mat2d class with initializer value</div><div class="ttdef"><b>Definition</b> mat_2d.h:58</div></div>
 <div class="ttc" id="aclass_mat2d_html_a7df3d85ab6e27081df44f8d3ff91a4cb"><div class="ttname"><a href="class_mat2d.html#a7df3d85ab6e27081df44f8d3ff91a4cb">Mat2d::operator()</a></div><div class="ttdeci">Mat1d&lt; T, COLS &gt; &amp; operator()(size_t i)</div><div class="ttdoc">operator () for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:124</div></div>
 <div class="ttc" id="aclass_mat2d_html_a812093c17b462919340dcd77079ad304"><div class="ttname"><a href="class_mat2d.html#a812093c17b462919340dcd77079ad304">Mat2d::Mat2d</a></div><div class="ttdeci">Mat2d(std::vector&lt; std::vector&lt; T &gt; &gt; v={})</div><div class="ttdoc">constructor for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:32</div></div>
-<div class="ttc" id="aclass_mat2d_html_aab97c9be6c1f663322342a62cd0d5cd2"><div class="ttname"><a href="class_mat2d.html#aab97c9be6c1f663322342a62cd0d5cd2">Mat2d::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">size function</div><div class="ttdef"><b>Definition</b> mat_2d.h:135</div></div>
+<div class="ttc" id="aclass_mat2d_html_a926a8c7a4f4ebe62debbdc1659454c8b"><div class="ttname"><a href="class_mat2d.html#a926a8c7a4f4ebe62debbdc1659454c8b">Mat2d::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">end() Iterator for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:170</div></div>
+<div class="ttc" id="aclass_mat2d_html_aab97c9be6c1f663322342a62cd0d5cd2"><div class="ttname"><a href="class_mat2d.html#aab97c9be6c1f663322342a62cd0d5cd2">Mat2d::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">size function</div><div class="ttdef"><b>Definition</b> mat_2d.h:136</div></div>
 <div class="ttc" id="aclass_mat2d_html_ae02c9c8f56d68bf9e59c0294636b311f"><div class="ttname"><a href="class_mat2d.html#ae02c9c8f56d68bf9e59c0294636b311f">Mat2d::operator=</a></div><div class="ttdeci">Mat2d &amp; operator=(Mat2d &amp;mat)</div><div class="ttdoc">operator = for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:91</div></div>
-<div class="ttc" id="aclass_mat2d_html_af7beca0a26147808d2335a39a1aed4d0"><div class="ttname"><a href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">Mat2d::cols</a></div><div class="ttdeci">size_t cols()</div><div class="ttdoc">cols function</div><div class="ttdef"><b>Definition</b> mat_2d.h:143</div></div>
+<div class="ttc" id="aclass_mat2d_html_af7beca0a26147808d2335a39a1aed4d0"><div class="ttname"><a href="class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0">Mat2d::cols</a></div><div class="ttdeci">size_t cols()</div><div class="ttdoc">cols function</div><div class="ttdef"><b>Definition</b> mat_2d.h:144</div></div>
 <div class="ttc" id="aclass_mat2d_html_af91bb089306c912c7ddc0f9be10ad0d0"><div class="ttname"><a href="class_mat2d.html#af91bb089306c912c7ddc0f9be10ad0d0">Mat2d::Mat2d</a></div><div class="ttdeci">Mat2d(const Mat2d &amp;mat)</div><div class="ttdoc">copy constructor for Mat2d class</div><div class="ttdef"><b>Definition</b> mat_2d.h:70</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
