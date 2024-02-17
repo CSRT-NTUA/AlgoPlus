@@ -22,7 +22,24 @@ TEST_CASE("testing default constructor for Mat2d class"){
   Mat1d<char, 5> check({'a','b','c','d','e'});
   bool ww = mat2(0) == check;
   REQUIRE(ww == true);
+
+}
+
+
+TEST_CASE("testing iterators for Mat2d class"){
+  Mat2d<int, 5, 5> mat;
+  for(int i = 0; i<mat.rows(); i++){
+    for(int j = 0; j<mat.cols(); j++){
+      mat(i, j) = i + j;
+    }
+  }
   
+  Mat1d<int, 5> check({0,1,2,3,4});
+  bool ww = mat(0) == check;
+  Mat1d<int, 5> check2({1,2,3,4,5});
+  bool ww2 = mat(1) == check2;
+  REQUIRE(ww == true);
+  REQUIRE(ww2 == true);
 }
 
 

@@ -122,8 +122,9 @@ public:
    *@return std::vector<T> the array of index i
    */
   Mat1d<T, COLS> & operator()(size_t i){
+    size_t index = 0;
     for(size_t j = i*__cols; j<i*__cols + __rows; j++){
-      mat[j] = arr[j];
+      mat[index++] = arr[j];
     }
     return mat;
   }
@@ -151,7 +152,28 @@ public:
   size_t rows(){
     return __rows;
   }
-
+  
+  class Iterator;
+  
+  /**
+   *@brief begin() Iterator for Mat2d class
+   *@return Iterator 
+   */
+  Iterator begin(){
+    return Iterator(arr, __rows, __cols, 0);
+  }
+  
+  /**
+   *@brief end() Iterator for Mat2d class
+   *@return Iterator
+   */
+  Iterator end(){
+    return Iterator(arr, __rows, __cols, __size);
+  }
+  
+  /**
+   *@brief operator << for Mat2d class
+   */
   friend std::ostream & operator <<(std::ostream &out, Mat2d &mat){
     out << '[';
     for(size_t i = 0; i<mat.rows(); i++){
@@ -173,4 +195,109 @@ public:
   
 };
 
+
+/**
+*@brief Iterator for Mat2d class
+*/
+template <typename T, size_t ROWS, size_t COLS> class Mat2d<T, ROWS, COLS>::Iterator{
+private:
+  T *arr;
+  size_t __rows;
+  size_t __cols;
+  size_t __index;
+  size_t __size;
+  Mat1d<T, COLS> mat;
+
+public:
+  /**
+  *@brief constructor for Iterator class
+  *@param __arr the input array
+  *@param rows the number of rows of the matrix 
+  *@param cols the number of columns of the matrix
+  *@param index the current index, if it's begin() then 0, if it's end() then __size
+  */
+  explicit Iterator(T *__arr, size_t rows, size_t cols, size_t index) noexcept : __rows(rows), __cols(cols), __index(index){
+    __size = rows*cols;
+    arr = new T[__size];
+    for(size_t i = 0; i<__size; i++){
+      arr[i] = __arr[i];
+    }
+  }
+  
+  /**
+  *@brief operator = for Iterator class
+  *@param curr the current array
+  *@return Iterator&
+  */
+  Iterator & operator=(T *curr){
+    for(size_t i = 0; i<__size; i++){
+      arr[i] = curr[i];
+    }
+    return *(this);
+  }
+  
+  /**
+  *@brief operator ++ for Iterator class
+  *@return Iterator&
+  */
+  Iterator & operator ++(){
+    if(__index < __size){
+      __index++;
+    }
+    return *(this);
+  }
+
+  /**
+  *@param operator ++ for Iterator class
+  *@return Iterator&
+  */
+  Iterator &operator ++(int){
+    Iterator it = *(this);
+    ++*(this);
+    return it;
+  }
+  
+  /**
+  *@brief operator -- for Iterator class
+  *@return Iterator&
+  */
+  Iterator &operator --(){
+    if(__index > 0){
+      __index--;
+    }
+    return *(this);
+  }
+  
+  /**
+  *@brief operator -- for Iterator class
+  *@return Iterator&
+  */
+  Iterator &operator --(int){
+    Iterator it = *(this);
+    --*(this);
+    return it;
+  }
+  
+  /**
+  *@brief operator != for Iterator class
+  *@return true if the elements of the array in the current index is not equal
+  *@return false otherwise
+  */
+  bool operator !=(const Iterator &it){
+    return it.arr[it.index] != arr[index];
+  }
+  
+  /**
+  *@brief operator * for Iterator class
+  *@return Mat1d<T, COLS> the 1-Dimensional Matrix in the current row 
+  */
+  Mat1d<T, COLS> operator *(){
+    size_t index = 0;
+    for(size_t j = __index * __cols; j < __index * __cols + __rows; ++j){
+      mat[index++] = arr[j];
+    }
+    return mat;
+  }
+
+};
 #endif
