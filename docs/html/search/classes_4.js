@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graph_0',['graph',['../classgraph.html',1,'']]]
+  ['frequency_5flist_0',['frequency_list',['../classfrequency__list.html',1,'']]]
 ];

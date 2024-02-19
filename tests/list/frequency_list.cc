@@ -1,6 +1,7 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/list/frequency_list.h"
 #include "../catch2/catch.hpp"
+#include <vector>
+#include <string>
 
 TEST_CASE("Testing empty() and push_front() frequency_list") {
     frequency_list<int> flist;
