@@ -1,0 +1,308 @@
+\doxysection{frequency\+\_\+list.\+h}
+\hypertarget{frequency__list_8h_source}{}\label{frequency__list_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/classes/list/frequency\_list.h@{/Users/spirosmag/Documents/AlgoPlus/src/classes/list/frequency\_list.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FREQUENCY\_LIST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FREQUENCY\_LIST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfrequency__list}{frequency\_list}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfrequency__list_af16fc0a50630362eb454b8d3694c6bb0}{frequency\_list}}(std::vector<T>\ data\ =\ \{\})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00038\ \ \ \ \ :\ head(nullptr),\ tail(nullptr),\ size(0)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}(!data.empty())\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&item:\ data)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classfrequency__list_aaa6570efed6d63daeeda8ca1743d0d68}{push\_back}}(item);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classfrequency__list_aa5aa5354547f92e9dd35ec45558a5ae1}{frequency\_list}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfrequency__list}{frequency\_list<T>}}\ \&list)\ :\ head(nullptr),\ tail(nullptr),\ size(0)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ iter\ =\ list.head;\ iter\ !=\ \textcolor{keyword}{nullptr};\ iter\ =\ iter-\/>next)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classfrequency__list_aaa6570efed6d63daeeda8ca1743d0d68}{push\_back}}(iter-\/>data);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{class\ }Iterator;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_aaa6570efed6d63daeeda8ca1743d0d68}{push\_back}}(T\ data);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_a1eb001ee71276afe20e2b71bef50682e}{push\_front}}(T\ data);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfrequency__list_a64e768e3b3bd8fcb3b00ca6020dda07a}{search}}(T\ key);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00104\ \ \ int64\_t\ \mbox{\hyperlink{classfrequency__list_a2b6e523e09744bac89657803d9984d34}{get\_frequency}}(T\ key);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_a28e06d771a5e94b17abff407ddb4bb82}{erase}}(T\ key);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_a70ad5b8f5abd9e02cc5e96090bf2ca50}{reset\_frequency}}();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfrequency__list_a19591103ff1fb820f19d5f7afe0959d5}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ head\ ==\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classfrequency__list_a3742b440201c8aa231fbc6480dbea2ec}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}(head);\ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classfrequency__list_a93d3b2b7e804127efecb9005ae3b16a9}{end}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classfrequency__list_a594639f408a5cb2d280f32d751178621}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfrequency__list}{frequency\_list<T>}}\&\ flist)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{auto}\ iterator\ =\ flist.head;}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{while}\ (iterator\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ os\ <<\ iterator-\/>data\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ iterator-\/>freq\ <<\ \textcolor{stringliteral}{"{})\ "{}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ iterator\ =\ iterator-\/>next;}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00168\ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00171\ \ \ \textcolor{keyword}{struct\ }node\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ T\ data;}
+\DoxyCodeLine{00173\ \ \ \ \ int64\_t\ freq;}
+\DoxyCodeLine{00174\ \ \ \ \ std::shared\_ptr<node>\ next;}
+\DoxyCodeLine{00175\ \ \ \ \ std::weak\_ptr<node>\ prev;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ node(T\ data,\ int64\_t\ freq,\ std::weak\_ptr<node>\ prev,\ std::shared\_ptr<node>\ next)}
+\DoxyCodeLine{00178\ \ \ \ \ :\ data(data),\ freq(freq),\ prev(prev),\ next(next)\ \{\}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_freq()\ \{\ freq++;\ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ reset\_freq()\ \{\ freq\ =\ 1;\ \}}
+\DoxyCodeLine{00182\ \ \ \};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ std::shared\_ptr<node>\ head;}
+\DoxyCodeLine{00185\ \ \ node\ *tail;}
+\DoxyCodeLine{00186\ \ \ uint64\_t\ size;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordtype}{void}\ update\_list\_sequence();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00210\ \ \ \textcolor{keywordtype}{void}\ swap\_nodes(std::shared\_ptr<node>\ a,\ std::shared\_ptr<node>\ b);}
+\DoxyCodeLine{00211\ \};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list}{frequency\_list<T>::swap\_nodes}}(std::shared\_ptr<node>\ a,\ std::shared\_ptr<node>\ b)\ \{}
+\DoxyCodeLine{00217\ \ \ \textcolor{keywordflow}{if}(a\ ==\ \textcolor{keyword}{nullptr}\ ||\ b\ ==\ \textcolor{keyword}{nullptr}\ ||\ a-\/>next\ !=\ b)}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \textcolor{comment}{//\ Attach\ b's\ next\ to\ a\ and\ a's\ prev\ to\ b}}
+\DoxyCodeLine{00221\ \ \ a-\/>next\ =\ b-\/>next;}
+\DoxyCodeLine{00222\ \ \ b-\/>prev\ =\ a-\/>prev;}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \textcolor{comment}{//\ If\ b's\ next\ exists,\ attach\ a\ to\ its\ prev}}
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordflow}{if}(b-\/>next)}
+\DoxyCodeLine{00226\ \ \ \ \ b-\/>next-\/>prev\ =\ a;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{comment}{//\ If\ a's\ prev\ exists(i.e.,\ a\ is\ not\ the\ head),\ attach\ b\ to\ its\ next}}
+\DoxyCodeLine{00229\ \ \ \textcolor{keywordflow}{if}(a-\/>prev.lock())}
+\DoxyCodeLine{00230\ \ \ \ \ a-\/>prev.lock()-\/>next\ =\ b;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \textcolor{comment}{//\ Now,\ attach\ a\ to\ b's\ next\ and\ b\ to\ a's\ prev}}
+\DoxyCodeLine{00233\ \ \ b-\/>next\ =\ a;}
+\DoxyCodeLine{00234\ \ \ a-\/>prev\ =\ b;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \textcolor{comment}{//\ If\ the\ node\ a\ was\ the\ head\ node,\ update\ the\ head\ to\ b}}
+\DoxyCodeLine{00237\ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ a)}
+\DoxyCodeLine{00238\ \ \ \ \ head\ =\ b;}
+\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00242\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list}{frequency\_list<T>::update\_list\_sequence}}()\ \{}
+\DoxyCodeLine{00243\ \ \ \textcolor{keyword}{auto}\ current\_node\ =\ head;}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \textcolor{keywordflow}{while}\ (current\_node\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ current\_node-\/>next\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_node-\/>freq\ <\ current\_node-\/>next-\/>freq)\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ swap\_nodes(current\_node,\ current\_node-\/>next);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\_node-\/>prev.lock())}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ current\_node\ =\ current\_node-\/>prev.lock();}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ current\_node\ =\ current\_node-\/>next;}
+\DoxyCodeLine{00254\ \ \ \}}
+\DoxyCodeLine{00255\ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_a70ad5b8f5abd9e02cc5e96090bf2ca50}{frequency\_list<T>::reset\_frequency}}()\ \{}
+\DoxyCodeLine{00259\ \ \ \textcolor{keyword}{auto}\ iterator\ =\ head;}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \textcolor{keywordflow}{while}\ (iterator\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ iterator-\/>reset\_freq();}
+\DoxyCodeLine{00263\ \ \ \ \ iterator\ =\ iterator-\/>next;}
+\DoxyCodeLine{00264\ \ \ \}}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00269\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_a1eb001ee71276afe20e2b71bef50682e}{frequency\_list<T>::push\_front}}(T\ data)\ \{}
+\DoxyCodeLine{00270\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ =\ head;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \textcolor{comment}{//\ Iterating\ over\ the\ list\ to\ find\ if\ the\ same\ data\ is\ already\ present}}
+\DoxyCodeLine{00273\ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}-\/>data\ ==\ data)\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \textcolor{comment}{//\ if\ data\ is\ found,\ increase\ frequency\ and\ re-\/sort\ the\ list}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}-\/>freq++;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ update\_list\_sequence();}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ =\ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}-\/>next;}
+\DoxyCodeLine{00281\ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \textcolor{comment}{//\ if\ data\ is\ not\ found\ in\ the\ list,\ add\ new\ node\ at\ front}}
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{auto}\ new\_node\ =\ std::make\_shared<node>(data,\ 1,\ std::weak\_ptr<node>(),\ head);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \textcolor{keywordflow}{if}\ (head\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ head-\/>prev\ =\ new\_node;}
+\DoxyCodeLine{00288\ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ head\ =\ new\_node;}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ size++;}
+\DoxyCodeLine{00293\ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00296\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_a28e06d771a5e94b17abff407ddb4bb82}{frequency\_list<T>::erase}}(T\ key)\ \{}
+\DoxyCodeLine{00297\ \ \ \textcolor{keyword}{auto}\ iterator\ =\ head;}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \textcolor{comment}{//\ special\ case:\ deleting\ the\ head\ node}}
+\DoxyCodeLine{00300\ \ \ \textcolor{keywordflow}{if}\ (head\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ head-\/>data\ ==\ key)\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{if}(head)}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ head-\/>prev.reset();}
+\DoxyCodeLine{00304\ \ \ \ \ size-\/-\/;}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00306\ \ \ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \textcolor{comment}{//\ iterate\ over\ the\ rest\ nodes}}
+\DoxyCodeLine{00309\ \ \ \textcolor{keywordflow}{while}\ (iterator\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{if}\ (iterator-\/>data\ ==\ key)\ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \textcolor{comment}{//\ connect\ previous\ node\ and\ next\ node}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{auto}\ sharedPrev\ =\ iterator-\/>prev.lock())\{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ sharedPrev-\/>next\ =\ iterator-\/>next;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iterator-\/>next)\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ iterator-\/>next-\/>prev\ =\ iterator-\/>prev;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \textcolor{comment}{//\ deleting\ the\ node\ by\ falling\ out\ of\ scope}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ size-\/-\/;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00321\ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ iterator\ =\ iterator-\/>next;}
+\DoxyCodeLine{00323\ \ \ \}}
+\DoxyCodeLine{00324\ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00327\ int64\_t\ \mbox{\hyperlink{classfrequency__list_a2b6e523e09744bac89657803d9984d34}{frequency\_list<T>::get\_frequency}}(T\ key)\ \{}
+\DoxyCodeLine{00328\ \ \ \textcolor{keyword}{auto}\ iterator\ =\ head;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \textcolor{keywordflow}{while}(iterator\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{if}(iterator-\/>data\ ==\ key)\ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator-\/>freq;}
+\DoxyCodeLine{00333\ \ \ \ \ \}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ iterator\ =\ iterator-\/>next;}
+\DoxyCodeLine{00336\ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00339\ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00342\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfrequency__list_a64e768e3b3bd8fcb3b00ca6020dda07a}{frequency\_list<T>::search}}(T\ key)\ \{}
+\DoxyCodeLine{00343\ \ \ \textcolor{keyword}{auto}\ iterator\ =\ head;}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \textcolor{keywordflow}{while}\ (iterator\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{if}\ (iterator-\/>data\ ==\ key)\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ iterator-\/>add\_freq();}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ update\_list\_sequence();}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00350\ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ iterator\ =\ iterator-\/>next;}
+\DoxyCodeLine{00353\ \ \ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00356\ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00359\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfrequency__list_aaa6570efed6d63daeeda8ca1743d0d68}{frequency\_list<T>::push\_back}}(T\ data)\ \{}
+\DoxyCodeLine{00360\ \ \ \textcolor{keywordflow}{if}\ (this-\/>empty())\ \{}
+\DoxyCodeLine{00361\ \ \ \ \ head\ =\ std::make\_shared<node>(data,\ 1,\ std::weak\_ptr<node>(),\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00363\ \ \ \}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \textcolor{keyword}{auto}\ iterator\ =\ head;}
+\DoxyCodeLine{00366\ \ \ \textcolor{keywordflow}{while}\ (iterator)\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordflow}{if}\ (iterator-\/>data\ ==\ data)\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ iterator-\/>add\_freq();}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ update\_list\_sequence();}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordflow}{if}\ (!iterator-\/>next)}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00374\ \ \ \ \ iterator\ =\ iterator-\/>next;}
+\DoxyCodeLine{00375\ \ \ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \textcolor{keyword}{auto}\ newNode\ =\ std::shared\_ptr<node>(\textcolor{keyword}{new}\ node(data,\ 1,\ iterator,\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00378\ \ \ \textcolor{keywordflow}{if}\ (iterator)\ iterator-\/>next\ =\ newNode;}
+\DoxyCodeLine{00379\ \ \ size++;}
+\DoxyCodeLine{00380\ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00384\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfrequency__list}{frequency\_list}}<T>::\mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \{}
+\DoxyCodeLine{00385\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00386\ \ \ std::shared\_ptr<node>\ current;}
+\DoxyCodeLine{00387\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator_a55735e7fe8761650aa778d2c5dbf3c9c}{Iterator}}(\textcolor{keyword}{const}\ std::shared\_ptr<node>\ \&ptr)\ noexcept}
+\DoxyCodeLine{00394\ \ \ :\ current(ptr)\ \{\}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00406\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classfrequency__list_1_1_iterator_a1829c6005d1751f02a936e9144d70bfe}{operator=}}(\textcolor{keyword}{const}\ std::shared\_ptr<node>\ \&ptr)\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ current\ =\ ptr;}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00409\ \ \ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00419\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{classfrequency__list_1_1_iterator_a260fa0fa598cc53da10edda7066668c6}{operator++}}()\ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordflow}{if}(current)\ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00424\ \ \ \}}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00434\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator_a6ff45a82ecf9e25e1f517f560c33a37f}{operator++}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ tmp\ =\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00436\ \ \ \ \ ++*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{00438\ \ \ \}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00448\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \&\ operator\ -\/-\/()\{}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordflow}{if}(current)\{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ current\ =\ current\ -\/>\ prev;}
+\DoxyCodeLine{00451\ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00453\ \ \ \}}
+\DoxyCodeLine{00454\ \ \ }
+\DoxyCodeLine{00462\ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ operator\ -\/-\/(\textcolor{keywordtype}{int})\{}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ tmp\ =\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00464\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{00466\ \ \ \}}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00476\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator_a6ff52cb1cbee8d198e405429163bc680}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ it.current\ ==\ this-\/>current;\ \}}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00486\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator_afa315e030402f0f881c4ce8451571bc7}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}}\ \&it)\ \{\ \textcolor{keywordflow}{return}\ it.current\ !=\ this-\/>current;\ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00493\ \ \ T\ \mbox{\hyperlink{classfrequency__list_1_1_iterator_a17e12c4d439848f520281d3eb252277b}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ current-\/>data;\ \}}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \};}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FREQUENCY\_LIST\_H}}
+
+\end{DoxyCode}

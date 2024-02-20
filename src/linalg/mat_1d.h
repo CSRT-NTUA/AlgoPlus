@@ -50,9 +50,9 @@ public:
   /**
   *@brief constructor for Mat1d class with input value
   *@param val the value that we want all the elements of the array to have
-  *@return Mat1d&
   */
-  explicit Mat1d(const T val) noexcept {
+  explicit Mat1d(const T val) noexcept : __size(SIZE) {
+    arr = new T[__size];
     for(size_t i = 0; i<__size; ++i){
       arr[i] = val;
     }
@@ -84,11 +84,13 @@ public:
   *@return Mat1d&
   */
   Mat1d & operator =(Mat1d &mat){
+    if(this == &mat){
+      return *(this);
+    }
     try{
       if(mat.size() != this -> __size){
         throw std::logic_error("Tried to copy matrixes with different sizes");
       }
-      this -> __size = mat.size();
       for(size_t i = 0; i<__size; i++){
         this -> arr[i] = mat.arr[i]; 
       }
@@ -149,21 +151,34 @@ public:
       std::cerr << e.what() << '\n';
     }
   } 
-
+  
   /**
-   *@brief sorting function
-   *
+   *@brief operator == for Mat1d class
+   *@param mat the matrix to compare
+   *@return true if &this is equal to mat
+   *@return false otherwise
    */
-  void sort();
+  bool operator ==(Mat1d &mat) const{
+    if(mat.size() != __size){
+      return false;
+    }
+
+    for(size_t i = 0; i<__size; i++){
+      if(mat.arr[i] != this->arr[i]){
+        return false;
+      }
+    }
+    return true;
+  }
 
   /**
   *@brief operator << for Mat1d class
   *@param mat the matrix
   *
   */
-  friend std::ostream & operator <<(std::ostream &out, const Mat1d &mat){
+  friend std::ostream & operator <<(std::ostream &out, Mat1d &mat){
     out << '[';
-    for(size_t i = 0; i<mat.size; i++){
+    for(size_t i = 0; i<mat.size(); i++){
       out << mat[i];
       if(i != mat.size() - 1){
         out << " ";

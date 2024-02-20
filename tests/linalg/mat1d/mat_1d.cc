@@ -5,6 +5,13 @@
 #include <algorithm>
 #include <random>
 
+
+TEST_CASE("testing destructor for Mat1d"){
+  Mat1d<int, 5> mat;
+  mat[4] = 5;
+  REQUIRE(mat[4] == 5);
+}
+
 TEST_CASE("testing default constructor of mat_1d"){
   Mat1d<int, 5> mat;
   for(int i = 0; i<mat.size(); i++){

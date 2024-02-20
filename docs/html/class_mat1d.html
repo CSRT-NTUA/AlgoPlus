@@ -125,16 +125,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4efee5334e47d87ecd83e6465e0d4e5" id="r_ab4efee5334e47d87ecd83e6465e0d4e5"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4efee5334e47d87ecd83e6465e0d4e5">operator[]</a> (const size_t index)</td></tr>
 <tr class="memdesc:ab4efee5334e47d87ecd83e6465e0d4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator[] for <a class="el" href="class_mat1d.html" title="Class for 1-dimensional Matrix.">Mat1d</a> class  <br /></td></tr>
 <tr class="separator:ab4efee5334e47d87ecd83e6465e0d4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1938f6eace371c45599eaefbcce009e" id="r_af1938f6eace371c45599eaefbcce009e"><td class="memItemLeft" align="right" valign="top"><a id="af1938f6eace371c45599eaefbcce009e" name="af1938f6eace371c45599eaefbcce009e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sort</b> ()</td></tr>
-<tr class="memdesc:af1938f6eace371c45599eaefbcce009e"><td class="mdescLeft">&#160;</td><td class="mdescRight">sorting function <br /></td></tr>
-<tr class="separator:af1938f6eace371c45599eaefbcce009e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a0616977dda8b1848b645cc982abf5" id="r_ac0a0616977dda8b1848b645cc982abf5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0a0616977dda8b1848b645cc982abf5">operator==</a> (<a class="el" href="class_mat1d.html">Mat1d</a> &amp;mat) const</td></tr>
+<tr class="memdesc:ac0a0616977dda8b1848b645cc982abf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator == for <a class="el" href="class_mat1d.html" title="Class for 1-dimensional Matrix.">Mat1d</a> class  <br /></td></tr>
+<tr class="separator:ac0a0616977dda8b1848b645cc982abf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a3ac9ac519ebafb7145d0b81bad566248" id="r_a3ac9ac519ebafb7145d0b81bad566248"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ac9ac519ebafb7145d0b81bad566248">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="class_mat1d.html">Mat1d</a> &amp;mat)</td></tr>
-<tr class="memdesc:a3ac9ac519ebafb7145d0b81bad566248"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;&lt; for <a class="el" href="class_mat1d.html" title="Class for 1-dimensional Matrix.">Mat1d</a> class  <br /></td></tr>
-<tr class="separator:a3ac9ac519ebafb7145d0b81bad566248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcb5b1c831cc22a3ebe196004fe809e" id="r_a6fcb5b1c831cc22a3ebe196004fe809e"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fcb5b1c831cc22a3ebe196004fe809e">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="class_mat1d.html">Mat1d</a> &amp;mat)</td></tr>
+<tr class="memdesc:a6fcb5b1c831cc22a3ebe196004fe809e"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;&lt; for <a class="el" href="class_mat1d.html" title="Class for 1-dimensional Matrix.">Mat1d</a> class  <br /></td></tr>
+<tr class="separator:a6fcb5b1c831cc22a3ebe196004fe809e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, size_t SIZE&gt;<br />
@@ -172,7 +171,6 @@ template&lt;typename T , size_t SIZE&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_mat1d.html" title="Class for 1-dimensional Matrix.">Mat1d</a>&amp; </dd></dl>
 
 </div>
 </div>
@@ -249,6 +247,44 @@ template&lt;typename T , size_t SIZE&gt; </div>
 
 </div>
 </div>
+<a id="ac0a0616977dda8b1848b645cc982abf5" name="ac0a0616977dda8b1848b645cc982abf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a0616977dda8b1848b645cc982abf5">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t SIZE&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_mat1d.html">Mat1d</a>&lt; T, SIZE &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mat1d.html">Mat1d</a>&lt; T, SIZE &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>mat</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator == for <a class="el" href="class_mat1d.html" title="Class for 1-dimensional Matrix.">Mat1d</a> class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>the matrix to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if &amp;this is equal to mat </dd>
+<dd>
+false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="ab4efee5334e47d87ecd83e6465e0d4e5" name="ab4efee5334e47d87ecd83e6465e0d4e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4efee5334e47d87ecd83e6465e0d4e5">&#9670;&#160;</a></span>operator[]()</h2>
 
@@ -310,8 +346,8 @@ template&lt;typename T , size_t SIZE&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="a3ac9ac519ebafb7145d0b81bad566248" name="a3ac9ac519ebafb7145d0b81bad566248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ac9ac519ebafb7145d0b81bad566248">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+<a id="a6fcb5b1c831cc22a3ebe196004fe809e" name="a6fcb5b1c831cc22a3ebe196004fe809e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fcb5b1c831cc22a3ebe196004fe809e">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,7 +365,7 @@ template&lt;typename T , size_t SIZE&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_mat1d.html">Mat1d</a>&lt; T, SIZE &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>mat</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_mat1d.html">Mat1d</a>&lt; T, SIZE &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>mat</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
