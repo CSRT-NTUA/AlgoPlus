@@ -34,12 +34,17 @@ void \mbox{\hyperlink{classfrequency__list_a28e06d771a5e94b17abff407ddb4bb82}{er
 \Hypertarget{classfrequency__list_a70ad5b8f5abd9e02cc5e96090bf2ca50}\label{classfrequency__list_a70ad5b8f5abd9e02cc5e96090bf2ca50} 
 void {\bfseries reset\+\_\+frequency} ()
 \begin{DoxyCompactList}\small\item\em Resets the frequency of all nodes in the frequency list to 1. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ T, int64\+\_\+t $>$ $>$ \mbox{\hyperlink{classfrequency__list_a653e897a061321234930d38331b8028f}{elements}} ()
+\begin{DoxyCompactList}\small\item\em Returns all the elements of the list. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classfrequency__list_a19591103ff1fb820f19d5f7afe0959d5}{empty}} ()
 \begin{DoxyCompactList}\small\item\em Checks if the frequency list is empty. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classfrequency__list_a3742b440201c8aa231fbc6480dbea2ec}{begin}} ()
 \begin{DoxyCompactList}\small\item\em Get an iterator pointing to the beginning of the frequency list. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classfrequency__list_1_1_iterator}{Iterator}} \mbox{\hyperlink{classfrequency__list_a93d3b2b7e804127efecb9005ae3b16a9}{end}} ()
-\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the end of the frequency list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get an iterator pointing to the end of the frequency list. \end{DoxyCompactList}\item 
+\Hypertarget{classfrequency__list_ac9a2d4c6112298db61e15df249f98365}\label{classfrequency__list_ac9a2d4c6112298db61e15df249f98365} 
+void {\bfseries visualize} ()
+\begin{DoxyCompactList}\small\item\em visualize function for \doxylink{classfrequency__list}{frequency\+\_\+list} Class returns a .dot file that can be previewd with graphviz plugin in vscode \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -118,6 +123,20 @@ The \doxylink{classfrequency__list_1_1_iterator}{Iterator} provides a way to tra
 
 \begin{DoxyReturn}{Returns}
 An \doxylink{classfrequency__list_1_1_iterator}{Iterator} object pointing to the beginning of the frequency list. 
+\end{DoxyReturn}
+\Hypertarget{classfrequency__list_a653e897a061321234930d38331b8028f}\label{classfrequency__list_a653e897a061321234930d38331b8028f} 
+\index{frequency\_list$<$ T $>$@{frequency\_list$<$ T $>$}!elements@{elements}}
+\index{elements@{elements}!frequency\_list$<$ T $>$@{frequency\_list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ std\+::pair$<$ T, int64\+\_\+t $>$ $>$ \mbox{\hyperlink{classfrequency__list}{frequency\+\_\+list}}$<$ T $>$\+::elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns all the elements of the list. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+T$>$ the elements of the list 
 \end{DoxyReturn}
 \Hypertarget{classfrequency__list_a19591103ff1fb820f19d5f7afe0959d5}\label{classfrequency__list_a19591103ff1fb820f19d5f7afe0959d5} 
 \index{frequency\_list$<$ T $>$@{frequency\_list$<$ T $>$}!empty@{empty}}
