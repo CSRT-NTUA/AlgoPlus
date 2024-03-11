@@ -4,7 +4,6 @@ Writting unit tests is the most important part of contributing. Fortunately or n
 
 
 ```cpp
-#define CATCH_CONFIG_MAIN
 #include "../catch2/catch.hpp"
 
 TEST_CASE("testing this and that..."){
