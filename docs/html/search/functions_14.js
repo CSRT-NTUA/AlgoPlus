@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['_7eavl_5ftree_0',['~avl_tree',['../classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb',1,'avl_tree']]],
-  ['_7egraph_1',['~graph',['../classgraph.html#ac1f9920571d2000f6ee9c6f69015d402',1,'graph']]],
-  ['_7ehash_5ftable_2',['~hash_table',['../classhash__table.html#ae61d0f9b046db9dcd290b1263475fbce',1,'hash_table']]],
-  ['_7emat1d_3',['~Mat1d',['../class_mat1d.html#a3e235c7bf6411348cce3ae210bf18bbb',1,'Mat1d']]],
-  ['_7eskip_5flist_4',['~skip_list',['../classskip__list.html#a6082ffc0f5cd0c86b09a4c3b12b3ab0d',1,'skip_list']]],
-  ['_7eweighted_5fgraph_5',['~weighted_graph',['../classweighted__graph.html#a320b97cb3de98b240890567a2bd3b792',1,'weighted_graph']]]
+  ['unflatten_0',['unflatten',['../classbasic__json.html#abdb57996898f80522e9abbb5e1e61e46',1,'basic_json']]],
+  ['update_1',['update',['../classbasic__json.html#a3819f393e82396782ccc22785575b01d',1,'basic_json::update(const_reference j, bool merge_objects=false)'],['../classbasic__json.html#a4ea2b8cef5e4aba5b92d14e6ebe25936',1,'basic_json::update(const_iterator first, const_iterator last, bool merge_objects=false)']]]
 ];

@@ -10,11 +10,11 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md97}{}\doxysubsection{\texorpdfstring{{\bfseries{search}}\+:}{{\bfseries{search}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md97}
@@ -23,13 +23,13 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(i.\mbox{\hyperlink{classinterval__tree_a5757bdc67f3a8a46d786676691b2d461}{search}}(\{10,15\}))\{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(i.search(\{10,15\}))\{}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}interval\ \{10,15\}\ found\ in\ the\ tree"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{\}}
 
@@ -40,15 +40,15 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//removes\ an\ interval\ from\ the\ tree}}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_a7ddb8375fc087cdbebc397a03f5092c9}{remove}}(\{0,1\});}
-\DoxyCodeLine{assert(i.\mbox{\hyperlink{classinterval__tree_a5757bdc67f3a8a46d786676691b2d461}{search}}(\{0,1\})\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{i.remove(\{0,1\});}
+\DoxyCodeLine{assert(i.search(\{0,1\})\ ==\ \textcolor{keyword}{false})}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md99}{}\doxysubsection{\texorpdfstring{{\bfseries{overlap}}\+:}{{\bfseries{overlap}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md99}
@@ -57,13 +57,13 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(i.\mbox{\hyperlink{classinterval__tree_a4f7fa294476721da36f1542b71a5e79f}{overlap}}(\{0,5\},\ \{1,6\}))\{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(i.overlap(\{0,5\},\ \{1,6\}))\{}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Overlap\ between\ \{0,5\}\ and\ \{1,6\}\ exist!"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{\}}
 
@@ -74,14 +74,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ returns\ the\ elements\ of\ the\ tree\ in\ inorder\ fashion}}
-\DoxyCodeLine{std::vector<int>\ inorder\ =\ i.\mbox{\hyperlink{classinterval__tree_a6472215cc03add0b3704c3d5e3249259}{inorder}}();}
+\DoxyCodeLine{std::vector<int>\ inorder\ =\ i.inorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md101}{}\doxysubsection{\texorpdfstring{{\bfseries{preorder}}\+:}{{\bfseries{preorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md101}
@@ -90,14 +90,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ returns\ the\ elements\ of\ the\ tree\ in\ preorder\ fashion}}
-\DoxyCodeLine{std::vector<int>\ preorder\ =\ i.\mbox{\hyperlink{classinterval__tree_ab8c4a843dab72278f269ffe034f30f06}{preorder}}();}
+\DoxyCodeLine{std::vector<int>\ preorder\ =\ i.preorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md102}{}\doxysubsection{\texorpdfstring{{\bfseries{postorder}}\+:}{{\bfseries{postorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md102}
@@ -106,14 +106,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ returns\ the\ elements\ of\ the\ tree\ in\ preorder\ fashion}}
-\DoxyCodeLine{std::vector<int>\ postorder\ =\ i.\mbox{\hyperlink{classinterval__tree_ad9fdedfea81952b61fb60b966849d911}{postorder}}();}
+\DoxyCodeLine{std::vector<int>\ postorder\ =\ i.postorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md103}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2interval__tree_autotoc_md103}
@@ -122,11 +122,11 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{\textcolor{comment}{//\ returns\ a\ .dot\ file\ that\ automatically\ opens}}
 \DoxyCodeLine{\textcolor{comment}{//\ using\ graphviz\ plugins\ on\ vscode(or\ locally\ with\ }}
 \DoxyCodeLine{\textcolor{comment}{//\ command\ lines).}}
@@ -139,13 +139,13 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <interval\_tree.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classinterval__tree}{interval\_tree<int>}}\ i;}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{20,\ 36\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{3,\ 41\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{29,\ 99\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{0,\ 1\});}
-\DoxyCodeLine{i.\mbox{\hyperlink{classinterval__tree_aa850e677df1d50f7fa3b4e2a5c8cd2b2}{insert}}(\{10,\ 15\});}
+\DoxyCodeLine{i.insert(\{20,\ 36\});}
+\DoxyCodeLine{i.insert(\{3,\ 41\});}
+\DoxyCodeLine{i.insert(\{29,\ 99\});}
+\DoxyCodeLine{i.insert(\{0,\ 1\});}
+\DoxyCodeLine{i.insert(\{10,\ 15\});}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ i.\mbox{\hyperlink{classinterval__tree_aabb5a5b119dfe11b997d3eb19989363e}{begin}}();\ it\ !=\ i.\mbox{\hyperlink{classinterval__tree_a04dd9337397e8afe44810c1169ac64b7}{end}}();\ it++)\{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ i.begin();\ it\ !=\ i.end();\ it++)\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ pair\ of\ each\ node}}
 \DoxyCodeLine{\ \ \ \ std::pair<int\ ,int>\ p\ =\ *(it);}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ p.first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ p.second\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}

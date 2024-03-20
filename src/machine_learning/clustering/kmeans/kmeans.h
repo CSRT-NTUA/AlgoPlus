@@ -1,0 +1,122 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <random>
+#include "../../../../third_party/json.hpp"
+#include <fstream>
+
+using json = nlohmann::json;
+
+/**
+ * @ brief Class for the kmeans clustering algorithm
+ */
+class kmeans{
+private:
+  /**
+  * @ brief distance function
+  * @ param a the first input vector
+  * @ param b the second input vector
+  * @ return int64_t the euclidean distance between vector a and b
+  *
+  */
+  int64_t distance(std::vector<int64_t> &a, std::vector<int64_t> &b){
+    return sqrt(pow((a[0] - b[0]) , 2) + pow((a[1] - b[1]), 2));
+  }
+  std::vector<std::vector<int64_t>> data;
+  int K;
+  std::vector<std::vector<int64_t> > cluster_centers;
+  std::map<std::vector<int64_t>, int64_t> assignments;
+
+public:
+  /**
+  * @brief Constructor for the kmeans class
+  * @param data: the input data(2D vector)
+  * @param K: the number of clusters
+  * @param MAX_ITER: default 500, maximum iterations till it converges
+  */
+  kmeans(std::vector<std::vector<int64_t>> data, int K, int64_t MAX_ITER=1500) {
+    this->data = data;
+    this->K = K;
+    for(int i = 0; i<K; i++){
+      int rand_num = rand() % data.size() - 1;
+      this->cluster_centers.push_back(data[rand_num]);
+    }
+
+    for(int ww = 0; ww<MAX_ITER; ww++){
+      for(int64_t i = 0; i<data.size(); i++){
+        assign_to_closest(data[i]);
+      }
+
+      std::vector<std::vector<std::vector<int64_t> > > __clusters(K);
+      for(auto & x: assignments){
+        __clusters[x.second].push_back(x.first);
+      }
+      std::vector<std::vector<int64_t> > new_centroids;
+      for(int i = 0; i<K; i++){
+        new_centroids.push_back(get_centroid(__clusters[i]));
+      }
+
+      if(new_centroids == this->cluster_centers){
+        break;
+      }
+      else{
+        this->cluster_centers = new_centroids;
+      }
+    }
+  }
+  
+  /**
+   * @brief Destroy the kmeans object
+   */
+  ~kmeans() {
+    cluster_centers.clear();
+    assignments.clear();
+  }
+  
+  /**
+  * @ brief assign_to_closest function
+  * assigns the closest centroid to point x
+  * @ param x: the input vector
+  */
+  void assign_to_closest(std::vector<int64_t> &x){
+    std::vector<int64_t> id = this->cluster_centers[0];
+    int index = 0;
+    int min_dist = distance(x, id);
+    for(int j = 0; j<this->cluster_centers.size(); j++){
+      int current_dist = distance(this->cluster_centers[j], x);
+      if(current_dist < min_dist){
+        min_dist = current_dist;
+        index = j;
+        id = this->cluster_centers[index];
+      }
+    }
+    assignments[x] = index;
+  }
+  
+  /**
+  * @ brief get_centroid function
+  * @ param cluster: the input cluster
+  * @ return vector<int>: the centroid of the cluster
+  */
+  std::vector<int64_t> get_centroid(std::vector<std::vector<int64_t> > cluster){
+    int sum_x = 0, sum_y = 0, n = cluster.size();
+    for(auto & x : cluster){
+      sum_x += x[0];
+      sum_y += x[1];
+    }
+    sum_x /= n;
+    sum_y /= n;
+    return {sum_x, sum_y};
+  }
+  
+  /**
+  * @ brief run function
+  * @ return pair<vector<int64_t>, map<int64_t, int> >: the centroids and the assignments of the clustering algorithm
+  *
+  */
+  std::pair<std::vector<std::vector<int64_t> >, std::map<std::vector<int64_t>, int64_t> > run(){
+    return std::make_pair(cluster_centers, assignments);
+  }
+};
+
+
