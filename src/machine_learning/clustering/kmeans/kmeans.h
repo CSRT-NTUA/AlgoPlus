@@ -1,9 +1,15 @@
+#pragma once
+#ifndef KMEANS_H
+#define KMEANS_H
+
+#ifdef __cplusplus
 #include <iostream>
 #include <vector>
 #include <map>
 #include <random>
 #include "../../../../third_party/json.hpp"
 #include <fstream>
+#endif
 
 using json = nlohmann::json;
 
@@ -119,4 +125,4 @@ public:
   }
 };
 
-
+#endif
