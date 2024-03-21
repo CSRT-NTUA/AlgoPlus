@@ -25,13 +25,13 @@ private:
   * @ return int64_t the euclidean distance between vector a and b
   *
   */
-  int64_t distance(std::vector<int64_t> &a, std::vector<int64_t> &b){
+  double distance(std::vector<double> &a, std::vector<double> &b){
     return sqrt(pow((a[0] - b[0]) , 2) + pow((a[1] - b[1]), 2));
   }
-  std::vector<std::vector<int64_t>> data;
+  std::vector<std::vector<double>> data;
   int K;
-  std::vector<std::vector<int64_t> > cluster_centers;
-  std::map<std::vector<int64_t>, int64_t> assignments;
+  std::vector<std::vector<double> > cluster_centers;
+  std::map<std::vector<double>, int64_t> assignments;
 
 public:
   /**
@@ -40,7 +40,7 @@ public:
   * @param K: the number of clusters
   * @param MAX_ITER: default 500, maximum iterations till it converges
   */
-  kmeans(std::vector<std::vector<int64_t>> data, int K, int64_t MAX_ITER=1500) {
+  kmeans(std::vector<std::vector<double>> data, int K, int64_t MAX_ITER=1500) {
     this->data = data;
     this->K = K;
     for(int i = 0; i<K; i++){
@@ -53,11 +53,11 @@ public:
         assign_to_closest(data[i]);
       }
 
-      std::vector<std::vector<std::vector<int64_t> > > __clusters(K);
+      std::vector<std::vector<std::vector<double> > > __clusters(K);
       for(auto & x: assignments){
         __clusters[x.second].push_back(x.first);
       }
-      std::vector<std::vector<int64_t> > new_centroids;
+      std::vector<std::vector<double> > new_centroids;
       for(int i = 0; i<K; i++){
         new_centroids.push_back(get_centroid(__clusters[i]));
       }
@@ -84,8 +84,8 @@ public:
   * assigns the closest centroid to point x
   * @ param x: the input vector
   */
-  void assign_to_closest(std::vector<int64_t> &x){
-    std::vector<int64_t> id = this->cluster_centers[0];
+  void assign_to_closest(std::vector<double> &x){
+    std::vector<double> id = this->cluster_centers[0];
     int index = 0;
     int min_dist = distance(x, id);
     for(int j = 0; j<this->cluster_centers.size(); j++){
@@ -104,8 +104,8 @@ public:
   * @ param cluster: the input cluster
   * @ return vector<int>: the centroid of the cluster
   */
-  std::vector<int64_t> get_centroid(std::vector<std::vector<int64_t> > cluster){
-    int sum_x = 0, sum_y = 0, n = cluster.size();
+  std::vector<double> get_centroid(std::vector<std::vector<double> > cluster){
+    double sum_x = 0, sum_y = 0, n = cluster.size();
     for(auto & x : cluster){
       sum_x += x[0];
       sum_y += x[1];
@@ -120,7 +120,7 @@ public:
   * @ return pair<vector<int64_t>, map<int64_t, int> >: the centroids and the assignments of the clustering algorithm
   *
   */
-  std::pair<std::vector<std::vector<int64_t> >, std::map<std::vector<int64_t>, int64_t> > run(){
+  std::pair<std::vector<std::vector<double> >, std::map<std::vector<double>, int64_t> > run(){
     return std::make_pair(cluster_centers, assignments);
   }
 };
