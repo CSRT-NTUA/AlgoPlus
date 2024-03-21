@@ -1,7 +1,7 @@
 #include "../../../src/algorithms/sorting/counting_sort.h"
-#include "../../catch2/catch.hpp"
-#include <vector>
+#include "../../../third_party/catch.hpp"
 #include <algorithm>
+#include <vector>
 
 TEST_CASE("Test counting_sort function with integer vector") {
   std::vector<int> v = {5, 4, 3, 2, 1};
@@ -11,7 +11,7 @@ TEST_CASE("Test counting_sort function with integer vector") {
 
 TEST_CASE("Test counting_sort function with another integer vector") {
   std::vector<int> v;
-  for(int i = 10; i<5000; i++){
+  for (int i = 10; i < 5000; i++) {
     int random = rand() % (i - 1);
     v.push_back(i - random);
   }

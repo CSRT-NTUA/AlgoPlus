@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/dynamic_programming/fib.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing fibonacci functions") {
   int64_t n1 = 2, ans1 = 1;

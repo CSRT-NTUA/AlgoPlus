@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/dynamic_programming/lis.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing longest increasing subsequence") {
   std::vector<int> v = {1, 5, 6, 7};
