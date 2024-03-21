@@ -6,6 +6,7 @@ AlgoPlus is a C++ library that includes ready-to-use complex **data structures**
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/CSRT-NTUA/AlgoPlus)
 [![CodeQL CI](https://github.com/TheAlgorithms/C-Plus-Plus/actions/workflows/codeql.yml/badge.svg)](https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/codeql.yml)
+[![codecov](https://codecov.io/gh/CSRT-NTUA/AlgoPlus/graph/badge.svg?token=3SBDRHUQR5)](https://codecov.io/gh/CSRT-NTUA/AlgoPlus)
 ![GitHub repo size](https://img.shields.io/github/repo-size/CSRT-NTUA/AlgoPlus)
 
 ### **See the full documentation [here](https://csrt-ntua.github.io/AlgoPlus/)**
