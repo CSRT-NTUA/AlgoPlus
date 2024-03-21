@@ -21,9 +21,5 @@ jobs:
           git config --global user.name github-actions[bot]
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           - name: Upload coverage reports to Codecov
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: CSRT-NTUA/AlgoPlus
+
 
