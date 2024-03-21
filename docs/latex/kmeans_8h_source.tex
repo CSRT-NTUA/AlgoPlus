@@ -2,93 +2,99 @@
 \hypertarget{kmeans_8h_source}{}\label{kmeans_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/clustering/kmeans/kmeans.h@{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/clustering/kmeans/kmeans.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <random>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/json.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classkmeans}{kmeans}}\{}
-\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00022\ \ \ int64\_t\ distance(std::vector<int64\_t>\ \&a,\ std::vector<int64\_t>\ \&b)\{}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(pow((a[0]\ -\/\ b[0])\ ,\ 2)\ +\ pow((a[1]\ -\/\ b[1]),\ 2));}
-\DoxyCodeLine{00024\ \ \ \}}
-\DoxyCodeLine{00025\ \ \ std::vector<std::vector<int64\_t>>\ data;}
-\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{int}\ K;}
-\DoxyCodeLine{00027\ \ \ std::vector<std::vector<int64\_t>\ >\ cluster\_centers;}
-\DoxyCodeLine{00028\ \ \ std::map<std::vector<int64\_t>,\ int64\_t>\ assignments;}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classkmeans_a591632bd6dbff8baa6c73dc33c8226f4}{kmeans}}(std::vector<std::vector<int64\_t>>\ data,\ \textcolor{keywordtype}{int}\ K,\ int64\_t\ MAX\_ITER=1500)\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ this-\/>data\ =\ data;}
-\DoxyCodeLine{00039\ \ \ \ \ this-\/>K\ =\ K;}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<K;\ i++)\{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rand\_num\ =\ rand()\ \%\ data.size()\ -\/\ 1;}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ this-\/>cluster\_centers.push\_back(data[rand\_num]);}
-\DoxyCodeLine{00043\ \ \ \ \ \}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ww\ =\ 0;\ ww<MAX\_ITER;\ ww++)\{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(int64\_t\ i\ =\ 0;\ i<data.size();\ i++)\{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classkmeans_aa145334d83755a4bd362510d6828b813}{assign\_to\_closest}}(data[i]);}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ std::vector<std::vector<std::vector<int64\_t>\ >\ >\ \_\_clusters(K);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&\ x:\ assignments)\{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_\_clusters[x.second].push\_back(x.first);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ std::vector<std::vector<int64\_t>\ >\ new\_centroids;}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<K;\ i++)\{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ new\_centroids.push\_back(\mbox{\hyperlink{classkmeans_a36e450f044068459bb4daae0f921b21e}{get\_centroid}}(\_\_clusters[i]));}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(new\_centroids\ ==\ this-\/>cluster\_centers)\{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ this-\/>cluster\_centers\ =\ new\_centroids;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \}}
-\DoxyCodeLine{00067\ \ \ }
-\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{classkmeans_a1f06fb5b0bc9616175a2f7cec63e5d43}{\string~kmeans}}()\ \{}
-\DoxyCodeLine{00072\ \ \ \ \ cluster\_centers.clear();}
-\DoxyCodeLine{00073\ \ \ \ \ assignments.clear();}
-\DoxyCodeLine{00074\ \ \ \}}
-\DoxyCodeLine{00075\ \ \ }
-\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classkmeans_aa145334d83755a4bd362510d6828b813}{assign\_to\_closest}}(std::vector<int64\_t>\ \&x)\{}
-\DoxyCodeLine{00082\ \ \ \ \ std::vector<int64\_t>\ \textcolor{keywordtype}{id}\ =\ this-\/>cluster\_centers[0];}
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ min\_dist\ =\ distance(x,\ \textcolor{keywordtype}{id});}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<this-\/>cluster\_centers.size();\ j++)\{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ current\_dist\ =\ distance(this-\/>cluster\_centers[j],\ x);}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\_dist\ <\ min\_dist)\{}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ min\_dist\ =\ current\_dist;}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ index\ =\ j;}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ this-\/>cluster\_centers[index];}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ assignments[x]\ =\ index;}
-\DoxyCodeLine{00094\ \ \ \}}
-\DoxyCodeLine{00095\ \ \ }
-\DoxyCodeLine{00101\ \ \ std::vector<int64\_t>\ \mbox{\hyperlink{classkmeans_a36e450f044068459bb4daae0f921b21e}{get\_centroid}}(std::vector<std::vector<int64\_t>\ >\ cluster)\{}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\_x\ =\ 0,\ sum\_y\ =\ 0,\ n\ =\ cluster.size();}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&\ x\ :\ cluster)\{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ sum\_x\ +=\ x[0];}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ sum\_y\ +=\ x[1];}
-\DoxyCodeLine{00106\ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ sum\_x\ /=\ n;}
-\DoxyCodeLine{00108\ \ \ \ \ sum\_y\ /=\ n;}
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ \{sum\_x,\ sum\_y\};}
-\DoxyCodeLine{00110\ \ \ \}}
-\DoxyCodeLine{00111\ \ \ }
-\DoxyCodeLine{00117\ \ \ std::pair<std::vector<std::vector<int64\_t>\ >,\ std::map<std::vector<int64\_t>,\ int64\_t>\ >\ \mbox{\hyperlink{classkmeans_ac1958b82e37b1ad8fdd0c9bf348d2caf}{run}}()\{}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(cluster\_centers,\ assignments);}
-\DoxyCodeLine{00119\ \ \ \}}
-\DoxyCodeLine{00120\ \};}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ KMEANS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ KMEANS\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../third\_party/json.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classkmeans}{kmeans}}\{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{double}\ distance(std::vector<double>\ \&a,\ std::vector<double>\ \&b)\{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(pow((a[0]\ -\/\ b[0])\ ,\ 2)\ +\ pow((a[1]\ -\/\ b[1]),\ 2));}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ \ \ std::vector<std::vector<double>>\ data;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{int}\ K;}
+\DoxyCodeLine{00033\ \ \ std::vector<std::vector<double>\ >\ cluster\_centers;}
+\DoxyCodeLine{00034\ \ \ std::map<std::vector<double>,\ int64\_t>\ assignments;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classkmeans_af696ff45df389c26254937064944e0c5}{kmeans}}(std::vector<std::vector<double>>\ data,\ \textcolor{keywordtype}{int}\ K,\ int64\_t\ MAX\_ITER=1500)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ this-\/>data\ =\ data;}
+\DoxyCodeLine{00045\ \ \ \ \ this-\/>K\ =\ K;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<K;\ i++)\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rand\_num\ =\ rand()\ \%\ data.size()\ -\/\ 1;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ this-\/>cluster\_centers.push\_back(data[rand\_num]);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ww\ =\ 0;\ ww<MAX\_ITER;\ ww++)\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(int64\_t\ i\ =\ 0;\ i<data.size();\ i++)\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classkmeans_afbea96aeec84f1fed57e8578235ef605}{assign\_to\_closest}}(data[i]);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ std::vector<std::vector<std::vector<double>\ >\ >\ \_\_clusters(K);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&\ x:\ assignments)\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_\_clusters[x.second].push\_back(x.first);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ std::vector<std::vector<double>\ >\ new\_centroids;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<K;\ i++)\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ new\_centroids.push\_back(\mbox{\hyperlink{classkmeans_a194cab304acc8a9a7912f8300b95531f}{get\_centroid}}(\_\_clusters[i]));}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(new\_centroids\ ==\ this-\/>cluster\_centers)\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ this-\/>cluster\_centers\ =\ new\_centroids;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ \ \ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classkmeans_a1f06fb5b0bc9616175a2f7cec63e5d43}{\string~kmeans}}()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ cluster\_centers.clear();}
+\DoxyCodeLine{00079\ \ \ \ \ assignments.clear();}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ \ \ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classkmeans_afbea96aeec84f1fed57e8578235ef605}{assign\_to\_closest}}(std::vector<double>\ \&x)\{}
+\DoxyCodeLine{00088\ \ \ \ \ std::vector<double>\ \textcolor{keywordtype}{id}\ =\ this-\/>cluster\_centers[0];}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ min\_dist\ =\ distance(x,\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<this-\/>cluster\_centers.size();\ j++)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ current\_dist\ =\ distance(this-\/>cluster\_centers[j],\ x);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\_dist\ <\ min\_dist)\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ min\_dist\ =\ current\_dist;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ index\ =\ j;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ this-\/>cluster\_centers[index];}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ assignments[x]\ =\ index;}
+\DoxyCodeLine{00100\ \ \ \}}
+\DoxyCodeLine{00101\ \ \ }
+\DoxyCodeLine{00107\ \ \ std::vector<double>\ \mbox{\hyperlink{classkmeans_a194cab304acc8a9a7912f8300b95531f}{get\_centroid}}(std::vector<std::vector<double>\ >\ cluster)\{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{double}\ sum\_x\ =\ 0,\ sum\_y\ =\ 0,\ n\ =\ cluster.size();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&\ x\ :\ cluster)\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ sum\_x\ +=\ x[0];}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ sum\_y\ +=\ x[1];}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ sum\_x\ /=\ n;}
+\DoxyCodeLine{00114\ \ \ \ \ sum\_y\ /=\ n;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ \{sum\_x,\ sum\_y\};}
+\DoxyCodeLine{00116\ \ \ \}}
+\DoxyCodeLine{00117\ \ \ }
+\DoxyCodeLine{00123\ \ \ std::pair<std::vector<std::vector<double>\ >,\ std::map<std::vector<double>,\ int64\_t>\ >\ \mbox{\hyperlink{classkmeans_a52a2f71f4736b20fc52ad552de17f5b4}{run}}()\{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(cluster\_centers,\ assignments);}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -4,7 +4,7 @@ var searchData=
   ['get_5fallocator_1',['get_allocator',['../classbasic__json.html#a4bceecf563151eb58af179416d8e6299',1,'basic_json']]],
   ['get_5fbinary_2',['get_binary',['../classbasic__json.html#aaa2432a7c01833b02c6330709211ede7',1,'basic_json::get_binary()'],['../classbasic__json.html#a67d6da9fb8325a87d9513f960d88512a',1,'basic_json::get_binary() const']]],
   ['get_5fcached_5fpower_5ffor_5fbinary_5fexponent_3',['get_cached_power_for_binary_exponent',['../namespacedetail_1_1dtoa__impl.html#a29ae6574f6be09a5c8ab08da9a3f71b4',1,'detail::dtoa_impl']]],
-  ['get_5fcentroid_4',['get_centroid',['../classkmeans.html#a36e450f044068459bb4daae0f921b21e',1,'kmeans']]],
+  ['get_5fcentroid_4',['get_centroid',['../classkmeans.html#a194cab304acc8a9a7912f8300b95531f',1,'kmeans']]],
   ['get_5ferror_5fmessage_5',['get_error_message',['../classdetail_1_1lexer.html#a412c108d8b931630d54e42fbbf764fc4',1,'detail::lexer']]],
   ['get_5ffrequency_6',['get_frequency',['../classfrequency__list.html#a2b6e523e09744bac89657803d9984d34',1,'frequency_list']]],
   ['get_5fmax_7',['get_max',['../classdsu.html#ac163ca40183c6c72422d95124344feb8',1,'dsu']]],

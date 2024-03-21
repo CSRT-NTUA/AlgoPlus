@@ -8,5 +8,5 @@ var searchData=
   ['retrieve_5',['retrieve',['../classhash__table.html#a29bcecb383e67c1e322ffffda88706db',1,'hash_table']]],
   ['reverse_6',['reverse',['../classdoubly__linked__list.html#aa610759539cd3fc651f7ad950a19adaf',1,'doubly_linked_list::reverse()'],['../classlinked__list.html#a15bc074e7cee3245e603ce2e136c65e1',1,'linked_list::reverse()']]],
   ['rows_7',['rows',['../class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe',1,'Mat2d']]],
-  ['run_8',['run',['../classkmeans.html#ac1958b82e37b1ad8fdd0c9bf348d2caf',1,'kmeans']]]
+  ['run_8',['run',['../classkmeans.html#a52a2f71f4736b20fc52ad552de17f5b4',1,'kmeans']]]
 ];

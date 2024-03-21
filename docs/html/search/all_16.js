@@ -15,6 +15,6 @@ var searchData=
   ['reverse_20strong_20_3a_12',['Reverse strong :',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2circular__linked__list.html#autotoc_md47',1,'&lt;strong&gt;reverse&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2doubly__linked__list.html#autotoc_md64',1,'&lt;strong&gt;reverse&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2linked__list.html#autotoc_md110',1,'&lt;strong&gt;reverse&lt;/strong&gt;:']]],
   ['reverse_5fiterator_13',['reverse_iterator',['../classbasic__json.html#aedc059cdae078322bb0d434b2127d1cf',1,'basic_json']]],
   ['rows_14',['rows',['../class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe',1,'Mat2d']]],
-  ['run_15',['run',['../classkmeans.html#ac1958b82e37b1ad8fdd0c9bf348d2caf',1,'kmeans']]],
+  ['run_15',['run',['../classkmeans.html#a52a2f71f4736b20fc52ad552de17f5b4',1,'kmeans']]],
   ['run_20test_20cases_20strong_16',['&lt;strong&gt;How to run test cases&lt;/strong&gt;',['../index.html#autotoc_md21',1,'']]]
 ];
