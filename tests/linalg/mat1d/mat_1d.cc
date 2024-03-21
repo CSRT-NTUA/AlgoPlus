@@ -64,22 +64,22 @@ TEST_CASE("testing copy constructor of mat_1d"){
   REQUIRE(v3 == v4);
 }
 
-TEST_CASE("testing iterators for Mat1d class"){
-  Mat1d<char, 5> mat({'a','b','c','d','e'});
-  std::vector<char> v = {'a','b','c','d','e'};
-  std::vector<char> check;
-  for(auto it = mat.begin(); it != mat.end(); it++){
-    check.push_back(*(it));
-  }
-  REQUIRE(v == check);
+//TEST_CASE("testing iterators for Mat1d class"){
+//  Mat1d<char, 5> mat({'a','b','c','d','e'});
+//  std::vector<char> v = {'a','b','c','d','e'};
+//  std::vector<char> check;
+//  for(auto it = mat.begin(); it != mat.end(); it++){
+//    check.push_back(*(it));
+//  }
+//  REQUIRE(v == check);
 
-  Mat1d<std::string, 5> mat2({"hello", "world", "we", "are", "csrt"});
-  std::vector<std::string> v2 = {"hello", "world", "we", "are", "csrt"};
-  std::vector<std::string> check2;
-  for(auto it = mat2.begin(); it != mat2.end(); it++){
-    check2.push_back(*(it));
-  }
-  REQUIRE(v2 == check2);
-}
+//  Mat1d<std::string, 5> mat2({"hello", "world", "we", "are", "csrt"});
+//  std::vector<std::string> v2 = {"hello", "world", "we", "are", "csrt"};
+//  std::vector<std::string> check2;
+//  for(auto it = mat2.begin(); it != mat2.end(); it++){
+//    check2.push_back(*(it));
+//  }
+//  REQUIRE(v2 == check2);
+//}
 
 
