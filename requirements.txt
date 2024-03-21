@@ -1,4 +1,10 @@
-gcovr==6.0 \
-  --hash=sha256:2e52019fdb76c6e327f48c2a2d8555fb5e362570b79cc74c5498804d1ce54a60
-lxml==5.1.0 \
-  --hash=sha256:22b7ee4c35f374e2c20337a95502057964d7e35b996b1c667b5c65c567d2252a
+attrs==23.2.0
+coverage==7.4.4
+iniconfig==2.0.0
+packaging==24.0
+pluggy==1.4.0
+py==1.11.0
+pyparsing==3.1.2
+pytest==8.1.1
+pytest-cov==4.1.0
+tomli==2.0.1
