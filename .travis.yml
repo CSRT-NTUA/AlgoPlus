@@ -7,7 +7,7 @@ sudo: required
 
 branches:
   only:
-    - master
+    - main
 
 before_install:
   - sudo apt-get -qq update
