@@ -1,0 +1,2 @@
+coverage:
+  ignore: "third_party"
