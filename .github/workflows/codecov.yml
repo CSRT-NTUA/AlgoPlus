@@ -1,2 +1,3 @@
 coverage:
-  ignore: "third_party"
+  ignore: 
+    - "third_party/catch.hpp"
