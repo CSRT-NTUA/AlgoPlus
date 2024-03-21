@@ -22,14 +22,18 @@ jobs:
     - name: Configure
       run: mkdir build && cd build
 
-    - name: run
-      run: cmake .. && make
-
+    - name: Build
+      run: cmake ..
+    - name: make
+      run: make
     - name: Test
-      run: ctest --output-on-failure 
+      working-directory: build/coverage
+      run: ctest --output-on-failure
+
+    - name: Process coverage info
+      run: cmake --build build/coverage -t coverage
 
     - name: Submit to codecov.io
-      run: |
-        curl -s https://codecov.io/bash > upload.sh
-        chmod +x upload.sh
-        ./upload.sh -a "-r"
+      uses: codecov/codecov-action@v4
+      with:
+        file: build/coverage/coverage.info
