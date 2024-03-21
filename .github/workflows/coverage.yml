@@ -1,0 +1,43 @@
+name: coverage
+on: push
+env:
+  BUILD_TYPE: Debug
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get install -o Acquire::Retries=3 lcov
+
+      - name: Create build directory
+        run: cmake -E make_directory ${{runner.workspace}}/build
+
+      - name: Configure CMake
+        shell: bash
+        working-directory: ${{runner.workspace}}/build
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD -DENABLE_COVERAGE=true
+
+      - name: Build
+        working-directory: ${{runner.workspace}}/build
+        shell: bash
+        run: cmake --build . --config $BUILD_TYPE
+
+      - name: Run
+        working-directory: ${{runner.workspace}}/build
+        shell: bash
+        run: ./test
+
+      - name: Coverage
+        working-directory: ${{runner.workspace}}/build
+        shell: bash
+        run: make coverage
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          path-to-lcov: ${{runner.workspace}}/build/coverage.info
+          github-token: ${{ secrets.GITHUB_TOKEN }}
