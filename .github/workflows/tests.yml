@@ -1,0 +1,35 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+    - master
+
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  coverage:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install LCov
+      run: sudo apt-get update -q
+        && sudo apt-get install lcov -q -y
+
+    - name: Configure
+      run: mkdir build && cd build
+
+    - name: run
+      run: cmake .. && make
+
+    - name: Test
+      run: ctest --output-on-failure 
+
+    - name: Submit to codecov.io
+      run: |
+        curl -s https://codecov.io/bash > upload.sh
+        chmod +x upload.sh
+        ./upload.sh -a "-r"
