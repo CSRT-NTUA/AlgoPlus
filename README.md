@@ -65,6 +65,12 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 - [X] [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
 
+**Machine Learning(NEW!)**
+- [X] [Kmeans](https://en.wikipedia.org/wiki/K-means_clustering)
+- [X] [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
+- [X] [Linear Regression-Currently working]
+- [X] [Polynomial Regression-Currently working]
+
 
 ### **How to run test cases**
 We have unit tests for every function of our implemented algorithms & data structures.It is very important to make sure that your code works before making any pull requests!  
