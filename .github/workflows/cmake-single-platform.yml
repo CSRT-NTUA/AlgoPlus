@@ -44,5 +44,6 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: CSRT-NTUA/AlgoPlus
-        
+    - name: Upload to codecov
+      run: bash <(curl -s https://codecov.io/bash)
 
