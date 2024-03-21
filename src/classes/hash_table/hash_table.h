@@ -2,6 +2,7 @@
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H
 
+#ifdef __cplusplus
 #include <functional>
 #include <iostream>
 #include <list>
@@ -10,6 +11,7 @@
 #include <unordered_map>
 #include <vector>
 #include <cstdint>
+#endif
 
 /**
  * @class hash_table
@@ -166,8 +168,8 @@ public:
   explicit Iterator(
       const std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
           &bucket,
-      int64_t index) noexcept
-      : bucketList(bucket), index(index) {
+      int64_t __index) noexcept
+      : bucketList(bucket), index(__index) {
     for (auto &x : bucketList) {
       key_values.push_back(x.first);
     }
@@ -192,8 +194,8 @@ public:
    * @return Iterator&
    */
   Iterator &operator++() {
-    if (index < key_values.size()) {
-      index++;
+    if (this->index < key_values.size()) {
+      this->index++;
     }
     return *(this);
   }
@@ -241,10 +243,10 @@ public:
    * @return false otherwise
    */
   bool operator!=(const Iterator &it) {
-    std::list<std::pair<KeyType, ValueType>> l1 = bucketList[key_values[index]];
+    std::list<std::pair<KeyType, ValueType>> l1 = bucketList[key_values[this->index]];
     std::list<std::pair<KeyType, ValueType>> l2 =
         bucketList[it.key_values[it.index]];
-    return index != it.index && l1 != l2;
+    return this->index != it.index && l1 != l2;
     return false;
   }
 
@@ -255,7 +257,7 @@ public:
    * index
    */
   std::list<std::pair<KeyType, ValueType>> operator*() {
-    return bucketList[key_values[index]];
+    return bucketList[key_values[this->index]];
   }
 };
 
