@@ -1,0 +1,40 @@
+name: Ubuntu CI Test
+on:
+   push:
+     branches: [main]
+   pull_request:
+     branches: [main]
+permissions:
+   contents: read
+jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+-uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+-name: install
+run: sudo apt-get update && sudo apt-get install lcov #libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
+-name: configure
+run:|
+           mkdir build && cd build
+-name: building
+run:|
+           cmake .. && make
+-name: run unit tests
+run:|
+           cd tests && ./runUnitTests
+
+-name: generate coverage
+working-directory: ./build
+run:|
+           make cov
+-name: Install gcovr
+         run: |
+           pip install -r requirements.txt  --require-hashes
+-name: Generate JSON coverage report
+working-directory: ./build
+run:|
+           gcovr -r .. . --branches --cobertura > coverage.xml
+       - name: Upload coverage reports to Codecov
+         uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+         env:
+           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
