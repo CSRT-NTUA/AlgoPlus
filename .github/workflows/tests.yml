@@ -14,11 +14,6 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
-
-    - name: Install LCov
-      run: sudo apt-get update -q
-        && sudo apt-get install lcov -q -y
-
     - name: Configure
       run: mkdir build && cd build
 
@@ -27,13 +22,6 @@ jobs:
     - name: make
       run: make
     - name: Test
-      working-directory: build/coverage
       run: ctest --output-on-failure
-
-    - name: Process coverage info
-      run: cmake --build build/coverage -t coverage
-
     - name: Submit to codecov.io
-      uses: codecov/codecov-action@v4
-      with:
-        file: build/coverage/coverage.info
+      run: bash <(curl -s https://codecov.io/bash)
