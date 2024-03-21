@@ -1,0 +1,27 @@
+# Travis-CI Build for libadt
+# see travis-ci.org for details
+
+language: cpp
+
+sudo: required
+
+branches:
+  only:
+    - master
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y build-essential cmake check valgrind lcov
+
+before_script:
+  - mkdir build
+
+script:
+  - cd build
+  - cmake ..
+  - make
+  - cd tests
+  - ./runUnitTests
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

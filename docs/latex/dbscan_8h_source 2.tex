@@ -1,0 +1,57 @@
+\doxysection{dbscan.\+h}
+\hypertarget{dbscan_8h_source}{}\label{dbscan_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/clustering/DBSCAN/dbscan.h@{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/clustering/DBSCAN/dbscan.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ DBSCAN\_H\ }}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ DBSCAN\_H\ }}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_b_s_c_a_n}{DBSCAN}}\{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ std::vector<std::pair<double,\ double>>\ setOfPoints;}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{double}\ Eps;}
+\DoxyCodeLine{00019\ \ \ int64\_t\ MinPts;}
+\DoxyCodeLine{00020\ \ \ int64\_t\ cluster\_id;}
+\DoxyCodeLine{00021\ \ \ std::map<std::pair<double,\ double>,\ int64\_t>\ points;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_d_b_s_c_a_n}{DBSCAN}}(std::vector<std::pair<double,\ double>>\ setOfPoints,\ \textcolor{keywordtype}{double}\ Eps,\ int64\_t\ MinPts)\ noexcept\ :\ setOfPoints(setOfPoints),\ Eps(Eps),\ MinPts(MinPts)\{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ cluster\_id\ is\ by\ default\ noise}}
+\DoxyCodeLine{00027\ \ \ \ \ cluster\_id\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<setOfPoints.size();\ ++i)\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}checking\ point\ "{}}\ <<\ setOfPoints[i].first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ setOfPoints[i].second\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(points.find(setOfPoints[i])\ ==\ points.end())\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ExpandCluster(setOfPoints,\ setOfPoints[i],\ cluster\_id,\ Eps,\ MinPts))\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ cluster\_id\ =\ nextId(cluster\_id);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ int64\_t\ nextId(int64\_t\ cluster\_id);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{bool}\ ExpandCluster(std::vector<std::pair<double,\ double>\ >\ setOfPoints,\ std::pair<double,\ double>\ point,\ int64\_t\ cluster\_id,\ \textcolor{keywordtype}{double}\ Eps,\ int64\_t\ MinPts);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ std::vector<std::pair<double,\ double>\ >\ get\_query(std::vector<std::pair<double,\ double>\ >\ setOfPoints,\ std::pair<double,\ double>\ point,\ \textcolor{keywordtype}{double}\ Eps);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{double}\ dist(std::pair<double,\ double>\ a,\ std::pair<double,\ double>\ b);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ std::map<std::pair<double,\ double>,\ int64\_t>\ get\_clusters();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ std::vector<std::pair<double,\ double>\ >\ get\_noise();}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

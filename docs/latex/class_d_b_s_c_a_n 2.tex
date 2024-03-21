@@ -1,0 +1,32 @@
+\doxysection{DBSCAN Class Reference}
+\hypertarget{class_d_b_s_c_a_n}{}\label{class_d_b_s_c_a_n}\index{DBSCAN@{DBSCAN}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_d_b_s_c_a_n_a052547e3cb21c270495f5fcf98e70b0a}\label{class_d_b_s_c_a_n_a052547e3cb21c270495f5fcf98e70b0a} 
+{\bfseries DBSCAN} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ set\+Of\+Points, double Eps, int64\+\_\+t Min\+Pts) noexcept
+\item 
+\Hypertarget{class_d_b_s_c_a_n_a905021a89af288a06f9fcb7dbe935c75}\label{class_d_b_s_c_a_n_a905021a89af288a06f9fcb7dbe935c75} 
+int64\+\_\+t {\bfseries next\+Id} (int64\+\_\+t cluster\+\_\+id)
+\item 
+\Hypertarget{class_d_b_s_c_a_n_a0952151dd5397eb95092ba7518cb34a5}\label{class_d_b_s_c_a_n_a0952151dd5397eb95092ba7518cb34a5} 
+bool {\bfseries Expand\+Cluster} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ set\+Of\+Points, std\+::pair$<$ double, double $>$ point, int64\+\_\+t cluster\+\_\+id, double Eps, int64\+\_\+t Min\+Pts)
+\item 
+\Hypertarget{class_d_b_s_c_a_n_aa9de3fa41342a0d23dd73bd15bca83e8}\label{class_d_b_s_c_a_n_aa9de3fa41342a0d23dd73bd15bca83e8} 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ {\bfseries get\+\_\+query} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ set\+Of\+Points, std\+::pair$<$ double, double $>$ point, double Eps)
+\item 
+\Hypertarget{class_d_b_s_c_a_n_a22318475f5a9ecb9b7911e4392eee422}\label{class_d_b_s_c_a_n_a22318475f5a9ecb9b7911e4392eee422} 
+double {\bfseries dist} (std\+::pair$<$ double, double $>$ a, std\+::pair$<$ double, double $>$ b)
+\item 
+\Hypertarget{class_d_b_s_c_a_n_aad8e927fe18f379b2c0cf65e9008ab42}\label{class_d_b_s_c_a_n_aad8e927fe18f379b2c0cf65e9008ab42} 
+std\+::map$<$ std\+::pair$<$ double, double $>$, int64\+\_\+t $>$ {\bfseries get\+\_\+clusters} ()
+\item 
+\Hypertarget{class_d_b_s_c_a_n_ac9cfb1bc65f74713a0e3e0ec5a42a0a4}\label{class_d_b_s_c_a_n_ac9cfb1bc65f74713a0e3e0ec5a42a0a4} 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ {\bfseries get\+\_\+noise} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/src/machine\+\_\+learning/clustering/\+DBSCAN/dbscan.\+h\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/src/machine\+\_\+learning/clustering/\+DBSCAN/dbscan.\+cc\end{DoxyCompactItemize}
