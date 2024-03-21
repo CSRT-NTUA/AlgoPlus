@@ -14,6 +14,7 @@ int main(){
   for(int i = 0; i<100; i++){
     double rand1 = (rand() % 50) + 40;
     double rand2 = (rand() % 50) + 40;
+    std:: cout << rand1 << " " << rand2 << '\n';
     data.push_back({rand1, rand2});
   }
 

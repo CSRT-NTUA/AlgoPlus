@@ -78,31 +78,256 @@ $(function() {
   <div class="headertitle"><div class="title">DBSCAN Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_d_b_s_c_a_n.html" title="DBSCAN clustering algorithm class.">DBSCAN</a> clustering algorithm class.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dbscan_8h_source.html">dbscan.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a052547e3cb21c270495f5fcf98e70b0a" id="r_a052547e3cb21c270495f5fcf98e70b0a"><td class="memItemLeft" align="right" valign="top"><a id="a052547e3cb21c270495f5fcf98e70b0a" name="a052547e3cb21c270495f5fcf98e70b0a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DBSCAN</b> (std::vector&lt; std::pair&lt; double, double &gt; &gt; setOfPoints, double Eps, int64_t MinPts) noexcept</td></tr>
+<tr class="memitem:a052547e3cb21c270495f5fcf98e70b0a" id="r_a052547e3cb21c270495f5fcf98e70b0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a052547e3cb21c270495f5fcf98e70b0a">DBSCAN</a> (std::vector&lt; std::pair&lt; double, double &gt; &gt; setOfPoints, double Eps, int64_t MinPts) noexcept</td></tr>
+<tr class="memdesc:a052547e3cb21c270495f5fcf98e70b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for the <a class="el" href="class_d_b_s_c_a_n.html" title="DBSCAN clustering algorithm class.">DBSCAN</a> class  <br /></td></tr>
 <tr class="separator:a052547e3cb21c270495f5fcf98e70b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a905021a89af288a06f9fcb7dbe935c75" id="r_a905021a89af288a06f9fcb7dbe935c75"><td class="memItemLeft" align="right" valign="top"><a id="a905021a89af288a06f9fcb7dbe935c75" name="a905021a89af288a06f9fcb7dbe935c75"></a>
-int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>nextId</b> (int64_t cluster_id)</td></tr>
+<tr class="memitem:a905021a89af288a06f9fcb7dbe935c75" id="r_a905021a89af288a06f9fcb7dbe935c75"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a905021a89af288a06f9fcb7dbe935c75">nextId</a> (int64_t cluster_id)</td></tr>
 <tr class="separator:a905021a89af288a06f9fcb7dbe935c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0952151dd5397eb95092ba7518cb34a5" id="r_a0952151dd5397eb95092ba7518cb34a5"><td class="memItemLeft" align="right" valign="top"><a id="a0952151dd5397eb95092ba7518cb34a5" name="a0952151dd5397eb95092ba7518cb34a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>ExpandCluster</b> (std::vector&lt; std::pair&lt; double, double &gt; &gt; setOfPoints, std::pair&lt; double, double &gt; point, int64_t cluster_id, double Eps, int64_t MinPts)</td></tr>
+<tr class="memitem:a0952151dd5397eb95092ba7518cb34a5" id="r_a0952151dd5397eb95092ba7518cb34a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0952151dd5397eb95092ba7518cb34a5">ExpandCluster</a> (std::vector&lt; std::pair&lt; double, double &gt; &gt; setOfPoints, std::pair&lt; double, double &gt; point, int64_t cluster_id, double Eps, int64_t MinPts)</td></tr>
+<tr class="memdesc:a0952151dd5397eb95092ba7518cb34a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ExpandCluster function.  <br /></td></tr>
 <tr class="separator:a0952151dd5397eb95092ba7518cb34a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9de3fa41342a0d23dd73bd15bca83e8" id="r_aa9de3fa41342a0d23dd73bd15bca83e8"><td class="memItemLeft" align="right" valign="top"><a id="aa9de3fa41342a0d23dd73bd15bca83e8" name="aa9de3fa41342a0d23dd73bd15bca83e8"></a>
-std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_query</b> (std::vector&lt; std::pair&lt; double, double &gt; &gt; setOfPoints, std::pair&lt; double, double &gt; point, double Eps)</td></tr>
+<tr class="memitem:aa9de3fa41342a0d23dd73bd15bca83e8" id="r_aa9de3fa41342a0d23dd73bd15bca83e8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9de3fa41342a0d23dd73bd15bca83e8">get_query</a> (std::vector&lt; std::pair&lt; double, double &gt; &gt; setOfPoints, std::pair&lt; double, double &gt; point, double Eps)</td></tr>
+<tr class="memdesc:aa9de3fa41342a0d23dd73bd15bca83e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_query function  <br /></td></tr>
 <tr class="separator:aa9de3fa41342a0d23dd73bd15bca83e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22318475f5a9ecb9b7911e4392eee422" id="r_a22318475f5a9ecb9b7911e4392eee422"><td class="memItemLeft" align="right" valign="top"><a id="a22318475f5a9ecb9b7911e4392eee422" name="a22318475f5a9ecb9b7911e4392eee422"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>dist</b> (std::pair&lt; double, double &gt; a, std::pair&lt; double, double &gt; b)</td></tr>
+<tr class="memitem:a22318475f5a9ecb9b7911e4392eee422" id="r_a22318475f5a9ecb9b7911e4392eee422"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22318475f5a9ecb9b7911e4392eee422">dist</a> (std::pair&lt; double, double &gt; a, std::pair&lt; double, double &gt; b)</td></tr>
+<tr class="memdesc:a22318475f5a9ecb9b7911e4392eee422"><td class="mdescLeft">&#160;</td><td class="mdescRight">dist function  <br /></td></tr>
 <tr class="separator:a22318475f5a9ecb9b7911e4392eee422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8e927fe18f379b2c0cf65e9008ab42" id="r_aad8e927fe18f379b2c0cf65e9008ab42"><td class="memItemLeft" align="right" valign="top"><a id="aad8e927fe18f379b2c0cf65e9008ab42" name="aad8e927fe18f379b2c0cf65e9008ab42"></a>
-std::map&lt; std::pair&lt; double, double &gt;, int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_clusters</b> ()</td></tr>
+<tr class="memitem:aad8e927fe18f379b2c0cf65e9008ab42" id="r_aad8e927fe18f379b2c0cf65e9008ab42"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::pair&lt; double, double &gt;, int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad8e927fe18f379b2c0cf65e9008ab42">get_clusters</a> ()</td></tr>
+<tr class="memdesc:aad8e927fe18f379b2c0cf65e9008ab42"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_clusters function  <br /></td></tr>
 <tr class="separator:aad8e927fe18f379b2c0cf65e9008ab42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9cfb1bc65f74713a0e3e0ec5a42a0a4" id="r_ac9cfb1bc65f74713a0e3e0ec5a42a0a4"><td class="memItemLeft" align="right" valign="top"><a id="ac9cfb1bc65f74713a0e3e0ec5a42a0a4" name="ac9cfb1bc65f74713a0e3e0ec5a42a0a4"></a>
-std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_noise</b> ()</td></tr>
+<tr class="memitem:ac9cfb1bc65f74713a0e3e0ec5a42a0a4" id="r_ac9cfb1bc65f74713a0e3e0ec5a42a0a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9cfb1bc65f74713a0e3e0ec5a42a0a4">get_noise</a> ()</td></tr>
+<tr class="memdesc:ac9cfb1bc65f74713a0e3e0ec5a42a0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_noise function  <br /></td></tr>
 <tr class="separator:ac9cfb1bc65f74713a0e3e0ec5a42a0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_d_b_s_c_a_n.html" title="DBSCAN clustering algorithm class.">DBSCAN</a> clustering algorithm class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a052547e3cb21c270495f5fcf98e70b0a" name="a052547e3cb21c270495f5fcf98e70b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052547e3cb21c270495f5fcf98e70b0a">&#9670;&#160;</a></span>DBSCAN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DBSCAN::DBSCAN </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, double &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>setOfPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>Eps</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>MinPts</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>constructor for the <a class="el" href="class_d_b_s_c_a_n.html" title="DBSCAN clustering algorithm class.">DBSCAN</a> class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">setOfPoints</td><td>vector&lt;pair&lt;double,double&gt;&gt;: the input dataset </td></tr>
+    <tr><td class="paramname">Eps</td><td>the input diameter </td></tr>
+    <tr><td class="paramname">MinPts</td><td>the minimum points that a cluster should have to exist </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a22318475f5a9ecb9b7911e4392eee422" name="a22318475f5a9ecb9b7911e4392eee422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22318475f5a9ecb9b7911e4392eee422">&#9670;&#160;</a></span>dist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DBSCAN::dist </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; double, double &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dist function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>the first input vector </td></tr>
+    <tr><td class="paramname">b</td><td>the second input vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double: the euclidean distance of vector a and b </dd></dl>
+
+</div>
+</div>
+<a id="a0952151dd5397eb95092ba7518cb34a5" name="a0952151dd5397eb95092ba7518cb34a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0952151dd5397eb95092ba7518cb34a5">&#9670;&#160;</a></span>ExpandCluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DBSCAN::ExpandCluster </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, double &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>setOfPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;</td>          <td class="paramname"><span class="paramname"><em>point</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>cluster_id</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>Eps</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>MinPts</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ExpandCluster function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">setOfPoints</td><td>the input dataset </td></tr>
+    <tr><td class="paramname">point</td><td>the input point </td></tr>
+    <tr><td class="paramname">cluster_id</td><td>the input cluster_id </td></tr>
+    <tr><td class="paramname">Eps</td><td>the input diameter </td></tr>
+    <tr><td class="paramname">MinPts</td><td>the minimum points that a cluster should have to exist </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad8e927fe18f379b2c0cf65e9008ab42" name="aad8e927fe18f379b2c0cf65e9008ab42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad8e927fe18f379b2c0cf65e9008ab42">&#9670;&#160;</a></span>get_clusters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::pair&lt; double, double &gt;, int64_t &gt; DBSCAN::get_clusters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get_clusters function </p>
+<dl class="section return"><dt>Returns</dt><dd>map&lt;pair&lt;double,double&gt;&gt;: the points and their assignments </dd></dl>
+
+</div>
+</div>
+<a id="ac9cfb1bc65f74713a0e3e0ec5a42a0a4" name="ac9cfb1bc65f74713a0e3e0ec5a42a0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9cfb1bc65f74713a0e3e0ec5a42a0a4">&#9670;&#160;</a></span>get_noise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; double, double &gt; &gt; DBSCAN::get_noise </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get_noise function </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;pair&lt;double,double&gt;&gt;: the total points that exist as noise in the dataset </dd></dl>
+
+</div>
+</div>
+<a id="aa9de3fa41342a0d23dd73bd15bca83e8" name="aa9de3fa41342a0d23dd73bd15bca83e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9de3fa41342a0d23dd73bd15bca83e8">&#9670;&#160;</a></span>get_query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; double, double &gt; &gt; DBSCAN::get_query </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, double &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>setOfPoints</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; double, double &gt;</td>          <td class="paramname"><span class="paramname"><em>point</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>Eps</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get_query function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">setOfPoints</td><td>the input dataset </td></tr>
+    <tr><td class="paramname">point</td><td>the input point </td></tr>
+    <tr><td class="paramname">Eps</td><td>the input diameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a905021a89af288a06f9fcb7dbe935c75" name="a905021a89af288a06f9fcb7dbe935c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a905021a89af288a06f9fcb7dbe935c75">&#9670;&#160;</a></span>nextId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t DBSCAN::nextId </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>cluster_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>@ brief nextId function @ return int64_t: the next cluster id </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/spirosmag/Documents/AlgoPlus/src/machine_learning/clustering/DBSCAN/<a class="el" href="dbscan_8h_source.html">dbscan.h</a></li>
 <li>/Users/spirosmag/Documents/AlgoPlus/src/machine_learning/clustering/DBSCAN/<b>dbscan.cc</b></li>
