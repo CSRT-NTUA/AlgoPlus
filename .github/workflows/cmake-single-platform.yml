@@ -31,15 +31,15 @@ jobs:
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DENABLE_COVERAGE=true
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -DENABLE_COVERAGE=true
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
     - name: Test
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --output-on-failure
-    - name: get coverage
-      run: make coverage
+    #- name: get coverage
+    #  run: make coverage
     #- name: Run tests and collect coverage
     #  run: pytest --cov build/tests ${{ env.CODECOV_ATS_TESTS }} 
     - name: Upload coverage reports to Codecov
