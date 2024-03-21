@@ -11,7 +11,7 @@ on:
 
 jobs:
   coverage:
-    runs-on: ubuntu-22.04
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
 
