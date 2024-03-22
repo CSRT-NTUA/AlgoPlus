@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/sorting/insertion_sort.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 #include <random>
 #include <string>
 

@@ -1,5 +1,5 @@
 #include "../../src/classes/list/doubly_linked_list.h"
-#include "../catch2/catch.hpp"
+#include "../../third_party/catch.hpp"
 #include <string>
 
 // TEST DOES NOT PASS

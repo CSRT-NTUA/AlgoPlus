@@ -1,0 +1,199 @@
+\doxysection{mat\+\_\+1d.\+h}
+\hypertarget{mat__1d_8h_source}{}\label{mat__1d_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/linalg/mat\_1d.h@{/Users/spirosmag/Documents/AlgoPlus/src/linalg/mat\_1d.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MAT\_1D\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MAT\_1D\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../algorithms/sorting/quick\_sort.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keywordtype}{size\_t}\ SIZE>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mat1d}{Mat1d}}\{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ T\ *arr;}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{size\_t}\ \_\_size;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_mat1d_a190fdc829a106ccdaf13c8809f09fb86}{Mat1d}}(std::vector<T>\ v\ =\ \{\})\ :\ \_\_size(SIZE)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[\_\_size];}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}(!v.empty())\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v.size()\ !=\ \_\_size)\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}Initializer\ array\ don't\ have\ the\ same\ size\ as\ the\ constructed\ array"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ i++)\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ arr[i]\ =\ v[i];}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(std::logic\_error\ \&e)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_mat1d_aae86aa599b8e6e90eec1118c4180c060}{Mat1d}}(\textcolor{keyword}{const}\ T\ val)\ noexcept\ :\ \_\_size(SIZE)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[\_\_size];}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ ++i)\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ arr[i]\ =\ val;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_mat1d_a87b738c5e712fcaf88b64199246c6b88}{Mat1d}}(\mbox{\hyperlink{class_mat1d}{Mat1d}}\ \&mat)\ :\ \_\_size(SIZE)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mat.\mbox{\hyperlink{class_mat1d_a8d25301a4c262e57cec4ad88ea381de9}{size}}()\ !=\ \_\_size)\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}Tried\ to\ copy\ matrixes\ with\ different\ sizes"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{this}\ -\/>\ arr\ =\ \textcolor{keyword}{new}\ T[\_\_size];}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ i++)\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this-\/>arr[i]\ =\ mat.arr[i];}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{catch}(std::logic\_error\ \&e)\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{class_mat1d}{Mat1d}}\ \&\ \mbox{\hyperlink{class_mat1d_a8a0eb5b018b01a0581f9fde70271f816}{operator\ =}}(\mbox{\hyperlink{class_mat1d}{Mat1d}}\ \&mat)\{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{this}\ ==\ \&mat)\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mat.\mbox{\hyperlink{class_mat1d_a8d25301a4c262e57cec4ad88ea381de9}{size}}()\ !=\ \textcolor{keyword}{this}\ -\/>\ \_\_size)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}Tried\ to\ copy\ matrixes\ with\ different\ sizes"{}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ i++)\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}\ -\/>\ arr[i]\ =\ mat.arr[i];\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{catch}(std::logic\_error\ \&e)\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{class_mat1d_a3e235c7bf6411348cce3ae210bf18bbb}{\string~Mat1d}}()\{\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{delete}\ []\ arr;}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mat1d_a8d25301a4c262e57cec4ad88ea381de9}{size}}()\{}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_\_size;}
+\DoxyCodeLine{00119\ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keyword}{class\ }Iterator;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{class_mat1d_aaa5805e1d9b819858c411fddb6d7f091}{begin}}()\{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}(0,\ \_\_size,\ arr);}
+\DoxyCodeLine{00129\ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{class_mat1d_afc8be35e7db23060bdf1709b32eb3079}{end}}()\{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}(\_\_size\ ,\ \_\_size,\ arr);}
+\DoxyCodeLine{00137\ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ T\ \&\ \mbox{\hyperlink{class_mat1d_ab4efee5334e47d87ecd83e6465e0d4e5}{operator\ []}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index)\{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(index\ >=\ \_\_size)\{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[index];}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{catch}(std::invalid\_argument\ \&e)\{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \}\ }
+\DoxyCodeLine{00154\ \ \ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mat1d_ac0a0616977dda8b1848b645cc982abf5}{operator\ ==}}(\mbox{\hyperlink{class_mat1d}{Mat1d}}\ \&mat)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{if}(mat.\mbox{\hyperlink{class_mat1d_a8d25301a4c262e57cec4ad88ea381de9}{size}}()\ !=\ \_\_size)\{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ i++)\{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mat.arr[i]\ !=\ this-\/>arr[i])\{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00172\ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\ \mbox{\hyperlink{class_mat1d_a6fcb5b1c831cc22a3ebe196004fe809e}{operator\ <<}}(std::ostream\ \&out,\ \mbox{\hyperlink{class_mat1d}{Mat1d}}\ \&mat)\{}
+\DoxyCodeLine{00180\ \ \ \ \ out\ <<\ \textcolor{charliteral}{'['};}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<mat.\mbox{\hyperlink{class_mat1d_a8d25301a4c262e57cec4ad88ea381de9}{size}}();\ i++)\{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ out\ <<\ mat[i];}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ !=\ mat.size()\ -\/\ 1)\{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ out\ <<\ \textcolor{charliteral}{']'}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00189\ \ \ \}}
+\DoxyCodeLine{00190\ \};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00195\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keywordtype}{size\_t}\ SIZE>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mat1d}{Mat1d}}<T,\ SIZE>::\mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \{}
+\DoxyCodeLine{00196\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00197\ \ \ \textcolor{keywordtype}{size\_t}\ \_\_size;}
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordtype}{size\_t}\ index;}
+\DoxyCodeLine{00199\ \ \ T\ *arr;}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00208\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_mat1d_1_1_iterator_a7f548b32a4b22c33e24ed33481067b2d}{Iterator}}(\textcolor{keywordtype}{size\_t}\ \_\_index,\ \textcolor{keywordtype}{size\_t}\ \_\_size,\ T\ *\_\_arr)\ noexcept\ :\ index(\_\_index),\ \_\_size(\_\_size)\{}
+\DoxyCodeLine{00209\ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[\_\_size];}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ i++)\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ arr[i]\ =\ \_\_arr[i];}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00221\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{class_mat1d_1_1_iterator_a0f1f815320addfe2d81e2a0ab676142f}{operator=}}(T\ *curr)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<\_\_size;\ i++)\{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ arr[i]\ =\ curr[i];}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00226\ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00233\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{class_mat1d_1_1_iterator_a296c4b3b1d8bec7a35b87104c8dc5a13}{operator++}}()\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ \_\_size)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00238\ \ \ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00245\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{class_mat1d_1_1_iterator_ab6d0c25820f6a0b1e1674be81e481a8f}{operator++}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00247\ \ \ \ \ ++*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00249\ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00256\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \&\mbox{\hyperlink{class_mat1d_1_1_iterator_ab7d8ff339380ff0ae71f0cf684272130}{operator-\/-\/}}()\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >\ 0)\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ index-\/-\/;}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
+\DoxyCodeLine{00261\ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00268\ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \mbox{\hyperlink{class_mat1d_1_1_iterator_a6f9ddd97cde05faacacdf996a5b19e0a}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ it\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00270\ \ \ \ \ -\/-\/*(\textcolor{keyword}{this});}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00272\ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00281\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mat1d_1_1_iterator_a8e699d25ea786e33f8b10df7c45e89b9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mat1d_1_1_iterator}{Iterator}}\ \&it)\ \{\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{return}\ it.arr[it.index]\ !=\ arr[index];}
+\DoxyCodeLine{00283\ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00290\ \ \ T\ \mbox{\hyperlink{class_mat1d_1_1_iterator_a9e64021986de3e19b2f2425c3b85d8d6}{operator*}}()\ \{\ \textcolor{keywordflow}{return}\ arr[index];\ \}}
+\DoxyCodeLine{00291\ \};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

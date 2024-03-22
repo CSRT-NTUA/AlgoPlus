@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/searching/binary_search.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing binary search") {
   std::vector<int> v = {-10, 10, 20, 30, 100};

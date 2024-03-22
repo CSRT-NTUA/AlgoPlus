@@ -241,8 +241,8 @@ public:
   *@return Iterator&
   */
   Iterator & operator ++(){
-    if(__index < __size){
-      __index++;
+    if(this->__index < __size){
+      this->__index++;
     }
     return *(this);
   }
@@ -262,8 +262,8 @@ public:
   *@return Iterator&
   */
   Iterator &operator --(){
-    if(__index > 0){
-      __index--;
+    if(this->__index > 0){
+      this->__index--;
     }
     return *(this);
   }
@@ -284,7 +284,7 @@ public:
   *@return false otherwise
   */
   bool operator !=(const Iterator &it){
-    return it.arr[it.index] != arr[index];
+    return it.arr[it.index] != arr[this->index];
   }
   
   /**
@@ -293,7 +293,7 @@ public:
   */
   Mat1d<T, COLS> operator *(){
     size_t index = 0;
-    for(size_t j = __index * __cols; j < __index * __cols + __rows; ++j){
+    for(size_t j = this->__index * __cols; j < this->__index * __cols + __rows; ++j){
       mat[index++] = arr[j];
     }
     return mat;

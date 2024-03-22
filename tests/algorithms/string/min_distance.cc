@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/string/edit_distance.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 #include <string>
 
 TEST_CASE("testing min distance function") {

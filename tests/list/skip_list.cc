@@ -1,5 +1,5 @@
 #include "../../src/classes/list/skip_list.h"
-#include "../catch2/catch.hpp"
+#include "../../third_party/catch.hpp"
 #include <string>
 
 TEST_CASE("testing search in skip list") {

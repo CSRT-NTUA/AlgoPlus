@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/number_theory/gcd.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing binary gcd") {
   int64_t a = 100, b = 4;

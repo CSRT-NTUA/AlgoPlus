@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/string/kmp.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 #include <string>
 
 TEST_CASE("testing kmp") {

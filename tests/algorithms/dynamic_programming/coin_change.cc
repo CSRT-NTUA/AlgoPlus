@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/dynamic_programming/coin_change.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 using namespace std;
 

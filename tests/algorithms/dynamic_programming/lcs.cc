@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/dynamic_programming/lcs.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing longest common subsequence") {
   std::string a = "AGGTAB", b = "GXTXAYB";

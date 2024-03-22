@@ -6,7 +6,7 @@ AlgoPlus is a C++ library that includes ready-to-use complex **data structures**
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/CSRT-NTUA/AlgoPlus)
 [![CodeQL CI](https://github.com/TheAlgorithms/C-Plus-Plus/actions/workflows/codeql.yml/badge.svg)](https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/codeql.yml)
-[![Awesome CI](https://github.com/CSRT-NTUA/AlgoPlus/workflows/Awesome%20CI%20Workflow/badge.svg)](https://github.com/CSRT-NTUA/AlgoPlus/actions?query=workflow%3A%22Awesome+CI+Workflow%22)
+[![codecov](https://codecov.io/gh/CSRT-NTUA/AlgoPlus/graph/badge.svg?token=3SBDRHUQR5)](https://codecov.io/gh/CSRT-NTUA/AlgoPlus)
 ![GitHub repo size](https://img.shields.io/github/repo-size/CSRT-NTUA/AlgoPlus)
 
 ### **See the full documentation [here](https://csrt-ntua.github.io/AlgoPlus/)**
@@ -64,6 +64,12 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 - [X] [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
+
+**Machine Learning(NEW!)**
+- [X] [Kmeans](https://en.wikipedia.org/wiki/K-means_clustering)
+- [X] [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
+- [X] [Linear Regression-Currently working]
+- [X] [Polynomial Regression-Currently working]
 
 
 ### **How to run test cases**

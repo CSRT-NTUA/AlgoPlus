@@ -1,3 +1,4 @@
+#pragma once
 #ifndef FREQUENCY_LIST_H
 #define FREQUENCY_LIST_H
 
@@ -5,6 +6,8 @@
 #include <cstdint>
 #include <vector>
 #include <memory>
+#include <string>
+#include "../../visualization/list_visual/linked_list_visualization.h"
 #endif
 
 
@@ -71,7 +74,6 @@ public:
      */
   void push_back(T data);
 
-
   /**
      * @brief Adds an element to the front of the frequency list.
      *
@@ -120,6 +122,14 @@ public:
      */
   void reset_frequency();
 
+  
+  /**
+   *@brief Returns all the elements of the list
+   *@return std::vector<T> the elements of the list
+   *
+   */
+  std::vector<std::pair<T, int64_t> > elements();
+
 
   /**
      * @brief Checks if the frequency list is empty.
@@ -146,6 +156,13 @@ public:
      * @return An Iterator object pointing to the end of the frequency list.
      */
   Iterator end() { return Iterator(nullptr); }
+
+  /**
+   *
+   *@brief visualize function for frequency_list Class
+   *returns a .dot file that can be previewd with graphviz plugin in vscode
+   */
+  void visualize();
 
   /**
      * @brief Overloaded output stream insertion operator for the frequency_list class.
@@ -208,6 +225,13 @@ private:
      * @param b The second node to be swapped.
      */
   void swap_nodes(std::shared_ptr<node> a, std::shared_ptr<node> b);
+
+  /**
+   *
+   *@brief generate a string that contains all the information for the visualization
+   *@return std::string the information for the .dot file
+   */
+  std::string generate();
 };
 
 
@@ -380,6 +404,90 @@ void frequency_list<T>::push_back(T data) {
 }
 
 
+template<typename T> std::vector<std::pair<T, int64_t> > frequency_list<T>::elements(){
+  std::vector<std::pair<T, int64_t> > ans;
+  std::shared_ptr<node> root = head;
+  while(root){
+    ans.push_back(std::make_pair(root -> data, root -> freq));
+    root = root -> next;
+  }
+  return ans;
+}
+
+
+template <typename T> std::string frequency_list<T>::generate() {
+  std::string gen = "";
+  gen += "rankdir=LR;";
+  gen += '\n';
+  gen += "node [shape=record;]";
+  gen += '\n';
+  std::vector<std::pair<T, int64_t> > els = this->elements();
+  if (std::is_same_v<T, std::string> || std::is_same_v<T, char>) {
+    for (auto &x : els) {
+      gen += x.first;
+      gen += " [label=<{ ";
+      gen += x.first;
+      gen += " | ";
+      gen += x.second;
+      gen += " | }>] ;";
+      gen += '\n';
+    }
+
+    std::shared_ptr<node> curr = head;
+    while (curr->next) {
+      gen += curr->data;
+      gen += ":ref -> ";
+      gen += curr->next->data;
+      gen += ":data [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      gen += curr->next->data;
+      gen += ":data -> ";
+      gen += curr->data;
+      gen += ":ref [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      curr = curr->next;
+    }
+  } else {
+    for (auto &x : els) {
+      std::cout << std::to_string(x.first) << " " << std::to_string(x.second) << '\n';
+      gen += std::to_string(x.first);
+      gen += " [label=<{ ";
+      gen += std::to_string(x.first);
+      gen += " | ";
+      gen += std::to_string(x.second);
+      gen += " | }>] ;";
+      gen += '\n';
+    }
+
+    std::shared_ptr<node> curr = head;
+    while (curr->next) {
+      gen += std::to_string(curr->data);
+      gen += ":ref -> ";
+      gen += std::to_string(curr->next->data);
+      gen += ":data [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      gen += std::to_string(curr->next->data);
+      gen += ":data -> ";
+      gen += std::to_string(curr->data);
+      gen += ":ref [arrowhead=vee, arrowtail=dot, dir=both];";
+      gen += '\n';
+
+      curr = curr->next;
+    }
+  }
+  return gen;
+}
+
+template <typename T> void frequency_list<T>::visualize() {
+  std::string generated = this->generate();
+  linked_list_visualization::visualize(generated);
+}
+
+
+
 template<typename T>
 class frequency_list<T>::Iterator {
 private:
@@ -451,7 +559,7 @@ public:
     }
     return *(this);
   }
-  
+
   /**
    *@brief Post-increment --operator for the Iterator class.
    *This operator overloads the post-increment operator (--).

@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/searching/linear_search.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing linear search") {
   std::vector<int> v = {1, 5, 3, 1, 2, 3, -41, -20};

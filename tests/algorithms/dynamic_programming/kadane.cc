@@ -1,5 +1,5 @@
 #include "../../../src/algorithms/dynamic_programming/kadane.h"
-#include "../../catch2/catch.hpp"
+#include "../../../third_party/catch.hpp"
 
 TEST_CASE("testing kadane's algo") {
   std::vector<int> v = {1, 4, 5, -5, -6, 4, 10, 15, -10};

@@ -1,5 +1,5 @@
 #include "../../src/classes/tree/avl_tree.h"
-#include "../catch2/catch.hpp"
+#include "../../third_party/catch.hpp"
 #include <string>
 
 TEST_CASE("checking insertions and traversals in avl") {
