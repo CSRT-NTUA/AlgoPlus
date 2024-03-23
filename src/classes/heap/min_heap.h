@@ -34,6 +34,16 @@ public:
 
   ~min_heap() noexcept { delete[] arr; }
 
+   /**
+ * @brief Copy constructor for the min_heap class
+ *
+ * @param h The heap to be copied
+ */
+min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_size) {
+    arr = new T[max_size];
+    std::copy(h.arr, h.arr + h.heap_size, arr);
+}
+
   /**
    * @brief parent function
    *
