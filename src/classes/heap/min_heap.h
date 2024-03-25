@@ -5,6 +5,7 @@
 #include <functional>
 #include <iostream>
 #include <vector>
+#include <climits>
 #endif
 
 // This is needed to avoid conflict with windows __min macro
@@ -138,9 +139,9 @@ min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_si
    * @param i the element we want to heapify from
    */
   void heapify(T i) {
-    T left = __left(i);
-    T right = __right(i);
-    T minim = i;
+    size_t left = __left(i);
+    size_t right = __right(i);
+    size_t minim = i;
     if (left < heap_size && arr[left] < arr[i]) {
       minim = left;
     }

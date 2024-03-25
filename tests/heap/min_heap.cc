@@ -1,5 +1,6 @@
 #include "../../src/classes/heap/min_heap.h"
 #include "../../third_party/catch.hpp"
+#include <climits>
 
 TEST_CASE("testing insertion an minimum")
 {
