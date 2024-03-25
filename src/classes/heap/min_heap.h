@@ -139,20 +139,20 @@ min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_si
    * @param i the element we want to heapify from
    */
   void heapify(T i) {
-    size_t left = __left(i);
-    size_t right = __right(i);
-    size_t minim = i;
-    if (left < heap_size && arr[left] < arr[i]) {
-      minim = left;
+    T left = __left(i);
+    T right = __right(i);
+    T minim = i;
+    if (left < static_cast<T>(heap_size) && arr[left] < arr[i]) {
+        minim = left;
     }
-    if (right < heap_size && arr[right] < arr[i]) {
-      minim = right;
+    if (right < static_cast<T>(heap_size) && arr[right] < arr[i]) {
+        minim = right;
     }
     if (minim != i) {
-      std::swap(arr[i], arr[minim]);
-      heapify(minim);
+        std::swap(arr[i], arr[minim]);
+        heapify(minim);
     }
-  }
+}
 };
 
 #endif
