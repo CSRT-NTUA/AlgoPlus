@@ -57,7 +57,6 @@ std::vector<std::pair<double, double> > DBSCAN::get_query(std::vector<std::pair<
   for(size_t i = 0; i<setOfPoints.size(); i++){
     std::pair<double, double> curr = setOfPoints[i];
     if(dist(point, curr) <= Eps){
-      std::cout << "Distance of {" << point.first << "," << point.second << "} and {" << curr.first << "," << curr.second << "} is smaller than " << Eps << '\n';
       ans.push_back(curr);
     }
   }

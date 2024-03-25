@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['to_5fjson_5ffn_0',['to_json_fn',['../structdetail_1_1to__json__fn.html',1,'detail']]],
-  ['trie_1',['trie',['../classtrie.html',1,'']]],
-  ['tuple_5felement_3c_20n_2c_20_3a_3anlohmann_3a_3adetail_3a_3aiteration_5fproxy_5fvalue_3c_20iteratortype_20_3e_20_3e_2',['tuple_element&lt; N, ::nlohmann::detail::iteration_proxy_value&lt; IteratorType &gt; &gt;',['../classstd_1_1tuple__element_3_01_n_00_01_1_1nlohmann_1_1detail_1_1iteration__proxy__value_3_01_iterator_type_01_4_01_4.html',1,'std']]],
-  ['tuple_5fsize_3c_3a_3anlohmann_3a_3adetail_3a_3aiteration_5fproxy_5fvalue_3c_20iteratortype_20_3e_20_3e_3',['tuple_size&lt;::nlohmann::detail::iteration_proxy_value&lt; IteratorType &gt; &gt;',['../classstd_1_1tuple__size_3_1_1nlohmann_1_1detail_1_1iteration__proxy__value_3_01_iterator_type_01_4_01_4.html',1,'std']]],
-  ['two_4',['two',['../structdetail_1_1is__ordered__map_1_1two.html',1,'detail::is_ordered_map']]],
-  ['type_5ferror_5',['type_error',['../classdetail_1_1type__error.html',1,'detail']]]
+  ['randomfloatinggenerator_0',['RandomFloatingGenerator',['../class_catch_1_1_generators_1_1_random_floating_generator.html',1,'Catch::Generators']]],
+  ['randomintegergenerator_1',['RandomIntegerGenerator',['../class_catch_1_1_generators_1_1_random_integer_generator.html',1,'Catch::Generators']]],
+  ['rangegenerator_2',['RangeGenerator',['../class_catch_1_1_generators_1_1_range_generator.html',1,'Catch::Generators']]],
+  ['regexmatcher_3',['RegexMatcher',['../struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher.html',1,'Catch::Matchers::StdString']]],
+  ['registrarfortagaliases_4',['RegistrarForTagAliases',['../struct_catch_1_1_registrar_for_tag_aliases.html',1,'Catch']]],
+  ['repeatgenerator_5',['RepeatGenerator',['../class_catch_1_1_generators_1_1_repeat_generator.html',1,'Catch::Generators']]],
+  ['resultdisposition_6',['ResultDisposition',['../struct_catch_1_1_result_disposition.html',1,'Catch']]],
+  ['resultwas_7',['ResultWas',['../struct_catch_1_1_result_was.html',1,'Catch']]],
+  ['reusablestringstream_8',['ReusableStringStream',['../class_catch_1_1_reusable_string_stream.html',1,'Catch']]],
+  ['runtests_9',['RunTests',['../struct_catch_1_1_run_tests.html',1,'Catch']]]
 ];

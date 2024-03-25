@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['exception_0',['exception',['../classdetail_1_1exception.html',1,'detail']]],
-  ['extend_1',['Extend',['../structdetail_1_1utility__internal_1_1_extend.html',1,'detail::utility_internal']]],
-  ['extend_3c_20integer_5fsequence_3c_20t_2c_20ints_2e_2e_2e_20_3e_2c_20seqsize_2c_200_20_3e_2',['Extend&lt; integer_sequence&lt; T, Ints... &gt;, SeqSize, 0 &gt;',['../structdetail_1_1utility__internal_1_1_extend_3_01integer__sequence_3_01_t_00_01_ints_8_8_8_01_4_00_01_seq_size_00_010_01_4.html',1,'detail::utility_internal']]],
-  ['extend_3c_20integer_5fsequence_3c_20t_2c_20ints_2e_2e_2e_20_3e_2c_20seqsize_2c_201_20_3e_3',['Extend&lt; integer_sequence&lt; T, Ints... &gt;, SeqSize, 1 &gt;',['../structdetail_1_1utility__internal_1_1_extend_3_01integer__sequence_3_01_t_00_01_ints_8_8_8_01_4_00_01_seq_size_00_011_01_4.html',1,'detail::utility_internal']]],
-  ['external_5fconstructor_4',['external_constructor',['../structdetail_1_1external__constructor.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3aarray_20_3e_5',['external_constructor&lt; value_t::array &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1array_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3abinary_20_3e_6',['external_constructor&lt; value_t::binary &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1binary_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3aboolean_20_3e_7',['external_constructor&lt; value_t::boolean &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1boolean_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3anumber_5ffloat_20_3e_8',['external_constructor&lt; value_t::number_float &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1number__float_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3anumber_5finteger_20_3e_9',['external_constructor&lt; value_t::number_integer &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1number__integer_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3anumber_5funsigned_20_3e_10',['external_constructor&lt; value_t::number_unsigned &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1number__unsigned_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3aobject_20_3e_11',['external_constructor&lt; value_t::object &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1object_01_4.html',1,'detail']]],
-  ['external_5fconstructor_3c_20value_5ft_3a_3astring_20_3e_12',['external_constructor&lt; value_t::string &gt;',['../structdetail_1_1external__constructor_3_01value__t_1_1string_01_4.html',1,'detail']]]
+  ['dbscan_0',['DBSCAN',['../class_d_b_s_c_a_n.html',1,'']]],
+  ['decomposer_1',['Decomposer',['../struct_catch_1_1_decomposer.html',1,'Catch']]],
+  ['dequeue_5flist_2',['dequeue_list',['../classdequeue__list.html',1,'']]],
+  ['derived_3',['Derived',['../structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_derived.html',1,'matplotlibcpp::detail::is_callable_impl&lt; true, T &gt;']]],
+  ['detector_4',['detector',['../structdetail_1_1detector.html',1,'detail']]],
+  ['detector_3c_20default_2c_20void_5ft_3c_20op_3c_20args_2e_2e_2e_20_3e_20_3e_2c_20op_2c_20args_2e_2e_2e_20_3e_5',['detector&lt; Default, void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;',['../structdetail_1_1detector_3_01_default_00_01void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4.html',1,'detail']]],
+  ['diyfp_6',['diyfp',['../structdetail_1_1dtoa__impl_1_1diyfp.html',1,'detail::dtoa_impl']]],
+  ['doubly_5flinked_5flist_7',['doubly_linked_list',['../classdoubly__linked__list.html',1,'']]],
+  ['dsu_8',['dsu',['../classdsu.html',1,'']]]
 ];

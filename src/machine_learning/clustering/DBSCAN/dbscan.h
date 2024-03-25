@@ -34,7 +34,6 @@ public:
     // cluster_id is by default noise
     cluster_id = 0;
     for(size_t i = 0; i<setOfPoints.size(); ++i){
-      std::cout << "checking point " << setOfPoints[i].first << " " << setOfPoints[i].second << '\n';
       if(points.find(setOfPoints[i]) == points.end()){
         if(ExpandCluster(setOfPoints, setOfPoints[i], cluster_id, Eps, MinPts)){
           cluster_id = nextId(cluster_id);

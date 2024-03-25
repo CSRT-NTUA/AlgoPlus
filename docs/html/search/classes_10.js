@@ -1,9 +1,15 @@
 var searchData=
 [
-  ['serializer_0',['serializer',['../classdetail_1_1serializer.html',1,'detail']]],
-  ['skip_5flist_1',['skip_list',['../classskip__list.html',1,'']]],
-  ['span_5finput_5fadapter_2',['span_input_adapter',['../classdetail_1_1span__input__adapter.html',1,'detail']]],
-  ['splay_5ftree_3',['splay_tree',['../classsplay__tree.html',1,'']]],
-  ['stack_5flist_4',['stack_list',['../classstack__list.html',1,'']]],
-  ['static_5fconst_5',['static_const',['../structdetail_1_1static__const.html',1,'detail']]]
+  ['parse_5ferror_0',['parse_error',['../classdetail_1_1parse__error.html',1,'detail']]],
+  ['parser_1',['parser',['../classdetail_1_1parser.html',1,'detail']]],
+  ['plot_2',['Plot',['../classmatplotlibcpp_1_1_plot.html',1,'matplotlibcpp']]],
+  ['plot_5fimpl_3',['plot_impl',['../structmatplotlibcpp_1_1detail_1_1plot__impl.html',1,'matplotlibcpp::detail']]],
+  ['plot_5fimpl_3c_20std_3a_3afalse_5ftype_20_3e_4',['plot_impl&lt; std::false_type &gt;',['../structmatplotlibcpp_1_1detail_1_1plot__impl_3_01std_1_1false__type_01_4.html',1,'matplotlibcpp::detail']]],
+  ['plot_5fimpl_3c_20std_3a_3atrue_5ftype_20_3e_5',['plot_impl&lt; std::true_type &gt;',['../structmatplotlibcpp_1_1detail_1_1plot__impl_3_01std_1_1true__type_01_4.html',1,'matplotlibcpp::detail']]],
+  ['pluralise_6',['pluralise',['../struct_catch_1_1pluralise.html',1,'Catch']]],
+  ['position_5ft_7',['position_t',['../structdetail_1_1position__t.html',1,'detail']]],
+  ['predicatematcher_8',['PredicateMatcher',['../class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher.html',1,'Catch::Matchers::Generic']]],
+  ['primitive_5fiterator_5ft_9',['primitive_iterator_t',['../classdetail_1_1primitive__iterator__t.html',1,'detail']]],
+  ['priority_5ftag_10',['priority_tag',['../structdetail_1_1priority__tag.html',1,'detail']]],
+  ['priority_5ftag_3c_200_20_3e_11',['priority_tag&lt; 0 &gt;',['../structdetail_1_1priority__tag_3_010_01_4.html',1,'detail']]]
 ];

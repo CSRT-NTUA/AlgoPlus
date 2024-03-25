@@ -169,8 +169,8 @@
 \DoxyCodeLine{00237\ \ \ \}}
 \DoxyCodeLine{00238\ \ \ }
 \DoxyCodeLine{00243\ \ \ \mbox{\hyperlink{class_mat2d_1_1_iterator}{Iterator}}\ \&\ operator\ ++()\{}
-\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_index\ <\ \_\_size)\{}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \_\_index++;}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\_\_index\ <\ \_\_size)\{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ this-\/>\_\_index++;}
 \DoxyCodeLine{00246\ \ \ \ \ \}}
 \DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
 \DoxyCodeLine{00248\ \ \ \}}
@@ -182,8 +182,8 @@
 \DoxyCodeLine{00258\ \ \ \}}
 \DoxyCodeLine{00259\ \ \ }
 \DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{class_mat2d_1_1_iterator}{Iterator}}\ \&operator\ -\/-\/()\{}
-\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_index\ >\ 0)\{}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \_\_index-\/-\/;}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\_\_index\ >\ 0)\{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ this-\/>\_\_index-\/-\/;}
 \DoxyCodeLine{00267\ \ \ \ \ \}}
 \DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{return}\ *(\textcolor{keyword}{this});}
 \DoxyCodeLine{00269\ \ \ \}}
@@ -195,12 +195,12 @@
 \DoxyCodeLine{00279\ \ \ \}}
 \DoxyCodeLine{00280\ \ \ }
 \DoxyCodeLine{00286\ \ \ \textcolor{keywordtype}{bool}\ operator\ !=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mat2d_1_1_iterator}{Iterator}}\ \&it)\{}
-\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{return}\ it.arr[it.index]\ !=\ arr[index];}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{return}\ it.arr[it.index]\ !=\ arr[this-\/>index];}
 \DoxyCodeLine{00288\ \ \ \}}
 \DoxyCodeLine{00289\ \ \ }
 \DoxyCodeLine{00294\ \ \ \mbox{\hyperlink{class_mat1d}{Mat1d<T,\ COLS>}}\ operator\ *()\{}
 \DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ 0;}
-\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ \_\_index\ *\ \_\_cols;\ j\ <\ \_\_index\ *\ \_\_cols\ +\ \_\_rows;\ ++j)\{}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ this-\/>\_\_index\ *\ \_\_cols;\ j\ <\ this-\/>\_\_index\ *\ \_\_cols\ +\ \_\_rows;\ ++j)\{}
 \DoxyCodeLine{00297\ \ \ \ \ \ \ mat[index++]\ =\ arr[j];}
 \DoxyCodeLine{00298\ \ \ \ \ \}}
 \DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{return}\ mat;}

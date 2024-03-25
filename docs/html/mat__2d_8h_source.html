@@ -283,8 +283,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  </div>
 <div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#aa58d88889c6632f002837a5def00fc7a">  243</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp; operator ++(){</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span>(__index &lt; __size){</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      __index++;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span>(this-&gt;__index &lt; __size){</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      this-&gt;__index++;</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  }</div>
@@ -300,8 +300,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  </div>
 <div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#ac9f6e292c31de87d8912a9bf60345468">  264</a></span>  <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp;operator --(){</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">if</span>(__index &gt; 0){</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      __index--;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">if</span>(this-&gt;__index &gt; 0){</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      this-&gt;__index--;</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  }</div>
@@ -317,14 +317,14 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  </div>
 <div class="foldopen" id="foldopen00286" data-start="{" data-end="}">
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#a579f6129fa773eaeab2f5bb85ddb35ea">  286</a></span>  <span class="keywordtype">bool</span> operator !=(<span class="keyword">const</span> <a class="code hl_class" href="class_mat2d_1_1_iterator.html">Iterator</a> &amp;it){</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">return</span> it.arr[it.index] != arr[index];</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">return</span> it.arr[it.index] != arr[this-&gt;index];</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  }</div>
 </div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  </div>
 <div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="class_mat2d_1_1_iterator.html#a5043fd4d69e524170c57876051c5e758">  294</a></span>  <a class="code hl_class" href="class_mat1d.html">Mat1d&lt;T, COLS&gt;</a> operator *(){</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordtype">size_t</span> index = 0;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = __index * __cols; j &lt; __index * __cols + __rows; ++j){</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = this-&gt;__index * __cols; j &lt; this-&gt;__index * __cols + __rows; ++j){</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      mat[index++] = arr[j];</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">return</span> mat;</div>

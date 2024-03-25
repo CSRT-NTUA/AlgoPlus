@@ -29,28 +29,27 @@
 \DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ cluster\_id\ is\ by\ default\ noise}}
 \DoxyCodeLine{00035\ \ \ \ \ cluster\_id\ =\ 0;}
 \DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<setOfPoints.size();\ ++i)\{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}checking\ point\ "{}}\ <<\ setOfPoints[i].first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ setOfPoints[i].second\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(points.find(setOfPoints[i])\ ==\ points.end())\{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_d_b_s_c_a_n_a0952151dd5397eb95092ba7518cb34a5}{ExpandCluster}}(setOfPoints,\ setOfPoints[i],\ cluster\_id,\ Eps,\ MinPts))\{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ cluster\_id\ =\ \mbox{\hyperlink{class_d_b_s_c_a_n_a905021a89af288a06f9fcb7dbe935c75}{nextId}}(cluster\_id);}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \}}
-\DoxyCodeLine{00044\ \ \ \}}
-\DoxyCodeLine{00045\ \ \ }
-\DoxyCodeLine{00050\ \ \ int64\_t\ \mbox{\hyperlink{class_d_b_s_c_a_n_a905021a89af288a06f9fcb7dbe935c75}{nextId}}(int64\_t\ cluster\_id);}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_b_s_c_a_n_a0952151dd5397eb95092ba7518cb34a5}{ExpandCluster}}(std::vector<std::pair<double,\ double>\ >\ setOfPoints,\ std::pair<double,\ double>\ point,\ int64\_t\ cluster\_id,\ \textcolor{keywordtype}{double}\ Eps,\ int64\_t\ MinPts);}
-\DoxyCodeLine{00062\ \ \ }
-\DoxyCodeLine{00070\ \ \ std::vector<std::pair<double,\ double>\ >\ \mbox{\hyperlink{class_d_b_s_c_a_n_aa9de3fa41342a0d23dd73bd15bca83e8}{get\_query}}(std::vector<std::pair<double,\ double>\ >\ setOfPoints,\ std::pair<double,\ double>\ point,\ \textcolor{keywordtype}{double}\ Eps);}
-\DoxyCodeLine{00071\ \ \ }
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_d_b_s_c_a_n_a22318475f5a9ecb9b7911e4392eee422}{dist}}(std::pair<double,\ double>\ a,\ std::pair<double,\ double>\ b);}
-\DoxyCodeLine{00079\ \ \ }
-\DoxyCodeLine{00085\ \ \ std::map<std::pair<double,\ double>,\ int64\_t>\ \mbox{\hyperlink{class_d_b_s_c_a_n_aad8e927fe18f379b2c0cf65e9008ab42}{get\_clusters}}();}
-\DoxyCodeLine{00086\ \ \ }
-\DoxyCodeLine{00091\ \ \ std::vector<std::pair<double,\ double>\ >\ \mbox{\hyperlink{class_d_b_s_c_a_n_ac9cfb1bc65f74713a0e3e0ec5a42a0a4}{get\_noise}}();}
-\DoxyCodeLine{00092\ \};}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(points.find(setOfPoints[i])\ ==\ points.end())\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_d_b_s_c_a_n_a0952151dd5397eb95092ba7518cb34a5}{ExpandCluster}}(setOfPoints,\ setOfPoints[i],\ cluster\_id,\ Eps,\ MinPts))\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ cluster\_id\ =\ \mbox{\hyperlink{class_d_b_s_c_a_n_a905021a89af288a06f9fcb7dbe935c75}{nextId}}(cluster\_id);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ \ \ }
+\DoxyCodeLine{00049\ \ \ int64\_t\ \mbox{\hyperlink{class_d_b_s_c_a_n_a905021a89af288a06f9fcb7dbe935c75}{nextId}}(int64\_t\ cluster\_id);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_b_s_c_a_n_a0952151dd5397eb95092ba7518cb34a5}{ExpandCluster}}(std::vector<std::pair<double,\ double>\ >\ setOfPoints,\ std::pair<double,\ double>\ point,\ int64\_t\ cluster\_id,\ \textcolor{keywordtype}{double}\ Eps,\ int64\_t\ MinPts);}
+\DoxyCodeLine{00061\ \ \ }
+\DoxyCodeLine{00069\ \ \ std::vector<std::pair<double,\ double>\ >\ \mbox{\hyperlink{class_d_b_s_c_a_n_aa9de3fa41342a0d23dd73bd15bca83e8}{get\_query}}(std::vector<std::pair<double,\ double>\ >\ setOfPoints,\ std::pair<double,\ double>\ point,\ \textcolor{keywordtype}{double}\ Eps);}
+\DoxyCodeLine{00070\ \ \ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_d_b_s_c_a_n_a22318475f5a9ecb9b7911e4392eee422}{dist}}(std::pair<double,\ double>\ a,\ std::pair<double,\ double>\ b);}
+\DoxyCodeLine{00078\ \ \ }
+\DoxyCodeLine{00084\ \ \ std::map<std::pair<double,\ double>,\ int64\_t>\ \mbox{\hyperlink{class_d_b_s_c_a_n_aad8e927fe18f379b2c0cf65e9008ab42}{get\_clusters}}();}
+\DoxyCodeLine{00085\ \ \ }
+\DoxyCodeLine{00090\ \ \ std::vector<std::pair<double,\ double>\ >\ \mbox{\hyperlink{class_d_b_s_c_a_n_ac9cfb1bc65f74713a0e3e0ec5a42a0a4}{get\_noise}}();}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
