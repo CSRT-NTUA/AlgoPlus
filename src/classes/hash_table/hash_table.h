@@ -32,6 +32,8 @@
  */
 template <typename KeyType, typename ValueType> class hash_table {
 public:
+    using BucketType = std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>;
+
   /**
    * @brief Construct a new hash table object
    *
@@ -121,31 +123,36 @@ public:
 
   class Iterator;
 
-  Iterator begin() { return Iterator(bucketList, 0); }
+    Iterator begin() {
+        auto startIterator = bucketList.begin();
+        while (startIterator != bucketList.end() && startIterator->second.empty())
+            startIterator++;
+        return Iterator(startIterator, bucketList.end());
+    }
 
-  Iterator end() { return Iterator(bucketList, bucketList.size()); }
+    Iterator end() {
+        return Iterator(bucketList.end(), bucketList.end());
+    }
 
   /**
    * @brief << operator for hash_table class
    * @return std::ostream&
    */
-  friend std::ostream &operator<<(std::ostream &out,
-                                  hash_table<KeyType, ValueType> &h) {
-    out << '[';
-    for (auto &[key, list] : h.bucketList) {
-      for (auto &pair : h.bucketList[key]) {
-        out << "{" << pair.first << ", " << pair.second << "} ";
+  friend std::ostream &operator<<(std::ostream &out, hash_table<KeyType, ValueType> &h) {
+      out << '[';
+      for (auto &[key, list] : h.bucketList) {
+          for (auto &pair : h.bucketList[key]) {
+              out << "{" << pair.first << ", " << pair.second << "} ";
+          }
+          out << '\n';
       }
-      out << '\n';
-    }
-    out << ']';
+      out << ']';
+      return out;
   }
 
 private:
-  std::hash<KeyType> hash;
-  // std::vector<std::list<std::pair<KeyType, ValueType>>> bucketList;
-  std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
-      bucketList;
+    std::hash<KeyType> hash;
+    BucketType bucketList;
 };
 
 /**
@@ -154,6 +161,11 @@ private:
 template <typename KeyType, typename ValueType>
 class hash_table<KeyType, ValueType>::Iterator {
 private:
+    using BucketIterator = typename BucketType::iterator;
+    using ListIterator = typename std::list<std::pair<KeyType, ValueType>>::iterator;
+    BucketIterator bucketIter, bucketEnd;
+    ListIterator listIter;
+
   std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
       bucketList;
   std::vector<size_t> key_values;
@@ -165,14 +177,11 @@ public:
    *
    * @param bucket the bucket list
    */
-  explicit Iterator(
-      const std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
-          &bucket,
-      int64_t __index) noexcept
-      : bucketList(bucket), index(__index) {
-    for (auto &x : bucketList) {
-      key_values.push_back(x.first);
-    }
+  explicit Iterator(BucketIterator start, BucketIterator end)
+          : bucketIter(start), bucketEnd(end) {
+      if (bucketIter != bucketEnd) {
+          listIter = bucketIter->second.begin();
+      }
   }
 
   /**
@@ -193,11 +202,14 @@ public:
    *
    * @return Iterator&
    */
-  Iterator &operator++() {
-    if (this->index < key_values.size()) {
-      this->index++;
-    }
-    return *(this);
+  Iterator& operator++() {
+      if (++listIter == bucketIter->second.end()) {
+          while (++bucketIter != bucketEnd && bucketIter->second.empty());
+          if (bucketIter != bucketEnd) {
+              listIter = bucketIter->second.begin();
+          }
+      }
+      return *this;
   }
 
   /**
@@ -242,12 +254,9 @@ public:
    * the it.list that exist in the it.index
    * @return false otherwise
    */
-  bool operator!=(const Iterator &it) {
-    std::list<std::pair<KeyType, ValueType>> l1 = bucketList[key_values[this->index]];
-    std::list<std::pair<KeyType, ValueType>> l2 =
-        bucketList[it.key_values[it.index]];
-    return this->index != it.index && l1 != l2;
-    return false;
+  bool operator!=(const Iterator& it) const {
+      return this->bucketIter != it.bucketIter
+             || (bucketIter != bucketEnd && this->listIter != it.listIter);
   }
 
   /**
@@ -256,8 +265,8 @@ public:
    * @return std::list<std::pair<KeyType, ValueType>> the list of the current
    * index
    */
-  std::list<std::pair<KeyType, ValueType>> operator*() {
-    return bucketList[key_values[this->index]];
+  std::pair<KeyType, ValueType>& operator*() {
+      return *listIter;
   }
 };
 
