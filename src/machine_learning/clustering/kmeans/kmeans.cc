@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
   json j;
   j["data"] = data;
   kmeans a(data, CLUSTERS);
-  std::pair<std::vector<std::vector<double> >, std::map<std::vector<double> ,int64_t> > ans = a.run();
+  std::pair<std::vector<std::vector<double> >, std::map<std::vector<double> ,int64_t> > ans = a.fit();
   j["centroids"] = ans.first;
   j["assignments"] = ans.second;
   std::ofstream file("info.json");

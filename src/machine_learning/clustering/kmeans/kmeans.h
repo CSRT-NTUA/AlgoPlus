@@ -120,7 +120,7 @@ public:
   * @ return pair<vector<int64_t>, map<int64_t, int> >: the centroids and the assignments of the clustering algorithm
   *
   */
-  std::pair<std::vector<std::vector<double> >, std::map<std::vector<double>, int64_t> > run(){
+  std::pair<std::vector<std::vector<double> >, std::map<std::vector<double>, int64_t> > fit(){
     return std::make_pair(cluster_centers, assignments);
   }
 };

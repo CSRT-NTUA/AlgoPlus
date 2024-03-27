@@ -1,0 +1,83 @@
+\doxysection{detail\+::binary\+\_\+reader\texorpdfstring{$<$}{<} Basic\+Json\+Type, Input\+Adapter\+Type, SAX \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classdetail_1_1binary__reader}{}\label{classdetail_1_1binary__reader}\index{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+
+
+deserialization of CBOR, Message\+Pack, and UBJSON values  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdetail_1_1binary__reader_a5dc3e9216177efe30686876d3faccf52}{binary\+\_\+reader}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} \&\&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{adapter}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a0ab3b338d0eadc6890b72cccef0ea04f}{input\+\_\+format\+\_\+t}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{format}}=input\+\_\+format\+\_\+t\+::json) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}
+\begin{DoxyCompactList}\small\item\em create a binary reader \end{DoxyCompactList}\item 
+\Hypertarget{classdetail_1_1binary__reader_a03d3ad5fd319550b8ca4e54ddcf46ba0}\label{classdetail_1_1binary__reader_a03d3ad5fd319550b8ca4e54ddcf46ba0} 
+{\bfseries binary\+\_\+reader} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{classdetail_1_1binary__reader}{binary\+\_\+reader}} \&)=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{delete}}
+\item 
+\Hypertarget{classdetail_1_1binary__reader_a4197fcaec6f876fd9019c0f6a48c7f0d}\label{classdetail_1_1binary__reader_a4197fcaec6f876fd9019c0f6a48c7f0d} 
+{\bfseries binary\+\_\+reader} (\mbox{\hyperlink{classdetail_1_1binary__reader}{binary\+\_\+reader}} \&\&)=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{default}}
+\item 
+\Hypertarget{classdetail_1_1binary__reader_a66cae2a279b02a0f575866d7c26445bc}\label{classdetail_1_1binary__reader_a66cae2a279b02a0f575866d7c26445bc} 
+\mbox{\hyperlink{classdetail_1_1binary__reader}{binary\+\_\+reader}} \& {\bfseries operator=} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{classdetail_1_1binary__reader}{binary\+\_\+reader}} \&)=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{delete}}
+\item 
+\Hypertarget{classdetail_1_1binary__reader_afe5457eb25503d02f42d4e558dbbf554}\label{classdetail_1_1binary__reader_afe5457eb25503d02f42d4e558dbbf554} 
+\mbox{\hyperlink{classdetail_1_1binary__reader}{binary\+\_\+reader}} \& {\bfseries operator=} (\mbox{\hyperlink{classdetail_1_1binary__reader}{binary\+\_\+reader}} \&\&)=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{default}}
+\item 
+\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{classdetail_1_1binary__reader_a8e1b5452ae426e1d7b48761859e7f52d}{sax\+\_\+parse}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a0ab3b338d0eadc6890b72cccef0ea04f}{input\+\_\+format\+\_\+t}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{format}}, json\+\_\+sax\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{sax\+\_\+}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a7c070b2bf3d61e3d8b8013f6fb18d592}{cbor\+\_\+tag\+\_\+handler\+\_\+t}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{tag\+\_\+handler}}=\mbox{\hyperlink{namespacedetail_a7c070b2bf3d61e3d8b8013f6fb18d592acb5e100e5a9a3e7f6d1fd97512215282}{cbor\+\_\+tag\+\_\+handler\+\_\+t\+::error}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}} = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$\newline
+class detail\+::binary\+\_\+reader$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$}
+deserialization of CBOR, Message\+Pack, and UBJSON values 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdetail_1_1binary__reader_a5dc3e9216177efe30686876d3faccf52}\label{classdetail_1_1binary__reader_a5dc3e9216177efe30686876d3faccf52} 
+\index{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!binary\_reader@{binary\_reader}}
+\index{binary\_reader@{binary\_reader}!detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_reader()}{binary\_reader()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}}  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classdetail_1_1binary__reader}{detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}} $>$\+::binary\+\_\+reader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} \&\&}]{adapter,  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a0ab3b338d0eadc6890b72cccef0ea04f}{input\+\_\+format\+\_\+t}}}]{format = {\ttfamily input\+\_\+format\+\_\+t\+:\+:json} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+create a binary reader 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adapter} & input adapter to read from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdetail_1_1binary__reader_a8e1b5452ae426e1d7b48761859e7f52d}\label{classdetail_1_1binary__reader_a8e1b5452ae426e1d7b48761859e7f52d} 
+\index{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!sax\_parse@{sax\_parse}}
+\index{sax\_parse@{sax\_parse}!detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{sax\_parse()}{sax\_parse()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}}  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{classdetail_1_1binary__reader}{detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}} $>$\+::sax\+\_\+parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a0ab3b338d0eadc6890b72cccef0ea04f}{input\+\_\+format\+\_\+t}}}]{format,  }\item[{json\+\_\+sax\+\_\+t \texorpdfstring{$\ast$}{*}}]{sax\+\_\+,  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{strict = {\ttfamily \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}}},  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a7c070b2bf3d61e3d8b8013f6fb18d592}{cbor\+\_\+tag\+\_\+handler\+\_\+t}}}]{tag\+\_\+handler = {\ttfamily \mbox{\hyperlink{namespacedetail_a7c070b2bf3d61e3d8b8013f6fb18d592acb5e100e5a9a3e7f6d1fd97512215282}{cbor\+\_\+tag\+\_\+handler\+\_\+t\+::error}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & the binary format to parse \\
+\hline
+\mbox{\texttt{ in}}  & {\em sax\+\_\+} & a SAX event processor \\
+\hline
+\mbox{\texttt{ in}}  & {\em strict} & whether to expect the input to be consumed completed \\
+\hline
+\mbox{\texttt{ in}}  & {\em tag\+\_\+handler} & how to treat CBOR tags\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether parsing was successful 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/spirosmag/\+Documents/\+Algo\+Plus/third\+\_\+party/json.\+hpp\end{DoxyCompactItemize}
