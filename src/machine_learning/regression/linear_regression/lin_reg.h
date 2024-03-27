@@ -42,6 +42,11 @@ public:
     }
   }
   
+  /**
+  * @brief get_results function
+  * @return pair<double,double> the values of a and b
+  *
+  */
   std::pair<double, double> get_results(){
     int64_t n = this->data.size();
     for(auto & x : data){
