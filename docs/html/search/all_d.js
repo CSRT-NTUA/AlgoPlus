@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['has_5fedge_0',['has_edge',['../classgraph.html#a4d434612e87f3e4a5f10c653167da8df',1,'graph::has_edge()'],['../classweighted__graph.html#a47d3931f45d5cc56894589b048e695dc',1,'weighted_graph::has_edge()']]],
+  ['has_5fedge_0',['has_edge',['../classgraph.html#a4d434612e87f3e4a5f10c653167da8df',1,'graph::has_edge()'],['../classweighted__graph.html#a47d3931f45d5cc56894589b048e695dc',1,'weighted_graph::has_edge()'],['../classhill__climbing.html#a1ad9ae87f47b2c51afb0c4f5f76f86ba',1,'hill_climbing::has_edge()']]],
   ['has_5ffrom_5fjson_1',['has_from_json',['../structdetail_1_1has__from__json.html',1,'detail']]],
   ['has_5ffrom_5fjson_3c_20basicjsontype_2c_20t_2c_20enable_5fif_5ft_3c_20_21is_5fbasic_5fjson_3c_20t_20_3e_3a_3avalue_20_3e_20_3e_2',['has_from_json&lt; BasicJsonType, T, enable_if_t&lt; !is_basic_json&lt; T &gt;::value &gt; &gt;',['../structdetail_1_1has__from__json_3_01_basic_json_type_00_01_t_00_01enable__if__t_3_01_9is__basic_fce8b8f93d45fb838eee91b696633019.html',1,'detail']]],
   ['has_5fkey_5fcompare_3',['has_key_compare',['../structdetail_1_1has__key__compare.html',1,'detail']]],
@@ -16,12 +16,13 @@ var searchData=
   ['hash_5ftable_3a_20strong_20_3a_13',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md90',1,'']]],
   ['heapify_14',['heapify',['../classmin__heap.html#a624dfa9812a698548226a6dbcfe2c6cc',1,'min_heap']]],
   ['here_20a_20strong_15',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
-  ['how_20do_20i_20write_20unit_20tests_16',['How do i write unit tests?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_u_n_i_t___t_e_s_t_s.html',1,'']]],
-  ['how_20should_20i_20comment_20my_20code_17',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
-  ['how_20to_20contribute_18',['How to contribute',['../index.html#autotoc_md23',1,'How to contribute'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'How to contribute?']]],
-  ['how_20to_20run_20test_20cases_20strong_19',['&lt;strong&gt;How to run test cases&lt;/strong&gt;',['../index.html#autotoc_md21',1,'']]],
-  ['href_20https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_20',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
-  ['href_20https_3a_20discord_20gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_21',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]],
-  ['https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_22',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
-  ['https_3a_20discord_20gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_23',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]]
+  ['hill_5fclimbing_16',['hill_climbing',['../classhill__climbing.html',1,'hill_climbing&lt; T &gt;'],['../classhill__climbing.html#a741bc35d951ed45a23a3969f6ab58c19',1,'hill_climbing::hill_climbing()']]],
+  ['how_20do_20i_20write_20unit_20tests_17',['How do i write unit tests?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_u_n_i_t___t_e_s_t_s.html',1,'']]],
+  ['how_20should_20i_20comment_20my_20code_18',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
+  ['how_20to_20contribute_19',['How to contribute',['../index.html#autotoc_md23',1,'How to contribute'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html',1,'How to contribute?']]],
+  ['how_20to_20run_20test_20cases_20strong_20',['&lt;strong&gt;How to run test cases&lt;/strong&gt;',['../index.html#autotoc_md21',1,'']]],
+  ['href_20https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_21',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
+  ['href_20https_3a_20discord_20gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_22',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]],
+  ['https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_23',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
+  ['https_3a_20discord_20gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_24',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]]
 ];

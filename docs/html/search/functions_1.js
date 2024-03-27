@@ -1,7 +1,7 @@
 var searchData=
 [
   ['accept_0',['accept',['../classdetail_1_1parser.html#ac46da3262cbe66ade670c5b4782451e6',1,'detail::parser']]],
-  ['add_5fedge_1',['add_edge',['../classgraph.html#a3b397af35ce0c1db49a6a814e68bffc3',1,'graph::add_edge()'],['../classweighted__graph.html#ad652cc371c4ae27df7bfd45380865726',1,'weighted_graph::add_edge()']]],
+  ['add_5fedge_1',['add_edge',['../classgraph.html#a3b397af35ce0c1db49a6a814e68bffc3',1,'graph::add_edge()'],['../classweighted__graph.html#ad652cc371c4ae27df7bfd45380865726',1,'weighted_graph::add_edge()'],['../classhill__climbing.html#ab246667632b06376b7397d182d9d1204',1,'hill_climbing::add_edge()']]],
   ['append_5fexponent_2',['append_exponent',['../namespacedetail_1_1dtoa__impl.html#aec9f6655c3b629aeb0e8c887aea5da87',1,'detail::dtoa_impl']]],
   ['array_3',['array',['../classbasic__json.html#ac736994a792cb8460a30a3f4dd86fd78',1,'basic_json']]],
   ['assign_5fto_5fclosest_4',['assign_to_closest',['../classkmeans.html#afbea96aeec84f1fed57e8578235ef605',1,'kmeans']]],

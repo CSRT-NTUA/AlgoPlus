@@ -37,7 +37,7 @@ if __name__ == "__main__":
     with open("data.json", "w") as outfile:
         outfile.write(json_object)
 
-    os.system("c++ -std=c++17 run.cc dbscan.cc")
+    os.system("c++ -std=c++17 run.cc ../../../../src/machine_learning/clustering/DBSCAN/dbscan.cc")
     os.system("./a.out")
     
     input_name = open("info.json", 'r') 

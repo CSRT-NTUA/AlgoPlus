@@ -6,7 +6,7 @@ var searchData=
   ['a_20new_20class_20strong_3',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md14',1,'']]],
   ['accept_4',['accept',['../classdetail_1_1parser.html#ac46da3262cbe66ade670c5b4782451e6',1,'detail::parser']]],
   ['actual_5fobject_5fcomparator_5',['actual_object_comparator',['../structdetail_1_1actual__object__comparator.html',1,'detail']]],
-  ['add_5fedge_6',['add_edge',['../classgraph.html#a3b397af35ce0c1db49a6a814e68bffc3',1,'graph::add_edge()'],['../classweighted__graph.html#ad652cc371c4ae27df7bfd45380865726',1,'weighted_graph::add_edge()']]],
+  ['add_5fedge_6',['add_edge',['../classgraph.html#a3b397af35ce0c1db49a6a814e68bffc3',1,'graph::add_edge()'],['../classweighted__graph.html#ad652cc371c4ae27df7bfd45380865726',1,'weighted_graph::add_edge()'],['../classhill__climbing.html#ab246667632b06376b7397d182d9d1204',1,'hill_climbing::add_edge()']]],
   ['adl_5fserializer_7',['adl_serializer',['../structadl__serializer.html',1,'']]],
   ['algoplus_20beta_20version_8',['Algoplus{BETA Version}',['../index.html',1,'']]],
   ['algoplus_20here_20a_20strong_9',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],

@@ -1,4 +1,4 @@
-#include "dbscan.h"
+#include "../../../../src/machine_learning/clustering/DBSCAN/dbscan.h"
 #include <fstream>
 #include <random>
 #include "../../../../third_party/json.hpp"
