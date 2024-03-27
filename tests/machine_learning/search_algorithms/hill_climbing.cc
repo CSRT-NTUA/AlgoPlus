@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../third_party/catch.hpp"
 #include "../../../src/machine_learning/search_algorithms/hill_climbing/hill_climbing.h"
 #include <string>
