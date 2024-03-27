@@ -72,9 +72,92 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classlinear__regression-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">linear_regression Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for linear regression algorithm.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lin__reg_8h_source.html">lin_reg.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8c56cd49e738a840b3482779924e9b53" id="r_a8c56cd49e738a840b3482779924e9b53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c56cd49e738a840b3482779924e9b53">linear_regression</a> (std::vector&lt; std::vector&lt; double &gt; &gt; points)</td></tr>
+<tr class="memdesc:a8c56cd49e738a840b3482779924e9b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for linear regression class.  <br /></td></tr>
+<tr class="separator:a8c56cd49e738a840b3482779924e9b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a17a140cd5fffd0fe9428a64b2525f8" id="r_a3a17a140cd5fffd0fe9428a64b2525f8"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a17a140cd5fffd0fe9428a64b2525f8">get_results</a> ()</td></tr>
+<tr class="memdesc:a3a17a140cd5fffd0fe9428a64b2525f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_results function  <br /></td></tr>
+<tr class="separator:a3a17a140cd5fffd0fe9428a64b2525f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for linear regression algorithm. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8c56cd49e738a840b3482779924e9b53" name="a8c56cd49e738a840b3482779924e9b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c56cd49e738a840b3482779924e9b53">&#9670;&#160;</a></span>linear_regression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">linear_regression::linear_regression </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for linear regression class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">points</td><td>2D points that user pass to the regressor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3a17a140cd5fffd0fe9428a64b2525f8" name="a3a17a140cd5fffd0fe9428a64b2525f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a17a140cd5fffd0fe9428a64b2525f8">&#9670;&#160;</a></span>get_results()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; linear_regression::get_results </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get_results function </p>
+<dl class="section return"><dt>Returns</dt><dd>pair&lt;double,double&gt; the values of a and b </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/spirosmag/Documents/AlgoPlus/src/machine_learning/regression/linear_regression/<a class="el" href="lin__reg_8h_source.html">lin_reg.h</a></li>
 </ul>

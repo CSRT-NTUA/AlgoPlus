@@ -20,10 +20,10 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
 \DoxyCodeLine{\textcolor{comment}{//creates\ a\ tree\ with\ elements\ \{4,5,10,13\};}}
 
 \end{DoxyCode}
@@ -33,11 +33,11 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{\textcolor{comment}{//removes\ the\ element\ 4\ from\ the\ tree.}}
 
 \end{DoxyCode}
@@ -47,14 +47,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ true\ if\ an\ element\ is\ in\ the\ tree.}}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(b.\mbox{\hyperlink{classbst_acd2ed132fc83a3a50a4085b4b7a90f47}{search}}(4))\{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(b.search(4))\{}
 \DoxyCodeLine{\ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{}element\ 4\ found\ in\ the\ tree"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{\}}
 
@@ -65,14 +65,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ inorder\ fashion.}}
-\DoxyCodeLine{std::vector<int>\ in\ =\ b.\mbox{\hyperlink{classbst_ab9d984aab9247a36c78b115484ccb623}{inorder}}();}
+\DoxyCodeLine{std::vector<int>\ in\ =\ b.inorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md38}{}\doxysubsection{\texorpdfstring{{\bfseries{preorder}}\+:}{{\bfseries{preorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md38}
@@ -81,14 +81,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ preorder\ fashion.}}
-\DoxyCodeLine{std::vector<int>\ pre\ =\ b.\mbox{\hyperlink{classbst_a4c3359b500e074fce8d1f3eae21dfdca}{preorder}}();}
+\DoxyCodeLine{std::vector<int>\ pre\ =\ b.preorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md39}{}\doxysubsection{\texorpdfstring{{\bfseries{postorder}}\+:}{{\bfseries{postorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2bst_autotoc_md39}
@@ -97,11 +97,11 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ postorder\ fashion.}}
 \DoxyCodeLine{std::vector<int>\ in\ =\ a.postorder();}
@@ -113,14 +113,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ b.\mbox{\hyperlink{classbst_a64edfd3a7c05023cef487ef40a07a322}{begin}}();\ it\ !=\ b.\mbox{\hyperlink{classbst_aa3db0ba407a005ce61feb9c605bbb187}{end}}();\ it++)\{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ b.begin();\ it\ !=\ b.end();\ it++)\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ value\ of\ the\ node}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//note\ that\ begin\ starts\ from\ the\ leftmost\ value}}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ *(it)\ <<\ \textcolor{charliteral}{'\ '};}
@@ -133,15 +133,15 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <bst.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classbst}{bst<int>}}\ b;}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(10);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(5);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(4);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_ad7def8a09da61a43c7033365ea226d06}{insert}}(13);}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a46aaefd422947e3f209db2e24119643a}{remove}}(4);}
+\DoxyCodeLine{b.insert(10);}
+\DoxyCodeLine{b.insert(5);}
+\DoxyCodeLine{b.insert(4);}
+\DoxyCodeLine{b.insert(13);}
+\DoxyCodeLine{b.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ a\ .dot\ file\ that\ can\ easily\ be\ previewed\ using}}
 \DoxyCodeLine{\textcolor{comment}{//vscode\ plugin\ for\ graphviz\ or\ local\ command\ line\ tools.}}
-\DoxyCodeLine{b.\mbox{\hyperlink{classbst_a0198118bc2eb3d58607ce6acadb770a6}{visualize}}();}
+\DoxyCodeLine{b.visualize();}
 
 \end{DoxyCode}
  

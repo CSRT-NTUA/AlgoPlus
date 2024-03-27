@@ -4311,7 +4311,7 @@
 \DoxyCodeLine{04448\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{04449\ }
 \DoxyCodeLine{04450\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ str\ =\ std::accumulate(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{tokens}}.rbegin(),\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{tokens}}.rend(),\ std::string\{\},}
-\DoxyCodeLine{04451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ std::string\ \&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{a}},\ \textcolor{keyword}{const}\ std::string\ \&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})}
+\DoxyCodeLine{04451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ std::string\ \&\ a,\ \textcolor{keyword}{const}\ std::string\ \&\ b)}
 \DoxyCodeLine{04452\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{04453\ \ \ \ \ \ \ \ \ \ \ \ \ return\ concat(a,\ \textcolor{stringliteral}{'/'},\ detail::escape(b));}
 \DoxyCodeLine{04454\ \ \ \ \ \ \ \ \ \});}
@@ -4542,13 +4542,13 @@
 \DoxyCodeLine{04708\ \}}
 \DoxyCodeLine{04709\ }
 \DoxyCodeLine{04710\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
-\DoxyCodeLine{04711\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ from\_json(\textcolor{keyword}{const}\ BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{typename}\ BasicJsonType::boolean\_t\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})}
+\DoxyCodeLine{04711\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ from\_json(\textcolor{keyword}{const}\ BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{typename}\ BasicJsonType::boolean\_t\&\ b)}
 \DoxyCodeLine{04712\ \{}
 \DoxyCodeLine{04713\ \ \ \ \ \textcolor{keywordflow}{if}\ (JSON\_HEDLEY\_UNLIKELY(!\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.is\_boolean()))}
 \DoxyCodeLine{04714\ \ \ \ \ \{}
 \DoxyCodeLine{04715\ \ \ \ \ \ \ \ \ JSON\_THROW(type\_error::create(302,\ concat(\textcolor{stringliteral}{"{}type\ must\ be\ boolean,\ but\ is\ "{}},\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.type\_name()),\ \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}));}
 \DoxyCodeLine{04716\ \ \ \ \ \}}
-\DoxyCodeLine{04717\ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}\ =\ *\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.template\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{get\_ptr<const\ typename\ BasicJsonType::boolean\_t*>}}();}
+\DoxyCodeLine{04717\ \ \ \ \ b\ =\ *\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.template\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{get\_ptr<const\ typename\ BasicJsonType::boolean\_t*>}}();}
 \DoxyCodeLine{04718\ \}}
 \DoxyCodeLine{04719\ }
 \DoxyCodeLine{04720\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
@@ -5235,11 +5235,11 @@
 \DoxyCodeLine{05422\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdetail_1_1external__constructor}{external\_constructor}}<\mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632}{value\_t}}::\mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a84e2c64f38f78ba3ea5c905ab5a2da27}{boolean}}>}
 \DoxyCodeLine{05423\ \{}
 \DoxyCodeLine{05424\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
-\DoxyCodeLine{05425\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ construct(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{typename}\ BasicJsonType::boolean\_t\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{05425\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ construct(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{typename}\ BasicJsonType::boolean\_t\ b)\ \textcolor{keyword}{noexcept}}
 \DoxyCodeLine{05426\ \ \ \ \ \{}
 \DoxyCodeLine{05427\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value.destroy(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_type);}
 \DoxyCodeLine{05428\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}};}
-\DoxyCodeLine{05429\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value\ =\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}};}
+\DoxyCodeLine{05429\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value\ =\ b;}
 \DoxyCodeLine{05430\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.assert\_invariant();}
 \DoxyCodeLine{05431\ \ \ \ \ \}}
 \DoxyCodeLine{05432\ \};}
@@ -5281,20 +5281,20 @@
 \DoxyCodeLine{05468\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdetail_1_1external__constructor}{external\_constructor}}<\mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632}{value\_t}}::\mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a9d7183f16acce70658f686ae7f1a4d20}{binary}}>}
 \DoxyCodeLine{05469\ \{}
 \DoxyCodeLine{05470\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
-\DoxyCodeLine{05471\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ construct(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})}
+\DoxyCodeLine{05471\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ construct(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t\&\ b)}
 \DoxyCodeLine{05472\ \ \ \ \ \{}
 \DoxyCodeLine{05473\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value.destroy(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_type);}
 \DoxyCodeLine{05474\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}};}
-\DoxyCodeLine{05475\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value\ =\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}});}
+\DoxyCodeLine{05475\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value\ =\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t(b);}
 \DoxyCodeLine{05476\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.assert\_invariant();}
 \DoxyCodeLine{05477\ \ \ \ \ \}}
 \DoxyCodeLine{05478\ }
 \DoxyCodeLine{05479\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
-\DoxyCodeLine{05480\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ construct(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t\&\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})}
+\DoxyCodeLine{05480\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ construct(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t\&\&\ b)}
 \DoxyCodeLine{05481\ \ \ \ \ \{}
 \DoxyCodeLine{05482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value.destroy(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_type);}
 \DoxyCodeLine{05483\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_type\ =\ \mbox{\hyperlink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}};}
-\DoxyCodeLine{05484\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value\ =\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t(std::move(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}));}
+\DoxyCodeLine{05484\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.m\_data.m\_value\ =\ \textcolor{keyword}{typename}\ BasicJsonType::binary\_t(std::move(b));}
 \DoxyCodeLine{05485\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}.assert\_invariant();}
 \DoxyCodeLine{05486\ \ \ \ \ \}}
 \DoxyCodeLine{05487\ \};}
@@ -5450,9 +5450,9 @@
 \DoxyCodeLine{05639\ }
 \DoxyCodeLine{05640\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType,\ \textcolor{keyword}{typename}\ T,}
 \DoxyCodeLine{05641\ \ \ \ \ \ \ \ \ \ enable\_if\_t<std::is\_same<T,\ typename\ BasicJsonType::boolean\_t>::value,\ \textcolor{keywordtype}{int}>\ =\ 0>}
-\DoxyCodeLine{05642\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ to\_json(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ T\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{05642\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ to\_json(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ T\ b)\ \textcolor{keyword}{noexcept}}
 \DoxyCodeLine{05643\ \{}
-\DoxyCodeLine{05644\ \ \ \ \ \mbox{\hyperlink{structdetail_1_1external__constructor}{external\_constructor<value\_t::boolean>::construct}}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}});}
+\DoxyCodeLine{05644\ \ \ \ \ \mbox{\hyperlink{structdetail_1_1external__constructor}{external\_constructor<value\_t::boolean>::construct}}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ b);}
 \DoxyCodeLine{05645\ \}}
 \DoxyCodeLine{05646\ }
 \DoxyCodeLine{05647\ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ BasicJsonType,\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{BoolRef}},}
@@ -5463,9 +5463,9 @@
 \DoxyCodeLine{05652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ !std::is\_same\ <detail::uncvref\_t<std::vector<bool>::const\_reference>,}
 \DoxyCodeLine{05653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BasicJsonType::boolean\_t\ >\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{::value}}))}
 \DoxyCodeLine{05654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ std::is\_convertible<const\ BoolRef\&,\ typename\ BasicJsonType::boolean\_t>::value,\ \textcolor{keywordtype}{int}\ >\ =\ 0\ >}
-\DoxyCodeLine{05655\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ to\_json(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{BoolRef}}\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{05655\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ to\_json(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{BoolRef}}\&\ b)\ \textcolor{keyword}{noexcept}}
 \DoxyCodeLine{05656\ \{}
-\DoxyCodeLine{05657\ \ \ \ \ external\_constructor<value\_t::boolean>::construct(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}}\ BasicJsonType::boolean\_t\textcolor{keyword}{>}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}));}
+\DoxyCodeLine{05657\ \ \ \ \ external\_constructor<value\_t::boolean>::construct(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}}\ BasicJsonType::boolean\_t\textcolor{keyword}{>}(b));}
 \DoxyCodeLine{05658\ \}}
 \DoxyCodeLine{05659\ }
 \DoxyCodeLine{05660\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType,\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{CompatibleString}},}
@@ -5583,9 +5583,9 @@
 \DoxyCodeLine{05772\ \textcolor{comment}{//\ for\ https://github.com/nlohmann/json/pull/1134}}
 \DoxyCodeLine{05773\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType,\ \textcolor{keyword}{typename}\ T,}
 \DoxyCodeLine{05774\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{enable\_if\_t<std::is\_same<T,\ iteration\_proxy\_value<typename\ BasicJsonType::iterator>}}>\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{::value}},\ \textcolor{keywordtype}{int}>\ =\ 0>}
-\DoxyCodeLine{05775\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ to\_json(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})}
+\DoxyCodeLine{05775\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ to\_json(BasicJsonType\&\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}},\ \textcolor{keyword}{const}\ T\&\ b)}
 \DoxyCodeLine{05776\ \{}
-\DoxyCodeLine{05777\ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}\ =\ \{\ \{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}.key(),\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}.value()\}\ \};}
+\DoxyCodeLine{05777\ \ \ \ \ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}\ =\ \{\ \{b.key(),\ b.value()\}\ \};}
 \DoxyCodeLine{05778\ \}}
 \DoxyCodeLine{05779\ }
 \DoxyCodeLine{05780\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType,\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Tuple}},\ std::size\_t...\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Idx}}>}
@@ -6340,10 +6340,10 @@
 \DoxyCodeLine{06586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_integral<typename\ std::remove\_pointer<CharT>::type>\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{::value}}\&\&}
 \DoxyCodeLine{06587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename}\ std::remove\_pointer<CharT>::type)\ ==\ 1,}
 \DoxyCodeLine{06588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ >::type\ =\ 0\ >}
-\DoxyCodeLine{06589\ contiguous\_bytes\_input\_adapter\ input\_adapter(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{CharT}}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})}
+\DoxyCodeLine{06589\ contiguous\_bytes\_input\_adapter\ input\_adapter(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{CharT}}\ b)}
 \DoxyCodeLine{06590\ \{}
-\DoxyCodeLine{06591\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{length}}\ =\ std::strlen(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}));}
-\DoxyCodeLine{06592\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}});}
+\DoxyCodeLine{06591\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{length}}\ =\ std::strlen(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(b));}
+\DoxyCodeLine{06592\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(b);}
 \DoxyCodeLine{06593\ \ \ \ \ \textcolor{keywordflow}{return}\ input\_adapter(ptr,\ ptr\ +\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{length}});}
 \DoxyCodeLine{06594\ \}}
 \DoxyCodeLine{06595\ }
@@ -6365,8 +6365,8 @@
 \DoxyCodeLine{06611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_integral<typename\ std::remove\_pointer<CharT>::type>\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{::value}}\&\&}
 \DoxyCodeLine{06612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename}\ std::remove\_pointer<CharT>::type)\ ==\ 1,}
 \DoxyCodeLine{06613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ >::type\ =\ 0\ >}
-\DoxyCodeLine{06614\ \ \ \ \ \mbox{\hyperlink{classdetail_1_1span__input__adapter}{span\_input\_adapter}}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{CharT}}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}},\ std::size\_t\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{l}})}
-\DoxyCodeLine{06615\ \ \ \ \ \ \ \ \ :\ ia(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}}),\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{b}})\ +\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{l}})\ \{\}}
+\DoxyCodeLine{06614\ \ \ \ \ \mbox{\hyperlink{classdetail_1_1span__input__adapter}{span\_input\_adapter}}(\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{CharT}}\ b,\ std::size\_t\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{l}})}
+\DoxyCodeLine{06615\ \ \ \ \ \ \ \ \ :\ ia(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(b),\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(b)\ +\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{l}})\ \{\}}
 \DoxyCodeLine{06616\ }
 \DoxyCodeLine{06617\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class\ }\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{IteratorType}},}
 \DoxyCodeLine{06618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<}

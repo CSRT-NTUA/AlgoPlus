@@ -95,8 +95,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afbea96aeec84f1fed57e8578235ef605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a194cab304acc8a9a7912f8300b95531f" id="r_a194cab304acc8a9a7912f8300b95531f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a194cab304acc8a9a7912f8300b95531f">get_centroid</a> (std::vector&lt; std::vector&lt; double &gt; &gt; cluster)</td></tr>
 <tr class="separator:a194cab304acc8a9a7912f8300b95531f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a2f71f4736b20fc52ad552de17f5b4" id="r_a52a2f71f4736b20fc52ad552de17f5b4"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::map&lt; std::vector&lt; double &gt;, int64_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52a2f71f4736b20fc52ad552de17f5b4">run</a> ()</td></tr>
-<tr class="separator:a52a2f71f4736b20fc52ad552de17f5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce91679a1e1c1ba44a19aedb8ca9a9f" id="r_a6ce91679a1e1c1ba44a19aedb8ca9a9f"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::map&lt; std::vector&lt; double &gt;, int64_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce91679a1e1c1ba44a19aedb8ca9a9f">fit</a> ()</td></tr>
+<tr class="separator:a6ce91679a1e1c1ba44a19aedb8ca9a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -228,6 +228,32 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>i</b> = 0</td></tr>
 
 </div>
 </div>
+<a id="a6ce91679a1e1c1ba44a19aedb8ca9a9f" name="a6ce91679a1e1c1ba44a19aedb8ca9a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce91679a1e1c1ba44a19aedb8ca9a9f">&#9670;&#160;</a></span>fit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::map&lt; std::vector&lt; double &gt;, int64_t &gt; &gt; kmeans::fit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>@ brief run function @ return pair&lt;vector&lt;int64_t&gt;, map&lt;int64_t, int&gt; &gt;: the centroids and the assignments of the clustering algorithm </p>
+
+</div>
+</div>
 <a id="a194cab304acc8a9a7912f8300b95531f" name="a194cab304acc8a9a7912f8300b95531f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a194cab304acc8a9a7912f8300b95531f">&#9670;&#160;</a></span>get_centroid()</h2>
 
@@ -251,32 +277,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>i</b> = 0</td></tr>
 </table>
 </div><div class="memdoc">
 <p>@ brief get_centroid function @ param cluster: the input cluster @ return vector&lt;int&gt;: the centroid of the cluster </p>
-
-</div>
-</div>
-<a id="a52a2f71f4736b20fc52ad552de17f5b4" name="a52a2f71f4736b20fc52ad552de17f5b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52a2f71f4736b20fc52ad552de17f5b4">&#9670;&#160;</a></span>run()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::pair&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::map&lt; std::vector&lt; double &gt;, int64_t &gt; &gt; kmeans::run </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>@ brief run function @ return pair&lt;vector&lt;int64_t&gt;, map&lt;int64_t, int&gt; &gt;: the centroids and the assignments of the clustering algorithm </p>
 
 </div>
 </div>
