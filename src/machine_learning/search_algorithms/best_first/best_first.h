@@ -95,7 +95,6 @@ public:
       int64_t size = q.size();
       for(int64_t i = 0; i<size; i++){
         std::pair<T, double> current = q.top();
-        std::cout << current.first << " " << current.second << '\n';
         if(current.first == end){
           return true;
         }

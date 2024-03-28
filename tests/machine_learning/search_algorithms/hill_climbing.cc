@@ -13,7 +13,7 @@ TEST_CASE("testing edges with insertion"){
   REQUIRE(h.has_edge(0, 3) == false);
 }
 
-TEST_CASE("testing search function"){
+TEST_CASE("testing search function for hill climbing class"){
   hill_climbing<char> h;
   h.insert_node('s', INT_MAX);
   h.insert_node('A', 10.4);

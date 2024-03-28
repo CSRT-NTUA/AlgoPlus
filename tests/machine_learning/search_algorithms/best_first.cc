@@ -2,7 +2,7 @@
 #include "../../../src/machine_learning/search_algorithms/best_first/best_first.h"
 #include <string>
 
-TEST_CASE("testing search function"){
+TEST_CASE("testing search function for best_first class"){
   best_first<char> h;
   h.insert_node('s', INT_MAX);
   h.insert_node('A', 10.4);
