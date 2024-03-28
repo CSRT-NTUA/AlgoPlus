@@ -5,6 +5,7 @@
 #include <functional>
 #include <iostream>
 #include <vector>
+#include <climits>
 #endif
 
 // This is needed to avoid conflict with windows __min macro
@@ -33,6 +34,16 @@ public:
   }
 
   ~min_heap() noexcept { delete[] arr; }
+
+   /**
+ * @brief Copy constructor for the min_heap class
+ *
+ * @param h The heap to be copied
+ */
+min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_size) {
+    arr = new T[max_size];
+    std::copy(h.arr, h.arr + h.heap_size, arr);
+}
 
   /**
    * @brief parent function
@@ -131,17 +142,17 @@ public:
     T left = __left(i);
     T right = __right(i);
     T minim = i;
-    if (left < heap_size && arr[left] < arr[i]) {
-      minim = left;
+    if (left < static_cast<T>(heap_size) && arr[left] < arr[i]) {
+        minim = left;
     }
-    if (right < heap_size && arr[right] < arr[i]) {
-      minim = right;
+    if (right < static_cast<T>(heap_size) && arr[right] < arr[i]) {
+        minim = right;
     }
     if (minim != i) {
-      std::swap(arr[i], arr[minim]);
-      heapify(minim);
+        std::swap(arr[i], arr[minim]);
+        heapify(minim);
     }
-  }
+}
 };
 
 #endif
