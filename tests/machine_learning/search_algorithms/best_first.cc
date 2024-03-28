@@ -2,6 +2,18 @@
 #include "../../../src/machine_learning/search_algorithms/best_first/best_first.h"
 #include <string>
 
+TEST_CASE("testing edges with insertion for best first class"){
+  best_first<int> h;
+  h.insert_node(0, INT_MAX);
+  h.insert_node(1, 10);
+  h.insert_node(2, 20);
+  h.insert_node(3, 10);
+  h.add_edge(0, 1);
+  REQUIRE(h.has_edge(0, 1) == true);
+  REQUIRE(h.has_edge(0, 3) == false);
+}
+
+
 TEST_CASE("testing search function for best_first class"){
   best_first<char> h;
   h.insert_node('s', INT_MAX);

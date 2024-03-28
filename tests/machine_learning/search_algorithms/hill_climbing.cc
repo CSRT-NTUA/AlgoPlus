@@ -2,7 +2,7 @@
 #include "../../../src/machine_learning/search_algorithms/hill_climbing/hill_climbing.h"
 #include <string>
 
-TEST_CASE("testing edges with insertion"){
+TEST_CASE("testing edges with insertion for hill climbing class"){
   hill_climbing<int> h;
   h.insert_node(0, INT_MAX);
   h.insert_node(1, 10);
