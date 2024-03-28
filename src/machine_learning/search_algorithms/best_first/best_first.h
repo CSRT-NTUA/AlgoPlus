@@ -1,6 +1,6 @@
 #pragma once
-#ifndef HILL_CLIMBING_H
-#define HILL_CLIMBING_H
+#ifndef BEST_FIRST_H 
+#define BEST_FIRST_H 
 
 #ifdef __cplusplus
 #include <iostream>
@@ -9,9 +9,9 @@
 #endif
 
 /**
-* @brief hill climbing class
+* @brief best first class
 */
-template <typename T> class hill_climbing{
+template <typename T> class best_first{
 private:
   std::unordered_map<T, std::vector<std::pair<T, double> > > adj; 
   std::unordered_map<T, double> nodes;
@@ -19,11 +19,11 @@ private:
 public:
 
   /**
-   * @brief hill_climbing constructor
+   * @brief best_first constructor
    * @param v: unordered_map<T, pair<T, int64_t> > initializer vector. Default = {}
    *
    */
-  explicit hill_climbing(std::unordered_map<T, std::vector<std::pair<T, double> > > v = {}){
+  explicit best_first(std::unordered_map<T, std::vector<std::pair<T, double> > > v = {}){
     if(!v.empty()){
       this->adj = v;
     }
@@ -88,37 +88,30 @@ public:
       return false;
     }
     std::unordered_map<T, bool> visited;
-    std::queue<T> q;
-    q.push(start);
+    std::priority_queue<std::pair<T, double>, std::vector<std::pair<T, double> >, std::greater<std::pair<T, double> > > q;
+    q.push({start, nodes[start]});
     visited[start] = true;
     while(!q.empty()){
       int64_t size = q.size();
       for(int64_t i = 0; i<size; i++){
-        T current = q.front();
-        if(current == end){
+        std::pair<T, double> current = q.top();
+        std::cout << current.first << " " << current.second << '\n';
+        if(current.first == end){
           return true;
         }
         q.pop();
-        double minim = std::numeric_limits<double>::max();
-        T neigh = current;
-        for(std::pair<T, double> &x : adj[current]){
-          if(visited.find(x.first) == visited.end()){
+        for(std::pair<T, double> &x: adj[current.first]){
+          if(visited.find(x.first) == visited.end() && x.second <= nodes[current.first]){
             visited[x.first] = true;
-            minim = std::min(minim, x.second);
-            neigh = x.first;
-          }
-        }
-        if(minim != INT_MAX && neigh != current){
-          if(current == start || minim <= nodes[current]){
-            q.push(neigh);
+            q.push({x.first, nodes[x.first]});
           }
         }
       }
     }
     return false;
   }
-
 };
 
 
 #endif
+

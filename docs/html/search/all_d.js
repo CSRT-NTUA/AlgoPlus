@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['has_5fedge_0',['has_edge',['../classgraph.html#a4d434612e87f3e4a5f10c653167da8df',1,'graph::has_edge()'],['../classweighted__graph.html#a47d3931f45d5cc56894589b048e695dc',1,'weighted_graph::has_edge()'],['../classhill__climbing.html#a1ad9ae87f47b2c51afb0c4f5f76f86ba',1,'hill_climbing::has_edge()']]],
+  ['has_5fedge_0',['has_edge',['../classgraph.html#a4d434612e87f3e4a5f10c653167da8df',1,'graph::has_edge()'],['../classweighted__graph.html#a47d3931f45d5cc56894589b048e695dc',1,'weighted_graph::has_edge()'],['../classbest__first.html#a500d360531f7f47a8cc5962d47dc41c4',1,'best_first::has_edge()'],['../classhill__climbing.html#a1ad9ae87f47b2c51afb0c4f5f76f86ba',1,'hill_climbing::has_edge()']]],
   ['has_5ffrom_5fjson_1',['has_from_json',['../structdetail_1_1has__from__json.html',1,'detail']]],
   ['has_5ffrom_5fjson_3c_20basicjsontype_2c_20t_2c_20enable_5fif_5ft_3c_20_21is_5fbasic_5fjson_3c_20t_20_3e_3a_3avalue_20_3e_20_3e_2',['has_from_json&lt; BasicJsonType, T, enable_if_t&lt; !is_basic_json&lt; T &gt;::value &gt; &gt;',['../structdetail_1_1has__from__json_3_01_basic_json_type_00_01_t_00_01enable__if__t_3_01_9is__basic_fce8b8f93d45fb838eee91b696633019.html',1,'detail']]],
   ['has_5fkey_5fcompare_3',['has_key_compare',['../structdetail_1_1has__key__compare.html',1,'detail']]],
