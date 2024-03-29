@@ -13,7 +13,7 @@ var searchData=
   ['hash_3c_20nlohmann_3a_3anlohmann_5fbasic_5fjson_5ftpl_20_3e_10',['hash&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;',['../structstd_1_1hash_3_01nlohmann_1_1_n_l_o_h_m_a_n_n___b_a_s_i_c___j_s_o_n___t_p_l_01_4.html',1,'std']]],
   ['hash_5ftable_11',['hash_table',['../classhash__table.html',1,'hash_table&lt; KeyType, ValueType &gt;'],['../classhash__table.html#adc831edf9651d7a2858e79624417749f',1,'hash_table::hash_table(std::vector&lt; std::pair&lt; KeyType, ValueType &gt; &gt; v={})'],['../classhash__table.html#a72b8facb5a3c01227e96ca3cda64fa14',1,'hash_table::hash_table(const hash_table &amp;h)']]],
   ['hash_5ftable_20class_12',['Mini Tutorial for the hash_table class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html',1,'']]],
-  ['hash_5ftable_3a_20strong_20_3a_13',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md90',1,'']]],
+  ['hash_5ftable_3a_20strong_20_3a_13',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md95',1,'']]],
   ['heapify_14',['heapify',['../classmin__heap.html#a624dfa9812a698548226a6dbcfe2c6cc',1,'min_heap']]],
   ['here_20a_20strong_15',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
   ['hill_5fclimbing_16',['hill_climbing',['../classhill__climbing.html',1,'hill_climbing&lt; T &gt;'],['../classhill__climbing.html#a741bc35d951ed45a23a3969f6ab58c19',1,'hill_climbing::hill_climbing()']]],
