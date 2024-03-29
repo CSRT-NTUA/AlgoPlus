@@ -1,3 +1,5 @@
+#define CATCH_CONFIG_MAIN
+
 #include "../../src/classes/heap/min_heap.h"
 #include "../../third_party/catch.hpp"
 #include <climits>
