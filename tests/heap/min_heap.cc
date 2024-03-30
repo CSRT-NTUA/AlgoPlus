@@ -2,7 +2,7 @@
 #include "../../third_party/catch.hpp"
 #include <climits>
 
-TEST_CASE("testing insertion an minimum")
+TEST_CASE("testing insertion of heap class")
 {
     min_heap<int> heap(10);
     heap.insert(5);
@@ -12,7 +12,7 @@ TEST_CASE("testing insertion an minimum")
     REQUIRE(heap.min() == 1);
 }
 
-TEST_CASE("testing removal")
+TEST_CASE("testing removal of heap class")
 {
     min_heap<int> heap(10);
     heap.insert(5);
@@ -21,9 +21,11 @@ TEST_CASE("testing removal")
     heap.insert(1);
     heap.remove(3);
     REQUIRE(heap.min() == 1);
+    heap.remove(1);
+    REQUIRE(heap.min() == 5);
 }
 
-TEST_CASE("testing decreasing key")
+TEST_CASE("testing decreasing key in heap class")
 {
     min_heap<int> heap(10);
     heap.insert(5);
@@ -34,7 +36,7 @@ TEST_CASE("testing decreasing key")
     REQUIRE(heap.min() == 0);
 }
 
-TEST_CASE("testing copy constructor"){
+TEST_CASE("testing copy constructor of heap class"){
     min_heap<int> heap(10);
     heap.insert(5);
     heap.insert(3);

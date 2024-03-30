@@ -19,10 +19,10 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
 \DoxyCodeLine{\textcolor{comment}{//creates\ a\ tree\ with\ elements\ \{4,5,10,13\};}}
 
 \end{DoxyCode}
@@ -32,11 +32,11 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{\textcolor{comment}{//removes\ the\ element\ 4\ from\ the\ tree.}}
 
 \end{DoxyCode}
@@ -46,14 +46,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ true\ if\ an\ element\ is\ in\ the\ tree.}}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(a.\mbox{\hyperlink{classavl__tree_a599641fb0e256bfa25deb206a7bf1b29}{search}}(4))\{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(a.search(4))\{}
 \DoxyCodeLine{\ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{}element\ 4\ found\ in\ the\ tree"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{\}}
 
@@ -64,14 +64,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ inorder\ fashion.}}
-\DoxyCodeLine{std::vector<int>\ in\ =\ a.\mbox{\hyperlink{classavl__tree_aef655e5753555d705e58d39bd094c55a}{inorder}}();}
+\DoxyCodeLine{std::vector<int>\ in\ =\ a.inorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md29}{}\doxysubsection{\texorpdfstring{{\bfseries{preorder}}\+:}{{\bfseries{preorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md29}
@@ -80,14 +80,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ preorder\ fashion.}}
-\DoxyCodeLine{std::vector<int>\ pre\ =\ a.\mbox{\hyperlink{classavl__tree_a8b6368356a04a58f29b1f56f835b7548}{preorder}}();}
+\DoxyCodeLine{std::vector<int>\ pre\ =\ a.preorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md30}{}\doxysubsection{\texorpdfstring{{\bfseries{postorder}}\+:}{{\bfseries{postorder}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md30}
@@ -96,14 +96,14 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ the\ elements\ in\ postorder\ fashion.}}
-\DoxyCodeLine{std::vector<int>\ in\ =\ a.\mbox{\hyperlink{classavl__tree_a82a19335d79d5f6928369635278c1c24}{postorder}}();}
+\DoxyCodeLine{std::vector<int>\ in\ =\ a.postorder();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md31}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md31}
@@ -112,15 +112,15 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//returns\ a\ .dot\ file\ that\ can\ easily\ be\ previewed\ using}}
 \DoxyCodeLine{\textcolor{comment}{//vscode\ plugin\ for\ graphviz\ or\ local\ command\ line\ tools.}}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a517f38f7f770647b80322fc7cd1192af}{visualize}}();}
+\DoxyCodeLine{a.visualize();}
 
 \end{DoxyCode}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md32}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2avl_autotoc_md32}
@@ -129,13 +129,13 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <avl.h>}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classavl__tree}{avl\_tree<int>}}\ a;}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(10);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(5);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(4);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_acdeb1d0610c350618d64fdb69f50ab08}{insert}}(13);}
-\DoxyCodeLine{a.\mbox{\hyperlink{classavl__tree_a76c9c53a32680f00a0071f1e236aa42b}{remove}}(4);}
+\DoxyCodeLine{a.insert(10);}
+\DoxyCodeLine{a.insert(5);}
+\DoxyCodeLine{a.insert(4);}
+\DoxyCodeLine{a.insert(13);}
+\DoxyCodeLine{a.remove(4);}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ a.\mbox{\hyperlink{classavl__tree_a2e4eb06ce68b6b9cf7e906cb786fc818}{begin}}();\ it\ !=\ a.\mbox{\hyperlink{classavl__tree_a015ac0902d879a52fd7a8940ab36ab7a}{end}}();\ it++)\{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ a.begin();\ it\ !=\ a.end();\ it++)\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ value\ of\ the\ node}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//note\ that\ begin\ starts\ from\ the\ leftmost\ value}}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ *(it)\ <<\ \textcolor{charliteral}{'\ '};}

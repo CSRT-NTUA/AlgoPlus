@@ -28,22 +28,29 @@ public:
    * @param max_size : maximum size of the heap
    */
   explicit min_heap(size_t max_size) noexcept {
-    heap_size = 0;
-    this->max_size = max_size;
-    arr = new T[max_size];
+    try{
+      if(max_size < 0 || max_size > INT_MAX){
+        throw std::logic_error("max_size out of bounds");
+      }
+      heap_size = 0;
+      this->max_size = max_size;
+      arr = new T[max_size];
+    } catch(std::logic_error &e){
+      std::cerr << e.what() << '\n';
+    }
   }
 
   ~min_heap() noexcept { delete[] arr; }
 
-   /**
- * @brief Copy constructor for the min_heap class
- *
- * @param h The heap to be copied
- */
-min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_size) {
+  /**
+   * @brief Copy constructor for the min_heap class
+   *
+   * @param h The heap to be copied
+   */
+  min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_size) {
     arr = new T[max_size];
     std::copy(h.arr, h.arr + h.heap_size, arr);
-}
+  }
 
   /**
    * @brief parent function
@@ -143,16 +150,16 @@ min_heap(const min_heap& h) noexcept : max_size(h.max_size), heap_size(h.heap_si
     T right = __right(i);
     T minim = i;
     if (left < static_cast<T>(heap_size) && arr[left] < arr[i]) {
-        minim = left;
+      minim = left;
     }
     if (right < static_cast<T>(heap_size) && arr[right] < arr[i]) {
-        minim = right;
+      minim = right;
     }
     if (minim != i) {
-        std::swap(arr[i], arr[minim]);
-        heapify(minim);
+      std::swap(arr[i], arr[minim]);
+      heapify(minim);
     }
-}
+  }
 };
 
 #endif
