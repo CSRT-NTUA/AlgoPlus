@@ -6,6 +6,6 @@ var searchData=
   ['merge_5fpatch_3',['merge_patch',['../classbasic__json.html#a8676ac2433fe299b8d420f00a0741395',1,'basic_json']]],
   ['meta_4',['meta',['../classbasic__json.html#a7b435c2ed2db99cb1daa78ae3c6c4580',1,'basic_json']]],
   ['min_5',['min',['../classmin__heap.html#a1f4229dc4a3f4e5888293b7de530163a',1,'min_heap']]],
-  ['min_5fheap_6',['min_heap',['../classmin__heap.html#a2db8fee3af814966c7299e10e3b7592a',1,'min_heap']]],
+  ['min_5fheap_6',['min_heap',['../classmin__heap.html#a2db8fee3af814966c7299e10e3b7592a',1,'min_heap::min_heap(size_t max_size) noexcept'],['../classmin__heap.html#a298fdf0d87143d2879d33cd45fb279d9',1,'min_heap::min_heap(const min_heap &amp;h) noexcept']]],
   ['mul_7',['mul',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a046c61f2c13411677eedfb5b9b7a8226',1,'detail::dtoa_impl::diyfp']]]
 ];

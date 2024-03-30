@@ -9,98 +9,111 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{comment}{//\ This\ is\ needed\ to\ avoid\ conflict\ with\ windows\ \_\_min\ macro}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#undef\ \_\_min}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmin__heap}{min\_heap}}\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00019\ \ \ T\ *arr;}
-\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{size\_t}\ max\_size;}
-\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{size\_t}\ heap\_size;}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classmin__heap_a2db8fee3af814966c7299e10e3b7592a}{min\_heap}}(\textcolor{keywordtype}{size\_t}\ max\_size)\ \textcolor{keyword}{noexcept}\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ heap\_size\ =\ 0;}
-\DoxyCodeLine{00031\ \ \ \ \ this-\/>max\_size\ =\ max\_size;}
-\DoxyCodeLine{00032\ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[max\_size];}
-\DoxyCodeLine{00033\ \ \ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classmin__heap}{\string~min\_heap}}()\ noexcept\ \{\ \textcolor{keyword}{delete}[]\ arr;\ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00042\ \ \ T\ \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (i\ -\/\ 1)\ /\ 2;\ \}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00049\ \ \ T\ \mbox{\hyperlink{classmin__heap_a85cdcef636a8e76e46a108d8a0395201}{\_\_left}}(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (2\ *\ i\ +\ 1);\ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00056\ \ \ T\ \mbox{\hyperlink{classmin__heap_a41ea56c3393f6da46f663ec0a1847454}{\_\_right}}(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (2\ *\ i\ +\ 2);\ \}}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00062\ \ \ T\ \mbox{\hyperlink{classmin__heap_acfd0f3259fb5f6792a0435cdcb0bea75}{\_\_min}}()\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ <=\ 0)\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INT\_MAX;}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ ==\ 1)\ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ heap\_size-\/-\/;}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[0];}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
-\DoxyCodeLine{00070\ \ \ \ \ T\ root\ =\ arr[0];}
-\DoxyCodeLine{00071\ \ \ \ \ arr[0]\ =\ arr[heap\_size\ -\/\ 1];}
-\DoxyCodeLine{00072\ \ \ \ \ heap\_size-\/-\/;}
-\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classmin__heap_a624dfa9812a698548226a6dbcfe2c6cc}{heapify}}(0);}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
-\DoxyCodeLine{00075\ \ \ \}}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00081\ \ \ T\ \mbox{\hyperlink{classmin__heap_a1f4229dc4a3f4e5888293b7de530163a}{min}}()\ \{\ \textcolor{keywordflow}{return}\ arr[0];\ \}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ decrease\_key(T\ i,\ T\ key)\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ arr[i]\ =\ key;}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0\ \&\&\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]\ >\ arr[i])\ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ std::swap(arr[i],\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]);}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i);}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmin__heap_a65ea47fb7a47b6db35cfc02a0d1f95be}{insert}}(T\ key)\ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ ==\ max\_size)\ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heap\ reached\ maximum\ size"{}});}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ heap\_size++;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ heap\_size\ -\/\ 1;}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ arr[i]\ =\ key;}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0\ \&\&\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]\ >\ arr[i])\ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ std::swap(arr[i],\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i);}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00109\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00112\ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \}}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00120\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmin__heap_ad5364af3e61a8e296e524968f1925de2}{remove}}(T\ key)\ \{}
-\DoxyCodeLine{00121\ \ \ \ \ decrease\_key(key,\ INT\_MIN);}
-\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classmin__heap_acfd0f3259fb5f6792a0435cdcb0bea75}{\_\_min}}();}
-\DoxyCodeLine{00123\ \ \ \}}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00130\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmin__heap_a624dfa9812a698548226a6dbcfe2c6cc}{heapify}}(T\ i)\ \{}
-\DoxyCodeLine{00131\ \ \ \ \ T\ left\ =\ \mbox{\hyperlink{classmin__heap_a85cdcef636a8e76e46a108d8a0395201}{\_\_left}}(i);}
-\DoxyCodeLine{00132\ \ \ \ \ T\ right\ =\ \mbox{\hyperlink{classmin__heap_a41ea56c3393f6da46f663ec0a1847454}{\_\_right}}(i);}
-\DoxyCodeLine{00133\ \ \ \ \ T\ minim\ =\ i;}
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ <\ heap\_size\ \&\&\ arr[left]\ <\ arr[i])\ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ minim\ =\ left;}
-\DoxyCodeLine{00136\ \ \ \ \ \}}
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (right\ <\ heap\_size\ \&\&\ arr[right]\ <\ arr[i])\ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ minim\ =\ right;}
-\DoxyCodeLine{00139\ \ \ \ \ \}}
-\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{if}\ (minim\ !=\ i)\ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ std::swap(arr[i],\ arr[minim]);}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \mbox{\hyperlink{classmin__heap_a624dfa9812a698548226a6dbcfe2c6cc}{heapify}}(minim);}
-\DoxyCodeLine{00143\ \ \ \ \ \}}
-\DoxyCodeLine{00144\ \ \ \}}
-\DoxyCodeLine{00145\ \};}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ This\ is\ needed\ to\ avoid\ conflict\ with\ windows\ \_\_min\ macro}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#undef\ \_\_min}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmin__heap}{min\_heap}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ T\ *arr;}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{size\_t}\ max\_size;}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{size\_t}\ heap\_size;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classmin__heap_a2db8fee3af814966c7299e10e3b7592a}{min\_heap}}(\textcolor{keywordtype}{size\_t}\ max\_size)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(max\_size\ <\ 0\ ||\ max\_size\ >\ INT\_MAX)\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}max\_size\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ heap\_size\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ this-\/>max\_size\ =\ max\_size;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[max\_size];}
+\DoxyCodeLine{00038\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(std::logic\_error\ \&e)\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classmin__heap}{\string~min\_heap}}()\ noexcept\ \{\ \textcolor{keyword}{delete}[]\ arr;\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classmin__heap_a298fdf0d87143d2879d33cd45fb279d9}{min\_heap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmin__heap}{min\_heap}}\&\ h)\ noexcept\ :\ max\_size(h.max\_size),\ heap\_size(h.heap\_size)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ arr\ =\ \textcolor{keyword}{new}\ T[max\_size];}
+\DoxyCodeLine{00052\ \ \ \ \ std::copy(h.arr,\ h.arr\ +\ h.heap\_size,\ arr);}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ T\ \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (i\ -\/\ 1)\ /\ 2;\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ T\ \mbox{\hyperlink{classmin__heap_a85cdcef636a8e76e46a108d8a0395201}{\_\_left}}(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (2\ *\ i\ +\ 1);\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ T\ \mbox{\hyperlink{classmin__heap_a41ea56c3393f6da46f663ec0a1847454}{\_\_right}}(T\ i)\ \{\ \textcolor{keywordflow}{return}\ (2\ *\ i\ +\ 2);\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ T\ \mbox{\hyperlink{classmin__heap_acfd0f3259fb5f6792a0435cdcb0bea75}{\_\_min}}()\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ <=\ 0)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INT\_MAX;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ ==\ 1)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ heap\_size-\/-\/;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[0];}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ T\ root\ =\ arr[0];}
+\DoxyCodeLine{00089\ \ \ \ \ arr[0]\ =\ arr[heap\_size\ -\/\ 1];}
+\DoxyCodeLine{00090\ \ \ \ \ heap\_size-\/-\/;}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classmin__heap_a624dfa9812a698548226a6dbcfe2c6cc}{heapify}}(0);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00093\ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ T\ \mbox{\hyperlink{classmin__heap_a1f4229dc4a3f4e5888293b7de530163a}{min}}()\ \{\ \textcolor{keywordflow}{return}\ arr[0];\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{void}\ decrease\_key(T\ i,\ T\ key)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ arr[i]\ =\ key;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0\ \&\&\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]\ >\ arr[i])\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ std::swap(arr[i],\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i);}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmin__heap_a65ea47fb7a47b6db35cfc02a0d1f95be}{insert}}(T\ key)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (heap\_size\ ==\ max\_size)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Heap\ reached\ maximum\ size"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ heap\_size++;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ heap\_size\ -\/\ 1;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ arr[i]\ =\ key;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0\ \&\&\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]\ >\ arr[i])\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ std::swap(arr[i],\ arr[\mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i)]);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}}(i);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmin__heap_ad5364af3e61a8e296e524968f1925de2}{remove}}(T\ key)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ decrease\_key(key,\ INT\_MIN);}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classmin__heap_acfd0f3259fb5f6792a0435cdcb0bea75}{\_\_min}}();}
+\DoxyCodeLine{00141\ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmin__heap_a624dfa9812a698548226a6dbcfe2c6cc}{heapify}}(T\ i)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ T\ left\ =\ \mbox{\hyperlink{classmin__heap_a85cdcef636a8e76e46a108d8a0395201}{\_\_left}}(i);}
+\DoxyCodeLine{00150\ \ \ \ \ T\ right\ =\ \mbox{\hyperlink{classmin__heap_a41ea56c3393f6da46f663ec0a1847454}{\_\_right}}(i);}
+\DoxyCodeLine{00151\ \ \ \ \ T\ minim\ =\ i;}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ <\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(heap\_size)\ \&\&\ arr[left]\ <\ arr[i])\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ minim\ =\ left;}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (right\ <\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(heap\_size)\ \&\&\ arr[right]\ <\ arr[i])\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ minim\ =\ right;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{if}\ (minim\ !=\ i)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ std::swap(arr[i],\ arr[minim]);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \mbox{\hyperlink{classmin__heap_a624dfa9812a698548226a6dbcfe2c6cc}{heapify}}(minim);}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \}}
+\DoxyCodeLine{00163\ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

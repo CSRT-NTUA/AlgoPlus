@@ -89,6 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2db8fee3af814966c7299e10e3b7592a" id="r_a2db8fee3af814966c7299e10e3b7592a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2db8fee3af814966c7299e10e3b7592a">min_heap</a> (size_t max_size) noexcept</td></tr>
 <tr class="memdesc:a2db8fee3af814966c7299e10e3b7592a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new min heap object.  <br /></td></tr>
 <tr class="separator:a2db8fee3af814966c7299e10e3b7592a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298fdf0d87143d2879d33cd45fb279d9" id="r_a298fdf0d87143d2879d33cd45fb279d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a298fdf0d87143d2879d33cd45fb279d9">min_heap</a> (const <a class="el" href="classmin__heap.html">min_heap</a> &amp;h) noexcept</td></tr>
+<tr class="memdesc:a298fdf0d87143d2879d33cd45fb279d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for the <a class="el" href="classmin__heap.html" title="min heap class">min_heap</a> class.  <br /></td></tr>
+<tr class="separator:a298fdf0d87143d2879d33cd45fb279d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8bbb147008dd39c014a3578330c62aa" id="r_ad8bbb147008dd39c014a3578330c62aa"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8bbb147008dd39c014a3578330c62aa">parent</a> (T i)</td></tr>
 <tr class="memdesc:ad8bbb147008dd39c014a3578330c62aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">parent function  <br /></td></tr>
 <tr class="separator:ad8bbb147008dd39c014a3578330c62aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +127,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>decrease_key</b> (T i
 class min_heap&lt; T &gt;</div><p>min heap class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2db8fee3af814966c7299e10e3b7592a" name="a2db8fee3af814966c7299e10e3b7592a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2db8fee3af814966c7299e10e3b7592a">&#9670;&#160;</a></span>min_heap()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db8fee3af814966c7299e10e3b7592a">&#9670;&#160;</a></span>min_heap() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +155,41 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">max_size</td><td>: maximum size of the heap </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a298fdf0d87143d2879d33cd45fb279d9" name="a298fdf0d87143d2879d33cd45fb279d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298fdf0d87143d2879d33cd45fb279d9">&#9670;&#160;</a></span>min_heap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmin__heap.html">min_heap</a>&lt; T &gt;<a class="el" href="classmin__heap.html">::min_heap</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmin__heap.html">min_heap</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>h</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor for the <a class="el" href="classmin__heap.html" title="min heap class">min_heap</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>The heap to be copied </td></tr>
   </table>
   </dd>
 </dl>

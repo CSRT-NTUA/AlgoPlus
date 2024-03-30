@@ -14,6 +14,8 @@ min heap class
 \item 
 \mbox{\hyperlink{classmin__heap_a2db8fee3af814966c7299e10e3b7592a}{min\+\_\+heap}} (size\+\_\+t max\+\_\+size) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new min heap object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmin__heap_a298fdf0d87143d2879d33cd45fb279d9}{min\+\_\+heap}} (const \mbox{\hyperlink{classmin__heap}{min\+\_\+heap}} \&h) noexcept
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \doxylink{classmin__heap}{min\+\_\+heap} class. \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{classmin__heap_ad8bbb147008dd39c014a3578330c62aa}{parent}} (T i)
 \begin{DoxyCompactList}\small\item\em parent function \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{classmin__heap_a85cdcef636a8e76e46a108d8a0395201}{\+\_\+\+\_\+left}} (T i)
@@ -46,7 +48,7 @@ min heap class
 \Hypertarget{classmin__heap_a2db8fee3af814966c7299e10e3b7592a}\label{classmin__heap_a2db8fee3af814966c7299e10e3b7592a} 
 \index{min\_heap$<$ T $>$@{min\_heap$<$ T $>$}!min\_heap@{min\_heap}}
 \index{min\_heap@{min\_heap}!min\_heap$<$ T $>$@{min\_heap$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{min\_heap()}{min\_heap()}}
+\doxysubsubsection{\texorpdfstring{min\_heap()}{min\_heap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classmin__heap}{min\+\_\+heap}}$<$ T $>$\mbox{\hyperlink{classmin__heap}{\+::min\+\_\+heap}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
@@ -57,6 +59,22 @@ Construct a new min heap object.
 
 \begin{DoxyParams}{Parameters}
 {\em max\+\_\+size} & \+: maximum size of the heap \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmin__heap_a298fdf0d87143d2879d33cd45fb279d9}\label{classmin__heap_a298fdf0d87143d2879d33cd45fb279d9} 
+\index{min\_heap$<$ T $>$@{min\_heap$<$ T $>$}!min\_heap@{min\_heap}}
+\index{min\_heap@{min\_heap}!min\_heap$<$ T $>$@{min\_heap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{min\_heap()}{min\_heap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmin__heap}{min\+\_\+heap}}$<$ T $>$\mbox{\hyperlink{classmin__heap}{\+::min\+\_\+heap}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmin__heap}{min\+\_\+heap}}$<$ T $>$ \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Copy constructor for the \doxylink{classmin__heap}{min\+\_\+heap} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & The heap to be copied \\
 \hline
 \end{DoxyParams}
 
