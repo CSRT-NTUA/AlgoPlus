@@ -68,7 +68,8 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 **Machine Learning(NEW!)**
 - [X] [Kmeans](https://en.wikipedia.org/wiki/K-means_clustering)
 - [X] [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
-- [X] [Linear Regression-Currently working]
+- [X] [Linear Regression](https://en.wikipedia.org/wiki/Linear_regression)
+- [X] [Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)
 - [X] [Polynomial Regression-Currently working]
 
 
