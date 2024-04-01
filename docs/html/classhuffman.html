@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AlgoPlus: huffman&lt; T &gt; Class Template Reference</title>
+<title>AlgoPlus: huffman Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,28 +75,98 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classhuffman-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">huffman&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">huffman Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>class for huffman coding  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="huffman__encoding_8h_source.html">huffman_encoding.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af376a39d8efc68e02402a2d70867bb15" id="r_af376a39d8efc68e02402a2d70867bb15"><td class="memItemLeft" align="right" valign="top"><a id="af376a39d8efc68e02402a2d70867bb15" name="af376a39d8efc68e02402a2d70867bb15"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>huffman</b> (std::vector&lt; T &gt; v={}, int64_t MAX_DEPTH=10)</td></tr>
-<tr class="separator:af376a39d8efc68e02402a2d70867bb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a985a2ac75694c963b322b34d57fbb83f" id="r_a985a2ac75694c963b322b34d57fbb83f"><td class="memItemLeft" align="right" valign="top"><a id="a985a2ac75694c963b322b34d57fbb83f" name="a985a2ac75694c963b322b34d57fbb83f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>compute_weights</b> ()</td></tr>
-<tr class="separator:a985a2ac75694c963b322b34d57fbb83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa29b94785fce13262b2bcb9463eecf41" id="r_aa29b94785fce13262b2bcb9463eecf41"><td class="memItemLeft" align="right" valign="top"><a id="aa29b94785fce13262b2bcb9463eecf41" name="aa29b94785fce13262b2bcb9463eecf41"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr class="separator:aa29b94785fce13262b2bcb9463eecf41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7a79a2f4a79f4430cd5ea165b28730d" id="r_ae7a79a2f4a79f4430cd5ea165b28730d"><td class="memItemLeft" align="right" valign="top"><a id="ae7a79a2f4a79f4430cd5ea165b28730d" name="ae7a79a2f4a79f4430cd5ea165b28730d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>decode</b> (char c)</td></tr>
-<tr class="separator:ae7a79a2f4a79f4430cd5ea165b28730d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affdadabdbcdcbe0d31cf069e37620305" id="r_affdadabdbcdcbe0d31cf069e37620305"><td class="memItemLeft" align="right" valign="top"><a id="affdadabdbcdcbe0d31cf069e37620305" name="affdadabdbcdcbe0d31cf069e37620305"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>levels</b> ()</td></tr>
-<tr class="separator:affdadabdbcdcbe0d31cf069e37620305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4176a6a290865292d5946440a1d9f39c" id="r_a4176a6a290865292d5946440a1d9f39c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4176a6a290865292d5946440a1d9f39c">huffman</a> (std::vector&lt; std::string &gt; v={}, int64_t MAX_DEPTH=10)</td></tr>
+<tr class="memdesc:a4176a6a290865292d5946440a1d9f39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for huffman class  <br /></td></tr>
+<tr class="separator:a4176a6a290865292d5946440a1d9f39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3185e73fc59752248afc7025a39d3079" id="r_a3185e73fc59752248afc7025a39d3079"><td class="memItemLeft" align="right" valign="top"><a id="a3185e73fc59752248afc7025a39d3079" name="a3185e73fc59752248afc7025a39d3079"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>create_tree</b> ()</td></tr>
+<tr class="memdesc:a3185e73fc59752248afc7025a39d3079"><td class="mdescLeft">&#160;</td><td class="mdescRight">create_tree function creates the tree in recursive fashion, from the leafs up to the root <br /></td></tr>
+<tr class="separator:a3185e73fc59752248afc7025a39d3079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa536c8708c473ce1bfce04f29e69f623" id="r_aa536c8708c473ce1bfce04f29e69f623"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa536c8708c473ce1bfce04f29e69f623">decode</a> ()</td></tr>
+<tr class="memdesc:aa536c8708c473ce1bfce04f29e69f623"><td class="mdescLeft">&#160;</td><td class="mdescRight">decode function  <br /></td></tr>
+<tr class="separator:aa536c8708c473ce1bfce04f29e69f623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>class for huffman coding </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4176a6a290865292d5946440a1d9f39c" name="a4176a6a290865292d5946440a1d9f39c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4176a6a290865292d5946440a1d9f39c">&#9670;&#160;</a></span>huffman()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">huffman::huffman </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>MAX_DEPTH</em><span class="paramdefsep"> = </span><span class="paramdefval">10</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>constructor for huffman class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>vector of strings(i.e. the text) </td></tr>
+    <tr><td class="paramname">MAX_DEPTH</td><td>maximum depth(number of bits) that we want to have(default = 10) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa536c8708c473ce1bfce04f29e69f623" name="aa536c8708c473ce1bfce04f29e69f623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa536c8708c473ce1bfce04f29e69f623">&#9670;&#160;</a></span>decode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::string, std::string &gt; huffman::decode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>decode function </p>
+<dl class="section return"><dt>Returns</dt><dd>unordered_map&lt;string, string&gt;: the resulted encoding </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/spirosmag/Documents/AlgoPlus/src/machine_learning/image/<a class="el" href="huffman__encoding_8h_source.html">huffman_encoding.h</a></li>
 </ul>

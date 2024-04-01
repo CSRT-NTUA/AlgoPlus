@@ -68,9 +68,10 @@ var searchData=
   ['create_20an_20instance_20of_20dbscan_3a_20strong_20_3a_65',['&lt;strong&gt;Create an instance of DBSCAN:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2_d_b_s_c_a_n.html#autotoc_md52',1,'']]],
   ['create_20an_20instance_20of_20kmeans_3a_20strong_20_3a_66',['&lt;strong&gt;Create an instance of kmeans:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2kmeans.html#autotoc_md111',1,'']]],
   ['create_20an_20instance_20of_20the_20hash_5ftable_3a_20strong_20_3a_67',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2hash__table.html#autotoc_md95',1,'']]],
-  ['creating_20a_20new_20class_20strong_68',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md14',1,'']]],
-  ['crend_69',['crend',['../classbasic__json.html#aa52cc6cc0de1e81d9cc21f9c48feb588',1,'basic_json']]],
-  ['csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_70',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
-  ['cycle_71',['cycle',['../classgraph.html#a77cab44c928701b32e0d0610392ed5cc',1,'graph::cycle()'],['../classweighted__graph.html#a4aa2ada9ac5954730d10abadcc16b2e1',1,'weighted_graph::cycle()']]],
-  ['cycle_20strong_20_3a_72',['&lt;strong&gt;cycle&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md85',1,'']]]
+  ['create_5ftree_68',['create_tree',['../classhuffman.html#a3185e73fc59752248afc7025a39d3079',1,'huffman']]],
+  ['creating_20a_20new_20class_20strong_69',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md14',1,'']]],
+  ['crend_70',['crend',['../classbasic__json.html#aa52cc6cc0de1e81d9cc21f9c48feb588',1,'basic_json']]],
+  ['csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_71',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
+  ['cycle_72',['cycle',['../classgraph.html#a77cab44c928701b32e0d0610392ed5cc',1,'graph::cycle()'],['../classweighted__graph.html#a4aa2ada9ac5954730d10abadcc16b2e1',1,'weighted_graph::cycle()']]],
+  ['cycle_20strong_20_3a_73',['&lt;strong&gt;cycle&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md85',1,'']]]
 ];

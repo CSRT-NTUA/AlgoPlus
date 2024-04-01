@@ -13,6 +13,7 @@ var searchData=
   ['count_10',['count',['../classbasic__json.html#ad1e1eff03a320299e6a8639a7579ca46',1,'basic_json::count(const typename object_t::key_type &amp;key) const'],['../classbasic__json.html#a1ba1cd73d36a2cd58a9da7021b0f7317',1,'basic_json::count(KeyType &amp;&amp;key) const']]],
   ['crbegin_11',['crbegin',['../classbasic__json.html#acdde2a6628e43b3e3f7f27c6af6998f8',1,'basic_json']]],
   ['create_12',['create',['../classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df',1,'detail::parse_error']]],
-  ['crend_13',['crend',['../classbasic__json.html#aa52cc6cc0de1e81d9cc21f9c48feb588',1,'basic_json']]],
-  ['cycle_14',['cycle',['../classgraph.html#a77cab44c928701b32e0d0610392ed5cc',1,'graph::cycle()'],['../classweighted__graph.html#a4aa2ada9ac5954730d10abadcc16b2e1',1,'weighted_graph::cycle()']]]
+  ['create_5ftree_13',['create_tree',['../classhuffman.html#a3185e73fc59752248afc7025a39d3079',1,'huffman']]],
+  ['crend_14',['crend',['../classbasic__json.html#aa52cc6cc0de1e81d9cc21f9c48feb588',1,'basic_json']]],
+  ['cycle_15',['cycle',['../classgraph.html#a77cab44c928701b32e0d0610392ed5cc',1,'graph::cycle()'],['../classweighted__graph.html#a4aa2ada9ac5954730d10abadcc16b2e1',1,'weighted_graph::cycle()']]]
 ];
