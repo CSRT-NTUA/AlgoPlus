@@ -1,0 +1,122 @@
+\doxysection{huffman\+\_\+encoding.\+h}
+\hypertarget{huffman__encoding_8h_source}{}\label{huffman__encoding_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/image/huffman\_encoding.h@{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/image/huffman\_encoding.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ HUFFMAN\_ENCODING\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ HUFFMAN\_ENCODING\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhuffman}{huffman}}\{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{struct\ }node\{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ weight;}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ ID;}
+\DoxyCodeLine{00021\ \ \ \ \ std::shared\_ptr<node>\ left;}
+\DoxyCodeLine{00022\ \ \ \ \ std::shared\_ptr<node>\ right;}
+\DoxyCodeLine{00023\ \ \ \ \ node(std::string\ ID,\ \textcolor{keywordtype}{double}\ weight)\ :\ ID(ID),\ weight(weight),\ left(\textcolor{keyword}{nullptr}),\ right(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00024\ \ \ \};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{double}\ \_\_size;}
+\DoxyCodeLine{00026\ \ \ int64\_t\ MAX\_DEPTH;}
+\DoxyCodeLine{00027\ \ \ std::shared\_ptr<node>\ root;}
+\DoxyCodeLine{00028\ \ \ std::unordered\_map<char,\ double>\ appearances;}
+\DoxyCodeLine{00029\ \ \ std::priority\_queue<std::pair<double,\ std::shared\_ptr<node>\ >,\ std::vector<std::pair<double,\ std::shared\_ptr<node>\ >\ >,\ std::greater<std::pair<double,\ std::shared\_ptr<node>\ >\ >\ >\ \_\_weights;}
+\DoxyCodeLine{00030\ \ \ std::unordered\_map<char,\ double>\ map\_weights;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classhuffman}{huffman}}(std::vector<T>\ v\ =\ \{\},\ int64\_t\ MAX\_DEPTH\ =\ 10)\ :\ root(\textcolor{keyword}{nullptr}),\ MAX\_DEPTH(MAX\_DEPTH)\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{for}(std::string\ \&x\ :\ v)\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{char}\ \&\ y\ :\ x)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ appearances[y]++;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_\_size++;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ compute\_weights()\{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&\ x\ :\ appearances)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ std::string\ curr\ =\ \textcolor{stringliteral}{"{}"{}};\ curr\ +=\ x.first;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(curr,\ x.second\ /\ \_\_size);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \_\_weights.push(\{x.second\ /\ \_\_size,\ nn\});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ map\_weights[x.first]\ =\ x.second\ /\ \_\_size;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \}}
+\DoxyCodeLine{00050\ \ \ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ run()\{}
+\DoxyCodeLine{00052\ \ \ \ \ compute\_weights();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{while}(\_\_weights.size()\ >=\ 2)\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ first\_node\ =\ \_\_weights.top();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \_\_weights.pop();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ second\_node\ =\ \_\_weights.top();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \_\_weights.pop();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ std::shared\_ptr<node>\ nn\ =\ std::make\_shared<node>(first\_node.second-\/>ID\ +\ second\_node.second-\/>ID,\ first\_node.first\ +\ second\_node.first);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ nn\ -\/>\ right\ =\ second\_node.second;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ nn\ -\/>\ left\ =\ first\_node.second;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \_\_weights.push(\{nn-\/>weight,\ nn\});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_\_weights.size()\ ==\ 2)\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ root\ =\ nn;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ std::string\ decode(\textcolor{keywordtype}{char}\ c)\{}
+\DoxyCodeLine{00069\ \ \ \ \ std::vector<int>\ v(MAX\_DEPTH);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ top\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \_\_decode(root,\ v,\ top);}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ levels()\{}
+\DoxyCodeLine{00075\ \ \ \ \ std::queue<std::shared\_ptr<node>\ >\ q;}
+\DoxyCodeLine{00076\ \ \ \ \ q.push(root);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{while}(!q.empty())\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ q.size();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<size;\ i++)\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ current\ =\ q.front();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cout\ <<\ current\ -\/>\ ID\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\ -\/>\ left)\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ q.push(current\ -\/>\ left);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\ -\/>\ right)\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ q.push(current\ -\/>\ right);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \}}
+\DoxyCodeLine{00092\ \ \ }
+\DoxyCodeLine{00093\ \ \ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{void}\ \_\_decode(std::shared\_ptr<node>\ root,\ std::vector<int>\ arr,\ \textcolor{keywordtype}{int}\ top)\{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}(root\ -\/>\ left)\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ arr[top]\ =\ 0;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \_\_decode(root\ -\/>\ left,\ arr,\ top\ +\ 1);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}(root\ -\/>\ right)\{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ arr[top]\ =\ 1;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \_\_decode(root\ -\/>\ right,\ arr,\ top\ +\ 1);}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{if}(!root\ -\/>\ left\ \&\&\ !root\ -\/>\ right)\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ std::cout\ <<\ root\ -\/>\ ID\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<top;\ i++)\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::cout\ <<\ arr[i];}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \}}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
