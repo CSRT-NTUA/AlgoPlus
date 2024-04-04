@@ -92,7 +92,7 @@ $(function() {
 <div class="line">ht.<a class="code hl_function" href="classhash__table.html#a075f7fb9d5f95b828e044dc49e6386ba">insert</a>(<span class="stringliteral">&quot;banana&quot;</span>, 2);</div>
 <div class="line">ht.<a class="code hl_function" href="classhash__table.html#a075f7fb9d5f95b828e044dc49e6386ba">insert</a>(<span class="stringliteral">&quot;carrot&quot;</span>, 3);</div>
 <div class="line"><span class="comment">// inserts key-value pairs {&quot;apple&quot;, 1}, {&quot;banana&quot;, 2}, {&quot;carrot&quot;, 3} into the hash table</span></div>
-<div class="ttc" id="aclasshash__table_html_a075f7fb9d5f95b828e044dc49e6386ba"><div class="ttname"><a href="classhash__table.html#a075f7fb9d5f95b828e044dc49e6386ba">hash_table::insert</a></div><div class="ttdeci">void insert(const KeyType &amp;key, const ValueType &amp;value)</div><div class="ttdoc">Inserts a key-value pair into the hash table.</div><div class="ttdef"><b>Definition</b> hash_table.h:82</div></div>
+<div class="ttc" id="aclasshash__table_html_a075f7fb9d5f95b828e044dc49e6386ba"><div class="ttname"><a href="classhash__table.html#a075f7fb9d5f95b828e044dc49e6386ba">hash_table::insert</a></div><div class="ttdeci">void insert(const KeyType &amp;key, const ValueType &amp;value)</div><div class="ttdoc">Inserts a key-value pair into the hash table.</div><div class="ttdef"><b>Definition</b> hash_table.h:87</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md97"></a>
 <b>retrieve</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;hash_table.h&gt;</span></div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Element not found&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclasshash__table_html_a29bcecb383e67c1e322ffffda88706db"><div class="ttname"><a href="classhash__table.html#a29bcecb383e67c1e322ffffda88706db">hash_table::retrieve</a></div><div class="ttdeci">std::optional&lt; ValueType &gt; retrieve(const KeyType &amp;key)</div><div class="ttdoc">Retrieves the value associated with the given key.</div><div class="ttdef"><b>Definition</b> hash_table.h:99</div></div>
+<div class="ttc" id="aclasshash__table_html_a29bcecb383e67c1e322ffffda88706db"><div class="ttname"><a href="classhash__table.html#a29bcecb383e67c1e322ffffda88706db">hash_table::retrieve</a></div><div class="ttdeci">std::optional&lt; ValueType &gt; retrieve(const KeyType &amp;key)</div><div class="ttdoc">Retrieves the value associated with the given key.</div><div class="ttdef"><b>Definition</b> hash_table.h:104</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md98"></a>
 <b>remove</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;hash_table.h&gt;</span></div>
@@ -122,7 +122,7 @@ $(function() {
 <div class="line"><span class="comment">// removes the key-value pair associated with the given key from the hash_table.</span></div>
 <div class="line">ht.<a class="code hl_function" href="classhash__table.html#ac9a4f3f321ddf37bcc445ea2c56d44ed">remove</a>(<span class="stringliteral">&quot;carrot&quot;</span>);</div>
 <div class="line">assert(!ht.<a class="code hl_function" href="classhash__table.html#a29bcecb383e67c1e322ffffda88706db">retrieve</a>(<span class="stringliteral">&quot;carrot&quot;</span>));</div>
-<div class="ttc" id="aclasshash__table_html_ac9a4f3f321ddf37bcc445ea2c56d44ed"><div class="ttname"><a href="classhash__table.html#ac9a4f3f321ddf37bcc445ea2c56d44ed">hash_table::remove</a></div><div class="ttdeci">void remove(const KeyType &amp;key)</div><div class="ttdoc">Removes the key-value pair associated with the given key from the hash table.</div><div class="ttdef"><b>Definition</b> hash_table.h:117</div></div>
+<div class="ttc" id="aclasshash__table_html_ac9a4f3f321ddf37bcc445ea2c56d44ed"><div class="ttname"><a href="classhash__table.html#ac9a4f3f321ddf37bcc445ea2c56d44ed">hash_table::remove</a></div><div class="ttdeci">void remove(const KeyType &amp;key)</div><div class="ttdoc">Removes the key-value pair associated with the given key from the hash table.</div><div class="ttdef"><b>Definition</b> hash_table.h:122</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md99"></a>
 <b>iterator</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;hash_table.h&gt;</span></div>
@@ -132,9 +132,10 @@ $(function() {
 <div class="line">ht.<a class="code hl_function" href="classhash__table.html#a075f7fb9d5f95b828e044dc49e6386ba">insert</a>(<span class="stringliteral">&quot;banana&quot;</span>, 2);</div>
 <div class="line">ht.<a class="code hl_function" href="classhash__table.html#a075f7fb9d5f95b828e044dc49e6386ba">insert</a>(<span class="stringliteral">&quot;carrot&quot;</span>, 3);</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> it = ht.begin(); it != ht.end(); it++){</div>
-<div class="line">    <span class="comment">// *(it) returns the list of pairs that exist in each index</span></div>
-<div class="line">    std::list&lt;std::pair&lt;std::string, int&gt;&gt; l = *(it);</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> it = ht.begin(); it != ht.end(); ++it) { </div>
+<div class="line">    <span class="comment">// *it returns the key-value pair at the iterator&#39;s current position </span></div>
+<div class="line">    std::pair&lt;std::string, int&gt; p = *it; </div>
+<div class="line">    std::cout &lt;&lt; p.first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; p.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>; </div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

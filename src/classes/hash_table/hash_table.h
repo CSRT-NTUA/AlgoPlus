@@ -63,6 +63,9 @@ public:
    * @return hash_table&
    */
   hash_table &operator=(const hash_table &h) {
+    if(&this == h){
+      return *this;
+    }
     bucketList = h.bucketList;
     hash = h.hash;
     return *this;
@@ -123,16 +126,16 @@ public:
 
   class Iterator;
 
-    Iterator begin() {
-        auto startIterator = bucketList.begin();
-        while (startIterator != bucketList.end() && startIterator->second.empty())
-            startIterator++;
-        return Iterator(startIterator, bucketList.end());
-    }
+  Iterator begin() {
+      auto startIterator = bucketList.begin();
+      while (startIterator != bucketList.end() && startIterator->second.empty())
+          startIterator++;
+      return Iterator(startIterator, bucketList.end());
+  }
 
-    Iterator end() {
-        return Iterator(bucketList.end(), bucketList.end());
-    }
+  Iterator end() {
+      return Iterator(bucketList.end(), bucketList.end());
+  }
 
   /**
    * @brief << operator for hash_table class

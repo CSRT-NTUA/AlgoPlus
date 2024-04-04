@@ -69,9 +69,10 @@
 \DoxyCodeLine{ht.\mbox{\hyperlink{classhash__table_a075f7fb9d5f95b828e044dc49e6386ba}{insert}}(\textcolor{stringliteral}{"{}banana"{}},\ 2);}
 \DoxyCodeLine{ht.\mbox{\hyperlink{classhash__table_a075f7fb9d5f95b828e044dc49e6386ba}{insert}}(\textcolor{stringliteral}{"{}carrot"{}},\ 3);}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ ht.begin();\ it\ !=\ ht.end();\ it++)\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ list\ of\ pairs\ that\ exist\ in\ each\ index}}
-\DoxyCodeLine{\ \ \ \ std::list<std::pair<std::string,\ int>>\ l\ =\ *(it);}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ ht.begin();\ it\ !=\ ht.end();\ ++it)\ \{\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *it\ returns\ the\ key-\/value\ pair\ at\ the\ iterator's\ current\ position\ }}
+\DoxyCodeLine{\ \ \ \ std::pair<std::string,\ int>\ p\ =\ *it;\ }
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ p.first\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ p.second\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ }
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
