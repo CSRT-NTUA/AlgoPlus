@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AlgoPlus: How do i write unit tests?</title>
+<title>AlgoPlus: Mini tutorial for huffman coding class</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,17 +72,30 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">How do i write unit tests?</div></div>
+  <div class="headertitle"><div class="title">Mini tutorial for huffman coding class</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md152"></a> Writting unit tests is the most important part of contributing. Fortunately or not, this is a project about algorithms and a lot of edge cases exist, so we must make sure everything works as it should.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../catch2/catch.hpp&quot;</span></div>
+<div class="textblock"><p><a class="anchor" id="autotoc_md100"></a> </p><pre class="fragment">-- huffman h(vector&lt;string&gt; v, MAX_DEPTH) creates a huffman object with the input text v and MAX_DEPTH(default = 10)
+</pre><h2><a class="anchor" id="autotoc_md101"></a>
+<b>create_tree</b>:</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;machine_learning/image/huffman_encoding.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line">TEST_CASE(<span class="stringliteral">&quot;testing this and that...&quot;</span>){</div>
-<div class="line">    std::vector&lt;int&gt; v = myclass.function();</div>
-<div class="line">    some mode code...</div>
-<div class="line">    std::vector&lt;int&gt; check_v = {the answer that myclass.function should <span class="keywordflow">return</span>};</div>
-<div class="line">    REQUIRE(check_v == v);</div>
+<div class="line"><span class="keywordtype">int</span> main(){</div>
+<div class="line">    std::vector&lt;std::string&gt; text = {<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>, <span class="stringliteral">&quot;it&#39;s&quot;</span>, <span class="stringliteral">&quot;algoplus&quot;</span>};</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_class" href="classhuffman.html">huffman</a> h(text);</div>
+<div class="line">    <span class="comment">// creates the huffman tree using the helper function compute_weights() </span></div>
+<div class="line">    h.create_tree();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasshuffman_html"><div class="ttname"><a href="classhuffman.html">huffman</a></div><div class="ttdoc">class for huffman coding</div><div class="ttdef"><b>Definition</b> huffman_encoding.h:19</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
+<b>decode</b>:</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;machine_learning/image/huffman_encoding.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(){</div>
+<div class="line">    ...</div>
+<div class="line">    <span class="comment">// get the decoded results from the alphabet text</span></div>
+<div class="line">    std::unordered_map&lt;std::string, std::string&gt; decoded = h.decode();</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

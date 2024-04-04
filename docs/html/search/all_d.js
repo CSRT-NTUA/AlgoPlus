@@ -25,5 +25,6 @@ var searchData=
   ['href_20https_3a_20discord_20gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_22',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]],
   ['https_3a_20csrt_20ntua_20github_20io_20algoplus_20here_20a_20strong_23',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
   ['https_3a_20discord_20gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_24',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]],
-  ['huffman_25',['huffman',['../classhuffman.html',1,'huffman'],['../classhuffman.html#a4176a6a290865292d5946440a1d9f39c',1,'huffman::huffman()']]]
+  ['huffman_25',['huffman',['../classhuffman.html',1,'huffman'],['../classhuffman.html#a4176a6a290865292d5946440a1d9f39c',1,'huffman::huffman()']]],
+  ['huffman_20coding_20class_26',['Mini tutorial for huffman coding class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2huffman__coding.html',1,'']]]
 ];

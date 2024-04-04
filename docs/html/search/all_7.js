@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_20of_20y_20_3a_20strong_0',['&lt;strong&gt;Get results from linear regression(i.e. get a and b of y):&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2linear__regression.html#autotoc_md115',1,'']]],
+  ['b_20of_20y_20_3a_20strong_0',['&lt;strong&gt;Get results from linear regression(i.e. get a and b of y):&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2linear__regression.html#autotoc_md118',1,'']]],
   ['back_1',['back',['../classdequeue__list.html#a52390a91517e3419a6120d38cc30ca39',1,'dequeue_list::back()'],['../classjson__pointer.html#aba71e63e4032cfc46dd90aeb09e5cb0f',1,'json_pointer::back()'],['../classbasic__json.html#a0d93dc1dbdf67a6ee3a5cf1d2439ca77',1,'basic_json::back()'],['../classbasic__json.html#a41eee3066cd1ebfea746f9f07fd03f6f',1,'basic_json::back() const']]],
   ['back_20strong_20_3a_2',['&lt;strong&gt;back&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html#autotoc_md60',1,'']]],
   ['ban_3',['Ban',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html#autotoc_md9',1,'3. Temporary Ban'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html#autotoc_md10',1,'4. Permanent Ban']]],
