@@ -64,8 +64,9 @@ ht.insert("apple", 1);
 ht.insert("banana", 2);
 ht.insert("carrot", 3);
 
-for(auto it = ht.begin(); it != ht.end(); it++){
-    // *(it) returns the list of pairs that exist in each index
-    std::list<std::pair<std::string, int>> l = *(it);
+for(auto it = ht.begin(); it != ht.end(); ++it) { 
+    // *it returns the key-value pair at the iterator's current position 
+    std::pair<std::string, int> p = *it; 
+    std::cout << p.first << ": " << p.second << "\n"; 
 }
 ```
