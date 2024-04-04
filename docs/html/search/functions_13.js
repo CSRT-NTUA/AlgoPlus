@@ -11,7 +11,8 @@ var searchData=
   ['token_5ftype_5fname_8',['token_type_name',['../classdetail_1_1lexer__base.html#aadef66e89ad828e5f69479c85887fa6d',1,'detail::lexer_base']]],
   ['top_9',['top',['../classstack__list.html#a02d7021eceefc2638fde93f38cdeb589',1,'stack_list']]],
   ['topological_5fsort_10',['topological_sort',['../classgraph.html#a5fa36c46613b6a5252f263dde594cf1f',1,'graph::topological_sort()'],['../classweighted__graph.html#a4b6919e5c07fa6b655169b6a30592771',1,'weighted_graph::topological_sort()']]],
-  ['trie_11',['trie',['../classtrie.html#a8d07730e7c6071a78b872f7f73613d14',1,'trie::trie(std::vector&lt; std::string &gt; v={}) noexcept'],['../classtrie.html#a6a3d9a7b2ad1393f5648e29d3963f3f5',1,'trie::trie(const trie &amp;t)']]],
-  ['type_12',['type',['../classbasic__json.html#ac5e52dbb3cb4e9fcabd1b88c37985aef',1,'basic_json']]],
-  ['type_5fname_13',['type_name',['../classbasic__json.html#a15b177614647598e238e15ab1cc889c7',1,'basic_json']]]
+  ['tree_11',['tree',['../classtree.html#ad5539664cc1fbf47d1bfce73ccc7c8e9',1,'tree']]],
+  ['trie_12',['trie',['../classtrie.html#a8d07730e7c6071a78b872f7f73613d14',1,'trie::trie(std::vector&lt; std::string &gt; v={}) noexcept'],['../classtrie.html#a6a3d9a7b2ad1393f5648e29d3963f3f5',1,'trie::trie(const trie &amp;t)']]],
+  ['type_13',['type',['../classbasic__json.html#ac5e52dbb3cb4e9fcabd1b88c37985aef',1,'basic_json']]],
+  ['type_5fname_14',['type_name',['../classbasic__json.html#a15b177614647598e238e15ab1cc889c7',1,'basic_json']]]
 ];
