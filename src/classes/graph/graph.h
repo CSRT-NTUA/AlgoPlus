@@ -1177,7 +1177,7 @@ template <typename T> void weighted_graph<T>::visualize() {
           s += element;
           s += "->";
           s += x.first;
-          s += "[weight=";
+          s += "[label=";
           s += std::to_string(x.second);
           s += "]";
           s += '\n';
@@ -1192,7 +1192,7 @@ template <typename T> void weighted_graph<T>::visualize() {
           s += std::to_string(element);
           s += "->";
           s += std::to_string(x.first);
-          s += "[weight=";
+          s += "[label=";
           s += std::to_string(x.second);
           s += "]";
           s += '\n';
@@ -1209,7 +1209,7 @@ template <typename T> void weighted_graph<T>::visualize() {
           s += element;
           s += "--";
           s += x.first;
-          s += "[weight=";
+          s += "[label=";
           s += std::to_string(x.second);
           s += "]";
           s += '\n';
@@ -1224,7 +1224,7 @@ template <typename T> void weighted_graph<T>::visualize() {
           s += std::to_string(element);
           s += "--";
           s += std::to_string(x.first);
-          s += "[weight=";
+          s += "[label=";
           s += std::to_string(x.second);
           s += "]";
           s += '\n';
