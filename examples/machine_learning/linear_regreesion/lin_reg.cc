@@ -1,22 +1,22 @@
+#include <iostream>
 #include "../../../src/machine_learning/regression/linear_regression/lin_reg.h"
-#include <random>
+#include "../../../third_party/json.hpp"
+#include <string>
+#include <fstream>
 
-std::vector<std::vector<double> > fill_data(){
-  std::vector<std::vector<double> > data;  
-  
-  for(int i = 0; i<100; ++i){
-    double rand1 = rand() % 5;
-    data.push_back({double(i), rand1});
-  }
-
-  return data;
-}
+using nlohmann::json;
 
 int main(){
-  std::vector<std::vector<double> > data = fill_data();
-  linear_regression l(data);
-
-  std::pair<double, double> a_b = l.get_results();
-  std::cout << "y = " << a_b.first << "x + " << a_b.second << '\n';
-
+  srand((unsigned)time(NULL));
+  std::ifstream ifs("data.json");
+  json jf = json::parse(ifs);
+  std::vector<std::vector<double> > data = jf["data"];
+  linear_regression lin_reg(data);
+  std::pair<double, double> a_b = lin_reg.get_results();
+  std::cout << a_b.first << " " << a_b.second << '\n';
+  json j;
+  j["a"] = a_b.first;
+  j["b"] = a_b.second;
+  std::ofstream file("info.json");
+  file << j;
 }
