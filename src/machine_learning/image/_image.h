@@ -11,7 +11,7 @@
 
 class image_handler{
 private:
-
+  std::vector<std::vector<double> > img_array;
 };
 
 #endif
