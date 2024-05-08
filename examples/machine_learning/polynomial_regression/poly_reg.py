@@ -10,16 +10,17 @@ def fill_data():
     data = [[1, 45000], [2, 50000], [3,  60000], [4, 80000], [5, 110000], [6, 150000], [7, 200000]]
     return data
 
-def plot(data,a,b):
+def plot(data, coeffs, deg):
     for x,y in data:
         plt.scatter(x,y,color='blue')
-    x = np.linspace(0, 400, num = 400)
-    fx = []
-    for i in range(len(x)):
-        fx.append(a + b*i)
-    print(fx)
-    plt.plot(x, fx)
-    plt.grid()
+    x = np.linspace(1, 7, num = 100)
+    y = sum(coeffs[i] * x**i for i in range(deg + 1))
+    plt.plot(x, y, label='Polynomial Regression')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title("Plot of the polynomial regression")
+    plt.legend()
+    plt.grid("on")
     plt.show()
 
        
@@ -43,5 +44,5 @@ if __name__ == "__main__":
     input_name = open("info.json", 'r') 
     file = json.load(input_name)
     coeffs = file["coeffs"]
-    print(f"Coefficients are {coeffs}")
+    plot(data, coeffs, 3)
     

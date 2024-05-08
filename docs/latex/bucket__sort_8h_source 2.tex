@@ -1,0 +1,41 @@
+\doxysection{bucket\+\_\+sort.\+h}
+\hypertarget{bucket__sort_8h_source}{}\label{bucket__sort_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/bucket\_sort.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/bucket\_sort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ BUCKET\_SORT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ BUCKET\_SORT\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ bucket\_sort(std::vector<T>\ \&arr)\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{if}\ (std::is\_same\_v<T,\ int>\ ||\ std::is\_same\_v<T,\ int64\_t>)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ std::sort(arr.begin(),\ arr.end());}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00020\ \ \ \}}
+\DoxyCodeLine{00021\ \ \ std::vector<float>\ buckets[arr.size()];}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ int64\_t\ index\ =\ arr.size()\ *\ arr[i];}
+\DoxyCodeLine{00024\ \ \ \ \ buckets[index].push\_back(arr[i]);}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ std::sort(buckets[i].begin(),\ buckets[i].end());}
+\DoxyCodeLine{00029\ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ int64\_t\ index\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ j\ =\ 0;\ j\ <\ buckets[i].size();\ j++)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ arr[index++]\ =\ buckets[i][j];}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
