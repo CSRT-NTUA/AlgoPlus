@@ -4717,13 +4717,13 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l04661" name="l04661"></a><span class="lineno"> 4661</span>{</div>
 <div class="line"><a id="l04662" name="l04662"></a><span class="lineno"> 4662</span> </div>
 <div class="line"><a id="l04663" name="l04663"></a><span class="lineno"> 4663</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> BasicJsonType&gt;</div>
-<div class="line"><a id="l04664" name="l04664"></a><span class="lineno"> 4664</span><span class="keyword">inline</span> <span class="keywordtype">void</span> from_json(<span class="keyword">const</span> BasicJsonType&amp; <a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">j</a>, <span class="keyword">typename</span> std::nullptr_t&amp; <a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">n</a>)</div>
+<div class="line"><a id="l04664" name="l04664"></a><span class="lineno"> 4664</span><span class="keyword">inline</span> <span class="keywordtype">void</span> from_json(<span class="keyword">const</span> BasicJsonType&amp; <a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">j</a>, <span class="keyword">typename</span> std::nullptr_t&amp; n)</div>
 <div class="line"><a id="l04665" name="l04665"></a><span class="lineno"> 4665</span>{</div>
 <div class="line"><a id="l04666" name="l04666"></a><span class="lineno"> 4666</span>    <span class="keywordflow">if</span> (JSON_HEDLEY_UNLIKELY(!<a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">j</a>.is_null()))</div>
 <div class="line"><a id="l04667" name="l04667"></a><span class="lineno"> 4667</span>    {</div>
 <div class="line"><a id="l04668" name="l04668"></a><span class="lineno"> 4668</span>        JSON_THROW(type_error::create(302, concat(<span class="stringliteral">&quot;type must be null, but is &quot;</span>, <a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">j</a>.type_name()), &amp;<a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">j</a>));</div>
 <div class="line"><a id="l04669" name="l04669"></a><span class="lineno"> 4669</span>    }</div>
-<div class="line"><a id="l04670" name="l04670"></a><span class="lineno"> 4670</span>    <a class="code hl_function" href="namespacedetail.html#a9dd43d16a6a490b032ceaca358755a29">n</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l04670" name="l04670"></a><span class="lineno"> 4670</span>    n = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l04671" name="l04671"></a><span class="lineno"> 4671</span>}</div>
 <div class="line"><a id="l04672" name="l04672"></a><span class="lineno"> 4672</span> </div>
 <div class="line"><a id="l04673" name="l04673"></a><span class="lineno"> 4673</span><span class="comment">// overloads for basic_json template parameters</span></div>
