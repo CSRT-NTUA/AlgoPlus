@@ -70,7 +70,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
 - [X] [Linear Regression](https://en.wikipedia.org/wiki/Linear_regression)
 - [X] [Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)
-- [X] [Polynomial Regression-Currently working]
+- [X] [Polynomial Regression](https://en.wikipedia.org/wiki/Polynomial_regression)
 
 
 ### **How to run test cases**
