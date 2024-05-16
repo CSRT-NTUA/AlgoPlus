@@ -1,0 +1,52 @@
+\doxysection{fib.\+h}
+\hypertarget{fib_8h_source}{}\label{fib_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/fib.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/fib.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ FIB\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ FIB\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ int64\_t\ fibonacci(int64\_t\ n)\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{if}\ (n\ <=\ 1)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ n;}
+\DoxyCodeLine{00021\ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordflow}{return}\ fibonacci(n\ -\/\ 1)\ +\ fibonacci(n\ -\/\ 2);}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ int64\_t\ fibonacci\_dp(int64\_t\ n)\ \{}
+\DoxyCodeLine{00032\ \ \ std::vector<int64\_t>\ dp(n\ +\ 2);}
+\DoxyCodeLine{00033\ \ \ dp[0]\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ dp[1]\ =\ 1;}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 2;\ i\ <=\ n;\ i++)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ dp[i]\ =\ dp[i\ -\/\ 1]\ +\ dp[i\ -\/\ 2];}
+\DoxyCodeLine{00037\ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{return}\ dp[n];}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ int64\_t\ fibonacci\_bottom\_up(int64\_t\ n)\ \{}
+\DoxyCodeLine{00048\ \ \ int64\_t\ a\ =\ 0,\ b\ =\ 1,\ c;}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 2;\ i\ <=\ n;\ i++)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ c\ =\ a\ +\ b;}
+\DoxyCodeLine{00054\ \ \ \ \ a\ =\ b;}
+\DoxyCodeLine{00055\ \ \ \ \ b\ =\ c;}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ int64\_t\ fibonacci\_binet(int64\_t\ n)\ \{}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{double}\ phi\ =\ (std::sqrt(5)\ +\ 1)\ /\ 2;}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordflow}{return}\ (int64\_t)std::round(std::pow(phi,\ n)\ /\ sqrt(5));}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

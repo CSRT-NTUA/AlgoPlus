@@ -1,0 +1,32 @@
+\doxysection{bubble\+\_\+sort.\+h}
+\hypertarget{bubble__sort_8h_source}{}\label{bubble__sort_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/bubble\_sort.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/bubble\_sort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ BUBBLE\_SORT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ BUBBLE\_SORT\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ bubble\_sort(std::vector<T>\ \&arr)\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ arr.size();\ i++)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ j\ =\ 0;\ j\ <\ arr.size()\ -\/\ i\ -\/\ 1;\ j++)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[j]\ >\ arr[j\ +\ 1])\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::swap(arr[j],\ arr[j\ +\ 1]);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ check\ =\ 1;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!check)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \}}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

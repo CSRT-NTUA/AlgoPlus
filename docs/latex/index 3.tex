@@ -1,0 +1,111 @@
+\chapter{Algoplus\{BETA Version\}}
+\hypertarget{index}{}\label{index}\index{Algoplus\lcurly{}BETA Version\rcurly{}@{Algoplus\lcurly{}BETA Version\rcurly{}}}
+\label{invalid_invalid}%
+\Hypertarget{invalid_invalid}%
+ Algo\+Plus is a C++ library that includes ready-\/to-\/use complex {\bfseries{data structures}} and {\bfseries{algorithms}}.
+
+
+
+\href{https://gitpod.io/\#https://github.com/CSRT-NTUA/AlgoPlus}{\texttt{ }} \href{https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/codeql.yml}{\texttt{ }} \href{https://codecov.io/gh/CSRT-NTUA/AlgoPlus}{\texttt{ }} \hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{{\bfseries{See the full documentation \href{https://csrt-ntua.github.io/AlgoPlus/}{\texttt{ here}}}}}{{\bfseries{See the full documentation \href{https://csrt-ntua.github.io/AlgoPlus/}{\texttt{ here}}}}}}\label{index_autotoc_md17}
+\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{{\bfseries{\href{https://discord.gg/M9nYv4MHz6}{\texttt{ Join}} our Discord}}}{{\bfseries{\href{https://discord.gg/M9nYv4MHz6}{\texttt{ Join}} our Discord}}}}\label{index_autotoc_md18}
+\hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{Example\+:}{Example\+:}}\label{index_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
+\DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<std::string>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
+\DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}world"{}});}
+\DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}world"{}},\ \textcolor{stringliteral}{"{}universe"{}});}
+\DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}universe"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(g.connected())\{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}graph\ is\ connected"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
+\DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
+\DoxyCodeLine{g.add\_edge(1,\ 4,\ 2);}
+\DoxyCodeLine{g.add\_edge(4,\ 5,\ 6);}
+\DoxyCodeLine{g.add\_edge(5,\ 2,\ 9);}
+\DoxyCodeLine{g.add\_edge(2,\ 8,\ 10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ returns\ the\ shortest\ path\ from\ 1\ to\ 2.}}
+\DoxyCodeLine{std::cout\ <<\ g.shortest\_path(1,\ 2)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{g.visualize()\ \textcolor{comment}{//\ You\ can\ visualize\ almost\ any\ of\ our\ implemented\ data\ structures!}}
+
+\end{DoxyCode}
+ You can see more \href{/examples}{\texttt{ examples}} or follow the \href{/tutorial}{\texttt{ Tutorials}}.\hypertarget{index_autotoc_md20}{}\doxysubsection{\texorpdfstring{Classes}{Classes}}\label{index_autotoc_md20}
+{\bfseries{Graphs}}
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Directed_graph}{\texttt{ Di-\/\+Graph}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)}{\texttt{ Graph}}
+\end{DoxyItemize}
+
+{\bfseries{Trees}}
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/AVL_tree}{\texttt{ AVL Tree}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Binary_search_tree}{\texttt{ Binary Search Tree}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Splay_tree}{\texttt{ Splay Tree}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Trie}{\texttt{ Trie}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Interval_tree}{\texttt{ Interval Tree}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Min-max_heap}{\texttt{ Min/\+Max Heap}}
+\end{DoxyItemize}
+
+{\bfseries{Lists}}
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Linked_list}{\texttt{ Single Linked List}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Doubly_linked_list}{\texttt{ Doubly Linked List}}
+\item \mbox{[}X\mbox{]} \href{https://www.geeksforgeeks.org/circular-linked-list}{\texttt{ Circular Linked List}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Skip_list}{\texttt{ Skip List}}
+\end{DoxyItemize}
+
+{\bfseries{Other}}
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Disjoint-set_data_structure}{\texttt{ Disjoint set}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Stack_(abstract_data_type)}{\texttt{ Stack}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Queue_(abstract_data_type)}{\texttt{ Queue}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Hash_table}{\texttt{ Hash Table}}
+\end{DoxyItemize}
+
+{\bfseries{Machine Learning(NEW!)}}
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/K-means_clustering}{\texttt{ Kmeans}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/DBSCAN}{\texttt{ DBSCAN}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Linear_regression}{\texttt{ Linear Regression}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Huffman_coding}{\texttt{ Huffman Coding}}
+\item \mbox{[}X\mbox{]} \href{https://en.wikipedia.org/wiki/Polynomial_regression}{\texttt{ Polynomial Regression}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md21}{}\doxysubsection{\texorpdfstring{{\bfseries{How to run test cases}}}{{\bfseries{How to run test cases}}}}\label{index_autotoc_md21}
+We have unit tests for every function of our implemented algorithms \& data structures.\+It is very important to make sure that your code works before making any pull requests! ~\newline
+
+
+{\bfseries{Linux/\+Mac\+OS}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build\ \&\&\ cd\ build}
+\DoxyCodeLine{cmake\ ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{cd\ tests}
+\DoxyCodeLine{./runUnitTests}
+
+\end{DoxyCode}
+ {\bfseries{Windows}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build\ \&\&\ cd\ build}
+\DoxyCodeLine{cmake\ -\/G\ "{}MinGW\ Makefiles"{}\ ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{cd\ tests}
+\DoxyCodeLine{./runUnitTests}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md22}{}\doxysubsection{\texorpdfstring{{\bfseries{Our contributors}}}{{\bfseries{Our contributors}}}}\label{index_autotoc_md22}
+\href{https://github.com/CSRT-NTUA/AlgoPlus/graphs/contributors}{\texttt{  }}\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{How to contribute}{How to contribute}}\label{index_autotoc_md23}
+
+\begin{DoxyEnumerate}
+\item Povide {\bfseries{new implementations}} on our already implemented data structures \& algorithms.
+\item Implement {\bfseries{new classes / algorithms}}.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Contribute to {\bfseries{unit testing}} by writting unit tests for our classes and algorithms.
+\item Create and contribute to {\bfseries{APIs for other languages}}.
+\item {\bfseries{Promote}} the repository on your local workshop/seminar and {\bfseries{get a shout-\/out}}.
+\end{DoxyEnumerate}
+
+See more here. 

@@ -1,0 +1,99 @@
+\doxysection{hill\+\_\+climbing.\+h}
+\hypertarget{hill__climbing_8h_source}{}\label{hill__climbing_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/search\_algorithms/hill\_climbing/hill\_climbing.h@{/Users/spirosmag/Documents/AlgoPlus/src/machine\_learning/search\_algorithms/hill\_climbing/hill\_climbing.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ HILL\_CLIMBING\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ HILL\_CLIMBING\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhill__climbing}{hill\_climbing}}\{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ std::unordered\_map<T,\ std::vector<std::pair<T,\ double>\ >\ >\ adj;\ }
+\DoxyCodeLine{00018\ \ \ std::unordered\_map<T,\ double>\ nodes;}
+\DoxyCodeLine{00019\ \ \ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classhill__climbing_a741bc35d951ed45a23a3969f6ab58c19}{hill\_climbing}}(std::unordered\_map<T,\ std::vector<std::pair<T,\ double>\ >\ >\ v\ =\ \{\})\{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}(!v.empty())\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ this-\/>adj\ =\ v;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \}}
+\DoxyCodeLine{00032\ \ \ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhill__climbing_ac30264fd6f3b64003211c7379935199e}{insert\_node}}(T\ u,\ \textcolor{keywordtype}{double}\ val)\{}
+\DoxyCodeLine{00039\ \ \ \ \ nodes[u]\ =\ val;}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhill__climbing_a1ad9ae87f47b2c51afb0c4f5f76f86ba}{has\_edge}}(T\ u,\ T\ v)\{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}(adj.find(u)\ !=\ adj.end())\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(std::pair<T,\ double>\ \&x\ :\ adj[u])\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x.first\ ==\ v)\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ \ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhill__climbing_ab246667632b06376b7397d182d9d1204}{add\_edge}}(T\ u,\ T\ v)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nodes.find(u)\ !=\ nodes.end()\ \&\&\ nodes.find(v)\ !=\ nodes.end())\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ adj[u].push\_back(std::make\_pair(v,\ nodes[v]));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}One\ of\ the\ two\ nodes\ that\ passed\ to\ the\ function\ do\ not\ exist\ in\ the\ graph"{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{catch}(std::logic\_error\ \&e)\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00079\ \ \ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhill__climbing_a8b8ea4aff33c127d7de29a27e43e9680}{search}}(T\ start,\ T\ end)\{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}(adj.empty())\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ std::unordered\_map<T,\ bool>\ visited;}
+\DoxyCodeLine{00092\ \ \ \ \ std::queue<T>\ q;}
+\DoxyCodeLine{00093\ \ \ \ \ q.push(start);}
+\DoxyCodeLine{00094\ \ \ \ \ visited[start]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{while}(!q.empty())\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ int64\_t\ size\ =\ q.size();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(int64\_t\ i\ =\ 0;\ i<size;\ i++)\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ T\ current\ =\ q.front();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\ ==\ end)\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minim\ =\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ T\ neigh\ =\ current;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(std::pair<T,\ double>\ \&x\ :\ adj[current])\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(visited.find(x.first)\ ==\ visited.end())\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ visited[x.first]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ minim\ =\ std::min(minim,\ x.second);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ neigh\ =\ x.first;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(minim\ !=\ INT\_MAX\ \&\&\ neigh\ !=\ current)\{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\ ==\ start\ ||\ minim\ <=\ nodes[current])\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ q.push(neigh);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00120\ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
