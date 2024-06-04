@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AlgoPlus: best_first&lt; T &gt; Class Template Reference</title>
+<title>AlgoPlus: AStar&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -74,40 +74,37 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classbest__first-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">best_first&lt; T &gt; Class Template Reference</div></div>
+<a href="class_a_star-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">AStar&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>best first class  
- <a href="#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="best__first_8h_source.html">best_first.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="astar_8h_source.html">astar.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a023c0fe7138ff505951941ac43826293" id="r_a023c0fe7138ff505951941ac43826293"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a023c0fe7138ff505951941ac43826293">best_first</a> (std::unordered_map&lt; T, std::vector&lt; std::pair&lt; T, double &gt; &gt; &gt; v={}, std::unordered_map&lt; T, double &gt; nodes={})</td></tr>
-<tr class="memdesc:a023c0fe7138ff505951941ac43826293"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classbest__first.html" title="best first class">best_first</a> constructor  <br /></td></tr>
-<tr class="separator:a023c0fe7138ff505951941ac43826293"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a039d4c6f83eb9707c774a325a0573" id="r_ac6a039d4c6f83eb9707c774a325a0573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6a039d4c6f83eb9707c774a325a0573">insert_node</a> (T u, double val)</td></tr>
-<tr class="memdesc:ac6a039d4c6f83eb9707c774a325a0573"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert_node function  <br /></td></tr>
-<tr class="separator:ac6a039d4c6f83eb9707c774a325a0573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500d360531f7f47a8cc5962d47dc41c4" id="r_a500d360531f7f47a8cc5962d47dc41c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a500d360531f7f47a8cc5962d47dc41c4">has_edge</a> (T u, T v)</td></tr>
-<tr class="memdesc:a500d360531f7f47a8cc5962d47dc41c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">has_edge function  <br /></td></tr>
-<tr class="separator:a500d360531f7f47a8cc5962d47dc41c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0184eaa1f2eb8fa65a7e7f8bafc30dea" id="r_a0184eaa1f2eb8fa65a7e7f8bafc30dea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0184eaa1f2eb8fa65a7e7f8bafc30dea">add_edge</a> (T u, T v)</td></tr>
-<tr class="memdesc:a0184eaa1f2eb8fa65a7e7f8bafc30dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_edge function  <br /></td></tr>
-<tr class="separator:a0184eaa1f2eb8fa65a7e7f8bafc30dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad26f8ac0e1c3b07108054faa049a1c58" id="r_ad26f8ac0e1c3b07108054faa049a1c58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad26f8ac0e1c3b07108054faa049a1c58">search</a> (T start, T end)</td></tr>
-<tr class="memdesc:ad26f8ac0e1c3b07108054faa049a1c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">search function  <br /></td></tr>
-<tr class="separator:ad26f8ac0e1c3b07108054faa049a1c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23730b1890b3092f7b96efbacba2e662" id="r_a23730b1890b3092f7b96efbacba2e662"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23730b1890b3092f7b96efbacba2e662">AStar</a> (std::unordered_map&lt; T, std::vector&lt; std::pair&lt; T, double &gt; &gt; &gt; v={}, std::unordered_map&lt; T, double &gt; nodes={})</td></tr>
+<tr class="memdesc:a23730b1890b3092f7b96efbacba2e662"><td class="mdescLeft">&#160;</td><td class="mdescRight">A* constructor.  <br /></td></tr>
+<tr class="separator:a23730b1890b3092f7b96efbacba2e662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232158ffb1edf7515775a4a80439782c" id="r_a232158ffb1edf7515775a4a80439782c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a232158ffb1edf7515775a4a80439782c">insert_node</a> (T u, double val)</td></tr>
+<tr class="memdesc:a232158ffb1edf7515775a4a80439782c"><td class="mdescLeft">&#160;</td><td class="mdescRight">insert_node function  <br /></td></tr>
+<tr class="separator:a232158ffb1edf7515775a4a80439782c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99bf06a4600767ab723ee763302ee43" id="r_ac99bf06a4600767ab723ee763302ee43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac99bf06a4600767ab723ee763302ee43">has_edge</a> (T u, T v)</td></tr>
+<tr class="memdesc:ac99bf06a4600767ab723ee763302ee43"><td class="mdescLeft">&#160;</td><td class="mdescRight">has_edge function  <br /></td></tr>
+<tr class="separator:ac99bf06a4600767ab723ee763302ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c509e43ddf247a7df630ee195e241b6" id="r_a8c509e43ddf247a7df630ee195e241b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c509e43ddf247a7df630ee195e241b6">add_edge</a> (T u, T v, double dist)</td></tr>
+<tr class="memdesc:a8c509e43ddf247a7df630ee195e241b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_edge function  <br /></td></tr>
+<tr class="separator:a8c509e43ddf247a7df630ee195e241b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df141efce063eaea654040eeedac9ed" id="r_a9df141efce063eaea654040eeedac9ed"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9df141efce063eaea654040eeedac9ed">shortest_path</a> (T start, T end)</td></tr>
+<tr class="memdesc:a9df141efce063eaea654040eeedac9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">shortest_path function  <br /></td></tr>
+<tr class="separator:a9df141efce063eaea654040eeedac9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class best_first&lt; T &gt;</div><p>best first class </p>
+class AStar&lt; T &gt;</div><p>@ brief A* Class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a023c0fe7138ff505951941ac43826293" name="a023c0fe7138ff505951941ac43826293"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a023c0fe7138ff505951941ac43826293">&#9670;&#160;</a></span>best_first()</h2>
+<a id="a23730b1890b3092f7b96efbacba2e662" name="a23730b1890b3092f7b96efbacba2e662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23730b1890b3092f7b96efbacba2e662">&#9670;&#160;</a></span>AStar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +115,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbest__first.html">best_first</a>&lt; T &gt;<a class="el" href="classbest__first.html">::best_first</a> </td>
+          <td class="memname"><a class="el" href="class_a_star.html">AStar</a>&lt; T &gt;<a class="el" href="class_a_star.html">::AStar</a> </td>
           <td>(</td>
           <td class="paramtype">std::unordered_map&lt; T, std::vector&lt; std::pair&lt; T, double &gt; &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </span></td>
         </tr>
@@ -135,11 +132,11 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classbest__first.html" title="best first class">best_first</a> constructor </p>
+<p>A* constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>unordered_map&lt;T, vector&lt;pair&lt;T, double&gt; &gt; &gt; initializer adjacency list. Default = {} </td></tr>
-    <tr><td class="paramname">nodes</td><td>unordered_map&lt;T, double&gt; : contains the heuristic value of each node. Default = {} </td></tr>
+    <tr><td class="paramname">nodes</td><td>unordered_map&lt;T, double&gt; contains the heuristic value of each node. Default = {} </td></tr>
   </table>
   </dd>
 </dl>
@@ -147,8 +144,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0184eaa1f2eb8fa65a7e7f8bafc30dea" name="a0184eaa1f2eb8fa65a7e7f8bafc30dea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0184eaa1f2eb8fa65a7e7f8bafc30dea">&#9670;&#160;</a></span>add_edge()</h2>
+<a id="a8c509e43ddf247a7df630ee195e241b6" name="a8c509e43ddf247a7df630ee195e241b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c509e43ddf247a7df630ee195e241b6">&#9670;&#160;</a></span>add_edge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,14 +156,19 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classbest__first.html">best_first</a>&lt; T &gt;::add_edge </td>
+          <td class="memname">void <a class="el" href="class_a_star.html">AStar</a>&lt; T &gt;::add_edge </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>u</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>v</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -181,14 +183,15 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">u</td><td>the first node </td></tr>
     <tr><td class="paramname">v</td><td>the second node </td></tr>
+    <tr><td class="paramname">dist</td><td>the distance between u and v </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a500d360531f7f47a8cc5962d47dc41c4" name="a500d360531f7f47a8cc5962d47dc41c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a500d360531f7f47a8cc5962d47dc41c4">&#9670;&#160;</a></span>has_edge()</h2>
+<a id="ac99bf06a4600767ab723ee763302ee43" name="ac99bf06a4600767ab723ee763302ee43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99bf06a4600767ab723ee763302ee43">&#9670;&#160;</a></span>has_edge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +202,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classbest__first.html">best_first</a>&lt; T &gt;::has_edge </td>
+          <td class="memname">bool <a class="el" href="class_a_star.html">AStar</a>&lt; T &gt;::has_edge </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>u</em>, </span></td>
         </tr>
@@ -230,8 +233,8 @@ false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="ac6a039d4c6f83eb9707c774a325a0573" name="ac6a039d4c6f83eb9707c774a325a0573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6a039d4c6f83eb9707c774a325a0573">&#9670;&#160;</a></span>insert_node()</h2>
+<a id="a232158ffb1edf7515775a4a80439782c" name="a232158ffb1edf7515775a4a80439782c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a232158ffb1edf7515775a4a80439782c">&#9670;&#160;</a></span>insert_node()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +245,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classbest__first.html">best_first</a>&lt; T &gt;::insert_node </td>
+          <td class="memname">void <a class="el" href="class_a_star.html">AStar</a>&lt; T &gt;::insert_node </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>u</em>, </span></td>
         </tr>
@@ -262,16 +265,15 @@ template&lt;typename T &gt; </div>
 <p>insert_node function </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td>the node ID </td></tr>
-    <tr><td class="paramname">val</td><td>the heuristic value of node u </td></tr>
+    <tr><td class="paramname">u</td><td>the node ID @val: the heuristic value of node u </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ad26f8ac0e1c3b07108054faa049a1c58" name="ad26f8ac0e1c3b07108054faa049a1c58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad26f8ac0e1c3b07108054faa049a1c58">&#9670;&#160;</a></span>search()</h2>
+<a id="a9df141efce063eaea654040eeedac9ed" name="a9df141efce063eaea654040eeedac9ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df141efce063eaea654040eeedac9ed">&#9670;&#160;</a></span>shortest_path()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +284,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classbest__first.html">best_first</a>&lt; T &gt;::search </td>
+          <td class="memname">std::vector&lt; T &gt; <a class="el" href="class_a_star.html">AStar</a>&lt; T &gt;::shortest_path </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>start</em>, </span></td>
         </tr>
@@ -299,7 +301,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>search function </p>
+<p>shortest_path function </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>starting node </td></tr>
@@ -307,14 +309,12 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if search found the end node. </dd>
-<dd>
-false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;T&gt;: the shortest path from start to end </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/spirosmag/Documents/AlgoPlus/src/machine_learning/search_algorithms/best_first/<a class="el" href="best__first_8h_source.html">best_first.h</a></li>
+<li>/Users/spirosmag/Documents/AlgoPlus/src/machine_learning/search_algorithms/AStar/<a class="el" href="astar_8h_source.html">astar.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

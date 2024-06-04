@@ -10,7 +10,7 @@ var searchData=
   ['begin_5farray_7',['begin_array',['../classdetail_1_1lexer__base.html#add65fa7a85aa15052963809fbcc04540a16c226b4425b68560fea322b46dabe01',1,'detail::lexer_base']]],
   ['begin_5fobject_8',['begin_object',['../classdetail_1_1lexer__base.html#add65fa7a85aa15052963809fbcc04540a9a9ffd53b6869d4eca271b1ed5b57fe8',1,'detail::lexer_base']]],
   ['bellman_5fford_9',['bellman_ford',['../classweighted__graph.html#abc8468ebe6d73b583b3bb1876f3b0747',1,'weighted_graph']]],
-  ['best_5ffirst_10',['best_first',['../classbest__first.html',1,'best_first&lt; T &gt;'],['../classbest__first.html#a0aba60a905eddbc5326e3b1f9bfe0d0f',1,'best_first::best_first()']]],
+  ['best_5ffirst_10',['best_first',['../classbest__first.html',1,'best_first&lt; T &gt;'],['../classbest__first.html#a023c0fe7138ff505951941ac43826293',1,'best_first::best_first()']]],
   ['beta_20version_11',['Algoplus{BETA Version}',['../index.html',1,'']]],
   ['bfs_12',['bfs',['../classgraph.html#a3cc331d692642bfdee0f8bcf87071176',1,'graph::bfs()'],['../classweighted__graph.html#a5407df31013d7d9d1bd5cbfa63082404',1,'weighted_graph::bfs()']]],
   ['bfs_20strong_20_3a_13',['&lt;strong&gt;BFS&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md83',1,'']]],

@@ -32,7 +32,7 @@ var searchData=
   ['set_5fbegin_29',['set_begin',['../classdetail_1_1primitive__iterator__t.html#ae05402e355829cd46a9b31365a7b1a49',1,'detail::primitive_iterator_t']]],
   ['set_5fend_30',['set_end',['../classdetail_1_1primitive__iterator__t.html#a761383c368d1c32f11bbeb31a04e6488',1,'detail::primitive_iterator_t::set_end()'],['../classdetail_1_1iter__impl.html#afc94db3b8f35616347c25fae68e09509',1,'detail::iter_impl::set_end()']]],
   ['set_5fsubtype_31',['set_subtype',['../classbyte__container__with__subtype.html#aa211ecfe3f0a626e96c54ea7e160491b',1,'byte_container_with_subtype']]],
-  ['shortest_5fpath_32',['shortest_path',['../classweighted__graph.html#a45b5f6269cf710025139eac881c9d9cb',1,'weighted_graph']]],
+  ['shortest_5fpath_32',['shortest_path',['../classweighted__graph.html#a45b5f6269cf710025139eac881c9d9cb',1,'weighted_graph::shortest_path()'],['../class_a_star.html#a9df141efce063eaea654040eeedac9ed',1,'AStar::shortest_path()']]],
   ['shortest_5fpath_20strong_20_3a_33',['&lt;strong&gt;shortest_path&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html#autotoc_md90',1,'']]],
   ['should_20i_20comment_20my_20code_34',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
   ['showdurations_35',['ShowDurations',['../struct_catch_1_1_show_durations.html',1,'Catch']]],

@@ -12,7 +12,7 @@ best first class
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbest__first_a0aba60a905eddbc5326e3b1f9bfe0d0f}{best\+\_\+first}} (std\+::unordered\+\_\+map$<$ T, std\+::vector$<$ std\+::pair$<$ T, double $>$ $>$ $>$ v=\{\})
+\mbox{\hyperlink{classbest__first_a023c0fe7138ff505951941ac43826293}{best\+\_\+first}} (std\+::unordered\+\_\+map$<$ T, std\+::vector$<$ std\+::pair$<$ T, double $>$ $>$ $>$ v=\{\}, std\+::unordered\+\_\+map$<$ T, double $>$ nodes=\{\})
 \begin{DoxyCompactList}\small\item\em \doxylink{classbest__first}{best\+\_\+first} constructor \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbest__first_ac6a039d4c6f83eb9707c774a325a0573}{insert\+\_\+node}} (T u, double val)
 \begin{DoxyCompactList}\small\item\em insert\+\_\+node function \end{DoxyCompactList}\item 
@@ -30,12 +30,12 @@ class best\+\_\+first$<$ T $>$}
 best first class 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classbest__first_a0aba60a905eddbc5326e3b1f9bfe0d0f}\label{classbest__first_a0aba60a905eddbc5326e3b1f9bfe0d0f} 
+\Hypertarget{classbest__first_a023c0fe7138ff505951941ac43826293}\label{classbest__first_a023c0fe7138ff505951941ac43826293} 
 \index{best\_first$<$ T $>$@{best\_first$<$ T $>$}!best\_first@{best\_first}}
 \index{best\_first@{best\_first}!best\_first$<$ T $>$@{best\_first$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{best\_first()}{best\_first()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classbest__first}{best\+\_\+first}}$<$ T $>$\mbox{\hyperlink{classbest__first}{\+::best\+\_\+first}} (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ T, std\+::vector$<$ std\+::pair$<$ T, double $>$ $>$ $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\mbox{\hyperlink{classbest__first}{best\+\_\+first}}$<$ T $>$\mbox{\hyperlink{classbest__first}{\+::best\+\_\+first}} (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ T, std\+::vector$<$ std\+::pair$<$ T, double $>$ $>$ $>$}]{v = {\ttfamily \{\}},  }\item[{std\+::unordered\+\_\+map$<$ T, double $>$}]{nodes = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -43,7 +43,9 @@ best first class
 
 
 \begin{DoxyParams}{Parameters}
-{\em v} & unordered\+\_\+map\texorpdfstring{$<$}{<}T, pair$<$\+T, int64\+\_\+t$>$ \texorpdfstring{$>$}{>} initializer vector. Default = \{\} \\
+{\em v} & unordered\+\_\+map\texorpdfstring{$<$}{<}T, vector\texorpdfstring{$<$}{<}pair$<$\+T, double$>$ \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} initializer adjacency list. Default = \{\} \\
+\hline
+{\em nodes} & unordered\+\_\+map$<$\+T, double$>$ \+: contains the heuristic value of each node. Default = \{\} \\
 \hline
 \end{DoxyParams}
 

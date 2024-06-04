@@ -21,12 +21,23 @@ public:
 
   /**
    * @brief best_first constructor
-   * @param v: unordered_map<T, pair<T, int64_t> > initializer vector. Default = {}
+   * @param v: unordered_map<T, vector<pair<T, double> > > initializer adjacency list. Default = {}
+   * @param nodes: unordered_map<T, double> : contains the heuristic value of each node. Default = {}
    *
    */
-  explicit best_first(std::unordered_map<T, std::vector<std::pair<T, double> > > v = {}){
-    if(!v.empty()){
-      this->adj = v;
+  explicit best_first(std::unordered_map<T, std::vector<std::pair<T, double> > > v = {},
+                      std::unordered_map<T, double> nodes = {}){
+    try{
+      if((!v.empty() && nodes.empty()) || (v.empty() && !nodes.empty())){
+        throw std::logic_error("You have to provide two non-empty maps");
+      }
+      if(!v.empty() && !nodes.empty()){
+        this->adj = v;
+        this->nodes = nodes;
+      }
+    }
+    catch(std::logic_error &e){
+      std::cerr << e.what() << '\n';
     }
   }
   

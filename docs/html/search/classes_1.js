@@ -9,6 +9,7 @@ var searchData=
   ['assertionhandler_6',['AssertionHandler',['../class_catch_1_1_assertion_handler.html',1,'Catch']]],
   ['assertioninfo_7',['AssertionInfo',['../struct_catch_1_1_assertion_info.html',1,'Catch']]],
   ['assertionreaction_8',['AssertionReaction',['../struct_catch_1_1_assertion_reaction.html',1,'Catch']]],
-  ['autoreg_9',['AutoReg',['../struct_catch_1_1_auto_reg.html',1,'Catch']]],
-  ['avl_5ftree_10',['avl_tree',['../classavl__tree.html',1,'']]]
+  ['astar_9',['AStar',['../class_a_star.html',1,'']]],
+  ['autoreg_10',['AutoReg',['../struct_catch_1_1_auto_reg.html',1,'Catch']]],
+  ['avl_5ftree_11',['avl_tree',['../classavl__tree.html',1,'']]]
 ];
