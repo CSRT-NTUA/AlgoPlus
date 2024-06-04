@@ -66,11 +66,10 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
 
 **Machine Learning(NEW!)**
-- [X] [Kmeans](https://en.wikipedia.org/wiki/K-means_clustering)
-- [X] [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
-- [X] [Linear Regression](https://en.wikipedia.org/wiki/Linear_regression)
-- [X] [Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)
-- [X] [Polynomial Regression](https://en.wikipedia.org/wiki/Polynomial_regression)
+- [X] [Clustering Algorithms](https://en.wikipedia.org/wiki/Cluster_analysis)
+- [X] [Encoders](https://en.wikipedia.org/wiki/Autoencoder)
+- [X] [Regression Algorithms](https://en.wikipedia.org/wiki/Regression_analysis) 
+- [X] [Shortest Path Algorithms]
 
 
 ### **How to run test cases**
