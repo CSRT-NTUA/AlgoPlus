@@ -1,0 +1,59 @@
+\doxysection{quick\+\_\+sort.\+h}
+\hypertarget{quick__sort_8h_source}{}\label{quick__sort_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/quick\_sort.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/sorting/quick\_sort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ALGOPLUS\_QUICK\_SORT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ALGOPLUS\_QUICK\_SORT\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}\ \textcolor{comment}{//\ For\ std::partition\ and\ std::swap}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iterator>}\ \ \textcolor{comment}{//\ For\ std::iterator\_traits}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ Iter\ median\_of\_three(Iter\ a,\ Iter\ b,\ Iter\ c)\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{if}\ (*a\ <\ *b)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (*b\ <\ *c)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (*a\ <\ *c)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00026\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (*a\ <\ *c)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (*b\ <\ *c)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00033\ \ \ \}}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ quick\_sort(Iter\ begin,\ Iter\ end)\ \{}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{auto}\ distance\ =\ std::distance(begin,\ end);}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordflow}{if}\ (distance\ <=\ 1)}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ choose\ the\ pivot\ as\ median\ of\ first,\ middle\ and\ last\ element}}
+\DoxyCodeLine{00054\ \ \ Iter\ mid\ =\ begin\ +\ distance\ /\ 2;}
+\DoxyCodeLine{00055\ \ \ Iter\ pivot\_pos\ =\ median\_of\_three(begin,\ mid,\ end\ -\/\ 1);}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{auto}\ pivot\ =\ *pivot\_pos;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ swap\ pivot\ to\ start}}
+\DoxyCodeLine{00059\ \ \ std::swap(*begin,\ *pivot\_pos);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ Iter\ middle1\ =\ std::partition(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ begin\ +\ 1,\ end,\ [pivot](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&elem)\ \{\ \textcolor{keywordflow}{return}\ elem\ <\ pivot;\ \});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ Iter\ middle2\ =\ std::partition(}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ middle1,\ end,\ [pivot](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&elem)\ \{\ \textcolor{keywordflow}{return}\ !(pivot\ <\ elem);\ \});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ swap\ pivot\ to\ its\ final\ place}}
+\DoxyCodeLine{00068\ \ \ std::swap(*begin,\ *(middle1\ -\/\ 1));}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ recursively\ apply\ quick\_sort\ to\ partitions}}
+\DoxyCodeLine{00071\ \ \ quick\_sort(begin,\ middle1\ -\/\ 1);}
+\DoxyCodeLine{00072\ \ \ quick\_sort(middle2,\ end);}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QUICK\_SORT\_H}}
+
+\end{DoxyCode}

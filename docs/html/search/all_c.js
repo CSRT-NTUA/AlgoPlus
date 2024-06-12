@@ -37,10 +37,9 @@ var searchData=
   ['get_5ftoken_5fstring_34',['get_token_string',['../classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b',1,'detail::lexer']]],
   ['gg_20m9nyv4mhz6_20join_20a_20our_20discord_20strong_35',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]],
   ['github_20io_20algoplus_20here_20a_20strong_36',['&lt;strong&gt;See the full documentation &lt;a href=&quot;https://csrt-ntua.github.io/AlgoPlus/&quot; &gt;here&lt;/a&gt;&lt;/strong&gt;',['../index.html#autotoc_md17',1,'']]],
-  ['gkernel_37',['GKernel',['../class_g_kernel.html',1,'']]],
-  ['graph_38',['graph',['../classgraph.html',1,'graph&lt; T &gt;'],['../classgraph.html#ad88980a06f2a3c4b4bb38e3a474573ff',1,'graph::graph(std::string __type, std::vector&lt; std::pair&lt; T, std::vector&lt; T &gt; &gt; &gt; __adj={})'],['../classgraph.html#ade08163a9b85ae16b5e898d0e6bb1353',1,'graph::graph(const graph &amp;g)']]],
-  ['graph_20class_39',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]],
-  ['grisu2_40',['grisu2',['../namespacedetail_1_1dtoa__impl.html#ad549352ed1a9676a092d143a2daa3dee',1,'detail::dtoa_impl::grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, diyfp m_minus, diyfp v, diyfp m_plus)'],['../namespacedetail_1_1dtoa__impl.html#abdf6bc05c54068a5930f66c2e803e8b8',1,'detail::dtoa_impl::grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, FloatType value)']]],
-  ['grisu2_5fdigit_5fgen_41',['grisu2_digit_gen',['../namespacedetail_1_1dtoa__impl.html#ae877aa13ab872c99a1c614e5e1524807',1,'detail::dtoa_impl']]],
-  ['guidelines_42',['Enforcement Guidelines',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html#autotoc_md6',1,'']]]
+  ['graph_37',['graph',['../classgraph.html',1,'graph&lt; T &gt;'],['../classgraph.html#ad88980a06f2a3c4b4bb38e3a474573ff',1,'graph::graph(std::string __type, std::vector&lt; std::pair&lt; T, std::vector&lt; T &gt; &gt; &gt; __adj={})'],['../classgraph.html#ade08163a9b85ae16b5e898d0e6bb1353',1,'graph::graph(const graph &amp;g)']]],
+  ['graph_20class_38',['Mini Tutorial for the Graph class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph.html',1,'']]],
+  ['grisu2_39',['grisu2',['../namespacedetail_1_1dtoa__impl.html#ad549352ed1a9676a092d143a2daa3dee',1,'detail::dtoa_impl::grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, diyfp m_minus, diyfp v, diyfp m_plus)'],['../namespacedetail_1_1dtoa__impl.html#abdf6bc05c54068a5930f66c2e803e8b8',1,'detail::dtoa_impl::grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, FloatType value)']]],
+  ['grisu2_5fdigit_5fgen_40',['grisu2_digit_gen',['../namespacedetail_1_1dtoa__impl.html#ae877aa13ab872c99a1c614e5e1524807',1,'detail::dtoa_impl']]],
+  ['guidelines_41',['Enforcement Guidelines',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html#autotoc_md6',1,'']]]
 ];
