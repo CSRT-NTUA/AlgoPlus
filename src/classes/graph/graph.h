@@ -556,11 +556,11 @@ public:
   /**
    * @brief Constructor for weighted graph.
    * @param __type: type of the graph, either "directed" or "undirected".
-   * @param __adj: vector<pair<pair<T,T>, int64_t>>, you can pass a vector of
+   * @param __adj: vector<pair<pair<T,T>, double>>, you can pass a vector of
    * pairs to construct the graph without doing multiple add_edge.
    */
   weighted_graph(std::string __type,
-                 std::vector<std::pair<std::pair<T, T>, int64_t>> __adj = {}) {
+                 std::vector<std::pair<std::pair<T, T>, double>> __adj = {}) {
     try {
       if (__type == "directed" || __type == "undirected") {
         this->__type = __type;
@@ -613,7 +613,7 @@ public:
    * @param v: second node.
    * @param w: weight between u and v.
    */
-  void add_edge(T u, T v, int64_t w) {
+  void add_edge(T u, T v, double w) {
     if (__type == "undirected") {
       adj[u].push_back(std::make_pair(v, w));
       adj[v].push_back(std::make_pair(u, w));
@@ -634,7 +634,7 @@ public:
     if (__elements.find(start) == __elements.end()) {
       return false;
     }
-    for (std::pair<T, int64_t> &x : adj[start]) {
+    for (std::pair<T, double> &x : adj[start]) {
       if (x.first == end) {
         return true;
       }
@@ -682,7 +682,7 @@ public:
    * @param end: ending node.
    * @returns int64_t, the total cost of the path.
    */
-  int64_t shortest_path(T start, T end);
+  double shortest_path(T start, T end);
 
   /**
    * @brief connected_components function.
@@ -707,7 +707,7 @@ public:
    * @param start: starting node.
    * @returns int64_t, the total cost of the minimum spanning tree of the graph.
    */
-  int64_t prim(T start);
+  double prim(T start);
 
   /**
    * @brief bipartite function.
@@ -774,7 +774,7 @@ private:
    * @param __type: type of the graph, either "directed" or "undirected".
    * @param __elements: set of total elements of the graph.
    */
-  std::unordered_map<T, std::vector<std::pair<T, int64_t>>> adj;
+  std::unordered_map<T, std::vector<std::pair<T, double>>> adj;
   std::string __type;
   std::unordered_set<T> __elements;
 
@@ -788,7 +788,7 @@ private:
                   std::vector<std::vector<T>> &bridges) {
     visited[start] = true;
     in[start] = out[start] = time++;
-    for (std::pair<T, int64_t> &x : adj[start]) {
+    for (std::pair<T, double> &x : adj[start]) {
       if (x.first != parent) {
         if (visited.find(x.first) == visited.end()) {
           dfs_bridge(x.first, start, time, visited, in, out, bridges);
@@ -806,7 +806,7 @@ template <typename T> size_t weighted_graph<T>::size() {
   return __elements.size();
 }
 
-template <typename T> int64_t weighted_graph<T>::shortest_path(T start, T end) {
+template <typename T> double weighted_graph<T>::shortest_path(T start, T end) {
   if (__elements.find(start) == __elements.end()) {
     std::cout << "Element: " << start << " is not found in the Graph" << '\n';
     return -1;
