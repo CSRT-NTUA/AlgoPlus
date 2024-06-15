@@ -22,3 +22,5 @@ comment:
 
 ignore:
   - "third_party/catch.hpp"
+  - "third_party/json.hpp"
+  - "third_party/matplotlibcpp.h"
