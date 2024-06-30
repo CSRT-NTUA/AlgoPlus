@@ -57,7 +57,7 @@ namespace sobel{
 
     Image G_x(img.apply_filter2d(k1));
     Image G_y(img.apply_filter2d(k2));
-    
+
     G_x = G_x.mul(G_x);
     G_y = G_y.mul(G_y);
 

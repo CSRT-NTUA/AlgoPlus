@@ -22,10 +22,10 @@ public:
    */
   explicit Image(std::vector<std::vector<int32_t> > img_pass = {}) noexcept {
     if(!img_pass.empty()){
+      height = img.size();
+      width = img[0].size();
       img = img_pass;
     }
-    height = img.size();
-    width = img[0].size();
   }
 
   /**
@@ -36,6 +36,8 @@ public:
   explicit Image(int height, int width) {
     assert(height > 0);
     assert(width > 0);
+    this->height = height;
+    this->width = width;
     img = std::vector<std::vector<int32_t> >(height, std::vector<int32_t>(width, 0));
   }
 
@@ -89,13 +91,13 @@ public:
     assert(img2.size() == img.size());
     assert(img2[0].size() == img[0].size());
 
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
+    Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
-        resulted_img[x][y] = img[x][y] + img2[x][y];
+        resulted_img.add_2_point(x, y, img[x][y] + img2[x][y]);
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
 
   /**
@@ -107,14 +109,14 @@ public:
   Image add(Image img2) const {  
     assert(img2._height() == img.size());
     assert(img2._width() == img[0].size());
-
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
+  
+    Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
-        resulted_img[x][y] = img[x][y] + img2.get_point(x, y);
+        resulted_img.add_2_point(x, y, img[x][y] + img2.get_point(x, y));
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
 
   /**
@@ -127,14 +129,14 @@ public:
     assert(!img2.empty());
     assert(img2.size() == img.size());
     assert(img2[0].size() == img[0].size());
-
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
+  
+    Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
-        resulted_img[x][y] = img[x][y] - img2[x][y];
+        resulted_img.add_2_point(x, y, img[x][y] - img2[x][y]);
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
 
   /**
@@ -147,13 +149,13 @@ public:
     assert(img2._height() == img.size());
     assert(img2._width() == img[0].size());
 
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
+    Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
-        resulted_img[x][y] = img[x][y] - img2.get_point(x, y);
+        resulted_img.add_2_point(x, y, img[x][y] - img2.get_point(x, y));
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
   
   /**
@@ -166,14 +168,14 @@ public:
     assert(!img2.empty());
     assert(img2.size() == img.size());
     assert(img2[0].size() == img[0].size());
-
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
+    
+    Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
-        resulted_img[x][y] = img[x][y]*img2[x][y];
+        resulted_img.add_2_point(x, y, img[x][y]*img2[x][y]);
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
 
   /**
@@ -185,14 +187,14 @@ public:
   Image mul(Image img2) const {
     assert(img2._height() == img.size());
     assert(img2._width() == img[0].size());
-
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
+  
+    Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
-        resulted_img[x][y] = img[x][y]*img2.get_point(x, y);
+        resulted_img.add_2_point(x, y, img[x][y]*img2.get_point(x, y));
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
 
 
@@ -202,37 +204,37 @@ public:
   * @return vector<vector<int32_t> > the resulted image
   */
   Image apply_filter2d(std::vector<std::vector<int32_t> > &filter) const{
-    std::vector<std::vector<int32_t> > resulted_img(height, std::vector<int32_t>(width));
-    for(int32_t x = 0; x<height; x++){
-      for(int32_t y = 0; y<width; y++){
-        resulted_img[x][y] = img[x][y]*filter[1][1];
+    Image resulted_img(height, width);
+    for(int x = 0; x<height; x++){
+      for(int y = 0; y<width; y++){
+        resulted_img.add_2_point(x, y, img[x][y]*filter[1][1]);
         if(y - 1 >= 0){
-          resulted_img[x][y] += img[x][y - 1]*filter[1][0];
+          resulted_img.add_2_point(x, y, img[x][y - 1]*filter[1][0]);
         }
         if(y + 1 < width){
-          resulted_img[x][y] += img[x][y + 1]*filter[1][2];
+          resulted_img.add_2_point(x, y, img[x][y + 1]*filter[1][2]);
           if(x + 1 < height){
-            resulted_img[x][y] += img[x + 1][y + 1]*filter[2][2];
+            resulted_img.add_2_point(x, y, img[x + 1][y + 1]*filter[2][2]);
           }
         }
         if(x - 1 >= 0){
-          resulted_img[x][y] += img[x - 1][y]*filter[0][1];
+          resulted_img.add_2_point(x, y, img[x - 1][y]*filter[0][1]);
           if(y + 1 < width){
-            resulted_img[x][y] += img[x - 1][y + 1]*filter[0][2];
+            resulted_img.add_2_point(x, y, img[x - 1][y + 1]*filter[0][2]);
           }
           if(y - 1 >= 0){
-            resulted_img[x][y] += img[x - 1][y - 1]*filter[0][0];
+            resulted_img.add_2_point(x, y, img[x - 1][y - 1]*filter[0][0]);
           }
         }
         if(x + 1 < height){
-          resulted_img[x][y] += img[x + 1][y]*filter[2][1];
+          resulted_img.add_2_point(x, y, img[x + 1][y]*filter[2][1]);
           if(y - 1 >= 0){
-            resulted_img[x][y] += img[x + 1][y - 1]*filter[2][0];
+            resulted_img.add_2_point(x, y, img[x + 1][y - 1]*filter[2][0]);
           }
         }
       }
     }
-    return Image(resulted_img);
+    return resulted_img;
   }
 };
 
