@@ -10,12 +10,8 @@ Sobel operator is used for edge detection. It creates 2 3x3 arrays G\+\_\+x and 
 \item 
 std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$, std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ $>$ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}} ()
 \item 
-std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacesobel_a813b687248f114a2d3044418331d09bf}{power\+\_\+2}} (const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&G)
-\begin{DoxyCompactList}\small\item\em power\+\_\+2 function \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}} (const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&G)
 \begin{DoxyCompactList}\small\item\em square function \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacesobel_a5e29da42188c91a7985e8425db4c3dcd}{\+\_\+\+\_\+add}} (const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&a, const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&b)
-\begin{DoxyCompactList}\small\item\em add function \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacesobel_aa2488f093457d0888ef32838e50d446a}{Sobel}} (const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&image)
 \begin{DoxyCompactList}\small\item\em Sobel apply function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -24,26 +20,6 @@ std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \mbox{\hyperlink{namespac
 Sobel operator is used for edge detection. It creates 2 3x3 arrays G\+\_\+x and G\+\_\+y and apply them to an image A(\+G\+\_\+x \texorpdfstring{$\ast$}{*} A, G\+\_\+y \texorpdfstring{$\ast$}{*} A). After that, the resulting image with edge detection is G = sqrt(G\+\_\+x\texorpdfstring{$^\wedge$}{\string^}2 + G\+\_\+y\texorpdfstring{$^\wedge$}{\string^}2) 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{namespacesobel_a5e29da42188c91a7985e8425db4c3dcd}\label{namespacesobel_a5e29da42188c91a7985e8425db4c3dcd} 
-\index{sobel@{sobel}!\_\_add@{\_\_add}}
-\index{\_\_add@{\_\_add}!sobel@{sobel}}
-\doxysubsubsection{\texorpdfstring{\_\_add()}{\_\_add()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ sobel\+::\+\_\+\+\_\+add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&}]{a,  }\item[{const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&}]{b }\end{DoxyParamCaption})}
-
-
-
-add function 
-
-
-\begin{DoxyParams}{Parameters}
-{\em a} & the first input 2d array \\
-\hline
-{\em b} & the second input 2d array \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>} the sum of the 2 arrays 
-\end{DoxyReturn}
 \Hypertarget{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}\label{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21} 
 \index{sobel@{sobel}!kernel@{kernel}}
 \index{kernel@{kernel}!sobel@{sobel}}
@@ -53,24 +29,6 @@ vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>} th
 @ brief kernel function. Of course you can change the kernel values depending on your needs ~\newline
  \begin{DoxyReturn}{Returns}
 pair\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$, vector$<$int32\+\_\+t$>$\texorpdfstring{$>$}{>} the G\+\_\+x and G\+\_\+y 3x3 kernels 
-\end{DoxyReturn}
-\Hypertarget{namespacesobel_a813b687248f114a2d3044418331d09bf}\label{namespacesobel_a813b687248f114a2d3044418331d09bf} 
-\index{sobel@{sobel}!power\_2@{power\_2}}
-\index{power\_2@{power\_2}!sobel@{sobel}}
-\doxysubsubsection{\texorpdfstring{power\_2()}{power\_2()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ sobel\+::power\+\_\+2 (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&}]{G }\end{DoxyParamCaption})}
-
-
-
-power\+\_\+2 function 
-
-
-\begin{DoxyParams}{Parameters}
-{\em G} & the input 2d array \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>} the array squared powered 
 \end{DoxyReturn}
 \Hypertarget{namespacesobel_aa2488f093457d0888ef32838e50d446a}\label{namespacesobel_aa2488f093457d0888ef32838e50d446a} 
 \index{sobel@{sobel}!Sobel@{Sobel}}

@@ -54,6 +54,6 @@ var searchData=
   ['mini_20tutorial_20for_20the_20splay_20tree_20class_51',['Mini Tutorial for the Splay Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2splay__tree.html',1,'']]],
   ['mini_20tutorial_20for_20the_20stack_20class_52',['Mini Tutorial for the Stack class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2dequeue.html',1,'Mini Tutorial for the Stack class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2stack.html',1,'Mini Tutorial for the Stack class']]],
   ['mini_20tutorial_20for_20the_20trie_20class_53',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2trie.html',1,'']]],
-  ['mul_54',['mul',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a046c61f2c13411677eedfb5b9b7a8226',1,'detail::dtoa_impl::diyfp']]],
+  ['mul_54',['mul',['../class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863',1,'Image::mul(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const'],['../class_image.html#a1af53349d893161a56a03e1b89eed0f9',1,'Image::mul(Image img2) const'],['../structdetail_1_1dtoa__impl_1_1diyfp.html#a046c61f2c13411677eedfb5b9b7a8226',1,'detail::dtoa_impl::diyfp::mul()']]],
   ['my_20code_55',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]]
 ];

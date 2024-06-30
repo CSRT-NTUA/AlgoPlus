@@ -7,5 +7,5 @@ var searchData=
   ['meta_4',['meta',['../classbasic__json.html#a7b435c2ed2db99cb1daa78ae3c6c4580',1,'basic_json']]],
   ['min_5',['min',['../classmin__heap.html#a1f4229dc4a3f4e5888293b7de530163a',1,'min_heap']]],
   ['min_5fheap_6',['min_heap',['../classmin__heap.html#a2db8fee3af814966c7299e10e3b7592a',1,'min_heap']]],
-  ['mul_7',['mul',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a046c61f2c13411677eedfb5b9b7a8226',1,'detail::dtoa_impl::diyfp']]]
+  ['mul_7',['mul',['../class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863',1,'Image::mul(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const'],['../class_image.html#a1af53349d893161a56a03e1b89eed0f9',1,'Image::mul(Image img2) const'],['../structdetail_1_1dtoa__impl_1_1diyfp.html#a046c61f2c13411677eedfb5b9b7a8226',1,'detail::dtoa_impl::diyfp::mul()']]]
 ];

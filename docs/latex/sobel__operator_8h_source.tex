@@ -11,128 +11,50 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cassert>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <utility>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesobel}{sobel}}\{}
-\DoxyCodeLine{00021\ \ \ std::pair<std::vector<std::vector<int32\_t>\ >,\ std::vector<std::vector<int32\_t>\ >\ >\ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}}()\{}
-\DoxyCodeLine{00022\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\_x\ =\ \{\ \{1,\ 0,\ -\/1\},\ \{2,\ 0,\ -\/2\},\ \{1,\ 0,\ -\/1\}\ \};}
-\DoxyCodeLine{00023\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\_y\ =\ \{\ \{1,\ 2,\ 1\},\ \{0,\ 0,\ 0\},\ \{-\/1,\ -\/2,\ -\/1\}\ \};}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(G\_x,\ G\_y);}
-\DoxyCodeLine{00025\ \ \ \}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00032\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_a813b687248f114a2d3044418331d09bf}{power\_2}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&G)\{}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ G.size();}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ G[0].size();}
-\DoxyCodeLine{00035\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ GP(height,\ std::vector<int32\_t>(width));}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<height;\ i++)\{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<height;\ j++)\{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ GP[i][j]\ =\ G[i][j]*G[i][j];}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ GP;}
-\DoxyCodeLine{00042\ \ \ \}}
-\DoxyCodeLine{00043\ \ \ }
-\DoxyCodeLine{00049\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&G)\{}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ G.size();}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ G[0].size();}
-\DoxyCodeLine{00052\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ res\_img(height,\ std::vector<int32\_t>(width));}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<height;\ i++)\{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<width;\ j++)\{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ res\_img[i][j]\ =\ sqrt(G[i][j]);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ res\_img;}
-\DoxyCodeLine{00059\ \ \ \}}
-\DoxyCodeLine{00060\ \ \ }
-\DoxyCodeLine{00067\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_a5e29da42188c91a7985e8425db4c3dcd}{\_\_add}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&a,\ \textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&b)\{}
-\DoxyCodeLine{00068\ \ \ \ \ assert(a.size()\ ==\ b.size());}
-\DoxyCodeLine{00069\ \ \ \ \ assert(a[0].size()\ ==\ b[0].size());}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ a.size();}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ a[0].size();}
-\DoxyCodeLine{00072\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ res(height,\ std::vector<int32\_t>(width));}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<height;\ i++)\{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<width;\ j++)\{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ res[i][j]\ =\ a[i][j]\ +\ b[i][j];}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00077\ \ \ \ \ \}}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
-\DoxyCodeLine{00079\ \ \ \}}
-\DoxyCodeLine{00080\ \ \ }
-\DoxyCodeLine{00086\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_aa2488f093457d0888ef32838e50d446a}{Sobel}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&image)\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ image.size();}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ image[0].size();}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ std::pair<std::vector<std::vector<int32\_t>\ >,\ std::vector<std::vector<int32\_t>\ >\ >\ kernels\ =\ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}}();}
-\DoxyCodeLine{00091\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ k1\ =\ kernels.first;\ std::vector<std::vector<int32\_t>\ >\ k2\ =\ kernels.second;}
-\DoxyCodeLine{00092\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\_x(height,\ std::vector<int>(width));}
-\DoxyCodeLine{00093\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\_y(height,\ std::vector<int>(width));}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ G\_x[x][y]\ =\ image[x][y]*k1[1][1];}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x][y\ -\/\ 1]*k1[1][0];}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x][y\ +\ 1]*k1[1][2];}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x\ +\ 1][y\ +\ 1]*k1[2][2];}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x\ -\/\ 1][y]*k1[0][1];}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x\ -\/\ 1][y\ +\ 1]*k1[0][2];}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x\ -\/\ 1][y\ -\/\ 1]*k1[0][0];}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x\ +\ 1][y]*k1[2][1];}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ G\_x[x][y]\ +=\ image[x\ +\ 1][y\ -\/\ 1]*k1[2][0];}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ G\_y[x][y]\ =\ image[x][y]*k2[1][1];}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x][y\ -\/\ 1]*k2[1][0];}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x][y\ +\ 1]*k2[1][2];}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x\ +\ 1][y\ +\ 1]*k2[2][2];}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x\ -\/\ 1][y]*k2[0][1];}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x\ -\/\ 1][y\ +\ 1]*k2[0][2];}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x\ -\/\ 1][y\ -\/\ 1]*k2[0][0];}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x\ +\ 1][y]*k2[2][1];}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ G\_y[x][y]\ +=\ image[x\ +\ 1][y\ -\/\ 1]*k2[2][0];}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00150\ \ \ \ \ \}}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ \ \ \ \ G\_x\ =\ \mbox{\hyperlink{namespacesobel_a813b687248f114a2d3044418331d09bf}{power\_2}}(G\_x);}
-\DoxyCodeLine{00153\ \ \ \ \ G\_y\ =\ \mbox{\hyperlink{namespacesobel_a813b687248f114a2d3044418331d09bf}{power\_2}}(G\_y);}
-\DoxyCodeLine{00154\ }
-\DoxyCodeLine{00155\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\ =\ \mbox{\hyperlink{namespacesobel_a5e29da42188c91a7985e8425db4c3dcd}{\_\_add}}(G\_x,\ G\_y);}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}}(G);}
-\DoxyCodeLine{00157\ \ \ \}}
-\DoxyCodeLine{00158\ \}}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../image.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesobel}{sobel}}\{}
+\DoxyCodeLine{00022\ \ \ std::pair<std::vector<std::vector<int32\_t>\ >,\ std::vector<std::vector<int32\_t>\ >\ >\ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}}()\{}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\_x\ =\ \{\ \{1,\ 0,\ -\/1\},\ \{2,\ 0,\ -\/2\},\ \{1,\ 0,\ -\/1\}\ \};}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ G\_y\ =\ \{\ \{1,\ 2,\ 1\},\ \{0,\ 0,\ 0\},\ \{-\/1,\ -\/2,\ -\/1\}\ \};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(G\_x,\ G\_y);}
+\DoxyCodeLine{00026\ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&G)\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ G.size();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ G[0].size();}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ res\_img(height,\ std::vector<int32\_t>(width));}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<height;\ i++)\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<width;\ j++)\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ res\_img[i][j]\ =\ sqrt(G[i][j]);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ res\_img;}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ \ \ }
+\DoxyCodeLine{00050\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_aa2488f093457d0888ef32838e50d446a}{Sobel}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&image)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(image);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ img.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ img.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::pair<std::vector<std::vector<int32\_t>\ >,\ std::vector<std::vector<int32\_t>\ >\ >\ kernels\ =\ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}}();}
+\DoxyCodeLine{00056\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ k1\ =\ kernels.first;\ std::vector<std::vector<int32\_t>\ >\ k2\ =\ kernels.second;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G\_x(img.\mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(k1));}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G\_y(img.\mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(k2));}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ G\_x\ =\ G\_x.\mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(G\_x);}
+\DoxyCodeLine{00062\ \ \ \ \ G\_y\ =\ G\_y.\mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(G\_y);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G(G\_x);\ \textcolor{comment}{//\ G\ =\ G\_x}}
+\DoxyCodeLine{00065\ \ \ \ \ G\ =\ G.\mbox{\hyperlink{class_image_ae46a0fc3c5ab7f98cedfc14802509926}{add}}(G\_y);\ \textcolor{comment}{//\ G\ +=\ G\_y}}
+\DoxyCodeLine{00066\ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}}(G.\mbox{\hyperlink{class_image_ad70be146565fdfd89e6f061a80f6e348}{get\_2d\_array}}());\ \textcolor{comment}{//\ result\ is:\ G\ =\ sqrt(G\_x\string^2\ +\ G\_y\string^2)}}
+\DoxyCodeLine{00068\ \ \ \}}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ \ }}
 
 \end{DoxyCode}
