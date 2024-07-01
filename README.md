@@ -129,5 +129,3 @@ cd tests
 
 See more [here](/CONTRIBUTE.md).
 
-## Stargazers over time
-[![Stargazers over time](https://starchart.cc/apache/singa.svg?variant=dark)](https://starchart.cc/apache/singa)
