@@ -16,16 +16,31 @@ AlgoPlus is a C++ library that includes ready-to-use complex **data structures**
 ### Example:
 
 ```cpp
-#include <graph.h>
-graph<std::string> g("undirected");
-g.add_edge("hello", "world");
-g.add_edge("world", "universe");
-g.add_edge("hello", "universe");
+#include <machine_learning/clustering/kmeans/kmeans.h>
 
-if(g.connected()){
-    std::cout << "graph is connected" << '\n';
+// AlgoPlus now has Machine Learning classes!
+int main(){
+    std::vector<std::vector<double> > data;
+    int CLUSTERS;
+    kmeans a(data, CLUSTERS);
+    ...
+    // returns the cluster centers and assignments of the kmeans clustering
+    std::pair<std::vector<std::vector<double> >, std::map<std::vector<double>, int64_t> > ans = a.fit();
 }
 
+#include <machine_learning/image/edge_detection/sobel_operator.h>
+
+// As well as image processing algorithms!
+int main(){
+  ...
+  std::vector<std::vector<int32_t> > img(data);
+
+  // Performs edge detection on image img
+  std::vector<std::vector<int32_t> > resulted = Sobel(img);
+  ...
+}
+
+// And of course, every data structure that you need!
 #include <graph.h>
 weighted_graph<int> g("undirected");
 g.add_edge(1, 4, 2);
