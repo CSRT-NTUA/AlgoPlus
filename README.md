@@ -129,3 +129,6 @@ cd tests
 
 See more [here](/CONTRIBUTE.md).
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=CSRT-NTUA/AlgoPlus&type=Date)](https://star-history.com/#CSRT-NTUA/AlgoPlus&Date)
