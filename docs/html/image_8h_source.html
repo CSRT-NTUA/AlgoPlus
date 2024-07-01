@@ -106,8 +106,8 @@ $(function() { codefold.init(0); });
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_image.html#a6a6f4692c2770414c62cc1181ee0dfff">   23</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_image.html#a6a6f4692c2770414c62cc1181ee0dfff">Image</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; img_pass = {}) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span>(!img_pass.empty()){</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      height = img.size();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      width = img[0].size();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      height = img_pass.size();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      width = img_pass[0].size();</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      img = img_pass;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
@@ -127,168 +127,174 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_image.html#a685b99decee477e0889511335a0ba167">   54</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">this</span> -&gt; width; }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">   60</a></span>  std::vector&lt;std::vector&lt;int32_t&gt; &gt; <a class="code hl_function" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">get_2d_array</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> img; }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_image.html#aaeae286b25120ded439611b04bae3425">   69</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y, <span class="keyword">const</span> T val){</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    img[x][y] += val;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">   60</a></span>  std::vector&lt;std::vector&lt;int32_t&gt; &gt; <a class="code hl_function" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">get_2d_array</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;img; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">   68</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;img[x][y]; }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_image.html#a75f51a29849d86680f6e7548efdc73aa">   75</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_image.html#a75f51a29849d86680f6e7548efdc73aa">set_point</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> val) { this-&gt;img[x][y] = val; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_image.html#aaeae286b25120ded439611b04bae3425">   84</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y, <span class="keyword">const</span> T val){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    img[x][y] += val;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">   79</a></span>  int32_t <a class="code hl_function" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">get_point</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y){</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> img[x][y];</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">   94</a></span>  int32_t <a class="code hl_function" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">get_point</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y){</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> img[x][y];</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">   89</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">add</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;img2)<span class="keyword"> const </span>{  </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    assert(!img2.empty());</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    assert(img2.size() == img.size());</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    assert(img2[0].size() == img[0].size());</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] + img2[x][y]);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">  104</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">add</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;img2)<span class="keyword"> const </span>{  </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    assert(!img2.empty());</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    assert(img2.size() == img.size());</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    assert(img2[0].size() == img[0].size());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] + img2[x][y]);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
 </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_image.html#aa3b2dab58f9f49a64c3c8a1349b50e68">  109</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#aa3b2dab58f9f49a64c3c8a1349b50e68">add</a>(<a class="code hl_class" href="class_image.html">Image</a> img2)<span class="keyword"> const </span>{  </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    assert(img2.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>() == img.size());</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    assert(img2.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>() == img[0].size());</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] + img2.<a class="code hl_function" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">get_point</a>(x, y));</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_image.html#aa3b2dab58f9f49a64c3c8a1349b50e68">  124</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#aa3b2dab58f9f49a64c3c8a1349b50e68">add</a>(<a class="code hl_class" href="class_image.html">Image</a> img2)<span class="keyword"> const </span>{  </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    assert(img2.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>() == img.size());</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    assert(img2.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>() == img[0].size());</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] + img2.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y));</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  }</div>
 </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_image.html#ae998c80337bc8941c914e5209df97bb3">  128</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#ae998c80337bc8941c914e5209df97bb3">sub</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;img2)<span class="keyword"> const </span>{  </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    assert(!img2.empty());</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    assert(img2.size() == img.size());</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    assert(img2[0].size() == img[0].size());</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] - img2[x][y]);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_image.html#ae998c80337bc8941c914e5209df97bb3">  143</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#ae998c80337bc8941c914e5209df97bb3">sub</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;img2)<span class="keyword"> const </span>{  </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    assert(!img2.empty());</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    assert(img2.size() == img.size());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    assert(img2[0].size() == img[0].size());</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] - img2[x][y]);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  }</div>
 </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_image.html#a2f4635f1d0e7d8a11e7d4d10db18ed6c">  148</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a2f4635f1d0e7d8a11e7d4d10db18ed6c">sub</a>(<a class="code hl_class" href="class_image.html">Image</a> img2)<span class="keyword"> const </span>{  </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    assert(img2.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>() == img.size());</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    assert(img2.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>() == img[0].size());</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] - img2.<a class="code hl_function" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">get_point</a>(x, y));</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_image.html#a2f4635f1d0e7d8a11e7d4d10db18ed6c">  163</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a2f4635f1d0e7d8a11e7d4d10db18ed6c">sub</a>(<a class="code hl_class" href="class_image.html">Image</a> img2)<span class="keyword"> const </span>{  </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    assert(img2.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>() == img.size());</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    assert(img2.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>() == img[0].size());</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y] - img2.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y));</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
 </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  </div>
-<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">  167</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">mul</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;img2)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    assert(!img2.empty());</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    assert(img2.size() == img.size());</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    assert(img2[0].size() == img[0].size());</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y]*img2[x][y]);</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  </div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">  182</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">mul</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;img2)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    assert(!img2.empty());</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    assert(img2.size() == img.size());</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    assert(img2[0].size() == img[0].size());</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y]*img2[x][y]);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }</div>
 </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_image.html#a1af53349d893161a56a03e1b89eed0f9">  187</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a1af53349d893161a56a03e1b89eed0f9">mul</a>(<a class="code hl_class" href="class_image.html">Image</a> img2)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    assert(img2.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>() == img.size());</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    assert(img2.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>() == img[0].size());</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y]*img2.<a class="code hl_function" href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">get_point</a>(x, y));</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      }</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="class_image.html#a1af53349d893161a56a03e1b89eed0f9">  202</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a1af53349d893161a56a03e1b89eed0f9">mul</a>(<a class="code hl_class" href="class_image.html">Image</a> img2)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    assert(img2.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>() == img.size());</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    assert(img2.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>() == img[0].size());</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; height; x++){</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y &lt; width; y++){</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y]*img2.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y));</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  }</div>
 </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_image.html#a3a56602ae5335142e179e679c9e31aa6">  206</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a3a56602ae5335142e179e679c9e31aa6">apply_filter2d</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;filter)<span class="keyword"> const</span>{</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x&lt;height; x++){</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y&lt;width; y++){</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y]*filter[1][1]);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y - 1]*filter[1][0]);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keywordflow">if</span>(y + 1 &lt; width){</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y + 1]*filter[1][2]);</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>          <span class="keywordflow">if</span>(x + 1 &lt; height){</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x + 1][y + 1]*filter[2][2]);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>          }</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0){</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x - 1][y]*filter[0][1]);</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>          <span class="keywordflow">if</span>(y + 1 &lt; width){</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x - 1][y + 1]*filter[0][2]);</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>          }</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>          <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x - 1][y - 1]*filter[0][0]);</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>          }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="foldopen" id="foldopen00221" data-start="{" data-end="}">
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="class_image.html#a3a56602ae5335142e179e679c9e31aa6">  221</a></span>  <a class="code hl_class" href="class_image.html">Image</a> <a class="code hl_function" href="class_image.html#a3a56602ae5335142e179e679c9e31aa6">apply_filter2d</a>(std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;filter)<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x&lt;height; x++){</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y&lt;width; y++){</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y]*filter[1][1]);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y - 1]*filter[1][0]);</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">if</span>(x + 1 &lt; height){</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x + 1][y]*filter[2][1]);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>          <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x + 1][y - 1]*filter[2][0]);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">if</span>(y + 1 &lt; width){</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x][y + 1]*filter[1][2]);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>          <span class="keywordflow">if</span>(x + 1 &lt; height){</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x + 1][y + 1]*filter[2][2]);</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>          }</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> resulted_img;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0){</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x - 1][y]*filter[0][1]);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>          <span class="keywordflow">if</span>(y + 1 &lt; width){</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x - 1][y + 1]*filter[0][2]);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>          }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>          <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x - 1][y - 1]*filter[0][0]);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>          }</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keywordflow">if</span>(x + 1 &lt; height){</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>          resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x + 1][y]*filter[2][1]);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>          <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            resulted_img.<a class="code hl_function" href="class_image.html#aaeae286b25120ded439611b04bae3425">add_2_point</a>(x, y, img[x + 1][y - 1]*filter[2][0]);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>          }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">return</span> resulted_img;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  }</div>
 </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>};</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>};</div>
 </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> image.h:11</div></div>
-<div class="ttc" id="aclass_image_html_a1af53349d893161a56a03e1b89eed0f9"><div class="ttname"><a href="class_image.html#a1af53349d893161a56a03e1b89eed0f9">Image::mul</a></div><div class="ttdeci">Image mul(Image img2) const</div><div class="ttdoc">secondary mul function with Image as an input multiplies the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:187</div></div>
-<div class="ttc" id="aclass_image_html_a2f4635f1d0e7d8a11e7d4d10db18ed6c"><div class="ttname"><a href="class_image.html#a2f4635f1d0e7d8a11e7d4d10db18ed6c">Image::sub</a></div><div class="ttdeci">Image sub(Image img2) const</div><div class="ttdoc">secondary sub function with Image as an input adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:148</div></div>
-<div class="ttc" id="aclass_image_html_a3a56602ae5335142e179e679c9e31aa6"><div class="ttname"><a href="class_image.html#a3a56602ae5335142e179e679c9e31aa6">Image::apply_filter2d</a></div><div class="ttdeci">Image apply_filter2d(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;filter) const</div><div class="ttdoc">apply_filter2d function</div><div class="ttdef"><b>Definition</b> image.h:206</div></div>
+<div class="ttc" id="aclass_image_html_a1af53349d893161a56a03e1b89eed0f9"><div class="ttname"><a href="class_image.html#a1af53349d893161a56a03e1b89eed0f9">Image::mul</a></div><div class="ttdeci">Image mul(Image img2) const</div><div class="ttdoc">secondary mul function with Image as an input multiplies the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:202</div></div>
+<div class="ttc" id="aclass_image_html_a2f4635f1d0e7d8a11e7d4d10db18ed6c"><div class="ttname"><a href="class_image.html#a2f4635f1d0e7d8a11e7d4d10db18ed6c">Image::sub</a></div><div class="ttdeci">Image sub(Image img2) const</div><div class="ttdoc">secondary sub function with Image as an input adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:163</div></div>
+<div class="ttc" id="aclass_image_html_a3a56602ae5335142e179e679c9e31aa6"><div class="ttname"><a href="class_image.html#a3a56602ae5335142e179e679c9e31aa6">Image::apply_filter2d</a></div><div class="ttdeci">Image apply_filter2d(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;filter) const</div><div class="ttdoc">apply_filter2d function</div><div class="ttdef"><b>Definition</b> image.h:221</div></div>
+<div class="ttc" id="aclass_image_html_a622b4c33bd14c5cd20d688f22a81fef4"><div class="ttname"><a href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">Image::get_point</a></div><div class="ttdeci">int get_point(const int x, const int y) const</div><div class="ttdoc">get_point function</div><div class="ttdef"><b>Definition</b> image.h:68</div></div>
 <div class="ttc" id="aclass_image_html_a6383baa72a87f006f0d1ab1ac19006eb"><div class="ttname"><a href="class_image.html#a6383baa72a87f006f0d1ab1ac19006eb">Image::Image</a></div><div class="ttdeci">Image(int height, int width)</div><div class="ttdoc">Image secondary constructor.</div><div class="ttdef"><b>Definition</b> image.h:36</div></div>
 <div class="ttc" id="aclass_image_html_a685b99decee477e0889511335a0ba167"><div class="ttname"><a href="class_image.html#a685b99decee477e0889511335a0ba167">Image::_width</a></div><div class="ttdeci">int _width() const</div><div class="ttdoc">width function</div><div class="ttdef"><b>Definition</b> image.h:54</div></div>
 <div class="ttc" id="aclass_image_html_a6a6f4692c2770414c62cc1181ee0dfff"><div class="ttname"><a href="class_image.html#a6a6f4692c2770414c62cc1181ee0dfff">Image::Image</a></div><div class="ttdeci">Image(std::vector&lt; std::vector&lt; int32_t &gt; &gt; img_pass={}) noexcept</div><div class="ttdoc">image default constructor</div><div class="ttdef"><b>Definition</b> image.h:23</div></div>
-<div class="ttc" id="aclass_image_html_a7ceea7a73b614f189cd5c9e9bf3f7863"><div class="ttname"><a href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">Image::mul</a></div><div class="ttdeci">Image mul(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const</div><div class="ttdoc">mul function multiplies the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:167</div></div>
-<div class="ttc" id="aclass_image_html_a990cb1a2708a9af67c6b46a90b490aed"><div class="ttname"><a href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">Image::get_point</a></div><div class="ttdeci">int32_t get_point(const int x, const int y)</div><div class="ttdoc">get_point function</div><div class="ttdef"><b>Definition</b> image.h:79</div></div>
-<div class="ttc" id="aclass_image_html_aa3b2dab58f9f49a64c3c8a1349b50e68"><div class="ttname"><a href="class_image.html#aa3b2dab58f9f49a64c3c8a1349b50e68">Image::add</a></div><div class="ttdeci">Image add(Image img2) const</div><div class="ttdoc">secondary add function with Image as a parameter adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:109</div></div>
-<div class="ttc" id="aclass_image_html_aaeae286b25120ded439611b04bae3425"><div class="ttname"><a href="class_image.html#aaeae286b25120ded439611b04bae3425">Image::add_2_point</a></div><div class="ttdeci">void add_2_point(const int x, const int y, const T val)</div><div class="ttdoc">add_2_point function</div><div class="ttdef"><b>Definition</b> image.h:69</div></div>
+<div class="ttc" id="aclass_image_html_a75f51a29849d86680f6e7548efdc73aa"><div class="ttname"><a href="class_image.html#a75f51a29849d86680f6e7548efdc73aa">Image::set_point</a></div><div class="ttdeci">void set_point(int x, int y, int val)</div><div class="ttdoc">set_point function</div><div class="ttdef"><b>Definition</b> image.h:75</div></div>
+<div class="ttc" id="aclass_image_html_a7ceea7a73b614f189cd5c9e9bf3f7863"><div class="ttname"><a href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">Image::mul</a></div><div class="ttdeci">Image mul(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const</div><div class="ttdoc">mul function multiplies the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:182</div></div>
+<div class="ttc" id="aclass_image_html_a990cb1a2708a9af67c6b46a90b490aed"><div class="ttname"><a href="class_image.html#a990cb1a2708a9af67c6b46a90b490aed">Image::get_point</a></div><div class="ttdeci">int32_t get_point(const int x, const int y)</div><div class="ttdoc">get_point function</div><div class="ttdef"><b>Definition</b> image.h:94</div></div>
+<div class="ttc" id="aclass_image_html_aa3b2dab58f9f49a64c3c8a1349b50e68"><div class="ttname"><a href="class_image.html#aa3b2dab58f9f49a64c3c8a1349b50e68">Image::add</a></div><div class="ttdeci">Image add(Image img2) const</div><div class="ttdoc">secondary add function with Image as a parameter adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:124</div></div>
+<div class="ttc" id="aclass_image_html_aaeae286b25120ded439611b04bae3425"><div class="ttname"><a href="class_image.html#aaeae286b25120ded439611b04bae3425">Image::add_2_point</a></div><div class="ttdeci">void add_2_point(const int x, const int y, const T val)</div><div class="ttdoc">add_2_point function</div><div class="ttdef"><b>Definition</b> image.h:84</div></div>
 <div class="ttc" id="aclass_image_html_ad70be146565fdfd89e6f061a80f6e348"><div class="ttname"><a href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">Image::get_2d_array</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int32_t &gt; &gt; get_2d_array() const</div><div class="ttdoc">get_2d_array function</div><div class="ttdef"><b>Definition</b> image.h:60</div></div>
-<div class="ttc" id="aclass_image_html_ae46a0fc3c5ab7f98cedfc14802509926"><div class="ttname"><a href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">Image::add</a></div><div class="ttdeci">Image add(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const</div><div class="ttdoc">add function adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:89</div></div>
-<div class="ttc" id="aclass_image_html_ae998c80337bc8941c914e5209df97bb3"><div class="ttname"><a href="class_image.html#ae998c80337bc8941c914e5209df97bb3">Image::sub</a></div><div class="ttdeci">Image sub(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const</div><div class="ttdoc">sub function adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:128</div></div>
+<div class="ttc" id="aclass_image_html_ae46a0fc3c5ab7f98cedfc14802509926"><div class="ttname"><a href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">Image::add</a></div><div class="ttdeci">Image add(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const</div><div class="ttdoc">add function adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:104</div></div>
+<div class="ttc" id="aclass_image_html_ae998c80337bc8941c914e5209df97bb3"><div class="ttname"><a href="class_image.html#ae998c80337bc8941c914e5209df97bb3">Image::sub</a></div><div class="ttdeci">Image sub(std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;img2) const</div><div class="ttdoc">sub function adds the img2 to img</div><div class="ttdef"><b>Definition</b> image.h:143</div></div>
 <div class="ttc" id="aclass_image_html_af90d355112add3631a0b0f8cccffdb95"><div class="ttname"><a href="class_image.html#af90d355112add3631a0b0f8cccffdb95">Image::_height</a></div><div class="ttdeci">int _height() const</div><div class="ttdoc">_height function</div><div class="ttdef"><b>Definition</b> image.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

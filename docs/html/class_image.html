@@ -96,6 +96,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad70be146565fdfd89e6f061a80f6e348" id="r_ad70be146565fdfd89e6f061a80f6e348"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int32_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad70be146565fdfd89e6f061a80f6e348">get_2d_array</a> () const</td></tr>
 <tr class="memdesc:ad70be146565fdfd89e6f061a80f6e348"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_2d_array function  <br /></td></tr>
 <tr class="separator:ad70be146565fdfd89e6f061a80f6e348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622b4c33bd14c5cd20d688f22a81fef4" id="r_a622b4c33bd14c5cd20d688f22a81fef4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a> (const int x, const int y) const</td></tr>
+<tr class="memdesc:a622b4c33bd14c5cd20d688f22a81fef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_point function  <br /></td></tr>
+<tr class="separator:a622b4c33bd14c5cd20d688f22a81fef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f51a29849d86680f6e7548efdc73aa" id="r_a75f51a29849d86680f6e7548efdc73aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75f51a29849d86680f6e7548efdc73aa">set_point</a> (int x, int y, int val)</td></tr>
+<tr class="memdesc:a75f51a29849d86680f6e7548efdc73aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">set_point function  <br /></td></tr>
+<tr class="separator:a75f51a29849d86680f6e7548efdc73aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeae286b25120ded439611b04bae3425" id="r_aaeae286b25120ded439611b04bae3425"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aaeae286b25120ded439611b04bae3425"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aaeae286b25120ded439611b04bae3425">add_2_point</a> (const int x, const int y, const T val)</td></tr>
 <tr class="memdesc:aaeae286b25120ded439611b04bae3425"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_2_point function  <br /></td></tr>
@@ -431,7 +437,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a990cb1a2708a9af67c6b46a90b490aed" name="a990cb1a2708a9af67c6b46a90b490aed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a990cb1a2708a9af67c6b46a90b490aed">&#9670;&#160;</a></span>get_point()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a990cb1a2708a9af67c6b46a90b490aed">&#9670;&#160;</a></span>get_point() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,6 +472,45 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int32_t: the value of img(x, y) </dd></dl>
+
+</div>
+</div>
+<a id="a622b4c33bd14c5cd20d688f22a81fef4" name="a622b4c33bd14c5cd20d688f22a81fef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622b4c33bd14c5cd20d688f22a81fef4">&#9670;&#160;</a></span>get_point() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::get_point </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get_point function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the first dimension </td></tr>
+    <tr><td class="paramname">y</td><td>the second dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int: the value of Img(x, y) </dd></dl>
 
 </div>
 </div>
@@ -534,6 +579,49 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;vector&lt;int32_t&gt; &gt; the resulted image </dd></dl>
+
+</div>
+</div>
+<a id="a75f51a29849d86680f6e7548efdc73aa" name="a75f51a29849d86680f6e7548efdc73aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f51a29849d86680f6e7548efdc73aa">&#9670;&#160;</a></span>set_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::set_point </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set_point function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the first dimension </td></tr>
+    <tr><td class="paramname">y</td><td>the second dimension </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

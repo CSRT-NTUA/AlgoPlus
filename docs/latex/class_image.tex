@@ -13,6 +13,10 @@ int \mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\+\_\+width}
 \begin{DoxyCompactList}\small\item\em width function \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_image_ad70be146565fdfd89e6f061a80f6e348}{get\+\_\+2d\+\_\+array}} () const
 \begin{DoxyCompactList}\small\item\em get\+\_\+2d\+\_\+array function \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\+\_\+point}} (const int x, const int y) const
+\begin{DoxyCompactList}\small\item\em get\+\_\+point function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a75f51a29849d86680f6e7548efdc73aa}{set\+\_\+point}} (int x, int y, int val)
+\begin{DoxyCompactList}\small\item\em set\+\_\+point function \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\+\_\+2\+\_\+point}} (const int x, const int y, const T val)
 \begin{DoxyCompactList}\small\item\em add\+\_\+2\+\_\+point function \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{class_image_a990cb1a2708a9af67c6b46a90b490aed}{get\+\_\+point}} (const int x, const int y)
@@ -185,7 +189,7 @@ vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>}\+:
 \Hypertarget{class_image_a990cb1a2708a9af67c6b46a90b490aed}\label{class_image_a990cb1a2708a9af67c6b46a90b490aed} 
 \index{Image@{Image}!get\_point@{get\_point}}
 \index{get\_point@{get\_point}!Image@{Image}}
-\doxysubsubsection{\texorpdfstring{get\_point()}{get\_point()}}
+\doxysubsubsection{\texorpdfstring{get\_point()}{get\_point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily int32\+\_\+t Image\+::get\+\_\+point (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -201,6 +205,26 @@ get\+\_\+point function
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int32\+\_\+t\+: the value of img(x, y) 
+\end{DoxyReturn}
+\Hypertarget{class_image_a622b4c33bd14c5cd20d688f22a81fef4}\label{class_image_a622b4c33bd14c5cd20d688f22a81fef4} 
+\index{Image@{Image}!get\_point@{get\_point}}
+\index{get\_point@{get\_point}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{get\_point()}{get\_point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Image\+::get\+\_\+point (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+point function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first dimension \\
+\hline
+{\em y} & the second dimension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\+: the value of Img(x, y) 
 \end{DoxyReturn}
 \Hypertarget{class_image_a1af53349d893161a56a03e1b89eed0f9}\label{class_image_a1af53349d893161a56a03e1b89eed0f9} 
 \index{Image@{Image}!mul@{mul}}
@@ -238,6 +262,23 @@ mul function multiplies the img2 to img
 \begin{DoxyReturn}{Returns}
 vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>} the resulted image 
 \end{DoxyReturn}
+\Hypertarget{class_image_a75f51a29849d86680f6e7548efdc73aa}\label{class_image_a75f51a29849d86680f6e7548efdc73aa} 
+\index{Image@{Image}!set\_point@{set\_point}}
+\index{set\_point@{set\_point}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{set\_point()}{set\_point()}}
+{\footnotesize\ttfamily void Image\+::set\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+\_\+point function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first dimension \\
+\hline
+{\em y} & the second dimension \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_image_a2f4635f1d0e7d8a11e7d4d10db18ed6c}\label{class_image_a2f4635f1d0e7d8a11e7d4d10db18ed6c} 
 \index{Image@{Image}!sub@{sub}}
 \index{sub@{sub}!Image@{Image}}

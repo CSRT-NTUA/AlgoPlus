@@ -28,7 +28,7 @@ var searchData=
   ['get_5fnumber_5ffloat_25',['get_number_float',['../classdetail_1_1lexer.html#af2e903d32a7e3705c66539ea1e30ce59',1,'detail::lexer']]],
   ['get_5fnumber_5finteger_26',['get_number_integer',['../classdetail_1_1lexer.html#a4227de7d0382fb4d3e18b119f0cc87d7',1,'detail::lexer']]],
   ['get_5fnumber_5funsigned_27',['get_number_unsigned',['../classdetail_1_1lexer.html#a65495d5d60a279adb009efa728708441',1,'detail::lexer']]],
-  ['get_5fpoint_28',['get_point',['../class_image.html#a990cb1a2708a9af67c6b46a90b490aed',1,'Image']]],
+  ['get_5fpoint_28',['get_point',['../class_image.html#a622b4c33bd14c5cd20d688f22a81fef4',1,'Image::get_point(const int x, const int y) const'],['../class_image.html#a990cb1a2708a9af67c6b46a90b490aed',1,'Image::get_point(const int x, const int y)']]],
   ['get_5fposition_29',['get_position',['../classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d',1,'detail::lexer']]],
   ['get_5fptr_30',['get_ptr',['../classbasic__json.html#aba60354728e2f7f64e3e5c6b02c5b820',1,'basic_json::get_ptr() noexcept -&gt; decltype(std::declval&lt; basic_json_t &amp; &gt;().get_impl_ptr(std::declval&lt; PointerType &gt;()))'],['../classbasic__json.html#a9db8d5e59277a70a736f899c4aec0af0',1,'basic_json::get_ptr() const noexcept -&gt; decltype(std::declval&lt; const basic_json_t &amp; &gt;().get_impl_ptr(std::declval&lt; PointerType &gt;()))']]],
   ['get_5fquery_31',['get_query',['../class_d_b_s_c_a_n.html#aa9de3fa41342a0d23dd73bd15bca83e8',1,'DBSCAN']]],

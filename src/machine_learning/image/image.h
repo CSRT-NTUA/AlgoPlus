@@ -22,8 +22,8 @@ public:
    */
   explicit Image(std::vector<std::vector<int32_t> > img_pass = {}) noexcept {
     if(!img_pass.empty()){
-      height = img.size();
-      width = img[0].size();
+      height = img_pass.size();
+      width = img_pass[0].size();
       img = img_pass;
     }
   }
@@ -57,7 +57,22 @@ public:
    * @brief get_2d_array function
    * @return vector<vector<int32_t> >: the 2d array of the image
    */
-  std::vector<std::vector<int32_t> > get_2d_array() const { return img; }
+  std::vector<std::vector<int32_t> > get_2d_array() const { return this->img; }
+    
+  /**
+   * @brief get_point function
+   * @param x: the first dimension
+   * @param y: the second dimension
+   * @return int: the value of Img(x, y)
+   */
+  int get_point(const int x, const int y) const { return this->img[x][y]; }
+
+  /**
+   * @brief set_point function
+   * @param x: the first dimension
+   * @param y: the second dimension
+   */
+  void set_point(int x, int y, int val) { this->img[x][y] = val; }
 
   /** 
    * @brief add_2_point function
