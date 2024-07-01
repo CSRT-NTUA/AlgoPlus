@@ -11,16 +11,31 @@
 \hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{Example\+:}{Example\+:}}\label{index_autotoc_md19}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
-\DoxyCodeLine{\mbox{\hyperlink{classgraph}{graph<std::string>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
-\DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}world"{}});}
-\DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}world"{}},\ \textcolor{stringliteral}{"{}universe"{}});}
-\DoxyCodeLine{g.add\_edge(\textcolor{stringliteral}{"{}hello"{}},\ \textcolor{stringliteral}{"{}universe"{}});}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <machine\_learning/clustering/kmeans/kmeans.h>}}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(g.connected())\{}
-\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}graph\ is\ connected"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\textcolor{comment}{//\ AlgoPlus\ now\ has\ Machine\ Learning\ classes!}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\{}
+\DoxyCodeLine{\ \ \ \ std::vector<std::vector<double>\ >\ data;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ CLUSTERS;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classkmeans}{kmeans}}\ a(data,\ CLUSTERS);}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ returns\ the\ cluster\ centers\ and\ assignments\ of\ the\ kmeans\ clustering}}
+\DoxyCodeLine{\ \ \ \ std::pair<std::vector<std::vector<double>\ >,\ std::map<std::vector<double>,\ int64\_t>\ >\ ans\ =\ a.fit();}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <machine\_learning/image/edge\_detection/sobel\_operator.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ As\ well\ as\ image\ processing\ algorithms!}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\{}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\ \ std::vector<std::vector<int32\_t>\ >\ img(data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Performs\ edge\ detection\ on\ image\ img}}
+\DoxyCodeLine{\ \ std::vector<std::vector<int32\_t>\ >\ resulted\ =\ \mbox{\hyperlink{namespacesobel_aa2488f093457d0888ef32838e50d446a}{Sobel}}(img);}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ And\ of\ course,\ every\ data\ structure\ that\ you\ need!}}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <graph.h>}}
 \DoxyCodeLine{\mbox{\hyperlink{classweighted__graph}{weighted\_graph<int>}}\ g(\textcolor{stringliteral}{"{}undirected"{}});}
 \DoxyCodeLine{g.add\_edge(1,\ 4,\ 2);}

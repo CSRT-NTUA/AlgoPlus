@@ -84,16 +84,31 @@ $(function() {
 <b><a href="https://discord.gg/M9nYv4MHz6">Join</a> our Discord</b></h2>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Example:</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
-<div class="line"><a class="code hl_class" href="classgraph.html">graph&lt;std::string&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
-<div class="line">g.add_edge(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);</div>
-<div class="line">g.add_edge(<span class="stringliteral">&quot;world&quot;</span>, <span class="stringliteral">&quot;universe&quot;</span>);</div>
-<div class="line">g.add_edge(<span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;universe&quot;</span>);</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;machine_learning/clustering/kmeans/kmeans.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span>(g.connected()){</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;graph is connected&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><span class="comment">// AlgoPlus now has Machine Learning classes!</span></div>
+<div class="line"><span class="keywordtype">int</span> main(){</div>
+<div class="line">    std::vector&lt;std::vector&lt;double&gt; &gt; data;</div>
+<div class="line">    <span class="keywordtype">int</span> CLUSTERS;</div>
+<div class="line">    <a class="code hl_class" href="classkmeans.html">kmeans</a> a(data, CLUSTERS);</div>
+<div class="line">    ...</div>
+<div class="line">    <span class="comment">// returns the cluster centers and assignments of the kmeans clustering</span></div>
+<div class="line">    std::pair&lt;std::vector&lt;std::vector&lt;double&gt; &gt;, std::map&lt;std::vector&lt;double&gt;, int64_t&gt; &gt; ans = a.fit();</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;machine_learning/image/edge_detection/sobel_operator.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// As well as image processing algorithms!</span></div>
+<div class="line"><span class="keywordtype">int</span> main(){</div>
+<div class="line">  ...</div>
+<div class="line">  std::vector&lt;std::vector&lt;int32_t&gt; &gt; img(data);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Performs edge detection on image img</span></div>
+<div class="line">  std::vector&lt;std::vector&lt;int32_t&gt; &gt; resulted = Sobel(img);</div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// And of course, every data structure that you need!</span></div>
 <div class="line"><span class="preprocessor">#include &lt;graph.h&gt;</span></div>
 <div class="line"><a class="code hl_class" href="classweighted__graph.html">weighted_graph&lt;int&gt;</a> g(<span class="stringliteral">&quot;undirected&quot;</span>);</div>
 <div class="line">g.add_edge(1, 4, 2);</div>
@@ -104,7 +119,7 @@ Example:</h2>
 <div class="line"><span class="comment">// returns the shortest path from 1 to 2.</span></div>
 <div class="line">std::cout &lt;&lt; g.shortest_path(1, 2) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">g.visualize() <span class="comment">// You can visualize almost any of our implemented data structures!</span></div>
-<div class="ttc" id="aclassgraph_html"><div class="ttname"><a href="classgraph.html">graph</a></div><div class="ttdoc">Class for Unweighted Graph.</div><div class="ttdef"><b>Definition</b> graph.h:26</div></div>
+<div class="ttc" id="aclasskmeans_html"><div class="ttname"><a href="classkmeans.html">kmeans</a></div><div class="ttdef"><b>Definition</b> kmeans.h:19</div></div>
 <div class="ttc" id="aclassweighted__graph_html"><div class="ttname"><a href="classweighted__graph.html">weighted_graph</a></div><div class="ttdoc">class for weighted graph</div><div class="ttdef"><b>Definition</b> graph.h:554</div></div>
 </div><!-- fragment --><p> You can see more <a href="/examples">examples</a> or follow the <a href="/tutorial">Tutorials</a>.</p>
 <h2><a class="anchor" id="autotoc_md20"></a>

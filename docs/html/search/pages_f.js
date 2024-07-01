@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_20tests_0',['How do i write unit tests?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_u_n_i_t___t_e_s_t_s.html',1,'']]]
+  ['regression_20class_0',['regression class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2linear__regression.html',1,'Mini tutorial for linear regression class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2polynomial__regression.html',1,'Mini tutorial for polynomial regression class']]]
 ];
