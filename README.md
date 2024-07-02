@@ -40,17 +40,20 @@ int main(){
   ...
 }
 
-// And of course, every data structure that you need!
-#include <graph.h>
-weighted_graph<int> g("undirected");
-g.add_edge(1, 4, 2);
-g.add_edge(4, 5, 6);
-g.add_edge(5, 2, 9);
-g.add_edge(2, 8, 10);
 
-// returns the shortest path from 1 to 2.
-std::cout << g.shortest_path(1, 2) << '\n';
-g.visualize() // You can visualize almost any of our implemented data structures!
+#include <graph.h>
+
+// And of course, every data structure that you need!
+int main(){
+  weighted_graph<int> g("undirected");
+  g.add_edge(1, 4, 2);
+  g.add_edge(4, 5, 6);
+  g.add_edge(5, 2, 9);
+  g.add_edge(2, 8, 10);
+
+  // returns the shortest path from 1 to 2.
+  std::cout << g.shortest_path(1, 2) << '\n';
+  g.visualize() // You can visualize almost any of our implemented data structures!
 ```
 You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 
