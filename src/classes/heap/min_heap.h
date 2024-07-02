@@ -35,6 +35,20 @@ public:
   ~min_heap() noexcept { delete[] arr; }
 
   /**
+   * @brief copy constructor
+   *
+   * @param copy : item to be copied
+   */
+  min_heap(const min_heap &copy) noexcept {
+    max_size = copy.max_size;
+    heap_size = copy.heap_size;
+    arr = new T[max_size];
+    for (size_t i{0}; i < heap_size; ++1){
+      arr[i] = copy.arr[i];
+    }
+  }
+
+  /**
    * @brief parent function
    *
    * @param i the element we want to find the parent
