@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/searching/binary_search.h"
 #include "../../../third_party/catch.hpp"
 
