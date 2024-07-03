@@ -1,3 +1,4 @@
+#define CATCH_CONFIG_MAIN
 #include "../../../src/algorithms/searching/binary_search.h"
 #include "../../../third_party/catch.hpp"
 
@@ -6,6 +7,7 @@ TEST_CASE("testing binary search") {
   REQUIRE(bin_search(v, 0, v.size() - 1, -10) == 0);
   REQUIRE(bin_search(v, 0, v.size() - 1, 30) == 3);
   REQUIRE(bin_search(v, 0, v.size() - 1, -20) == -1);
+  REQUIRE(bin_search(v, 0, v.size() - 1, 100) == v.size() - 1);
 }
 
 TEST_CASE("testing lower_bound search") {
@@ -21,4 +23,5 @@ TEST_CASE("testing upper_bound search") {
   REQUIRE(upper_bound(v, 0, v.size() - 1, 10) == 1);
   REQUIRE(upper_bound(v, 0, v.size() - 1, 30) == 6);
   REQUIRE(upper_bound(v, 0, v.size() - 1, -20) == -1);
+  REQUIRE(upper_bound(v, 0, v.size() - 1, 100) == v.size());
 }
