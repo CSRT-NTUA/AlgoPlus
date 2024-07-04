@@ -7,8 +7,8 @@
 #include <functional>
 #include <iostream>
 #include <memory>
-#include <vector>
 #include <queue>
+#include <vector>
 #endif
 
 /**
@@ -179,24 +179,23 @@ public:
 
   /**
    *@brief level order function.
-   *@returns vector<pair<T, T>>, the elements level ordered.
+   *@returns vector<pair<T, T>>, the level order traversal of the tree
    */
-  std::vector<std::vector<std::pair<T, T>>> levelorder() {
+  std::vector<std::vector<std::pair<T, T>>> level_order() {
     std::vector<std::vector<std::pair<T, T>>> path;
     std::queue<std::shared_ptr<node>> q;
     q.push(root);
-    while(!q.empty()){
+    while (!q.empty()) {
       size_t size = q.size();
       std::vector<std::pair<T, T>> level;
-      while(size > 0){
-        size -= 1;
+      for (size_t i = 0; i < size; i++) {
         std::shared_ptr<node> current = q.front();
         q.pop();
         level.push_back({current->i->low, current->i->high});
-        if(current->left){
+        if (current->left) {
           q.push(current->left);
         }
-        if(current->right){
+        if (current->right) {
           q.push(current->right);
         }
       }

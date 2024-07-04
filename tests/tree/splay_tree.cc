@@ -122,7 +122,7 @@ TEST_CASE("testing level order for splay tree"){
   t.insert(10);
   t.insert(9);
   t.insert(4);
-  std::vector<std::vector<int>> produced = t.levelorder();
+  std::vector<std::vector<int>> produced = t.level_order();
   std::vector<std::vector<int>> sol = {{4}, {3,8}, {2,6,9}, {1,5,7,10}};
   REQUIRE(produced==sol);
 }

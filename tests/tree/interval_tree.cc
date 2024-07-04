@@ -75,7 +75,7 @@ TEST_CASE("testing level order in interval tree"){
   t.insert({19,30});
   t.insert({17,19});
   t.insert({22,25});
-  std::vector<std::vector<std::pair<int,int>>> produced = t.levelorder();
+  std::vector<std::vector<std::pair<int,int>>> produced = t.level_order();
   std::vector<std::vector<std::pair<int,int>>> sol = {{{15,20}}, {{8,13}, {19,30}}, {{1,20}, {12,15}, {17,19}, {22,25}}};
   REQUIRE(produced==sol);
 }

@@ -144,7 +144,7 @@ TEST_CASE("testing level order in avl tree"){
   avl_tree<int> t;
   for(int i=1;i<=10;i++)
     t.insert(i);
-  std::vector<std::vector<int>> produced = t.levelorder();
+  std::vector<std::vector<int>> produced = t.level_order();
   std::vector<std::vector<int>> sol = {{4}, {2,8}, {1,3,6,9}, {5,7,10}};
   REQUIRE(produced==sol);
 }

@@ -47,7 +47,7 @@ TEST_CASE("testing level order traversal in tree class [TREECLASS]"){
   t.insert("lll", 8);
   t.insert("llr", 9);
   t.insert("lrl", 10);
-  std::vector<std::vector<int>> produced = t.levelorder();
+  std::vector<std::vector<int>> produced = t.level_order();
   std::vector<std::vector<int>> sol = {{1},{2,3},{4,5,6,7},{8,9,10}};
   REQUIRE(produced == sol);
 }

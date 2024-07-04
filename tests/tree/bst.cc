@@ -145,7 +145,7 @@ TEST_CASE("testing level order in bst"){
   t.insert(10);
   t.insert(9);
   t.insert(4);
-  std::vector<std::vector<int>> produced = t.levelorder();
+  std::vector<std::vector<int>> produced = t.level_order();
   std::vector<std::vector<int>> sol = {{5}, {1,6}, {2,8}, {3,7,10}, {4,9}};
   REQUIRE(produced == sol);
 }
