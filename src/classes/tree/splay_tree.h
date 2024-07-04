@@ -7,6 +7,7 @@
 #include <functional>
 #include <iostream>
 #include <memory>
+#include <queue>
 #include <vector>
 #endif
 
@@ -165,6 +166,33 @@ public:
           path.push_back(callbacked->info);
         },
         root);
+    return path;
+  }
+
+  /**
+   * @brief level order function
+   * @return vector<vector<T>>, the level order traversal of the tree
+   */
+  std::vector<std::vector<T>> level_order() {
+    std::vector<std::vector<T>> path;
+    std::queue<std::shared_ptr<node>> q;
+    q.push(root);
+    while (!q.empty()) {
+      size_t size = q.size();
+      std::vector<T> level;
+      for (size_t i = 0; i < size; i++) {
+        std::shared_ptr<node> current = q.front();
+        q.pop();
+        level.push_back(current->info);
+        if (current->left) {
+          q.push(current->left);
+        }
+        if (current->right) {
+          q.push(current->right);
+        }
+      }
+      path.push_back(level);
+    }
     return path;
   }
 

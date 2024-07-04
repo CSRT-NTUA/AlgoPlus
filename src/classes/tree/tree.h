@@ -3,37 +3,37 @@
 #define TREE_H
 
 #ifdef __cplusplus
-#include <iostream>
 #include <functional>
+#include <iostream>
 #include <queue>
 #endif
-
 
 /**
  * @brief tree class
  *
  */
-template <typename T>
-class tree{
+template <typename T> class tree {
 private:
-  struct node{
+  struct node {
     T info;
     std::shared_ptr<node> right;
     std::shared_ptr<node> left;
     node(T info) : info(info), left(nullptr), right(nullptr) {}
   };
-  
+
   int64_t __size;
   std::shared_ptr<node> root;
 
 public:
   /**
    * @brief constructor for tree class
-   * @param v: the input vector of pairs(string and T) to avoid doing multiple insertions
+   * @param v: the input vector of pairs(string and T) to avoid doing multiple
+   * insertions
    */
-  explicit tree(std::vector<std::pair<std::string, T> > v = {}) noexcept : root(nullptr) {
-    if(!v.empty()){
-      for(std::pair<std::string, T> &x : v){
+  explicit tree(std::vector<std::pair<std::string, T>> v = {}) noexcept
+      : root(nullptr) {
+    if (!v.empty()) {
+      for (std::pair<std::string, T> &x : v) {
         this->insert(x.first, x.second);
       }
     }
@@ -44,29 +44,27 @@ public:
    * @param direction: string, directions for the insertion of value info
    * @param info: the value of the new node
    */
-  void insert(std::string direction, T info){
+  void insert(std::string direction, T info) {
     std::shared_ptr<node> nn = std::make_shared<node>(info);
-    if(!root){
+    if (!root) {
       __size++;
       root = nn;
       return;
     }
     int64_t i = 0;
     std::shared_ptr<node> head = root;
-    while(head && i < direction.size() - 1){
-      if(direction[i] == 'r'){
-        head = head -> right;
-      }
-      else{
-        head = head -> left;
+    while (head && i < direction.size() - 1) {
+      if (direction[i] == 'r') {
+        head = head->right;
+      } else {
+        head = head->left;
       }
       i++;
     }
-    if(head && direction[i] == 'r'){
-      head -> right = nn;
-    }
-    else if(head && direction[i] == 'l'){
-      head -> left = nn;
+    if (head && direction[i] == 'r') {
+      head->right = nn;
+    } else if (head && direction[i] == 'l') {
+      head->left = nn;
     }
     __size++;
   }
@@ -77,22 +75,22 @@ public:
    * @return true: if the key exist in the tree
    * @return false: otherwise
    */
-  bool search(T key){ 
+  bool search(T key) {
     std::queue<std::shared_ptr<node>> q;
     q.push(root);
-    while(!q.empty()){
+    while (!q.empty()) {
       int64_t size = q.size();
-      for(int64_t i = 0; i<size; ++i){
+      for (int64_t i = 0; i < size; ++i) {
         std::shared_ptr<node> current = q.front();
         q.pop();
-        if(current -> info == key){
+        if (current->info == key) {
           return true;
         }
-        if(current -> right){
-          q.push(current -> right);
+        if (current->right) {
+          q.push(current->right);
         }
-        if(current -> left){
-          q.push(current -> left);
+        if (current->left) {
+          q.push(current->left);
         }
       }
     }
@@ -101,12 +99,12 @@ public:
 
   class Iterator;
 
-  Iterator begin(){
+  Iterator begin() {
     std::vector<T> ino = this->inorder();
     return Iterator(0, ino);
   }
 
-  Iterator end(){
+  Iterator end() {
     std::vector<T> ino = this->inorder();
     return Iterator(ino.size(), ino);
   }
@@ -115,14 +113,16 @@ public:
    * @brief inorder traversal
    * @return vector<T>: the inorder traversal of the tree
    */
-  std::vector<T> inorder(){
+  std::vector<T> inorder() {
     std::vector<T> ino;
-    __inorder([&](std::shared_ptr<node> callbacked){
-      ino.push_back(callbacked -> info);
-    }, root);
+    __inorder(
+        [&](std::shared_ptr<node> callbacked) {
+          ino.push_back(callbacked->info);
+        },
+        root);
     return ino;
   }
-  
+
   /**
    * @brief postorder function
    * @return vector<T>: the postorder traversal of the tree
@@ -136,7 +136,7 @@ public:
         root);
     return path;
   }
-  
+
   /**
    * @brief preorder function
    * @return vector<T>: the preorder traversal of the tree
@@ -151,29 +151,58 @@ public:
     return path;
   }
 
+  /**
+   * @brief level order function
+   * @return vector<vector<T>>: the level order traversal of the tree
+   */
+  std::vector<std::vector<T>> level_order() {
+    std::vector<std::vector<T>> path;
+    std::queue<std::shared_ptr<node>> q;
+    q.push(root);
+    while (!q.empty()) {
+      size_t size = q.size();
+      std::vector<T> level;
+      for (size_t i = 0; i < size; i++) {
+        std::shared_ptr<node> current = q.front();
+        q.pop();
+        level.push_back(current->info);
+        if (current->left) {
+          q.push(current->left);
+        }
+        if (current->right) {
+          q.push(current->right);
+        }
+      }
+      path.push_back(level);
+    }
+    return path;
+  }
+
 private:
-
-  void __inorder(std::function<void(std::shared_ptr<node>)> callback, std::shared_ptr<node> root){
-    if(root){
-      __inorder(callback, root -> left);
+  void __inorder(std::function<void(std::shared_ptr<node>)> callback,
+                 std::shared_ptr<node> root) {
+    if (root) {
+      __inorder(callback, root->left);
       callback(root);
-      __inorder(callback, root -> right);
+      __inorder(callback, root->right);
     }
   }
 
-  void __preorder(std::function<void(std::shared_ptr<node>)> callback, std::shared_ptr<node> root){
-    if(root){
+  void __preorder(std::function<void(std::shared_ptr<node>)> callback,
+                  std::shared_ptr<node> root) {
+    if (root) {
       callback(root);
-      __preorder(callback, root -> left);
-      __preorder(callback, root -> righ);
+      __preorder(callback, root->left);
+      __preorder(callback, root->righ);
     }
   }
 
-  void __postorder(std::function<void(std::shared_ptr<node>)> callback, std::shared_ptr<node> root){
-    if(root){
-      __postorder(callback, root -> right);
+  void __postorder(std::function<void(std::shared_ptr<node>)> callback,
+                   std::shared_ptr<node> root) {
+    if (root) {
+      __postorder(callback, root->right);
       callback(root);
-      __postorder(callback, root -> left);
+      __postorder(callback, root->left);
     }
   }
 };
@@ -265,6 +294,5 @@ public:
    */
   T operator*() { return elements[index]; }
 };
-
 
 #endif
