@@ -45,21 +45,21 @@ int64_t bin_search(std::vector<T> arr, int64_t left, int64_t right, T x) {
  */
 template <typename T>
 int64_t lower_bound(std::vector<T> arr, int64_t left, int64_t right, T x) {
-  int64_t mid = 0;
-  int64_t result =-1;
+  int64_t result = right, mid =0;
+  --right;
+  
   while (left <= right) {
-    mid = left + (right - left) / 2;
-    if (arr[mid] == x) {
-      result = mid;             // element found, make compression on left
-      right = mid-1;
+        mid = left + (right - left) / 2;
+        if (arr[mid] >= x) {
+            result = mid;
+            //look for smaller index on the left
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1; // look on the right
+        }
     }
-    else if (arr[mid] > x) {
-      right = mid - 1;
-    } else {
-      left = mid + 1;
-    }
-  }
-  return result; // element not found
+    return result;
 }
 
 /**
@@ -73,21 +73,21 @@ int64_t lower_bound(std::vector<T> arr, int64_t left, int64_t right, T x) {
  */
 template <typename T>
 int64_t upper_bound(std::vector<T> arr, int64_t left, int64_t right, T x) {
-  int64_t mid = 0;
-  int64_t result =-1;
+  int64_t result = right,mid =0;
+  --right;
+    
   while (left <= right) {
-    mid = left + (right - left) / 2;
-    if (arr[mid] == x) {
-      result = mid;             // element found, make compression on left
-      left = mid+1;
+        mid = left + (right-left) / 2;
+        if (arr[mid] > x) {
+            result = mid;
+            //look for smaller index on the left
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1; // look on the right
+        }
     }
-    else if (arr[mid] < x) {
-      left = mid+1;
-    } else {
-      right = mid-1;
-    }
-  }
-  return result; // element not found
+    return result;
 }
 
 #endif
