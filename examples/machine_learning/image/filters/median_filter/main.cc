@@ -11,8 +11,7 @@ int main() {
   std::ifstream ifs("data.json");
   json jf = json::parse(ifs);
   std::vector<std::vector<int32_t>> data = jf["img"];
-  Image img(data);
-  std::vector<std::vector<int32_t>> res = apply_median_filter(img);
+  std::vector<std::vector<int32_t>> res = apply_median_filter(data);
   if (res.empty()) {
     cout << "empty" << '\n';
   }

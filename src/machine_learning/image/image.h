@@ -96,6 +96,23 @@ public:
   }
 
   /**
+   * @brief binary function. Check if an image is black and white
+   * 
+   * @return true if the image is black and white
+   * @return false otherwise
+   */
+  bool binary() const {
+    for(int i = 0; i<height; i++){
+      for(int j = 0; j<width; j++){
+        if(!(img[i][j] != 0 || img[i][j] != 255)){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  /**
    * @brief add function
    * adds the img2 to img 
    * @param img2: the image you want to add to the img

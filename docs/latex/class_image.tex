@@ -21,6 +21,8 @@ void \mbox{\hyperlink{class_image_a75f51a29849d86680f6e7548efdc73aa}{set\+\_\+po
 \begin{DoxyCompactList}\small\item\em add\+\_\+2\+\_\+point function \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{class_image_a990cb1a2708a9af67c6b46a90b490aed}{get\+\_\+point}} (const int x, const int y)
 \begin{DoxyCompactList}\small\item\em get\+\_\+point function \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_image_a91a1625610a4bc05aa3b9f161edf57e2}{binary}} () const
+\begin{DoxyCompactList}\small\item\em binary function. Check if an image is black and white \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_ae46a0fc3c5ab7f98cedfc14802509926}{add}} (std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&img2) const
 \begin{DoxyCompactList}\small\item\em add function adds the img2 to img \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_aa3b2dab58f9f49a64c3c8a1349b50e68}{add}} (\mbox{\hyperlink{class_image}{Image}} img2) const
@@ -172,6 +174,21 @@ apply\+\_\+filter2d function
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>} the resulted image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a91a1625610a4bc05aa3b9f161edf57e2}\label{class_image_a91a1625610a4bc05aa3b9f161edf57e2} 
+\index{Image@{Image}!binary@{binary}}
+\index{binary@{binary}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{binary()}{binary()}}
+{\footnotesize\ttfamily bool Image\+::binary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+binary function. Check if an image is black and white 
+
+\begin{DoxyReturn}{Returns}
+true if the image is black and white 
+
+false otherwise 
 \end{DoxyReturn}
 \Hypertarget{class_image_ad70be146565fdfd89e6f061a80f6e348}\label{class_image_ad70be146565fdfd89e6f061a80f6e348} 
 \index{Image@{Image}!get\_2d\_array@{get\_2d\_array}}

@@ -22,50 +22,51 @@
 \DoxyCodeLine{00026\ \ \ \ \ \}}
 \DoxyCodeLine{00027\ \ \ \}}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00035\ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacemedian__filter_a6f572af3819ffeb5135937fb5674b407}{apply\_median\_filter}}(\mbox{\hyperlink{class_image}{Image}}\ img)\{}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ img.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}();}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ img.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}();}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00039\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ mask\ =\ \{\{0,\ 0,\ 0\},\ \{0,\ 0,\ 0\},\ \{0,\ 0,\ 0\}\};}
-\DoxyCodeLine{00040\ \ \ \ \ std::vector<int32\_t>\ values(9,\ 0);}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x<height;\ x++)\{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y<width;\ y++)\{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ mask[1][1]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y);}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0\ \&\&\ y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ mask[0][0]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y);}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ mask[1][0]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ -\/\ 1,\ y);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ mask[0][1]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y\ -\/\ 1);}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height\ \&\&\ y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ mask[2][0]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ +\ 1,\ y\ -\/\ 1);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0\ \&\&\ y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ mask[0][2]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ -\/\ 1,\ y\ +\ 1);}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ mask[1][2]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y\ +\ 1);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height\ \&\&\ y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ mask[2][2]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ +\ 1,\ y\ +\ 1);}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ mask[2][1]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ +\ 1,\ y);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemedian__filter_a782ca650f73271174ed759e535b4cfa6}{set\_values}}(values,\ mask);\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::sort(values.begin(),\ values.end());}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_a75f51a29849d86680f6e7548efdc73aa}{set\_point}}(x,\ y,\ values[5]);}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img.\mbox{\hyperlink{class_image_ad70be146565fdfd89e6f061a80f6e348}{get\_2d\_array}}();}
-\DoxyCodeLine{00074\ \ \ \}}
-\DoxyCodeLine{00075\ \}}
-\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00035\ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacemedian__filter_a318c02434941fc31796b530f1bd8137d}{apply\_median\_filter}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&image)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(image);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ img.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ img.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ mask\ =\ \{\{0,\ 0,\ 0\},\ \{0,\ 0,\ 0\},\ \{0,\ 0,\ 0\}\};}
+\DoxyCodeLine{00041\ \ \ \ \ std::vector<int32\_t>\ values(9,\ 0);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x<height;\ x++)\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y<width;\ y++)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ mask[1][1]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0\ \&\&\ y\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ mask[0][0]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ mask[1][0]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ -\/\ 1,\ y);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ mask[0][1]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y\ -\/\ 1);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height\ \&\&\ y\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ mask[2][0]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ +\ 1,\ y\ -\/\ 1);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0\ \&\&\ y\ +\ 1\ <\ width)\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ mask[0][2]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ -\/\ 1,\ y\ +\ 1);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ mask[1][2]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y\ +\ 1);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height\ \&\&\ y\ +\ 1\ <\ width)\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ mask[2][2]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ +\ 1,\ y\ +\ 1);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ mask[2][1]\ =\ img.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x\ +\ 1,\ y);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemedian__filter_a782ca650f73271174ed759e535b4cfa6}{set\_values}}(values,\ mask);\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::sort(values.begin(),\ values.end());}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_a75f51a29849d86680f6e7548efdc73aa}{set\_point}}(x,\ y,\ values[5]);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img.\mbox{\hyperlink{class_image_ad70be146565fdfd89e6f061a80f6e348}{get\_2d\_array}}();}
+\DoxyCodeLine{00075\ \ \ \}}
+\DoxyCodeLine{00076\ \}}
 \DoxyCodeLine{00077\ }
 \DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -32,7 +32,8 @@ namespace median_filter{
   * @return vector<vector<int32_t> >: the resulted image after applying the 3x3 filter
   *
   */
- std::vector<std::vector<int32_t> > apply_median_filter(Image img){
+ std::vector<std::vector<int32_t> > apply_median_filter(const std::vector<std::vector<int32_t> > &image){
+    Image img(image);
     int height = img._height();
     int width = img._width();
     Image resulted_img(height, width);

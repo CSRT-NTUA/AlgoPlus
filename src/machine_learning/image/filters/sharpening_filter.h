@@ -16,7 +16,8 @@ namespace sharpening_filter{
   * @param img(Class Image): the input image
   * @return vector<vector<int32_t> > : the resulted image after applying the laplacian filter
   */
-  std::vector<std::vector<int32_t> > apply_sharpening_filter(Image img){
+  std::vector<std::vector<int32_t> > apply_sharpening_filter(const std::vector<std::vector<int32_t> > &image){
+    Image img(image);
     int height = img._height();
     int width = img._width();
     Image resulted_img(height, width);
