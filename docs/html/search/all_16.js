@@ -27,7 +27,7 @@ var searchData=
   ['reverse_24',['reverse',['../classdoubly__linked__list.html#aa610759539cd3fc651f7ad950a19adaf',1,'doubly_linked_list::reverse()'],['../classlinked__list.html#a15bc074e7cee3245e603ce2e136c65e1',1,'linked_list::reverse()']]],
   ['reverse_20strong_20_3a_25',['Reverse strong :',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2circular__linked__list.html#autotoc_md64',1,'&lt;strong&gt;reverse&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2doubly__linked__list.html#autotoc_md73',1,'&lt;strong&gt;reverse&lt;/strong&gt;:'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2linked__list.html#autotoc_md90',1,'&lt;strong&gt;reverse&lt;/strong&gt;:']]],
   ['reverse_5fiterator_26',['reverse_iterator',['../classbasic__json.html#aedc059cdae078322bb0d434b2127d1cf',1,'basic_json']]],
-  ['rows_27',['rows',['../class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe',1,'Mat2d']]],
+  ['rows_27',['rows',['../class_mat2d.html#aa463449ec848050798cbed09121eeb87',1,'Mat2d']]],
   ['run_20test_20cases_20strong_28',['&lt;strong&gt;How to run test cases&lt;/strong&gt;',['../index.html#autotoc_md21',1,'']]],
   ['runtests_29',['RunTests',['../struct_catch_1_1_run_tests.html',1,'Catch']]]
 ];

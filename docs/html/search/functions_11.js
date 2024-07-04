@@ -7,5 +7,5 @@ var searchData=
   ['reset_5ffrequency_4',['reset_frequency',['../classfrequency__list.html#a70ad5b8f5abd9e02cc5e96090bf2ca50',1,'frequency_list']]],
   ['retrieve_5',['retrieve',['../classhash__table.html#a29bcecb383e67c1e322ffffda88706db',1,'hash_table']]],
   ['reverse_6',['reverse',['../classdoubly__linked__list.html#aa610759539cd3fc651f7ad950a19adaf',1,'doubly_linked_list::reverse()'],['../classlinked__list.html#a15bc074e7cee3245e603ce2e136c65e1',1,'linked_list::reverse()']]],
-  ['rows_7',['rows',['../class_mat2d.html#a1ccb776f2bbfdac2ac7d01b67068f7fe',1,'Mat2d']]]
+  ['rows_7',['rows',['../class_mat2d.html#aa463449ec848050798cbed09121eeb87',1,'Mat2d']]]
 ];

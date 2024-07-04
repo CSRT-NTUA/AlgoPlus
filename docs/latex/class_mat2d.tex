@@ -26,15 +26,15 @@ class \mbox{\hyperlink{class_mat2d_1_1_iterator}{Iterator}}
 \begin{DoxyCompactList}\small\item\em copy constructor for \doxylink{class_mat2d}{Mat2d} class \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_mat2d}{Mat2d}} \& \mbox{\hyperlink{class_mat2d_ae02c9c8f56d68bf9e59c0294636b311f}{operator=}} (\mbox{\hyperlink{class_mat2d}{Mat2d}} \&mat)
 \begin{DoxyCompactList}\small\item\em operator = for \doxylink{class_mat2d}{Mat2d} class \end{DoxyCompactList}\item 
-T \& \mbox{\hyperlink{class_mat2d_a071dfe4a1201f46444a40f28e1de6912}{operator()}} (size\+\_\+t i, size\+\_\+t j)
+T \& \mbox{\hyperlink{class_mat2d_a3b155613e785146c197eba404b7a995c}{operator()}} (size\+\_\+t i, size\+\_\+t j) const
 \begin{DoxyCompactList}\small\item\em operator (i, j) for \doxylink{class_mat2d}{Mat2d} class \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_mat1d}{Mat1d}}$<$ T, COLS $>$ \& \mbox{\hyperlink{class_mat2d_a7df3d85ab6e27081df44f8d3ff91a4cb}{operator()}} (size\+\_\+t i)
 \begin{DoxyCompactList}\small\item\em operator () for \doxylink{class_mat2d}{Mat2d} class \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{class_mat2d_aab97c9be6c1f663322342a62cd0d5cd2}{size}} ()
+size\+\_\+t \mbox{\hyperlink{class_mat2d_af7e0b3717b4c8fba6a4c83251c9b784a}{size}} () const
 \begin{DoxyCompactList}\small\item\em size function \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{class_mat2d_af7beca0a26147808d2335a39a1aed4d0}{cols}} ()
+size\+\_\+t \mbox{\hyperlink{class_mat2d_a05c6740f53a1a67521aabfccb2a3fe6f}{cols}} () const
 \begin{DoxyCompactList}\small\item\em cols function \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{class_mat2d_a1ccb776f2bbfdac2ac7d01b67068f7fe}{rows}} ()
+size\+\_\+t \mbox{\hyperlink{class_mat2d_aa463449ec848050798cbed09121eeb87}{rows}} () const
 \begin{DoxyCompactList}\small\item\em rows function \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_mat2d_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_mat2d_a3ddd50ed0504d260eb5b092999edf313}{begin}} ()
 \begin{DoxyCompactList}\small\item\em \doxylink{class_mat2d_a3ddd50ed0504d260eb5b092999edf313}{begin()} \doxylink{class_mat2d_1_1_iterator}{Iterator} for \doxylink{class_mat2d}{Mat2d} class \end{DoxyCompactList}\item 
@@ -103,12 +103,12 @@ copy constructor for \doxylink{class_mat2d}{Mat2d} class
 \begin{DoxyReturn}{Returns}
 \doxylink{class_mat2d_1_1_iterator}{Iterator} 
 \end{DoxyReturn}
-\Hypertarget{class_mat2d_af7beca0a26147808d2335a39a1aed4d0}\label{class_mat2d_af7beca0a26147808d2335a39a1aed4d0} 
+\Hypertarget{class_mat2d_a05c6740f53a1a67521aabfccb2a3fe6f}\label{class_mat2d_a05c6740f53a1a67521aabfccb2a3fe6f} 
 \index{Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}!cols@{cols}}
 \index{cols@{cols}!Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}}
 \doxysubsubsection{\texorpdfstring{cols()}{cols()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t ROWS, size\+\_\+t COLS$>$ \\
-size\+\_\+t \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -150,12 +150,12 @@ operator () for \doxylink{class_mat2d}{Mat2d} class
 \begin{DoxyReturn}{Returns}
 std\+::vector$<$\+T$>$ the array of index i 
 \end{DoxyReturn}
-\Hypertarget{class_mat2d_a071dfe4a1201f46444a40f28e1de6912}\label{class_mat2d_a071dfe4a1201f46444a40f28e1de6912} 
+\Hypertarget{class_mat2d_a3b155613e785146c197eba404b7a995c}\label{class_mat2d_a3b155613e785146c197eba404b7a995c} 
 \index{Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t ROWS, size\+\_\+t COLS$>$ \\
-T \& \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+T \& \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -190,12 +190,12 @@ operator = for \doxylink{class_mat2d}{Mat2d} class
 \begin{DoxyReturn}{Returns}
 \doxylink{class_mat2d}{Mat2d}\& 
 \end{DoxyReturn}
-\Hypertarget{class_mat2d_a1ccb776f2bbfdac2ac7d01b67068f7fe}\label{class_mat2d_a1ccb776f2bbfdac2ac7d01b67068f7fe} 
+\Hypertarget{class_mat2d_aa463449ec848050798cbed09121eeb87}\label{class_mat2d_aa463449ec848050798cbed09121eeb87} 
 \index{Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}!rows@{rows}}
 \index{rows@{rows}!Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}}
 \doxysubsubsection{\texorpdfstring{rows()}{rows()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t ROWS, size\+\_\+t COLS$>$ \\
-size\+\_\+t \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -204,12 +204,12 @@ rows function
 \begin{DoxyReturn}{Returns}
 size\+\_\+t the number of elements in each row 
 \end{DoxyReturn}
-\Hypertarget{class_mat2d_aab97c9be6c1f663322342a62cd0d5cd2}\label{class_mat2d_aab97c9be6c1f663322342a62cd0d5cd2} 
+\Hypertarget{class_mat2d_af7e0b3717b4c8fba6a4c83251c9b784a}\label{class_mat2d_af7e0b3717b4c8fba6a4c83251c9b784a} 
 \index{Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}!size@{size}}
 \index{size@{size}!Mat2d$<$ T, ROWS, COLS $>$@{Mat2d$<$ T, ROWS, COLS $>$}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
 {\footnotesize\ttfamily template$<$typename T , size\+\_\+t ROWS, size\+\_\+t COLS$>$ \\
-size\+\_\+t \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{class_mat2d}{Mat2d}}$<$ T, ROWS, COLS $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

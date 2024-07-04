@@ -34,7 +34,7 @@ var searchData=
   ['code_20of_20conduct_31',['Contributor Covenant Code of Conduct',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html',1,'']]],
   ['coding_20class_32',['Mini tutorial for huffman coding class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2huffman__coding.html',1,'']]],
   ['coefficients_20strong_33',['&lt;strong&gt;Get coefficients&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2polynomial__regression.html#autotoc_md122',1,'']]],
-  ['cols_34',['cols',['../class_mat2d.html#af7beca0a26147808d2335a39a1aed4d0',1,'Mat2d']]],
+  ['cols_34',['cols',['../class_mat2d.html#a05c6740f53a1a67521aabfccb2a3fe6f',1,'Mat2d']]],
   ['comment_20my_20code_35',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]],
   ['compute_5fboundaries_36',['compute_boundaries',['../namespacedetail_1_1dtoa__impl.html#a6a5ccf11847aab7a0f42f587b33935df',1,'detail::dtoa_impl']]],
   ['conduct_37',['Contributor Covenant Code of Conduct',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html',1,'']]],
