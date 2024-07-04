@@ -75,9 +75,9 @@ $(function() {
   <div class="headertitle"><div class="title">Mini Tutorial for the frequency_list class</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md73"></a></p><pre class="fragment">1. frequency_list&lt;T&gt; flist; creates an empty frequency list with T type elements.
+<div class="textblock"><p><a class="anchor" id="autotoc_md77"></a></p><pre class="fragment">1. frequency_list&lt;T&gt; flist; creates an empty frequency list with T type elements.
 2. frequency_list&lt;T&gt; flist({1, 2, 3, 4}); creates a frequency list and initializes it with the given values.
-</pre> <h2><a class="anchor" id="autotoc_md74"></a>
+</pre> <h2><a class="anchor" id="autotoc_md78"></a>
 <b>push_back</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>
@@ -87,7 +87,7 @@ $(function() {
 <div class="line">flist.<a class="code hl_function" href="classfrequency__list.html#aaa6570efed6d63daeeda8ca1743d0d68">push_back</a>(13);  <span class="comment">// Inserts 13 to the list.</span></div>
 <div class="ttc" id="aclassfrequency__list_html"><div class="ttname"><a href="classfrequency__list.html">frequency_list</a></div><div class="ttdoc">Self-learning Frequency List that maintains a list of elements in descending order of their frequency...</div><div class="ttdef"><b>Definition</b> frequency_list.h:28</div></div>
 <div class="ttc" id="aclassfrequency__list_html_aaa6570efed6d63daeeda8ca1743d0d68"><div class="ttname"><a href="classfrequency__list.html#aaa6570efed6d63daeeda8ca1743d0d68">frequency_list::push_back</a></div><div class="ttdeci">void push_back(T data)</div><div class="ttdoc">Adds an element to the back of the frequency list.</div><div class="ttdef"><b>Definition</b> frequency_list.h:383</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md75"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
 <b>push_front</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>
@@ -95,7 +95,7 @@ $(function() {
 <div class="line">flist.<a class="code hl_function" href="classfrequency__list.html#a1eb001ee71276afe20e2b71bef50682e">push_front</a>(7);  <span class="comment">// Inserts 7 to the front of the list.</span></div>
 <div class="line">flist.<a class="code hl_function" href="classfrequency__list.html#a1eb001ee71276afe20e2b71bef50682e">push_front</a>(2);  <span class="comment">// Inserts 2 to the front of the list.</span></div>
 <div class="ttc" id="aclassfrequency__list_html_a1eb001ee71276afe20e2b71bef50682e"><div class="ttname"><a href="classfrequency__list.html#a1eb001ee71276afe20e2b71bef50682e">frequency_list::push_front</a></div><div class="ttdeci">void push_front(T data)</div><div class="ttdoc">Adds an element to the front of the frequency list.</div><div class="ttdef"><b>Definition</b> frequency_list.h:293</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
 <b>search</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Element 5 found in the list&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassfrequency__list_html_a64e768e3b3bd8fcb3b00ca6020dda07a"><div class="ttname"><a href="classfrequency__list.html#a64e768e3b3bd8fcb3b00ca6020dda07a">frequency_list::search</a></div><div class="ttdeci">bool search(T key)</div><div class="ttdoc">Searches for a given key in the frequency list.</div><div class="ttdef"><b>Definition</b> frequency_list.h:366</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
 <b>get_frequency</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>
@@ -119,7 +119,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> freq = flist.<a class="code hl_function" href="classfrequency__list.html#a2b6e523e09744bac89657803d9984d34">get_frequency</a>(10); <span class="comment">// Returns the frequency of 10</span></div>
 <div class="ttc" id="aclassfrequency__list_html_a2b6e523e09744bac89657803d9984d34"><div class="ttname"><a href="classfrequency__list.html#a2b6e523e09744bac89657803d9984d34">frequency_list::get_frequency</a></div><div class="ttdeci">int64_t get_frequency(T key)</div><div class="ttdoc">Gets the frequency of a key in the frequency list.</div><div class="ttdef"><b>Definition</b> frequency_list.h:351</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md82"></a>
 <b>erase</b>:</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>
@@ -130,7 +130,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">flist.<a class="code hl_function" href="classfrequency__list.html#a28e06d771a5e94b17abff407ddb4bb82">erase</a>(13);  <span class="comment">// Removes 13 from the list.</span></div>
 <div class="ttc" id="aclassfrequency__list_html_a28e06d771a5e94b17abff407ddb4bb82"><div class="ttname"><a href="classfrequency__list.html#a28e06d771a5e94b17abff407ddb4bb82">frequency_list::erase</a></div><div class="ttdeci">void erase(T key)</div><div class="ttdoc">Removes the first occurrence of a given key in the frequency list.</div><div class="ttdef"><b>Definition</b> frequency_list.h:320</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
 <b>empty</b></h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>
@@ -140,7 +140,7 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;The list is empty.&quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassfrequency__list_html_a19591103ff1fb820f19d5f7afe0959d5"><div class="ttname"><a href="classfrequency__list.html#a19591103ff1fb820f19d5f7afe0959d5">frequency_list::empty</a></div><div class="ttdeci">bool empty()</div><div class="ttdoc">Checks if the frequency list is empty.</div><div class="ttdef"><b>Definition</b> frequency_list.h:139</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md84"></a>
 <b>Iterator</b></h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;frequency_list.h&quot;</span></div>
 <div class="line"> </div>

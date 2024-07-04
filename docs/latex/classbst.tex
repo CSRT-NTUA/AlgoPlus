@@ -44,8 +44,16 @@ std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_a4c3359b500e074fce8d1f3eae21dfd
 \begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classbst_a60575db4d925e7f08202549df73d0d9b}{postorder}} ()
 \begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classbst_ab9768cfd3f234e31558ccc1a283a1ed4}{level\+\_\+order}} ()
+\begin{DoxyCompactList}\small\item\em level order function \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbst_a0198118bc2eb3d58607ce6acadb770a6}{visualize}} ()
 \begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classbst_a2366bf064084a61835ca523cd0b7ff4e}\label{classbst_a2366bf064084a61835ca523cd0b7ff4e} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&out, \mbox{\hyperlink{classbst}{bst}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for bst class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -147,6 +155,20 @@ insert function.
 {\em key} & key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classbst_ab9768cfd3f234e31558ccc1a283a1ed4}\label{classbst_ab9768cfd3f234e31558ccc1a283a1ed4} 
+\index{bst$<$ T $>$@{bst$<$ T $>$}!level\_order@{level\_order}}
+\index{level\_order@{level\_order}!bst$<$ T $>$@{bst$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{level\_order()}{level\_order()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classbst}{bst}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+level order function 
+
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\+T$>$$>$, the level order traversal of the tree 
+\end{DoxyReturn}
 \Hypertarget{classbst_a8d1fb0829946f59b93a261ffdb8d044d}\label{classbst_a8d1fb0829946f59b93a261ffdb8d044d} 
 \index{bst$<$ T $>$@{bst$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!bst$<$ T $>$@{bst$<$ T $>$}}

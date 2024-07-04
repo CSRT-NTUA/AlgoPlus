@@ -137,16 +137,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <tr class="memitem:ad9fdedfea81952b61fb60b966849d911" id="r_ad9fdedfea81952b61fb60b966849d911"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; T, T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9fdedfea81952b61fb60b966849d911">postorder</a> ()</td></tr>
 <tr class="memdesc:ad9fdedfea81952b61fb60b966849d911"><td class="mdescLeft">&#160;</td><td class="mdescRight">postorder function.  <br /></td></tr>
 <tr class="separator:ad9fdedfea81952b61fb60b966849d911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11316641338b91307a0d777b55964a24" id="r_a11316641338b91307a0d777b55964a24"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; T, T &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11316641338b91307a0d777b55964a24">level_order</a> ()</td></tr>
+<tr class="memdesc:a11316641338b91307a0d777b55964a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">level order function.  <br /></td></tr>
+<tr class="separator:a11316641338b91307a0d777b55964a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0fc69adeddfe24e3c08c315aae9137" id="r_aae0fc69adeddfe24e3c08c315aae9137"><td class="memItemLeft" align="right" valign="top"><a id="aae0fc69adeddfe24e3c08c315aae9137" name="aae0fc69adeddfe24e3c08c315aae9137"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>visualize</b> ()</td></tr>
 <tr class="separator:aae0fc69adeddfe24e3c08c315aae9137"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a9ec9c06e600dc687b3ec921559634fb9" id="r_a9ec9c06e600dc687b3ec921559634fb9"><td class="memItemLeft" align="right" valign="top"><a id="a9ec9c06e600dc687b3ec921559634fb9" name="a9ec9c06e600dc687b3ec921559634fb9"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, <a class="el" href="classinterval__tree.html">interval_tree</a>&lt; T &gt; &amp;t)</td></tr>
-<tr class="memdesc:a9ec9c06e600dc687b3ec921559634fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;&lt; operator for <a class="el" href="classinterval__tree.html" title="interval tree class">interval_tree</a> class. <br /></td></tr>
-<tr class="separator:a9ec9c06e600dc687b3ec921559634fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59fbcb3841f451597a2157e49e211529" id="r_a59fbcb3841f451597a2157e49e211529"><td class="memItemLeft" align="right" valign="top"><a id="a59fbcb3841f451597a2157e49e211529" name="a59fbcb3841f451597a2157e49e211529"></a>
+ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;out, <a class="el" href="classinterval__tree.html">interval_tree</a>&lt; T &gt; &amp;t)</td></tr>
+<tr class="memdesc:a59fbcb3841f451597a2157e49e211529"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;&lt; for interval tree class <br /></td></tr>
+<tr class="separator:a59fbcb3841f451597a2157e49e211529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -345,6 +348,36 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a11316641338b91307a0d777b55964a24" name="a11316641338b91307a0d777b55964a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11316641338b91307a0d777b55964a24">&#9670;&#160;</a></span>level_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; T, T &gt; &gt; &gt; <a class="el" href="classinterval__tree.html">interval_tree</a>&lt; T &gt;::level_order </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>level order function. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;pair&lt;T, T&gt;&gt;, the level order traversal of the tree </dd></dl>
 
 </div>
 </div>

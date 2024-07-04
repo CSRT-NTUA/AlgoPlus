@@ -75,6 +75,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classsplay__tree-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">splay_tree&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -133,9 +134,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <tr class="memitem:a0a344c13f06a9f9666d8225264897553" id="r_a0a344c13f06a9f9666d8225264897553"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a344c13f06a9f9666d8225264897553">postorder</a> ()</td></tr>
 <tr class="memdesc:a0a344c13f06a9f9666d8225264897553"><td class="mdescLeft">&#160;</td><td class="mdescRight">postorder function.  <br /></td></tr>
 <tr class="separator:a0a344c13f06a9f9666d8225264897553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1563389efc44838d96fcbf1302e7bf10" id="r_a1563389efc44838d96fcbf1302e7bf10"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1563389efc44838d96fcbf1302e7bf10">level_order</a> ()</td></tr>
+<tr class="memdesc:a1563389efc44838d96fcbf1302e7bf10"><td class="mdescLeft">&#160;</td><td class="mdescRight">level order function  <br /></td></tr>
+<tr class="separator:a1563389efc44838d96fcbf1302e7bf10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf366c059ecbece708bd23db98ce94c0" id="r_adf366c059ecbece708bd23db98ce94c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf366c059ecbece708bd23db98ce94c0">visualize</a> ()</td></tr>
 <tr class="memdesc:adf366c059ecbece708bd23db98ce94c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">visualize function  <br /></td></tr>
 <tr class="separator:adf366c059ecbece708bd23db98ce94c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4aa8ac953ded6034d002a27f2f9b43ce" id="r_a4aa8ac953ded6034d002a27f2f9b43ce"><td class="memItemLeft" align="right" valign="top"><a id="a4aa8ac953ded6034d002a27f2f9b43ce" name="a4aa8ac953ded6034d002a27f2f9b43ce"></a>
+ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;out, <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt; &amp;t)</td></tr>
+<tr class="memdesc:a4aa8ac953ded6034d002a27f2f9b43ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;&lt; for splay tree class <br /></td></tr>
+<tr class="separator:a4aa8ac953ded6034d002a27f2f9b43ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -274,6 +285,36 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a1563389efc44838d96fcbf1302e7bf10" name="a1563389efc44838d96fcbf1302e7bf10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1563389efc44838d96fcbf1302e7bf10">&#9670;&#160;</a></span>level_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; T &gt; &gt; <a class="el" href="classsplay__tree.html">splay_tree</a>&lt; T &gt;::level_order </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>level order function </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;vector&lt;T&gt;&gt;, the level order traversal of the tree </dd></dl>
 
 </div>
 </div>

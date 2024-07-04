@@ -46,15 +46,17 @@ std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ \mbox{\hyperlink{classinterval__tre
 \begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ \mbox{\hyperlink{classinterval__tree_ad9fdedfea81952b61fb60b966849d911}{postorder}} ()
 \begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ $>$ \mbox{\hyperlink{classinterval__tree_a11316641338b91307a0d777b55964a24}{level\+\_\+order}} ()
+\begin{DoxyCompactList}\small\item\em level order function. \end{DoxyCompactList}\item 
 \Hypertarget{classinterval__tree_aae0fc69adeddfe24e3c08c315aae9137}\label{classinterval__tree_aae0fc69adeddfe24e3c08c315aae9137} 
 void {\bfseries visualize} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classinterval__tree_a9ec9c06e600dc687b3ec921559634fb9}\label{classinterval__tree_a9ec9c06e600dc687b3ec921559634fb9} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$ \&t)
-\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator for \doxylink{classinterval__tree}{interval\+\_\+tree} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{classinterval__tree_a59fbcb3841f451597a2157e49e211529}\label{classinterval__tree_a59fbcb3841f451597a2157e49e211529} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&out, \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for interval tree class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -156,6 +158,20 @@ insert function.
 {\em p} & interval to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classinterval__tree_a11316641338b91307a0d777b55964a24}\label{classinterval__tree_a11316641338b91307a0d777b55964a24} 
+\index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!level\_order@{level\_order}}
+\index{level\_order@{level\_order}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{level\_order()}{level\_order()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ T, T $>$ $>$ $>$ \mbox{\hyperlink{classinterval__tree}{interval\+\_\+tree}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+level order function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$pair$<$\+T, T$>$$>$, the level order traversal of the tree 
+\end{DoxyReturn}
 \Hypertarget{classinterval__tree_aaedefbcd20cca4389fb4e1bbd82fc15e}\label{classinterval__tree_aaedefbcd20cca4389fb4e1bbd82fc15e} 
 \index{interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!interval\_tree$<$ T $>$@{interval\_tree$<$ T $>$}}

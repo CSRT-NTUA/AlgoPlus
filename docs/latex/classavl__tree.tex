@@ -47,8 +47,16 @@ std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree_a8b6368356a04a58f29b1f56f
 \begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classavl__tree_a82a19335d79d5f6928369635278c1c24}{postorder}} ()
 \begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classavl__tree_ab139b35985a741d7834ef1e356c5f18f}{level\+\_\+order}} ()
+\begin{DoxyCompactList}\small\item\em level order function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classavl__tree_a517f38f7f770647b80322fc7cd1192af}{visualize}} ()
 \begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classavl__tree_abe65b6fb7200651bba6f6bfe22f62b58}\label{classavl__tree_abe65b6fb7200651bba6f6bfe22f62b58} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&out, \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for \doxylink{classavl__tree}{avl\+\_\+tree} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -150,6 +158,20 @@ insert function.
 {\em key} & key to be inserted. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classavl__tree_ab139b35985a741d7834ef1e356c5f18f}\label{classavl__tree_ab139b35985a741d7834ef1e356c5f18f} 
+\index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!level\_order@{level\_order}}
+\index{level\_order@{level\_order}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{level\_order()}{level\_order()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classavl__tree}{avl\+\_\+tree}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+level order function. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$, the level order traversal of the tree 
+\end{DoxyReturn}
 \Hypertarget{classavl__tree_a7170cb4310ced0ab7d002efba16fc32f}\label{classavl__tree_a7170cb4310ced0ab7d002efba16fc32f} 
 \index{avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!avl\_tree$<$ T $>$@{avl\_tree$<$ T $>$}}

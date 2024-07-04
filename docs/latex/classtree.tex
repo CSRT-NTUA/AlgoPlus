@@ -34,7 +34,15 @@ std\+::vector$<$ T $>$ \mbox{\hyperlink{classtree_a615053f451255036e64d7021faff9
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classtree_a1f3f031770fcf1490f2a8a56d8573c72}{postorder}} ()
 \begin{DoxyCompactList}\small\item\em postorder function \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classtree_a63caa8ece1a8503f591e60dd48bde102}{preorder}} ()
-\begin{DoxyCompactList}\small\item\em preorder function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em preorder function \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classtree_a5d18c70b1377d47b133104cd178a48e9}{level\+\_\+order}} ()
+\begin{DoxyCompactList}\small\item\em level order function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtree_a6f8da6eb21a892f7c7b2b93380e29da2}\label{classtree_a6f8da6eb21a892f7c7b2b93380e29da2} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&out, \mbox{\hyperlink{classtree}{tree}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for bst class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -94,6 +102,20 @@ insert function
 {\em info} & the value of the new node \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classtree_a5d18c70b1377d47b133104cd178a48e9}\label{classtree_a5d18c70b1377d47b133104cd178a48e9} 
+\index{tree$<$ T $>$@{tree$<$ T $>$}!level\_order@{level\_order}}
+\index{level\_order@{level\_order}!tree$<$ T $>$@{tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{level\_order()}{level\_order()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classtree}{tree}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+level order function 
+
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\+T$>$$>$\+: the level order traversal of the tree 
+\end{DoxyReturn}
 \Hypertarget{classtree_a1f3f031770fcf1490f2a8a56d8573c72}\label{classtree_a1f3f031770fcf1490f2a8a56d8573c72} 
 \index{tree$<$ T $>$@{tree$<$ T $>$}!postorder@{postorder}}
 \index{postorder@{postorder}!tree$<$ T $>$@{tree$<$ T $>$}}

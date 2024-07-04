@@ -46,8 +46,16 @@ std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a8c943a8d38b1e57f8e4568
 \begin{DoxyCompactList}\small\item\em preorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a0a344c13f06a9f9666d8225264897553}{postorder}} ()
 \begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10}{level\+\_\+order}} ()
+\begin{DoxyCompactList}\small\item\em level order function \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}{visualize}} ()
 \begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsplay__tree_a4aa8ac953ded6034d002a27f2f9b43ce}\label{classsplay__tree_a4aa8ac953ded6034d002a27f2f9b43ce} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&out, \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for splay tree class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -121,6 +129,20 @@ insert function
 {\em key} & the key to be inserted \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10}\label{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10} 
+\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!level\_order@{level\_order}}
+\index{level\_order@{level\_order}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{level\_order()}{level\_order()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+level order function 
+
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\+T$>$$>$, the level order traversal of the tree 
+\end{DoxyReturn}
 \Hypertarget{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e}\label{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e} 
 \index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}

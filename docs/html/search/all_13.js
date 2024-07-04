@@ -2,11 +2,11 @@ var searchData=
 [
   ['name_5fseparator_0',['name_separator',['../classdetail_1_1lexer__base.html#add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a',1,'detail::lexer_base']]],
   ['nameandtags_1',['NameAndTags',['../struct_catch_1_1_name_and_tags.html',1,'Catch']]],
-  ['namespace_2',['namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2edge__detection.html',1,'Mini tutorial for edge detection namespace'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2median__filter.html',1,'Mini tutorial for median filter namespace']]],
+  ['namespace_2',['namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2edge__detection.html',1,'Mini tutorial for edge detection namespace'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2median__filter.html',1,'Mini tutorial for median filter namespace'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2sharpening__filter.html',1,'Mini tutorial for sharpening filter namespace']]],
   ['negation_3',['negation',['../structdetail_1_1negation.html',1,'detail']]],
   ['new_20class_20strong_4',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md14',1,'']]],
   ['nextid_5',['nextId',['../class_d_b_s_c_a_n.html#a905021a89af288a06f9fcb7dbe935c75',1,'DBSCAN']]],
-  ['noise_20with_20dbscan_20clustering_3a_20strong_20_3a_6',['&lt;strong&gt;Get noise with DBSCAN clustering:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html#autotoc_md27',1,'']]],
+  ['noise_20with_20dbscan_20clustering_3a_20strong_20_3a_6',['&lt;strong&gt;Get noise with DBSCAN clustering:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html#autotoc_md28',1,'']]],
   ['noncopyable_7',['NonCopyable',['../class_catch_1_1_non_copyable.html',1,'Catch']]],
   ['nonesuch_8',['nonesuch',['../structdetail_1_1nonesuch.html',1,'detail']]],
   ['normalize_9',['normalize',['../structdetail_1_1dtoa__impl_1_1diyfp.html#a5bad735c2cb50b194938a8a89b82f6ed',1,'detail::dtoa_impl::diyfp']]],
