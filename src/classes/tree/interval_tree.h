@@ -210,19 +210,20 @@ public:
   }
 
   /**
-   *@brief << operator for interval_tree class.
+   * @brief operator << for interval tree class
    */
-  friend std::ostream &operator<<(std::ostream &out, interval_tree<T> &t) {
-    if (!t.root) {
-      out << "";
-      return out;
+  friend ostream & operator << (ostream &out, interval_tree<T> &t){
+    std::vector<std::vector<std::pair<T, T> > > order = t.level_order();
+    for(std::vector<std::pair<T, T> > & x : order){
+      for(size_t i = 0; i < x.size(); i++){
+        if(i != x.size() - 1){
+          out << '[' << x[i].first << "," << x[i].second << ']' << ", ";
+        }
+        else{
+          out << '[' << x[i].first << "," << x[i].second << ']' << '\n';
+        }
+      }
     }
-    out << '"';
-    std::vector<std::pair<T, T>> __inorder = t.inorder();
-    for (auto &x : __inorder) {
-      out << '"' << x.first << ' ' << x.second << '"' << " ";
-    }
-    out << '"';
     return out;
   }
 

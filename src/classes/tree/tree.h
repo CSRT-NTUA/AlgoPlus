@@ -3,6 +3,7 @@
 #define TREE_H
 
 #ifdef __cplusplus
+#include "../../visualization/tree_visual/tree_visualization.h"
 #include <functional>
 #include <iostream>
 #include <queue>
@@ -176,6 +177,24 @@ public:
       path.push_back(level);
     }
     return path;
+  }
+
+  /**
+   * @brief operator << for bst class
+   */
+  friend ostream & operator << (ostream &out, tree<T> &t){
+    std::vector<std::vector<T> > order = t.level_order();
+    for(std::vector<T> & x : order){
+      for(size_t i = 0; i < x.size(); i++){
+        if(i != x.size() - 1){
+          out << x[i] << ", ";
+        }
+        else{
+          out << x[i] << '\n';
+        }
+      }
+    }
+    return out;
   }
 
 private:
