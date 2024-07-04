@@ -28,6 +28,9 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
+    - name: Build for clang-tidy
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
     - name: Run clang-tidy with --fix
       run: cmake --build build --target run-clang-tidy
 
