@@ -109,3 +109,20 @@ TEST_CASE("testing operator = for splay tree class") {
   REQUIRE(s.inorder() == s2.inorder());
   REQUIRE(s.preorder() == s2.preorder());
 }
+
+TEST_CASE("testing level order for splay tree"){
+  splay_tree<int> t;
+  t.insert(5);
+  t.insert(1);
+  t.insert(2);
+  t.insert(3);
+  t.insert(6);
+  t.insert(8);
+  t.insert(7);
+  t.insert(10);
+  t.insert(9);
+  t.insert(4);
+  std::vector<std::vector<int>> produced = t.levelorder();
+  std::vector<std::vector<int>> sol = {{4}, {3,8}, {2,6,9}, {1,5,7,10}};
+  REQUIRE(produced==sol);
+}

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <queue>
 #endif
 
 /**
@@ -165,6 +166,34 @@ public:
           path.push_back(callbacked->info);
         },
         root);
+    return path;
+  }
+
+    /**
+   * @brief level order function
+   * @return vector<vector<T>>, the elements level ordered.
+   */
+  std::vector<std::vector<T>> levelorder() {
+    std::vector<std::vector<T>> path;
+    std::queue<std::shared_ptr<node>> q;
+    q.push(root);
+    while(!q.empty()){
+      size_t size = q.size();
+      std::vector<T> level;
+      while(size > 0){
+        size -= 1;
+        std::shared_ptr<node> current = q.front();
+        q.pop();
+        level.push_back(current->info);
+        if(current->left){
+          q.push(current->left);
+        }
+        if(current->right){
+          q.push(current->right);
+        }
+      }
+      path.push_back(level);
+    }
     return path;
   }
 

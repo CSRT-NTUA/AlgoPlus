@@ -65,3 +65,17 @@ TEST_CASE("testing operator = for interval tree class") {
   REQUIRE(i.inorder() == i2.inorder());
   REQUIRE(i.preorder() == i2.preorder());
 }
+
+TEST_CASE("testing level order in interval tree"){
+  interval_tree<int> t;
+  t.insert({15,20});
+  t.insert({8,13});
+  t.insert({1,20});
+  t.insert({12,15});
+  t.insert({19,30});
+  t.insert({17,19});
+  t.insert({22,25});
+  std::vector<std::vector<std::pair<int,int>>> produced = t.levelorder();
+  std::vector<std::vector<std::pair<int,int>>> sol = {{{15,20}}, {{8,13}, {19,30}}, {{1,20}, {12,15}, {17,19}, {22,25}}};
+  REQUIRE(produced==sol);
+}
