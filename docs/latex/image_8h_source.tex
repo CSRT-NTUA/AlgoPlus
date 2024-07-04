@@ -55,123 +55,134 @@
 \DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ img[x][y];}
 \DoxyCodeLine{00096\ \ \ \}}
 \DoxyCodeLine{00097\ }
-\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_ae46a0fc3c5ab7f98cedfc14802509926}{add}}(std::vector<std::vector<int32\_t>\ >\ \&img2)\textcolor{keyword}{\ const\ }\{\ \ }
-\DoxyCodeLine{00105\ \ \ \ \ assert(!img2.empty());}
-\DoxyCodeLine{00106\ \ \ \ \ assert(img2.size()\ ==\ img.size());}
-\DoxyCodeLine{00107\ \ \ \ \ assert(img2[0].size()\ ==\ img[0].size());}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ +\ img2[x][y]);}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00114\ \ \ \ \ \}}
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00116\ \ \ \}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_aa3b2dab58f9f49a64c3c8a1349b50e68}{add}}(\mbox{\hyperlink{class_image}{Image}}\ img2)\textcolor{keyword}{\ const\ }\{\ \ }
-\DoxyCodeLine{00125\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}()\ ==\ img.size());}
-\DoxyCodeLine{00126\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}()\ ==\ img[0].size());}
-\DoxyCodeLine{00127\ \ \ }
-\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ +\ img2.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y));}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \}}
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00135\ \ \ \}}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00143\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_ae998c80337bc8941c914e5209df97bb3}{sub}}(std::vector<std::vector<int32\_t>\ >\ \&img2)\textcolor{keyword}{\ const\ }\{\ \ }
-\DoxyCodeLine{00144\ \ \ \ \ assert(!img2.empty());}
-\DoxyCodeLine{00145\ \ \ \ \ assert(img2.size()\ ==\ img.size());}
-\DoxyCodeLine{00146\ \ \ \ \ assert(img2[0].size()\ ==\ img[0].size());}
-\DoxyCodeLine{00147\ \ \ }
-\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ -\/\ img2[x][y]);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ \ \ \ \ \}}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00155\ \ \ \}}
-\DoxyCodeLine{00156\ }
-\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a2f4635f1d0e7d8a11e7d4d10db18ed6c}{sub}}(\mbox{\hyperlink{class_image}{Image}}\ img2)\textcolor{keyword}{\ const\ }\{\ \ }
-\DoxyCodeLine{00164\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}()\ ==\ img.size());}
-\DoxyCodeLine{00165\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}()\ ==\ img[0].size());}
-\DoxyCodeLine{00166\ }
-\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ -\/\ img2.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y));}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00172\ \ \ \ \ \}}
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00174\ \ \ \}}
-\DoxyCodeLine{00175\ \ \ }
-\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(std::vector<std::vector<int32\_t>\ >\ \&img2)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00183\ \ \ \ \ assert(!img2.empty());}
-\DoxyCodeLine{00184\ \ \ \ \ assert(img2.size()\ ==\ img.size());}
-\DoxyCodeLine{00185\ \ \ \ \ assert(img2[0].size()\ ==\ img[0].size());}
-\DoxyCodeLine{00186\ \ \ \ \ }
-\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]*img2[x][y]);}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ \ \ \ \ \}}
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00194\ \ \ \}}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00202\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a1af53349d893161a56a03e1b89eed0f9}{mul}}(\mbox{\hyperlink{class_image}{Image}}\ img2)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00203\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}()\ ==\ img.size());}
-\DoxyCodeLine{00204\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}()\ ==\ img[0].size());}
-\DoxyCodeLine{00205\ \ \ }
-\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]*img2.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y));}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00211\ \ \ \ \ \}}
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00213\ \ \ \}}
-\DoxyCodeLine{00214\ }
-\DoxyCodeLine{00215\ }
-\DoxyCodeLine{00221\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(std::vector<std::vector<int32\_t>\ >\ \&filter)\textcolor{keyword}{\ const}\{}
-\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x<height;\ x++)\{}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y<width;\ y++)\{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]*filter[1][1]);}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y\ -\/\ 1]*filter[1][0]);}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y\ +\ 1]*filter[1][2]);}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ +\ 1][y\ +\ 1]*filter[2][2]);}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ -\/\ 1][y]*filter[0][1]);}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ -\/\ 1][y\ +\ 1]*filter[0][2]);}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ -\/\ 1][y\ -\/\ 1]*filter[0][0]);}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ +\ 1][y]*filter[2][1]);}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ +\ 1][y\ -\/\ 1]*filter[2][0]);}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00251\ \ \ \ \ \}}
-\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
-\DoxyCodeLine{00253\ \ \ \}}
-\DoxyCodeLine{00254\ \};}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_image_a91a1625610a4bc05aa3b9f161edf57e2}{binary}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<height;\ i++)\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<width;\ j++)\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!(img[i][j]\ !=\ 0\ ||\ img[i][j]\ !=\ 255))\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_ae46a0fc3c5ab7f98cedfc14802509926}{add}}(std::vector<std::vector<int32\_t>\ >\ \&img2)\textcolor{keyword}{\ const\ }\{\ \ }
+\DoxyCodeLine{00122\ \ \ \ \ assert(!img2.empty());}
+\DoxyCodeLine{00123\ \ \ \ \ assert(img2.size()\ ==\ img.size());}
+\DoxyCodeLine{00124\ \ \ \ \ assert(img2[0].size()\ ==\ img[0].size());}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ +\ img2[x][y]);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00133\ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00141\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_aa3b2dab58f9f49a64c3c8a1349b50e68}{add}}(\mbox{\hyperlink{class_image}{Image}}\ img2)\textcolor{keyword}{\ const\ }\{\ \ }
+\DoxyCodeLine{00142\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}()\ ==\ img.size());}
+\DoxyCodeLine{00143\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}()\ ==\ img[0].size());}
+\DoxyCodeLine{00144\ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ +\ img2.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y));}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00152\ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00160\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_ae998c80337bc8941c914e5209df97bb3}{sub}}(std::vector<std::vector<int32\_t>\ >\ \&img2)\textcolor{keyword}{\ const\ }\{\ \ }
+\DoxyCodeLine{00161\ \ \ \ \ assert(!img2.empty());}
+\DoxyCodeLine{00162\ \ \ \ \ assert(img2.size()\ ==\ img.size());}
+\DoxyCodeLine{00163\ \ \ \ \ assert(img2[0].size()\ ==\ img[0].size());}
+\DoxyCodeLine{00164\ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ -\/\ img2[x][y]);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00172\ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a2f4635f1d0e7d8a11e7d4d10db18ed6c}{sub}}(\mbox{\hyperlink{class_image}{Image}}\ img2)\textcolor{keyword}{\ const\ }\{\ \ }
+\DoxyCodeLine{00181\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}()\ ==\ img.size());}
+\DoxyCodeLine{00182\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}()\ ==\ img[0].size());}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]\ -\/\ img2.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y));}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00191\ \ \ \}}
+\DoxyCodeLine{00192\ \ \ }
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(std::vector<std::vector<int32\_t>\ >\ \&img2)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00200\ \ \ \ \ assert(!img2.empty());}
+\DoxyCodeLine{00201\ \ \ \ \ assert(img2.size()\ ==\ img.size());}
+\DoxyCodeLine{00202\ \ \ \ \ assert(img2[0].size()\ ==\ img[0].size());}
+\DoxyCodeLine{00203\ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]*img2[x][y]);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00211\ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00219\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a1af53349d893161a56a03e1b89eed0f9}{mul}}(\mbox{\hyperlink{class_image}{Image}}\ img2)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00220\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}()\ ==\ img.size());}
+\DoxyCodeLine{00221\ \ \ \ \ assert(img2.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}()\ ==\ img[0].size());}
+\DoxyCodeLine{00222\ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ height;\ x++)\{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ width;\ y++)\{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]*img2.\mbox{\hyperlink{class_image_a622b4c33bd14c5cd20d688f22a81fef4}{get\_point}}(x,\ y));}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00230\ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00238\ \ \ \mbox{\hyperlink{class_image}{Image}}\ \mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(std::vector<std::vector<int32\_t>\ >\ \&filter)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ resulted\_img(height,\ width);}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ x\ =\ 0;\ x<height;\ x++)\{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ y\ =\ 0;\ y<width;\ y++)\{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y]*filter[1][1]);}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y\ -\/\ 1]*filter[1][0]);}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x][y\ +\ 1]*filter[1][2]);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ +\ 1][y\ +\ 1]*filter[2][2]);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ -\/\ 1][y]*filter[0][1]);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ +\ 1\ <\ width)\{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ -\/\ 1][y\ +\ 1]*filter[0][2]);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ -\/\ 1][y\ -\/\ 1]*filter[0][0]);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ +\ 1\ <\ height)\{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ +\ 1][y]*filter[2][1]);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(y\ -\/\ 1\ >=\ 0)\{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ resulted\_img.\mbox{\hyperlink{class_image_aaeae286b25120ded439611b04bae3425}{add\_2\_point}}(x,\ y,\ img[x\ +\ 1][y\ -\/\ 1]*filter[2][0]);}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{return}\ resulted\_img;}
+\DoxyCodeLine{00270\ \ \ \}}
+\DoxyCodeLine{00271\ \};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

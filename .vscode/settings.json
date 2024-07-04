@@ -69,6 +69,7 @@
     "thread": "cpp",
     "random": "cpp",
     "list": "cpp",
-    "memory": "cpp"
-  }
+    "memory": "cpp",
+  },
+  "editor.language.colorizedBracketPairs": []
 }

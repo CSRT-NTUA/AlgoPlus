@@ -108,53 +108,54 @@ $(function() { codefold.init(0); });
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacemedian__filter.html#a6f572af3819ffeb5135937fb5674b407">   35</a></span> std::vector&lt;std::vector&lt;int32_t&gt; &gt; <a class="code hl_function" href="namespacemedian__filter.html#a6f572af3819ffeb5135937fb5674b407">apply_median_filter</a>(<a class="code hl_class" href="class_image.html">Image</a> img){</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> height = img.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> width = img.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::vector&lt;std::vector&lt;int32_t&gt; &gt; mask = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::vector&lt;int32_t&gt; values(9, 0);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x&lt;height; x++){</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y&lt;width; y++){</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        mask[1][1] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0 &amp;&amp; y - 1 &gt;= 0){</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          mask[0][0] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0){</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          mask[1][0] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x - 1, y);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          mask[0][1] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y - 1);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>(x + 1 &lt; height &amp;&amp; y - 1 &gt;= 0){</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          mask[2][0] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x + 1, y - 1);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0 &amp;&amp; y + 1 &lt; width){</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          mask[0][2] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x - 1, y + 1);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span>(y + 1 &lt; width){</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          mask[1][2] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y + 1);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span>(x + 1 &lt; height &amp;&amp; y + 1 &lt; width){</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          mask[2][2] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x + 1, y + 1);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span>(x + 1 &lt; height){</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          mask[2][1] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x + 1, y);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_function" href="namespacemedian__filter.html#a782ca650f73271174ed759e535b4cfa6">set_values</a>(values, mask); </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        std::sort(values.begin(), values.end());</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        resulted_img.<a class="code hl_function" href="class_image.html#a75f51a29849d86680f6e7548efdc73aa">set_point</a>(x, y, values[5]);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> resulted_img.<a class="code hl_function" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">get_2d_array</a>();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacemedian__filter.html#a318c02434941fc31796b530f1bd8137d">   35</a></span> std::vector&lt;std::vector&lt;int32_t&gt; &gt; <a class="code hl_function" href="namespacemedian__filter.html#a318c02434941fc31796b530f1bd8137d">apply_median_filter</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int32_t&gt; &gt; &amp;image){</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="class_image.html">Image</a> img(image);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> height = img.<a class="code hl_function" href="class_image.html#af90d355112add3631a0b0f8cccffdb95">_height</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">int</span> width = img.<a class="code hl_function" href="class_image.html#a685b99decee477e0889511335a0ba167">_width</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_image.html">Image</a> resulted_img(height, width);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::vector&lt;std::vector&lt;int32_t&gt; &gt; mask = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::vector&lt;int32_t&gt; values(9, 0);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x&lt;height; x++){</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y = 0; y&lt;width; y++){</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        mask[1][1] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0 &amp;&amp; y - 1 &gt;= 0){</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          mask[0][0] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0){</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          mask[1][0] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x - 1, y);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span>(y - 1 &gt;= 0){</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          mask[0][1] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y - 1);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span>(x + 1 &lt; height &amp;&amp; y - 1 &gt;= 0){</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          mask[2][0] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x + 1, y - 1);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span>(x - 1 &gt;= 0 &amp;&amp; y + 1 &lt; width){</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          mask[0][2] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x - 1, y + 1);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span>(y + 1 &lt; width){</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          mask[1][2] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x, y + 1);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span>(x + 1 &lt; height &amp;&amp; y + 1 &lt; width){</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          mask[2][2] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x + 1, y + 1);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">if</span>(x + 1 &lt; height){</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          mask[2][1] = img.<a class="code hl_function" href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">get_point</a>(x + 1, y);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_function" href="namespacemedian__filter.html#a782ca650f73271174ed759e535b4cfa6">set_values</a>(values, mask); </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        std::sort(values.begin(), values.end());</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        resulted_img.<a class="code hl_function" href="class_image.html#a75f51a29849d86680f6e7548efdc73aa">set_point</a>(x, y, values[5]);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> resulted_img.<a class="code hl_function" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">get_2d_array</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
 </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> image.h:11</div></div>
 <div class="ttc" id="aclass_image_html_a622b4c33bd14c5cd20d688f22a81fef4"><div class="ttname"><a href="class_image.html#a622b4c33bd14c5cd20d688f22a81fef4">Image::get_point</a></div><div class="ttdeci">int get_point(const int x, const int y) const</div><div class="ttdoc">get_point function</div><div class="ttdef"><b>Definition</b> image.h:68</div></div>
 <div class="ttc" id="aclass_image_html_a685b99decee477e0889511335a0ba167"><div class="ttname"><a href="class_image.html#a685b99decee477e0889511335a0ba167">Image::_width</a></div><div class="ttdeci">int _width() const</div><div class="ttdoc">width function</div><div class="ttdef"><b>Definition</b> image.h:54</div></div>
@@ -162,7 +163,7 @@ $(function() { codefold.init(0); });
 <div class="ttc" id="aclass_image_html_ad70be146565fdfd89e6f061a80f6e348"><div class="ttname"><a href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">Image::get_2d_array</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int32_t &gt; &gt; get_2d_array() const</div><div class="ttdoc">get_2d_array function</div><div class="ttdef"><b>Definition</b> image.h:60</div></div>
 <div class="ttc" id="aclass_image_html_af90d355112add3631a0b0f8cccffdb95"><div class="ttname"><a href="class_image.html#af90d355112add3631a0b0f8cccffdb95">Image::_height</a></div><div class="ttdeci">int _height() const</div><div class="ttdoc">_height function</div><div class="ttdef"><b>Definition</b> image.h:48</div></div>
 <div class="ttc" id="anamespacemedian__filter_html"><div class="ttname"><a href="namespacemedian__filter.html">median_filter</a></div><div class="ttdoc">median_filter namespace</div><div class="ttdef"><b>Definition</b> median_filter.h:13</div></div>
-<div class="ttc" id="anamespacemedian__filter_html_a6f572af3819ffeb5135937fb5674b407"><div class="ttname"><a href="namespacemedian__filter.html#a6f572af3819ffeb5135937fb5674b407">median_filter::apply_median_filter</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int32_t &gt; &gt; apply_median_filter(Image img)</div><div class="ttdoc">apply_median_filter function: applies a 3x3 median filter on image img</div><div class="ttdef"><b>Definition</b> median_filter.h:35</div></div>
+<div class="ttc" id="anamespacemedian__filter_html_a318c02434941fc31796b530f1bd8137d"><div class="ttname"><a href="namespacemedian__filter.html#a318c02434941fc31796b530f1bd8137d">median_filter::apply_median_filter</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int32_t &gt; &gt; apply_median_filter(const std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;image)</div><div class="ttdoc">apply_median_filter function: applies a 3x3 median filter on image img</div><div class="ttdef"><b>Definition</b> median_filter.h:35</div></div>
 <div class="ttc" id="anamespacemedian__filter_html_a782ca650f73271174ed759e535b4cfa6"><div class="ttname"><a href="namespacemedian__filter.html#a782ca650f73271174ed759e535b4cfa6">median_filter::set_values</a></div><div class="ttdeci">void set_values(std::vector&lt; int32_t &gt; &amp;values, const std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;mat)</div><div class="ttdoc">set_values function</div><div class="ttdef"><b>Definition</b> median_filter.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

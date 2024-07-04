@@ -2,9 +2,9 @@ var searchData=
 [
   ['name_5fseparator_0',['name_separator',['../classdetail_1_1lexer__base.html#add65fa7a85aa15052963809fbcc04540acc3c64f8ae08c00de1b33f19a4d2913a',1,'detail::lexer_base']]],
   ['nameandtags_1',['NameAndTags',['../struct_catch_1_1_name_and_tags.html',1,'Catch']]],
-  ['namespace_2',['Mini tutorial for median filter namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2median__filter.html',1,'']]],
-  ['namespace_3',['Mini tutorial for prewitt namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2edge__detection.html#autotoc_md50',1,'']]],
-  ['namespace_4',['namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2sharpening__filter.html',1,'Mini tutorial for sharpening filter namespace'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2edge__detection.html',1,'Mini tutorial for sobel namespace']]],
+  ['namespace_2',['namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2filters_2median__filter.html',1,'Mini tutorial for median filter namespace'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2morphology_2morphology__operations.html',1,'Mini tutorial for morphology operations namespace']]],
+  ['namespace_3',['Mini tutorial for prewitt namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2edge__detection_2edge__detection.html#autotoc_md50',1,'']]],
+  ['namespace_4',['namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2filters_2sharpening__filter.html',1,'Mini tutorial for sharpening filter namespace'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2edge__detection_2edge__detection.html',1,'Mini tutorial for sobel namespace']]],
   ['negation_5',['negation',['../structdetail_1_1negation.html',1,'detail']]],
   ['new_20class_20strong_6',['&lt;strong&gt;Creating a new Class&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html#autotoc_md14',1,'']]],
   ['nextid_7',['nextId',['../class_d_b_s_c_a_n.html#a905021a89af288a06f9fcb7dbe935c75',1,'DBSCAN']]],
