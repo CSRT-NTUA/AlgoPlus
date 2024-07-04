@@ -33,3 +33,6 @@
 
 # build folder
 build/
+
+# cache folder
+.cache/

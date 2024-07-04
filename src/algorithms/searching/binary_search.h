@@ -11,11 +11,11 @@
 /**
  * @brief binary search function
  *
- * @param arr the vector
- * @param left the left pointer
- * @param right the right pointer
- * @param x the element we want to search
- * @return int64_t the index of the element in the vector, if it doesn't exist
+ * @param arr The vector
+ * @param left The left pointer
+ * @param right The right pointer
+ * @param x The element we want to search
+ * @return int64_t The index of the element in the vector, if it doesn't exist
  * then it returns -1
  */
 template <typename T>
@@ -32,6 +32,62 @@ int64_t bin_search(std::vector<T> arr, int64_t left, int64_t right, T x) {
     }
   }
   return -1; // element not found
+}
+
+/**
+ * @brief lower bound search function
+ *
+ * @param arr The vector
+ * @param left The left pointer
+ * @param right The right pointer
+ * @param x The element we want to search
+ * @return int64_t The index of the first element that is not less than x
+ */
+template <typename T>
+int64_t lower_bound(std::vector<T> arr, int64_t left, int64_t right, T x) {
+  int64_t result = right, mid =0;
+  --right;
+  
+  while (left <= right) {
+        mid = left + (right - left) / 2;
+        if (arr[mid] >= x) {
+            result = mid;
+            //look for smaller index on the left
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1; // look on the right
+        }
+    }
+    return result;
+}
+
+/**
+ * @brief upper bound search function
+ *
+ * @param arr The vector
+ * @param left The left pointer
+ * @param right The right pointer
+ * @param x The element we want to search
+ * @return int64_t The index of the first element that is greater than x
+ */
+template <typename T>
+int64_t upper_bound(std::vector<T> arr, int64_t left, int64_t right, T x) {
+  int64_t result = right,mid =0;
+  --right;
+    
+  while (left <= right) {
+        mid = left + (right-left) / 2;
+        if (arr[mid] > x) {
+            result = mid;
+            //look for smaller index on the left
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1; // look on the right
+        }
+    }
+    return result;
 }
 
 #endif
