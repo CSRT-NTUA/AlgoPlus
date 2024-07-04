@@ -135,8 +135,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    G_x = G_x.<a class="code hl_function" href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">mul</a>(G_x);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    G_y = G_y.<a class="code hl_function" href="class_image.html#a7ceea7a73b614f189cd5c9e9bf3f7863">mul</a>(G_y);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_image.html">Image</a> G(G_x); <span class="comment">// G = G_x</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    G = G.<a class="code hl_function" href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">add</a>(G_y); <span class="comment">// G += G_y</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_image.html">Image</a> G(G_x); <span class="comment">// G = G_x^2</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    G = G.<a class="code hl_function" href="class_image.html#ae46a0fc3c5ab7f98cedfc14802509926">add</a>(G_y); <span class="comment">// G += G_y^2</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesobel.html#a9e7825227070061cd265749d9cd22b53">square</a>(G.<a class="code hl_function" href="class_image.html#ad70be146565fdfd89e6f061a80f6e348">get_2d_array</a>()); <span class="comment">// result is: G = sqrt(G_x^2 + G_y^2)</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>

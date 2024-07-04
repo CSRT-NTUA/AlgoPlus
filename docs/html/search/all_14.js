@@ -9,8 +9,8 @@ var searchData=
   ['of_20conduct_6',['Contributor Covenant Code of Conduct',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html',1,'']]],
   ['of_20dbscan_3a_20strong_20_3a_7',['&lt;strong&gt;Create an instance of DBSCAN:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html#autotoc_md26',1,'']]],
   ['of_20kmeans_3a_20strong_20_3a_8',['&lt;strong&gt;Create an instance of kmeans:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2kmeans.html#autotoc_md31',1,'']]],
-  ['of_20the_20hash_5ftable_3a_20strong_20_3a_9',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2hash__table.html#autotoc_md108',1,'']]],
-  ['of_20y_20_3a_20strong_10',['&lt;strong&gt;Get results from linear regression(i.e. get a and b of y):&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2linear__regression.html#autotoc_md119',1,'']]],
+  ['of_20the_20hash_5ftable_3a_20strong_20_3a_9',['&lt;strong&gt;Create an instance of the hash_table:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2hash__table.html#autotoc_md111',1,'']]],
+  ['of_20y_20_3a_20strong_10',['&lt;strong&gt;Get results from linear regression(i.e. get a and b of y):&lt;/strong&gt;',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2linear__regression.html#autotoc_md122',1,'']]],
   ['operator_20size_5ft_11',['operator size_t',['../structdetail_1_1position__t.html#a1299e15d15516235772d36e077ec9741',1,'detail::position_t']]],
   ['operator_20string_5ft_12',['operator string_t',['../classjson__pointer.html#a97364e516620b02f1049f847b2ad43c9',1,'json_pointer']]],
   ['operator_20value_5ft_13',['operator value_t',['../classbasic__json.html#a70e1c8fbdb62f3f8bc04e69eef9cc9cf',1,'basic_json']]],
@@ -39,7 +39,7 @@ var searchData=
   ['option_36',['Option',['../class_catch_1_1_option.html',1,'Catch']]],
   ['optionally_20for_20visualization_20purposes_20you_20can_20write_20to_20a_20json_20file_20and_20then_20use_20the_20python_20s_20matplotlib_20function_3a_20strong_20_3a_37',['&lt;strong&gt;optionally for visualization purposes you can write to a json file and then use the python&apos;s matplotlib function:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html#autotoc_md29',1,'']]],
   ['optionally_20for_20visualization_20purposes_20you_20can_20write_20to_20a_20json_20file_20and_20then_20visualize_20it_20with_20python_20s_20matplotlib_3a_20strong_20_3a_38',['&lt;strong&gt;optionally for visualization purposes you can write to a json file and then visualize it with python&apos;s matplotlib:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2kmeans.html#autotoc_md33',1,'']]],
-  ['optionally_20you_20can_20use_20python_20s_20matplotlib_20for_20visualization_20purposes_3a_20strong_39',['Optionally you can use python s matplotlib for visualization purposes: strong',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2linear__regression.html#autotoc_md120',1,'&lt;strong&gt;Optionally you can use python&apos;s matplotlib for visualization purposes:&lt;/strong&gt;'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2polynomial__regression.html#autotoc_md123',1,'&lt;strong&gt;Optionally you can use python&apos;s matplotlib for visualization purposes:&lt;/strong&gt;']]],
+  ['optionally_20you_20can_20use_20python_20s_20matplotlib_20for_20visualization_20purposes_3a_20strong_39',['Optionally you can use python s matplotlib for visualization purposes: strong',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2linear__regression.html#autotoc_md123',1,'&lt;strong&gt;Optionally you can use python&apos;s matplotlib for visualization purposes:&lt;/strong&gt;'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2polynomial__regression.html#autotoc_md126',1,'&lt;strong&gt;Optionally you can use python&apos;s matplotlib for visualization purposes:&lt;/strong&gt;']]],
   ['ordered_5fmap_40',['ordered_map',['../structordered__map.html',1,'']]],
   ['other_5ferror_41',['other_error',['../classdetail_1_1other__error.html',1,'detail']]],
   ['our_20contributors_20strong_42',['&lt;strong&gt;Our contributors&lt;/strong&gt;',['../index.html#autotoc_md22',1,'']]],
@@ -54,5 +54,5 @@ var searchData=
   ['output_5fstring_5fadapter_51',['output_string_adapter',['../classdetail_1_1output__string__adapter.html',1,'detail']]],
   ['output_5fvector_5fadapter_52',['output_vector_adapter',['../classdetail_1_1output__vector__adapter.html',1,'detail']]],
   ['overlap_53',['overlap',['../classinterval__tree.html#a4f7fa294476721da36f1542b71a5e79f',1,'interval_tree']]],
-  ['overlap_20strong_20_3a_54',['&lt;strong&gt;overlap&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2interval__tree.html#autotoc_md146',1,'']]]
+  ['overlap_20strong_20_3a_54',['&lt;strong&gt;overlap&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2interval__tree.html#autotoc_md149',1,'']]]
 ];

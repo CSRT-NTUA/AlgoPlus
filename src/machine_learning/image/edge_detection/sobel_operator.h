@@ -61,8 +61,8 @@ namespace sobel{
     G_x = G_x.mul(G_x);
     G_y = G_y.mul(G_y);
 
-    Image G(G_x); // G = G_x
-    G = G.add(G_y); // G += G_y
+    Image G(G_x); // G = G_x^2
+    G = G.add(G_y); // G += G_y^2
     
     return square(G.get_2d_array()); // result is: G = sqrt(G_x^2 + G_y^2)
   }

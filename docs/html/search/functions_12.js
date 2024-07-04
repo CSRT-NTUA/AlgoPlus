@@ -16,7 +16,7 @@ var searchData=
   ['skip_5flist_13',['skip_list',['../classskip__list.html#a9319489b15a937d372a0233e130bb513',1,'skip_list::skip_list(int __MAX_LEVEL, float __PROB)'],['../classskip__list.html#a7b67f580f2c6ef6a7bfa2aa4dbc31274',1,'skip_list::skip_list(const skip_list &amp;s)']]],
   ['sobel_14',['Sobel',['../namespacesobel.html#aa2488f093457d0888ef32838e50d446a',1,'sobel']]],
   ['splay_5ftree_15',['splay_tree',['../classsplay__tree.html#a42c17e85ad2c1bacd934ca0ccc51e398',1,'splay_tree::splay_tree(std::vector&lt; T &gt; v={}) noexcept'],['../classsplay__tree.html#aa9a135c3d10e1e8b919b8d817d53f98a',1,'splay_tree::splay_tree(const splay_tree &amp;s)']]],
-  ['square_16',['square',['../namespacesobel.html#a9e7825227070061cd265749d9cd22b53',1,'sobel']]],
+  ['square_16',['square',['../namespaceprewitt.html#a4a23510de7be3a0d768c8ccc865d8170',1,'prewitt::square()'],['../namespacesobel.html#a9e7825227070061cd265749d9cd22b53',1,'sobel::square()']]],
   ['stack_5flist_17',['stack_list',['../classstack__list.html#a2e5e4063aeedaf398ff182e124e5fa3f',1,'stack_list::stack_list(std::vector&lt; T &gt; v={}) noexcept'],['../classstack__list.html#aa2fac43e1e6e4188ea37331d7c7db90a',1,'stack_list::stack_list(const stack_list &amp;s)']]],
   ['start_5farray_18',['start_array',['../structjson__sax.html#afc4d5c0d123f2e3c939060a778c4f22c',1,'json_sax']]],
   ['start_5fobject_19',['start_object',['../structjson__sax.html#a54a0883df64f40664395e3dad674aaa5',1,'json_sax']]],
