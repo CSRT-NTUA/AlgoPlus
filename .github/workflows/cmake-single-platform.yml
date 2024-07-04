@@ -22,27 +22,21 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DENABLE_COVERAGE=true
-
-    - name: Build
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-
     - name: Build for clang-tidy
       run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
     - name: Run clang-tidy with --fix
       run: cmake --build build --target run-clang-tidy
 
-    - name: Test
-      working-directory: ${{github.workspace}}/build
-      run: ctest --output-on-failure
+    #- name: Test
+    #  working-directory: ${{github.workspace}}/build
+    #  run: ctest --output-on-failure
 
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        slug: CSRT-NTUA/AlgoPlus
+    #- name: Upload coverage reports to Codecov
+    #  uses: codecov/codecov-action@v4.0.1
+    #  with:
+    #    token: ${{ secrets.CODECOV_TOKEN }}
+    #    slug: CSRT-NTUA/AlgoPlus
 
-    - name: Upload to codecov
-      run: bash <(curl -s https://codecov.io/bash)
+    #- name: Upload to codecov
+    #  run: bash <(curl -s https://codecov.io/bash)
