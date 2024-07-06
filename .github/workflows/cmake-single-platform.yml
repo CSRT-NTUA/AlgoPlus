@@ -22,9 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Download requirements
-      run: sudo python3.12 -m pip install --upgrade pip && sudo pip3 install xcrun && sudo pip3 install gcovr && brew update && brew install pipx lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
+      run: sudo python3.12 -m pip install --upgrade pip --break-system-packages && sudo pip3 install xcrun --break-system-packages && sudo pip3 install gcovr --break-system-packages && brew update && brew install pipx lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
     - name: Install dependencies
-      run: pip3 install -r requirements.txt
+      run: pip3 install -r requirements.txt --break-system-packages
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
