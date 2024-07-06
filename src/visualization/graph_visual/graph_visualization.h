@@ -1,4 +1,3 @@
-#pragma once
 #ifndef GRAPH_VISUALIZATION_H
 #define GRAPH_VISUALIZATION_H
 

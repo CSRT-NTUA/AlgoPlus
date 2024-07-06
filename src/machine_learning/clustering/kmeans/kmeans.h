@@ -1,4 +1,3 @@
-#pragma once
 #ifndef KMEANS_H
 #define KMEANS_H
 
@@ -44,7 +43,7 @@ public:
     this->data = data;
     this->K = K;
     for(int i = 0; i<K; i++){
-      int rand_num = rand() % data.size() - 1;
+      int rand_num = arc4random() % data.size() - 1;
       this->cluster_centers.push_back(data[rand_num]);
     }
 

@@ -1,4 +1,3 @@
-#pragma once
 #ifndef DBSCAN_H 
 #define DBSCAN_H 
 

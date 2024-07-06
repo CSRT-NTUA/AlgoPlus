@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ALGOPLUS_H
 #define ALGOPLUS_H
 

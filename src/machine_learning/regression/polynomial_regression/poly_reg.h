@@ -1,4 +1,3 @@
-#pragma once
 #ifndef POLY_REG_H
 #define POLY_REG_H
 

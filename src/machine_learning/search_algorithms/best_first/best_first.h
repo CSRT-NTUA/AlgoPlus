@@ -1,4 +1,3 @@
-#pragma once
 #ifndef BEST_FIRST_H 
 #define BEST_FIRST_H 
 

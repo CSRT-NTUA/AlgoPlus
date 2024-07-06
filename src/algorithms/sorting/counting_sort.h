@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ALGOPLUS_COUNTING_SORT_H
 #define ALGOPLUS_COUNTING_SORT_H
 

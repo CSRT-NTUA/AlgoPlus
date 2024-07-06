@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ALGOPLUS_QUICK_SORT_H
 #define ALGOPLUS_QUICK_SORT_H
 

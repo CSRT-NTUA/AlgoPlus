@@ -1,4 +1,3 @@
-#pragma once
 #ifndef MIN_DISTANCE_H
 #define MIN_DISTANCE_H
 
@@ -6,6 +5,7 @@
 #include <cstdint>
 #include <iostream>
 #include <string>
+#include <vector>
 #endif
 
 /**
@@ -15,7 +15,7 @@
  * @return int64_t the minimum steps to make word1 equal to word2(i.e. the
  * distance of word1 and word2)
  */
-int64_t min_dist(std::string word1, std::string word2) {
+int64_t min_dist(const std::string word1, const std::string word2) {
   if (word1.size() == 0 && word2.size() == 0) {
     return 0;
   }
@@ -26,7 +26,7 @@ int64_t min_dist(std::string word1, std::string word2) {
     return word1.size();
   }
   int n = word1.size(), w = word2.size();
-  int dp[n + 1][w + 1];
+  std::vector<std::vector<int> > dp(n + 1, std::vector<int>(w + 1));
   for (int i = 0; i <= n; i++) {
     dp[i][0] = i;
   }

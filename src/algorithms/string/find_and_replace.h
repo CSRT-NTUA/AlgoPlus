@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ALGOPLUS_REGEX_PATTERNS_H
 #define ALGOPLUS_REGEX_PATTERNS_H
 

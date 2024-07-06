@@ -1,4 +1,3 @@
-#pragma once
 #ifndef TREE_VISUALIZATION_H
 #define TREE_VISUALIZATION_H
 

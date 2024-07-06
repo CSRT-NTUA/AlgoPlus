@@ -1,4 +1,3 @@
-#pragma once
 #ifndef GCD_H
 #define GCD_H
 

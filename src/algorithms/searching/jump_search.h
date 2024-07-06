@@ -1,4 +1,3 @@
-#pragma once
 #ifndef JUMP_SEARCH_H
 #define JUMP_SEARCH_H
 

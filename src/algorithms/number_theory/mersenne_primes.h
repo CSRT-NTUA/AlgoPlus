@@ -1,4 +1,3 @@
-#pragma once
 #ifndef MERSENNE_PRIMES_H
 #define MERSENNE_PRIMES_H
 

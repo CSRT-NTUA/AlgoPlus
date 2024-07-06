@@ -1,4 +1,3 @@
-#pragma once
 #ifndef INTERPOLATION_SEARCH_H
 #define INTERPOLATION_SEARCH_H
 

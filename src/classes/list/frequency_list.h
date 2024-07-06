@@ -1,4 +1,3 @@
-#pragma once
 #ifndef FREQUENCY_LIST_H
 #define FREQUENCY_LIST_H
 

@@ -1,4 +1,3 @@
-#pragma once
 #ifndef COIN_CHANGE_H
 #define COIN_CHANGE_H
 

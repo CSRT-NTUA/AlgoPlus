@@ -1,4 +1,3 @@
-#pragma once
 #ifndef MAT_2D_H
 #define MAT_2D_H
 

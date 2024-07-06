@@ -49,8 +49,6 @@ namespace sobel{
   */
   std::vector<std::vector<int32_t> > Sobel(const std::vector<std::vector<int32_t> > &image) {
     Image img(image);
-    int height = img._height();
-    int width = img._width();
 
     std::pair<std::vector<std::vector<int32_t> >, std::vector<std::vector<int32_t> > > kernels = kernel();
     std::vector<std::vector<int32_t> > k1 = kernels.first; std::vector<std::vector<int32_t> > k2 = kernels.second;

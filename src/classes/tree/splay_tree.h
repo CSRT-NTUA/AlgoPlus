@@ -1,4 +1,3 @@
-#pragma once
 #ifndef SPLAY_TREE_H
 #define SPLAY_TREE_H
 

@@ -1,4 +1,3 @@
-#pragma once
 #include <queue>
 #ifndef ASTAR_H
 #define ASTAR_H

@@ -1,4 +1,3 @@
-#pragma once
 #ifndef KADANE_H
 #define KADANE_H
 

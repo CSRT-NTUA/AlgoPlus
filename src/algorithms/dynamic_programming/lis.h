@@ -1,4 +1,3 @@
-#pragma once
 #ifndef LIS_H
 #define LIS_H
 

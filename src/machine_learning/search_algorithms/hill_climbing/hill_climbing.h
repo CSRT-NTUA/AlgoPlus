@@ -1,4 +1,3 @@
-#pragma once
 #ifndef HILL_CLIMBING_H
 #define HILL_CLIMBING_H
 
