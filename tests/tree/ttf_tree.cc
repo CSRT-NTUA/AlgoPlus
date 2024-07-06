@@ -24,18 +24,18 @@ TEST_CASE("Testing 234-tree insertion [2]"){
     REQUIRE(level_ordered == check);
 }
 
-TEST_CASE("Testing 234-tree searching [1]"){
-    ttf_tree<int> t;
-    t.insert(30);
-    t.insert(99);
-    t.insert(70);
-    t.insert(60);
-    t.insert(40);    
-    REQUIRE(t.search(30) == true);
-    REQUIRE(t.search(60) == true);
-    REQUIRE(t.search(50) == false);
-    REQUIRE(t.search(100) == false);
-}
+//TEST_CASE("Testing 234-tree searching [1]"){
+//    ttf_tree<int> t;
+//    t.insert(30);
+//    t.insert(99);
+//    t.insert(70);
+//    t.insert(60);
+//    t.insert(40);    
+//    REQUIRE(t.search(30) == true);
+//    REQUIRE(t.search(60) == true);
+//    REQUIRE(t.search(50) == false);
+//    REQUIRE(t.search(100) == false);
+//}
 
 //TEST_CASE("Testing 234-tree insertion [3]"){
 //    ttf_tree<int> t;

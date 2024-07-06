@@ -4,13 +4,14 @@ env:
   BUILD_TYPE: Debug
 jobs:
   coverage:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: brew install lcov
+        if: runner.os == 'Linux'
+        run: sudo apt-get install -o Acquire::Retries=3 lcov
 
       - name: Create build directory
         run: cmake -E make_directory ${{runner.workspace}}/build
@@ -34,5 +35,3 @@ jobs:
         working-directory: ${{runner.workspace}}/build
         shell: bash
         run: make coverage
-
-
