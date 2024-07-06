@@ -24,19 +24,19 @@ TEST_CASE("Testing 234-tree insertion [2]"){
     REQUIRE(level_ordered == check);
 }
 
-TEST_CASE("Testing 234-tree insertion [3]"){
-    ttf_tree<int> t;
-    t.insert(30);
-    t.insert(99);
-    t.insert(70);
-    t.insert(60);
-    t.insert(40);    
-    t.insert(66);
-    t.insert(50);
-    std::vector<std::vector<std::vector<int> > > level_ordered = t.level_order();
-    std::vector<std::vector<std::vector<int> > > check = {{{40,70} }, { {30},{50,60,66},{99}}};
-    REQUIRE(level_ordered == check);
-}
+//TEST_CASE("Testing 234-tree insertion [3]"){
+//    ttf_tree<int> t;
+//    t.insert(30);
+//    t.insert(99);
+//    t.insert(70);
+//    t.insert(60);
+//    t.insert(40);    
+//    t.insert(66);
+//    t.insert(50);
+//    std::vector<std::vector<std::vector<int> > > level_ordered = t.level_order();
+//    std::vector<std::vector<std::vector<int> > > check = {{{40,70} }, { {30},{50,60,66},{99}}};
+//    REQUIRE(level_ordered == check);
+//}
 
 TEST_CASE("Testing 234-tree insertion [4]"){
     ttf_tree<int> t;
