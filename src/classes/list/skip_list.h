@@ -277,7 +277,8 @@ private:
     gen += generate_edge("root", "NULL", m_level+1);
     for(int i=m_level;i>=0;i--){
       std::shared_ptr<node> head = root;
-      std::string prev_val;
+      head = head->next[i];
+      std::string prev_val = "root";
       std::string head_key;
       while(head){
         if(std::is_same_v<T, std::string>){
@@ -289,11 +290,7 @@ private:
           S.insert(head_key);
           gen += generate_node(head_key, i);
         }
-        if(head != root){
-          gen += generate_edge(prev_val, head_key, i);
-        } else {
-          gen += generate_edge("root", head_key, i);
-        }
+        gen += generate_edge(prev_val, head_key, i);
         prev_val = head_key;
         head = head->next[i];
       }
