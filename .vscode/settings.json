@@ -70,6 +70,6 @@
     "random": "cpp",
     "list": "cpp",
     "memory": "cpp",
+    "span": "cpp"
   },
-  "editor.language.colorizedBracketPairs": []
 }

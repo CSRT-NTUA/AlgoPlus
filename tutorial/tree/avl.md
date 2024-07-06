@@ -1,6 +1,5 @@
 ### Mini Tutorial for the AVL tree class
-
-    avl_tree<T> -- creates an avl tree.
+    --- avl_tree<T> creates an avl tree.
 
 avl tree contains:
     - insert

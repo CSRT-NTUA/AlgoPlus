@@ -198,15 +198,13 @@ public:
    * @brief operator << for avl_tree class
    */
   friend ostream & operator << (ostream &out, avl_tree<T> &t){
-    std::vector<std::vector<T> > order = t.level_order();
-    for(std::vector<T> & x : order){
-      for(size_t i = 0; i < x.size(); i++){
-        if(i != x.size() - 1){
-          out << x[i] << ", ";
-        }
-        else{
-          out << x[i] << '\n';
-        }
+    std::vector<std::vector<T> > order = t.inorder();
+    for(int i = 0; i<order.size(); i++){
+      if(i != order.size() - 1){
+        out << order[i] << ", ";
+      }
+      else{
+        out << order[i] << '\n';
       }
     }
     return out;
