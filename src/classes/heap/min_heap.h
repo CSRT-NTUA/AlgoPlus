@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdint>
 #include <vector>
+#include <climits>
 #endif
 
 // This is needed to avoid conflict with windows __min macro
