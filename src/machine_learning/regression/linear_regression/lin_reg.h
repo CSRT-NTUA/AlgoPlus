@@ -5,6 +5,7 @@
 #ifdef __cplusplus
 #include <iostream>
 #include <vector>
+#include <cmath>
 #endif
 
 

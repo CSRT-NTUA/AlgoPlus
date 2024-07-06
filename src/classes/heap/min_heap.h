@@ -3,6 +3,7 @@
 #ifdef __cplusplus
 #include <functional>
 #include <iostream>
+#include <cstdint>
 #include <vector>
 #endif
 

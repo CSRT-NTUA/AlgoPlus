@@ -58,7 +58,7 @@ public:
 
       int64_t maxRow = i;
       for (int64_t k = i + 1; k < n; ++k) {
-        if (abs(A[k][i]) > abs(A[maxRow][i])) {
+        if (std::abs(A[k][i]) > std::abs(A[maxRow][i])) {
           maxRow = k;
         }
       }
