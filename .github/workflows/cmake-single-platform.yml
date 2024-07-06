@@ -17,12 +17,12 @@ jobs:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     
     steps:
     - uses: actions/checkout@v3
     - name: Download requirements
-      run: sudo pip3 install xcrun && sudo pip3 install gcovr && sudo apt-get update && sudo apt-get install lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
+      run: sudo pip3 install xcrun && sudo pip3 install gcovr && brew update && brew install lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Configure CMake

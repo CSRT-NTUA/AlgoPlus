@@ -221,30 +221,21 @@ bool ttf_tree<T>::search(const T &key) const {
   std::shared_ptr<node> head = root;
   while(head != nullptr){
     if(head->numChildren == 2){ // case for 2-node
-      if(key == head->keys[0] || key == head->keys[1]){
-        return true;
-      }
-      else if(key < head->keys[0]){
-        head = head->children[0];
-      }
-      else if(key > head->keys[1]){
-        head = head->children[1];
-      }
+      if(key == head->keys[0] || key == head->keys[1]){ return true; }
+      else if(key < head->keys[0]){ head = head->children[0]; }
+      else if(key > head->keys[1]){ head = head->children[1]; }
     }
     else if(head->numChildren == 3){ // case for 3-node
-      if(key == head->keys[0]) { return true; }
+      if(key == head->keys[0] || key == head->keys[1]) { return true; }
       else if(key < head->keys[0]){ head = head->children[0]; }
       else if(key > head->keys[0] && key < head->keys[1]){ head = head->children[1]; }
-      else if(key == head->keys[1]){ return true; }
       else if(key > head->keys[1]) { head = head->children[2]; }
     }
     else{ // case for 4-node
-      if(key == head->keys[0]) { return true; }
+      if(key == head->keys[0] || key == head->keys[1] || key == head->keys[2]) { return true; }
       else if(key < head->keys[0]) { head = head->children[0]; }
       else if(key > head->keys[0] && key < head->keys[1]) { head = head->children[1]; }
-      else if(key == head->keys[1]) { return true; }
       else if(key > head->keys[1] && key < head->keys[2]) { head = head->children[2]; }
-      else if(key == head->keys[2]) { return true; }
       else if(key > head->keys[2]) { head = head->children[3]; }
     }
   }
