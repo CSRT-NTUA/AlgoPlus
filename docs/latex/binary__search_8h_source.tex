@@ -28,6 +28,44 @@
 \DoxyCodeLine{00034\ \ \ \textcolor{keywordflow}{return}\ -\/1;\ \textcolor{comment}{//\ element\ not\ found}}
 \DoxyCodeLine{00035\ \}}
 \DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00047\ int64\_t\ lower\_bound(std::vector<T>\ arr,\ int64\_t\ left,\ int64\_t\ right,\ T\ x)\ \{}
+\DoxyCodeLine{00048\ \ \ int64\_t\ result\ =\ right,\ mid\ =0;}
+\DoxyCodeLine{00049\ \ \ -\/-\/right;}
+\DoxyCodeLine{00050\ \ \ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{while}\ (left\ <=\ right)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ mid\ =\ left\ +\ (right\ -\/\ left)\ /\ 2;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[mid]\ >=\ x)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ mid;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//look\ for\ smaller\ index\ on\ the\ left}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ right\ =\ mid\ -\/\ 1;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ left\ =\ mid\ +\ 1;\ \textcolor{comment}{//\ look\ on\ the\ right}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00075\ int64\_t\ upper\_bound(std::vector<T>\ arr,\ int64\_t\ left,\ int64\_t\ right,\ T\ x)\ \{}
+\DoxyCodeLine{00076\ \ \ int64\_t\ result\ =\ right,mid\ =0;}
+\DoxyCodeLine{00077\ \ \ -\/-\/right;}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordflow}{while}\ (left\ <=\ right)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ mid\ =\ left\ +\ (right-\/left)\ /\ 2;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[mid]\ >\ x)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ mid;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//look\ for\ smaller\ index\ on\ the\ left}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ right\ =\ mid\ -\/\ 1;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ left\ =\ mid\ +\ 1;\ \textcolor{comment}{//\ look\ on\ the\ right}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

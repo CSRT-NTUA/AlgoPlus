@@ -13,6 +13,7 @@ var searchData=
   ['topological_5fsort_10',['topological_sort',['../classgraph.html#a5fa36c46613b6a5252f263dde594cf1f',1,'graph::topological_sort()'],['../classweighted__graph.html#a4b6919e5c07fa6b655169b6a30592771',1,'weighted_graph::topological_sort()']]],
   ['tree_11',['tree',['../classtree.html#ad5539664cc1fbf47d1bfce73ccc7c8e9',1,'tree']]],
   ['trie_12',['trie',['../classtrie.html#a8d07730e7c6071a78b872f7f73613d14',1,'trie::trie(std::vector&lt; std::string &gt; v={}) noexcept'],['../classtrie.html#a6a3d9a7b2ad1393f5648e29d3963f3f5',1,'trie::trie(const trie &amp;t)']]],
-  ['type_13',['type',['../classbasic__json.html#ac5e52dbb3cb4e9fcabd1b88c37985aef',1,'basic_json']]],
-  ['type_5fname_14',['type_name',['../classbasic__json.html#a15b177614647598e238e15ab1cc889c7',1,'basic_json']]]
+  ['ttf_5ftree_13',['ttf_tree',['../classttf__tree.html#a0f5ec1919b33be4c98c2277bcab76a67',1,'ttf_tree']]],
+  ['type_14',['type',['../classbasic__json.html#ac5e52dbb3cb4e9fcabd1b88c37985aef',1,'basic_json']]],
+  ['type_5fname_15',['type_name',['../classbasic__json.html#a15b177614647598e238e15ab1cc889c7',1,'basic_json']]]
 ];

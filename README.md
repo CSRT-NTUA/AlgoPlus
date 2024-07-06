@@ -70,6 +70,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Splay Tree](https://en.wikipedia.org/wiki/Splay_tree)
 - [X] [Trie](https://en.wikipedia.org/wiki/Trie)
 - [X] [Interval Tree](https://en.wikipedia.org/wiki/Interval_tree) 
+- [X] [234 Tree](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)
 - [X] [Min/Max Heap](https://en.wikipedia.org/wiki/Min-max_heap)
 
 **Lists**
