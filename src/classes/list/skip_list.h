@@ -2,10 +2,12 @@
 #define SKIP_LIST_H
 
 #ifdef __cplusplus
+#include "../../visualization/list_visual/linked_list_visualization.h"
 #include <iostream>
 #include <memory>
 #include <stdexcept>
 #include <vector>
+#include <unordered_set>
 #endif
 
 /**
@@ -171,6 +173,15 @@ public:
   }
 
   /**
+   * @brief visualize function
+   * returns a .dot file that can be previewd with graphviz plugin in vscode
+   */
+  void visualize(){
+    std::string generated = this->generate();
+    linked_list_visualization::visualize(generated);
+  }
+
+  /**
    *@brief operator << for skip_list<T> class.
    */
   friend std::ostream &operator<<(std::ostream &out, skip_list<T> &l) {
@@ -220,6 +231,72 @@ private:
 
   int level{0};
   std::shared_ptr<node> root;
+  
+  std:: string generate_node(std::string node_val, int levs){
+    std::string gen;
+    gen += node_val;
+    gen += " [label=\"<";
+    gen += to_string(levs);
+    gen += "> ";
+    gen += node_val;
+    for(int i=levs-1;i>=0;i--){
+      gen += " | <";
+      gen += to_string(i);
+      gen += "> ";
+      gen += node_val;
+    }
+    gen += "\"];";
+    gen += '\n';
+    return gen;
+  }
+
+  std::string generate_edge(std::string prev_val, std::string curr_val, int lev){
+    std::string gen;
+    gen += prev_val;
+    gen += ':';
+    gen += to_string(lev);
+    gen += " -> ";
+    gen += curr_val;
+    gen += ':';
+    gen += to_string(lev);
+    gen += " ;\n";
+    return gen;
+  }
+
+  std::string generate() {
+    std::string gen;
+    gen += "rankdir=LR;";
+    gen += '\n';
+    gen += "node [shape=record;]";
+    gen += '\n';
+    unordered_set<std::string> S;
+    int m_level = min(level, (int)root->next.size()); // See if this is a parameter
+    gen += generate_node("root", m_level+1);
+    gen += generate_node("NULL", m_level+1);
+    gen += generate_edge("root", "NULL", m_level+1);
+    for(int i=m_level;i>=0;i--){
+      std::shared_ptr<node> head = root;
+      head = head->next[i];
+      std::string prev_val = "root";
+      std::string head_key;
+      while(head){
+        if(std::is_same_v<T, std::string>){
+          head_key = head->key;
+        } else {
+          head_key = to_string(head->key);
+        }
+        if(S.find(head_key) == S.end()){
+          S.insert(head_key);
+          gen += generate_node(head_key, i);
+        }
+        gen += generate_edge(prev_val, head_key, i);
+        prev_val = head_key;
+        head = head->next[i];
+      }
+      gen += generate_edge(prev_val, "NULL", i);
+    }
+    return gen;
+  }
 };
 
 /**
