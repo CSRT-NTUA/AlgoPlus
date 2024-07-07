@@ -11,4 +11,5 @@ int main() {
   s.insert(5);
   s.insert(6);
   std::cout << s << '\n';
+  s.visualize();
 }
