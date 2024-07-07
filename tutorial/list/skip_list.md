@@ -53,3 +53,15 @@ for(auto it = s.begin(); it != s.end(); it++){
     std::cout << *it << '\n';
 }
 ```
+
+### **visualize**:
+```cpp
+#include <skip_list.h>
+
+skip_list<int> s(3, 0.5)
+s.insert(10);
+s.insert(5);
+s.insert(16);
+// returns a .dot file that can easily be previewed using vscode's graphviz plugin
+s.visualize();
+```
