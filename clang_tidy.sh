@@ -1,1 +1,1 @@
-find src/ -name '*.h' -exec clang-tidy -fix -fix-errors {} -- -x c++ -std=c++17 \;
+find src/ -name '*.h' -exec clang-tidy -fix -fix-errors {} -- -x c++ -std=c++17 -Werror \;
