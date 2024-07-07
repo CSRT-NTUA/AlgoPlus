@@ -27,7 +27,7 @@ private:
 
   std::shared_ptr<node> root;
   std::shared_ptr<node> tail;
-  size_t __size;
+  size_t _size{0};
 
 public:
   /**
@@ -36,7 +36,7 @@ public:
    * @param v initializer vector
    */
   explicit dequeue_list(std::vector<T> v = {}) noexcept
-      : root(nullptr), tail(nullptr), __size(0) {
+      : root(nullptr), tail(nullptr) {
     if (!v.empty()) {
       for (T &x : v) {
         this->push_back(x);
@@ -49,10 +49,10 @@ public:
    *
    * @param q the dequeue we want to copy
    */
-  explicit dequeue_list(const dequeue_list &q) {
-    root = q.root;
-    tail = q.tail;
-    __size = q.__size;
+  explicit dequeue_list(const dequeue_list &q) : root(q.root), tail(q.tail), _size(q._size) {
+    
+    
+    
   }
 
   /**
@@ -63,7 +63,7 @@ public:
   dequeue_list &operator=(const dequeue_list &q) {
     root = q.root;
     tail = q.tail;
-    __size = q.__size;
+    _size = q._size;
     return *this;
   }
 
@@ -73,7 +73,7 @@ public:
   void clear() {
     root = nullptr;
     tail = nullptr;
-    __size = 0;
+    _size = 0;
   }
 
   /**
@@ -81,7 +81,7 @@ public:
    *
    * @return size_t the size of the stack
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
 
   /**
    * @brief push_back function
@@ -93,13 +93,13 @@ public:
     if (!root) {
       root = nn;
       tail = nn;
-      __size++;
+      _size++;
       return;
     } else {
       tail->next = nn;
       nn->prev = tail;
       tail = nn;
-      __size++;
+      _size++;
     }
   }
 
@@ -113,13 +113,13 @@ public:
     if (!root) {
       root = nn;
       tail = nn;
-      __size++;
+      _size++;
       return;
     } else {
       root->prev = nn;
       nn->next = root;
       root = nn;
-      __size++;
+      _size++;
     }
   }
 
@@ -144,7 +144,7 @@ public:
   void pop_front() {
     root = root->next;
     root->prev = nullptr;
-    __size--;
+    _size--;
   }
 
   /**
@@ -154,7 +154,7 @@ public:
   void pop_back() {
     tail = tail->prev;
     tail->next = nullptr;
-    __size--;
+    _size--;
   }
 
   class Iterator;

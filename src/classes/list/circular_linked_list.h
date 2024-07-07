@@ -19,10 +19,10 @@ public:
    *
    * @param __elements vector<T> so you dont have to do multiple insertions
    */
-  explicit circular_linked_list(std::vector<T> __elements = {}) noexcept
-      : root(nullptr), tail(nullptr), __size(0) {
-    if (!__elements.empty()) {
-      for (T &x : __elements) {
+  explicit circular_linked_list(std::vector<T> _elements = {}) noexcept
+      : root(nullptr), tail(nullptr) {
+    if (!_elements.empty()) {
+      for (T &x : _elements) {
         this->push_back(x);
       }
     }
@@ -32,10 +32,10 @@ public:
    * @brief copy constructor for the circular linked list class
    * @param c the list we want to copy
    */
-  explicit circular_linked_list(const circular_linked_list &c) {
-    root = c.root;
-    tail = c.tail;
-    __size = c.__size;
+  explicit circular_linked_list(const circular_linked_list &c) : root(c.root), tail(c.tail), _size(c._size) {
+    
+    
+    
   }
 
   /**
@@ -46,7 +46,7 @@ public:
   circular_linked_list &operator=(const circular_linked_list &c) {
     root = c.root;
     tail = c.tail;
-    __size = c.__size;
+    _size = c._size;
     return *this;
   }
 
@@ -63,7 +63,7 @@ public:
    *
    * @return size_t the size of the list
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
 
   class Iterator;
 
@@ -153,7 +153,7 @@ private:
 
   std::shared_ptr<node> root;
   std::shared_ptr<node> tail;
-  size_t __size;
+  size_t _size{0};
 
   std::string generate();
 };
@@ -168,7 +168,7 @@ template <typename T> void circular_linked_list<T>::push_back(T key) {
     tail = p;
   }
   tail->next = root;
-  __size++;
+  _size++;
 }
 
 template <typename T> void circular_linked_list<T>::push_front(T key) {
@@ -181,7 +181,7 @@ template <typename T> void circular_linked_list<T>::push_front(T key) {
     root = p;
     tail->next = root;
   }
-  __size++;
+  _size++;
 }
 
 template <typename T> void circular_linked_list<T>::erase(T key) {
@@ -197,7 +197,7 @@ template <typename T> void circular_linked_list<T>::erase(T key) {
       to_be_removed = t->next;
       t->next = t->next->next;
       to_be_removed.reset();
-      __size--;
+      _size--;
 
       if (t->next == root) {
         tail = t;
@@ -236,19 +236,19 @@ template <typename T> bool circular_linked_list<T>::search(T key) {
 }
 
 template <typename T> std::vector<T> circular_linked_list<T>::elements() {
-  std::vector<T> __elements;
+  std::vector<T> _elements;
 
   if (this->empty()) {
-    return __elements;
+    return _elements;
   }
 
   std::shared_ptr<node> head = root;
   do {
-    __elements.push_back(head->val);
+    _elements.push_back(head->val);
     head = head->next;
   } while (head != root);
 
-  return __elements;
+  return _elements;
 }
 
 template <typename T> std::string circular_linked_list<T>::generate() {

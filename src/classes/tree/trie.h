@@ -18,7 +18,7 @@ private:
   };
 
   std::shared_ptr<node> root;
-  size_t __size;
+  size_t _size{};
 
 public:
   /**
@@ -39,9 +39,9 @@ public:
    * @brief Copy constructor for trie class
    * @param t the tree we want to copy
    */
-  explicit trie(const trie &t) {
-    root = t.root;
-    __size = t.__size;
+  explicit trie(const trie &t) : root(t.root), _size(t._size) {
+    
+    
   }
 
   /**
@@ -51,7 +51,7 @@ public:
    */
   trie &operator=(const trie &t) {
     root = t.root;
-    __size = t.__size;
+    _size = t._size;
     return *this;
   }
 
@@ -71,7 +71,7 @@ public:
    *
    * @return size_t the size of the tree
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
   /**
    *@brief remove function.
    *@param key: the key to be removed.
@@ -91,7 +91,7 @@ private:
    *@brief __children function.
    *checks if a node has children or not.
    */
-  bool __children(std::shared_ptr<node> root) {
+  bool _children(std::shared_ptr<node> root) {
     for (int64_t i = 0; i < 26; i++) {
       if (root->characters[i]) {
         return true;
@@ -103,13 +103,13 @@ private:
    *@brief __remove function.
    *helper function of remove().
    */
-  std::shared_ptr<node> __remove(std::shared_ptr<node> current,
+  std::shared_ptr<node> _remove(std::shared_ptr<node> current,
                                  std::string word, int64_t index) {
     if (word.size() == index) {
       if (current->end_word) {
         current->end_word = false;
       }
-      if (__children(current)) {
+      if (_children(current)) {
         return current;
       }
       return nullptr;
@@ -119,8 +119,8 @@ private:
     if (!current->characters[i]) {
       return nullptr;
     }
-    current->characters[i] = __remove(current->characters[i], word, index + 1);
-    if (current->characters[i] || __children(current)) {
+    current->characters[i] = _remove(current->characters[i], word, index + 1);
+    if (current->characters[i] || _children(current)) {
       return current;
     }
     return nullptr;
@@ -137,12 +137,12 @@ void trie::insert(std::string key) {
     current = current->characters[index];
   }
   current->end_word = true;
-  __size++;
+  _size++;
 }
 
 void trie::remove(std::string key) {
-  root = __remove(root, key, 0);
-  __size--;
+  root = _remove(root, key, 0);
+  _size--;
 }
 
 bool trie::search(std::string key) {

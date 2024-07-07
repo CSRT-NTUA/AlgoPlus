@@ -37,7 +37,7 @@ public:
      * @param data An optional initializer list of elements.
      */
   explicit frequency_list(std::vector<T> data = {}) noexcept
-    : head(nullptr), tail(nullptr), size(0) {
+    : head(nullptr), tail(nullptr) {
     if(!data.empty()) {
       for (const auto &item: data) {
         this->push_back(item);
@@ -199,7 +199,7 @@ private:
 
   std::shared_ptr<node> head;
   node *tail;
-  uint64_t size;
+  uint64_t size{0};
 
   /**
      * @brief Updates the order of nodes in the frequency list based on their frequencies.

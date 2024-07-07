@@ -18,8 +18,8 @@
 template <typename T> class min_heap {
 private:
   T *arr;
-  size_t max_size;
-  size_t heap_size;
+  size_t max_size{};
+  size_t heap_size{0};
 
 public:
   /**
@@ -27,10 +27,10 @@ public:
    *
    * @param max_size : maximum size of the heap
    */
-  explicit min_heap(size_t max_size) noexcept {
-    heap_size = 0;
+  explicit min_heap(size_t max_size) noexcept :  arr(new T[max_size]) {
+    
     this->max_size = max_size;
-    arr = new T[max_size];
+    
   }
 
   ~min_heap() noexcept { delete[] arr; }
@@ -47,20 +47,20 @@ public:
    *
    * @param i: the element we want to find the left
    */
-  T __left(T i) { return (2 * i + 1); }
+  T _left(T i) { return (2 * i + 1); }
 
   /**
    * @brief __right function
    *
    * @param i: the element we want to find the right
    */
-  T __right(T i) { return (2 * i + 2); }
+  T _right(T i) { return (2 * i + 2); }
 
   /**
    * @brief __min function
    * Returns the minimum with heapify
    */
-  T __min() {
+  T _min() {
     if (heap_size <= 0) {
       return INT_MAX;
     }
@@ -120,7 +120,7 @@ public:
    */
   void remove(T key) {
     decrease_key(key, INT_MIN);
-    __min();
+    _min();
   }
 
   /**
@@ -129,8 +129,8 @@ public:
    * @param i the element we want to heapify from
    */
   void heapify(T i) {
-    T left = __left(i);
-    T right = __right(i);
+    T left = _left(i);
+    T right = _right(i);
     T minim = i;
     if (left < heap_size && arr[left] < arr[i]) {
       minim = left;

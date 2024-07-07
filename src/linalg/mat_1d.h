@@ -18,22 +18,22 @@
 template <typename T, size_t SIZE> class Mat1d {
 private:
   T *arr;
-  size_t __size;
+  size_t _size;
 
 public:
   /**
    *@brief constructor for Mat1d class
    *
    */
-  explicit Mat1d(std::vector<T> v = {}) : __size(SIZE) {
-    arr = new T[__size];
+  explicit Mat1d(std::vector<T> v = {}) : _size(SIZE) {
+    arr = new T[_size];
     if (!v.empty()) {
       try {
-        if (v.size() != __size) {
+        if (v.size() != _size) {
           throw std::logic_error("Initializer array don't have the same size "
                                  "as the constructed array");
         } else {
-          for (size_t i = 0; i < __size; i++) {
+          for (size_t i = 0; i < _size; i++) {
             arr[i] = v[i];
           }
         }
@@ -47,9 +47,9 @@ public:
    *@brief constructor for Mat1d class with input value
    *@param val the value that we want all the elements of the array to have
    */
-  explicit Mat1d(const T val) noexcept : __size(SIZE) {
-    arr = new T[__size];
-    for (size_t i = 0; i < __size; ++i) {
+  explicit Mat1d(const T val) noexcept : _size(SIZE) {
+    arr = new T[_size];
+    for (size_t i = 0; i < _size; ++i) {
       arr[i] = val;
     }
   }
@@ -59,13 +59,13 @@ public:
    *@param mat the matrix we want to copy
    *@return Mat1d
    */
-  explicit Mat1d(Mat1d &mat) : __size(SIZE) {
+  explicit Mat1d(Mat1d &mat) : _size(SIZE) {
     try {
-      if (mat.size() != __size) {
+      if (mat.size() != _size) {
         throw std::logic_error("Tried to copy matrixes with different sizes");
       }
-      this->arr = new T[__size];
-      for (size_t i = 0; i < __size; i++) {
+      this->arr = new T[_size];
+      for (size_t i = 0; i < _size; i++) {
         this->arr[i] = mat.arr[i];
       }
     } catch (std::logic_error &e) {
@@ -82,8 +82,8 @@ public:
     if (this == &mat) {
       return *(this);
     }
-    assert(mat.size() == this->__size);
-    for (size_t i = 0; i < __size; i++) {
+    assert(mat.size() == this->_size);
+    for (size_t i = 0; i < _size; i++) {
       this->arr[i] = mat.arr[i];
     }
     return *(this);
@@ -100,7 +100,7 @@ public:
    *@return size_t the size of the array
    *
    */
-  size_t size() { return this->__size; }
+  size_t size() { return this->_size; }
 
   class Iterator;
 
@@ -108,20 +108,20 @@ public:
    *@brief Iterator begin for Mat1d class
    *
    */
-  Iterator begin() { return Iterator(0, __size, arr); }
+  Iterator begin() { return Iterator(0, _size, arr); }
 
   /**
    *@brief Iterator end for Mat1d class
    *
    */
-  Iterator end() { return Iterator(__size, __size, arr); }
+  Iterator end() { return Iterator(_size, _size, arr); }
 
   /**
    *@brief operator[] for Mat1d class
    *@return T the value of the array to that index
    */
   T &operator[](const size_t index) {
-    assert(index < __size);
+    assert(index < _size);
     return arr[index];
   }
 
@@ -132,11 +132,11 @@ public:
    *@return false otherwise
    */
   bool operator==(Mat1d &mat) const {
-    if (mat.size() != __size) {
+    if (mat.size() != _size) {
       return false;
     }
 
-    for (size_t i = 0; i < __size; i++) {
+    for (size_t i = 0; i < _size; i++) {
       if (mat.arr[i] != this->arr[i]) {
         return false;
       }
@@ -167,7 +167,7 @@ public:
  */
 template <typename T, size_t SIZE> class Mat1d<T, SIZE>::Iterator {
 private:
-  size_t __size;
+  size_t _size;
   size_t index;
   T *arr;
 
@@ -178,11 +178,11 @@ public:
    * @param __size size of the array
    * @param mat the matrix we have
    */
-  explicit Iterator(size_t __index, size_t __size, T *__arr) noexcept
-      : index(__index), __size(__size) {
-    arr = new T[__size];
-    for (size_t i = 0; i < __size; i++) {
-      arr[i] = __arr[i];
+  explicit Iterator(size_t _index, size_t _size, T *_arr) noexcept
+      : index(_index), _size(_size), arr(new T[_size]) {
+    
+    for (size_t i = 0; i < _size; i++) {
+      arr[i] = _arr[i];
     }
   }
 
@@ -193,7 +193,7 @@ public:
    * @return Iterator&
    */
   Iterator &operator=(T *curr) {
-    for (size_t i = 0; i < __size; i++) {
+    for (size_t i = 0; i < _size; i++) {
       arr[i] = curr[i];
     }
     return *(this);
@@ -205,7 +205,7 @@ public:
    * @return Iterator&
    */
   Iterator &operator++() {
-    if (index < __size) {
+    if (index < _size) {
       index++;
     }
     return *(this);

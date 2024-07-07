@@ -19,7 +19,7 @@ private:
   std::vector<std::pair<double, double>> setOfPoints;
   double Eps;
   int64_t MinPts;
-  int64_t cluster_id;
+  int64_t cluster_id{0};
   std::map<std::pair<double, double>, int64_t> points;
 
 public:
@@ -30,9 +30,9 @@ public:
   * @param Eps: the input diameter 
   * @param MinPts: the minimum points that a cluster should have to exist
   */
-  explicit DBSCAN(std::vector<std::pair<double, double>> setOfPoints, double Eps, int64_t MinPts) noexcept : setOfPoints(setOfPoints), Eps(Eps), MinPts(MinPts){
+  explicit DBSCAN(std::vector<std::pair<double, double>> setOfPoints, double Eps, int64_t MinPts) noexcept : setOfPoints(setOfPoints), Eps(Eps), MinPts(MinPts) {
     // cluster_id is by default noise
-    cluster_id = 0;
+    
     for(size_t i = 0; i<setOfPoints.size(); ++i){
       if(points.find(setOfPoints[i]) == points.end()){
         if(ExpandCluster(setOfPoints, setOfPoints[i], cluster_id, Eps, MinPts)){

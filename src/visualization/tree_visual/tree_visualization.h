@@ -16,7 +16,7 @@ namespace tree_visualization {
 
 #define OPEN_COMMAND "open"
 
-inline void visualize(std::string &__generate,
+inline void visualize(std::string &_generate,
                       std::string newFileName = "unnamed.dot") {
   auto start_time = std::chrono::high_resolution_clock::now();
   try {
@@ -33,7 +33,7 @@ inline void visualize(std::string &__generate,
       outFile << "digraph Tree {" << std::endl;
 
       // Generate DOT code recursively
-      outFile << __generate;
+      outFile << _generate;
       // Write the DOT format footer
       outFile << "}" << std::endl;
 

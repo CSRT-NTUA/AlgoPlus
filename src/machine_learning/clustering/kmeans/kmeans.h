@@ -39,9 +39,9 @@ public:
   * @param K: the number of clusters
   * @param MAX_ITER: default 500, maximum iterations till it converges
   */
-  kmeans(std::vector<std::vector<double>> data, int K, int64_t MAX_ITER=1500) {
-    this->data = data;
-    this->K = K;
+  kmeans(std::vector<std::vector<double>> data, int K, int64_t MAX_ITER=1500) : data(data), K(K) {
+    
+    
     for(int i = 0; i<K; i++){
       int rand_num = arc4random() % data.size() - 1;
       this->cluster_centers.push_back(data[rand_num]);
@@ -52,13 +52,13 @@ public:
         assign_to_closest(data[i]);
       }
 
-      std::vector<std::vector<std::vector<double> > > __clusters(K);
+      std::vector<std::vector<std::vector<double> > > _clusters(K);
       for(auto & x: assignments){
-        __clusters[x.second].push_back(x.first);
+        _clusters[x.second].push_back(x.first);
       }
       std::vector<std::vector<double> > new_centroids;
       for(int i = 0; i<K; i++){
-        new_centroids.push_back(get_centroid(__clusters[i]));
+        new_centroids.push_back(get_centroid(_clusters[i]));
       }
 
       if(new_centroids == this->cluster_centers){

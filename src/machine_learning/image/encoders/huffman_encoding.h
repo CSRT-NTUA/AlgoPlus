@@ -24,11 +24,11 @@ private:
     std::shared_ptr<node> right;
     node(std::string ID, double weight) : ID(ID), weight(weight), left(nullptr), right(nullptr) {}
   };
-  double __size;
+  double _size{};
   int64_t MAX_DEPTH;
   std::shared_ptr<node> root;
   std::unordered_map<char, double> appearances;
-  std::priority_queue<std::pair<double, std::shared_ptr<node> >, std::vector<std::pair<double, std::shared_ptr<node> > >, std::greater<std::pair<double, std::shared_ptr<node> > > > __weights;
+  std::priority_queue<std::pair<double, std::shared_ptr<node> >, std::vector<std::pair<double, std::shared_ptr<node> > >, std::greater<std::pair<double, std::shared_ptr<node> > > > _weights;
   std::unordered_map<char, double> map_weights;
 
 public:
@@ -41,7 +41,7 @@ public:
     for(std::string &x : v){
       for(char & y : x){
         appearances[y]++;
-        __size++;
+        _size++;
       }
     }
   }
@@ -52,17 +52,17 @@ public:
   */
   void create_tree(){
     compute_weights();
-    while(__weights.size() != 1){
-      auto first_node = __weights.top();
-      __weights.pop();
-      auto second_node = __weights.top();
-      __weights.pop();
+    while(_weights.size() != 1){
+      auto first_node = _weights.top();
+      _weights.pop();
+      auto second_node = _weights.top();
+      _weights.pop();
       std::shared_ptr<node> nn = std::make_shared<node>(first_node.second->ID + second_node.second->ID, first_node.first + second_node.first);
       nn -> right = second_node.second;
       nn -> left = first_node.second;
-      __weights.push({nn->weight, nn});
+      _weights.push({nn->weight, nn});
     }
-    root = __weights.top().second;
+    root = _weights.top().second;
   }
   
   /**
@@ -73,7 +73,7 @@ public:
     std::vector<int> v(MAX_DEPTH);
     int top = 0;
     std::unordered_map<std::string, std::string> decoded;
-    __decode(root, v, top, decoded);
+    _decode(root, v, top, decoded);
     return decoded;
   }
 
@@ -82,20 +82,20 @@ private:
   void compute_weights(){
     for(auto & x : appearances){
       std::string curr = ""; curr += x.first;
-      std::shared_ptr<node> nn = std::make_shared<node>(curr, x.second / __size);
-      __weights.push({x.second / __size, nn});
-      map_weights[x.first] = x.second / __size;
+      std::shared_ptr<node> nn = std::make_shared<node>(curr, x.second / _size);
+      _weights.push({x.second / _size, nn});
+      map_weights[x.first] = x.second / _size;
     }
   }
 
-  void __decode(std::shared_ptr<node> root, std::vector<int> arr, int top, std::unordered_map<std::string, std::string> &decoded){
+  void _decode(std::shared_ptr<node> root, std::vector<int> arr, int top, std::unordered_map<std::string, std::string> &decoded){
     if(root -> left){
       arr[top] = 0;
-      __decode(root -> left, arr, top + 1, decoded);
+      _decode(root -> left, arr, top + 1, decoded);
     }
     if(root -> right){
       arr[top] = 1;
-      __decode(root -> right, arr, top + 1, decoded);
+      _decode(root -> right, arr, top + 1, decoded);
     }
     if(!root -> left && !root -> right){
       std::string ans = "";

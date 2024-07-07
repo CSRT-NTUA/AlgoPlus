@@ -33,9 +33,9 @@ public:
    *
    * @param i the tree we want to copy
    */
-  explicit interval_tree(const interval_tree &i) {
-    root = i.root;
-    __size = i.__size;
+  explicit interval_tree(const interval_tree &i) : root(i.root), _size(i._size) {
+    
+    
   }
 
   /**
@@ -45,7 +45,7 @@ public:
    */
   interval_tree &operator=(const interval_tree &i) {
     root = i.root;
-    __size = i.__size;
+    _size = i._size;
     return *this;
   }
 
@@ -56,7 +56,7 @@ public:
    */
   void clear() {
     root = nullptr;
-    __size = 0;
+    _size = 0;
   }
 
   /**
@@ -65,8 +65,8 @@ public:
    */
   void insert(std::pair<T, T> p) {
     interval i = interval(p);
-    root = __insert(root, i);
-    __size++;
+    root = _insert(root, i);
+    _size++;
   }
 
   /**
@@ -81,7 +81,7 @@ public:
     if (this->overlap({root->i->low, root->i->high}, p)) {
       return true;
     }
-    return __search(root, i);
+    return _search(root, i);
   }
 
   /**
@@ -90,8 +90,8 @@ public:
    */
   void remove(std::pair<T, T> p) {
     interval i = interval(p);
-    root = __remove(root, i);
-    __size--;
+    root = _remove(root, i);
+    _size--;
   }
 
   /**
@@ -132,7 +132,7 @@ public:
    *
    * @return size_t the size of the tree
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
 
   /**
    *@brief inorder function.
@@ -140,7 +140,7 @@ public:
    */
   std::vector<std::pair<T, T>> inorder() {
     std::vector<std::pair<T, T>> path;
-    __inorder(
+    _inorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back({callbacked->i->low, callbacked->i->high});
         },
@@ -154,7 +154,7 @@ public:
    */
   std::vector<std::pair<T, T>> preorder() {
     std::vector<std::pair<T, T>> path;
-    __preorder(
+    _preorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back({callbacked->i->low, callbacked->i->high});
         },
@@ -168,7 +168,7 @@ public:
    */
   std::vector<std::pair<T, T>> postorder() {
     std::vector<std::pair<T, T>> path;
-    __postorder(
+    _postorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back({callbacked->i->low, callbacked->i->high});
         },
@@ -204,8 +204,8 @@ public:
   }
 
   void visualize() {
-    std::string __generated = generate_visualization();
-    tree_visualization::visualize(__generated);
+    std::string _generated = generate_visualization();
+    tree_visualization::visualize(_generated);
   }
 
   /**
@@ -257,7 +257,7 @@ private:
   };
 
   std::shared_ptr<node> root;
-  size_t __size;
+  size_t _size{};
 
   std::shared_ptr<node> new_node(interval i) {
     std::shared_ptr<node> p = std::make_shared<node>(i);
@@ -267,15 +267,15 @@ private:
   /**
    *@brief helper function for insertion
    */
-  std::shared_ptr<node> __insert(std::shared_ptr<node> root, interval i) {
+  std::shared_ptr<node> _insert(std::shared_ptr<node> root, interval i) {
     if (!root) {
       return new_node(i);
     }
     T l = root->i->low;
     if (i.low < l) {
-      root->left = __insert(root->left, i);
+      root->left = _insert(root->left, i);
     } else {
-      root->right = __insert(root->right, i);
+      root->right = _insert(root->right, i);
     }
     if (root->max < i.high) {
       root->max = i.high;
@@ -286,20 +286,20 @@ private:
   /**
    *@brief helper function for search
    */
-  bool __search(std::shared_ptr<node> root, interval i) {
+  bool _search(std::shared_ptr<node> root, interval i) {
     if (!root) {
       return false;
     }
     if (root->left && root->left->max >= i.low) {
-      return __search(root->left, i);
+      return _search(root->left, i);
     }
-    return __search(root->right, i);
+    return _search(root->right, i);
   }
 
   /**
    *@brief helper function for remove.
    */
-  std::shared_ptr<node> __remove(std::shared_ptr<node> root, interval i) {
+  std::shared_ptr<node> _remove(std::shared_ptr<node> root, interval i) {
     if (!root) {
       return nullptr;
     }
@@ -325,111 +325,111 @@ private:
           }
           p->i = temp->i;
           p->max = temp->max;
-          p->right = __remove(p->right, *temp->i);
+          p->right = _remove(p->right, *temp->i);
         }
       }
     }
     return root;
   }
 
-  void __inorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _inorder(std::function<void(std::shared_ptr<node>)> callback,
                  std::shared_ptr<node> root) {
     if (root) {
-      __inorder(callback, root->left);
+      _inorder(callback, root->left);
       callback(root);
-      __inorder(callback, root->right);
+      _inorder(callback, root->right);
     }
   }
 
-  void __postorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _postorder(std::function<void(std::shared_ptr<node>)> callback,
                    std::shared_ptr<node> root) {
     if (root) {
-      __postorder(callback, root->left);
-      __postorder(callback, root->right);
+      _postorder(callback, root->left);
+      _postorder(callback, root->right);
       callback(root);
     }
   }
 
-  void __preorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _preorder(std::function<void(std::shared_ptr<node>)> callback,
                   std::shared_ptr<node> root) {
     if (root) {
       callback(root);
-      __preorder(callback, root->left);
-      __preorder(callback, root->right);
+      _preorder(callback, root->left);
+      _preorder(callback, root->right);
     }
   }
 
   std::string generate_visualization() {
-    std::string __generate = __inorder_gen(root);
-    return __generate;
+    std::string _generate = _inorder_gen(root);
+    return _generate;
   }
 
-  std::string __inorder_gen(std::shared_ptr<node> root) {
-    std::string __s;
+  std::string _inorder_gen(std::shared_ptr<node> root) {
+    std::string _s;
     if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
       if (root->left) {
-        __s += '"';
-        __s += root->i->low;
-        __s += ',';
-        __s += root->i->high;
-        __s += '"';
-        __s += "->";
-        __s += '"';
-        __s += root->left->i->low;
-        __s += ',';
-        __s += root->left->i->high;
-        __s += '"';
-        __s += "\n";
-        __s += __inorder_gen(root->left);
+        _s += '"';
+        _s += root->i->low;
+        _s += ',';
+        _s += root->i->high;
+        _s += '"';
+        _s += "->";
+        _s += '"';
+        _s += root->left->i->low;
+        _s += ',';
+        _s += root->left->i->high;
+        _s += '"';
+        _s += "\n";
+        _s += _inorder_gen(root->left);
       }
       if (root->right) {
-        __s += '"';
-        __s += root->i->low;
-        __s += ',';
-        __s += root->i->high;
-        __s += '"';
-        __s += "->";
-        __s += '"';
-        __s += root->right->i->low;
-        __s += ',';
-        __s += root->right->i->high;
-        __s += '"';
-        __s += "\n";
-        __s += __inorder_gen(root->right);
+        _s += '"';
+        _s += root->i->low;
+        _s += ',';
+        _s += root->i->high;
+        _s += '"';
+        _s += "->";
+        _s += '"';
+        _s += root->right->i->low;
+        _s += ',';
+        _s += root->right->i->high;
+        _s += '"';
+        _s += "\n";
+        _s += _inorder_gen(root->right);
       }
     } else {
       if (root->left) {
-        __s += '"';
-        __s += std::to_string(root->i->low);
-        __s += ',';
-        __s += std::to_string(root->i->high);
-        __s += '"';
-        __s += "->";
-        __s += '"';
-        __s += std::to_string(root->left->i->low);
-        __s += ',';
-        __s += std::to_string(root->left->i->high);
-        __s += '"';
-        __s += "\n";
-        __s += __inorder_gen(root->left);
+        _s += '"';
+        _s += std::to_string(root->i->low);
+        _s += ',';
+        _s += std::to_string(root->i->high);
+        _s += '"';
+        _s += "->";
+        _s += '"';
+        _s += std::to_string(root->left->i->low);
+        _s += ',';
+        _s += std::to_string(root->left->i->high);
+        _s += '"';
+        _s += "\n";
+        _s += _inorder_gen(root->left);
       }
       if (root->right) {
-        __s += '"';
-        __s += std::to_string(root->i->low);
-        __s += ',';
-        __s += std::to_string(root->i->high);
-        __s += '"';
-        __s += "->";
-        __s += '"';
-        __s += std::to_string(root->right->i->low);
-        __s += ',';
-        __s += std::to_string(root->right->i->high);
-        __s += '"';
-        __s += "\n";
-        __s += __inorder_gen(root->right);
+        _s += '"';
+        _s += std::to_string(root->i->low);
+        _s += ',';
+        _s += std::to_string(root->i->high);
+        _s += '"';
+        _s += "->";
+        _s += '"';
+        _s += std::to_string(root->right->i->low);
+        _s += ',';
+        _s += std::to_string(root->right->i->high);
+        _s += '"';
+        _s += "\n";
+        _s += _inorder_gen(root->right);
       }
     }
-    return __s;
+    return _s;
   }
 };
 

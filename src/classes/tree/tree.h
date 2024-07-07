@@ -22,7 +22,7 @@ private:
     node(T info) : info(info), left(nullptr), right(nullptr) {}
   };
 
-  int64_t __size;
+  int64_t _size{};
   std::shared_ptr<node> root;
 
 public:
@@ -48,7 +48,7 @@ public:
   void insert(std::string direction, T info) {
     std::shared_ptr<node> nn = std::make_shared<node>(info);
     if (!root) {
-      __size++;
+      _size++;
       root = nn;
       return;
     }
@@ -67,7 +67,7 @@ public:
     } else if (head && direction[i] == 'l') {
       head->left = nn;
     }
-    __size++;
+    _size++;
   }
 
   /**
@@ -116,7 +116,7 @@ public:
    */
   std::vector<T> inorder() {
     std::vector<T> ino;
-    __inorder(
+    _inorder(
         [&](std::shared_ptr<node> callbacked) {
           ino.push_back(callbacked->info);
         },
@@ -130,7 +130,7 @@ public:
    */
   std::vector<T> postorder() {
     std::vector<T> path;
-    __postorder(
+    _postorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back(callbacked->info);
         },
@@ -144,7 +144,7 @@ public:
    */
   std::vector<T> preorder() {
     std::vector<T> path;
-    __preorder(
+    _preorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back(callbacked->info);
         },
@@ -196,30 +196,30 @@ public:
   }
 
 private:
-  void __inorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _inorder(std::function<void(std::shared_ptr<node>)> callback,
                  std::shared_ptr<node> root) {
     if (root) {
-      __inorder(callback, root->left);
+      _inorder(callback, root->left);
       callback(root);
-      __inorder(callback, root->right);
+      _inorder(callback, root->right);
     }
   }
 
-  void __preorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _preorder(std::function<void(std::shared_ptr<node>)> callback,
                   std::shared_ptr<node> root) {
     if (root) {
       callback(root);
-      __preorder(callback, root->left);
-      __preorder(callback, root->righ);
+      _preorder(callback, root->left);
+      _preorder(callback, root->righ);
     }
   }
 
-  void __postorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _postorder(std::function<void(std::shared_ptr<node>)> callback,
                    std::shared_ptr<node> root) {
     if (root) {
-      __postorder(callback, root->right);
+      _postorder(callback, root->right);
       callback(root);
-      __postorder(callback, root->left);
+      _postorder(callback, root->left);
     }
   }
 };

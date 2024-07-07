@@ -21,9 +21,9 @@ public:
    *@param __elements: you can directly pass a vector<T> so you don't have to do
    *insert multiple times.
    */
-  explicit bst(std::vector<T> __elements = {}) noexcept : root(nullptr) {
-    if (!__elements.empty()) {
-      for (T &x : __elements) {
+  explicit bst(std::vector<T> _elements = {}) noexcept : root(nullptr) {
+    if (!_elements.empty()) {
+      for (T &x : _elements) {
         this->insert(x);
       }
     }
@@ -33,9 +33,9 @@ public:
    * @brief Copy constructor for bst class
    * @param b the tree we want to copy
    */
-  explicit bst(const bst &b) {
-    root = b.root;
-    __size = b.__size;
+  explicit bst(const bst &b) : root(b.root), _size(b._size) {
+    
+    
   }
 
   /**
@@ -45,7 +45,7 @@ public:
    */
   bst &operator=(const bst &b) {
     root = b.root;
-    __size = b.__size;
+    _size = b._size;
     return *this;
   }
 
@@ -56,7 +56,7 @@ public:
    */
   void clear() {
     root = nullptr;
-    __size = 0;
+    _size = 0;
   }
 
   /**
@@ -64,8 +64,8 @@ public:
    *@param key: key to be inserted.
    */
   void insert(T key) {
-    root = __insert(root, key);
-    __size++;
+    root = _insert(root, key);
+    _size++;
   }
 
   /**
@@ -73,15 +73,15 @@ public:
    *@param key: key to be searched.
    *@returns true if the key exists in the tree.
    */
-  bool search(T key) { return __search(root, key); }
+  bool search(T key) { return _search(root, key); }
 
   /**
    *@brief remove function.
    *@param key: key to be removed.
    */
   void remove(T key) {
-    root = __remove(root, key);
-    __size--;
+    root = _remove(root, key);
+    _size--;
   }
 
   class Iterator;
@@ -111,7 +111,7 @@ public:
    *
    * @return size_t the size of the tree
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
 
   /**
    *@brief inorder function.
@@ -119,7 +119,7 @@ public:
    */
   std::vector<T> inorder() {
     std::vector<T> path;
-    __inorder(
+    _inorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back(callbacked->info);
         },
@@ -133,7 +133,7 @@ public:
    */
   std::vector<T> preorder() {
     std::vector<T> path;
-    __preorder(
+    _preorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back(callbacked->info);
         },
@@ -147,7 +147,7 @@ public:
    */
   std::vector<T> postorder() {
     std::vector<T> path;
-    __postorder(
+    _postorder(
         [&](std::shared_ptr<node> callbacked) {
           path.push_back(callbacked->info);
         },
@@ -187,8 +187,8 @@ public:
    *@returns .dot file that can be previewed using graphviz in vscode.
    */
   void visualize() {
-    std::string __generated = generate_visualization();
-    tree_visualization::visualize(__generated);
+    std::string _generated = generate_visualization();
+    tree_visualization::visualize(_generated);
   }
 
   
@@ -223,27 +223,27 @@ private:
   } node;
 
   std::shared_ptr<node> root;
-  size_t __size;
+  size_t _size{};
 
   std::shared_ptr<node> new_node(T &key) {
     std::shared_ptr<node> p = std::make_shared<node>(key);
     return p;
   }
 
-  std::shared_ptr<node> __insert(std::shared_ptr<node> root, T &key) {
+  std::shared_ptr<node> _insert(std::shared_ptr<node> root, T &key) {
     if (!root) {
       return new_node(key);
     } else {
       if (root->info < key) {
-        root->right = __insert(root->right, key);
+        root->right = _insert(root->right, key);
       } else {
-        root->left = __insert(root->left, key);
+        root->left = _insert(root->left, key);
       }
     }
     return root;
   }
 
-  bool __search(std::shared_ptr<node> root, T &key) {
+  bool _search(std::shared_ptr<node> root, T &key) {
     while (root) {
       if (root->info < key) {
         root = root->right;
@@ -256,15 +256,15 @@ private:
     return false;
   }
 
-  std::shared_ptr<node> __remove(std::shared_ptr<node> root, T &key) {
+  std::shared_ptr<node> _remove(std::shared_ptr<node> root, T &key) {
     if (!root) {
       return root;
     }
 
     if (root->info < key) {
-      root->right = __remove(root->right, key);
+      root->right = _remove(root->right, key);
     } else if (root->info > key) {
-      root->left = __remove(root->left, key);
+      root->left = _remove(root->left, key);
     } else {
       if (!root->left && !root->right) {
         root = nullptr;
@@ -280,74 +280,74 @@ private:
           temp = temp->left;
         }
         root->info = temp->info;
-        root->right = __remove(root->right, temp->info);
+        root->right = _remove(root->right, temp->info);
       }
     }
     return root;
   }
 
-  void __inorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _inorder(std::function<void(std::shared_ptr<node>)> callback,
                  std::shared_ptr<node> root) {
     if (root) {
-      __inorder(callback, root->left);
+      _inorder(callback, root->left);
       callback(root);
-      __inorder(callback, root->right);
+      _inorder(callback, root->right);
     }
   }
 
-  void __postorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _postorder(std::function<void(std::shared_ptr<node>)> callback,
                    std::shared_ptr<node> root) {
     if (root) {
-      __postorder(callback, root->left);
-      __postorder(callback, root->right);
+      _postorder(callback, root->left);
+      _postorder(callback, root->right);
       callback(root);
     }
   }
 
-  void __preorder(std::function<void(std::shared_ptr<node>)> callback,
+  void _preorder(std::function<void(std::shared_ptr<node>)> callback,
                   std::shared_ptr<node> root) {
     if (root) {
       callback(root);
-      __preorder(callback, root->left);
-      __preorder(callback, root->right);
+      _preorder(callback, root->left);
+      _preorder(callback, root->right);
     }
   }
 
   std::string generate_visualization() {
-    std::string __generate = __inorder_gen(root);
-    return __generate;
+    std::string _generate = _inorder_gen(root);
+    return _generate;
   }
 
-  std::string __inorder_gen(std::shared_ptr<node> root) {
-    std::string __s;
+  std::string _inorder_gen(std::shared_ptr<node> root) {
+    std::string _s;
     if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
       if (root->left) {
-        __s += root->info;
-        __s += "->";
-        __s += root->left->info;
-        __s += "\n";
-        __s += __inorder_gen(root->left);
+        _s += root->info;
+        _s += "->";
+        _s += root->left->info;
+        _s += "\n";
+        _s += _inorder_gen(root->left);
       }
       if (root->right) {
-        __s += root->info;
-        __s += "->";
-        __s += root->right->info;
-        __s += "\n";
-        __s += __inorder_gen(root->right);
+        _s += root->info;
+        _s += "->";
+        _s += root->right->info;
+        _s += "\n";
+        _s += _inorder_gen(root->right);
       }
     } else {
       if (root->left) {
-        __s += std::to_string(root->info) + "->" +
+        _s += std::to_string(root->info) + "->" +
                std::to_string(root->left->info) + "\n" +
-               __inorder_gen(root->left);
+               _inorder_gen(root->left);
       }
       if (root->right) {
-        __s += std::to_string(root->info) + "->" +
+        _s += std::to_string(root->info) + "->" +
                std::to_string(root->right->info) + "\n" +
-               __inorder_gen(root->right);
+               _inorder_gen(root->right);
       }
     }
-    return __s;
+    return _s;
   }
 };
 

@@ -16,9 +16,9 @@
 template <typename T, size_t ROWS, size_t COLS> class Mat2d {
 private:
   T *arr;
-  size_t __size;
-  size_t __cols;
-  size_t __rows;
+  size_t _size;
+  size_t _cols;
+  size_t _rows;
   Mat1d<T, COLS> mat;
 
 public:
@@ -27,12 +27,12 @@ public:
    *
    */
   explicit Mat2d(std::vector<std::vector<T>> v = {})
-      : __cols(COLS), __rows(ROWS), __size(ROWS * COLS) {
-    arr = new T[ROWS * COLS];
+      : arr(new T[ROWS * COLS]), _cols(COLS), _rows(ROWS), _size(ROWS * COLS) {
+    
     if (!v.empty()) {
       try {
-        if (v.size() * v[0].size() != __size || v[0].size() != __cols ||
-            v.size() != __rows) {
+        if (v.size() * v[0].size() != _size || v[0].size() != _cols ||
+            v.size() != _rows) {
           throw std::logic_error("Initializer array don't have the same "
                                  "dimensions as the constructed array");
         }
@@ -53,9 +53,9 @@ public:
    *@param val the value that we want all the index of the array to have
    */
   explicit Mat2d(const T val) noexcept
-      : __size(ROWS * COLS), __cols(COLS), __rows(ROWS) {
-    arr = new T[__size];
-    for (size_t i = 0; i < __size; i++) {
+      : _size(ROWS * COLS), _cols(COLS), _rows(ROWS) {
+    arr = new T[_size];
+    for (size_t i = 0; i < _size; i++) {
       arr[i] = val;
     }
   }
@@ -66,15 +66,15 @@ public:
    *
    */
   explicit Mat2d(const Mat2d &mat)
-      : __size(ROWS * COLS), __cols(COLS), __rows(ROWS) {
+      : _size(ROWS * COLS), _cols(COLS), _rows(ROWS) {
     try {
-      if (mat.size() != __size || mat.cols() != __cols ||
-          mat.rows() != __rows) {
+      if (mat.size() != _size || mat.cols() != _cols ||
+          mat.rows() != _rows) {
         throw std::logic_error(
             "Tried to copy matrixes with different dimensions");
       }
-      this->arr = new T[__size];
-      for (size_t i = 0; i < __size; i++) {
+      this->arr = new T[_size];
+      for (size_t i = 0; i < _size; i++) {
         this->arr[i] = mat.arr[i];
       }
     } catch (std::logic_error &e) {
@@ -92,11 +92,11 @@ public:
       return *(this);
     }
     try {
-      if (mat.size() != __size || mat.cols() != __cols || mat.rows != __rows) {
+      if (mat.size() != _size || mat.cols() != _cols || mat.rows != _rows) {
         throw std::logic_error(
             "Tried to copy matrixes with different dimensions");
       }
-      for (size_t i = 0; i < __size; i++) {
+      for (size_t i = 0; i < _size; i++) {
         this->arr[i] = mat.arr[i];
       }
       return *(this);
@@ -111,7 +111,7 @@ public:
    *@param j index that's pointing to the column
    *@return T the element of arr[i][j]
    */
-  T &operator()(size_t i, size_t j) const { return arr[i * __cols + j]; }
+  T &operator()(size_t i, size_t j) const { return arr[i * _cols + j]; }
 
   /**
    *@brief operator () for Mat2d class
@@ -120,7 +120,7 @@ public:
    */
   Mat1d<T, COLS> &operator()(size_t i) {
     size_t index = 0;
-    for (size_t j = i * __cols; j < i * __cols + __rows; j++) {
+    for (size_t j = i * _cols; j < i * _cols + _rows; j++) {
       mat[index++] = arr[j];
     }
     return mat;
@@ -130,19 +130,19 @@ public:
    *@brief size function
    *@return size_t the size of the matrix
    */
-  size_t size() const { return __size; }
+  size_t size() const { return _size; }
 
   /**
    *@brief cols function
    *@return size_t the number of elements in each column
    */
-  size_t cols() const { return __cols; }
+  size_t cols() const { return _cols; }
 
   /**
    *@brief rows function
    *@return size_t the number of elements in each row
    */
-  size_t rows() const { return __rows; }
+  size_t rows() const { return _rows; }
 
   class Iterator;
 
@@ -150,13 +150,13 @@ public:
    *@brief begin() Iterator for Mat2d class
    *@return Iterator
    */
-  Iterator begin() { return Iterator(arr, __rows, __cols, 0); }
+  Iterator begin() { return Iterator(arr, _rows, _cols, 0); }
 
   /**
    *@brief end() Iterator for Mat2d class
    *@return Iterator
    */
-  Iterator end() { return Iterator(arr, __rows, __cols, __size); }
+  Iterator end() { return Iterator(arr, _rows, _cols, _size); }
 
   /**
    *@brief operator << for Mat2d class
@@ -188,10 +188,10 @@ template <typename T, size_t ROWS, size_t COLS>
 class Mat2d<T, ROWS, COLS>::Iterator {
 private:
   T *arr;
-  size_t __rows;
-  size_t __cols;
-  size_t __index;
-  size_t __size;
+  size_t _rows;
+  size_t _cols;
+  size_t _index;
+  size_t _size;
   Mat1d<T, COLS> mat;
 
 public:
@@ -203,12 +203,12 @@ public:
    *@param index the current index, if it's begin() then 0, if it's end() then
    *__size
    */
-  explicit Iterator(T *__arr, size_t rows, size_t cols, size_t index) noexcept
-      : __rows(rows), __cols(cols), __index(index) {
-    __size = rows * cols;
-    arr = new T[__size];
-    for (size_t i = 0; i < __size; i++) {
-      arr[i] = __arr[i];
+  explicit Iterator(T *_arr, size_t rows, size_t cols, size_t index) noexcept
+      : _rows(rows), _cols(cols), _index(index), _size(rows * cols) {
+    
+    arr = new T[_size];
+    for (size_t i = 0; i < _size; i++) {
+      arr[i] = _arr[i];
     }
   }
 
@@ -218,7 +218,7 @@ public:
    *@return Iterator&
    */
   Iterator &operator=(T *curr) {
-    for (size_t i = 0; i < __size; i++) {
+    for (size_t i = 0; i < _size; i++) {
       arr[i] = curr[i];
     }
     return *(this);
@@ -229,8 +229,8 @@ public:
    *@return Iterator&
    */
   Iterator &operator++() {
-    if (this->__index < __size) {
-      this->__index++;
+    if (this->_index < _size) {
+      this->_index++;
     }
     return *(this);
   }
@@ -250,8 +250,8 @@ public:
    *@return Iterator&
    */
   Iterator &operator--() {
-    if (this->__index > 0) {
-      this->__index--;
+    if (this->_index > 0) {
+      this->_index--;
     }
     return *(this);
   }
@@ -281,7 +281,7 @@ public:
    */
   Mat1d<T, COLS> operator*() {
     size_t index = 0;
-    for (size_t j = this->__index * __cols; j < this->__index * __cols + __rows;
+    for (size_t j = this->_index * _cols; j < this->_index * _cols + _rows;
          ++j) {
       mat[index++] = arr[j];
     }

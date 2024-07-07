@@ -51,9 +51,9 @@ public:
    *
    * @param h the hash table we want to copy
    */
-  hash_table(const hash_table &h) {
-    bucketList = h.bucketList;
-    hash = h.hash;
+  hash_table(const hash_table &h) : bucketList(h.bucketList), hash(h.hash) {
+    
+    
   }
 
   /**
@@ -171,7 +171,7 @@ private:
   std::unordered_map<size_t, std::list<std::pair<KeyType, ValueType>>>
       bucketList;
   std::vector<size_t> key_values;
-  int64_t index;
+  int64_t index{};
 
 public:
   /**

@@ -25,7 +25,7 @@ namespace graph_visualization {
  *@param newFileName: if needed, the filename can be changed(default
  *"unnamed.dot")
  */
-inline void visualize(std::string &__generate,
+inline void visualize(std::string &_generate,
                       std::string newFileName = "unnamed.dot") {
   auto start_time = std::chrono::high_resolution_clock::now();
   try {
@@ -42,7 +42,7 @@ inline void visualize(std::string &__generate,
       outFile << "graph G{" << std::endl;
 
       // Generate DOT code recursively
-      outFile << __generate;
+      outFile << _generate;
       // Write the DOT format footer
       outFile << "}" << std::endl;
 
@@ -85,7 +85,7 @@ namespace digraph_visualization {
  *@param newFileName: if needed, the filename can be changed(default
  *"unnamed.dot")
  */
-inline void visualize(std::string &__generate,
+inline void visualize(std::string &_generate,
                       std::string newFileName = "unnamed.dot") {
   auto start_time = std::chrono::high_resolution_clock::now();
   try {
@@ -102,7 +102,7 @@ inline void visualize(std::string &__generate,
       outFile << "digraph G{" << std::endl;
 
       // Generate DOT code recursively
-      outFile << __generate;
+      outFile << _generate;
       // Write the DOT format footer
       outFile << "}" << std::endl;
 

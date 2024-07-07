@@ -27,7 +27,7 @@ private:
     std::vector<T> keys;
     std::vector<std::shared_ptr<node> > children;
     int numChildren;
-    int index;
+    int index{};
     node(std::vector<T> keys, std::vector<std::shared_ptr<node> > children, int numChildren) :
       keys(keys), children(children), numChildren(numChildren) {}
   } node;

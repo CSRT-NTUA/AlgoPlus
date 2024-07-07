@@ -21,10 +21,10 @@ public:
    *@param __elements: you can provide the constructor with a vector of elements
    *so you dont have to do multiple push backs yourself.
    */
-  explicit linked_list(std::vector<T> __elements = {}) noexcept
-      : root(nullptr), tail(nullptr), __size(0) {
-    if (!__elements.empty()) {
-      for (T &x : __elements) {
+  explicit linked_list(std::vector<T> _elements = {}) noexcept
+      : root(nullptr), tail(nullptr) {
+    if (!_elements.empty()) {
+      for (T &x : _elements) {
         this->push_back(x);
       }
     }
@@ -34,10 +34,10 @@ public:
    * @brief copy constructor for the linked_list class
    * @param l the list we want to copy
    */
-  explicit linked_list(const linked_list &l) {
-    root = l.root;
-    tail = l.tail;
-    __size = l.__size;
+  explicit linked_list(const linked_list &l) : root(l.root), tail(l.tail), _size(l._size) {
+    
+    
+    
   }
 
   /**
@@ -48,7 +48,7 @@ public:
   linked_list &operator=(const linked_list &l) {
     root = l.root;
     tail = l.tail;
-    __size = l.__size;
+    _size = l._size;
     return *this;
   }
 
@@ -62,7 +62,7 @@ public:
    *@brief size function.
    *Returns the size of the list.
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
 
   class Iterator;
 
@@ -149,7 +149,7 @@ private:
   };
   std::shared_ptr<node> root;
   std::shared_ptr<node> tail;
-  size_t __size;
+  size_t _size{0};
 
   std::string generate();
 };
@@ -162,14 +162,14 @@ template <typename T> void linked_list<T>::push_back(T key) {
     tail->next = p;
   }
   tail = p;
-  __size++;
+  _size++;
 }
 
 template <typename T> void linked_list<T>::push_front(T key) {
   std::shared_ptr<node> p = std::make_shared<node>(key);
   p->next = root;
   root = p;
-  __size++;
+  _size++;
 }
 
 template <typename T> void linked_list<T>::erase(T key) {
@@ -193,7 +193,7 @@ template <typename T> void linked_list<T>::erase(T key) {
   if (root == tail) {
     tail = nullptr;
   }
-  __size--;
+  _size--;
 }
 
 template <typename T> bool linked_list<T>::search(T key) {
@@ -217,17 +217,17 @@ template <typename T> bool linked_list<T>::search(T key) {
 }
 
 template <typename T> std::vector<T> linked_list<T>::elements() {
-  std::vector<T> __elements;
+  std::vector<T> _elements;
 
   if (this->empty()) {
-    return __elements;
+    return _elements;
   }
   std::shared_ptr<node> head = root;
   while (head) {
-    __elements.push_back(head->val);
+    _elements.push_back(head->val);
     head = head->next;
   }
-  return __elements;
+  return _elements;
 }
 
 template <typename T> void linked_list<T>::reverse() {

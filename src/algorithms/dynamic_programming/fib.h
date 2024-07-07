@@ -44,7 +44,7 @@ int64_t fibonacci_dp(int64_t n) {
  * @return int64_t returns the total fibonacci numbers till n
  */
 int64_t fibonacci_bottom_up(int64_t n) {
-  int64_t a = 0, b = 1, c;
+  int64_t a = 0, b = 1, c = 0;
   if (n == 0) {
     return 0;
   }

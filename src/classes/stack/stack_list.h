@@ -26,7 +26,7 @@ private:
   };
 
   std::shared_ptr<node> root;
-  size_t __size;
+  size_t _size{0};
 
 public:
   /**
@@ -35,7 +35,7 @@ public:
    * @param v initializer vector
    */
   explicit stack_list(std::vector<T> v = {}) noexcept
-      : root(nullptr), __size(0) {
+      : root(nullptr) {
     if (!v.empty()) {
       for (T &x : v) {
         this->push(x);
@@ -47,9 +47,9 @@ public:
    * @brief Copy constructor for stack list class
    * @param s the stack we want to copy
    */
-  explicit stack_list(const stack_list &s) {
-    root = s.root;
-    __size = s.__size;
+  explicit stack_list(const stack_list &s) : root(s.root), _size(s._size) {
+    
+    
   }
 
   /**
@@ -59,7 +59,7 @@ public:
    */
   stack_list &operator=(const stack_list &s) {
     root = s.root;
-    __size = s.__size;
+    _size = s._size;
     return *this;
   }
 
@@ -68,7 +68,7 @@ public:
    */
   void clear() {
     root = nullptr;
-    __size = 0;
+    _size = 0;
   }
 
   /**
@@ -76,7 +76,7 @@ public:
    *
    * @return size_t the size of the stack
    */
-  size_t size() { return __size; }
+  size_t size() { return _size; }
 
   /**
    * @brief push function
@@ -87,13 +87,13 @@ public:
     std::shared_ptr<node> nn = std::make_shared<node>(key);
     if (!root) {
       root = nn;
-      __size++;
+      _size++;
       return;
     } else {
       root->next = nn;
       nn->prev = root;
       root = nn;
-      __size++;
+      _size++;
     }
   }
 
@@ -111,7 +111,7 @@ public:
   void pop() {
     root = root->prev;
     root->next = nullptr;
-    __size--;
+    _size--;
   }
 
   class Iterator;

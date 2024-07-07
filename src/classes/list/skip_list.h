@@ -20,20 +20,20 @@ public:
    *@param __PROB: probability of increasing the height each time(by default it
    *should be 0.5).
    */
-  explicit skip_list(int __MAX_LEVEL, float __PROB) : level(0) {
+  explicit skip_list(int MAX_LEVEL, float PROB)  {
     try {
-      if (__MAX_LEVEL < 5) {
-        MAX_LEVEL = __MAX_LEVEL;
-        root = std::make_shared<node>(0, __MAX_LEVEL);
+      if (MAX_LEVEL < 5) {
+        MAX_LEVEL = MAX_LEVEL;
+        root = std::make_shared<node>(0, MAX_LEVEL);
       } else {
         throw std::invalid_argument("Max level value is too high");
       }
-      if (__PROB > 0.0 && __PROB < 1.0) {
-        PROB = __PROB;
-      } else if (__PROB >= 1.0) {
+      if (PROB > 0.0 && PROB < 1.0) {
+        PROB = PROB;
+      } else if (PROB >= 1.0) {
         throw std::invalid_argument(
             "Probability value is greater or equal to 1");
-      } else if (__PROB <= 0.0) {
+      } else if (PROB <= 0.0) {
         throw std::invalid_argument(
             "Probability value is smaller or equal to 0");
       }
@@ -48,11 +48,11 @@ public:
    *
    * @param s
    */
-  skip_list(const skip_list &s) {
-    level = s.level;
-    PROB = s.PROB;
-    MAX_LEVEL = s.MAX_LEVEL;
-    root = s.root;
+  skip_list(const skip_list &s) : level(s.level), PROB(s.PROB), MAX_LEVEL(s.MAX_LEVEL), root(s.root) {
+    
+    
+    
+    
   }
 
   /**
@@ -190,8 +190,8 @@ public:
   }
 
 private:
-  int MAX_LEVEL;
-  float PROB;
+  int MAX_LEVEL{};
+  float PROB{};
 
   /**
    * @brief struct for the node
@@ -218,7 +218,7 @@ private:
     return lvl;
   }
 
-  int level;
+  int level{0};
   std::shared_ptr<node> root;
 };
 
