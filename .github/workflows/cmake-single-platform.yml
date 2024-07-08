@@ -1,42 +1,72 @@
-name: CMake on a single platform
+name: CMake on multiple platforms
 
 on:
   push:
-    branches: [ "main", "morphology"]
+    branches: [ "main", "morphology" ]
   pull_request:
-    branches: [ "main", "morphology"]
+    branches: [ "main", "morphology" ]
 
 env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # This is a matrix build to provide cross-platform coverage.
+    runs-on: ${{ matrix.os }}
     
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
     steps:
     - uses: actions/checkout@v3
     
-    - name: Download requirements
-      run: sudo pip3 install xcrun gcovr && sudo apt-get update && sudo apt-get install -y lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev clang-tidy
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Install dependencies (Ubuntu)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev
+        pip3 install gcovr
 
-    - name: Install dependencies
+    - name: Install dependencies (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        choco install openal-soft
+        pip install gcovr
+
+    - name: Install Python requirements
       run: pip install -r requirements.txt
 
-    - name: Build for clang-tidy
-      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DENABLE_COVERAGE=true
 
-    - name: Run clang-tidy with --fix
-      run: cmake --build build --target run-clang-tidy
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-    #- name: Test
-    #  working-directory: ${{github.workspace}}/build
-    #  run: ctest --output-on-failure
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      run: ctest --output-on-failure
 
-    #- name: Upload coverage reports to Codecov
-    #  uses: codecov/codecov-action@v4.0.1
-    #  with:
-    #    token: ${{ secrets.CODECOV_TOKEN }}
-    #    slug: CSRT-NTUA/AlgoPlus
+    - name: clang-tidy
+      run: bash clang_tidy.sh
+    
+    #- name: get coverage
+    #  run: make coverage
+    
+    #- name: Run tests and collect coverage
+    #  run: pytest --cov build/tests ${{ env.CODECOV_ATS_TESTS }} 
 
-    #- name: Upload to codecov
-    #  run: bash <(curl -s https://codecov.io/bash)
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4.0.1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: CSRT-NTUA/AlgoPlus
+
+    - name: Upload to codecov
+      run: bash <(curl -s https://codecov.io/bash)
