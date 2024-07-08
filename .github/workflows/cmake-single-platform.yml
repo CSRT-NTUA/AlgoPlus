@@ -2,19 +2,16 @@ name: CMake on multiple platforms
 
 on:
   push:
-    branches: [ "main", "workflow_testing" ]
+    branches: ["main", "workflow_testing"]
   pull_request:
-    branches: [ "main", "workflow_testing" ]
+    branches: ["main", "workflow_testing"]
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
   build:
-    # This is a matrix build to provide cross-platform coverage.
     runs-on: ${{ matrix.os }}
-    
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -61,22 +58,13 @@ jobs:
 
     - name: Test
       working-directory: ${{github.workspace}}/build
-      run: ctest --output-on-failure
+      run: ctest --output-on-failure --verbose
 
     - name: clang-tidy
       run: bash clang_tidy.sh
     
-    #- name: get coverage
-    #  run: make coverage
-    
-    #- name: Run tests and collect coverage
-    #  run: pytest --cov build/tests ${{ env.CODECOV_ATS_TESTS }} 
-
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: CSRT-NTUA/AlgoPlus
-
-    - name: Upload to codecov
-      run: bash <(curl -s https://codecov.io/bash)
