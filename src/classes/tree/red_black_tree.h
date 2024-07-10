@@ -227,13 +227,42 @@ private:
     _remove(replace);
   }
 
-  bool _search(T &key);
+  bool _search(T &key) {
+    std::shared_ptr<node> t_node = this->root;
+    while(t_node){
+      if(key < t_node->info)
+        t_node = t_node->left;
+      else if(key == t_node->info)
+        return true;
+      else
+        t_node = t_node->right;
+    }
+    return false;
+  }
 
-  void _inorder(std::function<void(std::shared_ptr<node>)> callback, std::shared_ptr<node> t_node);
+  void _inorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) {
+    if(t_node){
+      _inorder(callback, t_node->left);
+      callback(t_node->info);
+      _inorder(callback, t_node->right);
+    }
+  }
 
-  void _postorder(std::function<void(std::shared_ptr<node>)> callback, std::shared_ptr<node> t_node);
+  void _postorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) {
+    if(t_node){
+      _postorder(callback, t_node->left);
+      _postorder(callback, t_node->right);
+      callback(t_node->info);
+    }
+  }
 
-  void _preorder(std::function<void(std::shared_ptr<node>)> callback, std::shared_ptr<node> t_node);
+  void _preorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) {
+    if(t_node){
+      callback(t_node->info);
+      _preorder(callback, t_node->left);
+      _preorder(callback, t_node->right);
+    }
+  }
 public:
   /**
    *@brief Contructor for red black tree class.
@@ -257,6 +286,35 @@ public:
    * @brief Destructor for red black tree class
    */
   ~red_black_tree() noexcept { root = nullptr; }
+
+  /**
+   * @brief operator = for red black tree class
+   * @param rb the tree we want to copy
+   * @return red_black_tree&
+   */
+  red_black_tree<T> &operator=(const red_black_tree<T> &rb) {
+    root = rb.root;
+    _size = rb._size;
+    return *this;
+  }
+
+  /**
+   * @brief operator == for red black tree class
+   * @param rb the tree we want to compare
+   * @return true if they are same, false otherwise
+   */
+  bool operator==(const red_black_tree<T> &rb) {
+    return this->root == rb.root;
+  }
+
+
+
+  /**
+   *@brief search function.
+   *@param key: key to be searched.
+   *@returns true if the key exists in the tree.
+   */
+  bool search(T key) { return _search(key); }
   
   /**
    *@brief insert function.
@@ -282,6 +340,7 @@ public:
         p->right = t_node;
     }
     _insert(t_node);
+    _size += 1;
   }
 
   /**
@@ -297,19 +356,81 @@ public:
         t_node = t_node->right;
     }
     _remove(t_node);
+    _size -= 1;
   }
 
-  std::vector<std::vector<pair<T, bool>>> level_order() {
-    std::vector<std::vector<pair<T, bool>>> path;
+  /**
+   * @brief size function
+   *
+   * @return size_t the size of the tree
+   */
+  size_t size() { return _size; }
+
+  /**
+   * @brief clear function
+   */
+  void clear() {
+    root = nullptr;
+    _size = 0;
+  }
+
+  /**
+   *@brief inorder function.
+   *@returns vector<T>, the elements inorder.
+   */
+  std::vector<T> inorder() {
+    std::vector<T> path;
+    _inorder(
+        [&](T callbacked) {
+          path.push_back(callbacked);
+        },
+        root);
+    return path;
+  }
+
+  /**
+   *@brief postorder function.
+   *@returns vector<T>, the elements postorder.
+   */
+  std::vector<T> postorder() {
+    std::vector<T> path;
+    _postorder(
+        [&](T callbacked) {
+          path.push_back(callbacked);
+        },
+        root);
+    return path;
+  }
+
+  /**
+   *@brief preorder function.
+   *@returns vector<T>, the elements preorder.
+   */
+  std::vector<T> preorder() {
+    std::vector<T> path;
+    _preorder(
+        [&](T callbacked) {
+          path.push_back(callbacked);
+        },
+        root);
+    return path;
+  }
+
+  /**
+   * @brief level order function
+   * @return vector<vector<T>>, the level order traversal of the tree
+   */
+  std::vector<std::vector<T>> level_order() {
+    std::vector<std::vector<T>> path;
     std::queue<std::shared_ptr<node>> q;
     q.push(root);
     while (!q.empty()) {
       size_t size = q.size();
-      std::vector<pair<T, bool>> level;
+      std::vector<T> level;
       for (size_t i = 0; i < size; i++) {
         std::shared_ptr<node> current = q.front();
         q.pop();
-        level.push_back(make_pair(current->info, current->is_red == 1));
+        level.push_back(current->info);
         if (current->left) {
           q.push(current->left);
         }
@@ -320,6 +441,20 @@ public:
       path.push_back(level);
     }
     return path;
+  }
+
+  /**
+   * @brief operator << for red black tree class
+   */
+  friend ostream &operator<<(ostream &out, red_black_tree<T> &rb){
+    std::vector<T> order = rb.inorder();
+    for(int i=0;i<order.size();i++){
+      if(i == order.size()-1)
+        out<<order[i]<<'\n';
+      else
+        out<<order[i]<<", ";
+    }
+    return out;
   }
 };
 
