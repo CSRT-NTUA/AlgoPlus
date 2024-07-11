@@ -5,6 +5,8 @@
 #include <memory>
 #include <bitset>
 #include <vector>
+#include <functional>
+#include <queue>
 #endif
 
 /**
@@ -303,7 +305,7 @@ public:
    * @param rb the tree we want to compare
    * @return true if they are same, false otherwise
    */
-  bool operator==(const red_black_tree<T> &rb) {
+  bool operator==(const red_black_tree<T> &rb) const {
     return this->root == rb.root;
   }
 
@@ -446,7 +448,7 @@ public:
   /**
    * @brief operator << for red black tree class
    */
-  friend ostream &operator<<(ostream &out, red_black_tree<T> &rb){
+  friend std::ostream &operator<<(std::ostream &out, red_black_tree<T> &rb){
     std::vector<T> order = rb.inorder();
     for(int i=0;i<order.size();i++){
       if(i == order.size()-1)
