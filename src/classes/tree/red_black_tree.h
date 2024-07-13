@@ -242,7 +242,7 @@ private:
     return false;
   }
 
-  void _inorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) {
+  void _inorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) const {
     if(t_node){
       _inorder(callback, t_node->left);
       callback(t_node->info);
@@ -250,7 +250,7 @@ private:
     }
   }
 
-  void _postorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) {
+  void _postorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) const {
     if(t_node){
       _postorder(callback, t_node->left);
       _postorder(callback, t_node->right);
@@ -258,7 +258,7 @@ private:
     }
   }
 
-  void _preorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) {
+  void _preorder(std::function<void(T)> callback, std::shared_ptr<node> t_node) const {
     if(t_node){
       callback(t_node->info);
       _preorder(callback, t_node->left);
@@ -366,7 +366,7 @@ public:
    *
    * @return size_t the size of the tree
    */
-  size_t size() { return _size; }
+  size_t size() const { return _size; }
 
   /**
    * @brief clear function
@@ -380,7 +380,7 @@ public:
    *@brief inorder function.
    *@returns vector<T>, the elements inorder.
    */
-  std::vector<T> inorder() {
+  std::vector<T> inorder() const {
     std::vector<T> path;
     _inorder(
         [&](T callbacked) {
@@ -394,7 +394,7 @@ public:
    *@brief postorder function.
    *@returns vector<T>, the elements postorder.
    */
-  std::vector<T> postorder() {
+  std::vector<T> postorder() const {
     std::vector<T> path;
     _postorder(
         [&](T callbacked) {
@@ -408,7 +408,7 @@ public:
    *@brief preorder function.
    *@returns vector<T>, the elements preorder.
    */
-  std::vector<T> preorder() {
+  std::vector<T> preorder() const {
     std::vector<T> path;
     _preorder(
         [&](T callbacked) {
@@ -422,7 +422,7 @@ public:
    * @brief level order function
    * @return vector<vector<T>>, the level order traversal of the tree
    */
-  std::vector<std::vector<T>> level_order() {
+  std::vector<std::vector<T>> level_order() const {
     std::vector<std::vector<T>> path;
     std::queue<std::shared_ptr<node>> q;
     q.push(root);
