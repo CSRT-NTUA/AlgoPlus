@@ -31,7 +31,7 @@ private:
     node(std::vector<T> keys, std::vector<std::shared_ptr<node> > children, int numChildren) :
       keys(keys), children(children), numChildren(numChildren) {}
   } node;
-
+  size_t __size;
   std::shared_ptr<node> root;
   std::unordered_map<std::shared_ptr<node>, std::shared_ptr<node> > parent;
 
@@ -40,11 +40,12 @@ public:
   * @brief default constructor of 234-tree class
   * @param elements: by default empty, if you want to pass elements all in one to the tree
   */
-  explicit ttf_tree(const std::vector<T> &elements = {}) { 
+  explicit ttf_tree(const std::vector<T> &elements = {}) : __size(0) { 
     if(!elements.empty()){
       for(const T & x: elements){
         this->insert(x);
       } 
+      __size = elements.size();
     }
   }
   
@@ -61,6 +62,12 @@ public:
   * @param key thet key we want to insert
   */
   void insert(const T &key);
+
+  /**
+   * @brief size function
+   * @return size_t the total elements of the tree
+   */
+  size_t size() const { return __size; }
   
   /**
    * @brief level_order function
@@ -95,10 +102,11 @@ template <typename T>
 void ttf_tree<T>::insert(const T &key) {
   std::vector<std::shared_ptr<node> > null_children(4, nullptr); 
   if(root == nullptr){
-    std::vector<int> keys = {key}; 
+    std::vector<T> keys = {key}; 
     root = std::make_shared<node>(keys, null_children, 2);
     root->index = 0;
     parent[root] = nullptr;
+    __size++;
     return;
   }
   else{
@@ -214,6 +222,7 @@ void ttf_tree<T>::insert(const T &key) {
       }
     }
   }
+  __size++;
 }
 
 template <typename T>
