@@ -65,6 +65,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
 
 **Trees**
+- [X] [Red-Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 - [X] [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree)
 - [X] [Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
 - [X] [Splay Tree](https://en.wikipedia.org/wiki/Splay_tree)
