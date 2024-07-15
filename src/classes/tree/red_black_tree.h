@@ -2,6 +2,7 @@
 #define RED_BLACK_TREE_H
 
 #ifdef __cplusplus
+#include "../../visualization/tree_visual/tree_visualization.h"
 #include <memory>
 #include <bitset>
 #include <vector>
@@ -260,6 +261,32 @@ private:
       _preorder(callback, t_node->right);
     }
   }
+
+  std::string _vis_gen(std::shared_ptr<node> t_node, T parent_info) {
+    std::string _s;
+    if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
+      _s += t_node->info + " [shape=circle fontcolor=black color=";
+      if(t_node->is_red == 1)
+        _s += "red";
+      else
+        _s += "black";
+      _s += "]\n";
+      _s += parent_info + "->" + t_node->info + '\n';
+    } else {
+      _s += std::to_string(t_node->info) + " [shape=circle fontcolor=black color=";
+      if(t_node->is_red == 1)
+        _s += "red";
+      else
+        _s += "black";
+      _s += "]\n";
+      _s += std::to_string(parent_info) + "->" + std::to_string(t_node->info) + '\n';
+    }
+    if (t_node->left)
+      _s += _vis_gen(t_node->left, t_node->info);
+    if (t_node->right)
+      _s += _vis_gen(t_node->right, t_node->info);
+    return _s;
+  }
 public:
   /**
    *@brief Contructor for red black tree class.
@@ -472,6 +499,30 @@ public:
   Iterator end() {
     std::vector<T> ino = this->inorder();
     return Iterator(ino.size(), ino);
+  }
+
+  /**
+   *@brief visualize function
+   *@returns .dot file that can be previewed using graphviz in vscode.
+   */
+  void visualize() {
+    std::string _generated;
+    if(this->root){
+      if (std::is_same_v<T, char> || std::is_same_v<T, std::string>)
+        _generated += root->info;
+      else
+        _generated += std::to_string(root->info);
+      _generated += " [shape=circle fontcolor=black color=";
+      if(root->is_red == 1)
+        _generated += "red]\n";
+      else
+        _generated += "black]\n";
+      if(this->root->left)
+        _generated += this->_vis_gen(this->root->left, root->info);
+      if(this->root->right)
+        _generated += this->_vis_gen(this->root->right, root->info);
+    }
+    tree_visualization::visualize(_generated);
   }
 };
 
