@@ -35,11 +35,6 @@ private:
   std::shared_ptr<node> root;
   size_t _size{};
 
-  std::shared_ptr<node> new_node(T &key, std::shared_ptr<node> p = nullptr)  {
-    std::shared_ptr<node> t_node = std::make_shared<node>(key, p);
-    return t_node;
-  }
-
   void _left_rotate(std::shared_ptr<node> t_node) {
     std::shared_ptr<node> x = t_node->right;
     x->parent = t_node->parent;
@@ -332,7 +327,7 @@ public:
       else
         x = x->right;
     }
-    std::shared_ptr<node> t_node = this->new_node(key, p);
+    std::shared_ptr<node> t_node = std::make_shared<node>(key, p);
     if(p == nullptr)
       this->root = t_node;
     else{
