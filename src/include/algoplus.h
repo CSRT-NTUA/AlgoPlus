@@ -38,6 +38,7 @@
 #include "../classes/tree/interval_tree.h"
 #include "../classes/tree/splay_tree.h"
 #include "../classes/tree/trie.h"
+#include "../classes/tree/red_black_tree.h"
 #include "../machine_learning/clustering/DBSCAN/dbscan.h"
 #include "../machine_learning/clustering/kmeans/kmeans.h"
 #include "../machine_learning/search_algorithms/best_first/best_first.h"
