@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: algoplus_py
+Version: 1.0.1
+Summary: AlgoPlus is a C++17 library for complex data structures and algorithms
+Author: Spiros Maggioros and the CSRT-NTUA team
+Author-email: <spirosmag@ieee.org>
+Requires-Python: >=3.8
