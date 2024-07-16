@@ -263,7 +263,7 @@ private:
   }
 
   std::string _vis_gen(std::shared_ptr<node> t_node, T parent_info) {
-    std::string _s;
+    std::string _s = "";
     if (std::is_same_v<T, char> || std::is_same_v<T, std::string>) {
       _s += t_node->info + " [shape=circle fontcolor=black color=";
       if(t_node->is_red == 1)

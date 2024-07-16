@@ -8,18 +8,18 @@ int main() {
     rb.insert('d');
     rb.insert('t');
     rb.remove('b');
-    // Will print an inorder traversal.
+    // Will print the inorder traversal.
     cout<<rb<<std::endl;
 
-    // Will return a preorder traversal.
+    // Will return the preorder traversal.
     std::vector<char> v = rb.preorder();
     for(int i=0;i<v.size();i++)
         std::cout<<v[i]<<" ";
     std::cout<<std::endl;
 
     
-    // example for visualise.
-    red_black_tree<int> rb({1, 2, 3, 4, 5, 6, 7, 8, 9});
-    rb.visualize();
+    // example for visualize.
+    red_black_tree<int> rb2({1, 2, 3, 4, 5, 6, 7, 8, 9});
+    rb2.visualize();
     return 0;
 }
