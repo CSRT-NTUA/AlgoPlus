@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 #include <cassert>
+#include <cmath>
+#include <cassert>
 #endif
 
 
@@ -236,6 +238,7 @@ public:
   * @return vector<vector<int32_t> > the resulted image
   */
   Image apply_filter2d(std::vector<std::vector<int32_t> > &filter) const{
+    assert(filter.size() == 3 && filter[0].size() == 3);
     Image resulted_img(height, width);
     for(int x = 0; x<height; x++){
       for(int y = 0; y<width; y++){
@@ -268,6 +271,45 @@ public:
     }
     return resulted_img;
   }
+  
+  /**
+  * @brief apply_filter2d_float function
+  * @param filter: 3x3 kernel with floats to be applied to the image
+  * @return vector<vector<int32_t> > the resulted image
+  */
+  Image apply_filter2d_float(std::vector<std::vector<float> > &filter) const {
+    assert(filter.size() == 3 && filter[0].size() == 3);
+    Image resulted_img(height, width);
+    for(int x = 0; x<height; x++){
+      for(int y = 0; y<width; y++){
+        resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x][y]*filter[1][1])));
+        if(y - 1 >= 0){
+          resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x][y - 1]*filter[1][0])));
+        }
+        if(y + 1 < width){
+          resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x][y + 1]*filter[1][2])));
+          if(x + 1 < height){
+            resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x + 1][y + 1]*filter[2][2])));
+          }
+        }
+        if(x - 1 >= 0){
+          resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x - 1][y]*filter[0][1])));
+          if(y + 1 < width){
+            resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x - 1][y + 1]*filter[0][2])));
+          }
+          if(y - 1 >= 0){
+            resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x - 1][y - 1]*filter[0][0])));
+          }
+        }
+        if(x + 1 < height){
+          resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x + 1][y]*filter[2][1])));
+          if(y - 1 >= 0){
+            resulted_img.add_2_point(x, y, static_cast<int32_t>(round(img[x + 1][y - 1]*filter[2][0])));
+          }
+        }
+      }
+    }
+    return resulted_img;  
+  }
 };
-
 #endif

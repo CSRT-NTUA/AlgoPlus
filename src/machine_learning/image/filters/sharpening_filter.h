@@ -13,7 +13,7 @@
 namespace sharpening_filter{
   /**
   * @brief apply_sharpening_filter function: applies a 3x3 laplacian filter to image img
-  * @param img(Class Image): the input image
+  * @param image(Class Image): the input image
   * @return vector<vector<int32_t> > : the resulted image after applying the laplacian filter
   */
   std::vector<std::vector<int32_t> > apply_sharpening_filter(const std::vector<std::vector<int32_t> > &image){
