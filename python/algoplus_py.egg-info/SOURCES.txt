@@ -4,4 +4,6 @@ algoplus_py.egg-info/SOURCES.txt
 algoplus_py.egg-info/dependency_links.txt
 algoplus_py.egg-info/not-zip-safe
 algoplus_py.egg-info/top_level.txt
+classes/disjoint_set/disjoint_set.cc
+classes/graph/graph.cc
 classes/tree/tree.cc

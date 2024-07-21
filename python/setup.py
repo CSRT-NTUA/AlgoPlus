@@ -13,6 +13,16 @@ ext_modules = [
         ["classes/tree/tree.cc"],
         define_macros=[("VERSION_INFO", VERSION)],
     ),
+    Pybind11Extension(
+        "algoplus_py.graph",
+        ["classes/graph/graph.cc"],
+        define_macros=[("VERSION_INFO", VERSION)],
+    ),
+    Pybind11Extension(
+        "algoplus_py.dsu",
+        ["classes/disjoint_set/disjoint_set.cc"],
+        define_macros=[("VERSION_INFO", VERSION)],
+    )
 ]
 
 setup(
