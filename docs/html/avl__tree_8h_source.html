@@ -84,436 +84,436 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">avl_tree.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef AVL_TREE_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define AVL_TREE_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../../visualization/tree_visual/tree_visualization.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classavl__tree.html">   17</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classavl__tree.html">avl_tree</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classavl__tree.html#a048c3bc01286503d3d540a8910551317">   24</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classavl__tree.html#a048c3bc01286503d3d540a8910551317">avl_tree</a>(std::vector&lt;T&gt; __elements = {}) <span class="keyword">noexcept</span> : root(nullptr) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!__elements.empty()) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">for</span> (T &amp;x : __elements) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        this-&gt;<a class="code hl_function" href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">insert</a>(x);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef AVL_TREE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define AVL_TREE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../visualization/tree_visual/tree_visualization.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classavl__tree.html">   16</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classavl__tree.html">avl_tree</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classavl__tree.html#a020d86f0f9f6442434c54158acf077c0">   23</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classavl__tree.html#a020d86f0f9f6442434c54158acf077c0">avl_tree</a>(std::vector&lt;T&gt; _elements = {}) <span class="keyword">noexcept</span> : root(nullptr) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (!_elements.empty()) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">for</span> (T &amp;x : _elements) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        this-&gt;<a class="code hl_function" href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">insert</a>(x);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classavl__tree.html#a3cab4d4112e58e6f90f36d0c23cbe3f6">   36</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classavl__tree.html#a3cab4d4112e58e6f90f36d0c23cbe3f6">avl_tree</a>(<span class="keyword">const</span> <a class="code hl_class" href="classavl__tree.html">avl_tree</a> &amp;a) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    root = a.root;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    __size = a.__size;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classavl__tree.html#a3cab4d4112e58e6f90f36d0c23cbe3f6">   35</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classavl__tree.html#a3cab4d4112e58e6f90f36d0c23cbe3f6">avl_tree</a>(<span class="keyword">const</span> <a class="code hl_class" href="classavl__tree.html">avl_tree</a> &amp;a) : root(a.root), _size(a._size) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classavl__tree.html#a7170cb4310ced0ab7d002efba16fc32f">   46</a></span>  <a class="code hl_class" href="classavl__tree.html">avl_tree</a> &amp;<a class="code hl_function" href="classavl__tree.html#a7170cb4310ced0ab7d002efba16fc32f">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classavl__tree.html">avl_tree</a> &amp;a) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    root = a.root;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    __size = a.__size;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classavl__tree.html#a7170cb4310ced0ab7d002efba16fc32f">   45</a></span>  <a class="code hl_class" href="classavl__tree.html">avl_tree</a> &amp;<a class="code hl_function" href="classavl__tree.html#a7170cb4310ced0ab7d002efba16fc32f">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classavl__tree.html">avl_tree</a> &amp;a) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    root = a.root;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    _size = a._size;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb">   56</a></span>  <a class="code hl_function" href="classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb">~avl_tree</a>() noexcept {}</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">   62</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">insert</a>(T key) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    root = __insert(root, key);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    __size++;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb">   55</a></span>  <a class="code hl_function" href="classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb">~avl_tree</a>() noexcept {}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">   61</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">insert</a>(T key) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    root = _insert(root, key);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    _size++;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classavl__tree.html#a35687925c37c49e535771da125388100">   71</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#a35687925c37c49e535771da125388100">clear</a>() {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    root = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    __size = 0;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classavl__tree.html#a35687925c37c49e535771da125388100">   70</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#a35687925c37c49e535771da125388100">clear</a>() {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    root = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    _size = 0;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classavl__tree.html#a599641fb0e256bfa25deb206a7bf1b29">   82</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classavl__tree.html#a599641fb0e256bfa25deb206a7bf1b29">search</a>(T key) { <span class="keywordflow">return</span> __search(root, key); }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">class </span>Iterator;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classavl__tree.html#a2e4eb06ce68b6b9cf7e906cb786fc818">   91</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree.html#a2e4eb06ce68b6b9cf7e906cb786fc818">begin</a>() {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    std::vector&lt;T&gt; ino = this-&gt;<a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a>(0, ino);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classavl__tree.html#a599641fb0e256bfa25deb206a7bf1b29">   81</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classavl__tree.html#a599641fb0e256bfa25deb206a7bf1b29">search</a>(T key) { <span class="keywordflow">return</span> _search(root, key); }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">class </span>Iterator;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classavl__tree.html#a2e4eb06ce68b6b9cf7e906cb786fc818">   90</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree.html#a2e4eb06ce68b6b9cf7e906cb786fc818">begin</a>() {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    std::vector&lt;T&gt; ino = this-&gt;<a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a>(0, ino);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classavl__tree.html#a015ac0902d879a52fd7a8940ab36ab7a">  101</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree.html#a015ac0902d879a52fd7a8940ab36ab7a">end</a>() {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    std::vector&lt;T&gt; ino = this-&gt;<a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a>(ino.size(), ino);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classavl__tree.html#a015ac0902d879a52fd7a8940ab36ab7a">  100</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree.html#a015ac0902d879a52fd7a8940ab36ab7a">end</a>() {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    std::vector&lt;T&gt; ino = this-&gt;<a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a>(ino.size(), ino);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
 </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">  111</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">size</a>() { <span class="keywordflow">return</span> __size; }</div>
-<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b">  116</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b">remove</a>(T key) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    root = __remove(root, key);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    __size--;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">  110</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">size</a>() { <span class="keywordflow">return</span> _size; }</div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b">  115</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b">remove</a>(T key) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    root = _remove(root, key);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    _size--;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">  125</a></span>  std::vector&lt;T&gt; <a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>() {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    std::vector&lt;T&gt; path;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    __inorder(</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        [&amp;](std::shared_ptr&lt;node&gt; callbacked) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          path.push_back(callbacked-&gt;info);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        },</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        root);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> path;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">  124</a></span>  std::vector&lt;T&gt; <a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>() {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    std::vector&lt;T&gt; path;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    _inorder(</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        [&amp;](std::shared_ptr&lt;node&gt; callbacked) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>          path.push_back(callbacked-&gt;info);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        },</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        root);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> path;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
 </div>
-<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classavl__tree.html#a8b6368356a04a58f29b1f56f835b7548">  138</a></span>  std::vector&lt;T&gt; <a class="code hl_function" href="classavl__tree.html#a8b6368356a04a58f29b1f56f835b7548">preorder</a>() {</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    std::vector&lt;T&gt; path;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    __preorder(</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        [&amp;](std::shared_ptr&lt;node&gt; callbacked) {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          path.push_back(callbacked-&gt;info);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        },</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        root);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">return</span> path;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  }</div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classavl__tree.html#a8b6368356a04a58f29b1f56f835b7548">  137</a></span>  std::vector&lt;T&gt; <a class="code hl_function" href="classavl__tree.html#a8b6368356a04a58f29b1f56f835b7548">preorder</a>() {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    std::vector&lt;T&gt; path;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    _preorder(</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        [&amp;](std::shared_ptr&lt;node&gt; callbacked) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>          path.push_back(callbacked-&gt;info);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        },</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        root);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> path;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  }</div>
 </div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classavl__tree.html#a82a19335d79d5f6928369635278c1c24">  151</a></span>  std::vector&lt;T&gt; <a class="code hl_function" href="classavl__tree.html#a82a19335d79d5f6928369635278c1c24">postorder</a>() {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    std::vector&lt;T&gt; path;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    __postorder(</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        [&amp;](std::shared_ptr&lt;node&gt; callbacked) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>          path.push_back(callbacked-&gt;info);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        },</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        root);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> path;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  }</div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classavl__tree.html#a82a19335d79d5f6928369635278c1c24">  150</a></span>  std::vector&lt;T&gt; <a class="code hl_function" href="classavl__tree.html#a82a19335d79d5f6928369635278c1c24">postorder</a>() {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    std::vector&lt;T&gt; path;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    _postorder(</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        [&amp;](std::shared_ptr&lt;node&gt; callbacked) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          path.push_back(callbacked-&gt;info);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        },</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        root);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">return</span> path;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }</div>
 </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classavl__tree.html#ab139b35985a741d7834ef1e356c5f18f">  165</a></span>  std::vector&lt;std::vector&lt;T&gt;&gt; <a class="code hl_function" href="classavl__tree.html#ab139b35985a741d7834ef1e356c5f18f">level_order</a>() {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    std::vector&lt;std::vector&lt;T&gt;&gt; path;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    std::queue&lt;std::shared_ptr&lt;node&gt;&gt; q;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    q.push(root);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">while</span> (!q.empty()) {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keywordtype">size_t</span> <a class="code hl_function" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">size</a> = q.size();</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      std::vector&lt;T&gt; level;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_function" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">size</a>; i++) {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        std::shared_ptr&lt;node&gt; current = q.front();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        q.pop();</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        level.push_back(current-&gt;info);</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">if</span> (current-&gt;left) {</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>          q.push(current-&gt;left);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        }</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">if</span> (current-&gt;right) {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>          q.push(current-&gt;right);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      }</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      path.push_back(level);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">return</span> path;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classavl__tree.html#ab139b35985a741d7834ef1e356c5f18f">  164</a></span>  std::vector&lt;std::vector&lt;T&gt;&gt; <a class="code hl_function" href="classavl__tree.html#ab139b35985a741d7834ef1e356c5f18f">level_order</a>() {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    std::vector&lt;std::vector&lt;T&gt;&gt; path;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    std::queue&lt;std::shared_ptr&lt;node&gt;&gt; q;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    q.push(root);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">while</span> (!q.empty()) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="keywordtype">size_t</span> <a class="code hl_function" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">size</a> = q.size();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      std::vector&lt;T&gt; level;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_function" href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">size</a>; i++) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        std::shared_ptr&lt;node&gt; current = q.front();</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        q.pop();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        level.push_back(current-&gt;info);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">if</span> (current-&gt;left) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>          q.push(current-&gt;left);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordflow">if</span> (current-&gt;right) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>          q.push(current-&gt;right);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      path.push_back(level);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">return</span> path;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  }</div>
 </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classavl__tree.html#a517f38f7f770647b80322fc7cd1192af">  192</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#a517f38f7f770647b80322fc7cd1192af">visualize</a>() {</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    std::string __generated = generate_visualization();</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    tree_visualization::visualize(__generated);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classavl__tree.html#a517f38f7f770647b80322fc7cd1192af">  191</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classavl__tree.html#a517f38f7f770647b80322fc7cd1192af">visualize</a>() {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    std::string _generated = generate_visualization();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    tree_visualization::visualize(_generated);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }</div>
 </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="foldopen" id="foldopen00200" data-start="{" data-end="};">
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classavl__tree.html#abe65b6fb7200651bba6f6bfe22f62b58">  200</a></span>  <span class="keyword">friend</span> ostream &amp; <a class="code hl_friend" href="classavl__tree.html#abe65b6fb7200651bba6f6bfe22f62b58">operator &lt;&lt; </a>(ostream &amp;out, <a class="code hl_class" href="classavl__tree.html">avl_tree&lt;T&gt;</a> &amp;t){</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    std::vector&lt;std::vector&lt;T&gt; &gt; order = t.<a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>();</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;order.size(); i++){</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="keywordflow">if</span>(i != order.size() - 1){</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        out &lt;&lt; order[i] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      }</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        out &lt;&lt; order[i] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      }</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="foldopen" id="foldopen00199" data-start="{" data-end="};">
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classavl__tree.html#abe65b6fb7200651bba6f6bfe22f62b58">  199</a></span>  <span class="keyword">friend</span> ostream &amp; <a class="code hl_friend" href="classavl__tree.html#abe65b6fb7200651bba6f6bfe22f62b58">operator &lt;&lt; </a>(ostream &amp;out, <a class="code hl_class" href="classavl__tree.html">avl_tree&lt;T&gt;</a> &amp;t){</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    std::vector&lt;std::vector&lt;T&gt; &gt; order = t.<a class="code hl_function" href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">inorder</a>();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;order.size(); i++){</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <span class="keywordflow">if</span>(i != order.size() - 1){</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        out &lt;&lt; order[i] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        out &lt;&lt; order[i] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  }</div>
 </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keyword">typedef</span> <span class="keyword">struct </span>node {</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    T info;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    int64_t height;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    std::shared_ptr&lt;node&gt; left;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    std::shared_ptr&lt;node&gt; right;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    node(T key) : info(key), left(nullptr), right(nullptr), height(0) {}</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  } node;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  std::shared_ptr&lt;node&gt; root;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">size_t</span> __size;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  int64_t height(std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">return</span> 1 + std::max(height(root-&gt;left), height(root-&gt;right));</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  }</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  std::shared_ptr&lt;node&gt; createNode(T info) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    std::shared_ptr&lt;node&gt; nn = std::make_shared&lt;node&gt;(info);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">return</span> nn;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  }</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  int64_t getBalance(std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">return</span> height(root-&gt;left) - height(root-&gt;right);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  }</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  std::shared_ptr&lt;node&gt; rightRotate(std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    std::shared_ptr&lt;node&gt; t = root-&gt;left;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    std::shared_ptr&lt;node&gt; u = t-&gt;right;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    t-&gt;right = root;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    root-&gt;left = u;</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">return</span> t;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  }</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  std::shared_ptr&lt;node&gt; leftRotate(std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    std::shared_ptr&lt;node&gt; t = root-&gt;right;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    std::shared_ptr&lt;node&gt; u = t-&gt;left;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    t-&gt;left = root;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    root-&gt;right = u;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">return</span> t;</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  }</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  std::shared_ptr&lt;node&gt; minValue(std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">if</span> (root-&gt;left == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      <span class="keywordflow">return</span> root;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">return</span> minValue(root-&gt;left);</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  std::shared_ptr&lt;node&gt; __insert(std::shared_ptr&lt;node&gt; root, T item) {</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    std::shared_ptr&lt;node&gt; nn = createNode(item);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      <span class="keywordflow">return</span> nn;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">if</span> (item &lt; root-&gt;info)</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      root-&gt;left = __insert(root-&gt;left, item);</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      root-&gt;right = __insert(root-&gt;right, item);</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordtype">int</span> b = getBalance(root);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordflow">if</span> (b &gt; 1) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      <span class="keywordflow">if</span> (getBalance(root-&gt;left) &lt; 0)</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        root-&gt;left = leftRotate(root-&gt;left);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>      <span class="keywordflow">return</span> rightRotate(root);</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b &lt; -1) {</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      <span class="keywordflow">if</span> (getBalance(root-&gt;right) &gt; 0)</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        root-&gt;right = rightRotate(root-&gt;right);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      <span class="keywordflow">return</span> leftRotate(root);</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">return</span> root;</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  }</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  std::shared_ptr&lt;node&gt; __remove(std::shared_ptr&lt;node&gt; root, T key) {</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      <span class="keywordflow">return</span> root;</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordflow">if</span> (key &lt; root-&gt;info)</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      root-&gt;left = __remove(root-&gt;left, key);</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key &gt; root-&gt;info)</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      root-&gt;right = __remove(root-&gt;right, key);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>      <span class="keywordflow">if</span> (!root-&gt;right) {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        std::shared_ptr&lt;node&gt; temp = root-&gt;left;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        root = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keywordflow">return</span> temp;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!root-&gt;left) {</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        std::shared_ptr&lt;node&gt; temp = root-&gt;right;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        root = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <span class="keywordflow">return</span> temp;</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      }</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      std::shared_ptr&lt;node&gt; temp = minValue(root-&gt;right);</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      root-&gt;info = temp-&gt;info;</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      root-&gt;right = __remove(root-&gt;right, temp-&gt;info);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    }</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordflow">return</span> root;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  }</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keywordtype">bool</span> __search(std::shared_ptr&lt;node&gt; root, T key) {</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    <span class="keywordflow">while</span> (root) {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      <span class="keywordflow">if</span> (root-&gt;info &lt; key) {</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        root = root-&gt;right;</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (root-&gt;info &gt; key) {</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        root = root-&gt;left;</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    }</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  }</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keywordtype">void</span> __inorder(std::function&lt;<span class="keywordtype">void</span>(std::shared_ptr&lt;node&gt;)&gt; callback,</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                 std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordflow">if</span> (root) {</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      __inorder(callback, root-&gt;left);</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      callback(root);</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>      __inorder(callback, root-&gt;right);</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  }</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  <span class="keywordtype">void</span> __postorder(std::function&lt;<span class="keywordtype">void</span>(std::shared_ptr&lt;node&gt;)&gt; callback,</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                   std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keywordflow">if</span> (root) {</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      __inorder(callback, root-&gt;left);</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      __inorder(callback, root-&gt;right);</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      callback(root);</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    }</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  }</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keywordtype">void</span> __preorder(std::function&lt;<span class="keywordtype">void</span>(std::shared_ptr&lt;node&gt;)&gt; callback,</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                  std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keywordflow">if</span> (root) {</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      callback(root);</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      __inorder(callback, root-&gt;left);</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>      __inorder(callback, root-&gt;right);</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    }</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  }</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  std::string generate_visualization() {</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    std::string __generate = __inorder_gen(root);</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keywordflow">return</span> __generate;</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  }</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  std::string __inorder_gen(std::shared_ptr&lt;node&gt; root) {</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    std::string __s;</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordflow">if</span> (std::is_same_v&lt;T, char&gt; || std::is_same_v&lt;T, std::string&gt;) {</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>      <span class="keywordflow">if</span> (root-&gt;left) {</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        __s += root-&gt;info;</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        __s += <span class="stringliteral">&quot;-&gt;&quot;</span>;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        __s += root-&gt;left-&gt;info;</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        __s += <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        __s += __inorder_gen(root-&gt;left);</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>      }</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>      <span class="keywordflow">if</span> (root-&gt;right) {</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>        __s += root-&gt;info;</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        __s += <span class="stringliteral">&quot;-&gt;&quot;</span>;</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        __s += root-&gt;right-&gt;info;</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        __s += <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        __s += __inorder_gen(root-&gt;right);</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>      }</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>      <span class="keywordflow">if</span> (root-&gt;left) {</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        __s += std::to_string(root-&gt;info) + <span class="stringliteral">&quot;-&gt;&quot;</span> +</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>               std::to_string(root-&gt;left-&gt;info) + <span class="stringliteral">&quot;\n&quot;</span> +</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>               __inorder_gen(root-&gt;left);</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      }</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>      <span class="keywordflow">if</span> (root-&gt;right) {</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        __s += std::to_string(root-&gt;info) + <span class="stringliteral">&quot;-&gt;&quot;</span> +</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>               std::to_string(root-&gt;right-&gt;info) + <span class="stringliteral">&quot;\n&quot;</span> +</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>               __inorder_gen(root-&gt;right);</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      }</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    }</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    <span class="keywordflow">return</span> __s;</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  }</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>};</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="keyword">typedef</span> <span class="keyword">struct </span>node {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    T info;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    int64_t height{0};</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    std::shared_ptr&lt;node&gt; left;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    std::shared_ptr&lt;node&gt; right;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    node(T key) : info(<a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">key</a>), left(nullptr), right(nullptr) {}</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  } node;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  std::shared_ptr&lt;node&gt; root;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">size_t</span> _size{};</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  int64_t height(std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordflow">return</span> 1 + std::max(height(root-&gt;left), height(root-&gt;right));</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  std::shared_ptr&lt;node&gt; createNode(T info) {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    std::shared_ptr&lt;node&gt; nn = std::make_shared&lt;node&gt;(info);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">return</span> nn;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  int64_t getBalance(std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordflow">return</span> height(root-&gt;left) - height(root-&gt;right);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  std::shared_ptr&lt;node&gt; rightRotate(std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    std::shared_ptr&lt;node&gt; t = root-&gt;left;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    std::shared_ptr&lt;node&gt; u = t-&gt;right;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    t-&gt;right = root;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    root-&gt;left = u;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordflow">return</span> t;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  std::shared_ptr&lt;node&gt; leftRotate(std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    std::shared_ptr&lt;node&gt; t = root-&gt;right;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    std::shared_ptr&lt;node&gt; u = t-&gt;left;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    t-&gt;left = root;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    root-&gt;right = u;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">return</span> t;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  std::shared_ptr&lt;node&gt; minValue(std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">if</span> (root-&gt;left == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="keywordflow">return</span> root;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">return</span> minValue(root-&gt;left);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  std::shared_ptr&lt;node&gt; _insert(std::shared_ptr&lt;node&gt; root, T item) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    std::shared_ptr&lt;node&gt; nn = createNode(item);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      <span class="keywordflow">return</span> nn;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordflow">if</span> (item &lt; root-&gt;info)</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      root-&gt;left = _insert(root-&gt;left, item);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      root-&gt;right = _insert(root-&gt;right, item);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordtype">int</span> b = getBalance(root);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">if</span> (b &gt; 1) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      <span class="keywordflow">if</span> (getBalance(root-&gt;left) &lt; 0)</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        root-&gt;left = leftRotate(root-&gt;left);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>      <span class="keywordflow">return</span> rightRotate(root);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b &lt; -1) {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      <span class="keywordflow">if</span> (getBalance(root-&gt;right) &gt; 0)</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        root-&gt;right = rightRotate(root-&gt;right);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      <span class="keywordflow">return</span> leftRotate(root);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordflow">return</span> root;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  std::shared_ptr&lt;node&gt; _remove(std::shared_ptr&lt;node&gt; root, T key) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      <span class="keywordflow">return</span> root;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">if</span> (key &lt; root-&gt;info)</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      root-&gt;left = _remove(root-&gt;left, key);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key &gt; root-&gt;info)</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      root-&gt;right = _remove(root-&gt;right, key);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      <span class="keywordflow">if</span> (!root-&gt;right) {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        std::shared_ptr&lt;node&gt; temp = root-&gt;left;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        root = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!root-&gt;left) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        std::shared_ptr&lt;node&gt; temp = root-&gt;right;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        root = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      std::shared_ptr&lt;node&gt; temp = minValue(root-&gt;right);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      root-&gt;info = temp-&gt;info;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      root-&gt;right = _remove(root-&gt;right, temp-&gt;info);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">return</span> root;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keywordtype">bool</span> _search(std::shared_ptr&lt;node&gt; root, T key) {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keywordflow">while</span> (root) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      <span class="keywordflow">if</span> (root-&gt;info &lt; key) {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        root = root-&gt;right;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (root-&gt;info &gt; key) {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        root = root-&gt;left;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>      }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keywordtype">void</span> _inorder(std::function&lt;<span class="keywordtype">void</span>(std::shared_ptr&lt;node&gt;)&gt; callback,</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                 std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keywordflow">if</span> (root) {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>      _inorder(callback, root-&gt;left);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      callback(root);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      _inorder(callback, root-&gt;right);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  }</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keywordtype">void</span> _postorder(std::function&lt;<span class="keywordtype">void</span>(std::shared_ptr&lt;node&gt;)&gt; callback,</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                   std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keywordflow">if</span> (root) {</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>      _inorder(callback, root-&gt;left);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      _inorder(callback, root-&gt;right);</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      callback(root);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  }</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  <span class="keywordtype">void</span> _preorder(std::function&lt;<span class="keywordtype">void</span>(std::shared_ptr&lt;node&gt;)&gt; callback,</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                  std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <span class="keywordflow">if</span> (root) {</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      callback(root);</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      _inorder(callback, root-&gt;left);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      _inorder(callback, root-&gt;right);</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  }</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  std::string generate_visualization() {</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    std::string _generate = _inorder_gen(root);</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keywordflow">return</span> _generate;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  }</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  std::string _inorder_gen(std::shared_ptr&lt;node&gt; root) {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    std::string _s;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordflow">if</span> (std::is_same_v&lt;T, char&gt; || std::is_same_v&lt;T, std::string&gt;) {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>      <span class="keywordflow">if</span> (root-&gt;left) {</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        _s += root-&gt;info;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        _s += <span class="stringliteral">&quot;-&gt;&quot;</span>;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        _s += root-&gt;left-&gt;info;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        _s += <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        _s += _inorder_gen(root-&gt;left);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>      }</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>      <span class="keywordflow">if</span> (root-&gt;right) {</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        _s += root-&gt;info;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>        _s += <span class="stringliteral">&quot;-&gt;&quot;</span>;</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        _s += root-&gt;right-&gt;info;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        _s += <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        _s += _inorder_gen(root-&gt;right);</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>      }</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>      <span class="keywordflow">if</span> (root-&gt;left) {</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        _s += std::to_string(root-&gt;info) + <span class="stringliteral">&quot;-&gt;&quot;</span> +</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>               std::to_string(root-&gt;left-&gt;info) + <span class="stringliteral">&quot;\n&quot;</span> +</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>               _inorder_gen(root-&gt;left);</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>      }</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      <span class="keywordflow">if</span> (root-&gt;right) {</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        _s += std::to_string(root-&gt;info) + <span class="stringliteral">&quot;-&gt;&quot;</span> +</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>               std::to_string(root-&gt;right-&gt;info) + <span class="stringliteral">&quot;\n&quot;</span> +</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>               _inorder_gen(root-&gt;right);</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      }</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    }</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    <span class="keywordflow">return</span> _s;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>  }</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>};</div>
 </div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
-<div class="foldopen" id="foldopen00396" data-start="{" data-end="};">
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html">  396</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classavl__tree.html">avl_tree</a>&lt;T&gt;::<a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> {</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  std::vector&lt;T&gt; elements;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  int64_t index;</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00407" data-start="{" data-end="}">
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a0ba2c42320c63a8379610c51c3c5a600">  407</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#a0ba2c42320c63a8379610c51c3c5a600">Iterator</a>(<span class="keyword">const</span> int64_t &amp;index, std::vector&lt;T&gt; &amp;els) noexcept</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>      : index(index), elements(els) {}</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
+<div class="foldopen" id="foldopen00395" data-start="{" data-end="};">
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html">  395</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classavl__tree.html">avl_tree</a>&lt;T&gt;::<a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> {</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  std::vector&lt;T&gt; elements;</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  int64_t index;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00406" data-start="{" data-end="}">
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a0ba2c42320c63a8379610c51c3c5a600">  406</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#a0ba2c42320c63a8379610c51c3c5a600">Iterator</a>(<span class="keyword">const</span> int64_t &amp;index, std::vector&lt;T&gt; &amp;els) noexcept</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>      : index(index), elements(els) {}</div>
 </div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="foldopen" id="foldopen00416" data-start="{" data-end="}">
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#af76d60d2edbddb06bc78ee386a624e6d">  416</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classavl__tree_1_1_iterator.html#af76d60d2edbddb06bc78ee386a624e6d">operator=</a>(int64_t index) {</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    this-&gt;index = index;</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  }</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
+<div class="foldopen" id="foldopen00415" data-start="{" data-end="}">
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#af76d60d2edbddb06bc78ee386a624e6d">  415</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classavl__tree_1_1_iterator.html#af76d60d2edbddb06bc78ee386a624e6d">operator=</a>(int64_t index) {</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    this-&gt;index = index;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  }</div>
 </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
-<div class="foldopen" id="foldopen00426" data-start="{" data-end="}">
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a9133f7949ed717536a917db15b7fe669">  426</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classavl__tree_1_1_iterator.html#a9133f7949ed717536a917db15b7fe669">operator++</a>() {</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    <span class="keywordflow">if</span> (this-&gt;index &lt; elements.size()) {</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>      this-&gt;index++;</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    }</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>  }</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
+<div class="foldopen" id="foldopen00425" data-start="{" data-end="}">
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a9133f7949ed717536a917db15b7fe669">  425</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classavl__tree_1_1_iterator.html#a9133f7949ed717536a917db15b7fe669">operator++</a>() {</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <span class="keywordflow">if</span> (this-&gt;index &lt; elements.size()) {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>      this-&gt;index++;</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    }</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  }</div>
 </div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
-<div class="foldopen" id="foldopen00438" data-start="{" data-end="}">
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#abb7d9c7890790037299048ce39894d65">  438</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#abb7d9c7890790037299048ce39894d65">operator++</a>(<span class="keywordtype">int</span>) {</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> it = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    ++*(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="keywordflow">return</span> it;</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>  }</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
+<div class="foldopen" id="foldopen00437" data-start="{" data-end="}">
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#abb7d9c7890790037299048ce39894d65">  437</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#abb7d9c7890790037299048ce39894d65">operator++</a>(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> it = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    ++*(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    <span class="keywordflow">return</span> it;</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>  }</div>
 </div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span> </div>
-<div class="foldopen" id="foldopen00449" data-start="{" data-end="}">
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a65b932177f6fef4039696b434c239848">  449</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classavl__tree_1_1_iterator.html#a65b932177f6fef4039696b434c239848">operator--</a>() {</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    <span class="keywordflow">if</span> (this-&gt;index &gt; 0) {</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>      this-&gt;index--;</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    }</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>  }</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="foldopen" id="foldopen00448" data-start="{" data-end="}">
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a65b932177f6fef4039696b434c239848">  448</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;<a class="code hl_function" href="classavl__tree_1_1_iterator.html#a65b932177f6fef4039696b434c239848">operator--</a>() {</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    <span class="keywordflow">if</span> (this-&gt;index &gt; 0) {</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>      this-&gt;index--;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    }</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    <span class="keywordflow">return</span> *(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>  }</div>
 </div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
-<div class="foldopen" id="foldopen00461" data-start="{" data-end="}">
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#afa6a01a6f7a1cf8186fde6f4779f53c0">  461</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#afa6a01a6f7a1cf8186fde6f4779f53c0">operator--</a>(<span class="keywordtype">int</span>) {</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> it = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    --*(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    <span class="keywordflow">return</span> it;</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>  }</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="foldopen" id="foldopen00460" data-start="{" data-end="}">
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#afa6a01a6f7a1cf8186fde6f4779f53c0">  460</a></span>  <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#afa6a01a6f7a1cf8186fde6f4779f53c0">operator--</a>(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> it = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    --*(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    <span class="keywordflow">return</span> it;</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>  }</div>
 </div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
-<div class="foldopen" id="foldopen00475" data-start="{" data-end="}">
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a0fd4ebd930bd4fe986438e203685d2fd">  475</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#a0fd4ebd930bd4fe986438e203685d2fd">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;it) {</div>
-<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>    <span class="keywordflow">return</span> index != it.index &amp;&amp; elements[index] != it.elements[it.index];</div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>  }</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span> </div>
+<div class="foldopen" id="foldopen00474" data-start="{" data-end="}">
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#a0fd4ebd930bd4fe986438e203685d2fd">  474</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classavl__tree_1_1_iterator.html#a0fd4ebd930bd4fe986438e203685d2fd">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classavl__tree_1_1_iterator.html">Iterator</a> &amp;it) {</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    <span class="keywordflow">return</span> index != it.index &amp;&amp; elements[index] != it.elements[it.index];</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  }</div>
 </div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span> </div>
-<div class="line"><a id="l00484" name="l00484"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#aa638b723e1ef408bf1406d6c9db06dd8">  484</a></span>  T <a class="code hl_function" href="classavl__tree_1_1_iterator.html#aa638b723e1ef408bf1406d6c9db06dd8">operator*</a>() { <span class="keywordflow">return</span> elements[index]; }</div>
-<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>};</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span> </div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno"><a class="line" href="classavl__tree_1_1_iterator.html#aa638b723e1ef408bf1406d6c9db06dd8">  483</a></span>  T <a class="code hl_function" href="classavl__tree_1_1_iterator.html#aa638b723e1ef408bf1406d6c9db06dd8">operator*</a>() { <span class="keywordflow">return</span> elements[index]; }</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>};</div>
 </div>
-<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html"><div class="ttname"><a href="classavl__tree_1_1_iterator.html">avl_tree::Iterator</a></div><div class="ttdoc">Iterator class.</div><div class="ttdef"><b>Definition</b> avl_tree.h:396</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a0ba2c42320c63a8379610c51c3c5a600"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a0ba2c42320c63a8379610c51c3c5a600">avl_tree::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const int64_t &amp;index, std::vector&lt; T &gt; &amp;els) noexcept</div><div class="ttdoc">Construct a new Iterator object.</div><div class="ttdef"><b>Definition</b> avl_tree.h:407</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a0fd4ebd930bd4fe986438e203685d2fd"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a0fd4ebd930bd4fe986438e203685d2fd">avl_tree::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;it)</div><div class="ttdoc">operator != for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:475</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a65b932177f6fef4039696b434c239848"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a65b932177f6fef4039696b434c239848">avl_tree::Iterator::operator--</a></div><div class="ttdeci">Iterator &amp; operator--()</div><div class="ttdoc">operator – for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:449</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a9133f7949ed717536a917db15b7fe669"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a9133f7949ed717536a917db15b7fe669">avl_tree::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:426</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_aa638b723e1ef408bf1406d6c9db06dd8"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#aa638b723e1ef408bf1406d6c9db06dd8">avl_tree::Iterator::operator*</a></div><div class="ttdeci">T operator*()</div><div class="ttdoc">operator * for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:484</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_abb7d9c7890790037299048ce39894d65"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#abb7d9c7890790037299048ce39894d65">avl_tree::Iterator::operator++</a></div><div class="ttdeci">Iterator operator++(int)</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:438</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_af76d60d2edbddb06bc78ee386a624e6d"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#af76d60d2edbddb06bc78ee386a624e6d">avl_tree::Iterator::operator=</a></div><div class="ttdeci">Iterator &amp; operator=(int64_t index)</div><div class="ttdoc">= operator for Iterator type</div><div class="ttdef"><b>Definition</b> avl_tree.h:416</div></div>
-<div class="ttc" id="aclassavl__tree_1_1_iterator_html_afa6a01a6f7a1cf8186fde6f4779f53c0"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#afa6a01a6f7a1cf8186fde6f4779f53c0">avl_tree::Iterator::operator--</a></div><div class="ttdeci">Iterator operator--(int)</div><div class="ttdoc">operator – for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:461</div></div>
-<div class="ttc" id="aclassavl__tree_html"><div class="ttname"><a href="classavl__tree.html">avl_tree</a></div><div class="ttdoc">Class for AVL tree.</div><div class="ttdef"><b>Definition</b> avl_tree.h:17</div></div>
-<div class="ttc" id="aclassavl__tree_html_a015ac0902d879a52fd7a8940ab36ab7a"><div class="ttname"><a href="classavl__tree.html#a015ac0902d879a52fd7a8940ab36ab7a">avl_tree::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">pointer that points to end</div><div class="ttdef"><b>Definition</b> avl_tree.h:101</div></div>
-<div class="ttc" id="aclassavl__tree_html_a048c3bc01286503d3d540a8910551317"><div class="ttname"><a href="classavl__tree.html#a048c3bc01286503d3d540a8910551317">avl_tree::avl_tree</a></div><div class="ttdeci">avl_tree(std::vector&lt; T &gt; __elements={}) noexcept</div><div class="ttdoc">Contructor for AVL tree class.</div><div class="ttdef"><b>Definition</b> avl_tree.h:24</div></div>
-<div class="ttc" id="aclassavl__tree_html_a2e4eb06ce68b6b9cf7e906cb786fc818"><div class="ttname"><a href="classavl__tree.html#a2e4eb06ce68b6b9cf7e906cb786fc818">avl_tree::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">pointer that points to begin</div><div class="ttdef"><b>Definition</b> avl_tree.h:91</div></div>
-<div class="ttc" id="aclassavl__tree_html_a35687925c37c49e535771da125388100"><div class="ttname"><a href="classavl__tree.html#a35687925c37c49e535771da125388100">avl_tree::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clear function Erase all the nodes from the tree.</div><div class="ttdef"><b>Definition</b> avl_tree.h:71</div></div>
-<div class="ttc" id="aclassavl__tree_html_a3cab4d4112e58e6f90f36d0c23cbe3f6"><div class="ttname"><a href="classavl__tree.html#a3cab4d4112e58e6f90f36d0c23cbe3f6">avl_tree::avl_tree</a></div><div class="ttdeci">avl_tree(const avl_tree &amp;a)</div><div class="ttdoc">Copy constructor for avl tree class.</div><div class="ttdef"><b>Definition</b> avl_tree.h:36</div></div>
-<div class="ttc" id="aclassavl__tree_html_a517f38f7f770647b80322fc7cd1192af"><div class="ttname"><a href="classavl__tree.html#a517f38f7f770647b80322fc7cd1192af">avl_tree::visualize</a></div><div class="ttdeci">void visualize()</div><div class="ttdoc">visualize function</div><div class="ttdef"><b>Definition</b> avl_tree.h:192</div></div>
-<div class="ttc" id="aclassavl__tree_html_a599641fb0e256bfa25deb206a7bf1b29"><div class="ttname"><a href="classavl__tree.html#a599641fb0e256bfa25deb206a7bf1b29">avl_tree::search</a></div><div class="ttdeci">bool search(T key)</div><div class="ttdoc">search function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:82</div></div>
-<div class="ttc" id="aclassavl__tree_html_a7170cb4310ced0ab7d002efba16fc32f"><div class="ttname"><a href="classavl__tree.html#a7170cb4310ced0ab7d002efba16fc32f">avl_tree::operator=</a></div><div class="ttdeci">avl_tree &amp; operator=(const avl_tree &amp;a)</div><div class="ttdoc">operator = for avl tree class</div><div class="ttdef"><b>Definition</b> avl_tree.h:46</div></div>
-<div class="ttc" id="aclassavl__tree_html_a76c9c53a32680f00a0071f1e236aa42b"><div class="ttname"><a href="classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b">avl_tree::remove</a></div><div class="ttdeci">void remove(T key)</div><div class="ttdoc">remove function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:116</div></div>
-<div class="ttc" id="aclassavl__tree_html_a7f52559d18953b8e44416c9a9bf5a5fb"><div class="ttname"><a href="classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb">avl_tree::~avl_tree</a></div><div class="ttdeci">~avl_tree() noexcept</div><div class="ttdoc">Destroy the avl tree object.</div><div class="ttdef"><b>Definition</b> avl_tree.h:56</div></div>
-<div class="ttc" id="aclassavl__tree_html_a82a19335d79d5f6928369635278c1c24"><div class="ttname"><a href="classavl__tree.html#a82a19335d79d5f6928369635278c1c24">avl_tree::postorder</a></div><div class="ttdeci">std::vector&lt; T &gt; postorder()</div><div class="ttdoc">postorder function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:151</div></div>
-<div class="ttc" id="aclassavl__tree_html_a8b6368356a04a58f29b1f56f835b7548"><div class="ttname"><a href="classavl__tree.html#a8b6368356a04a58f29b1f56f835b7548">avl_tree::preorder</a></div><div class="ttdeci">std::vector&lt; T &gt; preorder()</div><div class="ttdoc">preorder function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:138</div></div>
-<div class="ttc" id="aclassavl__tree_html_aab0ba446f1ee02bd5c6be467e1645ab2"><div class="ttname"><a href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">avl_tree::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">size function</div><div class="ttdef"><b>Definition</b> avl_tree.h:111</div></div>
-<div class="ttc" id="aclassavl__tree_html_ab139b35985a741d7834ef1e356c5f18f"><div class="ttname"><a href="classavl__tree.html#ab139b35985a741d7834ef1e356c5f18f">avl_tree::level_order</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; T &gt; &gt; level_order()</div><div class="ttdoc">level order function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:165</div></div>
-<div class="ttc" id="aclassavl__tree_html_abe65b6fb7200651bba6f6bfe22f62b58"><div class="ttname"><a href="classavl__tree.html#abe65b6fb7200651bba6f6bfe22f62b58">avl_tree::operator&lt;&lt;</a></div><div class="ttdeci">friend ostream &amp; operator&lt;&lt;(ostream &amp;out, avl_tree&lt; T &gt; &amp;t)</div><div class="ttdoc">operator &lt;&lt; for avl_tree class</div><div class="ttdef"><b>Definition</b> avl_tree.h:200</div></div>
-<div class="ttc" id="aclassavl__tree_html_acdeb1d0610c350618d64fdb69f50ab08"><div class="ttname"><a href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">avl_tree::insert</a></div><div class="ttdeci">void insert(T key)</div><div class="ttdoc">insert function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:62</div></div>
-<div class="ttc" id="aclassavl__tree_html_aef655e5753555d705e58d39bd094c55a"><div class="ttname"><a href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">avl_tree::inorder</a></div><div class="ttdeci">std::vector&lt; T &gt; inorder()</div><div class="ttdoc">inorder function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:125</div></div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span> </div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html"><div class="ttname"><a href="classavl__tree_1_1_iterator.html">avl_tree::Iterator</a></div><div class="ttdoc">Iterator class.</div><div class="ttdef"><b>Definition</b> avl_tree.h:395</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a0ba2c42320c63a8379610c51c3c5a600"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a0ba2c42320c63a8379610c51c3c5a600">avl_tree::Iterator::Iterator</a></div><div class="ttdeci">Iterator(const int64_t &amp;index, std::vector&lt; T &gt; &amp;els) noexcept</div><div class="ttdoc">Construct a new Iterator object.</div><div class="ttdef"><b>Definition</b> avl_tree.h:406</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a0fd4ebd930bd4fe986438e203685d2fd"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a0fd4ebd930bd4fe986438e203685d2fd">avl_tree::Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Iterator &amp;it)</div><div class="ttdoc">operator != for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:474</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a65b932177f6fef4039696b434c239848"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a65b932177f6fef4039696b434c239848">avl_tree::Iterator::operator--</a></div><div class="ttdeci">Iterator &amp; operator--()</div><div class="ttdoc">operator – for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:448</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_a9133f7949ed717536a917db15b7fe669"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#a9133f7949ed717536a917db15b7fe669">avl_tree::Iterator::operator++</a></div><div class="ttdeci">Iterator &amp; operator++()</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:425</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_aa638b723e1ef408bf1406d6c9db06dd8"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#aa638b723e1ef408bf1406d6c9db06dd8">avl_tree::Iterator::operator*</a></div><div class="ttdeci">T operator*()</div><div class="ttdoc">operator * for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:483</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_abb7d9c7890790037299048ce39894d65"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#abb7d9c7890790037299048ce39894d65">avl_tree::Iterator::operator++</a></div><div class="ttdeci">Iterator operator++(int)</div><div class="ttdoc">operator ++ for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:437</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_af76d60d2edbddb06bc78ee386a624e6d"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#af76d60d2edbddb06bc78ee386a624e6d">avl_tree::Iterator::operator=</a></div><div class="ttdeci">Iterator &amp; operator=(int64_t index)</div><div class="ttdoc">= operator for Iterator type</div><div class="ttdef"><b>Definition</b> avl_tree.h:415</div></div>
+<div class="ttc" id="aclassavl__tree_1_1_iterator_html_afa6a01a6f7a1cf8186fde6f4779f53c0"><div class="ttname"><a href="classavl__tree_1_1_iterator.html#afa6a01a6f7a1cf8186fde6f4779f53c0">avl_tree::Iterator::operator--</a></div><div class="ttdeci">Iterator operator--(int)</div><div class="ttdoc">operator – for type Iterator</div><div class="ttdef"><b>Definition</b> avl_tree.h:460</div></div>
+<div class="ttc" id="aclassavl__tree_html"><div class="ttname"><a href="classavl__tree.html">avl_tree</a></div><div class="ttdoc">Class for AVL tree.</div><div class="ttdef"><b>Definition</b> avl_tree.h:16</div></div>
+<div class="ttc" id="aclassavl__tree_html_a015ac0902d879a52fd7a8940ab36ab7a"><div class="ttname"><a href="classavl__tree.html#a015ac0902d879a52fd7a8940ab36ab7a">avl_tree::end</a></div><div class="ttdeci">Iterator end()</div><div class="ttdoc">pointer that points to end</div><div class="ttdef"><b>Definition</b> avl_tree.h:100</div></div>
+<div class="ttc" id="aclassavl__tree_html_a020d86f0f9f6442434c54158acf077c0"><div class="ttname"><a href="classavl__tree.html#a020d86f0f9f6442434c54158acf077c0">avl_tree::avl_tree</a></div><div class="ttdeci">avl_tree(std::vector&lt; T &gt; _elements={}) noexcept</div><div class="ttdoc">Contructor for AVL tree class.</div><div class="ttdef"><b>Definition</b> avl_tree.h:23</div></div>
+<div class="ttc" id="aclassavl__tree_html_a2e4eb06ce68b6b9cf7e906cb786fc818"><div class="ttname"><a href="classavl__tree.html#a2e4eb06ce68b6b9cf7e906cb786fc818">avl_tree::begin</a></div><div class="ttdeci">Iterator begin()</div><div class="ttdoc">pointer that points to begin</div><div class="ttdef"><b>Definition</b> avl_tree.h:90</div></div>
+<div class="ttc" id="aclassavl__tree_html_a35687925c37c49e535771da125388100"><div class="ttname"><a href="classavl__tree.html#a35687925c37c49e535771da125388100">avl_tree::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clear function Erase all the nodes from the tree.</div><div class="ttdef"><b>Definition</b> avl_tree.h:70</div></div>
+<div class="ttc" id="aclassavl__tree_html_a3cab4d4112e58e6f90f36d0c23cbe3f6"><div class="ttname"><a href="classavl__tree.html#a3cab4d4112e58e6f90f36d0c23cbe3f6">avl_tree::avl_tree</a></div><div class="ttdeci">avl_tree(const avl_tree &amp;a)</div><div class="ttdoc">Copy constructor for avl tree class.</div><div class="ttdef"><b>Definition</b> avl_tree.h:35</div></div>
+<div class="ttc" id="aclassavl__tree_html_a517f38f7f770647b80322fc7cd1192af"><div class="ttname"><a href="classavl__tree.html#a517f38f7f770647b80322fc7cd1192af">avl_tree::visualize</a></div><div class="ttdeci">void visualize()</div><div class="ttdoc">visualize function</div><div class="ttdef"><b>Definition</b> avl_tree.h:191</div></div>
+<div class="ttc" id="aclassavl__tree_html_a599641fb0e256bfa25deb206a7bf1b29"><div class="ttname"><a href="classavl__tree.html#a599641fb0e256bfa25deb206a7bf1b29">avl_tree::search</a></div><div class="ttdeci">bool search(T key)</div><div class="ttdoc">search function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:81</div></div>
+<div class="ttc" id="aclassavl__tree_html_a7170cb4310ced0ab7d002efba16fc32f"><div class="ttname"><a href="classavl__tree.html#a7170cb4310ced0ab7d002efba16fc32f">avl_tree::operator=</a></div><div class="ttdeci">avl_tree &amp; operator=(const avl_tree &amp;a)</div><div class="ttdoc">operator = for avl tree class</div><div class="ttdef"><b>Definition</b> avl_tree.h:45</div></div>
+<div class="ttc" id="aclassavl__tree_html_a76c9c53a32680f00a0071f1e236aa42b"><div class="ttname"><a href="classavl__tree.html#a76c9c53a32680f00a0071f1e236aa42b">avl_tree::remove</a></div><div class="ttdeci">void remove(T key)</div><div class="ttdoc">remove function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:115</div></div>
+<div class="ttc" id="aclassavl__tree_html_a7f52559d18953b8e44416c9a9bf5a5fb"><div class="ttname"><a href="classavl__tree.html#a7f52559d18953b8e44416c9a9bf5a5fb">avl_tree::~avl_tree</a></div><div class="ttdeci">~avl_tree() noexcept</div><div class="ttdoc">Destroy the avl tree object.</div><div class="ttdef"><b>Definition</b> avl_tree.h:55</div></div>
+<div class="ttc" id="aclassavl__tree_html_a82a19335d79d5f6928369635278c1c24"><div class="ttname"><a href="classavl__tree.html#a82a19335d79d5f6928369635278c1c24">avl_tree::postorder</a></div><div class="ttdeci">std::vector&lt; T &gt; postorder()</div><div class="ttdoc">postorder function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:150</div></div>
+<div class="ttc" id="aclassavl__tree_html_a8b6368356a04a58f29b1f56f835b7548"><div class="ttname"><a href="classavl__tree.html#a8b6368356a04a58f29b1f56f835b7548">avl_tree::preorder</a></div><div class="ttdeci">std::vector&lt; T &gt; preorder()</div><div class="ttdoc">preorder function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:137</div></div>
+<div class="ttc" id="aclassavl__tree_html_aab0ba446f1ee02bd5c6be467e1645ab2"><div class="ttname"><a href="classavl__tree.html#aab0ba446f1ee02bd5c6be467e1645ab2">avl_tree::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">size function</div><div class="ttdef"><b>Definition</b> avl_tree.h:110</div></div>
+<div class="ttc" id="aclassavl__tree_html_ab139b35985a741d7834ef1e356c5f18f"><div class="ttname"><a href="classavl__tree.html#ab139b35985a741d7834ef1e356c5f18f">avl_tree::level_order</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; T &gt; &gt; level_order()</div><div class="ttdoc">level order function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:164</div></div>
+<div class="ttc" id="aclassavl__tree_html_abe65b6fb7200651bba6f6bfe22f62b58"><div class="ttname"><a href="classavl__tree.html#abe65b6fb7200651bba6f6bfe22f62b58">avl_tree::operator&lt;&lt;</a></div><div class="ttdeci">friend ostream &amp; operator&lt;&lt;(ostream &amp;out, avl_tree&lt; T &gt; &amp;t)</div><div class="ttdoc">operator &lt;&lt; for avl_tree class</div><div class="ttdef"><b>Definition</b> avl_tree.h:199</div></div>
+<div class="ttc" id="aclassavl__tree_html_acdeb1d0610c350618d64fdb69f50ab08"><div class="ttname"><a href="classavl__tree.html#acdeb1d0610c350618d64fdb69f50ab08">avl_tree::insert</a></div><div class="ttdeci">void insert(T key)</div><div class="ttdoc">insert function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:61</div></div>
+<div class="ttc" id="aclassavl__tree_html_aef655e5753555d705e58d39bd094c55a"><div class="ttname"><a href="classavl__tree.html#aef655e5753555d705e58d39bd094c55a">avl_tree::inorder</a></div><div class="ttdeci">std::vector&lt; T &gt; inorder()</div><div class="ttdoc">inorder function.</div><div class="ttdef"><b>Definition</b> avl_tree.h:124</div></div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">detail::parse_event_t::key</a></div><div class="ttdeci">@ key</div><div class="ttdoc">the parser read a key of a value in an object</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

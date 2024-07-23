@@ -36,7 +36,9 @@ bool \mbox{\hyperlink{class_image_a91a1625610a4bc05aa3b9f161edf57e2}{binary}} ()
 \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a1af53349d893161a56a03e1b89eed0f9}{mul}} (\mbox{\hyperlink{class_image}{Image}} img2) const
 \begin{DoxyCompactList}\small\item\em secondary mul function with \doxylink{class_image}{Image} as an input multiplies the img2 to img \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\+\_\+filter2d}} (std\+::vector$<$ std\+::vector$<$ int32\+\_\+t $>$ $>$ \&filter) const
-\begin{DoxyCompactList}\small\item\em apply\+\_\+filter2d function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em apply\+\_\+filter2d function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a53a86b306f5abde5a7c9358259f16c01}{apply\+\_\+filter2d\+\_\+float}} (std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&filter) const
+\begin{DoxyCompactList}\small\item\em apply\+\_\+filter2d\+\_\+float function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -170,6 +172,24 @@ apply\+\_\+filter2d function
 
 \begin{DoxyParams}{Parameters}
 {\em filter} & 3x3 kernel to be applied to the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector\texorpdfstring{$<$}{<}vector$<$int32\+\_\+t$>$ \texorpdfstring{$>$}{>} the resulted image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a53a86b306f5abde5a7c9358259f16c01}\label{class_image_a53a86b306f5abde5a7c9358259f16c01} 
+\index{Image@{Image}!apply\_filter2d\_float@{apply\_filter2d\_float}}
+\index{apply\_filter2d\_float@{apply\_filter2d\_float}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{apply\_filter2d\_float()}{apply\_filter2d\_float()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}} Image\+::apply\+\_\+filter2d\+\_\+float (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{filter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+apply\+\_\+filter2d\+\_\+float function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & 3x3 kernel with floats to be applied to the image \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

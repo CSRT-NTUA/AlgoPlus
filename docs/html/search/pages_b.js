@@ -24,6 +24,5 @@ var searchData=
   ['mini_20tutorial_20for_20the_20splay_20tree_20class_21',['Mini Tutorial for the Splay Tree class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2splay__tree.html',1,'']]],
   ['mini_20tutorial_20for_20the_20stack_20class_22',['Mini Tutorial for the Stack class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue.html',1,'Mini Tutorial for the Stack class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2stack.html',1,'Mini Tutorial for the Stack class']]],
   ['mini_20tutorial_20for_20the_20trie_20class_23',['Mini Tutorial for the Trie class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2trie.html',1,'']]],
-  ['morphology_20operations_20namespace_24',['Mini tutorial for morphology operations namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2morphology_2morphology__operations.html',1,'']]],
-  ['my_20code_25',['How should i comment my code?',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html',1,'']]]
+  ['morphology_20operations_20namespace_24',['Mini tutorial for morphology operations namespace',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2morphology_2morphology__operations.html',1,'']]]
 ];

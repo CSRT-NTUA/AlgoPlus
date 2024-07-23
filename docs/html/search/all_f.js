@@ -1,9 +1,9 @@
 var searchData=
 [
   ['join_0',['join',['../classdsu.html#a02acccd340bf9e6818fb3a8e4415311d',1,'dsu']]],
-  ['join_20a_20our_20discord_20strong_1',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md18',1,'']]],
-  ['json_20file_20and_20then_20use_20the_20python_20s_20matplotlib_20function_3a_20strong_20_3a_2',['&lt;strong&gt;optionally for visualization purposes you can write to a json file and then use the python&apos;s matplotlib function:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html#autotoc_md29',1,'']]],
-  ['json_20file_20and_20then_20visualize_20it_20with_20python_20s_20matplotlib_3a_20strong_20_3a_3',['&lt;strong&gt;optionally for visualization purposes you can write to a json file and then visualize it with python&apos;s matplotlib:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2kmeans.html#autotoc_md33',1,'']]],
+  ['join_20a_20our_20discord_20strong_1',['&lt;strong&gt;&lt;a href=&quot;https://discord.gg/M9nYv4MHz6&quot; &gt;Join&lt;/a&gt; our Discord&lt;/strong&gt;',['../index.html#autotoc_md14',1,'']]],
+  ['json_20file_20and_20then_20use_20the_20python_20s_20matplotlib_20function_3a_20strong_20_3a_2',['&lt;strong&gt;optionally for visualization purposes you can write to a json file and then use the python&apos;s matplotlib function:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html#autotoc_md25',1,'']]],
+  ['json_20file_20and_20then_20visualize_20it_20with_20python_20s_20matplotlib_3a_20strong_20_3a_3',['&lt;strong&gt;optionally for visualization purposes you can write to a json file and then visualize it with python&apos;s matplotlib:&lt;/strong&gt;:',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2kmeans.html#autotoc_md29',1,'']]],
   ['json_5fdefault_5fbase_4',['json_default_base',['../structdetail_1_1json__default__base.html',1,'detail']]],
   ['json_5fpointer_5',['json_pointer',['../classjson__pointer.html',1,'json_pointer&lt; RefStringType &gt;'],['../classbasic__json.html#afe66720a34c11920f359394a4430a16e',1,'basic_json::json_pointer'],['../classjson__pointer.html#a5288b8f5d6ff6faca37f664b98a16ecd',1,'json_pointer::json_pointer()']]],
   ['json_5fref_6',['json_ref',['../classdetail_1_1json__ref.html',1,'detail']]],

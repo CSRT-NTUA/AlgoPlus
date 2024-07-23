@@ -10,8 +10,8 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
@@ -21,7 +21,7 @@
 \DoxyCodeLine{00027\ \ \ \ \ std::vector<T>\ keys;}
 \DoxyCodeLine{00028\ \ \ \ \ std::vector<std::shared\_ptr<node>\ >\ children;}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ numChildren;}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ index;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ index\{\};}
 \DoxyCodeLine{00031\ \ \ \ \ node(std::vector<T>\ keys,\ std::vector<std::shared\_ptr<node>\ >\ children,\ \textcolor{keywordtype}{int}\ numChildren)\ :}
 \DoxyCodeLine{00032\ \ \ \ \ \ \ keys(keys),\ children(children),\ numChildren(numChildren)\ \{\}}
 \DoxyCodeLine{00033\ \ \ \}\ node;}
@@ -193,60 +193,52 @@
 \DoxyCodeLine{00220\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classttf__tree_a69ff2b7fbe7bf6f87c8a55f6a47d02f2}{ttf\_tree<T>::search}}(\textcolor{keyword}{const}\ T\ \&key)\textcolor{keyword}{\ const\ }\{}
 \DoxyCodeLine{00221\ \ \ std::shared\_ptr<node>\ head\ =\ root;}
 \DoxyCodeLine{00222\ \ \ \textcolor{keywordflow}{while}(head\ !=\ \textcolor{keyword}{nullptr})\{}
-\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{if}(head-\/>numChilren\ ==\ 2)\{\ \textcolor{comment}{//\ case\ for\ 2-\/node}}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[0]\ ||\ key\ ==\ head-\/>keys[1])\{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ <\ head.keys[0])\{}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ head\ =\ head-\/>children[0];}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head.keys[1])\{}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ head\ =\ head-\/>children[1];}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{if}(head-\/>numChildren\ ==\ 2)\{\ \textcolor{comment}{//\ case\ for\ 2-\/node}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[0]\ ||\ key\ ==\ head-\/>keys[1])\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ <\ head-\/>keys[0])\{\ head\ =\ head-\/>children[0];\ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[1])\{\ head\ =\ head-\/>children[1];\ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(head-\/>numChildren\ ==\ 3)\{\ \textcolor{comment}{//\ case\ for\ 3-\/node}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[0]\ ||\ key\ ==\ head-\/>keys[1])\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ <\ head-\/>keys[0])\{\ head\ =\ head-\/>children[0];\ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[0]\ \&\&\ key\ <\ head-\/>keys[1])\{\ head\ =\ head-\/>children[1];\ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[1])\ \{\ head\ =\ head-\/>children[2];\ \}}
 \DoxyCodeLine{00233\ \ \ \ \ \}}
-\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(head.numChildren\ ==\ 3)\{\ \textcolor{comment}{//\ case\ for\ 3-\/node}}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[0])\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ <\ head-\/>keys[0])\{\ head\ =\ head-\/>children[0];\ \}}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[0]\ \&\&\ key\ <\ head-\/>keys[1])\{\ head\ =\ head-\/>children[1];\ \}}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[1])\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[1])\ \{\ head\ =\ head-\/>children[2];\ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{else}\{\ \textcolor{comment}{//\ case\ for\ 4-\/node}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[0]\ ||\ key\ ==\ head-\/>keys[1]\ ||\ key\ ==\ head-\/>keys[2])\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ <\ head-\/>keys[0])\ \{\ head\ =\ head-\/>children[0];\ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[0]\ \&\&\ key\ <\ head-\/>keys[1])\ \{\ head\ =\ head-\/>children[1];\ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[1]\ \&\&\ key\ <\ head-\/>keys[2])\ \{\ head\ =\ head-\/>children[2];\ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[2])\ \{\ head\ =\ head-\/>children[3];\ \}}
 \DoxyCodeLine{00240\ \ \ \ \ \}}
-\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{else}\{\ \textcolor{comment}{//\ case\ for\ 4-\/node}}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[0])\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ <\ head-\/>keys[0])\ \{\ head\ =\ head-\/>children[0];\ \}}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[0]\ \&\&\ key\ <\ head-\/>keys[1])\ \{\ head\ =\ head-\/>children[1];\ \}}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[1])\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[1]\ \&\&\ key\ <\ head.keys[2])\ \{\ head\ =\ head-\/>children[2];\ \}}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ ==\ head-\/>keys[2])\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(key\ >\ head-\/>keys[2])\ \{\ head\ =\ head-\/>children[3];\ \}}
-\DoxyCodeLine{00249\ \ \ \ \ \}}
-\DoxyCodeLine{00250\ \ \ \}}
-\DoxyCodeLine{00251\ \}}
-\DoxyCodeLine{00252\ }
-\DoxyCodeLine{00253\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00254\ std::vector<std::vector<std::vector<T>\ >\ >\ \mbox{\hyperlink{classttf__tree_ae9f816d0c9bc69b48eb927ce5a2525d6}{ttf\_tree<T>::level\_order}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00255\ \ \ std::vector<std::vector<std::vector<T>\ >\ >\ level\_ordered;}
-\DoxyCodeLine{00256\ \ \ std::queue<std::shared\_ptr<node>\ >\ q;}
-\DoxyCodeLine{00257\ \ \ q.push(root);}
-\DoxyCodeLine{00258\ \ \ \textcolor{keywordflow}{while}(!q.empty())\{}
-\DoxyCodeLine{00259\ \ \ \ \ std::vector<std::vector<T>\ >\ line;}
-\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ q.size();}
-\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<size;\ i++)\{}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ current\ =\ q.front();}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ line.push\_back(current-\/>keys);}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ x\ :\ current-\/>children)\{}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ !=\ \textcolor{keyword}{nullptr})\{}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00270\ \ \ \ \ \}}
-\DoxyCodeLine{00271\ \ \ \ \ level\_ordered.push\_back(line);}
-\DoxyCodeLine{00272\ \ \ \}}
-\DoxyCodeLine{00273\ \ \ \textcolor{keywordflow}{return}\ level\_ordered;}
-\DoxyCodeLine{00274\ \}}
-\DoxyCodeLine{00275\ }
-\DoxyCodeLine{00276\ }
-\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00241\ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00243\ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00246\ std::vector<std::vector<std::vector<T>\ >\ >\ \mbox{\hyperlink{classttf__tree_ae9f816d0c9bc69b48eb927ce5a2525d6}{ttf\_tree<T>::level\_order}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00247\ \ \ std::vector<std::vector<std::vector<T>\ >\ >\ level\_ordered;}
+\DoxyCodeLine{00248\ \ \ std::queue<std::shared\_ptr<node>\ >\ q;}
+\DoxyCodeLine{00249\ \ \ q.push(root);}
+\DoxyCodeLine{00250\ \ \ \textcolor{keywordflow}{while}(!q.empty())\{}
+\DoxyCodeLine{00251\ \ \ \ \ std::vector<std::vector<T>\ >\ line;}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ q.size();}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<size;\ i++)\{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ current\ =\ q.front();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ line.push\_back(current-\/>keys);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ x\ :\ current-\/>children)\{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ q.push(x);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ level\_ordered.push\_back(line);}
+\DoxyCodeLine{00264\ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordflow}{return}\ level\_ordered;}
+\DoxyCodeLine{00266\ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

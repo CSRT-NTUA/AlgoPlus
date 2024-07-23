@@ -84,20 +84,20 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">lcs.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef LCS_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define LCS_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef LCS_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define LCS_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>int64_t lcs(std::string a, std::string b) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>int64_t lcs(<span class="keyword">const</span> std::string a, <span class="keyword">const</span> std::string b) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  int64_t m = a.length(), n = b.length();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  int64_t res[m + 1][n + 1];</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  int64_t trace[20][20];</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::vector&lt;std::vector&lt;int64_t&gt; &gt; res(m + 1, std::vector&lt;int64_t&gt;(n + 1));</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::vector&lt;std::vector&lt;int64_t&gt; &gt; trace(20, std::vector&lt;int64_t&gt;(20));</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">for</span> (int64_t i = 0; i &lt; m + 1; i++) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span> (int64_t j = 0; j &lt; n + 1; j++) {</div>

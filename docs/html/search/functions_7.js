@@ -24,7 +24,7 @@ var searchData=
   ['get_5fstring_21',['get_string',['../classdetail_1_1lexer.html#aae63a63a83ae7e7bd5dc1a83669ba281',1,'detail::lexer']]],
   ['get_5fto_22',['get_to',['../classbasic__json.html#a8773ee34154b4f492549f5496c640ce5',1,'basic_json']]],
   ['get_5ftoken_5fstring_23',['get_token_string',['../classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b',1,'detail::lexer']]],
-  ['graph_24',['graph',['../classgraph.html#ad88980a06f2a3c4b4bb38e3a474573ff',1,'graph::graph(std::string __type, std::vector&lt; std::pair&lt; T, std::vector&lt; T &gt; &gt; &gt; __adj={})'],['../classgraph.html#ade08163a9b85ae16b5e898d0e6bb1353',1,'graph::graph(const graph &amp;g)']]],
+  ['graph_24',['graph',['../classgraph.html#ad28678aa29106d24cc67efb3760467cc',1,'graph::graph(std::string _type, std::vector&lt; std::pair&lt; T, std::vector&lt; T &gt; &gt; &gt; _adj={})'],['../classgraph.html#ade08163a9b85ae16b5e898d0e6bb1353',1,'graph::graph(const graph &amp;g)']]],
   ['grisu2_25',['grisu2',['../namespacedetail_1_1dtoa__impl.html#ad549352ed1a9676a092d143a2daa3dee',1,'detail::dtoa_impl::grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, diyfp m_minus, diyfp v, diyfp m_plus)'],['../namespacedetail_1_1dtoa__impl.html#abdf6bc05c54068a5930f66c2e803e8b8',1,'detail::dtoa_impl::grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, FloatType value)']]],
   ['grisu2_5fdigit_5fgen_26',['grisu2_digit_gen',['../namespacedetail_1_1dtoa__impl.html#ae877aa13ab872c99a1c614e5e1524807',1,'detail::dtoa_impl']]]
 ];

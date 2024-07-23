@@ -133,7 +133,7 @@ public:
   }
 
   /**
-   * @ brief run function
+   * @ brief fit function
    * @ return pair<vector<int64_t>, map<int64_t, int> >: the centroids and the assignments of the clustering algorithm
    *
    */

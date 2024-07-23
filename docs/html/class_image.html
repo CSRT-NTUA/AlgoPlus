@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3a56602ae5335142e179e679c9e31aa6" id="r_a3a56602ae5335142e179e679c9e31aa6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a56602ae5335142e179e679c9e31aa6">apply_filter2d</a> (std::vector&lt; std::vector&lt; int32_t &gt; &gt; &amp;filter) const</td></tr>
 <tr class="memdesc:a3a56602ae5335142e179e679c9e31aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply_filter2d function  <br /></td></tr>
 <tr class="separator:a3a56602ae5335142e179e679c9e31aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53a86b306f5abde5a7c9358259f16c01" id="r_a53a86b306f5abde5a7c9358259f16c01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53a86b306f5abde5a7c9358259f16c01">apply_filter2d_float</a> (std::vector&lt; std::vector&lt; float &gt; &gt; &amp;filter) const</td></tr>
+<tr class="memdesc:a53a86b306f5abde5a7c9358259f16c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply_filter2d_float function  <br /></td></tr>
+<tr class="separator:a53a86b306f5abde5a7c9358259f16c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6a6f4692c2770414c62cc1181ee0dfff" name="a6a6f4692c2770414c62cc1181ee0dfff"></a>
@@ -404,6 +407,40 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filter</td><td>3x3 kernel to be applied to the image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;vector&lt;int32_t&gt; &gt; the resulted image </dd></dl>
+
+</div>
+</div>
+<a id="a53a86b306f5abde5a7c9358259f16c01" name="a53a86b306f5abde5a7c9358259f16c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a86b306f5abde5a7c9358259f16c01">&#9670;&#160;</a></span>apply_filter2d_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_image.html">Image</a> Image::apply_filter2d_float </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>apply_filter2d_float function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>3x3 kernel with floats to be applied to the image </td></tr>
   </table>
   </dd>
 </dl>

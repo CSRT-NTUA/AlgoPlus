@@ -35,26 +35,24 @@
 \DoxyCodeLine{00044\ \ \ }
 \DoxyCodeLine{00050\ \ \ std::vector<std::vector<int32\_t>\ >\ \mbox{\hyperlink{namespacesobel_aa2488f093457d0888ef32838e50d446a}{Sobel}}(\textcolor{keyword}{const}\ std::vector<std::vector<int32\_t>\ >\ \&image)\ \{}
 \DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(image);}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ img.\mbox{\hyperlink{class_image_af90d355112add3631a0b0f8cccffdb95}{\_height}}();}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ img.\mbox{\hyperlink{class_image_a685b99decee477e0889511335a0ba167}{\_width}}();}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ std::pair<std::vector<std::vector<int32\_t>\ >,\ std::vector<std::vector<int32\_t>\ >\ >\ kernels\ =\ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}}();}
-\DoxyCodeLine{00056\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ k1\ =\ kernels.first;\ std::vector<std::vector<int32\_t>\ >\ k2\ =\ kernels.second;}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G\_x(img.\mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(k1));}
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G\_y(img.\mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(k2));}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ G\_x\ =\ G\_x.\mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(G\_x);}
-\DoxyCodeLine{00062\ \ \ \ \ G\_y\ =\ G\_y.\mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(G\_y);}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G(G\_x);\ \textcolor{comment}{//\ G\ =\ G\_x\string^2}}
-\DoxyCodeLine{00065\ \ \ \ \ G\ =\ G.\mbox{\hyperlink{class_image_ae46a0fc3c5ab7f98cedfc14802509926}{add}}(G\_y);\ \textcolor{comment}{//\ G\ +=\ G\_y\string^2}}
-\DoxyCodeLine{00066\ \ \ \ \ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}}(G.\mbox{\hyperlink{class_image_ad70be146565fdfd89e6f061a80f6e348}{get\_2d\_array}}());\ \textcolor{comment}{//\ result\ is:\ G\ =\ sqrt(G\_x\string^2\ +\ G\_y\string^2)}}
-\DoxyCodeLine{00068\ \ \ \}}
-\DoxyCodeLine{00069\ \}}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ std::pair<std::vector<std::vector<int32\_t>\ >,\ std::vector<std::vector<int32\_t>\ >\ >\ kernels\ =\ \mbox{\hyperlink{namespacesobel_a45bcfbac5ef3041b69834695b5a5ed21}{kernel}}();}
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<std::vector<int32\_t>\ >\ k1\ =\ kernels.first;\ std::vector<std::vector<int32\_t>\ >\ k2\ =\ kernels.second;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G\_x(img.\mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(k1));}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G\_y(img.\mbox{\hyperlink{class_image_a3a56602ae5335142e179e679c9e31aa6}{apply\_filter2d}}(k2));}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ G\_x\ =\ G\_x.\mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(G\_x);}
+\DoxyCodeLine{00060\ \ \ \ \ G\_y\ =\ G\_y.\mbox{\hyperlink{class_image_a7ceea7a73b614f189cd5c9e9bf3f7863}{mul}}(G\_y);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ G(G\_x);\ \textcolor{comment}{//\ G\ =\ G\_x\string^2}}
+\DoxyCodeLine{00063\ \ \ \ \ G\ =\ G.\mbox{\hyperlink{class_image_ae46a0fc3c5ab7f98cedfc14802509926}{add}}(G\_y);\ \textcolor{comment}{//\ G\ +=\ G\_y\string^2}}
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacesobel_a9e7825227070061cd265749d9cd22b53}{square}}(G.\mbox{\hyperlink{class_image_ad70be146565fdfd89e6f061a80f6e348}{get\_2d\_array}}());\ \textcolor{comment}{//\ result\ is:\ G\ =\ sqrt(G\_x\string^2\ +\ G\_y\string^2)}}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ \ }}
 
 \end{DoxyCode}

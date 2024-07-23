@@ -2,20 +2,20 @@
 \hypertarget{lcs_8h_source}{}\label{lcs_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/lcs.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/dynamic\_programming/lcs.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ LCS\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ LCS\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LCS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LCS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00018\ int64\_t\ lcs(std::string\ a,\ std::string\ b)\ \{}
+\DoxyCodeLine{00018\ int64\_t\ lcs(\textcolor{keyword}{const}\ std::string\ a,\ \textcolor{keyword}{const}\ std::string\ b)\ \{}
 \DoxyCodeLine{00019\ \ \ int64\_t\ m\ =\ a.length(),\ n\ =\ b.length();}
-\DoxyCodeLine{00020\ \ \ int64\_t\ res[m\ +\ 1][n\ +\ 1];}
-\DoxyCodeLine{00021\ \ \ int64\_t\ trace[20][20];}
+\DoxyCodeLine{00020\ \ \ std::vector<std::vector<int64\_t>\ >\ res(m\ +\ 1,\ std::vector<int64\_t>(n\ +\ 1));}
+\DoxyCodeLine{00021\ \ \ std::vector<std::vector<int64\_t>\ >\ trace(20,\ std::vector<int64\_t>(20));}
 \DoxyCodeLine{00022\ }
 \DoxyCodeLine{00023\ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ m\ +\ 1;\ i++)\ \{}
 \DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ j\ =\ 0;\ j\ <\ n\ +\ 1;\ j++)\ \{}

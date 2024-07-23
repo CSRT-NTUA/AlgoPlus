@@ -52,6 +52,7 @@
 <a href="avl__tree_8h_source.html"/>
 <a href="bst_8h_source.html"/>
 <a href="interval__tree_8h_source.html"/>
+<a href="red__black__tree_8h_source.html"/>
 <a href="splay__tree_8h_source.html"/>
 <a href="tree_8h_source.html"/>
 <a href="trie_8h_source.html"/>
@@ -63,6 +64,7 @@
 <a href="prewitt_8h_source.html"/>
 <a href="sobel__operator_8h_source.html"/>
 <a href="huffman__encoding_8h_source.html"/>
+<a href="average__filter_8h_source.html"/>
 <a href="median__filter_8h_source.html"/>
 <a href="sharpening__filter_8h_source.html"/>
 <a href="image_8h_source.html"/>
@@ -80,8 +82,6 @@
 <a href="json_8hpp_source.html"/>
 <a href="matplotlibcpp_8h_source.html"/>
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_d_e___o_f___c_o_n_d_u_c_t.html"/>
-<a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_m_m_e_n_t_s.html"/>
-<a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2_c_o_n_t_r_i_b_u_t_e.html"/>
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2_d_b_s_c_a_n.html"/>
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2clustering_2kmeans.html"/>
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2graph_2graph.html"/>
@@ -106,7 +106,6 @@
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2interval__tree.html"/>
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2splay__tree.html"/>
 <a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2tree_2trie.html"/>
-<a href="md__2_users_2spirosmag_2_documents_2_algo_plus_2_u_n_i_t___t_e_s_t_s.html"/>
 <a href="deprecated.html"/>
 <a href="structadl__serializer.html"/>
 <a href="structadl__serializer-members.html"/>
@@ -189,6 +188,10 @@
 <a href="structordered__map-members.html"/>
 <a href="classpolynomial__regression.html"/>
 <a href="classpolynomial__regression-members.html"/>
+<a href="classred__black__tree.html"/>
+<a href="classred__black__tree-members.html"/>
+<a href="classred__black__tree_1_1_iterator.html"/>
+<a href="classred__black__tree_1_1_iterator-members.html"/>
 <a href="classskip__list.html"/>
 <a href="classskip__list-members.html"/>
 <a href="classskip__list_1_1_iterator.html"/>
@@ -211,6 +214,7 @@
 <a href="classttf__tree-members.html"/>
 <a href="classweighted__graph.html"/>
 <a href="classweighted__graph-members.html"/>
+<a href="namespaceavg__filter.html"/>
 <a href="struct_catch_1_1always__false.html"/>
 <a href="class_catch_1_1_assertion_handler.html"/>
 <a href="class_catch_1_1_assertion_handler-members.html"/>
@@ -393,16 +397,16 @@
 <a href="struct_catch_1_1_wait_for_keypress-members.html"/>
 <a href="struct_catch_1_1_warn_about.html"/>
 <a href="struct_catch_1_1_warn_about-members.html"/>
-<a href="struct_catch_1_1detail_1_1is__range__impl.html"/>
-<a href="struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.html"/>
-<a href="struct_catch_1_1detail_1_1void__type.html"/>
-<a href="struct_catch_1_1detail_1_1void__type-members.html"/>
 <a href="class_catch_1_1_detail_1_1_approx.html"/>
 <a href="class_catch_1_1_detail_1_1_approx-members.html"/>
 <a href="struct_catch_1_1_detail_1_1_enum_info.html"/>
 <a href="struct_catch_1_1_detail_1_1_enum_info-members.html"/>
 <a href="class_catch_1_1_detail_1_1_is_stream_insertable.html"/>
 <a href="class_catch_1_1_detail_1_1_is_stream_insertable-members.html"/>
+<a href="struct_catch_1_1detail_1_1is__range__impl.html"/>
+<a href="struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.html"/>
+<a href="struct_catch_1_1detail_1_1void__type.html"/>
+<a href="struct_catch_1_1detail_1_1void__type-members.html"/>
 <a href="struct_catch_1_1_generators_1_1as.html"/>
 <a href="class_catch_1_1_generators_1_1_chunk_generator.html"/>
 <a href="class_catch_1_1_generators_1_1_chunk_generator-members.html"/>
@@ -793,6 +797,7 @@
 <a href="dir_e6df591b0639d4c4807ef64d058833e2.html"/>
 <a href="dir_1df265218765ee252aba9ebba4de5d2c.html"/>
 <a href="dir_6eccfcea2b2f42e381286a1302e32dce.html"/>
+<a href="dir_90981cb7cf57e6e4304ed68ed63f2276.html"/>
 <a href="dir_25d959d4ce8d574b2ba2fa1ac2a6ecb2.html"/>
 <a href="dir_018e9aafb459e6e1a4953404cb0c0b1d.html"/>
 <a href="dir_9260b7bc5b72cdaf5c937520e6543a4e.html"/>
@@ -829,10 +834,12 @@
 <a href="dir_e1c1026bde423968b22efcef9725e4fb.html"/>
 <a href="dir_cb03ce94fce8ccdd62afe2ec4257c72f.html"/>
 <a href="dir_938a78adcf375ff9ad5def0dfd7fd81d.html"/>
+<a href="dir_dfca5dc1db6470d370022c27dc0b6bb5.html"/>
 <a href="dir_8156ce265928c6d5a2b57dcbae95bfbb.html"/>
 <a href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html"/>
 <a href="dir_939fad0b547dbc1ad054f5bae205036c.html"/>
 <a href="dir_8f40b6a37a75a9dec96e8f490c11ab4a.html"/>
+<a href="dir_200d82dcfe85afb8aa415e38b3c8646e.html"/>
 <a href="dir_5dff776341474e546195e534ccdc31ab.html"/>
 <a href="dir_313fa62b5b8f32a0fe6ffcf0d4f840e3.html"/>
 <a href="dir_652ab7e22e07b48d50c2b8a42f7498bb.html"/>

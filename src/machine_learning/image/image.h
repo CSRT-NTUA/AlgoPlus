@@ -106,7 +106,7 @@ public:
   bool binary() const {
     for(int i = 0; i<height; i++){
       for(int j = 0; j<width; j++){
-        if(!(img[i][j] != 0 || img[i][j] != 255)){
+        if(img[i][j] != 0 && img[i][j] != 255){
           return false;
         }
       }

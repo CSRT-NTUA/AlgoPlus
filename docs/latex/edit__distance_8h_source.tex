@@ -2,17 +2,17 @@
 \hypertarget{edit__distance_8h_source}{}\label{edit__distance_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/string/edit\_distance.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/string/edit\_distance.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MIN\_DISTANCE\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MIN\_DISTANCE\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MIN\_DISTANCE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MIN\_DISTANCE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00018\ int64\_t\ min\_dist(std::string\ word1,\ std::string\ word2)\ \{}
+\DoxyCodeLine{00018\ int64\_t\ min\_dist(\textcolor{keyword}{const}\ std::string\ word1,\ \textcolor{keyword}{const}\ std::string\ word2)\ \{}
 \DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{if}\ (word1.size()\ ==\ 0\ \&\&\ word2.size()\ ==\ 0)\ \{}
 \DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00021\ \ \ \}}
@@ -23,7 +23,7 @@
 \DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ word1.size();}
 \DoxyCodeLine{00027\ \ \ \}}
 \DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{int}\ n\ =\ word1.size(),\ w\ =\ word2.size();}
-\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{int}\ dp[n\ +\ 1][w\ +\ 1];}
+\DoxyCodeLine{00029\ \ \ std::vector<std::vector<int>\ >\ dp(n\ +\ 1,\ std::vector<int>(w\ +\ 1));}
 \DoxyCodeLine{00030\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ n;\ i++)\ \{}
 \DoxyCodeLine{00031\ \ \ \ \ dp[i][0]\ =\ i;}
 \DoxyCodeLine{00032\ \ \ \}}

@@ -2,27 +2,26 @@
 \hypertarget{mersenne__primes_8h_source}{}\label{mersenne__primes_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/number\_theory/mersenne\_primes.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/number\_theory/mersenne\_primes.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MERSENNE\_PRIMES\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MERSENNE\_PRIMES\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}eratosthenes\_sieve.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00016\ std::vector<int>\ mersenne(int64\_t\ n)\ \{}
-\DoxyCodeLine{00017\ \ \ std::vector<bool>\ prime\ =\ soe(n);}
-\DoxyCodeLine{00018\ \ \ std::vector<int>\ elements;}
-\DoxyCodeLine{00019\ \ \ int64\_t\ k\ =\ 2;}
-\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{while}\ ((1\ <<\ k)\ -\/\ 1\ <=\ n)\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (prime[(1\ <<\ k)\ -\/\ 1])\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ elements.push\_back(k);}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ k++;}
-\DoxyCodeLine{00025\ \ \ \}}
-\DoxyCodeLine{00026\ \ \ \textcolor{keywordflow}{return}\ elements;}
-\DoxyCodeLine{00027\ \}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MERSENNE\_PRIMES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MERSENNE\_PRIMES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}eratosthenes\_sieve.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ std::vector<int>\ mersenne(int64\_t\ n)\ \{}
+\DoxyCodeLine{00016\ \ \ std::vector<bool>\ prime\ =\ soe(n);}
+\DoxyCodeLine{00017\ \ \ std::vector<int>\ elements;}
+\DoxyCodeLine{00018\ \ \ int64\_t\ k\ =\ 2;}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordflow}{while}\ ((1\ <<\ k)\ -\/\ 1\ <=\ n)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (prime[(1\ <<\ k)\ -\/\ 1])\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ elements.push\_back(k);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ k++;}
+\DoxyCodeLine{00024\ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{return}\ elements;}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

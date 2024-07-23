@@ -94,9 +94,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9319489b15a937d372a0233e130bb513" id="r_a9319489b15a937d372a0233e130bb513"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9319489b15a937d372a0233e130bb513">skip_list</a> (int __MAX_LEVEL, float __PROB)</td></tr>
-<tr class="memdesc:a9319489b15a937d372a0233e130bb513"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> constructor.  <br /></td></tr>
-<tr class="separator:a9319489b15a937d372a0233e130bb513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2850a6936114509ab828c44efdbad4c7" id="r_a2850a6936114509ab828c44efdbad4c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2850a6936114509ab828c44efdbad4c7">skip_list</a> (int MAX_LEVEL, float PROB)</td></tr>
+<tr class="memdesc:a2850a6936114509ab828c44efdbad4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> constructor.  <br /></td></tr>
+<tr class="separator:a2850a6936114509ab828c44efdbad4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b67f580f2c6ef6a7bfa2aa4dbc31274" id="r_a7b67f580f2c6ef6a7bfa2aa4dbc31274"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b67f580f2c6ef6a7bfa2aa4dbc31274">skip_list</a> (const <a class="el" href="classskip__list.html">skip_list</a> &amp;s)</td></tr>
 <tr class="memdesc:a7b67f580f2c6ef6a7bfa2aa4dbc31274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for the <a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class.  <br /></td></tr>
 <tr class="separator:a7b67f580f2c6ef6a7bfa2aa4dbc31274"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af53fbbb2e9761d71c6d53d3969aac1c9" id="r_af53fbbb2e9761d71c6d53d3969aac1c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af53fbbb2e9761d71c6d53d3969aac1c9">search</a> (T key)</td></tr>
 <tr class="memdesc:af53fbbb2e9761d71c6d53d3969aac1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">search function.  <br /></td></tr>
 <tr class="separator:af53fbbb2e9761d71c6d53d3969aac1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73490b2063dce58531c46bfed19faac" id="r_ac73490b2063dce58531c46bfed19faac"><td class="memItemLeft" align="right" valign="top"><a id="ac73490b2063dce58531c46bfed19faac" name="ac73490b2063dce58531c46bfed19faac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>visualize</b> ()</td></tr>
+<tr class="memdesc:ac73490b2063dce58531c46bfed19faac"><td class="mdescLeft">&#160;</td><td class="mdescRight">visualize function returns a .dot file that can be previewd with graphviz plugin in vscode <br /></td></tr>
+<tr class="separator:ac73490b2063dce58531c46bfed19faac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -134,8 +138,8 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
 class skip_list&lt; T &gt;</div><p><a class="el" href="classskip__list.html" title="skip_list class.">skip_list</a> class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9319489b15a937d372a0233e130bb513" name="a9319489b15a937d372a0233e130bb513"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9319489b15a937d372a0233e130bb513">&#9670;&#160;</a></span>skip_list() <span class="overload">[1/2]</span></h2>
+<a id="a2850a6936114509ab828c44efdbad4c7" name="a2850a6936114509ab828c44efdbad4c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2850a6936114509ab828c44efdbad4c7">&#9670;&#160;</a></span>skip_list() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,12 +152,12 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classskip__list.html">skip_list</a>&lt; T &gt;<a class="el" href="classskip__list.html">::skip_list</a> </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>__MAX_LEVEL</em>, </span></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>MAX_LEVEL</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>__PROB</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>PROB</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

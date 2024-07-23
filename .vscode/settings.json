@@ -70,6 +70,7 @@
     "random": "cpp",
     "list": "cpp",
     "memory": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "print": "cpp"
   },
 }

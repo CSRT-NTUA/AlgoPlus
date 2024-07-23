@@ -1,10 +1,10 @@
 \chapter{Mini Tutorial for the Skip List class}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list}{}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list}\index{Mini Tutorial for the Skip List class@{Mini Tutorial for the Skip List class}}
-\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md100}%
-\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md100}%
+\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md96}%
+\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md96}%
 \begin{DoxyVerb}1. skip_list<T> -- creates a skip list with T type elements.
 \end{DoxyVerb}
- \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md101}{}\doxysubsection{\texorpdfstring{{\bfseries{insert}}\+:}{{\bfseries{insert}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md101}
+ \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md97}{}\doxysubsection{\texorpdfstring{{\bfseries{insert}}\+:}{{\bfseries{insert}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md97}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <skip\_list.h>}}
@@ -15,7 +15,7 @@
 \DoxyCodeLine{s.insert(13);\ \textcolor{comment}{//\ inserts\ 13\ to\ the\ list.}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md102}{}\doxysubsection{\texorpdfstring{{\bfseries{remove}}\+:}{{\bfseries{remove}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md102}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md98}{}\doxysubsection{\texorpdfstring{{\bfseries{remove}}\+:}{{\bfseries{remove}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md98}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <skip\_list.h>}}
@@ -28,7 +28,7 @@
 \DoxyCodeLine{s.remove(13);\ \textcolor{comment}{//\ removes\ 13\ from\ the\ list.}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md103}{}\doxysubsection{\texorpdfstring{{\bfseries{search}}\+:}{{\bfseries{search}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md103}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md99}{}\doxysubsection{\texorpdfstring{{\bfseries{search}}\+:}{{\bfseries{search}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md99}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <skip\_list.h>}}
@@ -44,7 +44,7 @@
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md104}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md104}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md100}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md100}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <skip\_list.h>}}
@@ -58,6 +58,19 @@
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ *(it)\ returns\ the\ value\ of\ each\ node(at\ the\ level\ 0)}}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ *it\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 \DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md101}{}\doxysubsection{\texorpdfstring{{\bfseries{visualize}}\+:}{{\bfseries{visualize}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list_autotoc_md101}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <skip\_list.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classskip__list}{skip\_list<int>}}\ s(3,\ 0.5)}
+\DoxyCodeLine{s.insert(10);}
+\DoxyCodeLine{s.insert(5);}
+\DoxyCodeLine{s.insert(16);}
+\DoxyCodeLine{\textcolor{comment}{//\ returns\ a\ .dot\ file\ that\ can\ easily\ be\ previewed\ using\ vscode's\ graphviz\ plugin}}
+\DoxyCodeLine{s.visualize();}
 
 \end{DoxyCode}
  
