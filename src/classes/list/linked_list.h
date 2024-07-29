@@ -168,6 +168,7 @@ template <typename T> void linked_list<T>::push_back(T key) {
 template <typename T> void linked_list<T>::push_front(T key) {
   std::shared_ptr<node> p = std::make_shared<node>(key);
   p->next = root;
+  if(tail == nullptr) { tail = root; }
   root = p;
   _size++;
 }
