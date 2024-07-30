@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../src/classes/list/linked_list.h"
 #include "../../third_party/catch.hpp"
 #include <string>
