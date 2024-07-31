@@ -107,10 +107,10 @@ cd tests
 ```
 **Windows**
 ```
-mkdir build && cd build
-cmake -G "MinGW Makefiles" ..
-make
-cd tests
+mkdir build 
+cmake -S . -B build -G Ninja
+cmake --build build
+cd build/tests
 ./runUnitTests
 ```
 
