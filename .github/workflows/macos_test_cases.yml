@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Download requirements
-      run: sudo pip3 install xcrun && sudo pip3 install gcovr && brew install lcov libxrandr libxcursor libudev openal-soft flac libvorbis mesa freeglut
+      run: sudo pip3 install xcrun && sudo pip3 install gcovr --break-system-packages && brew install lcov libxrandr libxcursor libudev openal-soft flac libvorbis mesa freeglut
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Configure CMake
