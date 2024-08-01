@@ -6,7 +6,6 @@ coverage:
   round: down
   range: "70...100"
 
-
 parsers:
   gcov:
     branch_detection:
@@ -24,3 +23,4 @@ ignore:
   - "third_party/catch.hpp"
   - "third_party/json.hpp"
   - "third_party/matplotlibcpp.h"
+  - "src/visualization/*"
