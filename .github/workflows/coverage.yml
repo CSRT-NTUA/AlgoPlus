@@ -27,9 +27,9 @@ jobs:
         run: cmake --build . --config $BUILD_TYPE
 
       - name: Run
-        working-directory: ${{runner.workspace}}/build/tests
+        working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: ./runUnitTests
+        run: ctest --output-on-failure
 
       - name: Coverage
         working-directory: ${{runner.workspace}}/build
