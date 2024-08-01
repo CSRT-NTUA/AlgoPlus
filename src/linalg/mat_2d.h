@@ -28,7 +28,7 @@ public:
    */
   explicit Mat2d(std::vector<std::vector<T>> v = {})
       : arr(new T[ROWS * COLS]), _cols(COLS), _rows(ROWS), _size(ROWS * COLS) {
-    
+
     if (!v.empty()) {
       try {
         if (v.size() * v[0].size() != _size || v[0].size() != _cols ||
@@ -92,7 +92,7 @@ public:
       return *(this);
     }
     try {
-      if (mat.size() != _size || mat.cols() != _cols || mat.rows != _rows) {
+      if (mat.size() != _size || mat.cols() != _cols || mat.rows() != _rows) {
         throw std::logic_error(
             "Tried to copy matrixes with different dimensions");
       }
@@ -103,6 +103,7 @@ public:
     } catch (std::logic_error &e) {
       std::cerr << e.what() << '\n';
     }
+    return *(this);
   }
 
   /**
@@ -192,7 +193,6 @@ private:
   size_t _cols;
   size_t _index;
   size_t _size;
-  Mat1d<T, COLS> mat;
 
 public:
   /**
@@ -205,7 +205,7 @@ public:
    */
   explicit Iterator(T *_arr, size_t rows, size_t cols, size_t index) noexcept
       : _rows(rows), _cols(cols), _index(index), _size(rows * cols) {
-    
+
     arr = new T[_size];
     for (size_t i = 0; i < _size; i++) {
       arr[i] = _arr[i];
@@ -272,14 +272,16 @@ public:
    *@return false otherwise
    */
   bool operator!=(const Iterator &it) {
-    return it.arr[it.index] != arr[this->index];
+    return it.arr[it._index] != arr[this->_index];
   }
 
   /**
    *@brief operator * for Iterator class
    *@return Mat1d<T, COLS> the 1-Dimensional Matrix in the current row
    */
-  Mat1d<T, COLS> operator*() {
+  template <typename A, size_t CCOLS>
+  Mat1d<A, CCOLS> operator*() {
+    Mat1d<T, COLS> mat(0);
     size_t index = 0;
     for (size_t j = this->_index * _cols; j < this->_index * _cols + _rows;
          ++j) {

@@ -63,20 +63,50 @@ TEST_CASE("testing copy constructor of mat_1d") {
   REQUIRE(v3 == v4);
 }
 
-// TEST_CASE("testing iterators for Mat1d class"){
-//   Mat1d<char, 5> mat({'a','b','c','d','e'});
-//   std::vector<char> v = {'a','b','c','d','e'};
-//   std::vector<char> check;
-//   for(auto it = mat.begin(); it != mat.end(); it++){
-//     check.push_back(*(it));
-//   }
-//   REQUIRE(v == check);
+TEST_CASE("testing iterators for Mat1d class"){
+  Mat1d<char, 5> mat({'a','b','c','d','e'});
+  std::vector<char> v = {'a','b','c','d','e'};
+  std::vector<char> check;
+  for(auto it = mat.begin(); it != mat.end(); it++){
+    check.push_back(*(it));
+  }
+  REQUIRE(v == check);
 
-//  Mat1d<std::string, 5> mat2({"hello", "world", "we", "are", "csrt"});
-//  std::vector<std::string> v2 = {"hello", "world", "we", "are", "csrt"};
-//  std::vector<std::string> check2;
-//  for(auto it = mat2.begin(); it != mat2.end(); it++){
-//    check2.push_back(*(it));
-//  }
-//  REQUIRE(v2 == check2);
-//}
+ Mat1d<std::string, 5> mat2({"hello", "world", "we", "are", "csrt"});
+ std::vector<std::string> v2 = {"hello", "world", "we", "are", "csrt"};
+ std::vector<std::string> check2;
+ for(auto it = mat2.begin(); it != mat2.end(); it++){
+   check2.push_back(*(it));
+ }
+ REQUIRE(v2 == check2);
+}
+
+TEST_CASE("testing operator =  [1]") {
+    Mat1d<int, 5> mat({1, 2, 3, 4, 5});
+    Mat1d<int, 5> mat2;
+    mat2 = mat;
+    REQUIRE(mat == mat2);
+}
+
+TEST_CASE("testing operator == with falsy size") {
+    Mat1d<int, 5> mat({1, 2, 3, 4, 5});
+    Mat1d<int, 6> mat2({1, 2, 3, 4, 5, 6});
+    bool eq = (mat == mat2);
+    REQUIRE(eq == 0);
+}
+
+TEST_CASE("testing operator << for exceptions") {
+    Mat1d<char, 5> mat({'a', 'b', 'c', 'd', 'e'});
+    CHECK_NOTHROW(std::cout << mat << '\n');
+    Mat1d<std::string, 2> mat2({"hello", "world"});
+    CHECK_NOTHROW(std::cout << mat2 << '\n');
+    Mat1d<int, 5> mat3({1, 2, 3, 4, 5});
+    CHECK_NOTHROW(std::cout << mat3 << '\n');
+}
+
+TEST_CASE("testing constructor with one value for Mat1d class [1]") {
+    Mat1d<int, 5> mat(5);
+    for(auto it = mat.begin(); it != mat.end(); it++){
+        REQUIRE(*(it) == 5);
+    }
+}

@@ -57,9 +57,6 @@ public:
    * @param g the graph we want to copy
    */
   graph(const graph &g) : adj(g.adj), _elements(g._elements), _type(g._type) {
-    
-    
-    
   }
 
   /**
@@ -583,9 +580,9 @@ public:
    * @param g the graph we want to copy
    */
   explicit weighted_graph(const weighted_graph &g) : adj(g.adj), _elements(g._elements), _type(g._type) {
-    
-    
-    
+
+
+
   }
 
   /**

@@ -9,13 +9,15 @@
 #include <iostream>
 #include <optional>
 #include <vector>
+#include <initializer_list>
 #endif
 
 /**
  *@brief Class for 1-dimensional Matrix
  *
  */
-template <typename T, size_t SIZE> class Mat1d {
+template <typename T, size_t SIZE>
+class Mat1d {
 private:
   T *arr;
   size_t _size;
@@ -44,6 +46,18 @@ public:
   }
 
   /**
+   *@brief constructor for Mat1d class with initializer list
+   *@param il the initializer list that we want to use to initialize the array
+   */
+  explicit Mat1d(std::initializer_list<T> il) : _size(SIZE) {
+    arr = new T[_size];
+    if (il.size() != _size) {
+      throw std::logic_error("Initializer list doesn't have the same size as the constructed array");
+    }
+    std::copy(il.begin(), il.end(), arr);
+  }
+
+  /**
    *@brief constructor for Mat1d class with input value
    *@param val the value that we want all the elements of the array to have
    */
@@ -62,7 +76,7 @@ public:
   explicit Mat1d(Mat1d &mat) : _size(SIZE) {
     try {
       if (mat.size() != _size) {
-        throw std::logic_error("Tried to copy matrixes with different sizes");
+        throw std::logic_error("Tried to copy matrices with different sizes");
       }
       this->arr = new T[_size];
       for (size_t i = 0; i < _size; i++) {
@@ -100,7 +114,7 @@ public:
    *@return size_t the size of the array
    *
    */
-  size_t size() { return this->_size; }
+  size_t size() const { return this->_size; }
 
   class Iterator;
 
@@ -131,7 +145,7 @@ public:
    *@return true if &this is equal to mat
    *@return false otherwise
    */
-  bool operator==(Mat1d &mat) const {
+  bool operator==(const Mat1d<T, SIZE> &mat) const {
     if (mat.size() != _size) {
       return false;
     }
@@ -145,14 +159,24 @@ public:
   }
 
   /**
+   *@brief operator != for Mat1d class
+   *@param mat the matrix to compare
+   *@return true if &this is not equal to mat
+   *@return false otherwise
+   */
+  bool operator!=(const Mat1d<T, SIZE> &mat) const {
+    return !(*this == mat);
+  }
+
+  /**
    *@brief operator << for Mat1d class
    *@param mat the matrix
    *
    */
-  friend std::ostream &operator<<(std::ostream &out, Mat1d &mat) {
+  friend std::ostream &operator<<(std::ostream &out, const Mat1d &mat) {
     out << '[';
     for (size_t i = 0; i < mat.size(); i++) {
-      out << mat[i];
+      out << mat.arr[i];
       if (i != mat.size() - 1) {
         out << " ";
       }
@@ -163,9 +187,23 @@ public:
 };
 
 /**
+ * @brief Template specialization for comparing Mat1d objects of different sizes
+ */
+template <typename T, size_t SIZE1, size_t SIZE2>
+bool operator==(const Mat1d<T, SIZE1> &mat1, const Mat1d<T, SIZE2> &mat2) {
+  return false;  // Matrices of different sizes are not equal
+}
+
+template <typename T, size_t SIZE1, size_t SIZE2>
+bool operator!=(const Mat1d<T, SIZE1> &mat1, const Mat1d<T, SIZE2> &mat2) {
+  return !(mat1 == mat2);  // Uses the == operator specialization
+}
+
+/**
  * @brief Iterator class
  */
-template <typename T, size_t SIZE> class Mat1d<T, SIZE>::Iterator {
+template <typename T, size_t SIZE>
+class Mat1d<T, SIZE>::Iterator {
 private:
   size_t _size;
   size_t index;
@@ -180,7 +218,7 @@ public:
    */
   explicit Iterator(size_t _index, size_t _size, T *_arr) noexcept
       : index(_index), _size(_size), arr(new T[_size]) {
-    
+
     for (size_t i = 0; i < _size; i++) {
       arr[i] = _arr[i];
     }
