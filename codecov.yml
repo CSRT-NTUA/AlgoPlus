@@ -23,4 +23,6 @@ ignore:
   - "third_party/catch.hpp"
   - "third_party/json.hpp"
   - "third_party/matplotlibcpp.h"
-  - "src/visualization/*"
+  - "src/visualization/graph_visual/graph_visualization.h"
+  - "src/visualization/list_visual/list_visualization.h"
+  - "src/visualization/tree_visual/tree_visualization.h"
