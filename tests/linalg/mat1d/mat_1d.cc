@@ -104,10 +104,9 @@ TEST_CASE("testing operator << for exceptions") {
     CHECK_NOTHROW(std::cout << mat3 << '\n');
 }
 
-// This test cases is causing problems in ubuntu!
-// TEST_CASE("testing constructor with one value for Mat1d class [1]") {
-//     Mat1d<int, 5> mat(5);
-//     for(auto it = mat.begin(); it != mat.end(); it++){
-//         REQUIRE(*(it) == 5);
-//     }
-// }
+TEST_CASE("testing constructor with one value for Mat1d class [1]") {
+    Mat1d<int, 5> mat(5);
+    for(auto it = mat.begin(); it != mat.end(); it++){
+        REQUIRE(*(it) == 5);
+    }
+}
