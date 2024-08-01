@@ -1,8 +1,0 @@
-/Users/spirosmag/documents/AlgoPlus/tests/CMakeFiles/run-clang-tidy.dir
-/Users/spirosmag/documents/AlgoPlus/tests/CMakeFiles/test.dir
-/Users/spirosmag/documents/AlgoPlus/tests/CMakeFiles/edit_cache.dir
-/Users/spirosmag/documents/AlgoPlus/tests/CMakeFiles/rebuild_cache.dir
-/Users/spirosmag/documents/AlgoPlus/tests/tests/CMakeFiles/runUnitTests.dir
-/Users/spirosmag/documents/AlgoPlus/tests/tests/CMakeFiles/test.dir
-/Users/spirosmag/documents/AlgoPlus/tests/tests/CMakeFiles/edit_cache.dir
-/Users/spirosmag/documents/AlgoPlus/tests/tests/CMakeFiles/rebuild_cache.dir
