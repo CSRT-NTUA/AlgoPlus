@@ -4,9 +4,9 @@ name: ubuntu-test-cases
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -18,35 +18,28 @@ jobs:
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Download requirements
-      run: sudo pip3 install xcrun && sudo pip3 install gcovr && sudo apt-get update && sudo apt-get install lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    - name: Configure CMake
-      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DENABLE_COVERAGE=true
-    - name: Build
-      # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-    - name: Test
-      working-directory: ${{github.workspace}}/build
-      # Execute tests defined by the CMake configuration.
-      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest --output-on-failure
-    - name: clang-tidy
-      run: bash clang_tidy.sh
+      - uses: actions/checkout@v3
+      - name: Download requirements
+        run: sudo pip3 install xcrun && sudo pip3 install gcovr && sudo apt-get update && sudo apt-get install lcov libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev freeglut3-dev # OpenGL dependencies only needed for SFML
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Configure CMake
+        # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+        # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DENABLE_COVERAGE=true
+      - name: Build
+        # Build your program with the given configuration
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      - name: Test
+        working-directory: ${{github.workspace}}/build
+        # Execute tests defined by the CMake configuration.
+        # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+        run: ctest --output-on-failure
+      - name: clang-tidy
+        run: bash clang_tidy.sh
     #- name: get coverage
     #  run: make coverage
     #- name: Run tests and collect coverage
-    #  run: pytest --cov build/tests ${{ env.CODECOV_ATS_TESTS }} 
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        slug: CSRT-NTUA/AlgoPlus
-    - name: Upload to codecov
-      run: bash <(curl -s https://codecov.io/bash)
+    #  run: pytest --cov build/tests ${{ env.CODECOV_ATS_TESTS }}
