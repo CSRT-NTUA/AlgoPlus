@@ -237,3 +237,13 @@ TEST_CASE("testing operator = for weighted graph class") {
   REQUIRE(g.dfs("a") == g2.dfs("a"));
   REQUIRE(g.dfs("b") == g2.dfs("b"));
 }
+
+TEST_CASE("Testing operator << for weighted graph class") {
+  weighted_graph<std::string> g("undirected");
+  g.add_edge("a", "b", 12);
+  g.add_edge("b", "c", 10);
+  g.add_edge("c", "w", 110);
+  g.add_edge("w", "b", 2);
+  g.add_edge("a", "g", 5);
+  CHECK_NOTHROW(std::cout << g << '\n');
+}

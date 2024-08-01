@@ -117,3 +117,46 @@ TEST_CASE("checking hash_table<int, std::string> t3") {
 
     REQUIRE(vec == check_vec);
 }
+
+TEST_CASE("Testing operator = for hash table class") {
+    hash_table<int, std::string> t3;
+    t3.insert(1, "a");
+    t3.insert(2, "b");
+    t3.insert(3, "c");
+    t3.insert(4, "d");
+
+    std::vector<std::pair<int, std::string>> check_vec = {
+            {1, "a"},
+            {2, "b"},
+            {3, "c"},
+            {4, "d"}};
+    hash_table<int, std::string> t = t3;
+    std::vector<std::pair<int, std::string> > vec;
+    for(auto it = t3.begin(); it != t3.end(); it++){
+        vec.push_back(*it);
+    }
+    std::sort(vec.begin(), vec.end());
+}
+
+TEST_CASE("Testing operator << for hash table class") {
+    hash_table<int, std::string> t3;
+    t3.insert(1, "a");
+    t3.insert(2, "b");
+    t3.insert(3, "c");
+    t3.insert(4, "d");
+
+    CHECK_NOTHROW(std::cout << t3 << '\n');
+}
+
+TEST_CASE("Testing iterator -- for hash table class") {
+    hash_table<int, std::string> t3;
+    t3.insert(1, "a");
+    t3.insert(2, "b");
+    t3.insert(3, "c");
+    t3.insert(4, "d");
+
+    auto it = t3.end();
+    CHECK_NOTHROW(it--);
+    CHECK_NOTHROW(it--);
+    CHECK_NOTHROW(it--);
+}

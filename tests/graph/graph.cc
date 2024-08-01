@@ -205,3 +205,39 @@ TEST_CASE("testing copy constructor in graph") {
   REQUIRE(g4.dfs('a') == g3.dfs('a'));
   REQUIRE(g5.dfs('a') == g3.dfs('a'));
 }
+
+TEST_CASE("testing operator = for graph class") {
+    graph<int> g("undirected");
+    g.add_edge(0, 1);
+    g.add_edge(1, 0);
+    g.add_edge(2, 3);
+    g.add_edge(3, 2);
+    graph<int> g2 = g;
+    REQUIRE(g2.has_edge(0, 1)); REQUIRE(g.has_edge(0, 1));
+    REQUIRE(g2.has_edge(1, 0)); REQUIRE(g.has_edge(1, 0));
+    REQUIRE(g2.has_edge(2, 3)); REQUIRE(g.has_edge(2, 3));
+    REQUIRE(g2.has_edge(3, 2)); REQUIRE(g.has_edge(3, 2));
+}
+
+TEST_CASE("Testing visualize for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+    CHECK_NOTHROW(g.visualize());
+}
+
+TEST_CASE("Testing operator << for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+    CHECK_NOTHROW(std::cout << g << '\n');
+
+    graph<char> g2("directed");
+    g2.add_edge('a', 'b');
+    g2.add_edge('b', 'c');
+    CHECK_NOTHROW(std::cout << g2 << '\n');
+}

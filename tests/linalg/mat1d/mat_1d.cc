@@ -104,6 +104,16 @@ TEST_CASE("testing operator << for exceptions") {
     CHECK_NOTHROW(std::cout << mat3 << '\n');
 }
 
+TEST_CASE("Testing != operator for Mat1d class") {
+    Mat1d<char, 5> mat({'1', '2', '3', '4', '5'});
+    Mat1d<char, 5> mat2({'a', 'b', 'c', 'd', 'e'});
+    REQUIRE(mat != mat2);
+
+    Mat1d<int, 5> mat3({1, 2, 3, 4, 5});
+    Mat1d<int, 5> mat4({1001, 1002, 1003, 1004, 1005});
+    REQUIRE(mat3 != mat4);
+}
+
 // TEST_CASE("testing constructor with one value for Mat1d class [1]") {
 //     Mat1d<int, 5> mat(5);
 //     for(auto it = mat.begin(); it != mat.end(); it++){
