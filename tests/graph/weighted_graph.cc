@@ -291,6 +291,7 @@ TEST_CASE("Testing clear function for weighted graph class") {
     g.add_edge(1, 2, 5);
     g.add_edge(2, 3, 6);
     g.add_edge(3, 4, 11);
+    g.clear();
     std::vector<int> bfs_path = g.bfs(0);
     REQUIRE(bfs_path.size() == 0);
 }

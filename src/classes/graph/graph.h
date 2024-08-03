@@ -903,7 +903,7 @@ template <typename T> std::vector<T> weighted_graph<T>::bfs(T start) {
       T current = q.front();
       path.push_back(current);
       q.pop();
-      for (std::pair<T, int64_t> &x : adj[current]) {
+      for (std::pair<T, double> &x : adj[current]) {
         if (visited.find(x.first) == visited.end()) {
           q.push(x.first);
           visited[x.first] = true;
