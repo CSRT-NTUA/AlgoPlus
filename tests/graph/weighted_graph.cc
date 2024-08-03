@@ -253,10 +253,10 @@ TEST_CASE("Testing visualization for weighted graph class") {
     g.add_edge(1, 2, 5);
     g.add_edge(2, 4, 5);
     g.add_edge(4, 1, 10);
-    g.visualize();
+    CHECK_NOTHROW(g.visualize());
 }
 
-TEST_CASE("Testing bfs for weighted graph class") {
+TEST_CASE("Testing dfs for weighted graph class") {
     weighted_graph<int> g("undirected");
     g.add_edge(1, 2, 5);
     g.add_edge(2, 4, 5);
@@ -264,4 +264,33 @@ TEST_CASE("Testing bfs for weighted graph class") {
     std::vector<int> dfs_path = g.dfs(1);
     REQUIRE(dfs_path.size() != 0);
     REQUIRE(dfs_path[0] == 1);
+}
+
+TEST_CASE("Testing visualization with std::string for weighted graph class") {
+    weighted_graph<char> g2("directed");
+    g2.add_edge('a', 'b', 10);
+    g2.add_edge('b', 'c', 10);
+    g2.add_edge('c', 'd', 25);
+    CHECK_NOTHROW(g2.visualize());
+}
+
+TEST_CASE("Testing bfs function for weighted graph class") {
+    weighted_graph<int> g("directed");
+    g.add_edge(0, 1, 10);
+    g.add_edge(1, 2, 5);
+    g.add_edge(2, 3, 6);
+    g.add_edge(3, 4, 11);
+    std::vector<int> bfs_path = g.bfs(0);
+    std::vector<int> path = {0, 1, 2, 3, 4};
+    REQUIRE(bfs_path == path);
+}
+
+TEST_CASE("Testing clear function for weighted graph class") {
+    weighted_graph<int> g("directed");
+    g.add_edge(0, 1, 10);
+    g.add_edge(1, 2, 5);
+    g.add_edge(2, 3, 6);
+    g.add_edge(3, 4, 11);
+    std::vector<int> bfs_path = g.bfs(0);
+    REQUIRE(bfs_path.size() == 0);
 }

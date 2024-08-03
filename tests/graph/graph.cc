@@ -22,7 +22,7 @@ TEST_CASE("testing dfs in graph") {
   REQUIRE(v == dfs);
 }
 
-TEST_CASE("testing bfs in graph") {
+TEST_CASE("testing dfs in graph [2]") {
   graph<int> g("directed");
   g.add_edge(1, 4);
   g.add_edge(4, 5);
@@ -242,7 +242,7 @@ TEST_CASE("Testing operator << for graph class") {
     CHECK_NOTHROW(std::cout << g2 << '\n');
 }
 
-TEST_CASE("Testing bfs function for graph class") {
+TEST_CASE("Testing dfs function for graph class [3]") {
     graph<int> g("directed");
     g.add_edge(0, 1);
     g.add_edge(1, 2);
@@ -251,4 +251,41 @@ TEST_CASE("Testing bfs function for graph class") {
     std::vector<int> dfs_path = g.dfs(0);
     std::vector<int> path = {0, 1, 2, 3, 4};
     REQUIRE(dfs_path == path);
+}
+
+TEST_CASE("Testing bfs function for graph class [1]") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+    std::vector<int> bfs_path = g.bfs(0);
+    std::vector<int> path = {0, 1, 2, 3, 4};
+    REQUIRE(bfs_path == path);
+}
+
+TEST_CASE("Testing operator = for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+
+    graph<int> g2 = g;
+    std::vector<int> dfs_path = g.dfs(0);
+    std::vector<int> dfs_path_2 = g2.dfs(0);
+    REQUIRE(dfs_path == dfs_path_2);
+}
+
+
+TEST_CASE("Testing clear function for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+
+    g.clear();
+    std::vector<int> bfs_path = g.bfs(0);
+    REQUIRE(bfs_path.size() == 0);
 }
