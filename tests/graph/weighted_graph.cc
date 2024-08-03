@@ -247,3 +247,21 @@ TEST_CASE("Testing operator << for weighted graph class") {
   g.add_edge("a", "g", 5);
   CHECK_NOTHROW(std::cout << g << '\n');
 }
+
+TEST_CASE("Testing visualization for weighted graph class") {
+    weighted_graph<int> g("undirected");
+    g.add_edge(1, 2, 5);
+    g.add_edge(2, 4, 5);
+    g.add_edge(4, 1, 10);
+    g.visualize();
+}
+
+TEST_CASE("Testing bfs for weighted graph class") {
+    weighted_graph<int> g("undirected");
+    g.add_edge(1, 2, 5);
+    g.add_edge(2, 4, 5);
+    g.add_edge(4, 1, 10);
+    std::vector<int> dfs_path = g.dfs(1);
+    REQUIRE(dfs_path.size() != 0);
+    REQUIRE(dfs_path[0] == 1);
+}

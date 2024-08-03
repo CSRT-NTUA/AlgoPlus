@@ -241,3 +241,14 @@ TEST_CASE("Testing operator << for graph class") {
     g2.add_edge('b', 'c');
     CHECK_NOTHROW(std::cout << g2 << '\n');
 }
+
+TEST_CASE("Testing bfs function for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+    std::vector<int> dfs_path = g.dfs(0);
+    std::vector<int> path = {0, 1, 2, 3, 4};
+    REQUIRE(dfs_path == path);
+}
