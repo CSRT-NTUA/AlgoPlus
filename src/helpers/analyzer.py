@@ -32,5 +32,5 @@ if __name__ == "__main__":
     plt.grid(1)
     plt.xlabel("Execution time")
     plt.ylabel("Input size")
-    plt.title(f"Predicted time complexity of your function is O(N)")
+    plt.title(f"Time complexity analyzer")
     plt.show()
