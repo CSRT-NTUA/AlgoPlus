@@ -31,6 +31,6 @@ int main() {
     // returns which function is faster
     std::cout << TIMER::check_faster(shortest_path, std::make_tuple(0, 1), dfs, std::make_tuple(0)) << '\n';
 
-    // analyzes the time complxity, also returns a useful graph
+    // analyzes the time complexity, also returns a useful graph
     TIMER::time_complexity(soe, std::make_tuple(4), std::make_tuple(5), std::make_tuple(10), std::make_tuple(15), std::make_tuple(50), std::make_tuple(100), std::make_tuple(500), std::make_tuple(10000), std::make_tuple(99999));
 }
