@@ -1,6 +1,7 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#include <filesystem>
 #include <utility>
 #ifdef __cplusplus
 #include <iostream>
@@ -95,7 +96,11 @@ namespace TIMER {
         std::ofstream file("info.json");
         file << j.dump(4);
         file.close();
-        int rr = system("python3 analyzer.py");
+
+        std::filesystem::path header_path = __FILE__;
+        std::filesystem::path script_path = header_path.parent_path() / "analyzer.py";
+        std::string command = "python3 " + script_path.string();
+        int rr = system(command.c_str());
     }
 }
 
