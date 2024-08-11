@@ -136,6 +136,7 @@ TEST_CASE("Testing operator = for hash table class") {
         vec.push_back(*it);
     }
     std::sort(vec.begin(), vec.end());
+    REQUIRE(check_vec == vec);
 }
 
 TEST_CASE("Testing operator << for hash table class") {
