@@ -3,16 +3,32 @@
 
 #ifdef __cplusplus
 #include <iostream>
+#include <type_traits>
 #endif
 
 namespace DEBUG {
     template <typename T>
-    void print_arguments(T &&t) { // single argument
+    void print_arguments(const T &t) { // single argument
         std::cout << t << ' ';
     }
 
+    template <typename T>
+    void print_arguments(const std::vector<T> &t){ // vectors as arguments
+        for(const T& x : t) {
+            std::cout << x << ' ';
+        }
+    }
+
+    template <class T, typename ...Args>
+    void print_arguments(const std::vector<T> &t, Args&& ...args) { // multiple args
+        for(const T& x : t) {
+            std::cout << x << ' ';
+        }
+        print_arguments(std::forward<Args>(args)...);
+    }
+
     template <typename T, typename ...Args>
-    void print_arguments(T &&t, Args&& ...args) { // multiple arguments
+    void print_arguments(const T &t, Args&& ...args) { // single args
         std::cout << t << ' ';
         print_arguments(std::forward<Args>(args)...);
     }
