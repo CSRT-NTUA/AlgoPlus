@@ -4,6 +4,7 @@
 #ifdef __cplusplus
 #include <iostream>
 #include <type_traits>
+#include <vector>
 #endif
 
 namespace DEBUG {
