@@ -55,6 +55,8 @@ TEST_CASE("Testing pop_front function for table class") {
     REQUIRE(t[0] == 50);
     t.pop_front();
     REQUIRE(t.size() == 0);
+    t.pop_front();
+    REQUIRE(t.size() == 0);
 }
 
 TEST_CASE("Testing pop_back fucntion for table class") {
@@ -68,6 +70,8 @@ TEST_CASE("Testing pop_back fucntion for table class") {
     REQUIRE(t[t.size() - 1] == 20);
     t.pop_back();
     REQUIRE(t[t.size() - 1] == 10);
+    t.pop_back();
+    REQUIRE(t.size() == 0);
     t.pop_back();
     REQUIRE(t.size() == 0);
 }
@@ -86,6 +90,9 @@ TEST_CASE("Testing operator << for table class") {
     table<int> t;
     t.push_back(10, 20, 30, 40, 50);
     CHECK_NOTHROW(std::cout << t << '\n');
+
+    table<char> tt;
+    CHECK_NOTHROW(std::cout << tt << '\n');
 }
 
 TEST_CASE("Testing operator = for table class"){
@@ -104,4 +111,17 @@ TEST_CASE("Testing copy constructor for table class") {
     std::vector<int> v1 = t.vectorize(), v2 = tt.vectorize();
     REQUIRE(v1 == v2);
     REQUIRE(t.size() == tt.size());
+}
+
+TEST_CASE("Testing [] operator for table class") {
+    table<int> t;
+    t.push_back(10, 20, 30, 40, 50);
+    std::vector<int> v { t.vectorize() };
+    for(int i = 0; i<t.size(); i++){
+        REQUIRE(t[i] == v[i]);
+    }
+
+    REQUIRE(t[2] == 30);
+    REQUIRE(t[4] == 50);
+    REQUIRE(t[0] == 10);
 }
