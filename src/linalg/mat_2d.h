@@ -146,7 +146,7 @@ public:
   size_t rows() const { return _rows; }
 
   class Iterator;
-
+  typedef T* iterator;
   /**
    *@brief begin() Iterator for Mat2d class
    *@return Iterator
@@ -280,7 +280,7 @@ public:
    *@return Mat1d<T, COLS> the 1-Dimensional Matrix in the current row
    */
   template <typename A, size_t CCOLS>
-  Mat1d<A, CCOLS> operator*() {
+  Mat1d<A, CCOLS>& operator*() {
     Mat1d<T, COLS> mat(0);
     size_t index = 0;
     for (size_t j = this->_index * _cols; j < this->_index * _cols + _rows;

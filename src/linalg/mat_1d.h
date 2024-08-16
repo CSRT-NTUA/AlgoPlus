@@ -116,19 +116,20 @@ public:
    */
   size_t size() const { return this->_size; }
 
-  class Iterator;
-
   /**
    *@brief Iterator begin for Mat1d class
    *
    */
-  Iterator begin() { return Iterator(0, _size, arr); }
+  typedef T* iterator;
+  T* begin() { return &arr[0]; }
+  // Iterator begin() { return Iterator(0, _size, arr); }
 
   /**
    *@brief Iterator end for Mat1d class
    *
    */
-  Iterator end() { return Iterator(_size, _size, arr); }
+  T* end() { return &arr[0] + SIZE; }
+  // Iterator end() { return Iterator(_size, _size, arr); }
 
   /**
    *@brief operator[] for Mat1d class
@@ -198,107 +199,5 @@ template <typename T, size_t SIZE1, size_t SIZE2>
 bool operator!=(const Mat1d<T, SIZE1> &mat1, const Mat1d<T, SIZE2> &mat2) {
   return !(mat1 == mat2);  // Uses the == operator specialization
 }
-
-/**
- * @brief Iterator class
- */
-template <typename T, size_t SIZE>
-class Mat1d<T, SIZE>::Iterator {
-private:
-  size_t _size;
-  size_t index;
-  T *arr;
-
-public:
-  /**
-   * @brief Construct a new Iterator object
-   *
-   * @param __size size of the array
-   * @param mat the matrix we have
-   */
-  explicit Iterator(size_t _index, size_t _size, T *_arr) noexcept
-      : index(_index), _size(_size), arr(new T[_size]) {
-
-    for (size_t i = 0; i < _size; i++) {
-      arr[i] = _arr[i];
-    }
-  }
-
-  /**
-   * @brief = operator for Iterator type
-   *
-   * @param curr the current array
-   * @return Iterator&
-   */
-  Iterator &operator=(T *curr) {
-    for (size_t i = 0; i < _size; i++) {
-      arr[i] = curr[i];
-    }
-    return *(this);
-  }
-
-  /**
-   * @brief operator ++ for type Iterator
-   *
-   * @return Iterator&
-   */
-  Iterator &operator++() {
-    if (index < _size) {
-      index++;
-    }
-    return *(this);
-  }
-
-  /**
-   * @brief operator ++ for type Iterator
-   *
-   * @return Iterator
-   */
-  Iterator operator++(int) {
-    Iterator it = *this;
-    ++*(this);
-    return it;
-  }
-
-  /**
-   * @brief operator ++ for type Iterator
-   *
-   * @return Iterator&
-   */
-  Iterator &operator--() {
-    if (index > 0) {
-      index--;
-    }
-    return *(this);
-  }
-
-  /**
-   * @brief operator -- for type Iterator
-   *
-   * @return Iterator
-   */
-  Iterator operator--(int) {
-    Iterator it = *this;
-    --*(this);
-    return it;
-  }
-
-  /**
-   * @brief operator != for type Iterator
-   *
-   * @param it const Iterator
-   * @return true if the 2 arrays contains the same elements in the current
-   * index
-   * @return false otherwise
-   */
-  bool operator!=(const Iterator &it) { return it.arr[it.index] != arr[index]; }
-
-  /**
-   * @brief operator * for type Iterator
-   *
-   * @return T the value of the array to that index
-   */
-  T operator*() { return arr[index]; }
-};
 
 #endif

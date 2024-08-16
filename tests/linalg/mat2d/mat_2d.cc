@@ -1,7 +1,5 @@
 #include "../../../src/linalg/mat_2d.h"
 #include "../../../third_party/catch.hpp"
-#include <algorithm>
-#include <random>
 #include <string>
 #include <vector>
 
