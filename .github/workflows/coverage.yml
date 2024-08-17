@@ -37,6 +37,6 @@ jobs:
         run: ctest --output-on-failure
 
       - name: Coverage
-        working-directory: ${{runner.workspace}}/build
+        working-directory: ${{github.workspace}}/build
         shell: bash
         run: make coverage
