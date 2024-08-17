@@ -13,8 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        cxx: [g++-12, g++-13, g++-14, clang++-18]
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
@@ -33,12 +37,6 @@ jobs:
             cmake \
             g++ \
             python3-pip
-
-      - name: Install Clang 17
-        run: |
-          wget https://apt.llvm.org/llvm.sh
-          chmod +x llvm.sh
-          sudo ./llvm.sh 17
 
       - name: Configure CMake to use Clang
         run: |
