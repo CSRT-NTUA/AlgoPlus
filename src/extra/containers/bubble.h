@@ -10,7 +10,6 @@
 
 #ifdef __cplusplus
 #include <iostream>
-#include <print>
 #include <vector>
 #include <optional>
 #include <ranges>
