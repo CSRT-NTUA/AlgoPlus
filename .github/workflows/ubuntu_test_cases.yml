@@ -34,22 +34,22 @@ jobs:
             g++ \
             python3-pip
 
-      - name: Install newer clang and clangd
+      - name: Install Clang 17
         run: |
           wget https://apt.llvm.org/llvm.sh
-          chmod +x ./llvm.sh
+          chmod +x llvm.sh
           sudo ./llvm.sh 17
 
-      - name: Set Clang as the default compiler
+      - name: Configure CMake to use Clang
         run: |
-          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-17 50
-          sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-17 50
-
-      - name: Verify Clang version
-        run: clang++ --version
-
-      - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_CXX_STANDARD=20 -DENABLE_COVERAGE=true -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
+          export CC=clang
+          export CXX=clang++
+          cmake -B ${{github.workspace}}/build \
+            -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
+            -DCMAKE_CXX_STANDARD=20 \
+            -DENABLE_COVERAGE=true \
+            -DCMAKE_CXX_COMPILER=clang++ \
+            -DCMAKE_C_COMPILER=clang
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
