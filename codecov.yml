@@ -1,5 +1,5 @@
 codecov:
-  require_ci_to_pass: yes
+  require_ci_to_pass: true
 
 coverage:
   precision: 2
@@ -17,7 +17,7 @@ parsers:
 comment:
   layout: "reach,diff,flags,tree"
   behavior: default
-  require_changes: no
+  require_changes: false
 
 ignore:
   - "third_party/catch.hpp"
@@ -26,3 +26,5 @@ ignore:
   - "src/visualization/graph_visual/graph_visualization.h"
   - "src/visualization/list_visual/list_visualization.h"
   - "src/visualization/tree_visual/tree_visualization.h"
+  - "src/extra/*.h"
+  - "src/extra/*.cc"

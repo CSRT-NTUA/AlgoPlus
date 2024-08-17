@@ -1,5 +1,5 @@
-#include "../../third_party/catch.hpp"
-#include "../../src/extra/containers/bubble.h"
+#include "../../../third_party/catch.hpp"
+#include "../containers/bubble.h"
 
 
 TEST_CASE("Testing insertion for bubble class") {

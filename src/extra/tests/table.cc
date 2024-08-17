@@ -1,5 +1,5 @@
-#include "../../third_party/catch.hpp"
-#include "../../src/extra/containers/table.h"
+#include "../../../third_party/catch.hpp"
+#include "../containers/table.h"
 #include <string>
 
 TEST_CASE("Testing push_back function for table class") {
