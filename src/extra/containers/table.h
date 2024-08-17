@@ -47,6 +47,8 @@ public:
 
     void pop_back();
 
+    bool empty();
+
     std::vector<T> vectorize();
 
     class Iterator;
@@ -189,6 +191,11 @@ void table<T>::pop_front() {
     }
     _size--;
     _check_update();
+}
+
+template <typename T>
+bool table<T>::empty() {
+    return this->_size == 0;
 }
 
 template <typename T>

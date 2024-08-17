@@ -33,8 +33,8 @@ public:
    * @param a the tree we want to copy
    */
   explicit avl_tree(const avl_tree &a) : root(a.root), _size(a._size) {
-    
-    
+
+
   }
 
   /**
@@ -121,7 +121,7 @@ public:
    *@brief inorder function.
    *@returns vector<T>, the elements inorder.
    */
-  std::vector<T> inorder() {
+  std::vector<T> inorder() const {
     std::vector<T> path;
     _inorder(
         [&](std::shared_ptr<node> callbacked) {
@@ -134,7 +134,7 @@ public:
    @brief preorder function.
    *@returns vector<T>, the elements preorder.
    */
-  std::vector<T> preorder() {
+  std::vector<T> preorder() const {
     std::vector<T> path;
     _preorder(
         [&](std::shared_ptr<node> callbacked) {
@@ -147,7 +147,7 @@ public:
    *@brief postorder function.
    *@returns vector<T>, the elements postorder.
    */
-  std::vector<T> postorder() {
+  std::vector<T> postorder() const {
     std::vector<T> path;
     _postorder(
         [&](std::shared_ptr<node> callbacked) {
@@ -269,10 +269,15 @@ private:
     std::shared_ptr<node> nn = createNode(item);
     if (root == nullptr)
       return nn;
-    if (item < root->info)
+    if (item < root->info) {
       root->left = _insert(root->left, item);
-    else
+    }
+    else if (item > root->info) {
       root->right = _insert(root->right, item);
+    }
+    else {
+        return root;
+    }
     int b = getBalance(root);
     if (b > 1) {
       if (getBalance(root->left) < 0)
@@ -325,7 +330,7 @@ private:
   }
 
   void _inorder(std::function<void(std::shared_ptr<node>)> callback,
-                 std::shared_ptr<node> root) {
+                 std::shared_ptr<node> root) const {
     if (root) {
       _inorder(callback, root->left);
       callback(root);
@@ -334,7 +339,7 @@ private:
   }
 
   void _postorder(std::function<void(std::shared_ptr<node>)> callback,
-                   std::shared_ptr<node> root) {
+                   std::shared_ptr<node> root) const {
     if (root) {
       _inorder(callback, root->left);
       _inorder(callback, root->right);
@@ -343,7 +348,7 @@ private:
   }
 
   void _preorder(std::function<void(std::shared_ptr<node>)> callback,
-                  std::shared_ptr<node> root) {
+                  std::shared_ptr<node> root) const {
     if (root) {
       callback(root);
       _inorder(callback, root->left);

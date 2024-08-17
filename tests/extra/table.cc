@@ -1,5 +1,5 @@
 #include "../../third_party/catch.hpp"
-#include "../../src/extra/table.h"
+#include "../../src/extra/containers/table.h"
 #include <string>
 
 TEST_CASE("Testing push_back function for table class") {
@@ -124,4 +124,16 @@ TEST_CASE("Testing [] operator for table class") {
     REQUIRE(t[2] == 30);
     REQUIRE(t[4] == 50);
     REQUIRE(t[0] == 10);
+}
+
+
+TEST_CASE("Testing empty function for table class") {
+    table<int> t;
+    t.push_back(10, 20, 30, 40, 50);
+    REQUIRE(t.empty() == false);
+    int size = t.size();
+    for(int i = 0; i<size; i++){
+        t.pop_back();
+    }
+    REQUIRE(t.empty() == true);
 }
