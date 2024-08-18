@@ -1,5 +1,7 @@
+#define CATCH_CONFIG_MAIN
 #include "../../../third_party/catch.hpp"
 #include "../containers/bubble.h"
+#include <string>
 #include <cmath>
 
 TEST_CASE("Testing insertion for bubble class") {
@@ -11,6 +13,27 @@ TEST_CASE("Testing insertion for bubble class") {
     REQUIRE(b[2][0] == 10);
     REQUIRE(b[3][0] == 40);
     REQUIRE(b[4][0] == 50);
+}
+
+TEST_CASE("Testing searching for bubble class") {
+    bubble<std::string, 5> b;
+
+    b.insert("a", "c", "i", "l", "y");
+    b.insert("because", "bee", "before");
+    b.insert("careful", "coconut", "circle");
+    b.insert("ker");
+    b.insert("normal", "normalize");
+    b.insert("wow");
+    REQUIRE(b.search("wow") == true);
+    REQUIRE(b.search("coconut") == true);
+    REQUIRE(b.search("a") == true);
+    REQUIRE(b.search("before") == true);
+    b.remove("wow");
+    REQUIRE(b.search("wow") == false);
+    b.remove("before");
+    REQUIRE(b.search("before") == false);
+    b.remove("c");
+    REQUIRE(b.search("c") == false);
 }
 
 TEST_CASE("Testing removing for bubble class") {

@@ -40,10 +40,10 @@ public:
     }
 
     template <typename... Args>
-    void insert(Args&& ...keys);
+    void insert(Args ...keys);
 
     template <typename... Args>
-    void remove(Args&& ...keys);
+    void remove(Args ...keys);
 
     bool search(const T& key);
 
@@ -83,7 +83,7 @@ public:
 
 template <typename T, size_t _SIZE>
 template <typename... Args>
-inline void bubble<T, _SIZE>::insert(Args&& ...keys) {
+inline void bubble<T, _SIZE>::insert(Args ...keys) {
     auto _insert = [&](const T&& key) -> void {
         if(_size < _SIZE) {
             list.push_back({key, std::nullopt});
@@ -138,8 +138,8 @@ inline void bubble<T, _SIZE>::insert(Args&& ...keys) {
 */
 template <typename T, size_t _SIZE>
 template <typename... Args>
-void bubble<T, _SIZE>::remove(Args&& ...keys) {
-    auto _remove = [&](const T& key) -> void{
+void bubble<T, _SIZE>::remove(Args ...keys) {
+    auto _remove = [&](const T&& key) -> void{
         if(this->_size == 0) { return; }
         if(this->_size <= _SIZE) {
             auto [begin, end] = std::ranges::remove_if(this->list, [&](const std::pair<T, std::optional<avl_tree<T>>> &t) { return t.first == key; });
