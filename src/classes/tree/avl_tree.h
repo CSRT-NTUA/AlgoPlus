@@ -74,6 +74,13 @@ public:
   }
 
   /**
+  * @brief get_root function
+  * @return T: the root value
+  * Created for bubble.h container
+  */
+  T get_root() { return this->root->info; }
+
+  /**
    *@brief search function.
    *@param key: key to be searched.
    *@returns true if the key exists in the tree.

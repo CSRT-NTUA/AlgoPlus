@@ -100,16 +100,20 @@ inline void bubble<T, _SIZE>::insert(Args&& ...keys) {
 
         if(it != std::ranges::end(this->list)) {
             int idx = std::distance(std::ranges::begin(this->list), it);
+            if(this->list[idx].first == key) { return; }
+
             if(idx - 1 < 0){
                 if(this->list[0].second == std::nullopt) {
                     this->list[0].second = avl_tree<T>();
                 }
+                // if(this->list[0].first == key) { return; } I think we don't need this
                 this->list[0].second.value().insert(key);
             }
             else{
                 if(this->list[idx - 1].second == std::nullopt) {
                     this->list[idx - 1].second = avl_tree<T>();
                 }
+                // if(this->list[idx].first == key) { return; }
                 this->list[idx - 1].second.value().insert(key);
             }
         }
@@ -117,6 +121,7 @@ inline void bubble<T, _SIZE>::insert(Args&& ...keys) {
             if(this->list[this->list.size() - 1].second == std::nullopt){
                 this->list[this->list.size() - 1].second = avl_tree<T>();
             }
+            // if(this->list[this->list.size() - 1].first == key) { return; }
             this->list[this->list.size() - 1].second.value().insert(key);
         }
         _size++;
@@ -145,6 +150,14 @@ void bubble<T, _SIZE>::remove(Args&& ...keys) {
             auto it = std::lower_bound(std::ranges::begin(this->list), std::ranges::end(this->list), key, [](const std::pair<T, std::optional<avl_tree<T>>> &pair, const T &key){ return pair.first < key; });
             if(it != std::ranges::end(this->list)) {
                 size_t idx = std::ranges::distance(std::ranges::begin(this->list), it);
+
+                if(this->list[idx].first == key && this->list[idx].second != std::nullopt) {
+                    T curr_root = this->list[idx].second.value().get_root();
+                    this->list[idx].second.value().remove(curr_root);
+                    this->list[idx].first = curr_root;
+                    return;
+                }
+
                 if(idx - 1 < 0){
                     if(this->list[0].second == std::nullopt){
                         return;

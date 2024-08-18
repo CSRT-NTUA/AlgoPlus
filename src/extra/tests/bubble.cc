@@ -1,6 +1,6 @@
 #include "../../../third_party/catch.hpp"
 #include "../containers/bubble.h"
-
+#include <cmath>
 
 TEST_CASE("Testing insertion for bubble class") {
     bubble<int, 5> b;
@@ -26,6 +26,18 @@ TEST_CASE("Testing removing for bubble class") {
     REQUIRE(b.search('s') == true);
     b.remove('s');
     REQUIRE(b.search('s') == false);
+
+    bubble<int, 5> b2;
+    b2.insert(-50, -20, 0, 20, 50);
+    b2.insert(35, 30, 38, 36, 45, 22);
+    b2.remove(20);
+    std::vector v { b2[3] };
+    std::vector check {22, 30, 36, 38, 45};
+    REQUIRE(v == check);
+    b2.remove(35);
+    v = b2[3];
+    check = {22, 30, 38, 45};
+    REQUIRE(v == check);
 }
 
 TEST_CASE("Testing size for bubble class") {

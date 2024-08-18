@@ -148,3 +148,17 @@ TEST_CASE("testing level order in avl tree"){
   std::vector<std::vector<int>> sol = {{4}, {2,8}, {1,3,6,9}, {5,7,10}};
   REQUIRE(produced==sol);
 }
+
+TEST_CASE("Testing get_root function in avl tree"){
+  avl_tree<int> t;
+  t.insert(35);
+  t.insert(30);
+  t.insert(38);
+  t.insert(22);
+  t.insert(36);
+  t.insert(45);
+
+  REQUIRE(t.get_root() == 35);
+  t.remove(35);
+  REQUIRE(t.get_root() == 36);
+}
