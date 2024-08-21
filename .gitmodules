@@ -1,0 +1,3 @@
+[submodule "src/extra/containers/bubble"]
+	path = src/extra/containers/bubble
+	url = https://github.com/spirosmaggioros/bubble
