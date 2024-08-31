@@ -114,7 +114,8 @@ public:
    *
    * @return size_t the size of the tree
    */
-  size_t size() { return _size; }
+  size_t size() const { return _size; }
+
   /**
    *@brief remove function.
    *@param key: key to be removed.
