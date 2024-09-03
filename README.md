@@ -5,6 +5,8 @@ AlgoPlus is a C++ library that includes ready-to-use complex **data structures**
 ![Algoplus](https://github.com/CSRT-NTUA/AlgoPlus/blob/main/assets/logo.png)
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/CSRT-NTUA/AlgoPlus)
+![macos-tests](https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/macos_test_cases.yml/badge.svg)
+![ubuntu-tests](https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/ubuntu_test_cases.yml/badge.svg)
 [![CodeQL CI](https://github.com/TheAlgorithms/C-Plus-Plus/actions/workflows/codeql.yml/badge.svg)](https://github.com/CSRT-NTUA/AlgoPlus/actions/workflows/codeql.yml)
 [![codecov](https://codecov.io/gh/CSRT-NTUA/AlgoPlus/graph/badge.svg?token=3SBDRHUQR5)](https://codecov.io/gh/CSRT-NTUA/AlgoPlus)
 ![GitHub repo size](https://img.shields.io/github/repo-size/CSRT-NTUA/AlgoPlus)
@@ -16,16 +18,19 @@ AlgoPlus is a C++ library that includes ready-to-use complex **data structures**
 ### Example:
 
 ```cpp
-#include <machine_learning/clustering/kmeans/kmeans.h>
+#include <machine_learning/clustering/DBSCAN/dbscan.h>
 
 // AlgoPlus now has Machine Learning classes!
 int main(){
     std::vector<std::vector<double> > data;
-    int CLUSTERS;
-    kmeans a(data, CLUSTERS);
     ...
-    // returns the cluster centers and assignments of the kmeans clustering
-    std::pair<std::vector<std::vector<double> >, std::map<std::vector<double>, int64_t> > ans = a.fit();
+    // Eps = 4, MinPts = 3
+    DBSCAN a(data, 4, 3);
+    
+    // returns the clusters and noise of the DBSCAN clustering
+    std::map<std::pair<double, double>, int64_t>  clusters = a.get_clusters();
+    std::vector<std::pair<double, double> > noise = a.get_noise();
+    ...
 }
 
 #include <machine_learning/image/edge_detection/sobel_operator.h>

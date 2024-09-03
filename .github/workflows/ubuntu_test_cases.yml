@@ -1,4 +1,4 @@
-name: ubuntu-test-cases
+name: ubuntu-tests
 
 on:
   push:
