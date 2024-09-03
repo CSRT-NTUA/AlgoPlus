@@ -36,7 +36,7 @@ namespace losses {
     size_t n = y.size();
     double mse = 0.0;
     for(size_t i = 0; i<n; i++) {
-        mse += std::powf(y[i] - y_hat[i], 2);
+        mse += powf(y[i] - y_hat[i], 2);
     }
     return mse / double(n);
   }
