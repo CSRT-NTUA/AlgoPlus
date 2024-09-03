@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../../../src/machine_learning/loss_functions/losses.h"
 #include "../../../third_party/catch.hpp"
 
