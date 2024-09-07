@@ -847,7 +847,7 @@ template <typename T> double weighted_graph<T>::shortest_path(T start, T end) {
     dist[start] = 0;
     while (!pq.empty()) {
       T currentNode = pq.top().second;
-      T currentDist = pq.top().first;
+      double currentDist = pq.top().first;
       pq.pop();
       for (std::pair<T, double> &edge : adj[currentNode]) {
         if (currentDist + edge.second < dist[edge.first]) {
