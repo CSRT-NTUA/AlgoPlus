@@ -1,4 +1,4 @@
-## Algoplus{BETA Version}
+## Algoplus{1.0.0}
 
 AlgoPlus is a C++ library that includes ready-to-use complex **data structures** and **algorithms**.
 
@@ -25,7 +25,7 @@ int main(){
     ...
     // Eps = 4, MinPts = 3
     DBSCAN a(data, 4, 3);
-    
+
     // returns the clusters and noise of the DBSCAN clustering
     std::map<std::pair<double, double>, int64_t>  clusters = a.get_clusters();
     std::vector<std::pair<double, double> > noise = a.get_noise();
