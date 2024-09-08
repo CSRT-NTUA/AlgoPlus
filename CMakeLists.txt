@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(EXCLUDE_DIR "third_party/")
 set(unit_name "algoplus")
 set(package_name "${unit_name}")
-set(package_version "0.1.0")
+set(package_version "1.0.0")
 
 message(STATUS "Project '${PROJECT_NAME}', package '${package_name}' version: '${package_version}'")
 
