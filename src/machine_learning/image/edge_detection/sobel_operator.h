@@ -11,12 +11,12 @@
 #endif
 
 /**
-* @brief Sobel operator is used for edge detection. It creates 2 3x3 arrays G_x and G_y and apply them 
+* @brief Sobel operator is used for edge detection. It creates 2 3x3 arrays G_x and G_y and apply them
 * to an image A(G_x * A, G_y * A). After that, the resulting image with edge detection is G = sqrt(G_x^2 + G_y^2)
 */
 namespace sobel{
   /**
-  * @ brief kernel function. Of course you can change the kernel values depending on your needs  
+  * @ brief kernel function. Of course you can change the kernel values depending on your needs
   * @return pair<vector<int32_t>, vector<int32_t>> the G_x and G_y 3x3 kernels
   */
   std::pair<std::vector<std::vector<int32_t> >, std::vector<std::vector<int32_t> > > kernel(){
@@ -41,10 +41,10 @@ namespace sobel{
     }
     return res_img;
   }
-  
+
   /**
   * @brief Sobel apply function
-  * @param image: the 2d array of the input image 
+  * @param image: the 2d array of the input image
   * @return vector<vector<in t32_t> > the resulting image
   */
   std::vector<std::vector<int32_t> > Sobel(const std::vector<std::vector<int32_t> > &image) {
@@ -61,10 +61,10 @@ namespace sobel{
 
     Image G(G_x); // G = G_x^2
     G = G.add(G_y); // G += G_y^2
-    
+
     return square(G.get_2d_array()); // result is: G = sqrt(G_x^2 + G_y^2)
   }
 }
 
 
-#endif  
+#endif
