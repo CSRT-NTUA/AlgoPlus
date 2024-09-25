@@ -1,3 +1,4 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/splay_tree.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -126,3 +127,26 @@ TEST_CASE("testing level order for splay tree"){
   std::vector<std::vector<int>> sol = {{4}, {3,8}, {2,6,9}, {1,5,7,10}};
   REQUIRE(produced==sol);
 }
+
+#define TREE_VISUALIZATION_H
+#ifdef TREE_VISUALIZATION_H
+
+TEST_CASE("Testing splay tree visualization") {
+    splay_tree<int> t;
+    t.insert(5);
+    t.insert(1);
+    t.insert(2);
+    t.insert(3);
+    t.insert(6);
+    t.insert(8);
+    t.insert(7);
+    t.insert(10);
+    t.insert(9);
+    t.insert(4);
+    CHECK_NOTHROW(t.visualize());
+
+    splay_tree<char> s({'a', 'w', 'g', 'o', 's', 'v'});
+    CHECK_NOTHROW(s.visualize());
+}
+
+#endif

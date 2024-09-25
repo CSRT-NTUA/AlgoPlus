@@ -1,3 +1,4 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/red_black_tree.h"
 #include "../../third_party/catch.hpp"
 #include <algorithm>
@@ -162,9 +163,15 @@ TEST_CASE("Testing level order in red black tree [2]") {
   REQUIRE(produced == expected);
 }
 
+#define TREE_VISUALIZATION_H
+#ifdef TREE_VISUALIZATION_H
 
+TEST_CASE("Testing red black tree visualization") {
+    red_black_tree<int> rb({10,15,25,9,8,13,45});
+    CHECK_NOTHROW(rb.visualize());
 
+    red_black_tree<char> t({'a', 'c', 'e', 'g', 'd', 'f', 'u'});
+    CHECK_NOTHROW(t.visualize());
+}
 
-
-
-
+#endif

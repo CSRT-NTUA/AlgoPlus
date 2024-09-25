@@ -1,3 +1,4 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../third_party/catch.hpp"
 #include "../../src/classes/tree/tree.h"
 #include <string>
@@ -51,3 +52,29 @@ TEST_CASE("testing level order traversal in tree class [TREECLASS]"){
   std::vector<std::vector<int>> sol = {{1},{2,3},{4,5,6,7},{8,9,10}};
   REQUIRE(produced == sol);
 }
+
+#define TREE_VISUALIZATION_H
+#ifdef TREE_VISUALIZATION_H
+
+TEST_CASE("Testing tree visualization") {
+    tree<int> t;
+    t.insert("", 1);
+    t.insert("l", 2);
+    t.insert("r", 3);
+    t.insert("ll", 4);
+    t.insert("lr", 5);
+    t.insert("rl", 6);
+    t.insert("rr", 7);
+    t.insert("lll", 8);
+    t.insert("llr", 9);
+    t.insert("lrl", 10);
+    CHECK_NOTHROW(t.visualize());
+
+    tree<char> tt;
+    tt.insert("", 'c');
+    tt.insert("l", 'w');
+    tt.insert("r", 'd');
+    CHECK_NOTHROW(tt.visualize());
+}
+
+#endif

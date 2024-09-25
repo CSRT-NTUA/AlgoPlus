@@ -1,3 +1,4 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/interval_tree.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -79,3 +80,25 @@ TEST_CASE("testing level order in interval tree"){
   std::vector<std::vector<std::pair<int,int>>> sol = {{{15,20}}, {{8,13}, {19,30}}, {{1,20}, {12,15}, {17,19}, {22,25}}};
   REQUIRE(produced==sol);
 }
+
+#define TREE_VISUALIZATION_H
+#ifdef TREE_VISUALIZATION_H
+
+TEST_CASE("Testing interval tree visualization") {
+    interval_tree<int> t;
+    t.insert({15,20});
+    t.insert({8,13});
+    t.insert({1,20});
+    t.insert({12,15});
+    t.insert({19,30});
+    t.insert({17,19});
+    t.insert({22,25});
+    CHECK_NOTHROW(t.visualize());
+
+    interval_tree<char> i({{'a', 'b'}, {'c', 'd'}, {'a', 'd'}});
+    CHECK_NOTHROW(i.visualize());
+}
+
+
+
+#endif

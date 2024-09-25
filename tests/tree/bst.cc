@@ -1,3 +1,4 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/bst.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -149,3 +150,30 @@ TEST_CASE("testing level order in bst"){
   std::vector<std::vector<int>> sol = {{5}, {1,6}, {2,8}, {3,7,10}, {4,9}};
   REQUIRE(produced == sol);
 }
+
+#define TREE_VISUALIZATION_H
+#ifdef TREE_VISUALIZATION_H
+
+TEST_CASE("Testing binary search tree visualization") {
+    bst<int> t;
+    t.insert(5);
+    t.insert(1);
+    t.insert(2);
+    t.insert(3);
+    t.insert(6);
+    t.insert(8);
+    t.insert(7);
+    t.insert(10);
+    t.insert(9);
+    t.insert(4);
+    CHECK_NOTHROW(t.visualize());
+
+    bst<char> b;
+    b.insert('g');
+    b.insert('a');
+    b.insert('b');
+    b.insert('w');
+    CHECK_NOTHROW(b.visualize());
+}
+
+#endif

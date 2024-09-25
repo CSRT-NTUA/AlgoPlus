@@ -1,3 +1,4 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/avl_tree.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -162,3 +163,23 @@ TEST_CASE("Testing get_root function in avl tree"){
   t.remove(35);
   REQUIRE(t.get_root() == 36);
 }
+
+#define TREE_VISUALIZATION_H
+#ifdef TREE_VISUALIZATION_H
+
+TEST_CASE("Testing avl tree visualization") {
+    avl_tree<int> t;
+    t.insert(35);
+    t.insert(30);
+    t.insert(38);
+    t.insert(22);
+    t.insert(36);
+    t.insert(45);
+
+    CHECK_NOTHROW(t.visualize());
+
+    avl_tree<char> a({'g', 'w', 'h', 'p', 'u'});
+    CHECK_NOTHROW(a.visualize());
+}
+
+#endif
