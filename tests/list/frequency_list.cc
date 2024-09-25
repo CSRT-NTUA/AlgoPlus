@@ -1,3 +1,4 @@
+#include "../../src/visualization/list_visual/linked_list_visualization.h"
 #include "../../src/classes/list/frequency_list.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -76,3 +77,13 @@ TEST_CASE("Testing vector initialization for the frequency list class") {
   }
   REQUIRE(v2 == v1);
 }
+
+#define LINKED_LIST_VISUALIZATION_H
+#ifdef LINKED_LIST_VISUALIZATION_H
+
+TEST_CASE("Testing frequency list visualization") {
+    frequency_list<char> flist({'a', 'b', 'c', 'd', 'e', 'f'});
+    CHECK_NOTHROW(flist.visualize());
+}
+
+#endif

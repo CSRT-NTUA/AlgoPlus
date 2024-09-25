@@ -1,3 +1,4 @@
+#include "../../src/visualization/list_visual/linked_list_visualization.h"
 #include "../../src/classes/list/circular_linked_list.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -41,7 +42,7 @@ TEST_CASE("testing linked list with chars in circular list") {
   REQUIRE(elem == __second);
 }
 
-TEST_CASE("testing iteration in circular list") {
+TEST_CASE("testing iteration and visualization in circular list") {
   circular_linked_list<char> l1({'a', 'b', 'c', 'd'});
   std::vector<char> ans = {'a', 'b', 'c', 'd'};
   std::vector<char> elem = l1.elements();
@@ -94,3 +95,13 @@ TEST_CASE("testing operator = in circular list") {
   std::vector<int> v2 = l2.elements();
   REQUIRE(v2 == v);
 }
+
+#define LINKED_LIST_VISUALIZATION_H
+#ifdef LINKED_LIST_VISUALIZATION_H
+
+TEST_CASE("Testing circular linked list visualization") {
+    circular_linked_list<int> l({2, 4, 6, 7, 12, 9});
+    CHECK_NOTHROW(l.visualize());
+}
+
+#endif

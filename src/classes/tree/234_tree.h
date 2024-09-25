@@ -40,14 +40,14 @@ public:
   * @brief default constructor of 234-tree class
   * @param elements: by default empty, if you want to pass elements all in one to the tree
   */
-  explicit ttf_tree(const std::vector<T> &elements = {}) { 
+  explicit ttf_tree(const std::vector<T> &elements = {}) {
     if(!elements.empty()){
       for(const T & x: elements){
         this->insert(x);
-      } 
+      }
     }
   }
-  
+
   /**
   * @brief search function
   * @param key the element we want to search
@@ -55,13 +55,13 @@ public:
   * @return false otherwise
   */
   bool search(const T &key) const;
-  
+
   /**
   * @brief insert function
   * @param key thet key we want to insert
   */
   void insert(const T &key);
-  
+
   /**
    * @brief level_order function
    * @return vector<vector<vector<T> > > the level order of the 234-tree in a 3d array
@@ -93,9 +93,9 @@ public:
 
 template <typename T>
 void ttf_tree<T>::insert(const T &key) {
-  std::vector<std::shared_ptr<node> > null_children(4, nullptr); 
+  std::vector<std::shared_ptr<node> > null_children(4, nullptr);
   if(root == nullptr){
-    std::vector<int> keys = {key}; 
+    std::vector<int> keys = {key};
     root = std::make_shared<node>(keys, null_children, 2);
     root->index = 0;
     parent[root] = nullptr;

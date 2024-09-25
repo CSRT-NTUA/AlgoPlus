@@ -1,12 +1,16 @@
 #ifndef FREQUENCY_LIST_H
 #define FREQUENCY_LIST_H
 
+#ifdef LINKED_LIST_VISUALIZATION_H
+#include "../../visualization/list_visual/linked_list_visualization.h"
+#endif
+
 #ifdef __cplusplus
 #include <cstdint>
 #include <vector>
 #include <memory>
 #include <string>
-#include "../../visualization/list_visual/linked_list_visualization.h"
+#include <iostream>
 #endif
 
 
@@ -121,7 +125,7 @@ public:
      */
   void reset_frequency();
 
-  
+
   /**
    *@brief Returns all the elements of the list
    *@return std::vector<T> the elements of the list
@@ -480,10 +484,12 @@ template <typename T> std::string frequency_list<T>::generate() {
   return gen;
 }
 
+#ifdef LINKED_LIST_VISUALIZATION_H
 template <typename T> void frequency_list<T>::visualize() {
   std::string generated = this->generate();
   linked_list_visualization::visualize(generated);
 }
+#endif
 
 
 

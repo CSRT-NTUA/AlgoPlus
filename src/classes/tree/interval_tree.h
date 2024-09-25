@@ -1,8 +1,11 @@
 #ifndef INTERVAL_TREE_H
 #define INTERVAL_TREE_H
 
-#ifdef __cplusplus
+#ifdef TREE_VISUALIZATION_H
 #include "../../visualization/tree_visual/tree_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <functional>
 #include <iostream>
 #include <memory>
@@ -34,8 +37,8 @@ public:
    * @param i the tree we want to copy
    */
   explicit interval_tree(const interval_tree &i) : root(i.root), _size(i._size) {
-    
-    
+
+
   }
 
   /**
@@ -203,15 +206,17 @@ public:
     return path;
   }
 
+  #ifdef TREE_VISUALIZATION_H
   void visualize() {
     std::string _generated = generate_visualization();
     tree_visualization::visualize(_generated);
   }
+  #endif
 
   /**
    * @brief operator << for interval tree class
    */
-  friend ostream & operator << (ostream &out, interval_tree<T> &t){
+  friend std::ostream & operator << (std::ostream &out, interval_tree<T> &t){
     std::vector<std::vector<std::pair<T, T> > > order = t.level_order();
     for(std::vector<std::pair<T, T> > & x : order){
       for(size_t i = 0; i < x.size(); i++){

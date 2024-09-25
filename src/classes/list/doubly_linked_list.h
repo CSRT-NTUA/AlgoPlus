@@ -1,8 +1,11 @@
 #ifndef DOUBLY_LINKED_LIST_H
 #define DOUBLY_LINKED_LIST_H
 
-#ifdef __cplusplus
+#ifdef LINKED_LIST_VISUALIZATION_H
 #include "../../visualization/list_visual/linked_list_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <iostream>
 #include <memory>
 #include <string>
@@ -34,9 +37,9 @@ public:
    * @param l the list we want to copy
    */
   explicit doubly_linked_list(const doubly_linked_list &l) : root(l.root), tail(l.tail), _size(l._size) {
-    
-    
-    
+
+
+
   }
 
   /**
@@ -309,10 +312,13 @@ template <typename T> std::string doubly_linked_list<T>::generate() {
   return gen;
 }
 
+
+#ifdef LINKED_LIST_VISUALIZATION_H
 template <typename T> void doubly_linked_list<T>::visualize() {
   std::string generated = this->generate();
   linked_list_visualization::visualize(generated);
 }
+#endif
 
 /**
  * @brief Iterator class

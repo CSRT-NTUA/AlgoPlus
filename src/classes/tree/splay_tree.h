@@ -1,8 +1,11 @@
 #ifndef SPLAY_TREE_H
 #define SPLAY_TREE_H
 
-#ifdef __cplusplus
+#ifdef TREE_VISUALIZATION_H
 #include "../../visualization/tree_visual/tree_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <functional>
 #include <iostream>
 #include <memory>
@@ -50,8 +53,8 @@ public:
    * @param s the tree we want to copy
    */
   explicit splay_tree(const splay_tree &s) : root(s.root), _size(s._size) {
-    
-    
+
+
   }
 
   /**
@@ -199,15 +202,17 @@ public:
    *@brief visualize function
    *@returns .dot file that can be previewed using graphviz in vscode.
    */
+  #ifdef TREE_VISUALIZATION_H
   void visualize() {
     std::string _generated = generate_visualization();
     tree_visualization::visualize(_generated);
   }
+  #endif
 
   /**
    * @brief operator << for splay tree class
    */
-  friend ostream & operator << (ostream &out, splay_tree<T> &t){
+  friend std::ostream & operator << (std::ostream &out, splay_tree<T> &t){
     std::vector<std::vector<T> > order = t.inorder();
     for(int i = 0; i<order.size(); i++){
       if(i != order.size() - 1){

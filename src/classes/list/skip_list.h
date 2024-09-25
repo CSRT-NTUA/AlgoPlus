@@ -1,8 +1,11 @@
 #ifndef SKIP_LIST_H
 #define SKIP_LIST_H
 
-#ifdef __cplusplus
+#ifdef LINKED_LIST_VISUALIZATION_H
 #include "../../visualization/list_visual/linked_list_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <iostream>
 #include <memory>
 #include <stdexcept>
@@ -51,10 +54,10 @@ public:
    * @param s
    */
   skip_list(const skip_list &s) : level(s.level), PROB(s.PROB), MAX_LEVEL(s.MAX_LEVEL), root(s.root) {
-    
-    
-    
-    
+
+
+
+
   }
 
   /**
@@ -176,10 +179,13 @@ public:
    * @brief visualize function
    * returns a .dot file that can be previewd with graphviz plugin in vscode
    */
+
+  #ifdef LINKED_LIST_VISUALIZATION_H
   void visualize(){
     std::string generated = this->generate();
     linked_list_visualization::visualize(generated);
   }
+  #endif
 
   /**
    *@brief operator << for skip_list<T> class.
@@ -231,17 +237,17 @@ private:
 
   int level{0};
   std::shared_ptr<node> root;
-  
+
   std:: string generate_node(std::string node_val, int levs){
     std::string gen;
     gen += node_val;
     gen += " [label=\"<";
-    gen += to_string(levs);
+    gen += std::to_string(levs);
     gen += "> ";
     gen += node_val;
     for(int i=levs-1;i>=0;i--){
       gen += " | <";
-      gen += to_string(i);
+      gen += std::to_string(i);
       gen += "> ";
       gen += node_val;
     }
@@ -254,11 +260,11 @@ private:
     std::string gen;
     gen += prev_val;
     gen += ':';
-    gen += to_string(lev);
+    gen += std::to_string(lev);
     gen += " -> ";
     gen += curr_val;
     gen += ':';
-    gen += to_string(lev);
+    gen += std::to_string(lev);
     gen += " ;\n";
     return gen;
   }
@@ -269,8 +275,8 @@ private:
     gen += '\n';
     gen += "node [shape=record;]";
     gen += '\n';
-    unordered_set<std::string> S;
-    int m_level = min(level, (int)root->next.size()); // See if this is a parameter
+    std::unordered_set<std::string> S;
+    int m_level = std::min(level, (int)root->next.size()); // See if this is a parameter
     gen += generate_node("root", m_level+1);
     gen += generate_node("NULL", m_level+1);
     gen += generate_edge("root", "NULL", m_level+1);

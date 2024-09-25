@@ -1,3 +1,4 @@
+#include "../../src/visualization/list_visual/linked_list_visualization.h"
 #include "../../src/classes/list/linked_list.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -107,3 +108,20 @@ TEST_CASE("Bug with tail when pushing front and then pushing back") {
   std::vector<char> check = {'a', 'b', 'c', 'd', 'e', 'f'};
   REQUIRE(v == check);
 }
+
+#define LINKED_LIST_VISUALIZATION_H
+#ifdef LINKED_LIST_VISUALIZATION_H
+
+TEST_CASE("Testing linked list visualization") {
+    linked_list<char> l;
+    l.push_front('d');
+    l.push_front('c');
+    l.push_front('b');
+    l.push_front('a');
+    l.push_back('e');
+    l.push_back('f');
+
+    CHECK_NOTHROW(l.visualize());
+}
+
+#endif

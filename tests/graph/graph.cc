@@ -1,3 +1,4 @@
+#include "../../src/visualization/graph_visual/graph_visualization.h"
 #include "../../src/classes/graph/graph.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -219,14 +220,6 @@ TEST_CASE("testing operator = for graph class") {
     REQUIRE(g2.has_edge(3, 2)); REQUIRE(g.has_edge(3, 2));
 }
 
-TEST_CASE("Testing visualize for graph class") {
-    graph<int> g("directed");
-    g.add_edge(0, 1);
-    g.add_edge(1, 2);
-    g.add_edge(2, 3);
-    g.add_edge(3, 4);
-    CHECK_NOTHROW(g.visualize());
-}
 
 TEST_CASE("Testing operator << for graph class") {
     graph<int> g("directed");
@@ -289,3 +282,16 @@ TEST_CASE("Testing clear function for graph class") {
     std::vector<int> bfs_path = g.bfs(0);
     REQUIRE(bfs_path.size() == 0);
 }
+
+#define GRAPH_VISUALIZATION_H
+#ifdef GRAPH_VISUALIZATION_H
+TEST_CASE("Testing visualize for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 3);
+    g.add_edge(3, 4);
+    CHECK_NOTHROW(g.visualize());
+}
+
+#endif

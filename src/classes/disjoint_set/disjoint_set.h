@@ -85,7 +85,7 @@ public:
   }
 
   /**
-   * @brief
+   * @brief same function
    *
    * @param i first element
    * @param j second element

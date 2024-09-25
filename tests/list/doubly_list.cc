@@ -1,3 +1,4 @@
+#include "../../src/visualization/list_visual/linked_list_visualization.h"
 #include "../../src/classes/list/doubly_linked_list.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -129,3 +130,12 @@ TEST_CASE("testing operator = in doubly list") {
   std::vector<int> v2 = l2.elements();
   REQUIRE(v2 == v);
 }
+
+#define LINKED_LIST_VISUALIZATION_H
+#ifdef LINKED_LIST_VISUALIZATION_H
+
+TEST_CASE("Testing visualization of doubly linked list") {
+    doubly_linked_list<int> l({1, 5, 12, 7, 8, 4});
+    CHECK_NOTHROW(l.visualize());
+}
+#endif

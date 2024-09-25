@@ -1,3 +1,4 @@
+#include "../../src/visualization/graph_visual/graph_visualization.h"
 #include "../../src/classes/graph/graph.h"
 #include "../../third_party/catch.hpp"
 #include <string>
@@ -189,8 +190,8 @@ TEST_CASE("testing bellman ford algorithm in weighted graph") {
   g2.add_edge(1, 0, 8);
   g2.add_edge(0, 3, 4);
   g2.add_edge(3, 4, 3);
-  unordered_map<int, double> test = g2.bellman_ford(1);
-  unordered_map<int, double> check;
+  std::unordered_map<int, double> test = g2.bellman_ford(1);
+  std::unordered_map<int, double> check;
   check[1] = 0.0;
   check[2] = 11.0;
   check[0] = 8;
@@ -203,8 +204,8 @@ TEST_CASE("testing bellman ford algorithm in weighted graph") {
   g.add_edge(1, 2, -6);
   g.add_edge(2, 3, 5);
   g.add_edge(3, 1, -2);
-  unordered_map<int, double> test2 = g.bellman_ford(1);
-  unordered_map<int, double> check2;
+  std::unordered_map<int, double> test2 = g.bellman_ford(1);
+  std::unordered_map<int, double> check2;
   check2[2] = -std::numeric_limits<double>::infinity();
   check2[3] = -std::numeric_limits<double>::infinity();
   check2[1] = -std::numeric_limits<double>::infinity();
@@ -248,14 +249,6 @@ TEST_CASE("Testing operator << for weighted graph class") {
   CHECK_NOTHROW(std::cout << g << '\n');
 }
 
-TEST_CASE("Testing visualization for weighted graph class") {
-    weighted_graph<int> g("undirected");
-    g.add_edge(1, 2, 5);
-    g.add_edge(2, 4, 5);
-    g.add_edge(4, 1, 10);
-    CHECK_NOTHROW(g.visualize());
-}
-
 TEST_CASE("Testing dfs for weighted graph class") {
     weighted_graph<int> g("undirected");
     g.add_edge(1, 2, 5);
@@ -264,14 +257,6 @@ TEST_CASE("Testing dfs for weighted graph class") {
     std::vector<int> dfs_path = g.dfs(1);
     REQUIRE(dfs_path.size() != 0);
     REQUIRE(dfs_path[0] == 1);
-}
-
-TEST_CASE("Testing visualization with std::string for weighted graph class") {
-    weighted_graph<char> g2("directed");
-    g2.add_edge('a', 'b', 10);
-    g2.add_edge('b', 'c', 10);
-    g2.add_edge('c', 'd', 25);
-    CHECK_NOTHROW(g2.visualize());
 }
 
 TEST_CASE("Testing bfs function for weighted graph class") {
@@ -295,3 +280,24 @@ TEST_CASE("Testing clear function for weighted graph class") {
     std::vector<int> bfs_path = g.bfs(0);
     REQUIRE(bfs_path.size() == 0);
 }
+
+#define GRAPH_VISUALIZATION_H
+
+#ifdef GRAPH_VISUALIZATION_H
+TEST_CASE("Testing visualization for weighted graph class") {
+    weighted_graph<int> g("undirected");
+    g.add_edge(1, 2, 5);
+    g.add_edge(2, 4, 5);
+    g.add_edge(4, 1, 10);
+    CHECK_NOTHROW(g.visualize());
+}
+
+TEST_CASE("Testing visualization with std::string for weighted graph class") {
+    weighted_graph<char> g2("directed");
+    g2.add_edge('a', 'b', 10);
+    g2.add_edge('b', 'c', 10);
+    g2.add_edge('c', 'd', 25);
+    CHECK_NOTHROW(g2.visualize());
+}
+
+#endif

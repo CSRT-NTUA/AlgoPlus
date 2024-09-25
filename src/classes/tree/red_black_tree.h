@@ -1,8 +1,12 @@
 #ifndef RED_BLACK_TREE_H
 #define RED_BLACK_TREE_H
 
-#ifdef __cplusplus
+
+#ifdef TREE_VISUALIZATION_H
 #include "../../visualization/tree_visual/tree_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <memory>
 #include <bitset>
 #include <vector>
@@ -45,7 +49,7 @@ private:
       t_node->parent->left = x;
     else
       t_node->parent->right = x;
-    
+
     t_node->right = x->left;
     if(t_node->right)
       t_node->right->parent = t_node;
@@ -62,7 +66,7 @@ private:
       t_node->parent->left = x;
     else
       t_node->parent->right = x;
-    
+
     t_node->left = x->right;
     if(t_node->left)
       t_node->left->parent = t_node;
@@ -305,7 +309,7 @@ public:
    * @param rb the tree we want to copy
    */
   explicit red_black_tree(const red_black_tree &rb) : root(rb.root), _size(rb._size) {}
-  
+
   /**
    * @brief Destructor for red black tree class
    */
@@ -339,7 +343,7 @@ public:
    *@returns true if the key exists in the tree.
    */
   bool search(T key) { return _search(key); }
-  
+
   /**
    *@brief insert function.
    *@param key: key to be inserted.
@@ -505,6 +509,7 @@ public:
    *@brief visualize function
    *@returns .dot file that can be previewed using graphviz in vscode.
    */
+  #ifdef TREE_VISUALIZATION_H
   void visualize() {
     std::string _generated;
     if(this->root){
@@ -524,6 +529,7 @@ public:
     }
     tree_visualization::visualize(_generated);
   }
+  #endif
 };
 
 

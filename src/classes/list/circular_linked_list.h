@@ -1,8 +1,11 @@
 #ifndef CIRCULAR_LINKED_LIST_H
 #define CIRCULAR_LINKED_LIST_H
 
-#ifdef __cplusplus
+#ifdef LINKED_LIST_VISUALIZATION_H
 #include "../../visualization/list_visual/linked_list_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <iostream>
 #include <memory>
 #include <type_traits>
@@ -33,9 +36,9 @@ public:
    * @param c the list we want to copy
    */
   explicit circular_linked_list(const circular_linked_list &c) : root(c.root), tail(c.tail), _size(c._size) {
-    
-    
-    
+
+
+
   }
 
   /**
@@ -304,10 +307,12 @@ template <typename T> std::string circular_linked_list<T>::generate() {
   return gen;
 }
 
+#ifdef LINKED_LIST_VISUALIZATION_H
 template <typename T> void circular_linked_list<T>::visualize() {
   std::string generated = this->generate();
   linked_list_visualization::visualize(generated);
 }
+#endif
 
 /**
  * @brief Iterator class

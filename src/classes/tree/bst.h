@@ -1,8 +1,11 @@
 #ifndef BST_H
 #define BST_H
 
-#ifdef __cplusplus
+#ifdef TREE_VISUALIZATION_H
 #include "../../visualization/tree_visual/tree_visualization.h"
+#endif
+
+#ifdef __cplusplus
 #include <functional>
 #include <memory>
 #include <queue>
@@ -34,8 +37,8 @@ public:
    * @param b the tree we want to copy
    */
   explicit bst(const bst &b) : root(b.root), _size(b._size) {
-    
-    
+
+
   }
 
   /**
@@ -186,16 +189,17 @@ public:
    *@brief visualize function
    *@returns .dot file that can be previewed using graphviz in vscode.
    */
+  #ifdef TREE_VISUALIZATION_H
   void visualize() {
     std::string _generated = generate_visualization();
     tree_visualization::visualize(_generated);
   }
+  #endif
 
-  
   /**
    * @brief operator << for bst class
    */
-  friend ostream & operator << (ostream &out, bst<T> &t){
+  friend std::ostream & operator << (std::ostream &out, bst<T> &t){
     std::vector<std::vector<T> > order = t.inorder();
     for(int i = 0; i<order.size(); i++){
       if(i != order.size() - 1){
