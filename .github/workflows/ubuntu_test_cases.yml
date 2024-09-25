@@ -2,9 +2,9 @@ name: ubuntu-tests
 
 on:
   push:
-    branches: ["main"]
+    branches: ["workflow-testing"]
   pull_request:
-    branches: ["main"]
+    branches: ["workflow-testing"]
 
 env:
   BUILD_TYPE: Release
@@ -55,5 +55,3 @@ jobs:
       - name: Test
         working-directory: ${{github.workspace}}/build
         run: ctest --output-on-failure
-
-
