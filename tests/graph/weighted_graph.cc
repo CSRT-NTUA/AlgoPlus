@@ -237,6 +237,8 @@ TEST_CASE("testing operator = for weighted graph class") {
   g2 = g;
   REQUIRE(g.dfs("a") == g2.dfs("a"));
   REQUIRE(g.dfs("b") == g2.dfs("b"));
+  REQUIRE(g.bfs("a") == g2.bfs("a"));
+  REQUIRE(g.shortest_path("a", "w") == g2.shortest_path("a", "w"));
 }
 
 TEST_CASE("Testing operator << for weighted graph class") {
@@ -279,6 +281,19 @@ TEST_CASE("Testing clear function for weighted graph class") {
     g.clear();
     std::vector<int> bfs_path = g.bfs(0);
     REQUIRE(bfs_path.size() == 0);
+}
+
+TEST_CASE("Testing shortest path algorithm [2]") {
+    weighted_graph<int> g("undirected");
+    g.add_edge(5, 1, 12);
+    g.add_edge(1, 2, 12);
+    g.add_edge(1, 6, 30);
+    g.add_edge(6, 7, 40);
+    g.add_edge(2, 3, 12);
+    g.add_edge(7, 4, 20);
+    g.add_edge(4, 3, 12);
+
+    REQUIRE(g.shortest_path(1, 7) == 56);
 }
 
 #define GRAPH_VISUALIZATION_H
