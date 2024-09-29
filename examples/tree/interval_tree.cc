@@ -1,5 +1,9 @@
-#ifdef __cplusplus
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/interval_tree.h"
+
+#define TREE_VISUALIZATION_H
+
+#ifdef __cplusplus
 #include <iostream>
 #endif
 
@@ -10,6 +14,7 @@ int main() {
   i.insert({29, 99});
   i.insert({0, 1});
   i.insert({10, 15});
+
 
   // you can visualize the tree
   i.visualize();

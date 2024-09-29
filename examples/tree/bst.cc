@@ -1,7 +1,8 @@
-#ifdef __cplusplus
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/bst.h"
 #include <iostream>
-#endif
+
+#define TREE_VISUALIZATION_H
 
 int main() {
   bst<int> b({1, 3, 5});
@@ -24,7 +25,6 @@ int main() {
   b2.insert('p');
   b2.insert('o');
   b2.insert('m');
-  
 
   b2.visualize();
 }
