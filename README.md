@@ -76,6 +76,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Interval Tree](https://en.wikipedia.org/wiki/Interval_tree)
 - [X] [234 Tree](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)
 - [X] [Min/Max Heap](https://en.wikipedia.org/wiki/Min-max_heap)
+- [X] [Rope(Chord)](https://en.wikipedia.org/wiki/Rope_(data_structure))
 
 **Lists**
 - [X] [Single Linked List](https://en.wikipedia.org/wiki/Linked_list)
