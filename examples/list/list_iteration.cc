@@ -1,5 +1,7 @@
-#ifdef __cplusplus
+#include "../../src/visualization/list_visual/linked_list_visualization.h"
 #include "../../src/classes/list/linked_list.h"
+
+#ifdef __cplusplus
 #include <iostream>
 #endif
 

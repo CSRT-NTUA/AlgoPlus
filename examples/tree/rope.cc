@@ -5,12 +5,9 @@
 using namespace std;
 
 int main() {
-    rope r("hello world");
+    rope r("hello world", 3);
 
     cout << r.inorder() << '\n';
 
-    #define TREE_VISUALIZATION_H
-    #ifdef TREE_VISUALIZATION_H
     r.visualize();
-    #endif
 }

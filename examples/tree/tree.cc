@@ -1,7 +1,12 @@
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/tree.h"
 
+#ifdef __cplusplus
+#include <iostream>
+#endif
+
 int main() {
-  tree<int> t; 
+  tree<int> t;
   t.insert("", 10);
   t.insert("r", 15);
   t.insert("l", 20);

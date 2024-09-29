@@ -1,8 +1,6 @@
 #include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/interval_tree.h"
 
-#define TREE_VISUALIZATION_H
-
 #ifdef __cplusplus
 #include <iostream>
 #endif

@@ -1,5 +1,8 @@
 #include "../../src/classes/tree/234_tree.h"
 
+#ifdef __cplusplus
+#include <iostream>
+#endif
 
 int main(){
   ttf_tree<int> t;

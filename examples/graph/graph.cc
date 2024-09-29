@@ -1,5 +1,8 @@
-#ifndef GRAPH_H
+#include "../../src/visualization/graph_visual/graph_visualization.h"
 #include "../../src/classes/graph/graph.h"
+
+#ifdef __cplusplus
+#include <iostream>
 #endif
 
 int main() {

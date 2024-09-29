@@ -2,8 +2,6 @@
 #include "../../src/classes/tree/bst.h"
 #include <iostream>
 
-#define TREE_VISUALIZATION_H
-
 int main() {
   bst<int> b({1, 3, 5});
   b.insert(1);

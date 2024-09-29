@@ -1,5 +1,7 @@
-#ifdef __cplusplus
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/splay_tree.h"
+
+#ifdef __cplusplus
 #include <iostream>
 #endif
 

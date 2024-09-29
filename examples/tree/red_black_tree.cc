@@ -1,5 +1,7 @@
-#ifdef __cplusplus
+#include "../../src/visualization/tree_visual/tree_visualization.h"
 #include "../../src/classes/tree/red_black_tree.h"
+
+#ifdef __cplusplus
 #include <iostream>
 #endif
 
@@ -9,7 +11,7 @@ int main() {
     rb.insert('t');
     rb.remove('b');
     // Will print the inorder traversal.
-    cout<<rb<<std::endl;
+    std::cout << rb << '\n';
 
     // Will return the preorder traversal.
     std::vector<char> v = rb.preorder();
@@ -17,7 +19,7 @@ int main() {
         std::cout<<v[i]<<" ";
     std::cout<<std::endl;
 
-    
+
     // example for visualize.
     red_black_tree<int> rb2({1, 2, 3, 4, 5, 6, 7, 8, 9});
     rb2.visualize();

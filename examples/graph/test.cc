@@ -2,6 +2,11 @@
 #include "../../src/classes/graph/graph.h"
 #endif
 
+#ifdef __cplusplus
+#include <string>
+#include <iostream>
+#endif
+
 int main() {
     weighted_graph<std::string> g("directed");
     g.add_edge("Athens", "Benfica", 300);
@@ -13,7 +18,7 @@ int main() {
     g.add_edge("Malta", "Berlin", 190);
     g.add_edge("Athens", "Rome", 70);
 
-    std::vector<string> topo = g.topological_sort();
+    std::vector<std::string> topo = g.topological_sort();
 
     std::cout << g.shortest_path("Athens", "Malta") << '\n';
     std::cout << g.shortest_path("Athens", "Benfica") << '\n';

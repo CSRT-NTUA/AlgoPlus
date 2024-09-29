@@ -14,6 +14,18 @@
 #include <unordered_map>
 #endif
 
+/**
+* @brief rope's(chord's) data structure class
+* **************************WARNING*****************************
+* This is a class under current development, this implementation
+* doesn't comply with the implementations that you might've seen online.
+* Please read the code carefully if you plan to use this class
+* **************************************************************
+* This class needs a lot of optimizations, like the way it performs splitting.
+* Splitting right now keeps BFS'ing on all the nodes, but we always know that only the
+* leaf nodes will split. Also, at insertion we have to search for already existing subtrees
+* and point the new node there instead of creating duplicates.
+*/
 class rope {
     struct node {
         int64_t len;
@@ -49,16 +61,19 @@ class rope {
 
     std::vector<std::shared_ptr<node> > ropes;
     std::shared_ptr<node> root;
+    int64_t _height;
 
 public:
 
-    explicit rope(std::string s, int64_t splits = 2) : root(nullptr) {
+    explicit rope(std::string s, int64_t splits = 2) : root(nullptr), _height(-1) {
         this->create(s, splits);
     }
 
     void create(std::string s, int64_t splits = 2);
 
     std::string inorder();
+
+    int64_t height() { return this->_height; }
 
     #ifdef TREE_VISUALIZATION_H
     void visualize() {
@@ -73,38 +88,80 @@ private:
     return _generate;
     }
 
+    std::shared_ptr<node> split_tree(std::shared_ptr<node> root, int64_t& splits) {
+        std::queue<std::shared_ptr<node> > q;
+        q.push(root);
+        while(splits){
+            q = std::queue<std::shared_ptr<node> >{};
+            q.push(root);
+            int64_t count_height = -1;
+            while(!q.empty()){
+                int64_t size = q.size();
+                for(int64_t i = 0; i<size; i++){
+                    std::shared_ptr<node> curr = q.front();
+                    q.pop();
+                    if(splits <= 0){
+                        q = std::queue<std::shared_ptr<node> >{};
+                        break;
+                    }
+                    if(curr -> is_leaf == true){
+                        std::string s1 = (curr -> data).substr(0, int(curr -> len) / 2 + 1);
+                        std::string s2 = (curr -> data).substr(int(curr -> len) / 2 + 1, int(curr -> len) - int(curr -> len) / 2);
+                        std::shared_ptr<node> split1 = std::make_shared<node>(s1);
+                        std::shared_ptr<node> split2 = std::make_shared<node>(s2);
+
+                        std::shared_ptr<node> block_node = std::make_shared<node>(curr -> len, split1, split2);
+                        curr -> data.clear();
+                        curr -> is_leaf = block_node -> is_leaf;
+                        curr -> len = block_node -> len;
+                        curr -> left = block_node -> left;
+                        curr -> right = block_node -> right;
+
+                        splits--;
+                    }
+
+                    if(curr -> left != nullptr) { q.push(curr -> left); }
+                    if(curr -> right != nullptr) { q.push(curr -> right); }
+                }
+                count_height++;
+                _height = std::max(_height, count_height);
+            }
+        }
+        return root;
+    }
+
     std::string _inorder_gen(std::shared_ptr<node> root) {
         std::string _s;
         if (root->left) {
             if(root->is_leaf) {
-                _s += root->data;
+                _s += '"' + std::to_string(root->len) + ',' + root->data + '"';
             }
             else {
-                _s += std::to_string(root->len);
+                _s += '"' + std::to_string(root->len) + '"';
             }
             _s += "->";
             if(root->left->is_leaf) {
-                _s += root->left->data;
+                _s += '"' + std::to_string(root->left->len) + ',' + root->left->data + '"';
             }
             else {
-                _s += std::to_string(root->left->len);
+                _s += '"' + std::to_string(root->left->len) + '"';
             }
             _s += "\n";
             _s += _inorder_gen(root->left);
         }
         if (root->right) {
             if(root->is_leaf){
-                _s += root->data;
+                _s += '"' + std::to_string(root->len) + ',' + root->data + '"';
             }
             else {
-                _s += std::to_string(root->len);
+                _s += '"' + std::to_string(root->len) + '"';
             }
             _s += "->";
             if(root->right->is_leaf){
-                _s += root->right->data;
+                _s += '"' + std::to_string(root->right->len) + ',' + root->right->data + '"';
             }
             else {
-                _s += std::to_string(root->right->len);
+                _s += '"' + std::to_string(root->right->len) + '"';
             }
             _s += "\n";
             _s += _inorder_gen(root->right);
@@ -124,42 +181,7 @@ void rope::create(std::string s, int64_t splits) {
     std::shared_ptr<node> root_block = std::make_shared<node>(s.size(), split1, split2);
     root = root_block;
     splits--;
-
-
-    auto split_tree = [&](int64_t splits) -> void {
-        std::queue<std::shared_ptr<node> > q;
-        q.push(root);
-
-        while(splits){
-            q = std::queue<std::shared_ptr<node> >{};
-            q.push(root);
-            while(!q.empty()){
-                int64_t size = q.size();
-                for(int64_t i = 0; i<size; i++){
-                    std::shared_ptr<node> curr = q.front();
-                    q.pop();
-                    if(splits <= 0){
-                        break;
-                    }
-                    if(curr -> is_leaf == true){
-                        std::string s1 = (curr -> data).substr(0, int(curr -> len) / 2 + 1);
-                        std::string s2 = (curr -> data).substr(int(curr -> len) / 2 + 1, int(curr -> len) - int(curr -> len) / 2);
-                        std::shared_ptr<node> split1 = std::make_shared<node>(s1);
-                        std::shared_ptr<node> split2 = std::make_shared<node>(s2);
-
-                        std::shared_ptr<node> block_node = std::make_shared<node>(curr -> len, split1, split2);
-                        curr = block_node;
-                        splits--;
-                    }
-
-                    if(curr -> left != nullptr) { q.push(curr -> left); }
-                    if(curr -> right != nullptr) { q.push(curr -> right); }
-                }
-            }
-        }
-    };
-
-    split_tree(splits);
+    root = split_tree(root, splits);
 }
 
 std::string rope::inorder() {
