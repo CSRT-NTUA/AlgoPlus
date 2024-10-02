@@ -822,13 +822,13 @@ template <typename T> double weighted_graph<T>::shortest_path(T start, T end) {
     std::stack<T> s;
     std::unordered_map<T, double> dist;
     for (auto &x : _elements) {
-      dist[x] = INT_MAX;
+      dist[x] = std::numeric_limits<int64_t>::max();
     }
     dist[start] = 0;
     while (!top_sort.empty()) {
       auto current = top_sort.back();
       top_sort.pop_back();
-      if (dist[current] != INT_MAX) {
+      if (dist[current] != std::numeric_limits<int64_t>::max()) {
         for (std::pair<T, double> &x : adj[current]) {
           if (dist[x.first] > dist[current] + x.second) {
             dist[x.first] = dist[current] + x.second;
@@ -837,11 +837,11 @@ template <typename T> double weighted_graph<T>::shortest_path(T start, T end) {
         }
       }
     }
-    return (dist[end] != INT_MAX) ? dist[end] : -1;
+    return (dist[end] != std::numeric_limits<int64_t>::max()) ? dist[end] : -1;
   } else {
     std::unordered_map<T, double> dist;
     for (auto &x : _elements) {
-      dist[x] = INT_MAX;
+      dist[x] = std::numeric_limits<int64_t>::max();
     }
     std::priority_queue<std::pair<double, T>,
                         std::vector<std::pair<double, T>>,
@@ -860,7 +860,7 @@ template <typename T> double weighted_graph<T>::shortest_path(T start, T end) {
         }
       }
     }
-    return (dist[end] != INT_MAX) ? dist[end] : -1;
+    return (dist[end] != std::numeric_limits<int64_t>::max()) ? dist[end] : -1;
   }
   return -1;
 }
