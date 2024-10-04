@@ -82,4 +82,8 @@
 #include "../machine_learning/search_algorithms/hill_climbing/hill_climbing.h"
 #include "../machine_learning/regression/linear_regression/lin_reg.h"
 
+#include "../visualization/tree_visual/tree_visualization.h"
+#include "../visualization/graph_visual/graph_visualization.h"
+#include "../visualization/list_visual/linked_list_visualization.h"
+
 #endif
