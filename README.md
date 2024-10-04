@@ -73,6 +73,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
 - [X] [Splay Tree](https://en.wikipedia.org/wiki/Splay_tree)
 - [X] [Trie](https://en.wikipedia.org/wiki/Trie)
+- [X] [Segment Tree](https://en.wikipedia.org/wiki/Segment_tree)
 - [X] [Interval Tree](https://en.wikipedia.org/wiki/Interval_tree)
 - [X] [234 Tree](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)
 - [X] [Min/Max Heap](https://en.wikipedia.org/wiki/Min-max_heap)
