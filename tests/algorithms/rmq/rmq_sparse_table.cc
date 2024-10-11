@@ -1,4 +1,4 @@
-#include "../../../src/algorithms/rmq/rmq_segment_tree.h"
+#include "../../../src/algorithms/rmq/rmq_sparse_table.h"
 #include "../../../third_party/catch.hpp"
 
 TEST_CASE("Testing rmq 1") {
