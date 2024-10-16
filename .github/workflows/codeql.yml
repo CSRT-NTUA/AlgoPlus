@@ -2,11 +2,11 @@ name: "Code Scanning - Action"
 
 on:
   push:
-    branches: [master]
+    branches: [AlgoPy]
   pull_request:
-    branches: [master]
+    branches: [AlgoPy]
   schedule:
-    - cron: '30 1 * * 0'
+    - cron: "30 1 * * 0"
 
 jobs:
   CodeQL-Build:
@@ -33,4 +33,4 @@ jobs:
       #- name: Upload coverage reports to Codecov
       #  uses: codecov/codecov-action@v3
       #  env:
-      #    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} 
+      #    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
