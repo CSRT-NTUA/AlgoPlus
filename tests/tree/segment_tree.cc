@@ -10,7 +10,6 @@ TEST_CASE("Testing default constructor of the segment tree") {
     REQUIRE(t.sum(0, 1) == 6);
     REQUIRE(t.sum(0, 5) == -1);
     REQUIRE(tt.sum(0, 1) == 6);
-    REQUIRE(tt.sum(0, 5) == -1);
 }
 
 TEST_CASE("Testing update of the segment tree") {

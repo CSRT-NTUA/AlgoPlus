@@ -62,8 +62,8 @@ struct seg_tree {
     */
     void update(int idx, T x) {
         assert(idx >= 0 && idx < n);
-        tree[idx + n] += x - data[idx];
         idx += n;
+        tree[idx] = x;
         for(idx /= 2; idx >= 1; idx /= 2) {
             tree[idx] = tree[2 * idx] + tree[2 * idx + 1];
         }
