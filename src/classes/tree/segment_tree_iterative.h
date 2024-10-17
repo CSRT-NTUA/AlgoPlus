@@ -21,7 +21,7 @@ struct seg_tree {
     * @param v: the input vector
     */
     explicit seg_tree(const std::vector<T> & v) noexcept : data(v), n(int(v.size())) {
-        tree = vector<T>(2*v.size(), 0);
+        tree = std::vector<T>(2*v.size(), 0);
         int idx = n - 1;
         for(int i = 2*n - 1; i>=n; i--) {
             tree[i] = data[idx--];
