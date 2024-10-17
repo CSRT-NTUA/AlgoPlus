@@ -6,6 +6,7 @@
 #include <vector>
 #include <cassert>
 #include <cmath>
+#include <cstdint>
 #include <cassert>
 #endif
 
@@ -60,7 +61,7 @@ public:
    * @return vector<vector<int32_t> >: the 2d array of the image
    */
   std::vector<std::vector<int32_t> > get_2d_array() const { return this->img; }
-    
+
   /**
    * @brief get_point function
    * @param x: the first dimension
@@ -76,7 +77,7 @@ public:
    */
   void set_point(int x, int y, int val) { this->img[x][y] = val; }
 
-  /** 
+  /**
    * @brief add_2_point function
    * @param x: first coordinate
    * @param y: second coordinate
@@ -99,7 +100,7 @@ public:
 
   /**
    * @brief binary function. Check if an image is black and white
-   * 
+   *
    * @return true if the image is black and white
    * @return false otherwise
    */
@@ -116,11 +117,11 @@ public:
 
   /**
    * @brief add function
-   * adds the img2 to img 
+   * adds the img2 to img
    * @param img2: the image you want to add to the img
    * @return vector<vector<int32_t> > the resulted image
    */
-  Image add(std::vector<std::vector<int32_t> > &img2) const {  
+  Image add(std::vector<std::vector<int32_t> > &img2) const {
     assert(!img2.empty());
     assert(img2.size() == img.size());
     assert(img2[0].size() == img[0].size());
@@ -136,14 +137,14 @@ public:
 
   /**
    * @brief secondary add function with Image as a parameter
-   * adds the img2 to img 
+   * adds the img2 to img
    * @param img2: the image you want to add to the img
    * @return vector<vector<int32_t> > the resulted image
    */
-  Image add(Image img2) const {  
+  Image add(Image img2) const {
     assert(img2._height() == img.size());
     assert(img2._width() == img[0].size());
-  
+
     Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
@@ -155,15 +156,15 @@ public:
 
   /**
    * @brief sub function
-   * adds the img2 to img 
+   * adds the img2 to img
    * @param img2: the image you want to subtract from the img
    * @return vector<vector<int32_t> > the resulted image
    */
-  Image sub(std::vector<std::vector<int32_t> > &img2) const {  
+  Image sub(std::vector<std::vector<int32_t> > &img2) const {
     assert(!img2.empty());
     assert(img2.size() == img.size());
     assert(img2[0].size() == img[0].size());
-  
+
     Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
@@ -175,11 +176,11 @@ public:
 
   /**
    * @brief secondary sub function with Image as an input
-   * adds the img2 to img 
+   * adds the img2 to img
    * @param img2: the image you want to subtract from the img
    * @return vector<vector<int32_t> > the resulted image
    */
-  Image sub(Image img2) const {  
+  Image sub(Image img2) const {
     assert(img2._height() == img.size());
     assert(img2._width() == img[0].size());
 
@@ -191,10 +192,10 @@ public:
     }
     return resulted_img;
   }
-  
+
   /**
-   * @brief mul function 
-   * multiplies the img2 to img 
+   * @brief mul function
+   * multiplies the img2 to img
    * @param img2: the image you want to subtract from the img
    * @return vector<vector<int32_t> > the resulted image
    */
@@ -202,7 +203,7 @@ public:
     assert(!img2.empty());
     assert(img2.size() == img.size());
     assert(img2[0].size() == img[0].size());
-    
+
     Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
@@ -214,14 +215,14 @@ public:
 
   /**
    * @brief secondary mul function with Image as an input
-   * multiplies the img2 to img 
+   * multiplies the img2 to img
    * @param img2: the image you want to subtract from the img
    * @return vector<vector<int32_t> > the resulted image
    */
   Image mul(Image img2) const {
     assert(img2._height() == img.size());
     assert(img2._width() == img[0].size());
-  
+
     Image resulted_img(height, width);
     for(int x = 0; x < height; x++){
       for(int y = 0; y < width; y++){
@@ -271,7 +272,7 @@ public:
     }
     return resulted_img;
   }
-  
+
   /**
   * @brief apply_filter2d_float function
   * @param filter: 3x3 kernel with floats to be applied to the image
@@ -309,7 +310,7 @@ public:
         }
       }
     }
-    return resulted_img;  
+    return resulted_img;
   }
 };
 #endif
