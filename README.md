@@ -74,6 +74,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Splay Tree](https://en.wikipedia.org/wiki/Splay_tree)
 - [X] [Trie](https://en.wikipedia.org/wiki/Trie)
 - [X] [Segment Tree](https://en.wikipedia.org/wiki/Segment_tree)
+- [X] [Fenwick Tree](https://en.wikipedia.org/wiki/Fenwick_tree)
 - [X] [Interval Tree](https://en.wikipedia.org/wiki/Interval_tree)
 - [X] [234 Tree](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)
 - [X] [Min/Max Heap](https://en.wikipedia.org/wiki/Min-max_heap)
@@ -90,6 +91,7 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [X] [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 - [X] [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
+- [X] [Range Minimum Query](https://en.wikipedia.org/wiki/Range_minimum_query#:~:text=In%20computer%20science%2C%20a%20range,common%20prefix%20problem%20(LCP).)
 
 **Machine Learning(NEW!)**
 - [X] [Clustering Algorithms](https://en.wikipedia.org/wiki/Cluster_analysis)
