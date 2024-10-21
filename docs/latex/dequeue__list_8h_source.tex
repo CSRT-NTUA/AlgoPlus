@@ -28,8 +28,8 @@
 \DoxyCodeLine{00038\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdequeue__list_a42603e6d5dab281bac54316f61a07660}{dequeue\_list}}(std::vector<T>\ v\ =\ \{\})\ \textcolor{keyword}{noexcept}}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ :\ root(nullptr),\ tail(nullptr)\ \{}
 \DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (T\ \&x\ :\ v)\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classdequeue__list_a6bb8882f621456fea94b6023ced7c3bd}{push\_back}}(x);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ for\ (T\ \&x\ :\ v)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ this-\/>push\_back(x);}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00044\ \ \ \ \ \}}
 \DoxyCodeLine{00045\ \ \ \}}

@@ -1,10 +1,14 @@
 \chapter{Mini Tutorial for the Stack class}
 \hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue}{}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue}\index{Mini Tutorial for the Stack class@{Mini Tutorial for the Stack class}}
-\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md102}%
-\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md102}%
+\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md115}%
+\Hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md115}%
+
+
 \begin{DoxyVerb}dequeue_list<T> -- creates a dequeue implemented with a list.
 \end{DoxyVerb}
- splay tree contains\+:
+
+
+splay tree contains\+:
 \begin{DoxyItemize}
 \item push\+\_\+back
 \item push\+\_\+front
@@ -14,7 +18,7 @@
 \item pop\+\_\+back
 \item clear
 \item size
-\end{DoxyItemize}\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md103}{}\doxysubsection{\texorpdfstring{{\bfseries{push\+\_\+back}}\+:}{{\bfseries{push\+\_\+back}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md103}
+\end{DoxyItemize}\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md116}{}\doxysubsection{\texorpdfstring{{\bfseries{push\+\_\+back}}\+:}{{\bfseries{push\+\_\+back}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md116}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}
@@ -27,7 +31,7 @@
 \DoxyCodeLine{\textcolor{comment}{//\ now\ the\ dequeue\ contains\ \{10,5,4,13\}}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md104}{}\doxysubsection{\texorpdfstring{{\bfseries{push\+\_\+front}}\+:}{{\bfseries{push\+\_\+front}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md104}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md117}{}\doxysubsection{\texorpdfstring{{\bfseries{push\+\_\+front}}\+:}{{\bfseries{push\+\_\+front}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md117}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}
@@ -41,7 +45,7 @@
 \DoxyCodeLine{\textcolor{comment}{//\ now\ the\ dequeue\ contains\ \{13,4,5,10\}}}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md105}{}\doxysubsection{\texorpdfstring{{\bfseries{front}}\+:}{{\bfseries{front}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md105}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md118}{}\doxysubsection{\texorpdfstring{{\bfseries{front}}\+:}{{\bfseries{front}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md118}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}
@@ -56,7 +60,7 @@
 \DoxyCodeLine{std::cout\ <<\ q.\mbox{\hyperlink{classdequeue__list_a7a9f8326f96b1a42057ef0ec2a020a39}{front}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md106}{}\doxysubsection{\texorpdfstring{{\bfseries{back}}\+:}{{\bfseries{back}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md106}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md119}{}\doxysubsection{\texorpdfstring{{\bfseries{back}}\+:}{{\bfseries{back}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md119}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}
@@ -71,7 +75,7 @@
 \DoxyCodeLine{std::cout\ <<\ q.\mbox{\hyperlink{classdequeue__list_a52390a91517e3419a6120d38cc30ca39}{back}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md107}{}\doxysubsection{\texorpdfstring{{\bfseries{pop\+\_\+front}}\+:}{{\bfseries{pop\+\_\+front}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md107}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md120}{}\doxysubsection{\texorpdfstring{{\bfseries{pop\+\_\+front}}\+:}{{\bfseries{pop\+\_\+front}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md120}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}
@@ -89,7 +93,7 @@
 \DoxyCodeLine{std::cout\ <<\ q.\mbox{\hyperlink{classdequeue__list_a7a9f8326f96b1a42057ef0ec2a020a39}{front}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md108}{}\doxysubsection{\texorpdfstring{{\bfseries{pop\+\_\+back}}\+:}{{\bfseries{pop\+\_\+back}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md108}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md121}{}\doxysubsection{\texorpdfstring{{\bfseries{pop\+\_\+back}}\+:}{{\bfseries{pop\+\_\+back}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md121}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}
@@ -107,7 +111,7 @@
 \DoxyCodeLine{std::cout\ <<\ q.\mbox{\hyperlink{classdequeue__list_a52390a91517e3419a6120d38cc30ca39}{back}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
 
 \end{DoxyCode}
-\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md109}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md109}
+\hypertarget{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md122}{}\doxysubsection{\texorpdfstring{{\bfseries{iterator}}\+:}{{\bfseries{iterator}}\+:}}\label{md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2dequeue_autotoc_md122}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include\ <dequeue\_list.h>}}

@@ -7,5 +7,6 @@ var searchData=
   ['binaryexpr_4',['BinaryExpr',['../class_catch_1_1_binary_expr.html',1,'Catch']]],
   ['boundaries_5',['boundaries',['../structdetail_1_1dtoa__impl_1_1boundaries.html',1,'detail::dtoa_impl']]],
   ['bst_6',['bst',['../classbst.html',1,'']]],
-  ['byte_5fcontainer_5fwith_5fsubtype_7',['byte_container_with_subtype',['../classbyte__container__with__subtype.html',1,'']]]
+  ['bubble_7',['bubble',['../classbubble.html',1,'']]],
+  ['byte_5fcontainer_5fwith_5fsubtype_8',['byte_container_with_subtype',['../classbyte__container__with__subtype.html',1,'']]]
 ];

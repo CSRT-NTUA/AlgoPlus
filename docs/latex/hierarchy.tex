@@ -25,6 +25,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \end{DoxyCompactList}
 \item \contentsline{section}{detail\+::dtoa\+\_\+impl\+::boundaries}{\pageref{structdetail_1_1dtoa__impl_1_1boundaries}}{}
 \item \contentsline{section}{bst\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{classbst}}{}
+\item \contentsline{section}{bubble\texorpdfstring{$<$}{<} T, \+\_\+\+SIZE \texorpdfstring{$>$}{>}}{\pageref{classbubble}}{}
 \item \contentsline{section}{detail\+::dtoa\+\_\+impl\+::cached\+\_\+power}{\pageref{structdetail_1_1dtoa__impl_1_1cached__power}}{}
 \item \contentsline{section}{Catch\+::Capturer}{\pageref{class_catch_1_1_capturer}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Cased\+String}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string}}{}
@@ -51,6 +52,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{dsu}{\pageref{classdsu}}{}
 \item \contentsline{section}{Catch\+::Detail\+::Enum\+Info}{\pageref{struct_catch_1_1_detail_1_1_enum_info}}{}
 \item std\+::exception\begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Generator\+Exception}{\pageref{class_catch_1_1_generator_exception}}{}
 \item \contentsline{section}{Catch\+::Generator\+Exception}{\pageref{class_catch_1_1_generator_exception}}{}
 \item \contentsline{section}{detail\+::exception}{\pageref{classdetail_1_1exception}}{}
 \begin{DoxyCompactList}
@@ -81,10 +83,13 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \end{DoxyCompactList}
 \item std\+::false\+\_\+type\begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::always\+\_\+false\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1always__false}}{}
+\item \contentsline{section}{Catch\+::always\+\_\+false\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1always__false}}{}
 \item \contentsline{section}{Catch\+::detail\+::is\+\_\+range\+\_\+impl\texorpdfstring{$<$}{<} T, typename \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1detail_1_1is__range__impl}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::is\+\_\+range\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1is__range}}{}
+\item \contentsline{section}{Catch\+::is\+\_\+range\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1is__range}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::detail\+::is\+\_\+range\+\_\+impl\texorpdfstring{$<$}{<} T, typename \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1detail_1_1is__range__impl}}{}
 \item \contentsline{section}{detail\+::has\+\_\+from\+\_\+json\texorpdfstring{$<$}{<} Basic\+Json\+Type, T, typename \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1has__from__json}}{}
 \item \contentsline{section}{detail\+::has\+\_\+non\+\_\+default\+\_\+from\+\_\+json\texorpdfstring{$<$}{<} Basic\+Json\+Type, T, typename \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1has__non__default__from__json}}{}
 \item \contentsline{section}{detail\+::has\+\_\+to\+\_\+json\texorpdfstring{$<$}{<} Basic\+Json\+Type, T, typename \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1has__to__json}}{}
@@ -121,6 +126,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{detail\+::is\+\_\+json\+\_\+ref\texorpdfstring{$<$}{<} typename \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1is__json__ref}}{}
 \item \contentsline{section}{detail\+::is\+\_\+specialization\+\_\+of\texorpdfstring{$<$}{<} Primary, T \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1is__specialization__of}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{fenwick\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{structfenwick__tree}}{}
 \item \contentsline{section}{detail\+::file\+\_\+input\+\_\+adapter}{\pageref{classdetail_1_1file__input__adapter}}{}
 \item \contentsline{section}{frequency\+\_\+list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{classfrequency__list}}{}
 \item \contentsline{section}{detail\+::from\+\_\+json\+\_\+fn}{\pageref{structdetail_1_1from__json__fn}}{}
@@ -131,27 +137,43 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Generators\+::Chunk\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_chunk_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Chunk\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_chunk_generator}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} Float \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
 \begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Generators\+::Random\+Floating\+Generator\texorpdfstring{$<$}{<} Float \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_random_floating_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Random\+Floating\+Generator\texorpdfstring{$<$}{<} Float \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_random_floating_generator}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} Integer \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Generators\+::Random\+Integer\+Generator\texorpdfstring{$<$}{<} Integer \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_random_integer_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Random\+Integer\+Generator\texorpdfstring{$<$}{<} Integer \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_random_integer_generator}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} Float \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} Integer \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Generators\+::Filter\+Generator\texorpdfstring{$<$}{<} T, Predicate \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_filter_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Filter\+Generator\texorpdfstring{$<$}{<} T, Predicate \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_filter_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Fixed\+Values\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_fixed_values_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Fixed\+Values\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_fixed_values_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Generators\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_generators}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Generators\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_generators}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Iterator\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_iterator_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Iterator\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_iterator_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Map\+Generator\texorpdfstring{$<$}{<} T, U, Func \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_map_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Map\+Generator\texorpdfstring{$<$}{<} T, U, Func \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_map_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Range\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_range_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Range\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_range_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Repeat\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_repeat_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Repeat\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_repeat_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Single\+Value\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_single_value_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Single\+Value\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_single_value_generator}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Take\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_take_generator}}{}
+\item \contentsline{section}{Catch\+::Generators\+::Take\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_take_generator}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Generators\+::IGenerator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_generators_1_1_i_generator}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Generators\+::Generator\+Wrapper\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_generator_wrapper}}{}
 \item \contentsline{section}{Catch\+::Generators\+::Generator\+Wrapper\texorpdfstring{$<$}{<} U \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_generators_1_1_generator_wrapper}}{}
@@ -165,6 +187,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{huffman}{\pageref{classhuffman}}{}
 \item \contentsline{section}{Catch\+::IContext}{\pageref{struct_catch_1_1_i_context}}{}
 \begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::IMutable\+Context}{\pageref{struct_catch_1_1_i_mutable_context}}{}
 \item \contentsline{section}{Catch\+::IMutable\+Context}{\pageref{struct_catch_1_1_i_mutable_context}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{detail\+::identity\+\_\+tag\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1identity__tag}}{}
@@ -233,13 +256,14 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{hash\+\_\+table\texorpdfstring{$<$}{<} Key\+Type, Value\+Type \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classhash__table_1_1_iterator}}{}
 \item \contentsline{section}{interval\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classinterval__tree_1_1_iterator}}{}
 \item \contentsline{section}{linked\+\_\+list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classlinked__list_1_1_iterator}}{}
-\item \contentsline{section}{Mat1d\texorpdfstring{$<$}{<} T, SIZE \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{class_mat1d_1_1_iterator}}{}
 \item \contentsline{section}{Mat2d\texorpdfstring{$<$}{<} T, ROWS, COLS \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{class_mat2d_1_1_iterator}}{}
 \item \contentsline{section}{red\+\_\+black\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classred__black__tree_1_1_iterator}}{}
 \item \contentsline{section}{skip\+\_\+list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classskip__list_1_1_iterator}}{}
 \item \contentsline{section}{splay\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classsplay__tree_1_1_iterator}}{}
 \item \contentsline{section}{stack\+\_\+list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classstack__list_1_1_iterator}}{}
+\item \contentsline{section}{table\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classtable_1_1_iterator}}{}
 \item \contentsline{section}{tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Iterator}{\pageref{classtree_1_1_iterator}}{}
+\item \contentsline{section}{bubble\texorpdfstring{$<$}{<} T, \+\_\+\+SIZE \texorpdfstring{$>$}{>}\+::iterator}{\pageref{classbubble_1_1iterator}}{}
 \item \contentsline{section}{detail\+::iterator\+\_\+input\+\_\+adapter\texorpdfstring{$<$}{<} Iterator\+Type \texorpdfstring{$>$}{>}}{\pageref{classdetail_1_1iterator__input__adapter}}{}
 \item \contentsline{section}{detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory\texorpdfstring{$<$}{<} Iterator\+Type, Enable \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1iterator__input__adapter__factory}}{}
 \item \contentsline{section}{detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory\texorpdfstring{$<$}{<} Iterator\+Type, enable\+\_\+if\+\_\+t\texorpdfstring{$<$}{<} is\+\_\+iterator\+\_\+of\+\_\+multibyte\texorpdfstring{$<$}{<} Iterator\+Type \texorpdfstring{$>$}{>}\+::value \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1iterator__input__adapter__factory_3_01_iterator_type_00_01enable__if__t_3_01is__5cecb9bc5a87721b11b4762b91835d89}}{}
@@ -255,11 +279,15 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{Catch\+::ITest\+Invoker}{\pageref{struct_catch_1_1_i_test_invoker}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Test\+Invoker\+As\+Method\texorpdfstring{$<$}{<} C \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_test_invoker_as_method}}{}
+\item \contentsline{section}{Catch\+::Test\+Invoker\+As\+Method\texorpdfstring{$<$}{<} C \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_test_invoker_as_method}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::ITransient\+Expression}{\pageref{struct_catch_1_1_i_transient_expression}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Binary\+Expr\texorpdfstring{$<$}{<} LhsT, RhsT \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_binary_expr}}{}
+\item \contentsline{section}{Catch\+::Binary\+Expr\texorpdfstring{$<$}{<} LhsT, RhsT \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_binary_expr}}{}
 \item \contentsline{section}{Catch\+::Match\+Expr\texorpdfstring{$<$}{<} ArgT, MatcherT \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_match_expr}}{}
+\item \contentsline{section}{Catch\+::Match\+Expr\texorpdfstring{$<$}{<} ArgT, MatcherT \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_match_expr}}{}
+\item \contentsline{section}{Catch\+::Unary\+Expr\texorpdfstring{$<$}{<} LhsT \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_unary_expr}}{}
 \item \contentsline{section}{Catch\+::Unary\+Expr\texorpdfstring{$<$}{<} LhsT \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_unary_expr}}{}
 \end{DoxyCompactList}
 \item nlohmann\+::detail\+::json\+\_\+base\+\_\+class\begin{DoxyCompactList}
@@ -286,46 +314,78 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{Mat1d\texorpdfstring{$<$}{<} T, COLS \texorpdfstring{$>$}{>}}{\pageref{class_mat1d}}{}
 \item \contentsline{section}{Mat2d\texorpdfstring{$<$}{<} T, ROWS, COLS \texorpdfstring{$>$}{>}}{\pageref{class_mat2d}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} ObjectT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
 \begin{DoxyCompactList}
-\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::exception \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
-\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Match\+All\+Of\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Match\+All\+Of\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Match\+Any\+Of\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Match\+Any\+Of\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Match\+Not\+Of\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Match\+Not\+Of\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} std\+::exception \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::exception \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::exception \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} std\+::string \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::string \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::string \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \end{DoxyCompactList}
-\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
-\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
-\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} std\+::exception \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
-\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} std\+::string \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Method\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method}}{}
 \begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc\+Match \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc\+Match \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Matchers\+::Exception\+::Exception\+Message\+Matcher}{\pageref{class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Exception\+::Exception\+Message\+Matcher}{\pageref{class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Floating\+::Within\+Abs\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Floating\+::Within\+Abs\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Floating\+::Within\+Rel\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Floating\+::Within\+Rel\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Floating\+::Within\+Ulps\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Floating\+::Within\+Ulps\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Generic\+::Predicate\+Matcher\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Generic\+::Predicate\+Matcher\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Regex\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Regex\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::String\+Matcher\+Base}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Contains\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Contains\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Ends\+With\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Ends\+With\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Equals\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Equals\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Starts\+With\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::Starts\+With\+Matcher}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Std\+String\+::String\+Matcher\+Base}{\pageref{struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Approx\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Approx\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Contains\+Element\+Matcher\texorpdfstring{$<$}{<} T, Alloc \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Contains\+Element\+Matcher\texorpdfstring{$<$}{<} T, Alloc \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Contains\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Contains\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Equals\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Equals\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Unordered\+Equals\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Vector\+::Unordered\+Equals\+Matcher\texorpdfstring{$<$}{<} T, Alloc\+Comp, Alloc\+Match \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Untyped\+Base}{\pageref{class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base}}{}
 \begin{DoxyCompactList}
@@ -335,11 +395,19 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::string \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc\+Match \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::exception \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} ArgT \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::string \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc\+Match \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T, Alloc \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
+\item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \item \contentsline{section}{Catch\+::Matchers\+::Impl\+::Matcher\+Base\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Message\+Info}{\pageref{struct_catch_1_1_message_info}}{}
 \item \contentsline{section}{Catch\+::Message\+Stream}{\pageref{struct_catch_1_1_message_stream}}{}
 \begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Message\+Builder}{\pageref{struct_catch_1_1_message_builder}}{}
 \item \contentsline{section}{Catch\+::Message\+Builder}{\pageref{struct_catch_1_1_message_builder}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{min\+\_\+heap\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{classmin__heap}}{}
@@ -347,8 +415,12 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{Catch\+::Non\+Copyable}{\pageref{class_catch_1_1_non_copyable}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Auto\+Reg}{\pageref{struct_catch_1_1_auto_reg}}{}
+\item \contentsline{section}{Catch\+::Auto\+Reg}{\pageref{struct_catch_1_1_auto_reg}}{}
+\item \contentsline{section}{Catch\+::IConfig}{\pageref{struct_catch_1_1_i_config}}{}
 \item \contentsline{section}{Catch\+::IConfig}{\pageref{struct_catch_1_1_i_config}}{}
 \item \contentsline{section}{Catch\+::Reusable\+String\+Stream}{\pageref{class_catch_1_1_reusable_string_stream}}{}
+\item \contentsline{section}{Catch\+::Reusable\+String\+Stream}{\pageref{class_catch_1_1_reusable_string_stream}}{}
+\item \contentsline{section}{Catch\+::Section}{\pageref{class_catch_1_1_section}}{}
 \item \contentsline{section}{Catch\+::Section}{\pageref{class_catch_1_1_section}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{detail\+::nonesuch}{\pageref{structdetail_1_1nonesuch}}{}
@@ -378,10 +450,14 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item std\+::reverse\+\_\+iterator\begin{DoxyCompactList}
 \item \contentsline{section}{detail\+::json\+\_\+reverse\+\_\+iterator\texorpdfstring{$<$}{<} Base \texorpdfstring{$>$}{>}}{\pageref{classdetail_1_1json__reverse__iterator}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{RMQ\texorpdfstring{$<$}{<} T, maximum\+\_\+mode \texorpdfstring{$>$}{>}}{\pageref{struct_r_m_q}}{}
+\item \contentsline{section}{rope}{\pageref{classrope}}{}
 \item \contentsline{section}{Catch\+::Run\+Tests}{\pageref{struct_catch_1_1_run_tests}}{}
 \item \contentsline{section}{Catch\+::Scoped\+Message}{\pageref{class_catch_1_1_scoped_message}}{}
 \item \contentsline{section}{Catch\+::Section\+End\+Info}{\pageref{struct_catch_1_1_section_end_info}}{}
 \item \contentsline{section}{Catch\+::Section\+Info}{\pageref{struct_catch_1_1_section_info}}{}
+\item \contentsline{section}{seg\+\_\+tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{structseg__tree}}{}
+\item \contentsline{section}{segment\+\_\+tree}{\pageref{classsegment__tree}}{}
 \item \contentsline{section}{matplotlibcpp\+::detail\+::select\+\_\+npy\+\_\+type\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{structmatplotlibcpp_1_1detail_1_1select__npy__type}}{}
 \item \contentsline{section}{matplotlibcpp\+::detail\+::select\+\_\+npy\+\_\+type\texorpdfstring{$<$}{<} bool \texorpdfstring{$>$}{>}}{\pageref{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01bool_01_4}}{}
 \item \contentsline{section}{matplotlibcpp\+::detail\+::select\+\_\+npy\+\_\+type\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>}}{\pageref{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01double_01_4}}{}
@@ -406,6 +482,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{stack\+\_\+list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{classstack__list}}{}
 \item \contentsline{section}{detail\+::static\+\_\+const\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1static__const}}{}
 \item \contentsline{section}{Catch\+::Stream\+End\+Stop}{\pageref{struct_catch_1_1_stream_end_stop}}{}
+\item \contentsline{section}{string\+\_\+hasher}{\pageref{classstring__hasher}}{}
 \item \contentsline{section}{Catch\+::String\+Maker\texorpdfstring{$<$}{<} T, typename \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_string_maker}}{}
 \item \contentsline{section}{Catch\+::String\+Maker\texorpdfstring{$<$}{<} bool \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_string_maker_3_01bool_01_4}}{}
 \item \contentsline{section}{Catch\+::String\+Maker\texorpdfstring{$<$}{<} Catch\+::Detail\+::Approx \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1_string_maker_3_01_catch_1_1_detail_1_1_approx_01_4}}{}
@@ -438,8 +515,10 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item T\begin{DoxyCompactList}
 \item \contentsline{section}{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl\texorpdfstring{$<$}{<} true, T \texorpdfstring{$>$}{>}\+::Derived}{\pageref{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_derived}}{}
 \end{DoxyCompactList}
+\item \contentsline{section}{table\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}{\pageref{classtable}}{}
 \item \contentsline{section}{Catch\+::Test\+Case\+Info}{\pageref{struct_catch_1_1_test_case_info}}{}
 \begin{DoxyCompactList}
+\item \contentsline{section}{Catch\+::Test\+Case}{\pageref{class_catch_1_1_test_case}}{}
 \item \contentsline{section}{Catch\+::Test\+Case}{\pageref{class_catch_1_1_test_case}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::Test\+Failure\+Exception}{\pageref{struct_catch_1_1_test_failure_exception}}{}
@@ -476,6 +555,8 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \end{DoxyCompactList}
 \end{DoxyCompactList}
 \item \contentsline{section}{Catch\+::detail\+::is\+\_\+range\+\_\+impl\texorpdfstring{$<$}{<} T, typename void\+\_\+type\texorpdfstring{$<$}{<} decltype(begin(std\+::declval\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}()))\texorpdfstring{$>$}{>}\+::type \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd}}{}
+\item \contentsline{section}{Catch\+::detail\+::is\+\_\+range\+\_\+impl\texorpdfstring{$<$}{<} T, typename void\+\_\+type\texorpdfstring{$<$}{<} decltype(begin(std\+::declval\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}()))\texorpdfstring{$>$}{>}\+::type \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd}}{}
+\item \contentsline{section}{Catch\+::true\+\_\+given\texorpdfstring{$<$}{<} typename \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1true__given}}{}
 \item \contentsline{section}{Catch\+::true\+\_\+given\texorpdfstring{$<$}{<} typename \texorpdfstring{$>$}{>}}{\pageref{struct_catch_1_1true__given}}{}
 \item \contentsline{section}{detail\+::conjunction\texorpdfstring{$<$}{<}... \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1conjunction}}{}
 \item \contentsline{section}{detail\+::is\+\_\+basic\+\_\+json\texorpdfstring{$<$}{<} NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL \texorpdfstring{$>$}{>}}{\pageref{structdetail_1_1is__basic__json_3_01_n_l_o_h_m_a_n_n___b_a_s_i_c___j_s_o_n___t_p_l_01_4}}{}

@@ -47,15 +47,12 @@ std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a8c943a8d38b1e57f8e4568
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree_a0a344c13f06a9f9666d8225264897553}{postorder}} ()
 \begin{DoxyCompactList}\small\item\em postorder function. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10}{level\+\_\+order}} ()
-\begin{DoxyCompactList}\small\item\em level order function \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}{visualize}} ()
-\begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em level order function \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classsplay__tree_a4aa8ac953ded6034d002a27f2f9b43ce}\label{classsplay__tree_a4aa8ac953ded6034d002a27f2f9b43ce} 
-ostream \& {\bfseries operator$<$$<$} (ostream \&out, \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&t)
-\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for splay tree class \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::ostream \& \mbox{\hyperlink{classsplay__tree_ac7bf132c38e5a47f2fd6e20b6f783b4f}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em visualize function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -64,12 +61,12 @@ class splay\+\_\+tree$<$ T $>$}
 splay tree class 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}\label{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
+\Hypertarget{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
 \index{splay\_tree@{splay\_tree}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{splay\_tree()}{splay\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{v = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{classsplay__tree_a42c17e85ad2c1bacd934ca0ccc51e398} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{v}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
 
@@ -80,12 +77,12 @@ Construct a new splay tree object.
 {\em v} & vector$<$\+T$>$ initializer vector \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a}\label{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
+\Hypertarget{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!splay\_tree@{splay\_tree}}
 \index{splay\_tree@{splay\_tree}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{splay\_tree()}{splay\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{classsplay__tree_aa9a135c3d10e1e8b919b8d817d53f98a} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\mbox{\hyperlink{classsplay__tree}{\+::splay\+\_\+tree}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -99,12 +96,12 @@ Copy constructor for splay tree class.
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}\label{classsplay__tree_a3418b2394bd2f5295edeb0444292938a} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!inorder@{inorder}}
+\Hypertarget{classsplay__tree_a3418b2394bd2f5295edeb0444292938a}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!inorder@{inorder}}
 \index{inorder@{inorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::inorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_a3418b2394bd2f5295edeb0444292938a} 
+template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::inorder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -113,12 +110,12 @@ inorder function.
 \begin{DoxyReturn}{Returns}
 vector$<$\+T$>$, the elements inorder. 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_a28eea5f755129c69077896c03bb0406e}\label{classsplay__tree_a28eea5f755129c69077896c03bb0406e} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!insert@{insert}}
+\Hypertarget{classsplay__tree_a28eea5f755129c69077896c03bb0406e}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_a28eea5f755129c69077896c03bb0406e} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -129,12 +126,12 @@ insert function
 {\em key} & the key to be inserted \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10}\label{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!level\_order@{level\_order}}
+\Hypertarget{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!level\_order@{level\_order}}
 \index{level\_order@{level\_order}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{level\_order()}{level\_order()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_a1563389efc44838d96fcbf1302e7bf10} 
+template$<$typename T $>$ \\
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::level\+\_\+order (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -143,12 +140,12 @@ level order function
 \begin{DoxyReturn}{Returns}
 vector$<$vector$<$\+T$>$$>$, the level order traversal of the tree 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e}\label{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!operator=@{operator=}}
+\Hypertarget{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}} \& \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_ad3545f2f8b26bcef4f938decb1ac276e} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}} \& \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -162,12 +159,12 @@ operator = for splay tree class
 \begin{DoxyReturn}{Returns}
 \doxylink{classsplay__tree}{splay\+\_\+tree}\& 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_a0a344c13f06a9f9666d8225264897553}\label{classsplay__tree_a0a344c13f06a9f9666d8225264897553} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!postorder@{postorder}}
+\Hypertarget{classsplay__tree_a0a344c13f06a9f9666d8225264897553}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!postorder@{postorder}}
 \index{postorder@{postorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{postorder()}{postorder()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::postorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_a0a344c13f06a9f9666d8225264897553} 
+template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::postorder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -176,12 +173,12 @@ postorder function.
 \begin{DoxyReturn}{Returns}
 vector$<$\+T$>$, the elements postorder. 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43}\label{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!preorder@{preorder}}
+\Hypertarget{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!preorder@{preorder}}
 \index{preorder@{preorder}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{preorder()}{preorder()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::preorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_a8c943a8d38b1e57f8e45686bf45c3e43} 
+template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::preorder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -190,12 +187,12 @@ preorder function.
 \begin{DoxyReturn}{Returns}
 vector$<$\+T$>$, the elements preorder. 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_ab022b141626c54e2e09ab870e7000f89}\label{classsplay__tree_ab022b141626c54e2e09ab870e7000f89} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!remove@{remove}}
+\Hypertarget{classsplay__tree_ab022b141626c54e2e09ab870e7000f89}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!remove@{remove}}
 \index{remove@{remove}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_ab022b141626c54e2e09ab870e7000f89} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -206,12 +203,12 @@ remove function
 {\em key} & the key to be removed \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classsplay__tree_ae15a430689cfc7d6f75c35f8420e36b4}\label{classsplay__tree_ae15a430689cfc7d6f75c35f8420e36b4} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!search@{search}}
+\Hypertarget{classsplay__tree_ae15a430689cfc7d6f75c35f8420e36b4}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!search@{search}}
 \index{search@{search}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{search()}{search()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-bool \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_ae15a430689cfc7d6f75c35f8420e36b4} 
+template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -227,12 +224,12 @@ true if key exists in the tree
 
 false otherwise 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_aea0b17cab8207f3162e02835259100c6}\label{classsplay__tree_aea0b17cab8207f3162e02835259100c6} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!size@{size}}
+\Hypertarget{classsplay__tree_aea0b17cab8207f3162e02835259100c6}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!size@{size}}
 \index{size@{size}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-size\+\_\+t \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classsplay__tree_aea0b17cab8207f3162e02835259100c6} 
+template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -241,21 +238,24 @@ size function
 \begin{DoxyReturn}{Returns}
 size\+\_\+t the size of the tree 
 \end{DoxyReturn}
-\Hypertarget{classsplay__tree_adf366c059ecbece708bd23db98ce94c0}\label{classsplay__tree_adf366c059ecbece708bd23db98ce94c0} 
-\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!visualize@{visualize}}
-\index{visualize@{visualize}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{visualize()}{visualize()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$\+::visualize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classsplay__tree_ac7bf132c38e5a47f2fd6e20b6f783b4f}\index{splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!splay\_tree$<$ T $>$@{splay\_tree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classsplay__tree_ac7bf132c38e5a47f2fd6e20b6f783b4f} 
+template$<$typename T $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{\mbox{\hyperlink{classsplay__tree}{splay\+\_\+tree}}$<$ T $>$ \&}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
 visualize function 
 
 \begin{DoxyReturn}{Returns}
-.dot file that can be previewed using graphviz in vscode. 
+.dot file that can be previewed using graphviz in vscode.
 \end{DoxyReturn}
-
+operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for splay tree class 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

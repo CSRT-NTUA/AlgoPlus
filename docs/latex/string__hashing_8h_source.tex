@@ -1,0 +1,46 @@
+\doxysection{string\+\_\+hashing.\+h}
+\hypertarget{string__hashing_8h_source}{}\label{string__hashing_8h_source}\index{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/string/string\_hashing.h@{/Users/spirosmag/Documents/AlgoPlus/src/algorithms/string/string\_hashing.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STRING\_HASHING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STRING\_HASHING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classstring__hasher}{string\_hasher}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::unordered\_map<size\_t,\ int>\ \mbox{\hyperlink{classhash__table}{hash\_table}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classstring__hasher}{string\_hasher}}\ ()\ \textcolor{keyword}{noexcept}\ \{\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\textcolor{keyword}{const}\ std::string\ str)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ hashed\ =\ std::hash<std::string>\{\}(str);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhash__table}{hash\_table}}[hashed]\ =\ 1;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ search(\textcolor{keyword}{const}\ std::string\ str)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ hashed\ =\ std::hash<std::string>\{\}(str);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classhash__table}{hash\_table}}[hashed]\ !=\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ size()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classhash__table}{hash\_table}}.size();\ \}}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{bool}\ is\_palindrome(\textcolor{keyword}{const}\ std::string\ str)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ int64\_t\ \_size\ =\ str.size();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<\_size\ /\ 2;\ i++)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str[i]\ !=\ str[\_size\ -\/\ i\ -\/\ 1])\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

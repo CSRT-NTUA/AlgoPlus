@@ -25,8 +25,8 @@
 \DoxyCodeLine{00029\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtrie_a8d07730e7c6071a78b872f7f73613d14}{trie}}(std::vector<std::string>\ v\ =\ \{\})\ \textcolor{keyword}{noexcept}}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ :\ root(std::make\_shared<node>())\ \{}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (!v.empty())\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ v)\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classtrie_adb61c311b6d076114a48194cbf7e4822}{insert}}(x);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ for\ (auto\ \&x\ :\ v)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this-\/>insert(x);}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00035\ \ \ \ \ \}}
 \DoxyCodeLine{00036\ \ \ \}}
@@ -43,11 +43,11 @@
 \DoxyCodeLine{00056\ \ \ \}}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtrie_ad581a02dd94fc7d214f5488bb02fe4ee}{empty}}()\ \{\ \textcolor{keywordflow}{return}\ root\ ==\ \textcolor{keyword}{nullptr};\ \}}
-\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtrie_adb61c311b6d076114a48194cbf7e4822}{insert}}(std::string\ key);}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ insert(std::string\ key);}
 \DoxyCodeLine{00068\ }
 \DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classtrie_a23992f5354b529ac51761730b7d19cd6}{size}}()\ \{\ \textcolor{keywordflow}{return}\ \_size;\ \}}
-\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtrie_a856e569e4c40b5d5ebdaef26d8ec2a27}{remove}}(std::string\ key);}
-\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtrie_a390f27fc19bac589b2565bdbca3c0843}{search}}(std::string\ key);}
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ remove(std::string\ key);}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{bool}\ search(std::string\ key);}
 \DoxyCodeLine{00086\ }
 \DoxyCodeLine{00087\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \mbox{\hyperlink{classtrie}{trie}}\ \&t);}
 \DoxyCodeLine{00088\ }

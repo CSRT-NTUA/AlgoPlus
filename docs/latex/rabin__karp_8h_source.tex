@@ -65,7 +65,7 @@
 \DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00093\ }
 \DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ text\_length\ -\/\ pattern\_length)\ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ text\_hash\ =\ (base*(text\_hash\ -\/\ ((size\_t)text[i]*power\ \%\ modulus)\ +\ modulus)\ \%\ modulus\ +\ (\textcolor{keywordtype}{size\_t})text[i\ +\ pattern\_length])\ \%\ modulus;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ text\_hash\ =\ (base*(text\_hash\ -\/\ ((size\_t)text[i]*power\ \%\ modulus)\ +\ modulus)\ \%\ modulus\ +\ (size\_t)text[i\ +\ pattern\_length])\ \%\ modulus;}
 \DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00097\ \ \ \ \ \}}
 \DoxyCodeLine{00098\ }

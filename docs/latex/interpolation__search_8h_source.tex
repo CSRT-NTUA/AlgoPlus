@@ -21,7 +21,7 @@
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{while}(size\ >\ 0\ \&\&\ *it\_begin\ <=\ key\ \&\&\ *it\_end\ >=\ key)\ \{}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ guess\ =\ it\_begin;}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\_end\ !=\ *it\_begin)\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ offset\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(size\ -\/\ 1)\ *\ (key\ -\/\ *it\_begin)\ /\ (*it\_end\ -\/\ *it\_begin));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ offset\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(size\ -\/\ 1)\ *\ (\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d}{key}}\ -\/\ *it\_begin)\ /\ (*it\_end\ -\/\ *it\_begin));}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ std::advance(guess,\ offset);}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*guess\ ==\ key)}

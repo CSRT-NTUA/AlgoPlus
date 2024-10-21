@@ -19,48 +19,48 @@ Inheritance diagram for detail\+::output\+\_\+string\+\_\+adapter\texorpdfstring
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1output__string__adapter_a1de17d313223c70c8d30186a6e3eb07e}\label{classdetail_1_1output__string__adapter_a1de17d313223c70c8d30186a6e3eb07e} 
-{\bfseries output\+\_\+string\+\_\+adapter} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{String\+Type}} \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{s}}) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}
+{\bfseries output\+\_\+string\+\_\+adapter} (String\+Type \&s) noexcept
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1output__string__adapter_a15ef2742beddbc80d2468755ecf0a21e}{write\+\_\+character}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{c}}) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{override}}
+void \mbox{\hyperlink{classdetail_1_1output__string__adapter_a15ef2742beddbc80d2468755ecf0a21e}{write\+\_\+character}} (Char\+Type c) override
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1output__string__adapter_aae38554067dbef5006db25256a702416}{write\+\_\+characters}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{s}}, std\+::size\+\_\+t \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{length}}) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{override}}
+void \mbox{\hyperlink{classdetail_1_1output__string__adapter_aae38554067dbef5006db25256a702416}{write\+\_\+characters}} (const Char\+Type \texorpdfstring{$\ast$}{*}s, std\+::size\+\_\+t length) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries output\+\_\+adapter\+\_\+protocol} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&)=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{default}}
+{\bfseries output\+\_\+adapter\+\_\+protocol} (const \mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&)=default
 \item 
-{\bfseries output\+\_\+adapter\+\_\+protocol} (\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&\&) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{default}}
+{\bfseries output\+\_\+adapter\+\_\+protocol} (\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&\&) noexcept=default
 \item 
-\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \& {\bfseries operator=} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&)=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{default}}
+\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \& {\bfseries operator=} (const \mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&)=default
 \item 
-\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \& {\bfseries operator=} (\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&\&) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{default}}
+\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \& {\bfseries operator=} (\mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&\&) noexcept=default
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{String\+Type}} = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$\newline
+\subsubsection*{template$<$typename Char\+Type, typename String\+Type = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$\newline
 class detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}
 output adapter for basic\+\_\+string 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classdetail_1_1output__string__adapter_a15ef2742beddbc80d2468755ecf0a21e}\label{classdetail_1_1output__string__adapter_a15ef2742beddbc80d2468755ecf0a21e} 
-\index{detail::output\_string\_adapter$<$ CharType, StringType $>$@{detail::output\_string\_adapter$<$ CharType, StringType $>$}!write\_character@{write\_character}}
+\Hypertarget{classdetail_1_1output__string__adapter_a15ef2742beddbc80d2468755ecf0a21e}\index{detail::output\_string\_adapter$<$ CharType, StringType $>$@{detail::output\_string\_adapter$<$ CharType, StringType $>$}!write\_character@{write\_character}}
 \index{write\_character@{write\_character}!detail::output\_string\_adapter$<$ CharType, StringType $>$@{detail::output\_string\_adapter$<$ CharType, StringType $>$}}
 \doxysubsubsection{\texorpdfstring{write\_character()}{write\_character()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{String\+Type}}  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1output__string__adapter}{detail\+::output\+\_\+string\+\_\+adapter}}$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{String\+Type}} $>$\+::write\+\_\+character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classdetail_1_1output__string__adapter_a15ef2742beddbc80d2468755ecf0a21e} 
+template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+void \mbox{\hyperlink{classdetail_1_1output__string__adapter}{detail\+::output\+\_\+string\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::write\+\_\+character (\begin{DoxyParamCaption}\item[{Char\+Type}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Implements \mbox{\hyperlink{structdetail_1_1output__adapter__protocol}{detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}.
 
-\Hypertarget{classdetail_1_1output__string__adapter_aae38554067dbef5006db25256a702416}\label{classdetail_1_1output__string__adapter_aae38554067dbef5006db25256a702416} 
-\index{detail::output\_string\_adapter$<$ CharType, StringType $>$@{detail::output\_string\_adapter$<$ CharType, StringType $>$}!write\_characters@{write\_characters}}
+\Hypertarget{classdetail_1_1output__string__adapter_aae38554067dbef5006db25256a702416}\index{detail::output\_string\_adapter$<$ CharType, StringType $>$@{detail::output\_string\_adapter$<$ CharType, StringType $>$}!write\_characters@{write\_characters}}
 \index{write\_characters@{write\_characters}!detail::output\_string\_adapter$<$ CharType, StringType $>$@{detail::output\_string\_adapter$<$ CharType, StringType $>$}}
 \doxysubsubsection{\texorpdfstring{write\_characters()}{write\_characters()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{String\+Type}}  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1output__string__adapter}{detail\+::output\+\_\+string\+\_\+adapter}}$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{String\+Type}} $>$\+::write\+\_\+characters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} \texorpdfstring{$\ast$}{*}}]{s,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classdetail_1_1output__string__adapter_aae38554067dbef5006db25256a702416} 
+template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+void \mbox{\hyperlink{classdetail_1_1output__string__adapter}{detail\+::output\+\_\+string\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::write\+\_\+characters (\begin{DoxyParamCaption}\item[{const Char\+Type \texorpdfstring{$\ast$}{*}}]{s}{, }\item[{std\+::size\+\_\+t}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 

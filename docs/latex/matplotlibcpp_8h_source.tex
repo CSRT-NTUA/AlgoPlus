@@ -2761,16 +2761,16 @@
 \DoxyCodeLine{02769\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
 \DoxyCodeLine{02770\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{is\_callable\_impl}}<true,\ T>}
 \DoxyCodeLine{02771\ \{}
-\DoxyCodeLine{02772\ \ \ \ \ \textcolor{keyword}{struct\ }Fallback\ \{\ \textcolor{keywordtype}{void}\ operator()();\ \};}
-\DoxyCodeLine{02773\ \ \ \ \ \textcolor{keyword}{struct\ }Derived\ :\ T,\ Fallback\ \{\ \};}
+\DoxyCodeLine{02772\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_fallback}{Fallback}}\ \{\ \textcolor{keywordtype}{void}\ operator()();\ \};}
+\DoxyCodeLine{02773\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_derived}{Derived}}\ :\ T,\ \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_fallback}{Fallback}}\ \{\ \};}
 \DoxyCodeLine{02774\ }
-\DoxyCodeLine{02775\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U,\ U>\ \textcolor{keyword}{struct\ }Check;}
+\DoxyCodeLine{02775\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U,\ U>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_check}{Check}};}
 \DoxyCodeLine{02776\ }
 \DoxyCodeLine{02777\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
 \DoxyCodeLine{02778\ \ \ \ \ \textcolor{keyword}{static}\ std::true\_type\ test(\ ...\ );\ \textcolor{comment}{//\ use\ a\ variadic\ function\ to\ make\ sure\ (1)\ it\ accepts\ everything\ and\ (2)\ its\ always\ the\ worst\ match}}
 \DoxyCodeLine{02779\ }
 \DoxyCodeLine{02780\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
-\DoxyCodeLine{02781\ \ \ \ \ \textcolor{keyword}{static}\ std::false\_type\ test(\ Check<\textcolor{keywordtype}{void}(Fallback::*)(),\ \&U::operator()>*\ );}
+\DoxyCodeLine{02781\ \ \ \ \ \textcolor{keyword}{static}\ std::false\_type\ test(\ \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_check}{Check}}<\textcolor{keywordtype}{void}(\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_fallback}{Fallback}}::*)(),\ \&U::operator()>*\ );}
 \DoxyCodeLine{02782\ }
 \DoxyCodeLine{02783\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{02784\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{decltype}(test<Derived>(\textcolor{keyword}{nullptr}))\ type;}
@@ -2854,7 +2854,7 @@
 \DoxyCodeLine{02862\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ A,\ \textcolor{keyword}{typename}\ B,\ \textcolor{keyword}{typename}...\ Args>}
 \DoxyCodeLine{02863\ \textcolor{keywordtype}{bool}\ plot(\textcolor{keyword}{const}\ A\&\ a,\ \textcolor{keyword}{const}\ B\&\ b,\ \textcolor{keyword}{const}\ std::string\&\ format,\ Args...\ args)}
 \DoxyCodeLine{02864\ \{}
-\DoxyCodeLine{02865\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{detail::plot\_impl<typename\ detail::is\_callable<B>::type}}>()(a,b,format)\ \&\&\ plot(args...);}
+\DoxyCodeLine{02865\ \ \ \ \ \textcolor{keywordflow}{return}\ detail::plot\_impl<typename\ detail::is\_callable<B>::type>()(a,b,format)\ \&\&\ plot(args...);}
 \DoxyCodeLine{02866\ \}}
 \DoxyCodeLine{02867\ }
 \DoxyCodeLine{02868\ \textcolor{comment}{/*}}

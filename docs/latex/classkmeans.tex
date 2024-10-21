@@ -80,11 +80,11 @@ int {\bfseries i} = 0
 @ brief Class for the kmeans clustering algorithm 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classkmeans_af696ff45df389c26254937064944e0c5}\label{classkmeans_af696ff45df389c26254937064944e0c5} 
-\index{kmeans@{kmeans}!kmeans@{kmeans}}
+\Hypertarget{classkmeans_af696ff45df389c26254937064944e0c5}\index{kmeans@{kmeans}!kmeans@{kmeans}}
 \index{kmeans@{kmeans}!kmeans@{kmeans}}
 \doxysubsubsection{\texorpdfstring{kmeans()}{kmeans()}}
-{\footnotesize\ttfamily kmeans\+::kmeans (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{data,  }\item[{int}]{K,  }\item[{int64\+\_\+t}]{MAX\+\_\+\+ITER = {\ttfamily 1500} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classkmeans_af696ff45df389c26254937064944e0c5} 
+kmeans\+::kmeans (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{data}{, }\item[{int}]{K}{, }\item[{int64\+\_\+t}]{MAX\+\_\+\+ITER}{ = {\ttfamily 1500}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -102,32 +102,32 @@ Constructor for the kmeans class.
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classkmeans_afbea96aeec84f1fed57e8578235ef605}\label{classkmeans_afbea96aeec84f1fed57e8578235ef605} 
-\index{kmeans@{kmeans}!assign\_to\_closest@{assign\_to\_closest}}
+\Hypertarget{classkmeans_afbea96aeec84f1fed57e8578235ef605}\index{kmeans@{kmeans}!assign\_to\_closest@{assign\_to\_closest}}
 \index{assign\_to\_closest@{assign\_to\_closest}!kmeans@{kmeans}}
 \doxysubsubsection{\texorpdfstring{assign\_to\_closest()}{assign\_to\_closest()}}
-{\footnotesize\ttfamily void kmeans\+::assign\+\_\+to\+\_\+closest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classkmeans_afbea96aeec84f1fed57e8578235ef605} 
+void kmeans\+::assign\+\_\+to\+\_\+closest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-@ brief assign\+\_\+to\+\_\+closest function assigns the closest centroid to point x @ param x\+: the input vector \Hypertarget{classkmeans_a6ce91679a1e1c1ba44a19aedb8ca9a9f}\label{classkmeans_a6ce91679a1e1c1ba44a19aedb8ca9a9f} 
-\index{kmeans@{kmeans}!fit@{fit}}
+@ brief assign\+\_\+to\+\_\+closest function assigns the closest centroid to point x @ param x\+: the input vector \Hypertarget{classkmeans_a6ce91679a1e1c1ba44a19aedb8ca9a9f}\index{kmeans@{kmeans}!fit@{fit}}
 \index{fit@{fit}!kmeans@{kmeans}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$, std\+::map$<$ std\+::vector$<$ double $>$, int64\+\_\+t $>$ $>$ kmeans\+::fit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classkmeans_a6ce91679a1e1c1ba44a19aedb8ca9a9f} 
+std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$, std\+::map$<$ std\+::vector$<$ double $>$, int64\+\_\+t $>$ $>$ kmeans\+::fit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-@ brief fit function @ return pair\texorpdfstring{$<$}{<}vector$<$int64\+\_\+t$>$, map$<$int64\+\_\+t, int$>$ \texorpdfstring{$>$}{>}\+: the centroids and the assignments of the clustering algorithm \Hypertarget{classkmeans_a194cab304acc8a9a7912f8300b95531f}\label{classkmeans_a194cab304acc8a9a7912f8300b95531f} 
-\index{kmeans@{kmeans}!get\_centroid@{get\_centroid}}
+@ brief fit function @ return pair\texorpdfstring{$<$}{<}vector$<$int64\+\_\+t$>$, map$<$int64\+\_\+t, int$>$ \texorpdfstring{$>$}{>}\+: the centroids and the assignments of the clustering algorithm \Hypertarget{classkmeans_a194cab304acc8a9a7912f8300b95531f}\index{kmeans@{kmeans}!get\_centroid@{get\_centroid}}
 \index{get\_centroid@{get\_centroid}!kmeans@{kmeans}}
 \doxysubsubsection{\texorpdfstring{get\_centroid()}{get\_centroid()}}
-{\footnotesize\ttfamily std\+::vector$<$ double $>$ kmeans\+::get\+\_\+centroid (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{cluster }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classkmeans_a194cab304acc8a9a7912f8300b95531f} 
+std\+::vector$<$ double $>$ kmeans\+::get\+\_\+centroid (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{cluster}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 @ brief get\+\_\+centroid function @ param cluster\+: the input cluster @ return vector$<$int$>$\+: the centroid of the cluster 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classkmeans_a9b3e047d9f6812553c2e6c3eb0c3b1fb}\label{classkmeans_a9b3e047d9f6812553c2e6c3eb0c3b1fb} 
-\index{kmeans@{kmeans}!data\_dict@{data\_dict}}
+\Hypertarget{classkmeans_a9b3e047d9f6812553c2e6c3eb0c3b1fb}\index{kmeans@{kmeans}!data\_dict@{data\_dict}}
 \index{data\_dict@{data\_dict}!kmeans@{kmeans}}
 \doxysubsubsection{\texorpdfstring{data\_dict}{data\_dict}}
-{\footnotesize\ttfamily dict kmeans.\+data\+\_\+dict}
+{\footnotesize\ttfamily \label{classkmeans_a9b3e047d9f6812553c2e6c3eb0c3b1fb} 
+dict kmeans.\+data\+\_\+dict}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}

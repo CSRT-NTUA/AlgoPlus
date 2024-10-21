@@ -19,32 +19,32 @@ Inheritance diagram for detail\+::other\+\_\+error\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1other__error_a687565ec69bfdf7a15f9a672038b0f0f}\label{classdetail_1_1other__error_a687565ec69bfdf7a15f9a672038b0f0f} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Basic\+Json\+Context}} , enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structdetail_1_1is__basic__json__context}{is\+\_\+basic\+\_\+json\+\_\+context}}$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Basic\+Json\+Context}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} $>$  = 0$>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} \mbox{\hyperlink{classdetail_1_1other__error}{other\+\_\+error}} {\bfseries create} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{id\+\_\+}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} std\+::string \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{what\+\_\+arg}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Basic\+Json\+Context}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{context}})
+{\footnotesize template$<$typename Basic\+Json\+Context , enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structdetail_1_1is__basic__json__context}{is\+\_\+basic\+\_\+json\+\_\+context}}$<$ Basic\+Json\+Context $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\static \mbox{\hyperlink{classdetail_1_1other__error}{other\+\_\+error}} {\bfseries create} (int id\+\_\+, const std\+::string \&what\+\_\+arg, Basic\+Json\+Context context)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdetail_1_1exception}{detail\+::exception}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} \texorpdfstring{$\ast$}{*} {\bfseries what} () \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{override}}
+const char \texorpdfstring{$\ast$}{*} {\bfseries what} () const noexcept override
 \begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdetail_1_1exception}{detail\+::exception}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} {\bfseries id}
+const int {\bfseries id}
 \begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classdetail_1_1exception}{detail\+::exception}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries exception} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{id\+\_\+}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{what\+\_\+arg}})
+{\bfseries exception} (int id\+\_\+, const char \texorpdfstring{$\ast$}{*}what\+\_\+arg)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classdetail_1_1exception}{detail\+::exception}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} std\+::string {\bfseries name} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} std\+::string \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{ename}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{id\+\_\+}})
+static std\+::string {\bfseries name} (const std\+::string \&ename, int id\+\_\+)
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} std\+::string {\bfseries diagnostics} (std\+::nullptr\+\_\+t)
+static std\+::string {\bfseries diagnostics} (std\+::nullptr\+\_\+t)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type $>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} std\+::string {\bfseries diagnostics} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{leaf\+\_\+element}})
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static std\+::string {\bfseries diagnostics} (const Basic\+Json\+Type \texorpdfstring{$\ast$}{*}leaf\+\_\+element)
 \end{DoxyCompactItemize}
 
 

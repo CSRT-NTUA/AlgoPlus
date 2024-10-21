@@ -19,31 +19,31 @@ Inheritance diagram for detail\+::exception\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1exception_ae75d7315f5f2d85958da6d961375caf0}\label{classdetail_1_1exception_ae75d7315f5f2d85958da6d961375caf0} 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} \texorpdfstring{$\ast$}{*} {\bfseries what} () \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{override}}
+const char \texorpdfstring{$\ast$}{*} {\bfseries what} () const noexcept override
 \begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24}\label{classdetail_1_1exception_a63b819fbb2ef34df9dad1e309207fa24} 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} {\bfseries id}
+const int {\bfseries id}
 \begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0}\label{classdetail_1_1exception_a528d6bc77e88490bbb84cde2222b7ff0} 
-{\bfseries exception} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{id\+\_\+}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{what\+\_\+arg}})
+{\bfseries exception} (int id\+\_\+, const char \texorpdfstring{$\ast$}{*}what\+\_\+arg)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b}\label{classdetail_1_1exception_a8f1eb56b9964c8dd84d89d0da98d883b} 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} std\+::string {\bfseries name} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} std\+::string \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{ename}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{int}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{id\+\_\+}})
+static std\+::string {\bfseries name} (const std\+::string \&ename, int id\+\_\+)
 \item 
 \Hypertarget{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120}\label{classdetail_1_1exception_a6b4a786b5c1c25dd3edaceb1bf2d5120} 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} std\+::string {\bfseries diagnostics} (std\+::nullptr\+\_\+t)
+static std\+::string {\bfseries diagnostics} (std\+::nullptr\+\_\+t)
 \item 
 \Hypertarget{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80}\label{classdetail_1_1exception_af3739c53fe56a1712754d13dfa561f80} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type $>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} std\+::string {\bfseries diagnostics} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{leaf\+\_\+element}})
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static std\+::string {\bfseries diagnostics} (const Basic\+Json\+Type \texorpdfstring{$\ast$}{*}leaf\+\_\+element)
 \end{DoxyCompactItemize}
 
 

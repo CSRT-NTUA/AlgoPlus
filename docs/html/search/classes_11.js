@@ -10,5 +10,7 @@ var searchData=
   ['resultdisposition_7',['ResultDisposition',['../struct_catch_1_1_result_disposition.html',1,'Catch']]],
   ['resultwas_8',['ResultWas',['../struct_catch_1_1_result_was.html',1,'Catch']]],
   ['reusablestringstream_9',['ReusableStringStream',['../class_catch_1_1_reusable_string_stream.html',1,'Catch']]],
-  ['runtests_10',['RunTests',['../struct_catch_1_1_run_tests.html',1,'Catch']]]
+  ['rmq_10',['RMQ',['../struct_r_m_q.html',1,'']]],
+  ['rope_11',['rope',['../classrope.html',1,'']]],
+  ['runtests_12',['RunTests',['../struct_catch_1_1_run_tests.html',1,'Catch']]]
 ];

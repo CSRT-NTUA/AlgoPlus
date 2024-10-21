@@ -12,45 +12,45 @@ serialization to CBOR and Message\+Pack values
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classdetail_1_1binary__writer_a5b4f1bfcd0f3f7b57060c059e008c45b}{binary\+\_\+writer}} (\mbox{\hyperlink{namespacedetail_a558c0470e929e42aad8be2527da6c033}{output\+\_\+adapter\+\_\+t}}$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{adapter}})
+\mbox{\hyperlink{classdetail_1_1binary__writer_a5b4f1bfcd0f3f7b57060c059e008c45b}{binary\+\_\+writer}} (\mbox{\hyperlink{namespacedetail_a558c0470e929e42aad8be2527da6c033}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$ adapter)
 \begin{DoxyCompactList}\small\item\em create a binary writer \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer_a1aae361b7492825979cbb80245b9c0d6}{write\+\_\+bson}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}})
+void \mbox{\hyperlink{classdetail_1_1binary__writer_a1aae361b7492825979cbb80245b9c0d6}{write\+\_\+bson}} (const Basic\+Json\+Type \&j)
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer_ae6ab36b61e8ad346e75d9f9abc983d4c}{write\+\_\+cbor}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}})
+void \mbox{\hyperlink{classdetail_1_1binary__writer_ae6ab36b61e8ad346e75d9f9abc983d4c}{write\+\_\+cbor}} (const Basic\+Json\+Type \&j)
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer_adc3dbefa80134d3530a1b3f1c9629586}{write\+\_\+msgpack}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}})
+void \mbox{\hyperlink{classdetail_1_1binary__writer_adc3dbefa80134d3530a1b3f1c9629586}{write\+\_\+msgpack}} (const Basic\+Json\+Type \&j)
 \item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer_a972bec9688cbc5673bb482bbe9543e2a}{write\+\_\+ubjson}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{j}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{use\+\_\+count}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{use\+\_\+type}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{add\+\_\+prefix}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{use\+\_\+bjdata}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{false}})
+void \mbox{\hyperlink{classdetail_1_1binary__writer_a972bec9688cbc5673bb482bbe9543e2a}{write\+\_\+ubjson}} (const Basic\+Json\+Type \&j, const bool use\+\_\+count, const bool use\+\_\+type, const bool add\+\_\+prefix=true, const bool use\+\_\+bjdata=false)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906}\label{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}}  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+signed$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{constexpr}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} {\bfseries to\+\_\+char\+\_\+type} (std\+::uint8\+\_\+t x) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}
+{\footnotesize template$<$typename C  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ char $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static constexpr Char\+Type {\bfseries to\+\_\+char\+\_\+type} (std\+::uint8\+\_\+t x) noexcept
 \item 
 \Hypertarget{classdetail_1_1binary__writer_a4bc03434de56f9c9afd24702922a7ec8}\label{classdetail_1_1binary__writer_a4bc03434de56f9c9afd24702922a7ec8} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}}  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+signed$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+unsigned$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} {\bfseries to\+\_\+char\+\_\+type} (std\+::uint8\+\_\+t x) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}
+{\footnotesize template$<$typename C  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+unsigned$<$ char $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static Char\+Type {\bfseries to\+\_\+char\+\_\+type} (std\+::uint8\+\_\+t x) noexcept
 \item 
 \Hypertarget{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906}\label{classdetail_1_1binary__writer_a2822d4a58bbb0dc2198686da430e8906} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}}  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+unsigned$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{constexpr}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} {\bfseries to\+\_\+char\+\_\+type} (std\+::uint8\+\_\+t x) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}
+{\footnotesize template$<$typename C  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+unsigned$<$ C $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static constexpr Char\+Type {\bfseries to\+\_\+char\+\_\+type} (std\+::uint8\+\_\+t x) noexcept
 \item 
 \Hypertarget{classdetail_1_1binary__writer_a91bfd3642a0f90c295f9ce79c9447be9}\label{classdetail_1_1binary__writer_a91bfd3642a0f90c295f9ce79c9447be9} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Char\+Type}} , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}}  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+signed$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{C}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}} $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+same$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{char}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} std\+::remove\+\_\+cv$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Char\+Type}} $>$\+::type $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{static}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{constexpr}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} {\bfseries to\+\_\+char\+\_\+type} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Char\+Type}} x) \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{noexcept}}
+{\footnotesize template$<$typename Input\+Char\+Type , typename C  = Char\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ char $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\mbox{\hyperlink{namespacedetail_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static constexpr Char\+Type {\bfseries to\+\_\+char\+\_\+type} (Input\+Char\+Type x) noexcept
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}}$>$\newline
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Char\+Type$>$\newline
 class detail\+::binary\+\_\+writer$<$ Basic\+Json\+Type, Char\+Type $>$}
 serialization to CBOR and Message\+Pack values 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classdetail_1_1binary__writer_a5b4f1bfcd0f3f7b57060c059e008c45b}\label{classdetail_1_1binary__writer_a5b4f1bfcd0f3f7b57060c059e008c45b} 
-\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!binary\_writer@{binary\_writer}}
+\Hypertarget{classdetail_1_1binary__writer_a5b4f1bfcd0f3f7b57060c059e008c45b}\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!binary\_writer@{binary\_writer}}
 \index{binary\_writer@{binary\_writer}!detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
 \doxysubsubsection{\texorpdfstring{binary\_writer()}{binary\_writer()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$ \\
-\mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$\+::binary\+\_\+writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a558c0470e929e42aad8be2527da6c033}{output\+\_\+adapter\+\_\+t}}$<$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$}]{adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{classdetail_1_1binary__writer_a5b4f1bfcd0f3f7b57060c059e008c45b} 
+template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+\mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::binary\+\_\+writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a558c0470e929e42aad8be2527da6c033}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$}]{adapter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -64,12 +64,12 @@ create a binary writer
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classdetail_1_1binary__writer_a1aae361b7492825979cbb80245b9c0d6}\label{classdetail_1_1binary__writer_a1aae361b7492825979cbb80245b9c0d6} 
-\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson@{write\_bson}}
+\Hypertarget{classdetail_1_1binary__writer_a1aae361b7492825979cbb80245b9c0d6}\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson@{write\_bson}}
 \index{write\_bson@{write\_bson}!detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
 \doxysubsubsection{\texorpdfstring{write\_bson()}{write\_bson()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$\+::write\+\_\+bson (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classdetail_1_1binary__writer_a1aae361b7492825979cbb80245b9c0d6} 
+template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -79,36 +79,36 @@ create a binary writer
 \begin{DoxyPrecond}{Precondition}
 j.\+type() == \doxylink{namespacedetail_a917c3efabea8a20dc72d9ae2c673d632aa8cfde6331bd59eb2ac96f8911c4b666}{value\+\_\+t\+::object} 
 \end{DoxyPrecond}
-\Hypertarget{classdetail_1_1binary__writer_ae6ab36b61e8ad346e75d9f9abc983d4c}\label{classdetail_1_1binary__writer_ae6ab36b61e8ad346e75d9f9abc983d4c} 
-\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_cbor@{write\_cbor}}
+\Hypertarget{classdetail_1_1binary__writer_ae6ab36b61e8ad346e75d9f9abc983d4c}\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_cbor@{write\_cbor}}
 \index{write\_cbor@{write\_cbor}!detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
 \doxysubsubsection{\texorpdfstring{write\_cbor()}{write\_cbor()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$\+::write\+\_\+cbor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classdetail_1_1binary__writer_ae6ab36b61e8ad346e75d9f9abc983d4c} 
+template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+cbor (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classdetail_1_1binary__writer_adc3dbefa80134d3530a1b3f1c9629586}\label{classdetail_1_1binary__writer_adc3dbefa80134d3530a1b3f1c9629586} 
-\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_msgpack@{write\_msgpack}}
+\Hypertarget{classdetail_1_1binary__writer_adc3dbefa80134d3530a1b3f1c9629586}\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_msgpack@{write\_msgpack}}
 \index{write\_msgpack@{write\_msgpack}!detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
 \doxysubsubsection{\texorpdfstring{write\_msgpack()}{write\_msgpack()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$\+::write\+\_\+msgpack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classdetail_1_1binary__writer_adc3dbefa80134d3530a1b3f1c9629586} 
+template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+msgpack (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classdetail_1_1binary__writer_a972bec9688cbc5673bb482bbe9543e2a}\label{classdetail_1_1binary__writer_a972bec9688cbc5673bb482bbe9543e2a} 
-\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_ubjson@{write\_ubjson}}
+\Hypertarget{classdetail_1_1binary__writer_a972bec9688cbc5673bb482bbe9543e2a}\index{detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_ubjson@{write\_ubjson}}
 \index{write\_ubjson@{write\_ubjson}!detail::binary\_writer$<$ BasicJsonType, CharType $>$@{detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
 \doxysubsubsection{\texorpdfstring{write\_ubjson()}{write\_ubjson()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Char\+Type}} $>$\+::write\+\_\+ubjson (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} Basic\+Json\+Type \&}]{j,  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{use\+\_\+count,  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{use\+\_\+type,  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{add\+\_\+prefix = {\ttfamily \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}}},  }\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{use\+\_\+bjdata = {\ttfamily \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{false}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classdetail_1_1binary__writer_a972bec9688cbc5673bb482bbe9543e2a} 
+template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classdetail_1_1binary__writer}{detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+ubjson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j}{, }\item[{const bool}]{use\+\_\+count}{, }\item[{const bool}]{use\+\_\+type}{, }\item[{const bool}]{add\+\_\+prefix}{ = {\ttfamily true}, }\item[{const bool}]{use\+\_\+bjdata}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}[1]{Parameters}

@@ -13,31 +13,31 @@ syntax analysis
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classdetail_1_1parser_a4bb9ea1b0fddb8f46ff987bbf9e54045}\label{classdetail_1_1parser_a4bb9ea1b0fddb8f46ff987bbf9e54045} 
-{\bfseries parser} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} \&\&\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{adapter}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} parser\+\_\+callback\+\_\+t$<$ Basic\+Json\+Type $>$ \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{cb}}=nullptr, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{allow\+\_\+exceptions\+\_\+}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}}, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{skip\+\_\+comments}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{false}})
+{\bfseries parser} (Input\+Adapter\+Type \&\&adapter, const parser\+\_\+callback\+\_\+t$<$ Basic\+Json\+Type $>$ cb=nullptr, const bool allow\+\_\+exceptions\+\_\+=true, const bool skip\+\_\+comments=false)
 \begin{DoxyCompactList}\small\item\em a parser reading from an input adapter \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f}{parse}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}, Basic\+Json\+Type \&result)
+void \mbox{\hyperlink{classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f}{parse}} (const bool \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}, Basic\+Json\+Type \&result)
 \begin{DoxyCompactList}\small\item\em public parser interface \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6}{accept}} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}})
+bool \mbox{\hyperlink{classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6}{accept}} (const bool \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}=true)
 \begin{DoxyCompactList}\small\item\em public accept interface \end{DoxyCompactList}\item 
 \Hypertarget{classdetail_1_1parser_ae9084759356689163fee9ae37e69b050}\label{classdetail_1_1parser_ae9084759356689163fee9ae37e69b050} 
-{\footnotesize template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}} $>$ }\\\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} {\bfseries sax\+\_\+parse} (\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{SAX}} \texorpdfstring{$\ast$}{*}sax, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}=\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}})
+{\footnotesize template$<$typename SAX $>$ }\\bool {\bfseries sax\+\_\+parse} (SAX \texorpdfstring{$\ast$}{*}sax, const bool \mbox{\hyperlink{namespacedetail_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792}{strict}}=true)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}}$>$\newline
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Input\+Adapter\+Type$>$\newline
 class detail\+::parser$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$}
 syntax analysis 
 
 This class implements a recursive descent parser. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6}\label{classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6} 
-\index{detail::parser$<$ BasicJsonType, InputAdapterType $>$@{detail::parser$<$ BasicJsonType, InputAdapterType $>$}!accept@{accept}}
+\Hypertarget{classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6}\index{detail::parser$<$ BasicJsonType, InputAdapterType $>$@{detail::parser$<$ BasicJsonType, InputAdapterType $>$}!accept@{accept}}
 \index{accept@{accept}!detail::parser$<$ BasicJsonType, InputAdapterType $>$@{detail::parser$<$ BasicJsonType, InputAdapterType $>$}}
 \doxysubsubsection{\texorpdfstring{accept()}{accept()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} $>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}} \mbox{\hyperlink{classdetail_1_1parser}{detail\+::parser}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} $>$\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{strict = {\ttfamily \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6} 
+template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+bool \mbox{\hyperlink{classdetail_1_1parser}{detail\+::parser}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::accept (\begin{DoxyParamCaption}\item[{const bool}]{strict}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -51,12 +51,12 @@ public accept interface
 \begin{DoxyReturn}{Returns}
 whether the input is a proper JSON text 
 \end{DoxyReturn}
-\Hypertarget{classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f}\label{classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f} 
-\index{detail::parser$<$ BasicJsonType, InputAdapterType $>$@{detail::parser$<$ BasicJsonType, InputAdapterType $>$}!parse@{parse}}
+\Hypertarget{classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f}\index{detail::parser$<$ BasicJsonType, InputAdapterType $>$@{detail::parser$<$ BasicJsonType, InputAdapterType $>$}!parse@{parse}}
 \index{parse@{parse}!detail::parser$<$ BasicJsonType, InputAdapterType $>$@{detail::parser$<$ BasicJsonType, InputAdapterType $>$}}
 \doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} Basic\+Json\+Type , \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{typename}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} $>$ \\
-\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{void}} \mbox{\hyperlink{classdetail_1_1parser}{detail\+::parser}}$<$ Basic\+Json\+Type, \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{Input\+Adapter\+Type}} $>$\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{const}} \mbox{\hyperlink{namespacedetail_a9dd43d16a6a490b032ceaca358755a29}{bool}}}]{strict,  }\item[{Basic\+Json\+Type \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f} 
+template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+void \mbox{\hyperlink{classdetail_1_1parser}{detail\+::parser}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::parse (\begin{DoxyParamCaption}\item[{const bool}]{strict}{, }\item[{Basic\+Json\+Type \&}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

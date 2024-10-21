@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['linear_20regression_20class_0',['Mini tutorial for linear regression class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2regression_2linear__regression.html',1,'']]],
-  ['linked_20list_20class_1',['linked list class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2circular__linked__list.html',1,'Mini tutorial for circular linked list class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2doubly__linked__list.html',1,'Mini tutorial for doubly linked list class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2linked__list.html',1,'Mini tutorial for single linked list class']]],
-  ['list_2',['Deprecated List',['../deprecated.html',1,'']]],
-  ['list_20class_3',['list class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2circular__linked__list.html',1,'Mini tutorial for circular linked list class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2doubly__linked__list.html',1,'Mini tutorial for doubly linked list class'],['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2linked__list.html',1,'Mini tutorial for single linked list class']]],
-  ['list_20class_4',['Mini Tutorial for the Skip List class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2list_2skip__list.html',1,'']]]
+  ['hash_5ftable_20class_0',['Mini Tutorial for the hash_table class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2others_2hash__table.html',1,'']]],
+  ['heaps_1',['bubble: A new data structure based on the idea of fibonacci heaps',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2src_2extra_2containers_2bubble_2_r_e_a_d_m_e.html',1,'']]],
+  ['helper_20folder_2',['Mini tutorial for the helper folder',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2helpers_2helpers.html',1,'']]],
+  ['huffman_20coding_20class_3',['Mini tutorial for huffman coding class',['../md__2_users_2spirosmag_2_documents_2_algo_plus_2tutorial_2image_2encoders_2huffman__coding.html',1,'']]]
 ];
