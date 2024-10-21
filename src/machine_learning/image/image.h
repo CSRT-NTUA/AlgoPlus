@@ -1,6 +1,7 @@
 #ifndef img_H
 #define img_H
 
+#include <cinttypes>
 #ifdef __cplusplus
 #include <iostream>
 #include <vector>
@@ -274,11 +275,11 @@ public:
   }
 
   /**
-  * @brief apply_filter2d_float function
+  * @brief apply_filter2d function
   * @param filter: 3x3 kernel with floats to be applied to the image
   * @return vector<vector<int32_t> > the resulted image
   */
-  Image apply_filter2d_float(std::vector<std::vector<float> > &filter) const {
+  Image apply_filter2d(std::vector<std::vector<float> > &filter) const {
     assert(filter.size() == 3 && filter[0].size() == 3);
     Image resulted_img(height, width);
     for(int x = 0; x<height; x++){
@@ -311,6 +312,37 @@ public:
       }
     }
     return resulted_img;
+  }
+
+  /**
+  * @brief overloaded operator << for Image class
+  */
+  friend std::ostream & operator << (std::ostream &out, const Image &img) {
+      int height = img._height(), width = img._width();
+
+      auto write = [&](const int &start_at, const int &end_at) -> void {
+        for(int i = start_at; i<=end_at && i<height; i++) {
+            int j = 0;
+            for(; j<=10 && j<width; j++) {
+                if(j != std::min(10, width - 1)) {
+                    out << img.get_point(i, j) << ", ";
+                }
+                else {
+                    out << img.get_point(i, j);
+                }
+            }
+            out << '\n';
+        }
+      };
+
+      out << '[';
+      write(0, 2);
+      out << "...";
+      out << '\n';
+      write(height - 3, height - 1);
+      out << "(height: " << height << ", width: " << width << ')' << ']';
+      out << '\n';
+      return out;
   }
 };
 #endif

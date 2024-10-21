@@ -23,7 +23,7 @@ namespace avg_filter {
     int width = img._width();
     Image resulted_img(height, width);
     std::vector<std::vector<float> > kernel = {{1.0/9, 1.0/9, 1.0/9}, {1.0/9, 1.0/9, 1.0/9}, {1.0/9, 1.0/9, 1.0/9}};
-    return img.apply_filter2d_float(kernel).get_2d_array();
+    return img.apply_filter2d(kernel).get_2d_array();
   }
 }
 
