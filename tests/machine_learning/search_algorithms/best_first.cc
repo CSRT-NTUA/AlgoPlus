@@ -13,6 +13,22 @@ TEST_CASE("testing edges with insertion for best first class"){
   REQUIRE(h.has_edge(0, 3) == false);
 }
 
+TEST_CASE("Testing default constructor of best first with passed adjacency list") {
+    std::unordered_map<int, std::vector<std::pair<int, double> > > adj;
+    std::unordered_map<int, double> nodes;
+
+    nodes[0] = INT_MAX;
+    nodes[1] = 10;
+    nodes[2] = 20;
+    nodes[3] = 10;
+
+    adj[0].push_back({1, nodes[1]});
+
+    best_first<int> h(adj, nodes);
+    REQUIRE(h.has_edge(0, 1) == true);
+    REQUIRE(h.has_edge(0, 3) == false);
+    REQUIRE(h.has_edge(1, 0) == false);
+}
 
 TEST_CASE("testing search function for best_first class"){
   best_first<char> h;
@@ -52,3 +68,19 @@ TEST_CASE("testing search function for best_first class"){
 }
 
 
+TEST_CASE("Testing throws on add_edge for best first function") {
+    std::unordered_map<int, std::vector<std::pair<int, double> > > adj;
+    std::unordered_map<int, double> nodes;
+
+    nodes[0] = INT_MAX;
+    nodes[1] = 10;
+    nodes[2] = 20;
+    nodes[3] = 10;
+
+    adj[0].push_back({1, nodes[1]});
+
+    best_first<int> h(adj, nodes);
+
+    CHECK_NOTHROW(h.add_edge(10, 20));
+    CHECK_NOTHROW(h.add_edge(0, 1));
+}
