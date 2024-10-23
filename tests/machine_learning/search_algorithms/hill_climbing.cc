@@ -13,6 +13,23 @@ TEST_CASE("testing edges with insertion for hill climbing class"){
   REQUIRE(h.has_edge(0, 3) == false);
 }
 
+TEST_CASE("Testing default constructor of hill climbing") {
+    std::unordered_map<int, double> node;
+    std::unordered_map<int, std::vector<std::pair<int, double> > > adj;
+
+    node[0] = INT_MAX;
+    node[1] = 10;
+    node[2] = 20;
+    node[3] = 10;
+
+    adj[0].push_back({1, node[1]});
+
+    hill_climbing<int> h(adj, node);
+
+    REQUIRE(h.has_edge(0, 1) == true);
+    REQUIRE(h.has_edge(0, 3) == false);
+}
+
 TEST_CASE("testing search function for hill climbing class"){
   hill_climbing<char> h;
   h.insert_node('s', INT_MAX);
@@ -49,5 +66,3 @@ TEST_CASE("testing search function for hill climbing class"){
 
   REQUIRE(h2.search('s', 'G') == false);
 }
-
-

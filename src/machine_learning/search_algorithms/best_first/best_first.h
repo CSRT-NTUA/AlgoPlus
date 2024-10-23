@@ -1,5 +1,5 @@
-#ifndef BEST_FIRST_H 
-#define BEST_FIRST_H 
+#ifndef BEST_FIRST_H
+#define BEST_FIRST_H
 
 #ifdef __cplusplus
 #include <iostream>
@@ -13,9 +13,9 @@
 */
 template <typename T> class best_first{
 private:
-  std::unordered_map<T, std::vector<std::pair<T, double> > > adj; 
+  std::unordered_map<T, std::vector<std::pair<T, double> > > adj;
   std::unordered_map<T, double> nodes;
-  
+
 public:
 
   /**
@@ -39,7 +39,7 @@ public:
       std::cerr << e.what() << '\n';
     }
   }
-  
+
   /**
   * @brief insert_node function
   * @param u: the node ID
@@ -67,7 +67,7 @@ public:
     }
     return false;
   }
- 
+
   /**
    * @brief add_edge function
    * @param u: the first node
@@ -86,7 +86,7 @@ public:
       std::cerr << e.what() << '\n';
     }
   }
-  
+
   /**
    * @brief search function
    * @param start: starting node
@@ -124,4 +124,3 @@ public:
 
 
 #endif
-

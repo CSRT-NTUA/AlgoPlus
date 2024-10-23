@@ -14,22 +14,26 @@
 */
 template <typename T> class hill_climbing{
 private:
-  std::unordered_map<T, std::vector<std::pair<T, double> > > adj; 
+  std::unordered_map<T, std::vector<std::pair<T, double> > > adj;
   std::unordered_map<T, double> nodes;
-  
+
 public:
 
   /**
    * @brief hill_climbing constructor
-   * @param v: unordered_map<T, pair<T, int64_t> > initializer vector. Default = {}
-   *
+   * @param v: unordered_map<T, pair<T, double> > initializer vector. Default = {}
+   * @param nodes: unordered_map<T, double> initializer values for the nodes. Default = {}
    */
-  explicit hill_climbing(std::unordered_map<T, std::vector<std::pair<T, double> > > v = {}){
-    if(!v.empty()){
+  explicit hill_climbing(std::unordered_map<T, std::vector<std::pair<T, double> > > v = {},
+                         std::unordered_map<T, double> nodes = {}){
+    if(!v.empty()) {
       this->adj = v;
     }
+    if(!nodes.empty()) {
+        this->nodes = nodes;
+    }
   }
-  
+
   /**
   * @brief insert_node function
   * @param u: the node ID
@@ -57,7 +61,7 @@ public:
     }
     return false;
   }
- 
+
   /**
    * @brief add_edge function
    * @param u: the first node
@@ -76,7 +80,7 @@ public:
       std::cerr << e.what() << '\n';
     }
   }
-  
+
   /**
    * @brief search function
    * @param start: starting node
