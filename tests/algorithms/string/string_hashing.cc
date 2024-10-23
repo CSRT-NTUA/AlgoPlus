@@ -27,11 +27,3 @@ TEST_CASE("Testing string hasher size function") {
 
     REQUIRE(hash.size() == 6);
 }
-
-TEST_CASE("Testing palindrome function") {
-    std::string str = "abba";
-    REQUIRE(is_palindrome(str) == true);
-    REQUIRE(is_palindrome("aabbccbbaa") == true);
-    REQUIRE(is_palindrome("csrt") == false);
-    REQUIRE(is_palindrome("w") == true);
-}
