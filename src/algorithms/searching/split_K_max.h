@@ -1,7 +1,13 @@
+#ifndef SPLIT_K_MAX_H
+#define SPLIT_K_MAX_H
+
+#ifdef __cplusplus
 #include <iostream>
 #include <numeric>
 #include <vector>
 #include <algorithm>
+#include <climits>
+#endif
 
 namespace helpers {
     /**
@@ -59,3 +65,5 @@ int minimum_max_sub_sum(std::vector<int> &v, int K) {
 
     return ans;
 }
+
+#endif

@@ -1,5 +1,4 @@
-#define CATCH_CONFIG_MAIN
-#include "../../../src/algorithms/advanced/split_K_max.h"
+#include "../../../src/algorithms/searching/split_K_max.h"
 #include "../../../third_party/catch.hpp"
 
 TEST_CASE("Testing split_K_max [1]") {

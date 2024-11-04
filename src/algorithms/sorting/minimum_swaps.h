@@ -6,6 +6,7 @@
 #include <vector>
 #include <cassert>
 #include <map>
+#include <algorithm>
 #endif
 
 /**
