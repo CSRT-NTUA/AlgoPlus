@@ -170,10 +170,15 @@ TEST_CASE("Testing searching for issue #88") {
     l4.erase(3);
     REQUIRE(l4.search(3) == false);
     l4.push_back(3);
-    for(auto it = l4.begin(); it != l4.end(); it++) {
-        std::cout << *(it) << ' ';
-    }
     REQUIRE(l4.search(3) == true);
+    l4.erase(3);
+    l4.erase(2);
+    REQUIRE(l4.search(2) == false);
+    l4.push_back(2);
+    REQUIRE(l4.search(2) == true);
+    l4.erase(2);
+    l4.push_front(2);
+    REQUIRE(l4.search(2) == true);
 }
 
 
