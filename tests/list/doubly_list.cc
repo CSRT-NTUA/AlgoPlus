@@ -153,7 +153,6 @@ TEST_CASE("Testing searching for issue #88") {
     for(auto it = l2.begin(); it != l2.end(); it++) {
         REQUIRE(*(it) == check[idx++]);
     }
-    std::cout << "im here as well" << '\n';
 
     // Bug in erase method
     doubly_linked_list<int> l3({1, 2, 3});
@@ -166,6 +165,15 @@ TEST_CASE("Testing searching for issue #88") {
     for(auto it = l3.begin(); it != l3.end(); it++) {
         REQUIRE(*(it) == check[idx++]);
     }
+
+    doubly_linked_list<int> l4({1, 2, 3});
+    l4.erase(3);
+    REQUIRE(l4.search(3) == false);
+    l4.push_back(3);
+    for(auto it = l4.begin(); it != l4.end(); it++) {
+        std::cout << *(it) << ' ';
+    }
+    REQUIRE(l4.search(3) == true);
 }
 
 
