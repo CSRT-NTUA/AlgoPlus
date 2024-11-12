@@ -179,6 +179,12 @@ TEST_CASE("Testing searching for issue #88") {
     l4.erase(2);
     l4.push_front(2);
     REQUIRE(l4.search(2) == true);
+
+    doubly_linked_list<int> l5({1, 2, 3});
+    l5.erase(1);
+    REQUIRE(l5.search(1) == false);
+    l5.erase(3);
+    REQUIRE(l5.search(3) == false);
 }
 
 
