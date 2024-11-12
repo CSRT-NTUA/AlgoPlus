@@ -164,13 +164,10 @@ template <typename T> bool doubly_linked_list<T>::search(T key) {
     return false;
   } else {
     std::shared_ptr<node> t = root;
-    while (t != tail && t->val != key) {
+    while (t != nullptr && t->val != key) {
       t = t->next;
     }
-    if (t == tail || t == nullptr) {
-      return false;
-    }
-    return true;
+    return (t == nullptr || t->val != key) ? false : true;
   }
   return false;
 }
@@ -195,6 +192,9 @@ template <typename T> void doubly_linked_list<T>::push_front(T key) {
   p->prev = nullptr;
   if (root != nullptr) {
     root->prev = p;
+  }
+  if(tail == nullptr) {
+    tail = p;
   }
   root = p;
   _size++;
