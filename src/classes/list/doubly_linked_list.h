@@ -164,27 +164,24 @@ template <typename T> bool doubly_linked_list<T>::search(T key) {
     return false;
   } else {
     std::shared_ptr<node> t = root;
-    while (t != tail && t->val != key) {
+    while (t != nullptr && t->val != key) {
       t = t->next;
     }
-    if (t == tail || t == nullptr) {
-      return false;
-    }
-    return true;
+    return (t == nullptr || t->val != key) ? false : true;
   }
   return false;
 }
 
 template <typename T> void doubly_linked_list<T>::push_back(T key) {
   std::shared_ptr<node> p = std::make_shared<node>(key);
-  if (root == nullptr) {
-    root = p;
-  }
+  p->prev = tail;
+  p->next = nullptr;
   if (tail != nullptr) {
     tail->next = p;
   }
-  p->next = nullptr;
-  p->prev = tail;
+  if (root == nullptr) {
+    root = p;
+  }
   tail = p;
   _size++;
 }
@@ -196,6 +193,9 @@ template <typename T> void doubly_linked_list<T>::push_front(T key) {
   if (root != nullptr) {
     root->prev = p;
   }
+  if(tail == nullptr) {
+    tail = p;
+  }
   root = p;
   _size++;
 }
@@ -203,9 +203,6 @@ template <typename T> void doubly_linked_list<T>::push_front(T key) {
 template <typename T> void doubly_linked_list<T>::erase(T key) {
   if (root == nullptr) {
     return;
-  }
-  if (root->val == key) {
-    root = root->next;
   }
   std::shared_ptr<node> head = root;
   while (head && head->val != key) {
@@ -215,9 +212,15 @@ template <typename T> void doubly_linked_list<T>::erase(T key) {
     return;
   }
   if (head->next != nullptr) {
+    if(head == root) {
+        root = root -> next;
+    }
     head->next->prev = head->prev;
   }
   if (head->prev != nullptr) {
+    if(head == tail) {
+        tail = tail->prev;
+    }
     head->prev->next = head->next;
   }
 }
