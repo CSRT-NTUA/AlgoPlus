@@ -204,9 +204,6 @@ template <typename T> void doubly_linked_list<T>::erase(T key) {
   if (root == nullptr) {
     return;
   }
-  if (root->val == key) {
-    root = root->next;
-  }
   std::shared_ptr<node> head = root;
   while (head && head->val != key) {
     head = head->next;
