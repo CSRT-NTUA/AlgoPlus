@@ -131,6 +131,63 @@ TEST_CASE("testing operator = in doubly list") {
   REQUIRE(v2 == v);
 }
 
+TEST_CASE("Testing searching for issue #88") {
+    // Bug in search method
+    doubly_linked_list<int> l({1, 2, 3, 4});
+    REQUIRE(l.search(4) == true);
+    doubly_linked_list<char> ll({'a', 'b', 'c', 'd', 'e'});
+    REQUIRE(ll.search('e') == true);
+    ll.erase('e');
+    REQUIRE(ll.search('e') == false);
+    REQUIRE(ll.search('d') == true);
+    ll.erase('d');
+    REQUIRE(ll.search('d') == false);
+
+    // Bug in push_front method
+    doubly_linked_list<int> l2;
+    l2.push_front(1);
+    l2.push_back(2);
+    l2.push_back(3);
+    std::vector<int> check = {1, 2, 3};
+    int idx = 0;
+    for(auto it = l2.begin(); it != l2.end(); it++) {
+        REQUIRE(*(it) == check[idx++]);
+    }
+
+    // Bug in erase method
+    doubly_linked_list<int> l3({1, 2, 3});
+    l3.erase(3);
+    l3.push_back(4);
+    l3.push_back(5);
+    check.clear();
+    check = {1, 2, 4, 5};
+    idx = 0;
+    for(auto it = l3.begin(); it != l3.end(); it++) {
+        REQUIRE(*(it) == check[idx++]);
+    }
+
+    doubly_linked_list<int> l4({1, 2, 3});
+    l4.erase(3);
+    REQUIRE(l4.search(3) == false);
+    l4.push_back(3);
+    REQUIRE(l4.search(3) == true);
+    l4.erase(3);
+    l4.erase(2);
+    REQUIRE(l4.search(2) == false);
+    l4.push_back(2);
+    REQUIRE(l4.search(2) == true);
+    l4.erase(2);
+    l4.push_front(2);
+    REQUIRE(l4.search(2) == true);
+
+    doubly_linked_list<int> l5({1, 2, 3});
+    l5.erase(1);
+    REQUIRE(l5.search(1) == false);
+    l5.erase(3);
+    REQUIRE(l5.search(3) == false);
+}
+
+
 #define LINKED_LIST_VISUALIZATION_H
 #ifdef LINKED_LIST_VISUALIZATION_H
 
