@@ -48,5 +48,3 @@ jobs:
           slug: CSRT-NTUA/AlgoPlus
       - name: Upload to codecov
         run: bash <(curl -s https://codecov.io/bash)
-      - name: clang-tidy
-        run: bash clang_tidy.sh
