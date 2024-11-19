@@ -53,6 +53,27 @@ TEST_CASE("testing level order traversal in tree class [TREECLASS]"){
   REQUIRE(produced == sol);
 }
 
+TEST_CASE("Testing operator << for tree") {
+    tree<int> t;
+    t.insert("", 1);
+    t.insert("l", 2);
+    t.insert("r", 3);
+    t.insert("ll", 4);
+    t.insert("lr", 5);
+    t.insert("rl", 6);
+    t.insert("rr", 7);
+    t.insert("lll", 8);
+    t.insert("llr", 9);
+    t.insert("lrl", 10);
+    REQUIRE_NOTHROW(cout << t);
+
+    tree<std::string> tt;
+    tt.insert("", "hello");
+    tt.insert("r", "world");
+    tt.insert("l", "universe");
+    REQUIRE_NOTHROW(cout << tt);
+}
+
 #define TREE_VISUALIZATION_H
 #ifdef TREE_VISUALIZATION_H
 
