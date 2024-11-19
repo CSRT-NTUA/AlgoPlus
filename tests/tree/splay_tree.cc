@@ -128,6 +128,14 @@ TEST_CASE("testing level order for splay tree"){
   REQUIRE(produced==sol);
 }
 
+TEST_CASE("Testing operator << for splay tree") {
+    splay_tree<int> t({1, 5, 3, 2, 9, 11});
+    REQUIRE_NOTHROW(cout << t);
+
+    splay_tree<char> tt({'a', 'b', 'w', 'z', 'f', 'd'});
+    REQUIRE_NOTHROW(cout << tt);
+}
+
 #define TREE_VISUALIZATION_H
 #ifdef TREE_VISUALIZATION_H
 

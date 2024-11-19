@@ -164,6 +164,14 @@ TEST_CASE("Testing get_root function in avl tree"){
   REQUIRE(t.get_root() == 36);
 }
 
+TEST_CASE("Testing operator << for avl tree") {
+    avl_tree<int> t({1, 10, 2, 8, 6, 5});
+    REQUIRE_NOTHROW(cout << t);
+
+    avl_tree<char> tt({'a', 'g', 'd', 'z', 'w', 'f'});
+    REQUIRE_NOTHROW(cout << tt);
+}
+
 #define TREE_VISUALIZATION_H
 #ifdef TREE_VISUALIZATION_H
 
