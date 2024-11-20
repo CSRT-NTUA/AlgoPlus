@@ -200,7 +200,7 @@ public:
    * @brief operator << for bst class
    */
   friend std::ostream & operator << (std::ostream &out, bst<T> &t){
-    std::vector<std::vector<T> > order = t.inorder();
+    std::vector<T> order = t.inorder();
     for(int i = 0; i<order.size(); i++){
       if(i != order.size() - 1){
         out << order[i] << ", ";

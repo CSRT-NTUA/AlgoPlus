@@ -213,7 +213,7 @@ public:
    * @brief operator << for splay tree class
    */
   friend std::ostream & operator << (std::ostream &out, splay_tree<T> &t){
-    std::vector<std::vector<T> > order = t.inorder();
+    std::vector<T> order = t.inorder();
     for(int i = 0; i<order.size(); i++){
       if(i != order.size() - 1){
         out << order[i] << ", ";

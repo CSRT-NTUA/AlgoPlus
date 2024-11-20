@@ -20,7 +20,7 @@ private:
   double Sxy, Sxx;
   double x_mean, y_mean;
 public:
-  
+
   /**
   * @brief Constructor for linear regression class
   * @param points: 2D points that user pass to the regressor
@@ -41,7 +41,7 @@ public:
       std::cerr << e.what() << '\n';
     }
   }
-  
+
   /**
   * @brief get_results function
   * @return pair<double,double> the values of a and b

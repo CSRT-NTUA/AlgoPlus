@@ -151,6 +151,14 @@ TEST_CASE("testing level order in bst"){
   REQUIRE(produced == sol);
 }
 
+TEST_CASE("Testing opearator << for bst") {
+    bst<int> t({1, 10, 5, 3, 9, 25});
+    REQUIRE_NOTHROW(cout << t);
+
+    bst<char> tt({'a', 'g', 'q', 'v', 'w'});
+    REQUIRE_NOTHROW(cout << tt);
+}
+
 #define TREE_VISUALIZATION_H
 #ifdef TREE_VISUALIZATION_H
 
