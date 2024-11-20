@@ -16,7 +16,7 @@ AlgoPlus is a C++ library that includes ready-to-use complex **data structures**
 ### Example:
 
 ```cpp
-#include <machine_learning/clustering/DBSCAN/dbscan.h>
+#include "machine_learning/clustering/DBSCAN/dbscan.h"
 
 // AlgoPlus now has Machine Learning classes!
 int main(){
@@ -31,7 +31,7 @@ int main(){
     ...
 }
 
-#include <machine_learning/image/edge_detection/sobel_operator.h>
+#include "machine_learning/image/edge_detection/sobel_operator.h"
 
 // As well as image processing algorithms!
 int main(){
@@ -44,8 +44,8 @@ int main(){
 }
 
 
-#include <graph.h>
-#include <graph_visualization.h>
+#include "graph/graph.h"
+#include "visualization/graph_visualization.h"
 // And of course, every data structure that you need!
 int main(){
   weighted_graph<int> g("undirected");
