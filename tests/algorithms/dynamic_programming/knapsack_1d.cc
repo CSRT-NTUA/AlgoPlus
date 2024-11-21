@@ -1,4 +1,4 @@
-#include "../../../src/algorithms/dynamic_programming/coin_change.h"
+#include "../../../src/algorithms/dynamic_programming/knapsack_1d.h"
 #include "../../../third_party/catch.hpp"
 
 using namespace std;

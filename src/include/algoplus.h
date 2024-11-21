@@ -1,7 +1,8 @@
 #ifndef ALGOPLUS_H
 #define ALGOPLUS_H
 
-#include "../algorithms/dynamic_programming/coin_change.h"
+#include "../algorithms/dynamic_programming/knapsack_2d.h"
+#include "../algorithms/dynamic_programming/knapsack_1d.h"
 #include "../algorithms/dynamic_programming/fib.h"
 #include "../algorithms/dynamic_programming/kadane.h"
 #include "../algorithms/dynamic_programming/lcs.h"

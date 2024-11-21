@@ -1,5 +1,5 @@
 #include "../../../third_party/catch.hpp"
-#include "../../../src/algorithms/dynamic_programming/knapsack.h"
+#include "../../../src/algorithms/dynamic_programming/knapsack_2d.h"
 
 TEST_CASE("Testing knapsack 0/1 [1]") {
     std::vector<std::pair<int, int> > v = {{10, 60}, {20, 100}, {30, 120}};
