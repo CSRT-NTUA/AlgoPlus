@@ -9,6 +9,7 @@
 
 /**
  * @brief Longest increasing subsequence function
+ * @details computes the longest increasing subsequence of the passed array
  * @param arr input array
  * @return int64_t the size of the longest increasing subsequence
  */

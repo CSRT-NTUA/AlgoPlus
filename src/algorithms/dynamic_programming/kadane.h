@@ -10,7 +10,7 @@
 
 /**
  * @brief kadane's algorithm
- *
+ * @details Computes the maximum continuous subarray sum of an array
  * @param arr input array
  * @return int64_t max contiguous sum of the array
  */

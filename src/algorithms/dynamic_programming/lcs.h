@@ -10,7 +10,7 @@
 
 /**
  * @brief longest common subsequence function
- *
+ * @details computes the longest common subsequence of 2 strings
  * @param a first input string
  * @param b second input string
  * @return int64_t the longest common subsequence of a to b

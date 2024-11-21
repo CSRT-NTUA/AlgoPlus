@@ -11,7 +11,7 @@
 
 /**
 * @brief minimum swaps function.
-* It computes the minimum swaps to make a equal to b
+* @details computes the minimum swaps to make array 2 arrays equal
 * @param a: vector<int>
 * @param b: vector<int>
 * @return int: the minimum number of swaps to make array a equal to array b
