@@ -1,5 +1,5 @@
 #include "../../../third_party/catch.hpp"
-#include "../../../src/algorithms/sorting/convex_hull.h"
+#include "../../../src/algorithms/geometry/convex_hull.h"
 
 TEST_CASE("Testing convex hull with graham's scan [1]") {
     std::vector<std::pair<int, int> > points = { {0, 3}, {1, 1}, {2, 2}, {4, 4}, {0, 0}, {1, 2}, {3, 1}, {3, 3}, {2, 4}, {4, 0} };
