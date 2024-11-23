@@ -86,6 +86,14 @@ You can see more [examples](/examples) or follow the [Tutorials](/tutorial).
 - [X] [Circular Linked List](https://www.geeksforgeeks.org/circular-linked-list)
 - [X] [Skip List](https://en.wikipedia.org/wiki/Skip_list)
 
+**Algorithms**
+- [X] [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming)
+- [X] [Geometry](https://en.wikipedia.org/wiki/Computational_geometry)
+- [X] [Number Theory](https://en.wikipedia.org/wiki/Number_theory)
+- [X] [Searching](https://en.wikipedia.org/wiki/Search_algorithm)
+- [X] [Sorting](https://en.wikipedia.org/wiki/Sorting_algorithm)
+- [X] [String Manipulation](https://en.wikipedia.org/wiki/String_(computer_science))
+
 **Other**
 - [X] [Disjoint set](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
 - [X] [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
