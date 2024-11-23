@@ -16,4 +16,6 @@ TEST_CASE("Testing polynomial regression [1]"){
   for(int i = 0; i<check.size(); i++){
     REQUIRE(int(b_coeffs[i]) == int(check[i]));
   }
+
+  REQUIRE_NOTHROW(a.predict(4));
 }

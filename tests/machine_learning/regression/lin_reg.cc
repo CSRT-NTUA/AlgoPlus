@@ -7,4 +7,7 @@ TEST_CASE("Testing linear regression [1]"){
   linear_regression lin_reg(data);
   std::pair<double, double> a_b = lin_reg.get_results();
   REQUIRE(a_b == std::make_pair(10.0, 1.0));
+
+  double prediction = lin_reg.predict(2.2);
+  REQUIRE(prediction - 12 <= 1);
 }

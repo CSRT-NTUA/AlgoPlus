@@ -15,7 +15,7 @@ private:
 public:
 
   explicit polynomial_regression(std::vector<double> X, std::vector<double> Y, int64_t n) noexcept : X(X), Y(Y), n(n) {}
-   
+
   std::vector<double> get_coeffs(){
     std::vector<std::vector<double>> k = calculate_matrix(this->X, this->n);
     std::vector<double> l = calculate_vector(this->X, this->Y, this->n);
@@ -87,6 +87,22 @@ public:
       }
     }
     return x;
+  }
+
+  /**
+  * @brief predict function
+  * @param x: the value of x which we want to predict y
+  * @return double: the predicted  value of y
+  */
+  double predict(double x) {
+    std::vector<double> coeffs = get_coeffs();
+    double y_pred = 0.0;
+
+    for(int64_t i = 0; i<int(coeffs.size()); i++) {
+        y_pred += coeffs[i] * std::pow(x, i);
+    }
+
+    return y_pred;
   }
 
 };

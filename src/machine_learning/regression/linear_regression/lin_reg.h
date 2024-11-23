@@ -63,6 +63,18 @@ public:
     a = y_mean - b * x_mean;
     return std::make_pair(a, b);
   }
+
+  /**
+  * @brief predict function
+  * @param x: the value of x which we want to predict y
+  * @return double: the predicted value of y
+  */
+  double predict(double x) {
+    if(Sxx == 0.0 || Sxy == 0.0) {
+        get_results();
+    }
+    return a + b * x;
+  }
 };
 
 #endif
