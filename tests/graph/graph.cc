@@ -283,6 +283,42 @@ TEST_CASE("Testing clear function for graph class") {
     REQUIRE(bfs_path.size() == 0);
 }
 
+TEST_CASE("Testing scc function for graph class") {
+    graph<int> g("directed");
+    g.add_edge(0, 1);
+    g.add_edge(1, 2);
+    g.add_edge(2, 0);
+    g.add_edge(1, 3);
+    g.add_edge(3, 4);
+    g.add_edge(4, 3);
+
+    REQUIRE(g.scc() == 2);
+
+    graph<int> g2("undirected");
+    REQUIRE(g2.scc() == 0);
+
+    g2.add_edge(0, 1);
+    g2.add_edge(1, 2);
+    g2.add_edge(2, 0);
+    g2.add_edge(3, 4);
+    g2.add_edge(4, 5);
+    g2.add_edge(5, 3);
+    g2.add_edge(3, 6);
+    g2.add_edge(1, 3);
+
+    REQUIRE(g2.scc() == 1);
+
+    graph<char> t("directed");
+    t.add_edge('a', 'b');
+    t.add_edge('b', 'c');
+    t.add_edge('c', 'a');
+    t.add_edge('b', 'd');
+    t.add_edge('d', 'e');
+    t.add_edge('e', 'd');
+
+    REQUIRE(t.scc() == 2);
+}
+
 #define GRAPH_VISUALIZATION_H
 #ifdef GRAPH_VISUALIZATION_H
 TEST_CASE("Testing visualize for graph class") {
