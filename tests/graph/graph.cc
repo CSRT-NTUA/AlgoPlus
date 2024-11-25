@@ -317,6 +317,22 @@ TEST_CASE("Testing scc function for graph class") {
     t.add_edge('e', 'd');
 
     REQUIRE(t.scc() == 2);
+
+
+    graph<int> g3("directed");
+    g3.add_edge(0, 1);
+    g3.add_edge(1, 2);
+    g3.add_edge(2, 0);
+    g3.add_edge(1, 3);
+    g3.add_edge(3, 4);
+    g3.add_edge(4, 5);
+    g3.add_edge(5, 3);
+    g3.add_edge(3, 6);
+    g3.add_edge(6, 7);
+    g3.add_edge(6, 8);
+    g3.add_edge(8, 6);
+
+    REQUIRE(g3.scc() == 4);
 }
 
 #define GRAPH_VISUALIZATION_H
