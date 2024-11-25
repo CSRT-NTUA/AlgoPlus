@@ -183,7 +183,7 @@ public:
 
   /**
    *@brief scc(strongly connected components) function.
-   *@returns int64_t the number of scc's in the graph.
+   *@returns int64_t the number of scc's in the graph using kosaraju's algorithm.
    */
   int64_t scc();
 
@@ -253,6 +253,20 @@ private:
         out[start] = std::min(out[start], out[x]);
       }
     }
+  }
+
+  /**
+  * @brief helper dfs function for kosaraju's scc
+  */
+  void dfs_scc(T start, std::unordered_map<T, bool> &visited, std::stack<T> &s) {
+      visited[start] = true;
+      for(auto & x : adj[start]) {
+          if(visited.find(x) == visited.end()) {
+              dfs_scc(x, visited, s);
+          }
+      }
+
+      s.push(start);
   }
 };
 
@@ -475,6 +489,58 @@ template <typename T> bool graph<T>::connected() {
     }
   }
   return true;
+}
+
+template <typename T> int64_t graph<T>::scc() {
+    if (this -> size() == 0) {
+        return 0;
+    }
+
+    std::unordered_map<T, bool> visited;
+    std::stack<T> s;
+
+    for(const T& x: _elements) {
+        if(visited.find(x) == visited.end()) {
+            dfs_scc(x, visited, s);
+        }
+    }
+
+    std::unordered_map<T, std::vector<T> > new_adj;
+    for(const T& x: _elements) {
+        for(auto & neigh: adj[x]) {
+            new_adj[neigh].push_back(x);
+        }
+    }
+
+    int64_t scc = 0;
+    visited.clear();
+
+    auto dfs_new = [&](T start) -> void {
+        std::stack<T> _s;
+        _s.push(start);
+        visited[start] = true;
+        while(!_s.empty()) {
+            T current = _s.top();
+            _s.pop();
+            for(auto & x: new_adj[current]) {
+                if (visited.find(x) == visited.end()) {
+                    _s.push(x);
+                    visited[x] = true;
+                }
+            }
+        }
+    };
+
+    while(!s.empty()) {
+        T current = s.top();
+        s.pop();
+        if (visited.find(current) == visited.end()) {
+            dfs_new(current);
+            scc++;
+        }
+    }
+
+    return scc;
 }
 
 template <typename T> int graph<T>::eulerian() {
