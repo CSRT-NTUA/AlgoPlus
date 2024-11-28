@@ -296,6 +296,57 @@ TEST_CASE("Testing shortest path algorithm [2]") {
     REQUIRE(g.shortest_path(1, 7) == 56);
 }
 
+TEST_CASE("Testing scc function for weighted graph class") {
+    weighted_graph<int> g("directed");
+    g.add_edge(0, 1, 50);
+    g.add_edge(1, 2, 50);
+    g.add_edge(2, 0, 50);
+    g.add_edge(1, 3, 50);
+    g.add_edge(3, 4, 50);
+    g.add_edge(4, 3, 50);
+
+    REQUIRE(g.scc() == 2);
+
+    weighted_graph<int> g2("undirected");
+    REQUIRE(g2.scc() == 0);
+
+    g2.add_edge(0, 1, 5);
+    g2.add_edge(1, 2, 5);
+    g2.add_edge(2, 0, 5);
+    g2.add_edge(3, 4, 5);
+    g2.add_edge(4, 5, 5);
+    g2.add_edge(5, 3, 5);
+    g2.add_edge(3, 6, 5);
+    g2.add_edge(1, 3, 5);
+
+    REQUIRE(g2.scc() == 1);
+
+    weighted_graph<char> t("directed");
+    t.add_edge('a', 'b', 5);
+    t.add_edge('b', 'c', 5);
+    t.add_edge('c', 'a', 5);
+    t.add_edge('b', 'd', 5);
+    t.add_edge('d', 'e', 5);
+    t.add_edge('e', 'd', 5);
+
+    REQUIRE(t.scc() == 2);
+
+    weighted_graph<int> g3("directed");
+    g3.add_edge(0, 1, 5);
+    g3.add_edge(1, 2, 5);
+    g3.add_edge(2, 0, 5);
+    g3.add_edge(1, 3, 5);
+    g3.add_edge(3, 4, 5);
+    g3.add_edge(4, 5, 5);
+    g3.add_edge(5, 3, 5);
+    g3.add_edge(3, 6, 5);
+    g3.add_edge(6, 7, 5);
+    g3.add_edge(6, 8, 5);
+    g3.add_edge(8, 6, 5);
+
+    REQUIRE(g3.scc() == 4);
+}
+
 #define GRAPH_VISUALIZATION_H
 
 #ifdef GRAPH_VISUALIZATION_H
