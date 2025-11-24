@@ -30,7 +30,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Doxyfiles
         run:
           brew install doxygen && cd docs/ && doxygen
